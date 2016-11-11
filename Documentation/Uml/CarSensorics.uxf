@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="12.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>376</x>
+      <y>32</y>
+      <w>320</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>template=0: SensorFieldSelect
+Sensor
+/ /
+--
++register(c:Car):void
+/+get(s:SensorFieldSelect):float/
+
+#getCar():Car
+--
+mCar:Car
+--
+Responsibiliteis
+ -- query Car object for state before
+    data aquirition
+ -- provide Car with values matching the tag</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>880</x>
+      <y>40</y>
+      <w>264</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>/ /
+Car
+/ /
+--
+
++register(s:Sensor):void
++time(delta:double):void
++time():double
+--
+
+-mPwlSensor:PwlSensor
+-mGyroSensor:GyroSensor
+
+--
+-- Responsibilities:
+-- * keep track of time
+-- * bundle all neccesary sensors</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>224</x>
+      <y>336</y>
+      <w>216</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>/ /
+LSM9DS1Sensor
+/ /
+--
+LSM9DS1Sensor()
++get(s:GyroSensorFields):float
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>720</x>
+      <y>344</y>
+      <w>240</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>template=0: SensorFieldSelect
+TableSensor
+/ /
+--
+/+get():float/
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>8</x>
+      <y>336</y>
+      <w>200</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+GyroSensorFields
+--
+Pitch
+Yaw
+Roll</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>96</x>
+      <y>280</y>
+      <w>226</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;bind&gt;&gt;{0:GyroSensorFields}</panel_attributes>
+    <additional_attributes>160;56;160;40;80;40;80;56</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>320</x>
+      <y>184</y>
+      <w>200</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>184;24;184;88;24;88;24;152</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>480</x>
+      <y>184</y>
+      <w>360</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;88;344;88;344;168</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>16</y>
+      <w>224</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>
+SensorTraits
+--
++getFieldCount():size_t
++getField: 
+
+?????</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>896</x>
+      <y>480</y>
+      <w>216</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>/ /
+SimGyroSensor
+/ /
+--
+SimGyroSensor(times[], entries[][][])
++get(s:GyroSensorFields):float
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>800</x>
+      <y>400</y>
+      <w>216</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>24;24;24;56;200;56;200;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1144</x>
+      <y>480</y>
+      <w>128</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+GyroSensorFields
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1000</x>
+      <y>424</y>
+      <w>226</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;bind&gt;&gt;{0:GyroSensorFields}</panel_attributes>
+    <additional_attributes>80;56;80;40;160;40;160;56</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>640</x>
+      <y>480</y>
+      <w>216</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>/ /
+SimPwmSensor
+/ /
+--
+SimPwmSensor(times[], entries[])
++get(s:GyroSensorFields):float
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>560</x>
+      <y>400</y>
+      <w>136</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+PwmSensorFields
+--
+pwm</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>728</x>
+      <y>400</y>
+      <w>112</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>96;24;96;56;24;56;24;80</additional_attributes>
+  </element>
+</diagram>
