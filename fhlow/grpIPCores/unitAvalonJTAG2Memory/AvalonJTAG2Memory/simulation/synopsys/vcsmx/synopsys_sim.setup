@@ -1,0 +1,28 @@
+
+WORK > DEFAULT
+DEFAULT:                          ./libraries/work/                            
+work:                             ./libraries/work/                            
+p2b_adapter:                      ./libraries/p2b_adapter/                     
+b2p_adapter:                      ./libraries/b2p_adapter/                     
+transacto:                        ./libraries/transacto/                       
+p2b:                              ./libraries/p2b/                             
+b2p:                              ./libraries/b2p/                             
+fifo:                             ./libraries/fifo/                            
+timing_adt:                       ./libraries/timing_adt/                      
+jtag_phy_embedded_in_jtag_master: ./libraries/jtag_phy_embedded_in_jtag_master/
+master_0:                         ./libraries/master_0/                        
+altera_ver:                       ./libraries/altera_ver/                      
+lpm_ver:                          ./libraries/lpm_ver/                         
+sgate_ver:                        ./libraries/sgate_ver/                       
+altera_mf_ver:                    ./libraries/altera_mf_ver/                   
+altera_lnsim_ver:                 ./libraries/altera_lnsim_ver/                
+cyclonev_ver:                     ./libraries/cyclonev_ver/                    
+cyclonev_hssi_ver:                ./libraries/cyclonev_hssi_ver/               
+cyclonev_pcie_hip_ver:            ./libraries/cyclonev_pcie_hip_ver/           
+altera:                           ./libraries/altera/                          
+lpm:                              ./libraries/lpm/                             
+sgate:                            ./libraries/sgate/                           
+altera_mf:                        ./libraries/altera_mf/                       
+altera_lnsim:                     ./libraries/altera_lnsim/                    
+cyclonev:                         ./libraries/cyclonev/                        
+LIBRARY_SCAN = TRUE

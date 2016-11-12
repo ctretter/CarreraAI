@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/mentor/altera_reset_controller.v"
+   type="VERILOG_ENCRYPT"
+   library="rst_controller"
+   simulator="modelsim" />
+ <file
+   path="simulation/submodules/mentor/altera_reset_synchronizer.v"
+   type="VERILOG_ENCRYPT"
+   library="rst_controller"
+   simulator="modelsim" />
+ <file
+   path="simulation/submodules/aldec/altera_reset_controller.v"
+   type="VERILOG_ENCRYPT"
+   library="rst_controller"
+   simulator="riviera" />
+ <file
+   path="simulation/submodules/aldec/altera_reset_synchronizer.v"
+   type="VERILOG_ENCRYPT"
+   library="rst_controller"
+   simulator="riviera" />
+ <file
+   path="simulation/submodules/AvalonJTAG2Memory_master_0_p2b_adapter.vho"
+   type="VHDL"
+   library="p2b_adapter" />
+ <file
+   path="simulation/submodules/AvalonJTAG2Memory_master_0_b2p_adapter.vho"
+   type="VHDL"
+   library="b2p_adapter" />
+ <file
+   path="simulation/submodules/AvalonJTAG2Memory_master_0_transacto.vho"
+   type="VHDL"
+   library="transacto" />
+ <file
+   path="simulation/submodules/AvalonJTAG2Memory_master_0_p2b.vho"
+   type="VHDL"
+   library="p2b" />
+ <file
+   path="simulation/submodules/AvalonJTAG2Memory_master_0_b2p.vho"
+   type="VHDL"
+   library="b2p" />
+ <file
+   path="simulation/submodules/AvalonJTAG2Memory_master_0_fifo.vho"
+   type="VHDL"
+   library="fifo" />
+ <file
+   path="simulation/submodules/AvalonJTAG2Memory_master_0_timing_adt.vho"
+   type="VHDL"
+   library="timing_adt" />
+ <file
+   path="simulation/submodules/altera_avalon_st_jtag_interface.v"
+   type="VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_jtag_dc_streaming.v"
+   type="VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_jtag_sld_node.v"
+   type="VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_jtag_streaming.v"
+   type="VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_avalon_st_clock_crosser.v"
+   type="VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_avalon_st_pipeline_base.v"
+   type="VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_avalon_st_idle_remover.v"
+   type="VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_avalon_st_idle_inserter.v"
+   type="VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_avalon_st_pipeline_stage.sv"
+   type="SYSTEM_VERILOG"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/altera_avalon_st_jtag_interface.sdc"
+   type="SDC"
+   library="jtag_phy_embedded_in_jtag_master" />
+ <file
+   path="simulation/submodules/AvalonJTAG2Memory_master_0.vhd"
+   type="VHDL"
+   library="master_0" />
+ <file path="simulation/AvalonJTAG2Memory.vhd" type="VHDL" />
+ <topLevel name="AvalonJTAG2Memory" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

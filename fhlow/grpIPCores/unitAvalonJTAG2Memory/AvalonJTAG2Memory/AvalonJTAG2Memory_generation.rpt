@@ -1,0 +1,96 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\Michi\Desktop\Final_v0.9\fhlow_v1.4\grpIPCores\unitAvalonJTAG2Memory\AvalonJTAG2Memory.qsys --simulation=VHDL --output-directory=C:\Users\Michi\Desktop\Final_v0.9\fhlow_v1.4\grpIPCores\unitAvalonJTAG2Memory\AvalonJTAG2Memory\simulation --family="Cyclone V" --part=5CGXFC3B6F23C6
+Progress: Loading unitAvalonJTAG2Memory/AvalonJTAG2Memory.qsys
+Progress: Reading input file
+Progress: Adding master_0 [altera_jtag_avalon_master 15.0]
+Progress: Parameterizing module master_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: AvalonJTAG2Memory: Generating AvalonJTAG2Memory "AvalonJTAG2Memory" for SIM_VHDL
+Info: master_0: "AvalonJTAG2Memory" instantiated altera_jtag_avalon_master "master_0"
+Info: jtag_phy_embedded_in_jtag_master: "master_0" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Warning: Parallel compilation is not licensed and has been disabled
+Warning: Verilog HDL or VHDL warning at AvalonJTAG2Memory_master_0_timing_adt.sv(82): object "in_ready" assigned a value but never read
+Info: timing_adt: "master_0" instantiated timing_adapter "timing_adt"
+Info: fifo: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: fifo: Generated simulation model AvalonJTAG2Memory_master_0_fifo.vho
+Info: fifo: "master_0" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: b2p: Generated simulation model AvalonJTAG2Memory_master_0_b2p.vho
+Info: b2p: "master_0" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: p2b: Generated simulation model AvalonJTAG2Memory_master_0_p2b.vho
+Info: p2b: "master_0" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: transacto: Generated simulation model AvalonJTAG2Memory_master_0_transacto.vho
+Info: transacto: "master_0" instantiated altera_avalon_packets_to_master "transacto"
+Warning: Parallel compilation is not licensed and has been disabled
+Warning: Verilog HDL or VHDL warning at AvalonJTAG2Memory_master_0_b2p_adapter.sv(78): object "out_channel" assigned a value but never read
+Warning: Verilog HDL assignment warning at AvalonJTAG2Memory_master_0_b2p_adapter.sv(90): truncated value with size 8 to match size of target (1)
+Info: b2p_adapter: "master_0" instantiated channel_adapter "b2p_adapter"
+Warning: Parallel compilation is not licensed and has been disabled
+Info: p2b_adapter: "master_0" instantiated channel_adapter "p2b_adapter"
+Info: rst_controller: "master_0" instantiated altera_reset_controller "rst_controller"
+Info: AvalonJTAG2Memory: Done "AvalonJTAG2Memory" with 11 modules, 23 files
+Info: ip-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\Michi\Desktop\Final_v0.9\fhlow_v1.4\grpIPCores\unitAvalonJTAG2Memory\AvalonJTAG2Memory\AvalonJTAG2Memory.spd --output-directory=C:/Users/Michi/Desktop/Final_v0.9/fhlow_v1.4/grpIPCores/unitAvalonJTAG2Memory/AvalonJTAG2Memory/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\Michi\Desktop\Final_v0.9\fhlow_v1.4\grpIPCores\unitAvalonJTAG2Memory\AvalonJTAG2Memory\AvalonJTAG2Memory.spd --output-directory=C:/Users/Michi/Desktop/Final_v0.9/fhlow_v1.4/grpIPCores/unitAvalonJTAG2Memory/AvalonJTAG2Memory/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/Michi/Desktop/Final_v0.9/fhlow_v1.4/grpIPCores/unitAvalonJTAG2Memory/AvalonJTAG2Memory/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/Michi/Desktop/Final_v0.9/fhlow_v1.4/grpIPCores/unitAvalonJTAG2Memory/AvalonJTAG2Memory/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/Michi/Desktop/Final_v0.9/fhlow_v1.4/grpIPCores/unitAvalonJTAG2Memory/AvalonJTAG2Memory/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	9 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/Michi/Desktop/Final_v0.9/fhlow_v1.4/grpIPCores/unitAvalonJTAG2Memory/AvalonJTAG2Memory/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\Michi\Desktop\Final_v0.9\fhlow_v1.4\grpIPCores\unitAvalonJTAG2Memory\AvalonJTAG2Memory.qsys --block-symbol-file --output-directory=C:\Users\Michi\Desktop\Final_v0.9\fhlow_v1.4\grpIPCores\unitAvalonJTAG2Memory\AvalonJTAG2Memory --family="Cyclone V" --part=5CGXFC3B6F23C6
+Progress: Loading unitAvalonJTAG2Memory/AvalonJTAG2Memory.qsys
+Progress: Reading input file
+Progress: Adding master_0 [altera_jtag_avalon_master 15.0]
+Progress: Parameterizing module master_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\Michi\Desktop\Final_v0.9\fhlow_v1.4\grpIPCores\unitAvalonJTAG2Memory\AvalonJTAG2Memory.qsys --synthesis=VHDL --output-directory=C:\Users\Michi\Desktop\Final_v0.9\fhlow_v1.4\grpIPCores\unitAvalonJTAG2Memory\AvalonJTAG2Memory\synthesis --family="Cyclone V" --part=5CGXFC3B6F23C6
+Progress: Loading unitAvalonJTAG2Memory/AvalonJTAG2Memory.qsys
+Progress: Reading input file
+Progress: Adding master_0 [altera_jtag_avalon_master 15.0]
+Progress: Parameterizing module master_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: AvalonJTAG2Memory: Generating AvalonJTAG2Memory "AvalonJTAG2Memory" for QUARTUS_SYNTH
+Info: master_0: "AvalonJTAG2Memory" instantiated altera_jtag_avalon_master "master_0"
+Info: jtag_phy_embedded_in_jtag_master: "master_0" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
+Info: timing_adt: "master_0" instantiated timing_adapter "timing_adt"
+Info: fifo: "master_0" instantiated altera_avalon_sc_fifo "fifo"
+Info: b2p: "master_0" instantiated altera_avalon_st_bytes_to_packets "b2p"
+Info: p2b: "master_0" instantiated altera_avalon_st_packets_to_bytes "p2b"
+Info: transacto: "master_0" instantiated altera_avalon_packets_to_master "transacto"
+Info: b2p_adapter: "master_0" instantiated channel_adapter "b2p_adapter"
+Info: p2b_adapter: "master_0" instantiated channel_adapter "p2b_adapter"
+Info: rst_controller: "master_0" instantiated altera_reset_controller "rst_controller"
+Info: AvalonJTAG2Memory: Done "AvalonJTAG2Memory" with 11 modules, 22 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
