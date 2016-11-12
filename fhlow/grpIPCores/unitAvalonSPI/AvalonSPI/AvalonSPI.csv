@@ -1,0 +1,18 @@
+# system info AvalonSPI on 2016.08.22.16:05:33
+system_info:
+name,value
+DEVICE,5CGXFC3B6F23C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1471874711
+#
+#
+# Files generated for AvalonSPI on 2016.08.22.16:05:33
+files:
+filepath,kind,attributes,module,is_top
+simulation/AvalonSPI.vhd,VHDL,,AvalonSPI,true
+simulation/submodules/AvalonSPI_spislave_0.vho,VHDL,,AvalonSPI_spislave_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+AvalonSPI.spislave_0,AvalonSPI_spislave_0

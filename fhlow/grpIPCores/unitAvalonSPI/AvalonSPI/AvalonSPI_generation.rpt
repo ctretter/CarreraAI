@@ -1,0 +1,63 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\Michi\Desktop\Versions\fhlow_v1.4-done\grpIPCores\unitAvalonSPI\AvalonSPI.qsys --simulation=VHDL --output-directory=C:\Users\Michi\Desktop\Versions\fhlow_v1.4-done\grpIPCores\unitAvalonSPI\AvalonSPI\simulation --family="Cyclone V" --part=5CGXFC3B6F23C6
+Progress: Loading unitAvalonSPI/AvalonSPI.qsys
+Progress: Reading input file
+Progress: Adding spislave_0 [spislave 15.0]
+Progress: Parameterizing module spislave_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: AvalonSPI: Generating AvalonSPI "AvalonSPI" for SIM_VHDL
+Info: spislave_0: Generating VHDL simulation model
+Warning: Parallel compilation is not licensed and has been disabled
+Info: spislave_0: Generated simulation model AvalonSPI_spislave_0.vho
+Info: spislave_0: "AvalonSPI" instantiated spislave "spislave_0"
+Info: AvalonSPI: Done "AvalonSPI" with 2 modules, 2 files
+Info: ip-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\Michi\Desktop\Versions\fhlow_v1.4-done\grpIPCores\unitAvalonSPI\AvalonSPI\AvalonSPI.spd --output-directory=C:/Users/Michi/Desktop/Versions/fhlow_v1.4-done/grpIPCores/unitAvalonSPI/AvalonSPI/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\Michi\Desktop\Versions\fhlow_v1.4-done\grpIPCores\unitAvalonSPI\AvalonSPI\AvalonSPI.spd --output-directory=C:/Users/Michi/Desktop/Versions/fhlow_v1.4-done/grpIPCores/unitAvalonSPI/AvalonSPI/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/Michi/Desktop/Versions/fhlow_v1.4-done/grpIPCores/unitAvalonSPI/AvalonSPI/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/Michi/Desktop/Versions/fhlow_v1.4-done/grpIPCores/unitAvalonSPI/AvalonSPI/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/Michi/Desktop/Versions/fhlow_v1.4-done/grpIPCores/unitAvalonSPI/AvalonSPI/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/Michi/Desktop/Versions/fhlow_v1.4-done/grpIPCores/unitAvalonSPI/AvalonSPI/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\Michi\Desktop\Versions\fhlow_v1.4-done\grpIPCores\unitAvalonSPI\AvalonSPI.qsys --block-symbol-file --output-directory=C:\Users\Michi\Desktop\Versions\fhlow_v1.4-done\grpIPCores\unitAvalonSPI\AvalonSPI --family="Cyclone V" --part=5CGXFC3B6F23C6
+Progress: Loading unitAvalonSPI/AvalonSPI.qsys
+Progress: Reading input file
+Progress: Adding spislave_0 [spislave 15.0]
+Progress: Parameterizing module spislave_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\Michi\Desktop\Versions\fhlow_v1.4-done\grpIPCores\unitAvalonSPI\AvalonSPI.qsys --synthesis=VHDL --output-directory=C:\Users\Michi\Desktop\Versions\fhlow_v1.4-done\grpIPCores\unitAvalonSPI\AvalonSPI\synthesis --family="Cyclone V" --part=5CGXFC3B6F23C6
+Progress: Loading unitAvalonSPI/AvalonSPI.qsys
+Progress: Reading input file
+Progress: Adding spislave_0 [spislave 15.0]
+Progress: Parameterizing module spislave_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: AvalonSPI: Generating AvalonSPI "AvalonSPI" for QUARTUS_SYNTH
+Info: spislave_0: "AvalonSPI" instantiated spislave "spislave_0"
+Info: AvalonSPI: Done "AvalonSPI" with 2 modules, 2 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

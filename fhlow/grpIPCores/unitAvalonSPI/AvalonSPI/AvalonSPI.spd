@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/AvalonSPI_spislave_0.vho"
+   type="VHDL"
+   library="spislave_0" />
+ <file path="simulation/AvalonSPI.vhd" type="VHDL" />
+ <topLevel name="AvalonSPI" />
+ <deviceFamily name="cyclonev" />
+</simPackage>
