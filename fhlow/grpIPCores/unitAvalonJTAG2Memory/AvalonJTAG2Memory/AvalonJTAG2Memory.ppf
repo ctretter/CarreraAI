@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="master_0"
+ megafunction_name="ALTERA_JTAG_AVALON_MASTER"
+ intended_family="Cyclone V"
+ specifies="all_ports">
+ <global>
+  <pin name="clk_clk" direction="input" scope="external" />
+  <pin name="clk_reset_reset" direction="input" scope="external" />
+  <pin name="master_address[31..0]" direction="output" scope="external" />
+  <pin name="master_readdata[31..0]" direction="input" scope="external" />
+  <pin name="master_read" direction="output" scope="external" />
+  <pin name="master_write" direction="output" scope="external" />
+  <pin name="master_writedata[31..0]" direction="output" scope="external" />
+  <pin name="master_waitrequest" direction="input" scope="external" />
+  <pin name="master_readdatavalid" direction="input" scope="external" />
+  <pin name="master_byteenable[3..0]" direction="output" scope="external" />
+  <pin name="master_reset_reset" direction="output" scope="external" />
+ </global>
+</pinplan>

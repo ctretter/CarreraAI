@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="AlteraPLL_sim/AlteraPLL.vho" type="VHDL" />
+ <topLevel name="AlteraPLL" />
+ <deviceFamily name="cyclonev" />
+</simPackage>
