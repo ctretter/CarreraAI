@@ -45,18 +45,19 @@ OBJ_CPP += $(subst $(EXT_CPP),.o,$(SRC_CPP))
 
 .PHONY: clean all build documentation
 
-all: build
-	ping -c2 -W1 ${TARGET_IP} && scp ${BINARY} ${TARGET_PATH}
+all: clean build
+	@ #ping -c2 -W1 ${TARGET_IP} && scp ${BINARY} ${TARGET_PATH}
 
 build: $(BINARY)
 $(BINARY): $(OBJ) $(OBJ_CPP)
-	$(CC) $(LDFLAGS)   $^ -o $@
+	@$(CC) $(LDFLAGS)   $^ -o $@
 	
 %.o : %$(EXT_CPP)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	
 %.o : %$(EXT)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -fv $(BINARY) *.a *.o *~ 
+	@-rm -f $(BINARY) *.a *.o *~ 
+
