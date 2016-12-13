@@ -7,9 +7,9 @@ InputAngle = IADegree*pi/180;
 OutputAngle = 160*pi/180;
 
 
-Radius = BowRange/abs((OutputAngle-InputAngle))
-EndPointX = StartPoint(1) + Radius*(sin(OutputAngle)-sin(InputAngle))
-EndPointY = StartPoint(2) + Radius*(cos(InputAngle)-cos(OutputAngle))
+Radius = BowRange/abs((OutputAngle-InputAngle));
+EndPointX = StartPoint(1) + Radius*(sin(OutputAngle)-sin(InputAngle));
+EndPointY = StartPoint(2) + Radius*(cos(InputAngle)-cos(OutputAngle));
 
 CenterPointX = StartPoint(1) + Radius*cos(InputAngle+pi/2);
 CenterPointY = StartPoint(2) + Radius*sin(InputAngle+pi/2);
