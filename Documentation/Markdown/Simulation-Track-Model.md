@@ -20,4 +20,4 @@ Die Simulationsumgebung beinhaltet folgende Einheiten:
 		Das Durchdrehen führt zu einem Positionsmismatch (Herausfinden, wie gut das neuronale Netzwerk diese Mismatches behandelt)
 
 
-Die mathematischen Herleitungen für die Berechnungen können in dem Dokument [Math.pdf](link-to-math.pdf)) aufgefunden werden.
+Die mathematischen Herleitungen für die Berechnungen der Kurvenstücke können in dem Dokument [TrackEndPointCalculation.pdf](../pdf/TrackEndPointCalculation.pdf)) aufgefunden werden.
