@@ -62,7 +62,9 @@ source ${PathGlobalSynLayDir}/ReadTechnology.tcl
 # setting synthesis constraints
 source ${PathGlobalSynLayDir}/SynConstraints.tcl
 # do whatever user wants to do
-source ${PathLocalSynLayDir}/MyAddons.tcl
+if [file exists ${PathLocalSynLayDir}/MyAddons.tcl] then {
+	source ${PathLocalSynLayDir}/MyAddons.tcl
+}
 
 export_assignments
 if [expr ${DoLay}] {
