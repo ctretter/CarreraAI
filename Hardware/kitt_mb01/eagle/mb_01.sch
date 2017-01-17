@@ -507,98 +507,6 @@ Source: http://www.farnell.com/datasheets/716597.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="inductor-neosid">
-<description>&lt;b&gt;Neosid Chokes and Transformers&lt;/b&gt;&lt;p&gt;
-
-Based on the following sources:
-&lt;ul&gt;
-&lt;li&gt;Electronic Component Book, Part 2 : Chokes, Fixed Value Inductors
-&lt;li&gt;Part 3 : Filters, Coil Assemblies, Thermoplastic Parts
-&lt;li&gt;Part 4 : SMD Filters, Coils, Fixed Value Inductors
-&lt;li&gt;www.neosid.de
-&lt;/ul&gt;
- &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="SM-B5">
-<description>SMD BEAD &lt;B&gt;INDUCTOR&lt;/B&gt;&lt;p&gt;
-4.8 x 3 x 3 mm</description>
-<wire x1="-2.3" y1="-1.4" x2="2.3" y2="-1.4" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1.4" x2="2.3" y2="1.4" width="0.2032" layer="51"/>
-<wire x1="2.3" y1="1.4" x2="-2.3" y2="1.4" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="1.4" x2="-2.3" y2="-1.4" width="0.2032" layer="51"/>
-<smd name="1" x="-2" y="0" dx="2" dy="1.7" layer="1"/>
-<smd name="2" x="2" y="0" dx="2" dy="1.7" layer="1"/>
-<text x="-2.408" y="1.632" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.3" y="-2.8" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="SM-B9">
-<description>SMD BEAD &lt;B&gt;INDUCTOR&lt;/B&gt;&lt;p&gt;
-9.2 x 3 x 3 mm</description>
-<wire x1="-4.5" y1="-1.4" x2="4.5" y2="-1.4" width="0.2032" layer="21"/>
-<wire x1="4.5" y1="-1.4" x2="4.5" y2="1.4" width="0.2032" layer="51"/>
-<wire x1="4.5" y1="1.4" x2="-4.5" y2="1.4" width="0.2032" layer="21"/>
-<wire x1="-4.5" y1="1.4" x2="-4.5" y2="-1.4" width="0.2032" layer="51"/>
-<smd name="1" x="-4" y="0" dx="2" dy="1.7" layer="1"/>
-<smd name="2" x="4" y="0" dx="2" dy="1.7" layer="1"/>
-<text x="-4.451" y="1.624" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.8" y="-1.1" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="BEAD-IND">
-<wire x1="-1.27" y1="-0.254" x2="-0.254" y2="0" width="0.1524" layer="94" curve="-36.869898" cap="flat"/>
-<wire x1="-1.27" y1="-0.254" x2="-0.762" y2="-1.016" width="0.1524" layer="94" curve="-46.397181" cap="flat"/>
-<wire x1="-1.778" y1="-1.016" x2="-1.27" y2="-0.254" width="0.1524" layer="94" curve="-46.397181" cap="flat"/>
-<wire x1="-1.778" y1="-1.016" x2="-0.762" y2="-1.016" width="0.1524" layer="94" curve="208.072487" cap="flat"/>
-<wire x1="-2.54" y1="0" x2="-2.286" y2="0" width="0.1524" layer="94"/>
-<wire x1="-0.254" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
-<wire x1="-2.286" y1="0" x2="-1.27" y2="-0.254" width="0.1524" layer="94" curve="-36.869898" cap="flat"/>
-<text x="-4.318" y="1.27" size="1.778" layer="95">&gt;NAME</text>
-<text x="-4.318" y="-4.064" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<pin name="2" x="2.54" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="SM-B" prefix="L" uservalue="yes">
-<description>&lt;b&gt;INDUCTOR&lt;/b&gt;&lt;p&gt;
-SMD Bead inductor</description>
-<gates>
-<gate name="G$1" symbol="BEAD-IND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="5" package="SM-B5">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="9" package="SM-B9">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="jumper">
 <description>&lt;b&gt;Jumpers&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -23124,7 +23032,7 @@ Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="L1.02" library="rcl" deviceset="L-EU" device="WE-TPC" value="4.7uH"/>
 <part name="P+5VMAIN" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
-<part name="L2" library="inductor-neosid" deviceset="SM-B" device="5" value="BEAD"/>
+<part name="L2" library="inductors" deviceset="BLM15H" device="" technology="B121SN1" value="BEAD"/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="FRAME2" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="IC2.00" library="kitt.ic" deviceset="BQ24266RGET" device=""/>
@@ -23173,7 +23081,7 @@ Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
 <part name="R2.08" library="rcl" deviceset="R-EU_" device="R0402" value="[10kR/NTC]"/>
 <part name="P1" library="kitt.con" deviceset="JST.S2B-PH-SM4-TB" device=""/>
 <part name="REF5" library="kitt.refs" deviceset="REF.KITT-MB01" device=""/>
-<part name="U$1" library="kitt.ic" deviceset="LSM9DS1" device=""/>
+<part name="IC3.01" library="kitt.ic" deviceset="LSM9DS1" device=""/>
 <part name="FRAME4" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
@@ -23468,7 +23376,7 @@ Trainable Trackcars</text>
 <net name="N$32" class="0">
 <segment>
 <pinref part="L2" gate="G$1" pin="2"/>
-<wire x1="224.79" y1="143.51" x2="229.87" y2="143.51" width="0.1524" layer="91"/>
+<wire x1="227.33" y1="143.51" x2="229.87" y2="143.51" width="0.1524" layer="91"/>
 <pinref part="R1.05" gate="G$1" pin="2"/>
 <wire x1="229.87" y1="146.05" x2="229.87" y2="143.51" width="0.1524" layer="91"/>
 <pinref part="R1.06" gate="G$1" pin="1"/>
@@ -23869,7 +23777,7 @@ Trainable Trackcars</text>
 <text x="163.83" y="19.05" size="2.54" layer="94">KITT MB01 - Axis Sensor</text>
 </plain>
 <instances>
-<instance part="U$1" gate="G$1" x="127" y="114.3"/>
+<instance part="IC3.01" gate="G$1" x="127" y="114.3"/>
 <instance part="FRAME4" gate="G$1" x="0" y="0"/>
 <instance part="+3V1" gate="G$1" x="96.52" y="149.86"/>
 <instance part="GND17" gate="1" x="96.52" y="78.74"/>
@@ -23899,10 +23807,10 @@ Trainable Trackcars</text>
 <net name="+3V3" class="0">
 <segment>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
-<pinref part="U$1" gate="G$1" pin="VDD"/>
+<pinref part="IC3.01" gate="G$1" pin="VDD"/>
 <wire x1="96.52" y1="147.32" x2="96.52" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="142.24" x2="104.14" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VDDIO"/>
+<pinref part="IC3.01" gate="G$1" pin="VDDIO"/>
 <wire x1="96.52" y1="142.24" x2="96.52" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="137.16" x2="104.14" y2="137.16" width="0.1524" layer="91"/>
 <junction x="96.52" y="142.24"/>
@@ -23947,11 +23855,11 @@ Trainable Trackcars</text>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="IC3.01" gate="G$1" pin="GND"/>
 <wire x1="104.14" y1="86.36" x2="96.52" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="GND17" gate="1" pin="GND"/>
 <wire x1="96.52" y1="86.36" x2="96.52" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="RES"/>
+<pinref part="IC3.01" gate="G$1" pin="RES"/>
 <wire x1="104.14" y1="93.98" x2="96.52" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="93.98" x2="96.52" y2="86.36" width="0.1524" layer="91"/>
 <junction x="96.52" y="86.36"/>
@@ -23995,7 +23903,7 @@ Trainable Trackcars</text>
 </net>
 <net name="N$17" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="DEN_A/G"/>
+<pinref part="IC3.01" gate="G$1" pin="DEN_A/G"/>
 <pinref part="R3.02" gate="G$1" pin="2"/>
 <wire x1="149.86" y1="137.16" x2="200.66" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="137.16" x2="200.66" y2="121.92" width="0.1524" layer="91"/>
@@ -24021,7 +23929,7 @@ Trainable Trackcars</text>
 <pinref part="R3.03" gate="G$1" pin="1"/>
 <pinref part="R3.04" gate="G$1" pin="2"/>
 <wire x1="213.36" y1="142.24" x2="213.36" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="SDO_A/G"/>
+<pinref part="IC3.01" gate="G$1" pin="SDO_A/G"/>
 <wire x1="213.36" y1="132.08" x2="213.36" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="121.92" x2="193.04" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="121.92" x2="193.04" y2="132.08" width="0.1524" layer="91"/>
@@ -24031,7 +23939,7 @@ Trainable Trackcars</text>
 </net>
 <net name="N$26" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="SDO_M"/>
+<pinref part="IC3.01" gate="G$1" pin="SDO_M"/>
 <wire x1="149.86" y1="116.84" x2="195.58" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="195.58" y1="116.84" x2="195.58" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="195.58" y1="129.54" x2="226.06" y2="129.54" width="0.1524" layer="91"/>
@@ -24045,7 +23953,7 @@ Trainable Trackcars</text>
 <net name="N$24" class="0">
 <segment>
 <pinref part="R3.07" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="CS_A/G"/>
+<pinref part="IC3.01" gate="G$1" pin="CS_A/G"/>
 <wire x1="177.8" y1="142.24" x2="177.8" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="111.76" x2="149.86" y2="111.76" width="0.1524" layer="91"/>
 </segment>
@@ -24053,21 +23961,21 @@ Trainable Trackcars</text>
 <net name="N$27" class="0">
 <segment>
 <pinref part="R3.08" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="CS_M"/>
+<pinref part="IC3.01" gate="G$1" pin="CS_M"/>
 <wire x1="187.96" y1="142.24" x2="187.96" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="106.68" x2="149.86" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="!IRQ_GYRO" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="INT1_A/G"/>
+<pinref part="IC3.01" gate="G$1" pin="INT1_A/G"/>
 <wire x1="154.94" y1="86.36" x2="149.86" y2="86.36" width="0.1524" layer="91"/>
 <label x="154.94" y="86.36" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="CAP"/>
+<pinref part="IC3.01" gate="G$1" pin="CAP"/>
 <pinref part="C3.01" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="119.38" x2="73.66" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="119.38" x2="73.66" y2="106.68" width="0.1524" layer="91"/>
@@ -24076,7 +23984,7 @@ Trainable Trackcars</text>
 <net name="N$6" class="0">
 <segment>
 <pinref part="C3.02" gate="G$1" pin="1"/>
-<pinref part="U$1" gate="G$1" pin="C1"/>
+<pinref part="IC3.01" gate="G$1" pin="C1"/>
 <wire x1="86.36" y1="106.68" x2="86.36" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="109.22" x2="104.14" y2="109.22" width="0.1524" layer="91"/>
 </segment>
