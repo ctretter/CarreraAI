@@ -4,7 +4,7 @@
 -- File        :	OpticalSensorCommunicator-e.vhd
 -- Description : 	entity for module OpticalSensorCommunicator
 -------------------------------------------------------------------------------
--- Latest update:	17.01.2017
+-- Latest update:	22.01.2017
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -16,7 +16,8 @@ use work.Global.all;
 
 entity OpticalSensorCommunicator is
 	generic (
-		gDataWidth			: integer := 8									-- bit width of optical sensor values
+		gDataWidth			: integer := 8;									-- bit width of optical sensor values
+		gBurstRegWidth		: integer := 56									-- bit width of optical sensor burst register
 	);
 	port (
 		iClk 				: in std_ulogic;								-- clk 50MHz
@@ -24,6 +25,16 @@ entity OpticalSensorCommunicator is
 		iMISO				: in std_ulogic;								-- MasterInSlaveOut
 		oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
 		oSelect				: out std_ulogic;								-- select input bit
-		oSysClk				: out std_ulogic								-- slave clk 1 MHz	
+		oSysClk				: out std_ulogic;								-- slave clk 1 MHz	
+		oDataValid			: out std_ulogic;								-- valid bit for further usage in other components
+		
+		-- sensor data from burst register:
+		oMotion				: out std_ulogic_vector (gDataWidth-1 downto 0);
+		oDataX				: out std_ulogic_vector (gDataWidth-1 downto 0);
+		oDataY				: out std_ulogic_vector (gDataWidth-1 downto 0);
+		oSQUAL				: out std_ulogic_vector (gDataWidth-1 downto 0);
+		oShutterUpper		: out std_ulogic_vector (gDataWidth-1 downto 0);
+		oShutterLower		: out std_ulogic_vector (gDataWidth-1 downto 0);
+		oMaximumPixel		: out std_ulogic_vector (gDataWidth-1 downto 0)
     );
 end OpticalSensorCommunicator;
