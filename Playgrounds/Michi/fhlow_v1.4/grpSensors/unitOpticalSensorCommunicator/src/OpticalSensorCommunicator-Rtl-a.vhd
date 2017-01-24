@@ -18,7 +18,6 @@ architecture Rtl of OpticalSensorCommunicator is
 	signal MasterOutput			: std_ulogic									:= '0';
 	signal SysClk 				: std_ulogic									:= '0';
 	signal Sel 					: std_ulogic 									:= '1';
-	signal ClkEnable			: std_ulogic									:= '0';
 	signal OneMHzSpike			: std_ulogic									:= '0';
 	signal DataValid			: std_ulogic									:= '0';
 	signal SlaveClkCounter		: integer 										:= gDataWidth-1;
@@ -29,11 +28,11 @@ architecture Rtl of OpticalSensorCommunicator is
 	
 	-- component constants
 	constant cBurstRegister		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "01010000";			-- address: 0x50
-	constant cMaxSysClkValue	: integer										:= 50;					-- 50MHz/50 = 1MHz for SysClk
+	constant cMaxSysClkValue	: integer										:= gClkDivider;			-- 1MHz for SysClk
 	constant cDelayMotionReg	: integer										:= 75;					-- 75µs delay between write -> read
 	constant cDelayNewData		: integer										:= 1;					-- 1µs delay between read -> write (min. 250ns)
-	constant cMaxWriteBits		: integer										:= gDataWidth-1;		-- length of a register: 8 bit
-	constant cMaxReadBits		: integer										:= gBurstRegWidth-1;	-- lengt of burst register: 56 bit
+	constant cMaxWriteBits		: integer										:= gDataWidth;			-- length of a register: 8 bit
+	constant cMaxReadBits		: integer										:= gBurstRegWidth;		-- lengt of burst register: 56 bit
 	constant cMaxClkValue		: integer										:= 50;					-- 50MHz/50 = 1MHz for WaitClk
 
 
@@ -47,8 +46,7 @@ begin
 			SlaveClkCounter 	<= gDataWidth-1;
 			MasterOutput 		<= '0';
 			SysClk 				<= '1';
-			Sel 				<= '1';
-			ClkEnable 			<= '0';
+			Sel 				<= '1';			
 			DataValid 			<= '0';
 			OneMHzSpike 		<= '0';
 			ClkGenCounter 		<= 1;
@@ -83,13 +81,12 @@ begin
 				-- initialize slave select, reset slave clock and set MasterOutput
 				when Init =>
 										State 				<= SetBurstRegister;	
-										SlaveClkCounter 	<= 8;
+										SlaveClkCounter 	<= cMaxWriteBits;
 										Sel 				<= cnActivated;
 										CntWaitCycles		<= 1;
 										SysClkGenCounter 	<= 1;
 										MasterOutput 		<= '0';
 										SysClk 				<= '1';	
-										ClkEnable			<= '0';
 										DataValid 			<= '0';
 										oMotion				<= (others => '0');
 										oDataX 				<= (others => '0');	
@@ -102,7 +99,7 @@ begin
 				when SetBurstRegister => 			
 										if (SysClk = '1' and SysClkGenCounter = cMaxClkValue) then
 											if (SlaveClkCounter /= 0) then
-												if (SlaveClkCounter < 8) then
+												if (SlaveClkCounter < cMaxWriteBits) then
 													MasterOutput <= cBurstRegister(SlaveClkCounter-1);
 												end if;
 												
@@ -125,7 +122,7 @@ begin
 												State <= ReadBurstRegister;
 												Sel <= cnActivated;
 												SysClk <= '1';
-												SlaveClkCounter <= 56;
+												SlaveClkCounter <= cMaxReadBits;
 												CntWaitCycles <= 1;	
 											else										
 												CntWaitCycles <= CntWaitCycles + 1;
@@ -138,7 +135,7 @@ begin
 				when ReadBurstRegister => 			
 										if (SysClk = '1' and SysClkGenCounter = 1) then
 											if (SlaveClkCounter /= 0) then
-												if (SlaveClkCounter < 56) then
+												if (SlaveClkCounter < cMaxReadBits) then
 													BurstRegData(SlaveClkCounter) <= iMISO;
 												end if;
 												
@@ -157,7 +154,7 @@ begin
 												State <= SetBurstRegister;
 												Sel <= cnActivated;
 												SysClk <= '1';
-												SlaveClkCounter <= 8;
+												SlaveClkCounter <= cMaxWriteBits;
 												SysClkGenCounter <= 1;
 											end if;
 											
@@ -177,12 +174,11 @@ begin
 												
 				when others =>			
 										-- reset by error
-										State <= Init;
-										SlaveClkCounter 	<= gDataWidth-1;
+										State 				<= Init;
+										SlaveClkCounter 	<= cMaxWriteBits;
 										MasterOutput 		<= '0';
 										SysClk 				<= '1';
-										Sel 				<= cnInactivated;
-										ClkEnable 			<= '0';
+										Sel 				<= cnInactivated;					
 										DataValid 			<= '0';
 										OneMHzSpike 		<= '0';
 										ClkGenCounter 		<= 1;

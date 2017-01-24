@@ -16,10 +16,11 @@ use work.Global.all;
 entity OpticalSensorCommunicator is
 	generic (
 		gDataWidth			: integer := 8;									-- bit width of optical sensor values
-		gBurstRegWidth		: integer := 56									-- bit width of optical sensor burst register
+		gBurstRegWidth		: integer := 56;								-- bit width of optical sensor burst register
+		gClkDivider			: integer := 24									
 	);
 	port (
-		iClk 				: in std_ulogic;								-- clk 50MHz
+		iClk 				: in std_ulogic;								-- clk 
 		inResetAsync		: in std_ulogic;								-- reset
 		iMISO				: in std_ulogic;								-- MasterInSlaveOut
 		oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
