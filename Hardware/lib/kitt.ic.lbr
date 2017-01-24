@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1055,11 +1055,11 @@ Source: www.ti.com/.. slvs087l.pdf</description>
 <connect gate="G$1" pin="ILIM" pad="4"/>
 <connect gate="G$1" pin="IN1" pad="3"/>
 <connect gate="G$1" pin="IN2" pad="2"/>
-<connect gate="G$1" pin="OUT1" pad="7"/>
-<connect gate="G$1" pin="OUT2" pad="5"/>
+<connect gate="G$1" pin="OUT1" pad="6"/>
+<connect gate="G$1" pin="OUT2" pad="8"/>
 <connect gate="G$1" pin="PAD" pad="THERMAL"/>
-<connect gate="G$1" pin="PGND" pad="6"/>
-<connect gate="G$1" pin="VM" pad="8"/>
+<connect gate="G$1" pin="PGND" pad="7"/>
+<connect gate="G$1" pin="VM" pad="5"/>
 </connects>
 <technologies>
 <technology name=""/>
