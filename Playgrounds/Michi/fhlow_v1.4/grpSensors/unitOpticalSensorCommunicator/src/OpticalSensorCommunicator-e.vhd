@@ -13,7 +13,6 @@ use ieee.numeric_std.all;
 
 use work.Global.all;
 
-
 entity OpticalSensorCommunicator is
 	generic (
 		gDataWidth			: integer := 8;									-- bit width of optical sensor values
