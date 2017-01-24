@@ -22,6 +22,7 @@ public:
 	double const getRadius(void) const;
 	TPair const& getAngles(void) const;
 	double const getAngle(void) const;
+	double const getLen(void) const;
 	
 	void CalcPos(double &x, double &y, double const len) const;
 	

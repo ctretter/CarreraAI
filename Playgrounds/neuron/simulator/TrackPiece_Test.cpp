@@ -11,7 +11,7 @@ void PrintTestName(std::string const& msg, bool const test = true){
 	if(test){
 		std::cout << "Test " << ++testcase << ": " << msg << std::endl;
 	}
-	std::cout << std::setfill('-') << std::setw(80) << "-" << std::endl;
+	std::cout << std::setfill('-') << std::setw(95) << "-" << std::endl;
 	if(!test){
 		std::cout << std::endl;
 	}
@@ -34,11 +34,12 @@ void TestCtor(double const x_start, double const y_start, double const x_o, doub
 	while(angle < 0) angle += TrackPiece::PI_2;
 	while(angle > TrackPiece::PI_2) angle -= TrackPiece::PI_2;
 	std::cout << std::setfill(' ') << std::setw(w) << " " << std::setw(w) << std::left << "Radius" << "| " << std::setw(w) << "Xout" 
-				<< "| "<<  std::setw(w) << "Yout" << "| " << std::setw(w) << "Xin"  << "| " << std::setw(w) << "Yin" << "| " << std::setw(w) << "Angle" << std::endl;
+				<< "| "<<  std::setw(w) << "Yout" << "| " << std::setw(w) << "Xin"  << "| " << std::setw(w) << "Yin" << "| " << std::setw(w) << "Angle" << "| " << std::setw(w) << "Length" << std::endl;
 	std::cout << std::setw(w) << "Expected:" << std::setw(w) << r << "| " << std::setw(w) << x_o << "| " << std::setw(w) << y_o 
-				<< "| " << std::setw(w) << x_start << "| " << std::setw(w) << y_start << "| " << std::setw(w) << angle << std::endl;
+				<< "| " << std::setw(w) << x_start << "| " << std::setw(w) << y_start << "| " << std::setw(w) << angle << "| " << std::setw(w) << len << std::endl;
 	std::cout << std::setw(w) << "Real:" << std::setw(w) << straight_piece.getRadius() << "| " << std::setw(w) << x << "| " 
-				<< std::setw(w) << y << "| " << std::setw(w) << Start.first << "| " << std::setw(w) << Start.second << "| " << std::setw(w) << straight_piece.getAngle() << std::endl;
+				<< std::setw(w) << y << "| " << std::setw(w) << Start.first << "| " << std::setw(w) << Start.second << "| " 
+				<< std::setw(w) << straight_piece.getAngle() << "| " << std::setw(w) << straight_piece.getLen() << std::endl;
 	PrintTestName("",false);
 }
 
@@ -48,8 +49,6 @@ int main(int argc, char** argv){
 	double x_o = 10.0;
 	double y_o = 40.5;
 	double r = 0.0;
-	double x = 0.0;
-	double y = 0.0;
 	double phi_in = M_PI_2;
 	double phi_out = phi_in;
 	double len = 30.5;
@@ -86,22 +85,17 @@ int main(int argc, char** argv){
 		TestCtor(x_start,y_start,x_o,y_o,r,phi_in,phi_out,len,dir,"Testing CTor_1 right curve",10,piece);
 	}
 	
-	/*
-	TestCtor(10.0,10.0,10.0,40.5,0.0,M_PI_2,M_PI_2,30.5,EDir_Straight,"Testing CTor_2 straight up",10);
-	TestCtor(10.0,10.0,40.5,10.0,0.0,0.0,0.0,30.5,EDir_Straight,"Testing CTor_2 straight right",10);
-	TestCtor(10.0,10.0,35.4648,35.4648,25.4648,0.0,M_PI_2,40.0,EDir_Left,"Testing CTor_2 left curve",10);
-	TestCtor(10.0,10.0,35.4648,-15.4648,25.4648,0.0,-M_PI_2,40.0,EDir_Right,"Testing CTor_2 right curve",10);
-	*/
-	PrintTestName("Testing CTor_2 Straight");
 	{
-		TrackPiece::TPair Start;
-		TrackPiece straight_piece(x_start,y_start,x_o,y_o,phi_in,phi_out,EDir_Straight);
-		straight_piece.CalcEndPoint(x,y);
-		Start = straight_piece.getStartPoint();
-		std::cout << std::setfill(' ') << std::setw(12) << " " << std::setw(12) << std::left << "Radius" << "| " << std::setw(12) << "Xout" << "| "<< std::setw(12)<< std::setw(12) << "Yout" << "| " << std::setw(12) << "Xin"  << "| " << std::setw(12) << "Yin" << std::endl;
-		std::cout << std::setw(12) << "Expected:" << std::setw(12) << r << "| " << std::setw(12) << x_o << "| " << std::setw(12) << y_o << "| " << std::setw(12) << x_start << "| " << std::setw(12) << y_start << std::endl;
-		std::cout << std::setw(12) << "Real:" << std::setw(12) << straight_piece.getRadius() << "| " << std::setw(12) << x << "| " << std::setw(12) << y << "| " << std::setw(12) << Start.first << "| " << std::setw(12) << Start.second << std::endl;
+		x_o = 10.0;
+		y_o = 50.0;
+		phi_in = M_PI_2;
+		phi_out = phi_in;
+		r = 0.0;
+		dir = EDir_Straight;
+		TrackPiece piece(x_start,y_start,x_o,y_o,phi_in,phi_out,dir);
+		TestCtor(x_start,y_start,x_o,y_o,r,phi_in,phi_out,len,dir,"Testing CTor_2 straight up",10,piece);
 	}
+	
 	return 0;
 }
 

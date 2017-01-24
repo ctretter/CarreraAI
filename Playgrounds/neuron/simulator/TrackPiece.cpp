@@ -46,6 +46,10 @@ std::pair<double,double> const& TrackPiece::getAngles(void) const{
 	return mAngles;
 }
 
+double const TrackPiece::getLen(void) const{
+	return mLen;
+}
+
 double const TrackPiece::getAngle(void) const{
 	double angle = 0.0;
 	switch(mDirection){
@@ -98,9 +102,9 @@ void TrackPiece::_CalcRadius(double const x, double const y){
 	switch(mDirection){
 	case EDir_Straight: mRadius = 0.0;
 		break;
-	case EDir_Left: mRadius = (x - mStart.first) / (sin(mAngles.second) - sin(mAngles.first));
+	case EDir_Left: mRadius = (x - mStart.first) / (sin(getAngle()));
 		break;
-	case EDir_Right: mRadius = (mStart.first - x) / (sin(mAngles.second) - sin(mAngles.first));
+	case EDir_Right: mRadius = (mStart.first - x) / (sin(getAngle()));
 		break;
 	default: mRadius = 0.0;
 		break;
@@ -122,7 +126,7 @@ void TrackPiece::_SetAngles(double const angle_i, double const angle_o){
 
 void TrackPiece::_CalcLen(double const x, double const y){
 	switch(mDirection){
-	case EDir_Straight: mLen = (x - mStart.first)/cos(mAngles.first);
+	case EDir_Straight: mLen = sqrt(pow((x - mStart.first)/cos(mAngles.first),2) + pow((y - mStart.first)/sin(mAngles.first),2));
 		break;
 	case EDir_Left: mLen = mRadius * (mAngles.second - mAngles.first);
 		break;
