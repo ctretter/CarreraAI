@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
--- Created	   :	11.11.2016
+-- Created	   :	24.01.2017
 -- Author	   :	Michael Bierig
 -- File        :	tbOpticalSensorCommunicator-Bhv-ea.vhd
 -- Description : 	testbench for module OpticalSensorCommunicator
 -------------------------------------------------------------------------------
--- Latest update:	11.11.2016
+-- Latest update:	27.01.2017
 -------------------------------------------------------------------------------
 
 library ieee;

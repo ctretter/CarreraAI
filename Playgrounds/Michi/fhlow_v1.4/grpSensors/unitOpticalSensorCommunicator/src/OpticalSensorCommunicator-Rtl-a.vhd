@@ -4,7 +4,7 @@
 -- File        :	OpticalSensorCommunicator-Rtl-a.vhd
 -- Description : 	architecture for communication between FPGA and OptiSensor
 -------------------------------------------------------------------------------
--- Latest update:	22.01.2017
+-- Latest update:	27.01.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of OpticalSensorCommunicator is
