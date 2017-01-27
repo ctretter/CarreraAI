@@ -25,7 +25,7 @@ architecture Bhv of tbOpticalSensorCommunicator is
 	-- component constants
 	constant cDataWidth			: integer  										:= 8;
 	constant cBurstRegWidth 	: integer  										:= 56;
-	constant cClkFreq			: integer 										:= 50;
+	constant cClkFreq			: integer 										:= 25;
 	constant cClkPeriod			: time 	   										:= 20 ns;		-- 50MHz clock
 	constant cOneMHzClkPeriod	: time 	   										:= 1 us;		--  1MHz clock
 	constant cExampleData		: std_ulogic_vector(cBurstRegWidth-1 downto 0)	:= "00000000101111111111110100000000000000000000000000000000";
@@ -58,8 +58,8 @@ architecture Bhv of tbOpticalSensorCommunicator is
 	component OpticalSensorCommunicator
 		generic (
 			gDataWidth			: integer := 8;									-- bit width of optical sensor values
-			gBurstRegWidth		: integer := 56;									-- bit width of optical sensor burst register
-			gClkDivider			: integer := 50
+			gBurstRegWidth		: integer := 56;								-- bit width of optical sensor burst register
+			gClkDivider			: integer := cClkFreq
 		);
 		port (
 			iClk 				: in std_ulogic;								-- clk 50MHz

@@ -97,7 +97,7 @@ begin
 										oMaximumPixel 		<= (others => '0');
 									
 				when SetBurstRegister => 			
-										if (SysClk = '1' and SysClkGenCounter = cMaxClkValue) then
+										if (SysClk = '1' and SysClkGenCounter = cMaxSysClkValue) then
 											if (SlaveClkCounter /= 0) then
 												if (SlaveClkCounter < cMaxWriteBits) then
 													MasterOutput <= cBurstRegister(SlaveClkCounter-1);
@@ -108,7 +108,7 @@ begin
 												-- change to wait state after sending address and disable SysClk (see datasheet ADNS 3080, page 18)
 												State <= WaitForRead;
 												Sel <= cnInactivated;
-												SysClkGenCounter <= 0;	
+												SysClkGenCounter <= 1;	
 												SysClk <= '1';
 											end if;
 										end if;
