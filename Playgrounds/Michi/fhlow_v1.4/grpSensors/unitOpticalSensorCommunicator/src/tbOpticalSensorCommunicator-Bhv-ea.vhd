@@ -47,23 +47,21 @@ architecture Bhv of tbOpticalSensorCommunicator is
 	signal oMaximumPixel		: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	
 	-- component signals
-	signal OneMHzClock			: std_ulogic 									:= '0';
+	signal OneMHzStrobe			: std_ulogic 									:= '0';
 	signal DataFromFPGA			: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal DataToFPGA			: std_ulogic_vector(cBurstRegWidth-1 downto 0) 	:= (others => '0');
 	
-	
-	
-
 	-- component declaration of OpticalSensorCommunicator
 	component OpticalSensorCommunicator
 		generic (
-			gDataWidth			: integer := 8;									-- bit width of optical sensor values
-			gBurstRegWidth		: integer := 56;								-- bit width of optical sensor burst register
+			gDataWidth			: integer := cDataWidth;									-- bit width of optical sensor values
+			gBurstRegWidth		: integer := cBurstRegWidth;								-- bit width of optical sensor burst register
 			gClkDivider			: integer := cClkFreq
 		);
 		port (
 			iClk 				: in std_ulogic;								-- clk 50MHz
 			inResetAsync		: in std_ulogic;								-- reset
+			iOneMHzStrobe		: in std_ulogic;								-- 1MHz strobe for wait cycles of sensor
 			iMISO				: in std_ulogic;								-- MasterInSlaveOut
 			oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
 			oSelect				: out std_ulogic;								-- select input bit
@@ -94,6 +92,7 @@ begin
 	port map (
 		iClk			=> iClk,
 		inResetAsync 	=> inResetAsync,
+		iOneMHzStrobe	=> OneMHzStrobe,
 		iMISO			=> iMISO,
 		oMOSI			=> oMOSI,
 		oSelect 		=> oSelect,
@@ -124,9 +123,9 @@ begin
 	-- ##########################################
 	GenerateSampleClock : process
 	begin
-		OneMHzClock <= '0';
+		OneMHzStrobe <= '0';
 		wait for cOneMHzClkPeriod/2;
-		OneMHzClock <= '1';
+		OneMHzStrobe <= '1';
 		wait for cOneMHzClkPeriod/2;
 	end process;
 	
@@ -134,11 +133,11 @@ begin
 	-- ##########################################
 	-- Process : detect directon to see in sim
 	-- ##########################################
-	Detect_Direction : process  (oDataValid, OneMHzClock)
+	Detect_Direction : process  (oDataValid, OneMHzStrobe)
 	begin
 	
 		-- only detect if reset is disabled
-		if (rising_edge(OneMHzClock)) then
+		if (rising_edge(OneMHzStrobe)) then
 			if (oDataValid = '1') then
 				report "New data received ..." severity note;
 			end if;

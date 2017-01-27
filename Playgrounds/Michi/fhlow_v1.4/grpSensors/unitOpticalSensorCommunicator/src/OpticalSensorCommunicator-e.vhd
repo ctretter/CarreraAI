@@ -22,10 +22,11 @@ entity OpticalSensorCommunicator is
 	port (
 		iClk 				: in std_ulogic;								-- clk 
 		inResetAsync		: in std_ulogic;								-- reset
+		iOneMHzStrobe		: in std_ulogic;								-- 1MHz strobe for wait cycles of sensor
 		iMISO				: in std_ulogic;								-- MasterInSlaveOut
 		oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
 		oSelect				: out std_ulogic;								-- select input bit
-		oSysClk				: out std_ulogic;								-- slave clk 1 MHz	
+		oSysClk				: out std_ulogic;								-- slave clk 1MHz	
 		oDataValid			: out std_ulogic;								-- valid bit for further usage in other components
 		
 		-- sensor data from burst register:

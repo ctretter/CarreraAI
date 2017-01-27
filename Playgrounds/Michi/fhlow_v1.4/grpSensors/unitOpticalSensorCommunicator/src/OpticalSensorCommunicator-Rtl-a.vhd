@@ -18,12 +18,10 @@ architecture Rtl of OpticalSensorCommunicator is
 	signal MasterOutput			: std_ulogic									:= '0';
 	signal SysClk 				: std_ulogic									:= '0';
 	signal Sel 					: std_ulogic 									:= '1';
-	signal OneMHzSpike			: std_ulogic									:= '0';
 	signal DataValid			: std_ulogic									:= '0';
 	signal SlaveClkCounter		: integer 										:= gDataWidth-1;
 	signal SysClkGenCounter 	: integer 										:= 1;
 	signal CntWaitCycles		: integer										:= 1;
-	signal ClkGenCounter		: integer 										:= 1;
 
 	
 	-- component constants
@@ -33,7 +31,6 @@ architecture Rtl of OpticalSensorCommunicator is
 	constant cDelayNewData		: integer										:= 1;					-- 1µs delay between read -> write (min. 250ns)
 	constant cMaxWriteBits		: integer										:= gDataWidth;			-- length of a register: 8 bit
 	constant cMaxReadBits		: integer										:= gBurstRegWidth;		-- lengt of burst register: 56 bit
-	constant cMaxClkValue		: integer										:= 50;					-- 50MHz/50 = 1MHz for WaitClk
 
 
 begin
@@ -48,22 +45,11 @@ begin
 			SysClk 				<= '1';
 			Sel 				<= '1';			
 			DataValid 			<= '0';
-			OneMHzSpike 		<= '0';
-			ClkGenCounter 		<= 1;
 			SysClkGenCounter 	<= 1;
 			CntWaitCycles 		<= 1;
 			BurstRegData 		<= (others => '0');
 			
 		elsif (rising_edge(iClk)) then
-
-			-- generate 1MHz spike toggle
-			if (ClkGenCounter = cMaxClkValue) then
-				OneMHzSpike <= '1';
-				ClkGenCounter <= 1;
-			else
-				OneMHzSpike <= '0';
-				ClkGenCounter <= ClkGenCounter + 1;
-			end if;
 
 			-- generate SysClk
 			if (Sel = cnActivated) then
@@ -116,7 +102,7 @@ begin
 										DataValid <= '0';
 															
 				when WaitForRead =>				
-										if (OneMHzSpike = '1') then
+										if (iOneMHzStrobe = '1') then
 											if (CntWaitCycles = cDelayMotionReg) then
 											
 												State <= ReadBurstRegister;
@@ -148,7 +134,7 @@ begin
 										end if;
 																								
 				when OutputAndWaitForWrite =>			
-										if (OneMHzSpike = '1') then
+										if (iOneMHzStrobe = '1') then
 											if (CntWaitCycles = cDelayNewData) then
 											
 												State <= SetBurstRegister;
@@ -179,9 +165,7 @@ begin
 										MasterOutput 		<= '0';
 										SysClk 				<= '1';
 										Sel 				<= cnInactivated;					
-										DataValid 			<= '0';
-										OneMHzSpike 		<= '0';
-										ClkGenCounter 		<= 1;
+										DataValid 			<= '0';										
 										SysClkGenCounter 	<= 1;
 										CntWaitCycles 		<= 1;
 										BurstRegData 		<= (others => '0');

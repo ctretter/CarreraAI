@@ -23,7 +23,7 @@ entity StrobeGen is
   
   generic (
     gClkFrequency    : natural := 50E6;
-    gStrobeCycleTime : time    := 100 us);
+    gStrobeCycleTime : time    := 1 us);
 
   port (
     -- Sequential logic inside this unit
