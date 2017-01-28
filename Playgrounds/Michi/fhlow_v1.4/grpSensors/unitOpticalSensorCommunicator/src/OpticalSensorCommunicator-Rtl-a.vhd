@@ -26,7 +26,7 @@ architecture Rtl of OpticalSensorCommunicator is
 	
 	-- component constants
 	constant cBurstRegister		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "01010000";			-- address: 0x50
-	constant cMaxSysClkValue	: integer										:= gClkDivider;			-- 1MHz for SysClk
+	constant cMaxSysClkValue	: integer										:= gClkDivider/2;		-- 2Hz for SysClk
 	constant cDelayMotionReg	: integer										:= 75;					-- 75µs delay between write -> read
 	constant cDelayNewData		: integer										:= 1;					-- 1µs delay between read -> write (min. 250ns)
 	constant cMaxWriteBits		: integer										:= gDataWidth;			-- length of a register: 8 bit
