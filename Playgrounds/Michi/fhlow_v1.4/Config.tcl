@@ -70,7 +70,7 @@ set ChipManufacturer "Altera"
 # misc:     the exact string depends on how your p&r tool names your fpga
 #
 ###########################################################################
-set ChipFamily "Cyclone V"
+set ChipFamily "Cyclone II"
 
 ############## ChipPart ###################################################
 # purpose:  denfies the part number of your target fpga
@@ -81,7 +81,7 @@ set ChipFamily "Cyclone V"
 # misc:     the exact string depends on how your p&r tool names your fpga
 #
 ###########################################################################
-set ChipPart "5CSEM"
+set ChipPart "EP2C20"
 
 ############## ChipPackage ################################################
 # purpose:  denfies the package of your target fpga
@@ -92,7 +92,7 @@ set ChipPart "5CSEM"
 # misc:     the exact string depends on how your p&r tool names your fpga
 #
 ###########################################################################
-set ChipPackage "A5F31C"
+set ChipPackage "F484C"
 
 ############## ChipPackageSynplify ########################################
 # purpose:  the package name for Synplicity differs from 
@@ -104,7 +104,7 @@ set ChipPackage "A5F31C"
 # misc:     this variable is only used if you use Synplify
 #
 ###########################################################################
-set ChipPackageSynplify "A5F31C"
+set ChipPackageSynplify "F484C"
 
 ############## ChipSpeedgrade #############################################
 # purpose:  defines the speedgrade of your target fpga
@@ -113,7 +113,7 @@ set ChipPackageSynplify "A5F31C"
 #           set ChipSpeedgrade "8"
 #
 ###########################################################################
-set ChipSpeedgrade "6"
+set ChipSpeedgrade "7"
 
 ############## ChipFrequency ##############################################
 # purpose:  defines the frequency of the main frequency of your target fpga
@@ -154,8 +154,14 @@ set ChipFrequency "24"
 # This is the general pin setting for use of the SandboxM (Altera DE1) as
 # a DSP system.
 set Pins {
-{oSEG0[0] V16 0}
+{iClk B12 0}
+{inResetAsync R22 0}
+{oDataValid U22 0}
+#{iMISO 0}
+#{oSysClk  1}
+#{oSelect  1}
+#{oMOSI  0}
 }
 
 # This is the general pin load (capacity) in pF
-set PinLoad 100
+set PinLoad 50

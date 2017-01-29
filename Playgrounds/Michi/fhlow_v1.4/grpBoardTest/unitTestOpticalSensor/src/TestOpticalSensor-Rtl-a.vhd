@@ -26,6 +26,7 @@ architecture Rtl of TestOpticalSensor is
 	signal oShutterUpper		: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal oShutterLower		: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal oMaximumPixel		: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
+	signal NowDataValid			: std_ulogic									:= '0';
 	
 	-- component signals
 	signal OneMHzStrobe			: std_ulogic 									:= '0';
@@ -118,15 +119,22 @@ begin
 		oStrobe				=> OneMHzStrobe
 	);
 	
-	CheckValidData : process (iClk) is
-	begin		
-		if (rising_edge(iClk)) then
+	CheckValidData : process (iClk, inResetAsync) is
+	begin	
+		if (inResetAsync = cnActivated) then
+			NowDataValid <= '0';
+			oDataValid <= '0';
+		elsif (rising_edge(iClk)) then
 		
-			if(DataValid = '1' and oDataX /= "00000000" and oDataX /= "11111111" and oDataY /= "00000000" and oDataY /= "11111111") then
+			if(DataValid = '1' and ((oDataX /= "00000000" and oDataX /= "11111111") or (oDataY /= "00000000" and oDataY /= "11111111") or (oMaximumPixel /= "00000000" and oMaximumPixel /= "11111111"))) then
 				oDataValid <= '1';
-			else
+			else 
 				oDataValid <= '0';
-			end if;	
+			end if;
+			
+			--if (NowDataValid = '1') then
+			--	oDataValid <= '1';
+			--end if;
 			
 		end if;
 	end process;
