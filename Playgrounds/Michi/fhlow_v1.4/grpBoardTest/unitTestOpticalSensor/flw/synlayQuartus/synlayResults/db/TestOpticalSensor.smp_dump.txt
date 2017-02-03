@@ -1,0 +1,8 @@
+
+State Machine - |TestOpticalSensor|OpticalSensorCommunicator:uut|State
+Name State.OutputAndWaitForWrite State.ReadBurstRegister State.WaitForRead State.SetBurstRegister State.Init 
+State.Init 0 0 0 0 0 
+State.SetBurstRegister 0 0 0 1 1 
+State.WaitForRead 0 0 1 0 1 
+State.ReadBurstRegister 0 1 0 0 1 
+State.OutputAndWaitForWrite 1 0 0 0 1 

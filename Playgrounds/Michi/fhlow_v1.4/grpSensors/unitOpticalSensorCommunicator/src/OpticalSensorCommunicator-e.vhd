@@ -13,19 +13,20 @@ use ieee.numeric_std.all;
 
 use work.Global.all;
 
-
 entity OpticalSensorCommunicator is
 	generic (
 		gDataWidth			: integer := 8;									-- bit width of optical sensor values
-		gBurstRegWidth		: integer := 56									-- bit width of optical sensor burst register
+		gBurstRegWidth		: integer := 56;								-- bit width of optical sensor burst register
+		gClkDivider			: integer := 24									
 	);
 	port (
-		iClk 				: in std_ulogic;								-- clk 50MHz
+		iClk 				: in std_ulogic;								-- clk 
 		inResetAsync		: in std_ulogic;								-- reset
+		iOneMHzStrobe		: in std_ulogic;								-- 1MHz strobe for wait cycles of sensor
 		iMISO				: in std_ulogic;								-- MasterInSlaveOut
 		oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
 		oSelect				: out std_ulogic;								-- select input bit
-		oSysClk				: out std_ulogic;								-- slave clk 1 MHz	
+		oSysClk				: out std_ulogic;								-- slave clk 1MHz	
 		oDataValid			: out std_ulogic;								-- valid bit for further usage in other components
 		
 		-- sensor data from burst register:
