@@ -123,10 +123,10 @@ begin
 	-- ##########################################
 	GenerateSampleClock : process
 	begin
-		OneMHzStrobe <= '0';
-		wait for cOneMHzClkPeriod/2;
 		OneMHzStrobe <= '1';
-		wait for cOneMHzClkPeriod/2;
+		wait for cClkPeriod;
+		OneMHzStrobe <= '0';
+		wait for cOneMHzClkPeriod-cClkPeriod;
 	end process;
 	
 	
