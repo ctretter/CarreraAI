@@ -402,6 +402,38 @@
 <smd name="4" x="1.27" y="-0.9398" dx="1.3208" dy="0.5588" layer="1"/>
 <smd name="5" x="1.27" y="0.9398" dx="1.3208" dy="0.5588" layer="1"/>
 </package>
+<package name="LGA-24">
+<wire x1="-0.245" y1="2.725" x2="3.255" y2="2.725" width="0.03" layer="21"/>
+<wire x1="3.255" y1="2.725" x2="3.255" y2="-0.275" width="0.03" layer="21"/>
+<wire x1="3.255" y1="-0.275" x2="-0.245" y2="-0.275" width="0.03" layer="21"/>
+<wire x1="-0.245" y1="-0.275" x2="-0.245" y2="2.725" width="0.03" layer="21"/>
+<text x="-0.2" y="2.8" size="0.3" layer="21">&gt;NAME</text>
+<text x="-0.3" y="-0.7" size="0.3" layer="21">&gt;VALUE</text>
+<smd name="1" x="3.01" y="2.45" dx="0.29" dy="0.4" layer="1" rot="R180"/>
+<smd name="2" x="3.01" y="1.87" dx="0.29" dy="0.4" layer="1" rot="R270"/>
+<smd name="3" x="3.01" y="1.44" dx="0.29" dy="0.4" layer="1" rot="R270"/>
+<smd name="4" x="3.01" y="1.01" dx="0.29" dy="0.4" layer="1" rot="R270"/>
+<smd name="5" x="3.01" y="0.58" dx="0.29" dy="0.4" layer="1" rot="R270"/>
+<smd name="6" x="3.01" y="0" dx="0.29" dy="0.4" layer="1"/>
+<smd name="7" x="2.58" y="0" dx="0.29" dy="0.4" layer="1"/>
+<smd name="8" x="2.15" y="0" dx="0.29" dy="0.4" layer="1"/>
+<smd name="9" x="1.72" y="0" dx="0.29" dy="0.4" layer="1"/>
+<smd name="10" x="1.29" y="0" dx="0.29" dy="0.4" layer="1"/>
+<smd name="11" x="0.86" y="0" dx="0.29" dy="0.4" layer="1"/>
+<smd name="12" x="0.43" y="0" dx="0.29" dy="0.4" layer="1"/>
+<smd name="13" x="0" y="0" dx="0.29" dy="0.4" layer="1"/>
+<smd name="14" x="0" y="0.58" dx="0.29" dy="0.4" layer="1" rot="R90"/>
+<smd name="15" x="0" y="1.01" dx="0.29" dy="0.4" layer="1" rot="R90"/>
+<smd name="16" x="0" y="1.44" dx="0.29" dy="0.4" layer="1" rot="R90"/>
+<smd name="17" x="0" y="1.87" dx="0.29" dy="0.4" layer="1" rot="R90"/>
+<smd name="18" x="0" y="2.45" dx="0.29" dy="0.4" layer="1" rot="R180"/>
+<smd name="19" x="0.43" y="2.45" dx="0.29" dy="0.4" layer="1" rot="R180"/>
+<smd name="20" x="0.86" y="2.45" dx="0.29" dy="0.4" layer="1" rot="R180"/>
+<smd name="21" x="1.29" y="2.45" dx="0.29" dy="0.4" layer="1" rot="R180"/>
+<smd name="22" x="1.72" y="2.45" dx="0.29" dy="0.4" layer="1" rot="R180"/>
+<smd name="23" x="2.15" y="2.45" dx="0.29" dy="0.4" layer="1" rot="R180"/>
+<smd name="24" x="2.58" y="2.45" dx="0.29" dy="0.4" layer="1" rot="R180"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ADNS-3080">
@@ -550,6 +582,31 @@
 <pin name="GND" x="-17.78" y="-10.16" length="middle" direction="pas"/>
 <pin name="OUT" x="17.78" y="2.54" length="middle" direction="out" rot="R180"/>
 </symbol>
+<symbol name="LSM9DS1">
+<wire x1="-17.78" y1="-33.02" x2="-17.78" y2="33.02" width="0.254" layer="94"/>
+<wire x1="-17.78" y1="33.02" x2="17.78" y2="33.02" width="0.254" layer="94"/>
+<wire x1="17.78" y1="33.02" x2="17.78" y2="-33.02" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-33.02" x2="-17.78" y2="-33.02" width="0.254" layer="94"/>
+<pin name="VDDIO" x="-22.86" y="22.86" length="middle"/>
+<pin name="SCL/SPC" x="22.86" y="17.78" length="middle" rot="R180"/>
+<pin name="SDA/SDI/SDO" x="22.86" y="12.7" length="middle" rot="R180"/>
+<pin name="SDO_A/G" x="22.86" y="7.62" length="middle" rot="R180"/>
+<pin name="SDO_M" x="22.86" y="2.54" length="middle" rot="R180"/>
+<pin name="CS_A/G" x="22.86" y="-2.54" length="middle" rot="R180"/>
+<pin name="CS_M" x="22.86" y="-7.62" length="middle" rot="R180"/>
+<pin name="DRDY_M" x="22.86" y="27.94" length="middle" rot="R180"/>
+<pin name="INT_M" x="22.86" y="-15.24" length="middle" rot="R180"/>
+<pin name="INT1_A/G" x="22.86" y="-27.94" length="middle" rot="R180"/>
+<pin name="INT2_A/G" x="22.86" y="-20.32" length="middle" rot="R180"/>
+<pin name="DEN_A/G" x="22.86" y="22.86" length="middle" rot="R180"/>
+<pin name="RES" x="-22.86" y="-20.32" length="middle"/>
+<pin name="GND" x="-22.86" y="-27.94" length="middle"/>
+<pin name="CAP" x="-22.86" y="5.08" length="middle"/>
+<pin name="VDD" x="-22.86" y="27.94" length="middle"/>
+<pin name="C1" x="-22.86" y="-5.08" length="middle"/>
+<text x="-17.78" y="-35.56" size="1.778" layer="95">&gt;NAME</text>
+<text x="-17.78" y="-38.1" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="ADNS-3080" prefix="U">
@@ -693,6 +750,44 @@
 <attribute name="MP" value="MIC5205-3.3YM5-TR"/>
 <attribute name="PACKAGE" value="SOT-23-5 Microchip"/>
 <attribute name="PRICE" value="0.36 USD"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LSM9DS1">
+<gates>
+<gate name="G$1" symbol="LSM9DS1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LGA-24">
+<connects>
+<connect gate="G$1" pin="C1" pad="24"/>
+<connect gate="G$1" pin="CAP" pad="21"/>
+<connect gate="G$1" pin="CS_A/G" pad="7"/>
+<connect gate="G$1" pin="CS_M" pad="8"/>
+<connect gate="G$1" pin="DEN_A/G" pad="13"/>
+<connect gate="G$1" pin="DRDY_M" pad="9"/>
+<connect gate="G$1" pin="GND" pad="19 20"/>
+<connect gate="G$1" pin="INT1_A/G" pad="11"/>
+<connect gate="G$1" pin="INT2_A/G" pad="12"/>
+<connect gate="G$1" pin="INT_M" pad="10"/>
+<connect gate="G$1" pin="RES" pad="14 15 16 17 18"/>
+<connect gate="G$1" pin="SCL/SPC" pad="2"/>
+<connect gate="G$1" pin="SDA/SDI/SDO" pad="4"/>
+<connect gate="G$1" pin="SDO_A/G" pad="5"/>
+<connect gate="G$1" pin="SDO_M" pad="6"/>
+<connect gate="G$1" pin="VDD" pad="22 23"/>
+<connect gate="G$1" pin="VDDIO" pad="1 3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="AVAILABILITY" value="Unavailable"/>
+<attribute name="DESCRIPTION" value="iNEMO inertial module: 3D accelerometer, 3D gyroscope, 3D magnetometer"/>
+<attribute name="MF" value="STMicroelectronics"/>
+<attribute name="MP" value="LSM9DS1"/>
+<attribute name="PACKAGE" value="None"/>
+<attribute name="PRICE" value="None"/>
 </technology>
 </technologies>
 </device>
