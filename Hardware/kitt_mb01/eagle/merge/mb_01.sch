@@ -25326,7 +25326,7 @@ Solder type</description>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
 <part name="+3V11" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+5VMAIN4" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
-<part name="U$5" library="kitt.ic" deviceset="SI1922EDH" device=""/>
+<part name="U7.01" library="kitt.ic" deviceset="SI1922EDH" device=""/>
 <part name="R0.03" library="rcl" deviceset="R-EU_" device="R1206" value="[0R]"/>
 <part name="GND33" library="supply1" deviceset="GND" device=""/>
 <part name="JMP1" library="jump-0r-smd" deviceset="0R-JUMP" device="A"/>
@@ -26254,7 +26254,6 @@ INTERNAL PULLUP OR WHAT?</text>
 <instance part="GND32" gate="1" x="86.36" y="53.34"/>
 <instance part="+3V11" gate="G$1" x="86.36" y="83.82"/>
 <instance part="P+5VMAIN4" gate="1" x="73.66" y="83.82" rot="MR0"/>
-<instance part="U$5" gate="B" x="31.75" y="78.74" rot="MR0"/>
 <instance part="R0.03" gate="G$1" x="29.21" y="88.9" rot="R90"/>
 <instance part="GND33" gate="1" x="29.21" y="68.58"/>
 <instance part="JMP1" gate="-0R" x="31.75" y="102.87" rot="R180"/>
@@ -26270,6 +26269,7 @@ INTERNAL PULLUP OR WHAT?</text>
 <instance part="JMP2" gate="G$2" x="29.21" y="57.15" rot="R180"/>
 <instance part="P+5VMAIN6" gate="1" x="29.21" y="63.5" rot="MR0"/>
 <instance part="+3V12" gate="G$1" x="40.64" y="64.77"/>
+<instance part="U7.01" gate="A" x="31.75" y="78.74" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -26334,8 +26334,8 @@ INTERNAL PULLUP OR WHAT?</text>
 </segment>
 <segment>
 <pinref part="GND33" gate="1" pin="GND"/>
-<pinref part="U$5" gate="B" pin="S"/>
 <wire x1="29.21" y1="71.12" x2="29.21" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="U7.01" gate="A" pin="S"/>
 </segment>
 <segment>
 <pinref part="GND34" gate="1" pin="GND"/>
@@ -26570,12 +26570,6 @@ INTERNAL PULLUP OR WHAT?</text>
 <wire x1="29.21" y1="93.98" x2="29.21" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$44" class="0">
-<segment>
-<pinref part="U$5" gate="B" pin="D"/>
-<pinref part="R0.03" gate="G$1" pin="1"/>
-</segment>
-</net>
 <net name="N$45" class="0">
 <segment>
 <pinref part="JMP1" gate="-0R" pin="2"/>
@@ -26616,6 +26610,38 @@ INTERNAL PULLUP OR WHAT?</text>
 <wire x1="152.4" y1="67.31" x2="165.1" y2="67.31" width="0.1524" layer="91"/>
 <label x="152.4" y="67.31" size="1.778" layer="95" rot="R90" xref="yes"/>
 <pinref part="U$4" gate="B" pin="G"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="R0.03" gate="G$1" pin="1"/>
+<pinref part="U7.01" gate="A" pin="D"/>
+</segment>
+</net>
+<net name="CAR.FLIGHT" class="0">
+<segment>
+<pinref part="U7.01" gate="A" pin="G"/>
+<wire x1="34.29" y1="76.2" x2="43.18" y2="76.2" width="0.1524" layer="91"/>
+<label x="43.18" y="76.2" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<label x="210.82" y="86.36" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="CON1" gate="G$3" pin="IO.6"/>
+<wire x1="210.82" y1="86.36" x2="215.9" y2="86.36" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="CAR.BLIGHT" class="0">
+<segment>
+<label x="210.82" y="88.9" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="210.82" y1="88.9" x2="215.9" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="CON1" gate="G$3" pin="IO.5"/>
+</segment>
+</net>
+<net name="CAR.LAPCNT" class="0">
+<segment>
+<pinref part="CON1" gate="G$3" pin="IO.7"/>
+<wire x1="215.9" y1="83.82" x2="210.82" y2="83.82" width="0.1524" layer="91"/>
+<label x="210.82" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
