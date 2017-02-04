@@ -16327,6 +16327,60 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="51.2833" y1="3.265859375" x2="51.380559375" y2="3.28913125" width="0.001" layer="49"/>
 <wire x1="51.380559375" y1="3.28913125" x2="51.47976875" y2="3.296840625" width="0.001" layer="49"/>
 </package>
+<package name="REF_LAYERS">
+<rectangle x1="0.635" y1="0.9525" x2="0.9525" y2="1.27" layer="2"/>
+<rectangle x1="0.635" y1="0.3175" x2="0.9525" y2="0.635" layer="2"/>
+<rectangle x1="0.3175" y1="0.635" x2="0.635" y2="0.9525" layer="2"/>
+<rectangle x1="0.9525" y1="0.635" x2="1.27" y2="0.9525" layer="2"/>
+<rectangle x1="0.635" y1="0.635" x2="0.9525" y2="0.9525" layer="3"/>
+<rectangle x1="0.3175" y1="0.9525" x2="0.635" y2="1.27" layer="3"/>
+<rectangle x1="0.9525" y1="0.9525" x2="1.27" y2="1.27" layer="3"/>
+<rectangle x1="0.3175" y1="0.3175" x2="0.635" y2="0.635" layer="3"/>
+<rectangle x1="0.9525" y1="0.3175" x2="1.27" y2="0.635" layer="3"/>
+<rectangle x1="3.175" y1="0.635" x2="3.81" y2="0.9525" layer="2"/>
+<rectangle x1="4.445" y1="0.635" x2="5.08" y2="0.9525" layer="3"/>
+<rectangle x1="4.445" y1="1.27" x2="5.08" y2="1.5875" layer="3"/>
+<rectangle x1="5.715" y1="0" x2="6.35" y2="0.3175" layer="16"/>
+<rectangle x1="2.54" y1="0" x2="2.8575" y2="1.27" layer="1"/>
+<rectangle x1="3.81" y1="0" x2="4.1275" y2="1.5875" layer="2"/>
+<rectangle x1="5.08" y1="0" x2="5.3975" y2="1.5875" layer="3"/>
+<rectangle x1="6.35" y1="0" x2="6.6675" y2="1.5875" layer="16"/>
+<rectangle x1="1.905" y1="1.27" x2="2.8575" y2="1.5875" layer="1"/>
+<rectangle x1="6.985" y1="0" x2="7.62" y2="0.3175" layer="1"/>
+<rectangle x1="6.985" y1="1.27" x2="7.62" y2="1.5875" layer="1"/>
+<rectangle x1="7.62" y1="0" x2="7.9375" y2="1.5875" layer="1"/>
+<rectangle x1="0" y1="0.3175" x2="0.3175" y2="1.27" layer="1"/>
+<rectangle x1="0.3175" y1="0" x2="1.27" y2="0.3175" layer="1"/>
+<rectangle x1="1.27" y1="0.3175" x2="1.5875" y2="1.27" layer="1"/>
+<rectangle x1="0.3175" y1="1.27" x2="1.27" y2="1.5875" layer="1"/>
+<rectangle x1="0" y1="1.27" x2="0.3175" y2="1.5875" layer="25"/>
+<rectangle x1="0" y1="0" x2="0.3175" y2="0.3175" layer="25"/>
+<rectangle x1="1.27" y1="0" x2="1.5875" y2="0.3175" layer="25"/>
+<rectangle x1="1.27" y1="1.27" x2="1.5875" y2="1.5875" layer="25"/>
+<rectangle x1="0" y1="0.635" x2="0.3175" y2="0.9525" layer="26"/>
+<rectangle x1="1.27" y1="0.635" x2="1.5875" y2="0.9525" layer="26"/>
+<rectangle x1="0.635" y1="1.27" x2="0.9525" y2="1.5875" layer="26"/>
+<rectangle x1="0.635" y1="0" x2="0.9525" y2="0.3175" layer="26"/>
+<rectangle x1="0" y1="0" x2="0.3175" y2="0.635" layer="16"/>
+<rectangle x1="0.3175" y1="0" x2="0.635" y2="0.3175" layer="16"/>
+<rectangle x1="0.9525" y1="0" x2="1.5875" y2="0.3175" layer="16"/>
+<rectangle x1="1.27" y1="0.3175" x2="1.5875" y2="0.635" layer="16"/>
+<rectangle x1="1.27" y1="0.9525" x2="1.5875" y2="1.27" layer="16"/>
+<rectangle x1="0.9525" y1="1.27" x2="1.5875" y2="1.5875" layer="16"/>
+<rectangle x1="0" y1="1.27" x2="0.635" y2="1.5875" layer="16"/>
+<rectangle x1="0" y1="0.9525" x2="0.3175" y2="1.27" layer="16"/>
+<rectangle x1="1.905" y1="1.905" x2="2.8575" y2="2.2225" layer="1"/>
+<rectangle x1="3.175" y1="1.905" x2="4.1275" y2="2.2225" layer="2"/>
+<rectangle x1="4.445" y1="1.905" x2="5.3975" y2="2.2225" layer="3"/>
+<rectangle x1="5.715" y1="1.905" x2="6.6675" y2="2.2225" layer="16"/>
+<rectangle x1="0" y1="1.905" x2="1.5875" y2="2.2225" layer="17"/>
+<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="33"/>
+<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="34"/>
+<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="1"/>
+<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="2"/>
+<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="3"/>
+<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="16"/>
+</package>
 </packages>
 <symbols>
 <symbol name="REF">
@@ -16346,6 +16400,18 @@ DIN A4, landscape with location and doc. field</description>
 </gates>
 <devices>
 <device name="" package="REF_KITT_MB01">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="REF.LAYERS" prefix="REF">
+<gates>
+<gate name="G$1" symbol="REF" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="REF_LAYERS">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -26348,6 +26414,11 @@ http://dangerousprototypes.com</description>
 <part name="JP3" library="pinhead" deviceset="PINHD-1X18" device="/90"/>
 <part name="J1" library="dp_devices" deviceset="CON_HEADER_1X06" device="-SMD-RIGHT-ANGLED"/>
 <part name="J2" library="dp_devices" deviceset="CON_HEADER_1X06" device="-SMD-RIGHT-ANGLED"/>
+<part name="P+5" library="supply1" deviceset="+12V" device="" value="V.POW"/>
+<part name="R7,05" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
+<part name="D7.07" library="led" deviceset="LED" device="CHIPLED_1206" value="OK+12V"/>
+<part name="GND37" library="supply1" deviceset="GND" device=""/>
+<part name="REF1" library="kitt.refs" deviceset="REF.LAYERS" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -27211,7 +27282,7 @@ INTERNAL PULLUP OR WHAT?</text>
 <instance part="R7.02" gate="G$1" x="187.96" y="109.22" rot="MR270"/>
 <instance part="R7.03" gate="G$1" x="187.96" y="93.98" rot="MR270"/>
 <instance part="GND8" gate="1" x="187.96" y="83.82"/>
-<instance part="REF5" gate="G$1" x="234.95" y="30.48"/>
+<instance part="REF5" gate="G$1" x="234.95" y="31.75"/>
 <instance part="P+5VMAIN1" gate="1" x="27.94" y="167.64" rot="MR0"/>
 <instance part="X7.04" gate="-1" x="20.32" y="160.02" rot="MR0"/>
 <instance part="X7.04" gate="-2" x="20.32" y="149.86" rot="MR0"/>
@@ -27284,6 +27355,13 @@ INTERNAL PULLUP OR WHAT?</text>
 <instance part="JP3" gate="A" x="-63.5" y="105.41"/>
 <instance part="J1" gate="J" x="-17.78" y="106.68" rot="R180"/>
 <instance part="J2" gate="J" x="-17.78" y="83.82" rot="R180"/>
+<instance part="P+5" gate="1" x="96.52" y="83.82" smashed="yes">
+<attribute name="VALUE" x="93.98" y="83.82" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R7,05" gate="G$1" x="96.52" y="73.66" rot="R90"/>
+<instance part="D7.07" gate="G$1" x="96.52" y="63.5"/>
+<instance part="GND37" gate="1" x="96.52" y="53.34"/>
+<instance part="REF1" gate="G$1" x="234.95" y="36.83"/>
 </instances>
 <busses>
 </busses>
@@ -27368,6 +27446,11 @@ INTERNAL PULLUP OR WHAT?</text>
 <wire x1="96.52" y1="29.21" x2="96.52" y2="36.83" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="36.83" x2="90.17" y2="36.83" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND37" gate="1" pin="GND"/>
+<pinref part="D7.07" gate="G$1" pin="C"/>
+<wire x1="96.52" y1="55.88" x2="96.52" y2="58.42" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="RAILS.RX" class="0">
 <segment>
@@ -27435,6 +27518,11 @@ INTERNAL PULLUP OR WHAT?</text>
 <pinref part="R7.02" gate="G$1" pin="1"/>
 <wire x1="187.96" y1="114.3" x2="187.96" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="P+6" gate="1" pin="+12V"/>
+</segment>
+<segment>
+<pinref part="P+5" gate="1" pin="+12V"/>
+<pinref part="R7,05" gate="G$1" pin="2"/>
+<wire x1="96.52" y1="81.28" x2="96.52" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -27702,6 +27790,13 @@ INTERNAL PULLUP OR WHAT?</text>
 <label x="100.33" y="34.29" size="1.27" layer="95" xref="yes"/>
 <wire x1="90.17" y1="34.29" x2="100.33" y2="34.29" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="A" pin="2"/>
+</segment>
+</net>
+<net name="N$44" class="0">
+<segment>
+<pinref part="D7.07" gate="G$1" pin="A"/>
+<pinref part="R7,05" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="66.04" x2="96.52" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
