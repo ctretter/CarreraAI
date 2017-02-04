@@ -8,9 +8,9 @@
 </settings>
 <grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.0125" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="29" fill="0" visible="no" active="yes"/>
-<layer number="3" name="Route3" color="24" fill="9" visible="no" active="yes"/>
+<layer number="3" name="Route3" color="24" fill="9" visible="yes" active="yes"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -194,11 +194,15 @@
 <text x="45.323125" y="63.02375" size="1.778" layer="51" rot="R180">SoC Supply --&gt;</text>
 <text x="45.085" y="47.228125" size="1.778" layer="51" rot="R180">Tail Light --&gt;</text>
 <text x="106.600625" y="46.51375" size="1.778" layer="51">&lt;-- Head Light</text>
-<text x="30.241875" y="41.5925" size="0.6096" layer="46">here's a thought:
-how about utilitzing both gates in parallel?
--&gt; 0.5 and 1.0xI -&gt; half and fulbright</text>
-<text x="33.893125" y="40.64" size="0.6096" layer="46">.. eh pwm will do the same :/</text>
 <hole x="101.6" y="27.94" drill="1.6"/>
+<text x="15.5575" y="52.07" size="1.6764" layer="49" rot="R90">&lt;-- IDK</text>
+<text x="20.32" y="37.7825" size="1.6764" layer="49">SPEEDBOARD --&gt;
+LAPDETECTOR --&gt;</text>
+<text x="70.485" y="11.43" size="1.6764" layer="49">TODO:
+COMMAND/BOTTOM LIGHT!!!</text>
+<text x="70.485" y="8.5725" size="1.778" layer="48">GROUND POURS</text>
+<text x="91.7575" y="8.5725" size="1.778" layer="48">RAILS POURS</text>
+<text x="70.1675" y="6.0325" size="1.778" layer="48">ARDUINO&lt;-&gt;RAILS</text>
 </plain>
 <libraries>
 <library name="rcl">
@@ -26880,6 +26884,12 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 <wire x1="104.775" y1="68.2625" x2="102.235" y2="68.2625" width="0" layer="2"/>
 <wire x1="102.235" y1="68.2625" x2="102.235" y2="59.69" width="0" layer="2"/>
 <wire x1="102.235" y1="59.69" x2="104.775" y2="59.69" width="0" layer="2"/>
+</signal>
+<signal name="ARDUINO.SCL">
+<contactref element="IC3.01" pad="2"/>
+</signal>
+<signal name="ARDUINO.SDA">
+<contactref element="IC3.01" pad="4"/>
 </signal>
 </signals>
 </board>
