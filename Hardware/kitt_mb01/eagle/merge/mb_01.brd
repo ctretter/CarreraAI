@@ -45,11 +45,11 @@
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -188,22 +188,29 @@
 <hole x="101.6" y="54.61" drill="1.6"/>
 <text x="107.315" y="61.11875" size="1.778" layer="51">&lt;-- Battery Pak</text>
 <text x="45.323125" y="63.02375" size="1.778" layer="51" rot="R180">SoC Supply --&gt;</text>
-<text x="45.085" y="47.228125" size="1.778" layer="51" rot="R180">Tail Light --&gt;</text>
-<text x="106.600625" y="46.51375" size="1.778" layer="51">&lt;-- Head Light</text>
+<text x="37.465" y="48.656875" size="1.778" layer="51" rot="R180">Tail Light --&gt;</text>
+<text x="114.379375" y="45.72" size="1.778" layer="51">&lt;-- Head Light</text>
 <hole x="101.6" y="28.2575" drill="1.6"/>
 <text x="20.32" y="37.7825" size="1.6764" layer="49">SPEEDBOARD --&gt;
 LAPDETECTOR --&gt;</text>
 <text x="70.485" y="11.43" size="1.6764" layer="49">TODO:
 COMMAND/BOTTOM LIGHT!!!</text>
-<text x="70.485" y="8.5725" size="1.778" layer="48">GROUND POURS</text>
-<text x="91.7575" y="8.5725" size="1.778" layer="48">RAILS POURS</text>
+<text x="71.59625" y="16.66875" size="1.778" layer="48">GROUND POURS</text>
+<text x="71.59625" y="13.97" size="1.778" layer="48">RAILS POURS</text>
 <text x="168.91" y="-22.225" size="1.9304" layer="48" font="vector">D.Hoeginger/A.Gessler</text>
 <text x="114.3" y="-21.9075" size="1.9304" layer="48" font="vector">KITT-MB01 PCB LAYOUT</text>
 <text x="114.3" y="-36.5125" size="1.9304" layer="48" font="vector">Kit for Intelligent and
 Trainable Trackcars</text>
-<text x="107.47375" y="59.055" size="1.27" layer="48" font="vector">&lt;-- + EXT NTC SENSOR</text>
 <text x="103.02875" y="64.4525" size="0.6096" layer="26" font="vector" ratio="18" rot="MR0">EXT.PTC</text>
-<text x="106.83875" y="39.6875" size="1.27" layer="48" font="vector" ratio="18">&lt;-- AUX LIGHT (IR?)</text>
+<text x="38.89375" y="41.830625" size="1.778" layer="51" rot="R180">SpeedBoard--&gt;
+Lap Detector--&gt;</text>
+<text x="37.62375" y="46.116875" size="1.778" layer="51" rot="R180">AUX OUT --&gt;</text>
+<text x="114.379375" y="42.8625" size="1.778" layer="51">&lt;-- Gate Control IR</text>
+<text x="71.59625" y="-0.15875" size="1.778" layer="48">TEST COUPON on PANELIZING
+-&gt; include layer indicator and fiducial marks
+-&gt; can include spare headlight
+-&gt; even a I2C or decatron knightrider 
+     blinkenlight would be an option here</text>
 </plain>
 <libraries>
 <library name="rcl">
