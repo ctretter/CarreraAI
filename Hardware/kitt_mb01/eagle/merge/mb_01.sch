@@ -16402,60 +16402,6 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="51.2833" y1="3.265859375" x2="51.380559375" y2="3.28913125" width="0.001" layer="49"/>
 <wire x1="51.380559375" y1="3.28913125" x2="51.47976875" y2="3.296840625" width="0.001" layer="49"/>
 </package>
-<package name="REF_LAYERS">
-<rectangle x1="0.635" y1="0.9525" x2="0.9525" y2="1.27" layer="2"/>
-<rectangle x1="0.635" y1="0.3175" x2="0.9525" y2="0.635" layer="2"/>
-<rectangle x1="0.3175" y1="0.635" x2="0.635" y2="0.9525" layer="2"/>
-<rectangle x1="0.9525" y1="0.635" x2="1.27" y2="0.9525" layer="2"/>
-<rectangle x1="0.635" y1="0.635" x2="0.9525" y2="0.9525" layer="3"/>
-<rectangle x1="0.3175" y1="0.9525" x2="0.635" y2="1.27" layer="3"/>
-<rectangle x1="0.9525" y1="0.9525" x2="1.27" y2="1.27" layer="3"/>
-<rectangle x1="0.3175" y1="0.3175" x2="0.635" y2="0.635" layer="3"/>
-<rectangle x1="0.9525" y1="0.3175" x2="1.27" y2="0.635" layer="3"/>
-<rectangle x1="3.175" y1="0.635" x2="3.81" y2="0.9525" layer="2"/>
-<rectangle x1="4.445" y1="0.635" x2="5.08" y2="0.9525" layer="3"/>
-<rectangle x1="4.445" y1="1.27" x2="5.08" y2="1.5875" layer="3"/>
-<rectangle x1="5.715" y1="0" x2="6.35" y2="0.3175" layer="16"/>
-<rectangle x1="2.54" y1="0" x2="2.8575" y2="1.27" layer="1"/>
-<rectangle x1="3.81" y1="0" x2="4.1275" y2="1.5875" layer="2"/>
-<rectangle x1="5.08" y1="0" x2="5.3975" y2="1.5875" layer="3"/>
-<rectangle x1="6.35" y1="0" x2="6.6675" y2="1.5875" layer="16"/>
-<rectangle x1="1.905" y1="1.27" x2="2.8575" y2="1.5875" layer="1"/>
-<rectangle x1="6.985" y1="0" x2="7.62" y2="0.3175" layer="1"/>
-<rectangle x1="6.985" y1="1.27" x2="7.62" y2="1.5875" layer="1"/>
-<rectangle x1="7.62" y1="0" x2="7.9375" y2="1.5875" layer="1"/>
-<rectangle x1="0" y1="0.3175" x2="0.3175" y2="1.27" layer="1"/>
-<rectangle x1="0.3175" y1="0" x2="1.27" y2="0.3175" layer="1"/>
-<rectangle x1="1.27" y1="0.3175" x2="1.5875" y2="1.27" layer="1"/>
-<rectangle x1="0.3175" y1="1.27" x2="1.27" y2="1.5875" layer="1"/>
-<rectangle x1="0" y1="1.27" x2="0.3175" y2="1.5875" layer="25"/>
-<rectangle x1="0" y1="0" x2="0.3175" y2="0.3175" layer="25"/>
-<rectangle x1="1.27" y1="0" x2="1.5875" y2="0.3175" layer="25"/>
-<rectangle x1="1.27" y1="1.27" x2="1.5875" y2="1.5875" layer="25"/>
-<rectangle x1="0" y1="0.635" x2="0.3175" y2="0.9525" layer="26"/>
-<rectangle x1="1.27" y1="0.635" x2="1.5875" y2="0.9525" layer="26"/>
-<rectangle x1="0.635" y1="1.27" x2="0.9525" y2="1.5875" layer="26"/>
-<rectangle x1="0.635" y1="0" x2="0.9525" y2="0.3175" layer="26"/>
-<rectangle x1="0" y1="0" x2="0.3175" y2="0.635" layer="16"/>
-<rectangle x1="0.3175" y1="0" x2="0.635" y2="0.3175" layer="16"/>
-<rectangle x1="0.9525" y1="0" x2="1.5875" y2="0.3175" layer="16"/>
-<rectangle x1="1.27" y1="0.3175" x2="1.5875" y2="0.635" layer="16"/>
-<rectangle x1="1.27" y1="0.9525" x2="1.5875" y2="1.27" layer="16"/>
-<rectangle x1="0.9525" y1="1.27" x2="1.5875" y2="1.5875" layer="16"/>
-<rectangle x1="0" y1="1.27" x2="0.635" y2="1.5875" layer="16"/>
-<rectangle x1="0" y1="0.9525" x2="0.3175" y2="1.27" layer="16"/>
-<rectangle x1="1.905" y1="1.905" x2="2.8575" y2="2.2225" layer="1"/>
-<rectangle x1="3.175" y1="1.905" x2="4.1275" y2="2.2225" layer="2"/>
-<rectangle x1="4.445" y1="1.905" x2="5.3975" y2="2.2225" layer="3"/>
-<rectangle x1="5.715" y1="1.905" x2="6.6675" y2="2.2225" layer="16"/>
-<rectangle x1="0" y1="1.905" x2="1.5875" y2="2.2225" layer="17"/>
-<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="33"/>
-<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="34"/>
-<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="1"/>
-<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="2"/>
-<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="3"/>
-<rectangle x1="6.985" y1="1.905" x2="7.9375" y2="2.2225" layer="16"/>
-</package>
 <package name="REF_LOGO_UASUA">
 <wire x1="0" y1="5.6" x2="0" y2="2.2" width="0.4064" layer="25"/>
 <wire x1="0" y1="2.2" x2="1.2" y2="1" width="0.4064" layer="25" curve="90"/>
@@ -16564,18 +16510,6 @@ DIN A4, landscape with location and doc. field</description>
 </gates>
 <devices>
 <device name="" package="REF_KITT_MB01">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="REF.LAYERS" prefix="REF">
-<gates>
-<gate name="G$1" symbol="REF" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="REF_LAYERS">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -25501,7 +25435,6 @@ Solder type</description>
 <part name="R7,05" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="D7.07" library="led" deviceset="LED" device="CHIPLED_1206" value="OK+12V"/>
 <part name="GND37" library="supply1" deviceset="GND" device=""/>
-<part name="REF1" library="kitt.refs" deviceset="REF.LAYERS" device=""/>
 <part name="REF2" library="kitt.refs" deviceset="REF.LOGO.UASUA" device=""/>
 <part name="NTC+" library="wirepad" deviceset="SMD2" device=""/>
 <part name="NTC-" library="wirepad" deviceset="SMD2" device=""/>
@@ -26463,7 +26396,6 @@ Trainable Trackcars</text>
 <instance part="R7,05" gate="G$1" x="93.345" y="148.59" rot="R90"/>
 <instance part="D7.07" gate="G$1" x="93.345" y="134.62"/>
 <instance part="GND37" gate="1" x="93.345" y="121.285"/>
-<instance part="REF1" gate="G$1" x="209.55" y="31.75"/>
 <instance part="REF2" gate="G$1" x="209.55" y="26.67"/>
 <instance part="R0.05" gate="G$1" x="204.47" y="127" smashed="yes">
 <attribute name="NAME" x="194.945" y="127.2286" size="1.4224" layer="95"/>
