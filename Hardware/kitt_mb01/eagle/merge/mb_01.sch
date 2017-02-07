@@ -17426,65 +17426,6 @@ In this library the device names are the same as the pin names of the symbols, t
 </deviceset>
 </devicesets>
 </library>
-<library name="inductors">
-<description>&lt;b&gt;Inductors and Filters&lt;/b&gt;&lt;p&gt;
-Based on the previous library ind-a.lbr&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="0402">
-<description>&lt;b&gt;EMIFIL (R) Chip Ferrite Bead for GHz Noise&lt;/b&gt;&lt;p&gt;
-Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
-<wire x1="-0.245" y1="0.224" x2="0.245" y2="0.224" width="0.1524" layer="51"/>
-<wire x1="0.245" y1="-0.224" x2="-0.245" y2="-0.224" width="0.1524" layer="51"/>
-<wire x1="-1.473" y1="0.483" x2="1.473" y2="0.483" width="0.0508" layer="39"/>
-<wire x1="1.473" y1="0.483" x2="1.473" y2="-0.483" width="0.0508" layer="39"/>
-<wire x1="1.473" y1="-0.483" x2="-1.473" y2="-0.483" width="0.0508" layer="39"/>
-<wire x1="-1.473" y1="-0.483" x2="-1.473" y2="0.483" width="0.0508" layer="39"/>
-<smd name="1" x="-0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
-<smd name="2" x="0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
-<text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="51"/>
-<rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
-<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
-</package>
-</packages>
-<symbols>
-<symbol name="L">
-<text x="-3.81" y="1.3716" size="1.778" layer="95">&gt;NAME</text>
-<text x="-3.81" y="-2.921" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-2.54" y1="-0.889" x2="2.54" y2="0.889" layer="94"/>
-<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BLM15H" prefix="L">
-<description>&lt;b&gt;EMIFIL (R) Chip Ferrite Bead for GHz Noise&lt;/b&gt;&lt;p&gt;
-Source: http://www.murata.com/ Ferrite Bead BLM15H.pdf</description>
-<gates>
-<gate name="G$1" symbol="L" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="0402">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="B121SN1"/>
-<technology name="B221SN1"/>
-<technology name="D102SN1"/>
-<technology name="D182SN1"/>
-<technology name="D601SN1"/>
-<technology name="G102SN1"/>
-<technology name="G601SN1"/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="kitt.psvs">
 <packages>
 <package name="TAIYO-YUDEN.NRS8030T4R7MJGJ">
@@ -25271,13 +25212,13 @@ Solder type</description>
 <part name="P+6" library="supply1" deviceset="+12V" device="" value="V.POW"/>
 <part name="D1.01" library="diode" deviceset="MBRS3*0T3" device="" technology="2"/>
 <part name="F1.01" library="rcl" deviceset="R-EU_" device="R1210" value="750mA"/>
-<part name="L1.01" library="inductors" deviceset="BLM15H" device="" technology="B121SN1" value="BEAD"/>
+<part name="FB1.01" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="P+2" library="supply1" deviceset="+12V" device="" value="V.POW"/>
 <part name="C1.01" library="rcl" deviceset="C-EU" device="C1210K" value="22uF/25V"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="L1.02" library="kitt.psvs" deviceset="NRS8030XX" device="" value="4.7uH"/>
 <part name="P+5VMAIN" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
-<part name="L1.03" library="inductors" deviceset="BLM15H" device="" technology="B121SN1" value="BEAD"/>
+<part name="FB1.02" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="IC1.01" library="kitt.ic" deviceset="RT8293A" device=""/>
 <part name="R1.01" library="rcl" deviceset="R-EU_" device="R0402" value="100kR"/>
@@ -25345,7 +25286,7 @@ Solder type</description>
 <part name="R3.07" library="rcl" deviceset="R-EU_" device="R0402" value="[10kR]"/>
 <part name="R3.08" library="rcl" deviceset="R-EU_" device="R0402" value="[10kR]"/>
 <part name="+3V3" library="supply1" deviceset="+3V3" device=""/>
-<part name="C3.01" library="rcl" deviceset="C-EU" device="C0402" value="10nF"/>
+<part name="C3.01" library="rcl" deviceset="C-EU" device="C0603" value="10nF"/>
 <part name="C3.02" library="rcl" deviceset="C-EU" device="C0402" value="100nF"/>
 <part name="C3.03" library="rcl" deviceset="C-EU" device="C0402" value="100nF"/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
@@ -25360,7 +25301,7 @@ Solder type</description>
 <part name="C4.01" library="rcl" deviceset="CPOL-EU" device="C/6032-28R" value="47uF/25V"/>
 <part name="C4.02" library="resistor" deviceset="C-EU" device="C0603K" value="100nF/25V"/>
 <part name="C4.03" library="resistor" deviceset="C-EU" device="C0805K"/>
-<part name="L4.01" library="inductors" deviceset="BLM15H" device="" technology="B121SN1" value="BEAD"/>
+<part name="FB4.01" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="+12V" device="" value="V.POW"/>
 <part name="C4.04" library="rcl" deviceset="C-EU" device="C0603K" value="220nF/25V"/>
@@ -25387,7 +25328,7 @@ Solder type</description>
 <part name="SUPPLY8" library="supply2" deviceset="+4.1V" device="" value="VBAT+4.1V"/>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
 <part name="P+5VMAIN3" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
-<part name="FB6.01" library="inductors" deviceset="BLM15H" device="" technology="B121SN1" value="BEAD"/>
+<part name="FB6.01" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="C6.04" library="kitt.psvs" deviceset="CPOL-2917" device="2312" value="100u"/>
 <part name="C6.05" library="kitt.psvs" deviceset="CPOL-2917" device="2312" value="100u"/>
 <part name="L6.01" library="kitt.psvs" deviceset="NRS8030XX" device=""/>
@@ -25452,8 +25393,8 @@ Solder type</description>
 <part name="X7.06" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="X7.03" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="R7.10" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="R0805"/>
-<part name="R2" library="rcl" deviceset="R-EU_" device="R0402"/>
+<part name="L1" library="rcl" deviceset="L-EU" device="L1812"/>
+<part name="L2" library="rcl" deviceset="L-EU" device="L4516C"/>
 </parts>
 <sheets>
 <sheet>
@@ -25475,7 +25416,7 @@ Trainable Trackcars</text>
 <instances>
 <instance part="D1.01" gate="G$1" x="31.75" y="106.68"/>
 <instance part="F1.01" gate="G$1" x="49.53" y="106.68"/>
-<instance part="L1.01" gate="G$1" x="62.23" y="106.68"/>
+<instance part="FB1.01" gate="G$1" x="62.23" y="106.68" rot="R90"/>
 <instance part="P+2" gate="1" x="41.91" y="114.3" smashed="yes">
 <attribute name="VALUE" x="39.37" y="114.3" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -25485,7 +25426,7 @@ Trainable Trackcars</text>
 <instance part="P+5VMAIN" gate="1" x="229.87" y="119.38" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="233.68" y="120.65" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="L1.03" gate="G$1" x="222.25" y="99.06"/>
+<instance part="FB1.02" gate="G$1" x="222.25" y="99.06" rot="R90"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="IC1.01" gate="G$1" x="123.19" y="96.52"/>
 <instance part="R1.01" gate="G$1" x="92.71" y="99.06"/>
@@ -25521,6 +25462,7 @@ Trainable Trackcars</text>
 <attribute name="VALUE" x="243.84" y="104.648" size="1.778" layer="96"/>
 </instance>
 <instance part="GND29" gate="1" x="17.78" y="57.15"/>
+<instance part="L1" gate="G$1" x="167.64" y="118.11"/>
 </instances>
 <busses>
 </busses>
@@ -25536,7 +25478,7 @@ Trainable Trackcars</text>
 <net name="N$80" class="0">
 <segment>
 <pinref part="F1.01" gate="G$1" pin="2"/>
-<pinref part="L1.01" gate="G$1" pin="1"/>
+<pinref part="FB1.01" gate="G$1" pin="1"/>
 <wire x1="54.61" y1="106.68" x2="57.15" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -25583,7 +25525,7 @@ Trainable Trackcars</text>
 <net name="N$81" class="0">
 <segment>
 <pinref part="C1.01" gate="G$1" pin="1"/>
-<pinref part="L1.01" gate="G$1" pin="2"/>
+<pinref part="FB1.01" gate="G$1" pin="2"/>
 <wire x1="67.31" y1="81.28" x2="67.31" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="IC1.01" gate="G$1" pin="VIN"/>
 <wire x1="100.33" y1="106.68" x2="82.55" y2="106.68" width="0.1524" layer="91"/>
@@ -25657,7 +25599,7 @@ Trainable Trackcars</text>
 <wire x1="196.85" y1="99.06" x2="212.09" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="212.09" y1="99.06" x2="212.09" y2="83.82" width="0.1524" layer="91"/>
 <junction x="196.85" y="99.06"/>
-<pinref part="L1.03" gate="G$1" pin="1"/>
+<pinref part="FB1.02" gate="G$1" pin="1"/>
 <wire x1="217.17" y1="99.06" x2="212.09" y2="99.06" width="0.1524" layer="91"/>
 <junction x="212.09" y="99.06"/>
 </segment>
@@ -25681,7 +25623,7 @@ Trainable Trackcars</text>
 </net>
 <net name="N$90" class="0">
 <segment>
-<pinref part="L1.03" gate="G$1" pin="2"/>
+<pinref part="FB1.02" gate="G$1" pin="2"/>
 <wire x1="227.33" y1="99.06" x2="229.87" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="R1.05" gate="G$1" pin="2"/>
 <wire x1="229.87" y1="101.6" x2="229.87" y2="99.06" width="0.1524" layer="91"/>
@@ -26946,7 +26888,7 @@ Trainable Trackcars</text>
 <instance part="C4.01" gate="G$1" x="88.9" y="121.92" rot="MR0"/>
 <instance part="C4.02" gate="G$1" x="68.58" y="121.92" rot="MR0"/>
 <instance part="C4.03" gate="G$1" x="48.26" y="121.92" rot="MR0"/>
-<instance part="L4.01" gate="G$1" x="58.42" y="129.54" rot="MR0"/>
+<instance part="FB4.01" gate="G$1" x="59.055" y="129.54" rot="MR90"/>
 <instance part="GND21" gate="1" x="48.26" y="106.68" rot="MR0"/>
 <instance part="P+3" gate="1" x="48.26" y="139.7" smashed="yes">
 <attribute name="VALUE" x="45.72" y="139.7" size="1.778" layer="96" rot="R180"/>
@@ -26959,8 +26901,7 @@ Trainable Trackcars</text>
 <instance part="R4.04" gate="G$1" x="109.22" y="73.66" rot="R90"/>
 <instance part="R4.05" gate="G$1" x="99.06" y="73.66" rot="R90"/>
 <instance part="J4.01" gate="G$1" x="193.04" y="81.28" rot="R180"/>
-<instance part="R1" gate="G$1" x="173.99" y="67.945"/>
-<instance part="R2" gate="G$1" x="184.785" y="56.515"/>
+<instance part="L2" gate="G$1" x="218.44" y="62.23"/>
 </instances>
 <busses>
 </busses>
@@ -26992,8 +26933,8 @@ Trainable Trackcars</text>
 <pinref part="C4.01" gate="G$1" pin="+"/>
 <wire x1="68.58" y1="129.54" x2="88.9" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="129.54" x2="88.9" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="L4.01" gate="G$1" pin="1"/>
-<wire x1="68.58" y1="129.54" x2="63.5" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="FB4.01" gate="G$1" pin="1"/>
+<wire x1="68.58" y1="129.54" x2="64.135" y2="129.54" width="0.1524" layer="91"/>
 <junction x="68.58" y="129.54"/>
 <wire x1="88.9" y1="129.54" x2="149.86" y2="129.54" width="0.1524" layer="91"/>
 <junction x="88.9" y="129.54"/>
@@ -27060,8 +27001,8 @@ Trainable Trackcars</text>
 <segment>
 <pinref part="C4.03" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="129.54" x2="48.26" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="L4.01" gate="G$1" pin="2"/>
-<wire x1="53.34" y1="129.54" x2="48.26" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="FB4.01" gate="G$1" pin="2"/>
+<wire x1="53.975" y1="129.54" x2="48.26" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="P+3" gate="1" pin="+12V"/>
 <wire x1="48.26" y1="137.16" x2="48.26" y2="129.54" width="0.1524" layer="91"/>
 <junction x="48.26" y="129.54"/>
@@ -27133,7 +27074,7 @@ Trainable Trackcars</text>
 <instance part="P+5VMAIN3" gate="1" x="172.72" y="144.78" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="176.53" y="146.05" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="FB6.01" gate="G$1" x="172.72" y="121.92" rot="R90"/>
+<instance part="FB6.01" gate="G$1" x="172.72" y="123.19" rot="R180"/>
 <instance part="C6.04" gate="G$1" x="172.72" y="109.22"/>
 <instance part="C6.05" gate="G$1" x="185.42" y="109.22"/>
 <instance part="L6.01" gate="G$1" x="93.98" y="104.14" rot="R90"/>
@@ -27187,7 +27128,7 @@ Trainable Trackcars</text>
 <pinref part="C6.03" gate="G$1" pin="1"/>
 <wire x1="172.72" y1="114.3" x2="172.72" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="FB6.01" gate="G$1" pin="1"/>
-<wire x1="172.72" y1="114.3" x2="172.72" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="114.3" x2="172.72" y2="118.11" width="0.1524" layer="91"/>
 <pinref part="C6.04" gate="G$1" pin="+"/>
 <pinref part="C6.05" gate="G$1" pin="+"/>
 <junction x="152.4" y="101.6"/>
@@ -27306,7 +27247,7 @@ Trainable Trackcars</text>
 <segment>
 <pinref part="R6.03" gate="G$1" pin="2"/>
 <pinref part="FB6.01" gate="G$1" pin="2"/>
-<wire x1="172.72" y1="129.54" x2="172.72" y2="127" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="129.54" x2="172.72" y2="128.27" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
