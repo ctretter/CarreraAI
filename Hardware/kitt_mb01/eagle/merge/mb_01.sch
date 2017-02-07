@@ -25414,13 +25414,13 @@ Solder type</description>
 <part name="+3V11" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+5VMAIN4" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
 <part name="U7.01" library="kitt.ic" deviceset="SI1922EDH" device=""/>
-<part name="R7.04" library="rcl" deviceset="R-EU_" device="R1206" value="330R"/>
+<part name="R7.04" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="GND33" library="supply1" deviceset="GND" device=""/>
 <part name="X7.10" library="jump-0r-smd" deviceset="0R-JUMP" device="A"/>
 <part name="P+5VMAIN5" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
 <part name="+3V10" library="supply1" deviceset="+3V3" device=""/>
 <part name="U7.2" library="kitt.ic" deviceset="SI1922EDH" device=""/>
-<part name="R7.09" library="rcl" deviceset="R-EU_" device="R1206" value="[0R]"/>
+<part name="R7.09" library="rcl" deviceset="R-EU_" device="R0603" value="[0R]"/>
 <part name="GND34" library="supply1" deviceset="GND" device=""/>
 <part name="X7.09" library="jump-0r-smd" deviceset="0R-JUMP" device="A"/>
 <part name="P+5VMAIN6" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
@@ -25447,11 +25447,11 @@ Solder type</description>
 <part name="P+7" library="supply1" deviceset="+12V" device="" value="V.POW"/>
 <part name="X7.08" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="X7.11" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
-<part name="R7.08" library="rcl" deviceset="R-EU_" device="R1206" value="330R"/>
+<part name="R7.08" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="X7.06" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="X7.03" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
-<part name="R7.10" library="rcl" deviceset="R-EU_" device="R1206" value="330R"/>
+<part name="R7.10" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R0805"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0402"/>
 </parts>
