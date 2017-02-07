@@ -25270,7 +25270,7 @@ Solder type</description>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" deviceset="+12V" device="" value="V.POW"/>
 <part name="D1.01" library="diode" deviceset="MBRS3*0T3" device="" technology="2"/>
-<part name="F1.01" library="rcl" deviceset="R-EU_" device="R0805" value="750mA"/>
+<part name="F1.01" library="rcl" deviceset="R-EU_" device="R1210" value="750mA"/>
 <part name="L1.01" library="inductors" deviceset="BLM15H" device="" technology="B121SN1" value="BEAD"/>
 <part name="P+2" library="supply1" deviceset="+12V" device="" value="V.POW"/>
 <part name="C1.01" library="rcl" deviceset="C-EU" device="C1210K" value="22uF/25V"/>
@@ -25452,6 +25452,8 @@ Solder type</description>
 <part name="X7.06" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="X7.03" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="R7.10" library="rcl" deviceset="R-EU_" device="R1206" value="330R"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="R0805"/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="R0402"/>
 </parts>
 <sheets>
 <sheet>
@@ -26957,6 +26959,8 @@ Trainable Trackcars</text>
 <instance part="R4.04" gate="G$1" x="109.22" y="73.66" rot="R90"/>
 <instance part="R4.05" gate="G$1" x="99.06" y="73.66" rot="R90"/>
 <instance part="J4.01" gate="G$1" x="193.04" y="81.28" rot="R180"/>
+<instance part="R1" gate="G$1" x="173.99" y="67.945"/>
+<instance part="R2" gate="G$1" x="184.785" y="56.515"/>
 </instances>
 <busses>
 </busses>
