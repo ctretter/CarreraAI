@@ -16649,6 +16649,63 @@ Source: MBRS340T3-D.pdf</description>
 <text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
 <rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
 </package>
+<package name="SJ">
+<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
+<wire x1="1.397" y1="-1.016" x2="-1.397" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="1.397" y1="1.016" x2="1.651" y2="0.762" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-1.651" y1="0.762" x2="-1.397" y2="1.016" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-1.651" y1="-0.762" x2="-1.397" y2="-1.016" width="0.1524" layer="21" curve="90"/>
+<wire x1="1.397" y1="-1.016" x2="1.651" y2="-0.762" width="0.1524" layer="21" curve="90"/>
+<wire x1="1.651" y1="-0.762" x2="1.651" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-1.651" y1="-0.762" x2="-1.651" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-1.397" y1="1.016" x2="1.397" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="0" x2="1.524" y2="0" width="0.1524" layer="51"/>
+<wire x1="-1.016" y1="0" x2="-1.524" y2="0" width="0.1524" layer="51"/>
+<wire x1="-0.254" y1="-0.127" x2="-0.254" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<wire x1="0.254" y1="0.127" x2="0.254" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<smd name="1" x="-0.762" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<smd name="2" x="0.762" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<text x="-1.651" y="1.143" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0.4001" y="0" size="0.02" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.0762" y1="-0.9144" x2="0.0762" y2="0.9144" layer="29"/>
+</package>
+<package name="SJW">
+<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
+<wire x1="1.905" y1="-1.524" x2="-1.905" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.524" x2="2.159" y2="1.27" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.159" y1="1.27" x2="-1.905" y2="1.524" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.159" y1="-1.27" x2="-1.905" y2="-1.524" width="0.1524" layer="21" curve="90"/>
+<wire x1="1.905" y1="-1.524" x2="2.159" y2="-1.27" width="0.1524" layer="21" curve="90"/>
+<wire x1="2.159" y1="-1.27" x2="2.159" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-2.159" y1="-1.27" x2="-2.159" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.524" x2="1.905" y2="1.524" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="0.762" x2="0.762" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="-0.762" y1="0.762" x2="-0.762" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="1.524" y1="0" x2="2.032" y2="0" width="0.1524" layer="51"/>
+<wire x1="-1.524" y1="0" x2="-2.032" y2="0" width="0.1524" layer="51"/>
+<wire x1="0.762" y1="0.762" x2="0.762" y2="-0.762" width="0.1524" layer="51" curve="-180"/>
+<wire x1="-0.762" y1="0.762" x2="-0.762" y2="-0.762" width="0.1524" layer="51" curve="180"/>
+<smd name="1" x="-1.27" y="0" dx="1.27" dy="2.54" layer="1"/>
+<smd name="2" x="1.27" y="0" dx="1.27" dy="2.54" layer="1"/>
+<text x="-2.159" y="1.778" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="1" y="0" size="0.02" layer="27">&gt;VALUE</text>
+<rectangle x1="0.762" y1="-0.762" x2="1.016" y2="0.762" layer="51"/>
+<rectangle x1="1.016" y1="-0.635" x2="1.27" y2="0.635" layer="51"/>
+<rectangle x1="1.27" y1="-0.508" x2="1.397" y2="0.508" layer="51"/>
+<rectangle x1="1.397" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.016" y1="-0.762" x2="-0.762" y2="0.762" layer="51"/>
+<rectangle x1="-1.27" y1="-0.635" x2="-1.016" y2="0.635" layer="51"/>
+<rectangle x1="-1.397" y1="-0.508" x2="-1.27" y2="0.508" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.397" y2="0.254" layer="51"/>
+<rectangle x1="0.9652" y1="-0.7112" x2="1.0922" y2="-0.5842" layer="51"/>
+<rectangle x1="1.3462" y1="-0.3556" x2="1.4732" y2="-0.2286" layer="51"/>
+<rectangle x1="1.3462" y1="0.2032" x2="1.4732" y2="0.3302" layer="51"/>
+<rectangle x1="0.9652" y1="0.5842" x2="1.0922" y2="0.7112" layer="51"/>
+<rectangle x1="-1.0922" y1="-0.7112" x2="-0.9652" y2="-0.5842" layer="51"/>
+<rectangle x1="-1.4478" y1="-0.3302" x2="-1.3208" y2="-0.2032" layer="51"/>
+<rectangle x1="-1.4732" y1="0.2032" x2="-1.3462" y2="0.3302" layer="51"/>
+<rectangle x1="-1.1176" y1="0.5842" x2="-0.9906" y2="0.7112" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SJ_2">
@@ -16666,6 +16723,16 @@ Source: MBRS340T3-D.pdf</description>
 <pin name="3" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
 <pin name="1" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
 <pin name="2" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+</symbol>
+<symbol name="SJ">
+<wire x1="0.381" y1="0.635" x2="0.381" y2="-0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="-0.381" y1="-0.635" x2="-0.381" y2="0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="2.54" y1="0" x2="1.651" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.651" y2="0" width="0.1524" layer="94"/>
+<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-3.81" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="pad" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="pad" length="short" direction="pas" swaplevel="1"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -16690,6 +16757,32 @@ Source: MBRS340T3-D.pdf</description>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 <connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SJ" prefix="SJ" uservalue="yes">
+<description>SMD solder &lt;b&gt;JUMPER&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="SJ" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SJ">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="W" package="SJW">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25216,17 +25309,17 @@ Solder type</description>
 <part name="P+2" library="supply1" deviceset="+12V" device="" value="V.POW"/>
 <part name="C1.01" library="rcl" deviceset="C-EU" device="C1210K" value="22uF/25V"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
-<part name="L1.02" library="kitt.psvs" deviceset="NRS8030XX" device="" value="4.7uH"/>
+<part name="L1.02" library="kitt.psvs" deviceset="NRS8030XX" device="" value="15uH"/>
 <part name="P+5VMAIN" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
 <part name="FB1.02" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="IC1.01" library="kitt.ic" deviceset="RT8293A" device=""/>
 <part name="R1.01" library="rcl" deviceset="R-EU_" device="R0402" value="100kR"/>
 <part name="C1.02" library="rcl" deviceset="C-EU" device="C0402K" value="100nF"/>
-<part name="C1.04" library="rcl" deviceset="C-EU" device="C0402K" value="XX"/>
-<part name="R1.02" library="rcl" deviceset="R-EU_" device="R0402" value="XX"/>
-<part name="R1.03" library="rcl" deviceset="R-EU_" device="R0402" value="XX"/>
-<part name="R1.04" library="rcl" deviceset="R-EU_" device="R0402" value="XX"/>
+<part name="C1.04" library="rcl" deviceset="C-EU" device="C0402K" value="3.3nF"/>
+<part name="R1.02" library="rcl" deviceset="R-EU_" device="R0402" value="20kR"/>
+<part name="R1.03" library="rcl" deviceset="R-EU_" device="R0402" value="62kR"/>
+<part name="R1.04" library="rcl" deviceset="R-EU_" device="R0402" value="11.8kR"/>
 <part name="C1.03" library="rcl" deviceset="C-EU" device="C0402K" value="100nF"/>
 <part name="C1.05" library="rcl" deviceset="C-EU" device="C1206K" value="22uF/6.3V"/>
 <part name="C1.06" library="rcl" deviceset="C-EU" device="C1206K" value="22uF/6.3V"/>
@@ -25255,7 +25348,7 @@ Solder type</description>
 <part name="R2.05" library="rcl" deviceset="R-EU_" device="R0402" value="11k8R"/>
 <part name="C2.04" library="rcl" deviceset="C-EU" device="C0805" value="33nF/16V"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="L2.02" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD"/>
+<part name="FB2.01" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="R2.07" library="rcl" deviceset="R-EU_" device="R0402" value="0R"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="R2.10" library="rcl" deviceset="R-EU_" device="R0402" value="10kR"/>
@@ -25300,7 +25393,7 @@ Solder type</description>
 <part name="X7.05" library="con-phoenix-254" deviceset="MPT2" device="" value="MOTOR"/>
 <part name="C4.01" library="rcl" deviceset="CPOL-EU" device="C/6032-28R" value="47uF/25V"/>
 <part name="C4.02" library="resistor" deviceset="C-EU" device="C0603K" value="100nF/25V"/>
-<part name="C4.03" library="resistor" deviceset="C-EU" device="C0805K"/>
+<part name="C4.03" library="resistor" deviceset="C-EU" device="C0805K" value="4.7uF"/>
 <part name="FB4.01" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="+12V" device="" value="V.POW"/>
@@ -25338,7 +25431,7 @@ Solder type</description>
 <part name="GND29" library="supply1" deviceset="GND" device=""/>
 <part name="R7.11" library="rcl" deviceset="R-EU_" device="R1206" value="SHUNT"/>
 <part name="D7.03" library="led" deviceset="LED" device="CHIPLED_1206"/>
-<part name="U0.1" library="kitt.ic" deviceset="SI1922EDH" device=""/>
+<part name="U7.03" library="kitt.ic" deviceset="SI1922EDH" device=""/>
 <part name="R7,01" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="R7.01" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="D7.04" library="led" deviceset="LED" device="CHIPLED_1206"/>
@@ -25380,11 +25473,11 @@ Solder type</description>
 <part name="NTC+" library="wirepad" deviceset="SMD2" device=""/>
 <part name="NTC-" library="wirepad" deviceset="SMD2" device=""/>
 <part name="GND26" library="supply1" deviceset="GND" device=""/>
-<part name="R7.05" library="rcl" deviceset="R-EU_" device="R1206" value="[0R]"/>
-<part name="R7.06" library="rcl" deviceset="R-EU_" device="R1206" value="[0R]"/>
+<part name="R7.05" library="jumper" deviceset="SJ" device="" value="[0R]"/>
+<part name="R7.06" library="jumper" deviceset="SJ" device="" value="[0R]"/>
 <part name="P+5VMAIN2" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
-<part name="R7.07" library="rcl" deviceset="R-EU_" device="R1206" value="[0R]"/>
+<part name="R7.07" library="jumper" deviceset="SJ" device="" value="[0R]"/>
 <part name="P+7" library="supply1" deviceset="+12V" device="" value="V.POW"/>
 <part name="X7.08" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="X7.11" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
@@ -25393,7 +25486,6 @@ Solder type</description>
 <part name="X7.06" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="X7.03" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="R7.10" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
-<part name="L1" library="rcl" deviceset="L-EU" device="L1812"/>
 <part name="L2" library="rcl" deviceset="L-EU" device="L4516C"/>
 </parts>
 <sheets>
@@ -25462,7 +25554,6 @@ Trainable Trackcars</text>
 <attribute name="VALUE" x="243.84" y="104.648" size="1.778" layer="96"/>
 </instance>
 <instance part="GND29" gate="1" x="17.78" y="57.15"/>
-<instance part="L1" gate="G$1" x="167.64" y="118.11"/>
 </instances>
 <busses>
 </busses>
@@ -25679,7 +25770,7 @@ Trainable Trackcars</text>
 <instance part="R2.05" gate="G$1" x="170.18" y="55.88" rot="MR270"/>
 <instance part="C2.04" gate="G$1" x="160.02" y="139.7"/>
 <instance part="GND13" gate="1" x="160.02" y="132.08"/>
-<instance part="L2.02" gate="G$1" x="175.26" y="144.78" rot="MR270"/>
+<instance part="FB2.01" gate="G$1" x="175.26" y="144.78" rot="MR270"/>
 <instance part="R2.07" gate="G$1" x="187.96" y="144.78" rot="MR0"/>
 <instance part="GND14" gate="1" x="132.08" y="99.06" rot="R90"/>
 <instance part="R2.10" gate="G$1" x="132.08" y="76.2" rot="MR90"/>
@@ -25950,7 +26041,7 @@ Trainable Trackcars</text>
 <wire x1="149.86" y1="144.78" x2="160.02" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="144.78" x2="160.02" y2="142.24" width="0.1524" layer="91"/>
 <junction x="149.86" y="144.78"/>
-<pinref part="L2.02" gate="G$1" pin="1"/>
+<pinref part="FB2.01" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="144.78" x2="160.02" y2="144.78" width="0.1524" layer="91"/>
 <junction x="160.02" y="144.78"/>
 </segment>
@@ -26003,7 +26094,7 @@ Trainable Trackcars</text>
 </net>
 <net name="N$16" class="0">
 <segment>
-<pinref part="L2.02" gate="G$1" pin="2"/>
+<pinref part="FB2.01" gate="G$1" pin="2"/>
 <pinref part="R2.07" gate="G$1" pin="2"/>
 <wire x1="180.34" y1="144.78" x2="182.88" y2="144.78" width="0.1524" layer="91"/>
 </segment>
@@ -26292,8 +26383,8 @@ Trainable Trackcars</text>
 <instance part="GND28" gate="1" x="44.45" y="118.11"/>
 <instance part="R7.11" gate="G$1" x="35.56" y="149.86"/>
 <instance part="D7.03" gate="G$1" x="130.175" y="144.78"/>
-<instance part="U0.1" gate="A" x="127.635" y="132.08"/>
-<instance part="U0.1" gate="B" x="166.37" y="132.08"/>
+<instance part="U7.03" gate="A" x="127.635" y="132.08"/>
+<instance part="U7.03" gate="B" x="166.37" y="132.08"/>
 <instance part="R7,01" gate="G$1" x="130.175" y="157.48" rot="R90"/>
 <instance part="R7.01" gate="G$1" x="168.91" y="157.48" rot="R90"/>
 <instance part="D7.04" gate="G$1" x="168.91" y="146.05"/>
@@ -26341,11 +26432,11 @@ Trainable Trackcars</text>
 <instance part="D7.07" gate="G$1" x="93.345" y="134.62"/>
 <instance part="GND37" gate="1" x="93.345" y="121.285"/>
 <instance part="REF2" gate="G$1" x="209.55" y="26.67"/>
-<instance part="R7.05" gate="G$1" x="204.47" y="127" smashed="yes">
+<instance part="R7.05" gate="1" x="204.47" y="127" smashed="yes">
 <attribute name="NAME" x="194.945" y="127.2286" size="1.4224" layer="95"/>
 <attribute name="VALUE" x="208.28" y="127.508" size="1.4224" layer="96"/>
 </instance>
-<instance part="R7.06" gate="G$1" x="204.47" y="124.46" smashed="yes">
+<instance part="R7.06" gate="1" x="204.47" y="124.46" smashed="yes">
 <attribute name="NAME" x="194.945" y="124.6886" size="1.4224" layer="95"/>
 <attribute name="VALUE" x="208.28" y="124.968" size="1.4224" layer="96"/>
 </instance>
@@ -26355,7 +26446,7 @@ Trainable Trackcars</text>
 <instance part="+3V6" gate="G$1" x="189.23" y="127" smashed="yes" rot="R90">
 <attribute name="VALUE" x="187.96" y="127.635" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R7.07" gate="G$1" x="204.47" y="116.84" smashed="yes">
+<instance part="R7.07" gate="1" x="204.47" y="116.84" smashed="yes">
 <attribute name="NAME" x="194.945" y="117.0686" size="1.4224" layer="95"/>
 <attribute name="VALUE" x="208.28" y="117.348" size="1.4224" layer="96"/>
 </instance>
@@ -26404,12 +26495,12 @@ Trainable Trackcars</text>
 <pinref part="R7.12" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U0.1" gate="A" pin="S"/>
+<pinref part="U7.03" gate="A" pin="S"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="130.175" y1="127" x2="130.175" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U0.1" gate="B" pin="S"/>
+<pinref part="U7.03" gate="B" pin="S"/>
 <pinref part="GND30" gate="1" pin="GND"/>
 <wire x1="168.91" y1="127" x2="168.91" y2="124.46" width="0.1524" layer="91"/>
 </segment>
@@ -26517,7 +26608,7 @@ Trainable Trackcars</text>
 <wire x1="29.845" y1="59.69" x2="29.845" y2="64.135" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R7.06" gate="G$1" pin="1"/>
+<pinref part="R7.06" gate="1" pin="1"/>
 <pinref part="P+5VMAIN2" gate="1" pin="+5V"/>
 <wire x1="191.77" y1="124.46" x2="199.39" y2="124.46" width="0.1524" layer="91"/>
 </segment>
@@ -26546,7 +26637,7 @@ Trainable Trackcars</text>
 </segment>
 <segment>
 <pinref part="P+7" gate="1" pin="+12V"/>
-<pinref part="R7.07" gate="G$1" pin="1"/>
+<pinref part="R7.07" gate="1" pin="1"/>
 <wire x1="193.675" y1="116.84" x2="199.39" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -26627,7 +26718,7 @@ Trainable Trackcars</text>
 </segment>
 <segment>
 <pinref part="+3V6" gate="G$1" pin="+3V3"/>
-<pinref part="R7.05" gate="G$1" pin="1"/>
+<pinref part="R7.05" gate="1" pin="1"/>
 <wire x1="191.77" y1="127" x2="199.39" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -26641,7 +26732,7 @@ Trainable Trackcars</text>
 <net name="N$28" class="0">
 <segment>
 <pinref part="D7.03" gate="G$1" pin="C"/>
-<pinref part="U0.1" gate="A" pin="D"/>
+<pinref part="U7.03" gate="A" pin="D"/>
 <wire x1="130.175" y1="139.7" x2="130.175" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -26662,7 +26753,7 @@ Trainable Trackcars</text>
 <net name="N$31" class="0">
 <segment>
 <pinref part="D7.04" gate="G$1" pin="C"/>
-<pinref part="U0.1" gate="B" pin="D"/>
+<pinref part="U7.03" gate="B" pin="D"/>
 <wire x1="168.91" y1="140.97" x2="168.91" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -26725,7 +26816,7 @@ Trainable Trackcars</text>
 <net name="IC2.0.!CHG" class="0">
 <segment>
 <label x="121.285" y="129.54" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U0.1" gate="A" pin="G"/>
+<pinref part="U7.03" gate="A" pin="G"/>
 <wire x1="121.285" y1="129.54" x2="125.095" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -26733,7 +26824,7 @@ Trainable Trackcars</text>
 <segment>
 <wire x1="154.305" y1="129.54" x2="163.83" y2="129.54" width="0.1524" layer="91"/>
 <label x="154.305" y="129.54" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="U0.1" gate="B" pin="G"/>
+<pinref part="U7.03" gate="B" pin="G"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -26799,7 +26890,7 @@ Trainable Trackcars</text>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="R7.05" gate="G$1" pin="2"/>
+<pinref part="R7.05" gate="1" pin="2"/>
 <pinref part="X7.02" gate="G$2" pin="3V3"/>
 <wire x1="209.55" y1="127" x2="215.9" y2="127" width="0.1524" layer="91"/>
 </segment>
@@ -26808,12 +26899,12 @@ Trainable Trackcars</text>
 <segment>
 <pinref part="X7.02" gate="G$2" pin="5V"/>
 <wire x1="215.9" y1="124.46" x2="209.55" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="R7.06" gate="G$1" pin="2"/>
+<pinref part="R7.06" gate="1" pin="2"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="R7.07" gate="G$1" pin="2"/>
+<pinref part="R7.07" gate="1" pin="2"/>
 <pinref part="X7.02" gate="G$2" pin="VIN"/>
 <wire x1="209.55" y1="116.84" x2="215.9" y2="116.84" width="0.1524" layer="91"/>
 </segment>
