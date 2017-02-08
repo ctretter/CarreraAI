@@ -17838,6 +17838,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="LED5" library="led" deviceset="LED" device="CHIP-LED0805"/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="R0805" value="330R"/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="R0805" value="[0R]"/>
+<part name="R11" library="rcl" deviceset="R-EU_" device="R0805" value="[PPR]"/>
+<part name="R12" library="rcl" deviceset="R-EU_" device="R0805" value="[PPR]"/>
+<part name="R13" library="rcl" deviceset="R-EU_" device="R0805" value="[PPR]"/>
+<part name="R14" library="rcl" deviceset="R-EU_" device="R0805" value="[PPR]"/>
 </parts>
 <sheets>
 <sheet>
@@ -18006,9 +18011,9 @@ Odometry Unit (w/ Proto-Area)</text>
 <instance part="SJ31" gate="1" x="27.94" y="45.72"/>
 <instance part="SJ32" gate="1" x="27.94" y="43.18"/>
 <instance part="SJ33" gate="1" x="27.94" y="40.64"/>
-<instance part="TP19" gate="G$1" x="35.56" y="83.82" smashed="yes" rot="R270">
-<attribute name="NAME" x="36.83" y="82.55" size="1.778" layer="95"/>
-<attribute name="TP_SIGNAL_NAME" x="34.29" y="82.55" size="1.778" layer="97" rot="R270"/>
+<instance part="TP19" gate="G$1" x="53.34" y="93.98" smashed="yes">
+<attribute name="NAME" x="54.61" y="95.25" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="54.61" y="92.71" size="1.778" layer="97"/>
 </instance>
 <instance part="TP20" gate="G$1" x="35.56" y="81.28" smashed="yes" rot="R270">
 <attribute name="NAME" x="36.83" y="80.01" size="1.778" layer="95"/>
@@ -18071,6 +18076,11 @@ Odometry Unit (w/ Proto-Area)</text>
 <instance part="GND11" gate="1" x="247.65" y="63.5"/>
 <instance part="LED5" gate="G$1" x="237.49" y="113.03"/>
 <instance part="R10" gate="G$1" x="237.49" y="100.33" rot="R90"/>
+<instance part="R8" gate="G$1" x="223.52" y="66.04" rot="MR0"/>
+<instance part="R11" gate="G$1" x="116.84" y="95.25" rot="MR0"/>
+<instance part="R12" gate="G$1" x="116.84" y="92.71" rot="MR0"/>
+<instance part="R13" gate="G$1" x="116.84" y="90.17" rot="MR0"/>
+<instance part="R14" gate="G$1" x="116.84" y="87.63" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -18255,9 +18265,9 @@ Odometry Unit (w/ Proto-Area)</text>
 </net>
 <net name="MOSI" class="0">
 <segment>
-<wire x1="124.46" y1="87.63" x2="119.38" y2="87.63" width="0.1524" layer="91"/>
-<label x="119.38" y="87.63" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="MOSI"/>
+<label x="99.06" y="87.63" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
+<wire x1="111.76" y1="87.63" x2="99.06" y2="87.63" width="0.1524" layer="91"/>
+<pinref part="R14" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <label x="73.66" y="106.68" size="1.27" layer="95" xref="yes"/>
@@ -18287,9 +18297,9 @@ Odometry Unit (w/ Proto-Area)</text>
 </net>
 <net name="MISO" class="0">
 <segment>
-<wire x1="124.46" y1="92.71" x2="119.38" y2="92.71" width="0.1524" layer="91"/>
-<label x="119.38" y="92.71" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="MISO"/>
+<label x="99.06" y="92.71" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
+<wire x1="111.76" y1="92.71" x2="99.06" y2="92.71" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <label x="73.66" y="111.76" size="1.27" layer="95" rot="MR180" xref="yes"/>
@@ -18303,9 +18313,9 @@ Odometry Unit (w/ Proto-Area)</text>
 </net>
 <net name="!CS" class="0">
 <segment>
-<wire x1="124.46" y1="95.25" x2="119.38" y2="95.25" width="0.1524" layer="91"/>
-<label x="119.38" y="95.25" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="!CS"/>
+<label x="99.06" y="95.25" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
+<wire x1="111.76" y1="95.25" x2="99.06" y2="95.25" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <wire x1="73.66" y1="114.3" x2="50.8" y2="114.3" width="0.1524" layer="91"/>
@@ -18319,9 +18329,9 @@ Odometry Unit (w/ Proto-Area)</text>
 </net>
 <net name="SCLK" class="0">
 <segment>
-<wire x1="124.46" y1="90.17" x2="119.38" y2="90.17" width="0.1524" layer="91"/>
-<label x="119.38" y="90.17" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="SCLK"/>
+<label x="99.06" y="90.17" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
+<wire x1="111.76" y1="90.17" x2="99.06" y2="90.17" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <label x="73.66" y="109.22" size="1.27" layer="95" xref="yes"/>
@@ -18718,10 +18728,20 @@ Odometry Unit (w/ Proto-Area)</text>
 <pinref part="SJ33" gate="1" pin="1"/>
 </segment>
 </net>
-<net name="N$168" class="0">
+<net name="AUXLED" class="0">
 <segment>
 <pinref part="SJ20" gate="1" pin="2"/>
 <pinref part="TP19" gate="G$1" pin="TP"/>
+<wire x1="53.34" y1="91.44" x2="53.34" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="83.82" x2="33.02" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="83.82" x2="72.39" y2="83.82" width="0.1524" layer="91"/>
+<junction x="53.34" y="83.82"/>
+<label x="72.39" y="83.82" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="228.6" y1="66.04" x2="233.68" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<label x="233.68" y="66.04" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$169" class="0">
@@ -18809,6 +18829,10 @@ Odometry Unit (w/ Proto-Area)</text>
 <pinref part="U9.01" gate="B" pin="G"/>
 <wire x1="217.17" y1="76.2" x2="217.17" y2="85.09" width="0.1524" layer="91"/>
 <wire x1="217.17" y1="85.09" x2="242.57" y2="85.09" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="218.44" y1="66.04" x2="217.17" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="217.17" y1="66.04" x2="217.17" y2="76.2" width="0.1524" layer="91"/>
+<junction x="217.17" y="76.2"/>
 </segment>
 </net>
 <net name="N$185" class="0">
@@ -18835,6 +18859,34 @@ Odometry Unit (w/ Proto-Area)</text>
 <pinref part="R10" gate="G$1" pin="2"/>
 <pinref part="LED5" gate="G$1" pin="C"/>
 <wire x1="237.49" y1="105.41" x2="237.49" y2="107.95" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$168" class="0">
+<segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<pinref part="U1" gate="G$1" pin="!CS"/>
+<wire x1="121.92" y1="95.25" x2="124.46" y2="95.25" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$182" class="0">
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="U1" gate="G$1" pin="MISO"/>
+<wire x1="121.92" y1="92.71" x2="124.46" y2="92.71" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$183" class="0">
+<segment>
+<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="U1" gate="G$1" pin="SCLK"/>
+<wire x1="121.92" y1="90.17" x2="124.46" y2="90.17" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$188" class="0">
+<segment>
+<pinref part="R14" gate="G$1" pin="1"/>
+<pinref part="U1" gate="G$1" pin="MOSI"/>
+<wire x1="121.92" y1="87.63" x2="124.46" y2="87.63" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
