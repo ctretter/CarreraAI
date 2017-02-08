@@ -17803,6 +17803,34 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="TP16" library="testpad" deviceset="TP" device="PAD1-13"/>
 <part name="TP17" library="testpad" deviceset="TP" device="PAD1-13"/>
 <part name="TP18" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="SJ20" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ21" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ22" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ23" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ24" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ25" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ26" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ27" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ28" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ29" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ30" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ31" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ32" library="jumper" deviceset="SJ" device=""/>
+<part name="SJ33" library="jumper" deviceset="SJ" device=""/>
+<part name="TP19" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP20" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP21" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP22" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP23" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP24" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP25" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP26" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP27" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP28" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP29" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP30" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP31" library="testpad" deviceset="TP" device="PAD1-13"/>
+<part name="TP32" library="testpad" deviceset="TP" device="PAD1-13"/>
 </parts>
 <sheets>
 <sheet>
@@ -17958,6 +17986,76 @@ Odometry Unit (w/ Proto-Area)</text>
 <instance part="TP18" gate="G$1" x="38.1" y="129.54" smashed="yes">
 <attribute name="NAME" x="39.37" y="130.81" size="1.778" layer="95" rot="R90"/>
 <attribute name="TP_SIGNAL_NAME" x="39.37" y="128.27" size="1.778" layer="97"/>
+</instance>
+<instance part="SJ20" gate="1" x="27.94" y="83.82"/>
+<instance part="SJ21" gate="1" x="27.94" y="81.28"/>
+<instance part="SJ22" gate="1" x="27.94" y="78.74"/>
+<instance part="SJ23" gate="1" x="27.94" y="76.2"/>
+<instance part="SJ24" gate="1" x="27.94" y="73.66"/>
+<instance part="SJ25" gate="1" x="27.94" y="71.12"/>
+<instance part="SJ26" gate="1" x="27.94" y="58.42"/>
+<instance part="SJ27" gate="1" x="27.94" y="55.88"/>
+<instance part="SJ28" gate="1" x="27.94" y="53.34"/>
+<instance part="SJ29" gate="1" x="27.94" y="50.8"/>
+<instance part="SJ30" gate="1" x="27.94" y="48.26"/>
+<instance part="SJ31" gate="1" x="27.94" y="45.72"/>
+<instance part="SJ32" gate="1" x="27.94" y="43.18"/>
+<instance part="SJ33" gate="1" x="27.94" y="40.64"/>
+<instance part="TP19" gate="G$1" x="35.56" y="83.82" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="82.55" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="82.55" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP20" gate="G$1" x="35.56" y="81.28" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="80.01" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="80.01" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP21" gate="G$1" x="35.56" y="78.74" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="77.47" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="77.47" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP22" gate="G$1" x="35.56" y="76.2" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="74.93" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="74.93" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP23" gate="G$1" x="35.56" y="73.66" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="72.39" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="72.39" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP24" gate="G$1" x="35.56" y="71.12" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="69.85" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="69.85" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP25" gate="G$1" x="35.56" y="58.42" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="57.15" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="57.15" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP26" gate="G$1" x="35.56" y="55.88" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="54.61" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="54.61" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP27" gate="G$1" x="35.56" y="53.34" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="52.07" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="52.07" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP28" gate="G$1" x="35.56" y="50.8" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="49.53" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="49.53" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP29" gate="G$1" x="35.56" y="48.26" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="46.99" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="46.99" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP30" gate="G$1" x="35.56" y="45.72" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="44.45" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="44.45" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP31" gate="G$1" x="35.56" y="43.18" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="41.91" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="41.91" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP32" gate="G$1" x="35.56" y="40.64" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="39.37" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="34.29" y="39.37" size="1.778" layer="97" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -18491,6 +18589,174 @@ Odometry Unit (w/ Proto-Area)</text>
 <segment>
 <pinref part="SV1" gate="G$1" pin="10"/>
 <pinref part="SJ18" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$154" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="6"/>
+<pinref part="SJ20" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$155" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="5"/>
+<pinref part="SJ21" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$156" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="4"/>
+<pinref part="SJ22" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$157" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="3"/>
+<pinref part="SJ23" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$158" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="2"/>
+<pinref part="SJ24" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$159" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="1"/>
+<pinref part="SJ25" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$160" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="8"/>
+<pinref part="SJ26" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$161" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="7"/>
+<pinref part="SJ27" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$162" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="6"/>
+<pinref part="SJ28" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$163" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="5"/>
+<pinref part="SJ29" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$164" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="4"/>
+<pinref part="SJ30" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$165" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="3"/>
+<pinref part="SJ31" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$166" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="2"/>
+<pinref part="SJ32" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$167" class="0">
+<segment>
+<pinref part="SV3" gate="G$1" pin="1"/>
+<pinref part="SJ33" gate="1" pin="1"/>
+</segment>
+</net>
+<net name="N$168" class="0">
+<segment>
+<pinref part="SJ20" gate="1" pin="2"/>
+<pinref part="TP19" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$169" class="0">
+<segment>
+<pinref part="SJ21" gate="1" pin="2"/>
+<pinref part="TP20" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$170" class="0">
+<segment>
+<pinref part="SJ22" gate="1" pin="2"/>
+<pinref part="TP21" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$171" class="0">
+<segment>
+<pinref part="SJ23" gate="1" pin="2"/>
+<pinref part="TP22" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$172" class="0">
+<segment>
+<pinref part="SJ24" gate="1" pin="2"/>
+<pinref part="TP23" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$173" class="0">
+<segment>
+<pinref part="SJ25" gate="1" pin="2"/>
+<pinref part="TP24" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$174" class="0">
+<segment>
+<pinref part="SJ26" gate="1" pin="2"/>
+<pinref part="TP25" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$175" class="0">
+<segment>
+<pinref part="SJ27" gate="1" pin="2"/>
+<pinref part="TP26" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$176" class="0">
+<segment>
+<pinref part="SJ28" gate="1" pin="2"/>
+<pinref part="TP27" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$177" class="0">
+<segment>
+<pinref part="SJ29" gate="1" pin="2"/>
+<pinref part="TP28" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$178" class="0">
+<segment>
+<pinref part="SJ30" gate="1" pin="2"/>
+<pinref part="TP29" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$179" class="0">
+<segment>
+<pinref part="SJ31" gate="1" pin="2"/>
+<pinref part="TP30" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$180" class="0">
+<segment>
+<pinref part="SJ32" gate="1" pin="2"/>
+<pinref part="TP31" gate="G$1" pin="TP"/>
+</segment>
+</net>
+<net name="N$181" class="0">
+<segment>
+<pinref part="SJ33" gate="1" pin="2"/>
+<pinref part="TP32" gate="G$1" pin="TP"/>
 </segment>
 </net>
 </nets>

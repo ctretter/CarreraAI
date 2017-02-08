@@ -8,12 +8,12 @@
 </settings>
 <grid distance="0.25" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="8" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="yes"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="yes"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="8" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="24" fill="1" visible="yes" active="yes"/>
@@ -4171,8 +4171,8 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 <attribute name="NAME" x="58.7375" y="76.5175" size="1.27" layer="25" font="vector"/>
 <attribute name="VALUE" x="66.9925" y="73.9775" size="1.27" layer="27" font="vector" rot="R90"/>
 </element>
-<element name="R7" library="rcl" package="R0805" value="[0R]" x="29.38" y="38.1" smashed="yes" rot="R180">
-<attribute name="NAME" x="31.6025" y="37.465" size="1.27" layer="25" font="vector"/>
+<element name="R7" library="rcl" package="R0805" value="[0R]" x="31.63" y="45.85" smashed="yes" rot="R180">
+<attribute name="NAME" x="33.8525" y="45.215" size="1.27" layer="25" font="vector"/>
 </element>
 <element name="REF1" library="kitt.refs" package="REF_KITT-DB01" value="REF.KITT-DB01" x="31.90875" y="59.055" locked="yes"/>
 <element name="REF2" library="kitt.con" package="REF_GHOSTCAR" value="REF_GC-BBV2.0" x="22.06625" y="58.26125" locked="yes" rot="R180"/>
@@ -4245,7 +4245,7 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 <element name="SJ16" library="jumper" package="SJ" value="" x="18" y="38.25" rot="R90"/>
 <element name="SJ17" library="jumper" package="SJ" value="" x="20.5" y="38.25" rot="R90"/>
 <element name="SJ18" library="jumper" package="SJ" value="" x="23" y="38.25" rot="R90"/>
-<element name="SJ19" library="jumper" package="SJ" value="" x="48.5" y="27.5" rot="R90"/>
+<element name="SJ19" library="jumper" package="SJ" value="" x="65.25" y="28" rot="R90"/>
 <element name="TP12" library="testpad" package="P1-13" value="TPPAD1-13" x="10.5" y="41.25">
 <attribute name="TP_SIGNAL_NAME" value="" x="10.5" y="41.25" size="1.778" layer="27" display="off"/>
 </element>
@@ -4266,6 +4266,62 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 </element>
 <element name="TP18" library="testpad" package="P1-13" value="TPPAD1-13" x="8" y="41.25">
 <attribute name="TP_SIGNAL_NAME" value="" x="8" y="41.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="SJ20" library="jumper" package="SJ" value="" x="44.75" y="79.75" rot="R270"/>
+<element name="SJ21" library="jumper" package="SJ" value="" x="42.25" y="79.75" rot="R270"/>
+<element name="SJ22" library="jumper" package="SJ" value="" x="39.75" y="79.75" rot="R270"/>
+<element name="SJ23" library="jumper" package="SJ" value="" x="37.25" y="79.75" rot="R270"/>
+<element name="SJ24" library="jumper" package="SJ" value="" x="34.75" y="79.75" rot="R270"/>
+<element name="SJ25" library="jumper" package="SJ" value="" x="32.25" y="79.75" rot="R270"/>
+<element name="SJ26" library="jumper" package="SJ" value="" x="44.75" y="38.25" rot="R90"/>
+<element name="SJ27" library="jumper" package="SJ" value="" x="42.25" y="38.25" rot="R90"/>
+<element name="SJ28" library="jumper" package="SJ" value="" x="39.75" y="38.25" rot="R90"/>
+<element name="SJ29" library="jumper" package="SJ" value="" x="37.25" y="38.25" rot="R90"/>
+<element name="SJ30" library="jumper" package="SJ" value="" x="34.75" y="38.25" rot="R90"/>
+<element name="SJ31" library="jumper" package="SJ" value="" x="32.25" y="38.25" rot="R90"/>
+<element name="SJ32" library="jumper" package="SJ" value="" x="29.75" y="38.25" rot="R90"/>
+<element name="SJ33" library="jumper" package="SJ" value="" x="27.25" y="38.25" rot="R90"/>
+<element name="TP19" library="testpad" package="P1-13" value="TPPAD1-13" x="44.75" y="76.75" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="44.75" y="76.75" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="TP20" library="testpad" package="P1-13" value="TPPAD1-13" x="42.25" y="76.75" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="42.25" y="76.75" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="TP21" library="testpad" package="P1-13" value="TPPAD1-13" x="39.75" y="76.75" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="39.75" y="76.75" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="TP22" library="testpad" package="P1-13" value="TPPAD1-13" x="37.25" y="76.75" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="37.25" y="76.75" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="TP23" library="testpad" package="P1-13" value="TPPAD1-13" x="34.75" y="76.75" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="34.75" y="76.75" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="TP24" library="testpad" package="P1-13" value="TPPAD1-13" x="32.25" y="76.75" rot="R180">
+<attribute name="TP_SIGNAL_NAME" value="" x="32.25" y="76.75" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="TP25" library="testpad" package="P1-13" value="TPPAD1-13" x="44.75" y="41.25">
+<attribute name="TP_SIGNAL_NAME" value="" x="44.75" y="41.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="TP26" library="testpad" package="P1-13" value="TPPAD1-13" x="42.25" y="41.25">
+<attribute name="TP_SIGNAL_NAME" value="" x="42.25" y="41.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="TP27" library="testpad" package="P1-13" value="TPPAD1-13" x="39.75" y="41.25">
+<attribute name="TP_SIGNAL_NAME" value="" x="39.75" y="41.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="TP28" library="testpad" package="P1-13" value="TPPAD1-13" x="37.25" y="41.25">
+<attribute name="TP_SIGNAL_NAME" value="" x="37.25" y="41.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="TP29" library="testpad" package="P1-13" value="TPPAD1-13" x="34.75" y="41.25">
+<attribute name="TP_SIGNAL_NAME" value="" x="34.75" y="41.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="TP30" library="testpad" package="P1-13" value="TPPAD1-13" x="32.25" y="41.25">
+<attribute name="TP_SIGNAL_NAME" value="" x="32.25" y="41.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="TP31" library="testpad" package="P1-13" value="TPPAD1-13" x="29.75" y="41.25">
+<attribute name="TP_SIGNAL_NAME" value="" x="29.75" y="41.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="TP32" library="testpad" package="P1-13" value="TPPAD1-13" x="27.25" y="41.25">
+<attribute name="TP_SIGNAL_NAME" value="" x="27.25" y="41.25" size="1.778" layer="27" display="off"/>
 </element>
 </elements>
 <signals>
@@ -4445,15 +4501,13 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 </signal>
 <signal name="MOSI">
 <contactref element="U1" pad="4"/>
-<wire x1="36.195" y1="42.8625" x2="36.195" y2="48.5775" width="0.6096" layer="16"/>
-<wire x1="33.655" y1="40.3225" x2="36.195" y2="42.8625" width="0.6096" layer="16"/>
 <via x="36.195" y="48.5775" extent="1-16" drill="0.6"/>
 <wire x1="36.374" y1="48.7565" x2="36.374" y2="52.7" width="0.6096" layer="1"/>
 <wire x1="36.195" y1="48.5775" x2="36.374" y2="48.7565" width="0.6096" layer="1"/>
 <contactref element="SJ14" pad="2"/>
 <contactref element="TP13" pad="TP"/>
 <wire x1="13" y1="41.25" x2="13" y2="39.012" width="1.016" layer="1"/>
-<wire x1="13" y1="41.25" x2="33.655" y2="40.3225" width="0" layer="19" extent="16-16"/>
+<wire x1="13" y1="41.25" x2="36.195" y2="48.5775" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RST">
 <contactref element="U1" pad="6"/>
@@ -4476,31 +4530,24 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 </signal>
 <signal name="MISO">
 <contactref element="U1" pad="2"/>
-<wire x1="32.374" y1="52.7" x2="32.374" y2="43.804" width="0.6096" layer="1"/>
-<wire x1="32.374" y1="43.804" x2="30.48" y2="41.91" width="0.6096" layer="1"/>
 <contactref element="SJ15" pad="2"/>
 <contactref element="TP14" pad="TP"/>
 <wire x1="15.5" y1="41.25" x2="15.5" y2="39.012" width="1.016" layer="1"/>
-<wire x1="15.5" y1="41.25" x2="30.48" y2="41.91" width="0" layer="19" extent="1-1"/>
+<wire x1="15.5" y1="41.25" x2="32.374" y2="52.7" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="!CS">
 <contactref element="U1" pad="1"/>
-<wire x1="30.374" y1="52.7" x2="30.374" y2="44.6615" width="0.6096" layer="1"/>
-<wire x1="30.374" y1="44.6615" x2="29.5275" y2="43.815" width="0.6096" layer="1"/>
-<wire x1="29.5275" y1="43.815" x2="17.4625" y2="43.815" width="0.6096" layer="1"/>
 <contactref element="SJ13" pad="2"/>
 <contactref element="TP12" pad="TP"/>
 <wire x1="10.5" y1="41.25" x2="10.5" y2="39.012" width="1.016" layer="1"/>
-<wire x1="10.5" y1="41.25" x2="17.4625" y2="43.815" width="0" layer="19" extent="1-1"/>
+<wire x1="10.5" y1="41.25" x2="30.374" y2="52.7" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCLK">
 <contactref element="U1" pad="3"/>
-<wire x1="34.374" y1="52.7" x2="34.374" y2="42.9465" width="0.6096" layer="1"/>
-<wire x1="34.374" y1="42.9465" x2="31.4325" y2="40.005" width="0.6096" layer="1"/>
 <contactref element="SJ16" pad="2"/>
 <contactref element="TP15" pad="TP"/>
 <wire x1="18" y1="41.25" x2="18" y2="39.012" width="1.016" layer="1"/>
-<wire x1="18" y1="41.25" x2="31.4325" y2="40.005" width="0" layer="19" extent="1-1"/>
+<wire x1="18" y1="41.25" x2="34.374" y2="52.7" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="U1" pad="5"/>
@@ -4509,13 +4556,11 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 <contactref element="R7" pad="1"/>
 <wire x1="38.374" y1="52.7" x2="38.4175" y2="52.6565" width="0.6096" layer="1"/>
 <wire x1="38.4175" y1="52.6565" x2="38.4175" y2="44.1325" width="0.6096" layer="1"/>
-<wire x1="30.33" y1="38.1" x2="35.56" y2="38.1" width="0.6096" layer="1"/>
 <wire x1="53.6575" y1="44.13" x2="56.99" y2="44.13" width="0.6096" layer="1"/>
 <wire x1="56.99" y1="44.13" x2="56.991" y2="44.131" width="0.6096" layer="1"/>
-<wire x1="35.56" y1="38.1" x2="38.4175" y2="40.9575" width="0.6096" layer="1"/>
-<wire x1="38.4175" y1="40.9575" x2="38.4175" y2="44.1325" width="0.6096" layer="1"/>
 <wire x1="53.6575" y1="44.13" x2="38.42" y2="44.13" width="0.6096" layer="1"/>
 <wire x1="38.42" y1="44.13" x2="38.4175" y2="44.1325" width="0.6096" layer="1"/>
+<wire x1="32.58" y1="45.85" x2="38.42" y2="44.13" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="C1" pad="+"/>
@@ -4554,14 +4599,13 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 <contactref element="U1" pad="7"/>
 <contactref element="R3" pad="2"/>
 <wire x1="20.6375" y1="37.1475" x2="21.59" y2="38.1" width="0.6096" layer="16"/>
-<wire x1="33.9725" y1="38.1" x2="42.374" y2="46.5015" width="0.6096" layer="16"/>
 <wire x1="42.374" y1="46.5015" x2="42.374" y2="52.7" width="0.6096" layer="16"/>
 <wire x1="42.2275" y1="49.5275" x2="42.374" y2="49.674" width="0.6096" layer="1"/>
 <wire x1="42.374" y1="49.674" x2="42.374" y2="52.7" width="0.6096" layer="1"/>
 <contactref element="SJ17" pad="2"/>
 <contactref element="TP16" pad="TP"/>
 <wire x1="20.5" y1="39.012" x2="20.5" y2="41.25" width="1.016" layer="1"/>
-<wire x1="21.59" y1="38.1" x2="33.9725" y2="38.1" width="0" layer="19" extent="16-16"/>
+<wire x1="21.59" y1="38.1" x2="42.374" y2="46.5015" width="0" layer="19" extent="16-16"/>
 <wire x1="20.5" y1="39.012" x2="21.59" y2="38.1" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="+5V">
@@ -4603,7 +4647,7 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 <contactref element="SJ18" pad="2"/>
 <contactref element="TP17" pad="TP"/>
 <wire x1="23" y1="39.012" x2="23" y2="41.25" width="1.016" layer="1"/>
-<wire x1="23" y1="39.012" x2="28.43" y2="38.1" width="0" layer="19" extent="1-1"/>
+<wire x1="23" y1="39.012" x2="30.68" y2="45.85" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$14">
 <via x="0.635" y="70.485" extent="1-16" drill="1" diameter="1.9304" shape="square"/>
@@ -5102,6 +5146,160 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 <contactref element="SJ18" pad="1"/>
 <wire x1="23.1775" y1="34.925" x2="23.1775" y2="37.3105" width="1.016" layer="1"/>
 <wire x1="23.1775" y1="37.3105" x2="23" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$154">
+<contactref element="SV2" pad="6"/>
+<contactref element="SJ20" pad="1"/>
+<wire x1="44.92625" y1="83.02625" x2="44.92625" y2="80.68825" width="1.016" layer="1"/>
+<wire x1="44.92625" y1="80.68825" x2="44.75" y2="80.512" width="1.016" layer="1"/>
+</signal>
+<signal name="N$155">
+<contactref element="SV2" pad="5"/>
+<contactref element="SJ21" pad="1"/>
+<wire x1="42.38625" y1="83.02625" x2="42.38625" y2="80.64825" width="1.016" layer="1"/>
+<wire x1="42.38625" y1="80.64825" x2="42.25" y2="80.512" width="1.016" layer="1"/>
+</signal>
+<signal name="N$156">
+<contactref element="SV2" pad="4"/>
+<contactref element="SJ22" pad="1"/>
+<wire x1="39.84625" y1="83.02625" x2="39.84625" y2="80.60825" width="1.016" layer="1"/>
+<wire x1="39.84625" y1="80.60825" x2="39.75" y2="80.512" width="1.016" layer="1"/>
+</signal>
+<signal name="N$157">
+<contactref element="SV2" pad="3"/>
+<contactref element="SJ23" pad="1"/>
+<wire x1="37.30625" y1="83.02625" x2="37.30625" y2="80.56825" width="1.016" layer="1"/>
+<wire x1="37.30625" y1="80.56825" x2="37.25" y2="80.512" width="1.016" layer="1"/>
+</signal>
+<signal name="N$158">
+<contactref element="SV2" pad="2"/>
+<contactref element="SJ24" pad="1"/>
+<wire x1="34.76625" y1="83.02625" x2="34.76625" y2="80.52825" width="1.016" layer="1"/>
+<wire x1="34.76625" y1="80.52825" x2="34.75" y2="80.512" width="1.016" layer="1"/>
+</signal>
+<signal name="N$159">
+<contactref element="SV2" pad="1"/>
+<contactref element="SJ25" pad="1"/>
+<wire x1="32.22625" y1="83.02625" x2="32.22625" y2="80.53575" width="1.016" layer="1"/>
+<wire x1="32.22625" y1="80.53575" x2="32.25" y2="80.512" width="1.016" layer="1"/>
+</signal>
+<signal name="N$160">
+<contactref element="SV3" pad="8"/>
+<contactref element="SJ26" pad="1"/>
+<wire x1="44.92625" y1="34.925" x2="44.92625" y2="37.31175" width="1.016" layer="1"/>
+<wire x1="44.92625" y1="37.31175" x2="44.75" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$161">
+<contactref element="SV3" pad="7"/>
+<contactref element="SJ27" pad="1"/>
+<wire x1="42.38625" y1="34.925" x2="42.38625" y2="37.35175" width="1.016" layer="1"/>
+<wire x1="42.38625" y1="37.35175" x2="42.25" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$162">
+<contactref element="SV3" pad="6"/>
+<contactref element="SJ28" pad="1"/>
+<wire x1="39.84625" y1="34.925" x2="39.84625" y2="37.39175" width="1.016" layer="1"/>
+<wire x1="39.84625" y1="37.39175" x2="39.75" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$163">
+<contactref element="SV3" pad="5"/>
+<contactref element="SJ29" pad="1"/>
+<wire x1="37.30625" y1="34.925" x2="37.30625" y2="37.43175" width="1.016" layer="1"/>
+<wire x1="37.30625" y1="37.43175" x2="37.25" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$164">
+<contactref element="SV3" pad="4"/>
+<contactref element="SJ30" pad="1"/>
+<wire x1="34.76625" y1="34.925" x2="34.76625" y2="37.47175" width="1.016" layer="1"/>
+<wire x1="34.76625" y1="37.47175" x2="34.75" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$165">
+<contactref element="SV3" pad="3"/>
+<contactref element="SJ31" pad="1"/>
+<wire x1="32.22625" y1="34.925" x2="32.22625" y2="37.46425" width="1.016" layer="1"/>
+<wire x1="32.22625" y1="37.46425" x2="32.25" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$166">
+<contactref element="SV3" pad="2"/>
+<contactref element="SJ32" pad="1"/>
+<wire x1="29.68625" y1="34.925" x2="29.68625" y2="37.42425" width="1.016" layer="1"/>
+<wire x1="29.68625" y1="37.42425" x2="29.75" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$167">
+<contactref element="SV3" pad="1"/>
+<contactref element="SJ33" pad="1"/>
+<wire x1="27.14625" y1="34.925" x2="27.14625" y2="37.38425" width="1.016" layer="1"/>
+<wire x1="27.14625" y1="37.38425" x2="27.25" y2="37.488" width="1.016" layer="1"/>
+</signal>
+<signal name="N$168">
+<contactref element="SJ20" pad="2"/>
+<contactref element="TP19" pad="TP"/>
+<wire x1="44.75" y1="76.75" x2="44.75" y2="78.988" width="1.016" layer="1"/>
+</signal>
+<signal name="N$169">
+<contactref element="SJ21" pad="2"/>
+<contactref element="TP20" pad="TP"/>
+<wire x1="42.25" y1="76.75" x2="42.25" y2="78.988" width="1.016" layer="1"/>
+</signal>
+<signal name="N$170">
+<contactref element="SJ22" pad="2"/>
+<contactref element="TP21" pad="TP"/>
+<wire x1="39.75" y1="76.75" x2="39.75" y2="78.988" width="1.016" layer="1"/>
+</signal>
+<signal name="N$171">
+<contactref element="SJ23" pad="2"/>
+<contactref element="TP22" pad="TP"/>
+<wire x1="37.25" y1="76.75" x2="37.25" y2="78.988" width="1.016" layer="1"/>
+</signal>
+<signal name="N$172">
+<contactref element="SJ24" pad="2"/>
+<contactref element="TP23" pad="TP"/>
+<wire x1="34.75" y1="76.75" x2="34.75" y2="78.988" width="1.016" layer="1"/>
+</signal>
+<signal name="N$173">
+<contactref element="SJ25" pad="2"/>
+<contactref element="TP24" pad="TP"/>
+<wire x1="32.25" y1="76.75" x2="32.25" y2="78.988" width="1.016" layer="1"/>
+</signal>
+<signal name="N$174">
+<contactref element="SJ26" pad="2"/>
+<contactref element="TP25" pad="TP"/>
+<wire x1="44.75" y1="41.25" x2="44.75" y2="39.012" width="1.016" layer="1"/>
+</signal>
+<signal name="N$175">
+<contactref element="SJ27" pad="2"/>
+<contactref element="TP26" pad="TP"/>
+<wire x1="42.25" y1="41.25" x2="42.25" y2="39.012" width="1.016" layer="1"/>
+</signal>
+<signal name="N$176">
+<contactref element="SJ28" pad="2"/>
+<contactref element="TP27" pad="TP"/>
+<wire x1="39.75" y1="41.25" x2="39.75" y2="39.012" width="1.016" layer="1"/>
+</signal>
+<signal name="N$177">
+<contactref element="SJ29" pad="2"/>
+<contactref element="TP28" pad="TP"/>
+<wire x1="37.25" y1="41.25" x2="37.25" y2="39.012" width="1.016" layer="1"/>
+</signal>
+<signal name="N$178">
+<contactref element="SJ30" pad="2"/>
+<contactref element="TP29" pad="TP"/>
+<wire x1="34.75" y1="41.25" x2="34.75" y2="39.012" width="1.016" layer="1"/>
+</signal>
+<signal name="N$179">
+<contactref element="SJ31" pad="2"/>
+<contactref element="TP30" pad="TP"/>
+<wire x1="32.25" y1="41.25" x2="32.25" y2="39.012" width="1.016" layer="1"/>
+</signal>
+<signal name="N$180">
+<contactref element="SJ32" pad="2"/>
+<contactref element="TP31" pad="TP"/>
+<wire x1="29.75" y1="41.25" x2="29.75" y2="39.012" width="1.016" layer="1"/>
+</signal>
+<signal name="N$181">
+<contactref element="SJ33" pad="2"/>
+<contactref element="TP32" pad="TP"/>
+<wire x1="27.25" y1="41.25" x2="27.25" y2="39.012" width="1.016" layer="1"/>
 </signal>
 </signals>
 </board>
