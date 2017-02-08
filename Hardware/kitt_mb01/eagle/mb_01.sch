@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -25487,6 +25487,7 @@ Solder type</description>
 <part name="X7.03" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="R7.10" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="L2" library="rcl" deviceset="L-EU" device="L4516C"/>
+<part name="GND27" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -26462,6 +26463,7 @@ Trainable Trackcars</text>
 <instance part="X7.06" gate="G$1" x="10.16" y="55.88" rot="R180"/>
 <instance part="X7.03" gate="G$1" x="66.04" y="55.88"/>
 <instance part="R7.10" gate="G$1" x="46.355" y="43.18" rot="R90"/>
+<instance part="GND27" gate="1" x="213.36" y="39.37"/>
 </instances>
 <busses>
 </busses>
@@ -26550,6 +26552,12 @@ Trainable Trackcars</text>
 <pinref part="GND12" gate="1" pin="GND"/>
 <pinref part="U7.01" gate="B" pin="S"/>
 <wire x1="55.245" y1="71.12" x2="55.245" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND27" gate="1" pin="GND"/>
+<pinref part="X7.02" gate="G$4" pin="GND"/>
+<wire x1="213.36" y1="41.91" x2="213.36" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="63.5" x2="215.9" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RAILS.RX" class="0">
@@ -26956,9 +26964,9 @@ Trainable Trackcars</text>
 <label x="61.595" y="30.48" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="205.74" y1="53.34" x2="215.9" y2="53.34" width="0.1524" layer="91"/>
-<label x="205.74" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="X7.02" gate="G$4" pin="IO.10"/>
+<label x="210.82" y="99.06" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="X7.02" gate="G$3" pin="IO.1"/>
+<wire x1="210.82" y1="99.06" x2="215.9" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
