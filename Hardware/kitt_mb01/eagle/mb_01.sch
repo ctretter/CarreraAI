@@ -23662,7 +23662,7 @@ Solder type</description>
 <part name="R2.05" library="rcl" deviceset="R-EU_" device="R0402" value="11k8R"/>
 <part name="C2.04" library="rcl" deviceset="C-EU" device="C0805" value="33nF/16V"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="FB2.01" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
+<part name="L2.02" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="R2.07" library="rcl" deviceset="R-EU_" device="R0402" value="0R"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="R2.10" library="rcl" deviceset="R-EU_" device="R0402" value="10kR"/>
@@ -24084,7 +24084,7 @@ Trainable Trackcars</text>
 <instance part="R2.05" gate="G$1" x="170.18" y="55.88" rot="MR270"/>
 <instance part="C2.04" gate="G$1" x="160.02" y="139.7"/>
 <instance part="GND13" gate="1" x="160.02" y="132.08"/>
-<instance part="FB2.01" gate="G$1" x="175.26" y="144.78" rot="MR270"/>
+<instance part="L2.02" gate="G$1" x="175.26" y="144.78" rot="MR270"/>
 <instance part="R2.07" gate="G$1" x="187.96" y="144.78" rot="MR0"/>
 <instance part="GND14" gate="1" x="132.08" y="99.06" rot="R90"/>
 <instance part="R2.10" gate="G$1" x="132.08" y="76.2" rot="MR90"/>
@@ -24355,7 +24355,7 @@ Trainable Trackcars</text>
 <wire x1="149.86" y1="144.78" x2="160.02" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="144.78" x2="160.02" y2="142.24" width="0.1524" layer="91"/>
 <junction x="149.86" y="144.78"/>
-<pinref part="FB2.01" gate="G$1" pin="1"/>
+<pinref part="L2.02" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="144.78" x2="160.02" y2="144.78" width="0.1524" layer="91"/>
 <junction x="160.02" y="144.78"/>
 </segment>
@@ -24408,7 +24408,7 @@ Trainable Trackcars</text>
 </net>
 <net name="N$16" class="0">
 <segment>
-<pinref part="FB2.01" gate="G$1" pin="2"/>
+<pinref part="L2.02" gate="G$1" pin="2"/>
 <pinref part="R2.07" gate="G$1" pin="2"/>
 <wire x1="180.34" y1="144.78" x2="182.88" y2="144.78" width="0.1524" layer="91"/>
 </segment>
