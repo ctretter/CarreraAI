@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -16253,6 +16253,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="SJ19" library="jumper" deviceset="SJ2W" device=""/>
 <part name="+3V10" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
+<part name="R9.16" library="rcl" deviceset="R-EU_" device="R0805" value="10kR"/>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
+<part name="R9.17" library="rcl" deviceset="R-EU_" device="R0805" value="10kR"/>
+<part name="GND14" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16498,6 +16502,10 @@ Odometry Unit (w/ Proto-Area)</text>
 <instance part="SJ19" gate="G$1" x="92.71" y="66.04" rot="R90"/>
 <instance part="+3V10" gate="G$1" x="87.63" y="72.39"/>
 <instance part="P+3" gate="1" x="97.79" y="72.39" rot="MR0"/>
+<instance part="R9.16" gate="G$1" x="217.17" y="54.61" rot="MR270"/>
+<instance part="GND13" gate="1" x="217.17" y="44.45"/>
+<instance part="R9.17" gate="G$1" x="180.34" y="54.61" rot="MR270"/>
+<instance part="GND14" gate="1" x="180.34" y="44.45"/>
 </instances>
 <busses>
 </busses>
@@ -16693,6 +16701,16 @@ Odometry Unit (w/ Proto-Area)</text>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="85.09" y1="39.37" x2="85.09" y2="43.18" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R9.16" gate="G$1" pin="2"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+<wire x1="217.17" y1="46.99" x2="217.17" y2="49.53" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R9.17" gate="G$1" pin="2"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+<wire x1="180.34" y1="46.99" x2="180.34" y2="49.53" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="MOSI" class="0">
 <segment>
@@ -16787,6 +16805,9 @@ Odometry Unit (w/ Proto-Area)</text>
 <wire x1="182.88" y1="76.2" x2="180.34" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="76.2" x2="180.34" y2="85.09" width="0.1524" layer="91"/>
 <pinref part="U9.02" gate="A" pin="G"/>
+<pinref part="R9.17" gate="G$1" pin="1"/>
+<wire x1="180.34" y1="59.69" x2="180.34" y2="76.2" width="0.1524" layer="91"/>
+<junction x="180.34" y="76.2"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -17293,6 +17314,9 @@ Odometry Unit (w/ Proto-Area)</text>
 <wire x1="219.71" y1="66.04" x2="217.17" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="217.17" y1="66.04" x2="217.17" y2="76.2" width="0.1524" layer="91"/>
 <junction x="217.17" y="76.2"/>
+<pinref part="R9.16" gate="G$1" pin="1"/>
+<wire x1="217.17" y1="59.69" x2="217.17" y2="66.04" width="0.1524" layer="91"/>
+<junction x="217.17" y="66.04"/>
 </segment>
 </net>
 <net name="N$185" class="0">
