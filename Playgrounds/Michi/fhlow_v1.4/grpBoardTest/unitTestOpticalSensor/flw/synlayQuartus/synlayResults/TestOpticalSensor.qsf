@@ -67,6 +67,34 @@ set_location_assignment PIN_A14 -to iMISO
 set_location_assignment PIN_A15 -to oMOSI
 set_location_assignment PIN_A16 -to oSysClk
 set_location_assignment PIN_A17 -to oSelect
+set_location_assignment PIN_J2 -to oHEX1[0]
+set_location_assignment PIN_J1 -to oHEX1[1]
+set_location_assignment PIN_H2 -to oHEX1[2]
+set_location_assignment PIN_H1 -to oHEX1[3]
+set_location_assignment PIN_F2 -to oHEX1[4]
+set_location_assignment PIN_F1 -to oHEX1[5]
+set_location_assignment PIN_E2 -to oHEX1[6]
+set_location_assignment PIN_E1 -to oHEX2[0]
+set_location_assignment PIN_H6 -to oHEX2[1]
+set_location_assignment PIN_H5 -to oHEX2[2]
+set_location_assignment PIN_H4 -to oHEX2[3]
+set_location_assignment PIN_G3 -to oHEX2[4]
+set_location_assignment PIN_D2 -to oHEX2[5]
+set_location_assignment PIN_D1 -to oHEX2[6]
+set_location_assignment PIN_G5 -to oHEX3[0]
+set_location_assignment PIN_G6 -to oHEX3[1]
+set_location_assignment PIN_C2 -to oHEX3[2]
+set_location_assignment PIN_C1 -to oHEX3[3]
+set_location_assignment PIN_E3 -to oHEX3[4]
+set_location_assignment PIN_E4 -to oHEX3[5]
+set_location_assignment PIN_D3 -to oHEX3[6]
+set_location_assignment PIN_F4 -to oHEX4[0]
+set_location_assignment PIN_D5 -to oHEX4[1]
+set_location_assignment PIN_D6 -to oHEX4[2]
+set_location_assignment PIN_J4 -to oHEX4[3]
+set_location_assignment PIN_L8 -to oHEX4[4]
+set_location_assignment PIN_F3 -to oHEX4[5]
+set_location_assignment PIN_D4 -to oHEX4[6]
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name OUTPUT_PIN_LOAD 10 -section_id "3.3-V PCI"
 set_global_assignment -name OUTPUT_PIN_LOAD 10 -section_id "3.3-V PCI-X"
@@ -74,4 +102,5 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
 set_global_assignment -name OUTPUT_PIN_LOAD 100 -section_id "3.3-V LVTTL"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
