@@ -50,8 +50,7 @@ set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_
 set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpBoardTest/unitTestOpticalSensor/src/TestOpticalSensor-Rtl-a.vhd"
 set_global_assignment -name TOP_LEVEL_ENTITY TestOpticalSensor
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
-set_global_assignment -name OUTPUT_PIN_LOAD 50 -section_id "3.3-V LVTTL"
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
 set_global_assignment -name EDA_SIMULATION_TOOL "MODELSIM (VHDL OUTPUT FROM QUARTUS II)"
 set_global_assignment -name FMAX_REQUIREMENT "24 MHz"
@@ -68,4 +67,11 @@ set_location_assignment PIN_A14 -to iMISO
 set_location_assignment PIN_A15 -to oMOSI
 set_location_assignment PIN_A16 -to oSysClk
 set_location_assignment PIN_A17 -to oSelect
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name OUTPUT_PIN_LOAD 10 -section_id "3.3-V PCI"
+set_global_assignment -name OUTPUT_PIN_LOAD 10 -section_id "3.3-V PCI-X"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name OUTPUT_PIN_LOAD 100 -section_id "3.3-V LVTTL"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
