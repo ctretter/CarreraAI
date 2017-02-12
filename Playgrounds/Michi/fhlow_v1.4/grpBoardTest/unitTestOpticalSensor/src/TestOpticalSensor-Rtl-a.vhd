@@ -126,7 +126,7 @@ begin
 			oDataValid <= '0';
 		elsif (rising_edge(iClk)) then
 		
-			if(DataValid = '1' and ((oDataX /= "00000000" and oDataX /= "11111111") or (oDataY /= "00000000" and oDataY /= "11111111") or (oMaximumPixel /= "00000000" and oMaximumPixel /= "11111111"))) then
+			if(DataValid = '1' and ((oDataX /= "00000000" and oDataX /= "11111111") or (oDataY /= "00000000" and oDataY /= "11111111"))) then
 				oDataValid <= '1';
 			else 
 				oDataValid <= '0';
