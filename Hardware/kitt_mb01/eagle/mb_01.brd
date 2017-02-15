@@ -481,6 +481,10 @@ Trainable Trackcars</text>
 <text x="50.64125" y="50.32375" size="1.016" layer="26" font="vector" ratio="18" rot="MR90">  2017 ESD</text>
 <text x="50.8" y="50.4825" size="0.8128" layer="26" font="vector" ratio="18" rot="MR90">c</text>
 <circle x="51.1175" y="50.8" radius="0.635" width="0.2032" layer="26"/>
+<wire x1="50.8" y1="42.8625" x2="50.95875" y2="43.02125" width="0.254" layer="26"/>
+<wire x1="50.95875" y1="43.02125" x2="51.59375" y2="43.97375" width="0.254" layer="26" curve="22.619865"/>
+<wire x1="51.59375" y1="43.97375" x2="51.27625" y2="43.815" width="0.254" layer="26"/>
+<wire x1="51.59375" y1="43.97375" x2="51.59375" y2="43.65625" width="0.254" layer="26"/>
 </plain>
 <libraries>
 <library name="rcl">
@@ -6273,7 +6277,7 @@ Bitte nur von autorisierten erfahrenen Nutzern anwenden!!!
 <attribute name="NAME" x="54.13375" y="44.1325" size="0.8128" layer="21" font="vector" ratio="10" rot="R180"/>
 </element>
 <element name="X7.03" library="kitt.con" package="M1X2_MALE_RIGHT_ANGLED_SMD" value="CON_HEADER_1X02" x="51.7525" y="46.6725" smashed="yes" rot="MR270">
-<attribute name="NAME" x="50.01875" y="39.766875" size="0.8128" layer="22" font="vector" ratio="10" rot="MR90"/>
+<attribute name="NAME" x="49.86" y="39.290625" size="0.8128" layer="22" font="vector" ratio="10" rot="MR90"/>
 </element>
 <element name="R7.10" library="rcl" package="R0603" value="330R" x="60.16625" y="46.593125" smashed="yes" rot="MR0">
 <attribute name="NAME" x="58.486875" y="46.116875" size="0.8128" layer="26" font="vector" rot="MR0"/>
