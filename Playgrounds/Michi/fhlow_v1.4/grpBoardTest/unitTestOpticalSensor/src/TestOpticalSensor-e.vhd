@@ -23,6 +23,12 @@ entity TestOpticalSensor is
 		iMISO				: in std_ulogic;
 		oSelect 			: out std_ulogic;
 		oSysClk				: out std_ulogic;
-		oMOSI				: out std_ulogic
+		oMOSI				: out std_ulogic;
+		
+		-- seven segment
+		oHEX1				: out std_ulogic_vector (6 downto 0);
+		oHEX2				: out std_ulogic_vector (6 downto 0);
+		oHEX3				: out std_ulogic_vector (6 downto 0);
+		oHEX4				: out std_ulogic_vector (6 downto 0)
     );
 end TestOpticalSensor;

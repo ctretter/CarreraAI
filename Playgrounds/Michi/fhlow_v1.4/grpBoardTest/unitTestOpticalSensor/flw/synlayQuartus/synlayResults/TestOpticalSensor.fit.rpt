@@ -1,5 +1,5 @@
 Fitter report for TestOpticalSensor
-Sun Feb 12 01:53:57 2017
+Sun Feb 12 16:32:11 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -62,18 +62,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Feb 12 01:53:57 2017           ;
+; Fitter Status                      ; Successful - Sun Feb 12 16:32:11 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; TestOpticalSensor                               ;
 ; Top-level Entity Name              ; TestOpticalSensor                               ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 347 / 18,752 ( 2 % )                            ;
-;     Total combinational functions  ; 347 / 18,752 ( 2 % )                            ;
-;     Dedicated logic registers      ; 145 / 18,752 ( < 1 % )                          ;
-; Total registers                    ; 145                                             ;
-; Total pins                         ; 7 / 315 ( 2 % )                                 ;
+; Total logic elements               ; 375 / 18,752 ( 2 % )                            ;
+;     Total combinational functions  ; 375 / 18,752 ( 2 % )                            ;
+;     Dedicated logic registers      ; 173 / 18,752 ( < 1 % )                          ;
+; Total registers                    ; 173                                             ;
+; Total pins                         ; 35 / 315 ( 11 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                  ;
@@ -149,8 +149,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 504 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 504 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 588 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 588 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -173,7 +173,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 501     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 585     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -189,28 +189,28 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 347 / 18,752 ( 2 % )   ;
+; Total logic elements                        ; 375 / 18,752 ( 2 % )   ;
 ;     -- Combinational with no register       ; 202                    ;
 ;     -- Register only                        ; 0                      ;
-;     -- Combinational with a register        ; 145                    ;
+;     -- Combinational with a register        ; 173                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 132                    ;
+;     -- 4 input functions                    ; 160                    ;
 ;     -- 3 input functions                    ; 30                     ;
 ;     -- <=2 input functions                  ; 185                    ;
 ;     -- Register only                        ; 0                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 249                    ;
+;     -- normal mode                          ; 277                    ;
 ;     -- arithmetic mode                      ; 98                     ;
 ;                                             ;                        ;
-; Total registers*                            ; 145 / 19,649 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 145 / 18,752 ( < 1 % ) ;
+; Total registers*                            ; 173 / 19,649 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 173 / 18,752 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )        ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 24 / 1,172 ( 2 % )     ;
+; Total LABs:  partially or completely used   ; 26 / 1,172 ( 2 % )     ;
 ; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 7 / 315 ( 2 % )        ;
+; I/O pins                                    ; 35 / 315 ( 11 % )      ;
 ;     -- Clock pins                           ; 2 / 8 ( 25 % )         ;
 ;                                             ;                        ;
 ; Global signals                              ; 2                      ;
@@ -224,11 +224,11 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 2% / 1% / 2%           ;
-; Maximum fan-out                             ; 145                    ;
+; Peak interconnect usage (total/H/V)         ; 1% / 1% / 0%           ;
+; Maximum fan-out                             ; 173                    ;
 ; Highest non-global fan-out                  ; 57                     ;
-; Total fan-out                               ; 1549                   ;
-; Average fan-out                             ; 3.07                   ;
+; Total fan-out                               ; 1773                   ;
+; Average fan-out                             ; 3.02                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -241,28 +241,28 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 347 / 18752 ( 2 % )   ; 0 / 18752 ( 0 % )              ;
+; Total logic elements                        ; 375 / 18752 ( 2 % )   ; 0 / 18752 ( 0 % )              ;
 ;     -- Combinational with no register       ; 202                   ; 0                              ;
 ;     -- Register only                        ; 0                     ; 0                              ;
-;     -- Combinational with a register        ; 145                   ; 0                              ;
+;     -- Combinational with a register        ; 173                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 132                   ; 0                              ;
+;     -- 4 input functions                    ; 160                   ; 0                              ;
 ;     -- 3 input functions                    ; 30                    ; 0                              ;
 ;     -- <=2 input functions                  ; 185                   ; 0                              ;
 ;     -- Register only                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 249                   ; 0                              ;
+;     -- normal mode                          ; 277                   ; 0                              ;
 ;     -- arithmetic mode                      ; 98                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 145                   ; 0                              ;
-;     -- Dedicated logic registers            ; 145 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
+; Total registers                             ; 173                   ; 0                              ;
+;     -- Dedicated logic registers            ; 173 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 24 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 26 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 7                     ; 0                              ;
+; I/O pins                                    ; 35                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )        ; 0 / 52 ( 0 % )                 ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
@@ -275,8 +275,8 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 1549                  ; 0                              ;
-;     -- Registered Connections               ; 539                   ; 0                              ;
+;     -- Total Connections                    ; 1773                  ; 0                              ;
+;     -- Registered Connections               ; 679                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -284,7 +284,7 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 3                     ; 0                              ;
-;     -- Output Ports                         ; 4                     ; 0                              ;
+;     -- Output Ports                         ; 32                    ; 0                              ;
 ;     -- Bidir Ports                          ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -320,26 +320,54 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; Name       ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load   ; Output Enable Source ; Output Enable Group ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+--------+----------------------+---------------------+
 ; oDataValid ; U22   ; 6        ; 50           ; 7            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX1[0]   ; J2    ; 2        ; 0            ; 18           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX1[1]   ; J1    ; 2        ; 0            ; 18           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX1[2]   ; H2    ; 2        ; 0            ; 19           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX1[3]   ; H1    ; 2        ; 0            ; 19           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX1[4]   ; F2    ; 2        ; 0            ; 20           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX1[5]   ; F1    ; 2        ; 0            ; 20           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX1[6]   ; E2    ; 2        ; 0            ; 20           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX2[0]   ; E1    ; 2        ; 0            ; 20           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX2[1]   ; H6    ; 2        ; 0            ; 21           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX2[2]   ; H5    ; 2        ; 0            ; 21           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX2[3]   ; H4    ; 2        ; 0            ; 21           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX2[4]   ; G3    ; 2        ; 0            ; 21           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX2[5]   ; D2    ; 2        ; 0            ; 22           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX2[6]   ; D1    ; 2        ; 0            ; 22           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX3[0]   ; G5    ; 2        ; 0            ; 22           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX3[1]   ; G6    ; 2        ; 0            ; 23           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX3[2]   ; C2    ; 2        ; 0            ; 23           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX3[3]   ; C1    ; 2        ; 0            ; 23           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX3[4]   ; E3    ; 2        ; 0            ; 24           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX3[5]   ; E4    ; 2        ; 0            ; 24           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX3[6]   ; D3    ; 2        ; 0            ; 25           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX4[0]   ; F4    ; 2        ; 0            ; 23           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX4[1]   ; D5    ; 2        ; 0            ; 24           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX4[2]   ; D6    ; 2        ; 0            ; 24           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX4[3]   ; J4    ; 2        ; 0            ; 18           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX4[4]   ; L8    ; 2        ; 0            ; 19           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX4[5]   ; F3    ; 2        ; 0            ; 22           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
+; oHEX4[6]   ; D4    ; 2        ; 0            ; 25           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
 ; oMOSI      ; A15   ; 4        ; 33           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
 ; oSelect    ; A17   ; 4        ; 37           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
 ; oSysClk    ; A16   ; 4        ; 33           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 100 pF ; -                    ; -                   ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+--------+----------------------+---------------------+
 
 
-+-----------------------------------------------------------+
-; I/O Bank Usage                                            ;
-+----------+-----------------+---------------+--------------+
-; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
-+----------+-----------------+---------------+--------------+
-; 1        ; 0 / 41 ( 0 % )  ; 3.3V          ; --           ;
-; 2        ; 2 / 33 ( 6 % )  ; 3.3V          ; --           ;
-; 3        ; 0 / 43 ( 0 % )  ; 3.3V          ; --           ;
-; 4        ; 5 / 40 ( 13 % ) ; 3.3V          ; --           ;
-; 5        ; 1 / 39 ( 3 % )  ; 3.3V          ; --           ;
-; 6        ; 2 / 36 ( 6 % )  ; 3.3V          ; --           ;
-; 7        ; 0 / 40 ( 0 % )  ; 3.3V          ; --           ;
-; 8        ; 0 / 43 ( 0 % )  ; 3.3V          ; --           ;
-+----------+-----------------+---------------+--------------+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 0 / 41 ( 0 % )   ; 3.3V          ; --           ;
+; 2        ; 30 / 33 ( 91 % ) ; 3.3V          ; --           ;
+; 3        ; 0 / 43 ( 0 % )   ; 3.3V          ; --           ;
+; 4        ; 5 / 40 ( 13 % )  ; 3.3V          ; --           ;
+; 5        ; 1 / 39 ( 3 % )   ; 3.3V          ; --           ;
+; 6        ; 2 / 36 ( 6 % )   ; 3.3V          ; --           ;
+; 7        ; 0 / 40 ( 0 % )   ; 3.3V          ; --           ;
+; 8        ; 0 / 43 ( 0 % )   ; 3.3V          ; --           ;
++----------+------------------+---------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -435,8 +463,8 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; B20      ; 246        ; 4        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B21      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; C1       ; 8          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; C2       ; 9          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; C1       ; 8          ; 2        ; oHEX3[3]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; C2       ; 9          ; 2        ; oHEX3[2]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; C3       ; 1          ; 2        ; ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
 ; C4       ; 0          ; 2        ; ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
 ; C5       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -457,12 +485,12 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; C20      ; 239        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C21      ; 236        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C22      ; 237        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D1       ; 14         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D2       ; 15         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D3       ; 2          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D4       ; 3          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D5       ; 4          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D6       ; 5          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; D1       ; 14         ; 2        ; oHEX2[6]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; D2       ; 15         ; 2        ; oHEX2[5]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; D3       ; 2          ; 2        ; oHEX3[6]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; D4       ; 3          ; 2        ; oHEX4[6]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; D5       ; 4          ; 2        ; oHEX4[1]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; D6       ; 5          ; 2        ; oHEX4[2]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; D7       ; 311        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D8       ; 309        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D9       ; 302        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -479,10 +507,10 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; D20      ; 241        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D21      ; 229        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D22      ; 230        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; E1       ; 20         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; E2       ; 21         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; E3       ; 6          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; E4       ; 7          ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; E1       ; 20         ; 2        ; oHEX2[0]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; E2       ; 21         ; 2        ; oHEX1[6]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; E3       ; 6          ; 2        ; oHEX3[4]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; E4       ; 7          ; 2        ; oHEX3[5]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; E5       ;            ;          ; VCCD_PLL3                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; E6       ;            ;          ; VCCA_PLL3                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; E7       ; 316        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -501,10 +529,10 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; E20      ; 234        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E21      ; 227        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E22      ; 228        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F1       ; 22         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F2       ; 23         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F3       ; 13         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F4       ; 10         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; F1       ; 22         ; 2        ; oHEX1[5]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; F2       ; 23         ; 2        ; oHEX1[4]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; F3       ; 13         ; 2        ; oHEX4[5]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; F4       ; 10         ; 2        ; oHEX4[0]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; F5       ;            ;          ; GND_PLL3                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F6       ;            ;          ; GND_PLL3                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F7       ;            ;          ; GNDA_PLL3                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -525,10 +553,10 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; F22      ; 224        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G1       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; G2       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; G3       ; 16         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G3       ; 16         ; 2        ; oHEX2[4]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; G4       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; G5       ; 12         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G6       ; 11         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G5       ; 12         ; 2        ; oHEX3[0]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; G6       ; 11         ; 2        ; oHEX3[1]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; G7       ; 317        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G8       ; 313        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G9       ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -545,12 +573,12 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; G20      ; 233        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; G21      ; 221        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G22      ; 222        ; 5        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H1       ; 24         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H2       ; 25         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H1       ; 24         ; 2        ; oHEX1[3]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; H2       ; 25         ; 2        ; oHEX1[2]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H3       ; 27         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; H4       ; 17         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H5       ; 18         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H6       ; 19         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H4       ; 17         ; 2        ; oHEX2[3]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; H5       ; 18         ; 2        ; oHEX2[2]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; H6       ; 19         ; 2        ; oHEX2[1]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H7       ; 318        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H8       ; 314        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H9       ; 300        ; 3        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -567,10 +595,10 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; H20      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H21      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; H22      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; J1       ; 29         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J2       ; 30         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; J1       ; 29         ; 2        ; oHEX1[1]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J2       ; 30         ; 2        ; oHEX1[0]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J3       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; J4       ; 28         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; J4       ; 28         ; 2        ; oHEX4[3]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J5       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; J6       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; J7       ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -618,7 +646,7 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; L5       ; 34         ; 2        ; #TDO                                     ; output ;              ;         ; --         ;                 ; --       ; --           ;
 ; L6       ; 35         ; 2        ; ^DCLK                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; L7       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; L8       ; 26         ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L8       ; 26         ; 2        ; oHEX4[4]                                 ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L9       ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; L10      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L11      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -877,7 +905,7 @@ Note: User assignments will override these defaults. The user specified values a
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                              ; Library Name ;
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------+--------------+
-; |TestOpticalSensor                 ; 347 (7)     ; 145 (1)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 7    ; 0            ; 202 (6)      ; 0 (0)             ; 145 (1)          ; |TestOpticalSensor                               ; work         ;
+; |TestOpticalSensor                 ; 375 (35)    ; 173 (29)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 35   ; 0            ; 202 (6)      ; 0 (0)             ; 173 (29)         ; |TestOpticalSensor                               ; work         ;
 ;    |OpticalSensorCommunicator:uut| ; 330 (330)   ; 137 (137)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 193 (193)    ; 0 (0)             ; 137 (137)        ; |TestOpticalSensor|OpticalSensorCommunicator:uut ; work         ;
 ;    |StrobeGen:GenerateStrobe|      ; 10 (10)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 7 (7)            ; |TestOpticalSensor|StrobeGen:GenerateStrobe      ; work         ;
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------+--------------+
@@ -893,6 +921,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; oSelect      ; Output   ; --            ; --            ; --                    ; --  ;
 ; oSysClk      ; Output   ; --            ; --            ; --                    ; --  ;
 ; oMOSI        ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX1[0]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX1[1]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX1[2]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX1[3]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX1[4]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX1[5]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX1[6]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX2[0]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX2[1]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX2[2]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX2[3]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX2[4]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX2[5]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX2[6]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX3[0]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX3[1]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX3[2]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX3[3]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX3[4]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX3[5]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX3[6]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX4[0]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX4[1]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX4[2]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX4[3]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX4[4]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX4[5]     ; Output   ; --            ; --            ; --                    ; --  ;
+; oHEX4[6]     ; Output   ; --            ; --            ; --                    ; --  ;
 ; iClk         ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; inResetAsync ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; iMISO        ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
@@ -931,14 +987,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                      ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; OpticalSensorCommunicator:uut|CntWaitCycles[30]~1         ; LCCOMB_X33_Y15_N28 ; 31      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[0]~5        ; LCCOMB_X38_Y18_N28 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[26]~3       ; LCCOMB_X38_Y17_N22 ; 29      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; LCFF_X37_Y17_N17   ; 57      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~3       ; LCCOMB_X35_Y17_N22 ; 31      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; iClk                                                      ; PIN_B12            ; 145     ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; OpticalSensorCommunicator:uut|CntWaitCycles[30]~1         ; LCCOMB_X42_Y15_N22 ; 31      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[0]~5        ; LCCOMB_X25_Y15_N30 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[26]~3       ; LCCOMB_X26_Y15_N14 ; 29      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; LCFF_X26_Y15_N11   ; 57      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~3       ; LCCOMB_X24_Y15_N6  ; 31      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; iClk                                                      ; PIN_B12            ; 173     ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
 ; inResetAsync                                              ; PIN_L22            ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; inResetAsync                                              ; PIN_L22            ; 129     ; Async. clear ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; inResetAsync                                              ; PIN_L22            ; 157     ; Async. clear ; yes    ; Global Clock         ; GCLK6            ; --                        ;
 +-----------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -947,8 +1003,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+----------+---------+----------------------+------------------+---------------------------+
 ; Name         ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------+----------+---------+----------------------+------------------+---------------------------+
-; iClk         ; PIN_B12  ; 145     ; Global Clock         ; GCLK10           ; --                        ;
-; inResetAsync ; PIN_L22  ; 129     ; Global Clock         ; GCLK6            ; --                        ;
+; iClk         ; PIN_B12  ; 173     ; Global Clock         ; GCLK10           ; --                        ;
+; inResetAsync ; PIN_L22  ; 157     ; Global Clock         ; GCLK6            ; --                        ;
 +--------------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -975,8 +1031,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]          ; 12      ;
 ; OpticalSensorCommunicator:uut|State.SetBurstRegister      ; 12      ;
 ; StrobeGen:GenerateStrobe|oStrobe                          ; 10      ;
+; OpticalSensorCommunicator:uut|oDataY[5]                   ; 10      ;
+; OpticalSensorCommunicator:uut|oDataY[6]                   ; 10      ;
+; OpticalSensorCommunicator:uut|oDataX[5]                   ; 10      ;
+; OpticalSensorCommunicator:uut|oDataX[6]                   ; 10      ;
 ; OpticalSensorCommunicator:uut|Decoder0~2                  ; 9       ;
 ; OpticalSensorCommunicator:uut|Decoder0~1                  ; 9       ;
+; OpticalSensorCommunicator:uut|oDataY[1]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataY[2]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataY[0]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataY[3]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataY[4]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataY[7]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataX[1]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataX[2]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataX[0]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataX[3]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataX[4]                   ; 9       ;
+; OpticalSensorCommunicator:uut|oDataX[7]                   ; 9       ;
 ; OpticalSensorCommunicator:uut|SysClk                      ; 6       ;
 ; OpticalSensorCommunicator:uut|Sel                         ; 6       ;
 ; OpticalSensorCommunicator:uut|Selector103~0               ; 5       ;
@@ -1008,14 +1080,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|CntWaitCycles[6]            ; 3       ;
 ; OpticalSensorCommunicator:uut|Selector1~0                 ; 3       ;
 ; OpticalSensorCommunicator:uut|RegAndClockGen~9            ; 3       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[3]         ; 3       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[4]         ; 3       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[5]         ; 3       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[6]         ; 3       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]          ; 3       ;
 ; OpticalSensorCommunicator:uut|Decoder0~0                  ; 3       ;
-; OpticalSensorCommunicator:uut|oDataY[5]                   ; 3       ;
-; OpticalSensorCommunicator:uut|oDataY[6]                   ; 3       ;
-; OpticalSensorCommunicator:uut|oDataX[5]                   ; 3       ;
-; OpticalSensorCommunicator:uut|oDataX[6]                   ; 3       ;
 ; OpticalSensorCommunicator:uut|Decoder0~17                 ; 2       ;
 ; OpticalSensorCommunicator:uut|Decoder0~9                  ; 2       ;
 ; OpticalSensorCommunicator:uut|Decoder0~7                  ; 2       ;
@@ -1085,8 +1153,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Selector2~1                 ; 2       ;
 ; OpticalSensorCommunicator:uut|SysClkGenCounter[1]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[5]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[6]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[3]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[4]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]         ; 2       ;
@@ -1145,18 +1213,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|MasterOutput                ; 2       ;
 ; OpticalSensorCommunicator:uut|Add1~4                      ; 2       ;
 ; OpticalSensorCommunicator:uut|Add1~0                      ; 2       ;
-; OpticalSensorCommunicator:uut|oDataY[1]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataY[2]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataY[0]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataY[3]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataY[4]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataY[7]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataX[1]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataX[2]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataX[0]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataX[3]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataX[4]                   ; 2       ;
-; OpticalSensorCommunicator:uut|oDataX[7]                   ; 2       ;
 ; OpticalSensorCommunicator:uut|State.Init~feeder           ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector30~2                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector29~2                ; 1       ;
@@ -1261,8 +1317,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Selector3~0                 ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector100~0               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector99~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector96~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector95~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector98~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector97~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector94~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector93~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector92~0                ; 1       ;
@@ -1292,9 +1348,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Selector101~1               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector101~0               ; 1       ;
 ; OpticalSensorCommunicator:uut|RegAndClockGen~10           ; 1       ;
-; OpticalSensorCommunicator:uut|Selector98~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector96~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~2       ; 1       ;
-; OpticalSensorCommunicator:uut|Selector97~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector95~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector32~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector31~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector1~7                 ; 1       ;
@@ -1317,6 +1373,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Selector114~0               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector113~0               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector104~0               ; 1       ;
+; Mux21~0                                                   ; 1       ;
+; Mux22~0                                                   ; 1       ;
+; Mux23~0                                                   ; 1       ;
+; Mux24~0                                                   ; 1       ;
+; Mux25~0                                                   ; 1       ;
+; Mux26~0                                                   ; 1       ;
+; Mux27~0                                                   ; 1       ;
+; Mux14~0                                                   ; 1       ;
+; Mux15~0                                                   ; 1       ;
+; Mux16~0                                                   ; 1       ;
+; Mux17~0                                                   ; 1       ;
+; Mux18~0                                                   ; 1       ;
+; Mux19~0                                                   ; 1       ;
+; Mux20~0                                                   ; 1       ;
+; Mux7~0                                                    ; 1       ;
+; Mux8~0                                                    ; 1       ;
+; Mux9~0                                                    ; 1       ;
+; Mux10~0                                                   ; 1       ;
+; Mux11~0                                                   ; 1       ;
+; Mux12~0                                                   ; 1       ;
+; Mux13~0                                                   ; 1       ;
+; Mux0~0                                                    ; 1       ;
+; Mux1~0                                                    ; 1       ;
+; Mux2~0                                                    ; 1       ;
+; Mux3~0                                                    ; 1       ;
+; Mux4~0                                                    ; 1       ;
+; Mux5~0                                                    ; 1       ;
+; Mux6~0                                                    ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector102~1               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector102~0               ; 1       ;
 ; OpticalSensorCommunicator:uut|MasterOutput~10             ; 1       ;
@@ -1350,6 +1434,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CheckValidData~2                                          ; 1       ;
 ; CheckValidData~1                                          ; 1       ;
 ; CheckValidData~0                                          ; 1       ;
+; oHEX4[6]~reg0                                             ; 1       ;
+; oHEX4[5]~reg0                                             ; 1       ;
+; oHEX4[4]~reg0                                             ; 1       ;
+; oHEX4[3]~reg0                                             ; 1       ;
+; oHEX4[2]~reg0                                             ; 1       ;
+; oHEX4[1]~reg0                                             ; 1       ;
+; oHEX4[0]~reg0                                             ; 1       ;
+; oHEX3[6]~reg0                                             ; 1       ;
+; oHEX3[5]~reg0                                             ; 1       ;
+; oHEX3[4]~reg0                                             ; 1       ;
+; oHEX3[3]~reg0                                             ; 1       ;
+; oHEX3[2]~reg0                                             ; 1       ;
+; oHEX3[1]~reg0                                             ; 1       ;
+; oHEX3[0]~reg0                                             ; 1       ;
+; oHEX2[6]~reg0                                             ; 1       ;
+; oHEX2[5]~reg0                                             ; 1       ;
+; oHEX2[4]~reg0                                             ; 1       ;
+; oHEX2[3]~reg0                                             ; 1       ;
+; oHEX2[2]~reg0                                             ; 1       ;
+; oHEX2[1]~reg0                                             ; 1       ;
+; oHEX2[0]~reg0                                             ; 1       ;
+; oHEX1[6]~reg0                                             ; 1       ;
+; oHEX1[5]~reg0                                             ; 1       ;
+; oHEX1[4]~reg0                                             ; 1       ;
+; oHEX1[3]~reg0                                             ; 1       ;
+; oHEX1[2]~reg0                                             ; 1       ;
+; oHEX1[1]~reg0                                             ; 1       ;
+; oHEX1[0]~reg0                                             ; 1       ;
 ; oDataValid~reg0                                           ; 1       ;
 ; StrobeGen:GenerateStrobe|Add0~10                          ; 1       ;
 ; StrobeGen:GenerateStrobe|Add0~9                           ; 1       ;
@@ -1557,58 +1669,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 398 / 54,004 ( < 1 % ) ;
-; C16 interconnects           ; 1 / 2,100 ( < 1 % )    ;
-; C4 interconnects            ; 156 / 36,000 ( < 1 % ) ;
-; Direct links                ; 142 / 54,004 ( < 1 % ) ;
+; Block interconnects         ; 414 / 54,004 ( < 1 % ) ;
+; C16 interconnects           ; 7 / 2,100 ( < 1 % )    ;
+; C4 interconnects            ; 144 / 36,000 ( < 1 % ) ;
+; Direct links                ; 160 / 54,004 ( < 1 % ) ;
 ; Global clocks               ; 2 / 16 ( 13 % )        ;
 ; Local interconnects         ; 167 / 18,752 ( < 1 % ) ;
-; R24 interconnects           ; 2 / 1,900 ( < 1 % )    ;
-; R4 interconnects            ; 148 / 46,920 ( < 1 % ) ;
+; R24 interconnects           ; 17 / 1,900 ( < 1 % )   ;
+; R4 interconnects            ; 238 / 46,920 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 14.46) ; Number of LABs  (Total = 24) ;
+; Number of Logic Elements  (Average = 14.42) ; Number of LABs  (Total = 26) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 0                            ;
 ; 2                                           ; 0                            ;
 ; 3                                           ; 0                            ;
-; 4                                           ; 1                            ;
-; 5                                           ; 0                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 1                            ;
+; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
 ; 10                                          ; 1                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 2                            ;
-; 13                                          ; 0                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 2                            ;
-; 16                                          ; 17                           ;
+; 11                                          ; 1                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 3                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 4                            ;
+; 16                                          ; 14                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.08) ; Number of LABs  (Total = 24) ;
+; LAB-wide Signals  (Average = 2.27) ; Number of LABs  (Total = 26) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 17                           ;
-; 1 Clock                            ; 18                           ;
-; 1 Clock enable                     ; 11                           ;
-; 1 Sync. load                       ; 3                            ;
-; 2 Clock enables                    ; 1                            ;
+; 1 Async. clear                     ; 20                           ;
+; 1 Clock                            ; 20                           ;
+; 1 Clock enable                     ; 14                           ;
+; 1 Sync. load                       ; 5                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 20.50) ; Number of LABs  (Total = 24) ;
+; Number of Signals Sourced  (Average = 21.08) ; Number of LABs  (Total = 26) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
@@ -1617,9 +1728,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
+; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 0                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 1                            ;
 ; 12                                           ; 0                            ;
@@ -1627,18 +1738,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 6                            ;
-; 17                                           ; 2                            ;
+; 17                                           ; 0                            ;
 ; 18                                           ; 1                            ;
-; 19                                           ; 2                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 0                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 2                            ;
 ; 22                                           ; 2                            ;
-; 23                                           ; 0                            ;
+; 23                                           ; 1                            ;
 ; 24                                           ; 1                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 5                            ;
+; 25                                           ; 2                            ;
+; 26                                           ; 2                            ;
+; 27                                           ; 2                            ;
+; 28                                           ; 2                            ;
 ; 29                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
@@ -1646,58 +1757,56 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +--------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 11.33) ; Number of LABs  (Total = 24) ;
+; Number of Signals Sourced Out  (Average = 11.50) ; Number of LABs  (Total = 26) ;
 +--------------------------------------------------+------------------------------+
 ; 0                                                ; 0                            ;
-; 1                                                ; 1                            ;
-; 2                                                ; 3                            ;
-; 3                                                ; 0                            ;
+; 1                                                ; 0                            ;
+; 2                                                ; 0                            ;
+; 3                                                ; 1                            ;
 ; 4                                                ; 0                            ;
-; 5                                                ; 0                            ;
+; 5                                                ; 1                            ;
 ; 6                                                ; 1                            ;
-; 7                                                ; 1                            ;
-; 8                                                ; 2                            ;
-; 9                                                ; 0                            ;
-; 10                                               ; 0                            ;
-; 11                                               ; 1                            ;
-; 12                                               ; 1                            ;
-; 13                                               ; 3                            ;
-; 14                                               ; 1                            ;
-; 15                                               ; 0                            ;
-; 16                                               ; 10                           ;
+; 7                                                ; 0                            ;
+; 8                                                ; 3                            ;
+; 9                                                ; 3                            ;
+; 10                                               ; 2                            ;
+; 11                                               ; 2                            ;
+; 12                                               ; 2                            ;
+; 13                                               ; 2                            ;
+; 14                                               ; 0                            ;
+; 15                                               ; 2                            ;
+; 16                                               ; 7                            ;
 +--------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 16.54) ; Number of LABs  (Total = 24) ;
+; Number of Distinct Inputs  (Average = 15.19) ; Number of LABs  (Total = 26) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
+; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 1                            ;
-; 9                                            ; 1                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 9                                            ; 2                            ;
+; 10                                           ; 2                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
+; 13                                           ; 3                            ;
 ; 14                                           ; 1                            ;
-; 15                                           ; 0                            ;
+; 15                                           ; 2                            ;
 ; 16                                           ; 4                            ;
-; 17                                           ; 4                            ;
-; 18                                           ; 3                            ;
-; 19                                           ; 3                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 1                            ;
+; 17                                           ; 6                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 0                            ;
 ; 22                                           ; 1                            ;
-; 23                                           ; 1                            ;
-; 24                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1772,7 +1881,7 @@ Info (176353): Automatically promoted node inResetAsync (placed in PIN L22 (CLK4
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1780,22 +1889,22 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X25_Y14 to location X37_Y27
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X0_Y14 to location X11_Y27
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.19 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.23 seconds.
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 634 megabytes
-    Info: Processing ended: Sun Feb 12 01:53:57 2017
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Sun Feb 12 16:32:11 2017
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:05
 
 

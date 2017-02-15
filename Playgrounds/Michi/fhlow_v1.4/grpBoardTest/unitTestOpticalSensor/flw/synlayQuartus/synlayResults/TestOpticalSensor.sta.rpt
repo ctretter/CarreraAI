@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for TestOpticalSensor
-Sun Feb 12 01:54:03 2017
+Sun Feb 12 16:32:17 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -98,7 +98,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                          ; Status ; Read at                  ;
 +--------------------------------------------------------+--------+--------------------------+
-; ../../../../../flw/synlayQuartus/TimingConstraints.tcl ; OK     ; Sun Feb 12 01:54:03 2017 ;
+; ../../../../../flw/synlayQuartus/TimingConstraints.tcl ; OK     ; Sun Feb 12 16:32:17 2017 ;
 +--------------------------------------------------------+--------+--------------------------+
 
 
@@ -111,13 +111,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
 
 
-+--------------------------------------------------+
-; Slow Model Fmax Summary                          ;
-+------------+-----------------+------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
-+------------+-----------------+------------+------+
-; 124.88 MHz ; 124.88 MHz      ; SYSCLK     ;      ;
-+------------+-----------------+------------+------+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 86.75 MHz ; 86.75 MHz       ; SYSCLK     ;      ;
++-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -126,7 +126,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------+---------------+
 ; Clock  ; Slack  ; End Point TNS ;
 +--------+--------+---------------+
-; SYSCLK ; 31.992 ; 0.000         ;
+; SYSCLK ; 28.473 ; 0.000         ;
 +--------+--------+---------------+
 
 
@@ -160,220 +160,220 @@ No paths to report.
 +--------+--------+----------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'SYSCLK'                                                                                                                                                            ;
-+--------+---------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                                         ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+---------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 31.992 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 8.041      ;
-; 32.052 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.004     ; 7.982      ;
-; 32.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.979      ;
-; 32.072 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.004     ; 7.962      ;
-; 32.073 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.960      ;
-; 32.080 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.953      ;
-; 32.087 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.954      ;
-; 32.087 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.954      ;
-; 32.087 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.954      ;
-; 32.117 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.919      ;
-; 32.122 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 7.913      ;
-; 32.147 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 7.888      ;
-; 32.149 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.892      ;
-; 32.149 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.892      ;
-; 32.149 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.892      ;
-; 32.168 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.868      ;
-; 32.168 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.873      ;
-; 32.168 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.873      ;
-; 32.168 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.873      ;
-; 32.175 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.866      ;
-; 32.175 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.866      ;
-; 32.175 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.866      ;
-; 32.179 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.857      ;
-; 32.187 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.006     ; 7.845      ;
-; 32.194 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.843      ;
-; 32.194 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.843      ;
-; 32.194 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.843      ;
-; 32.198 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.838      ;
-; 32.202 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.004     ; 7.832      ;
-; 32.205 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.831      ;
-; 32.207 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.006     ; 7.825      ;
-; 32.209 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 7.826      ;
-; 32.214 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.823      ;
-; 32.214 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.823      ;
-; 32.214 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.823      ;
-; 32.228 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 7.807      ;
-; 32.235 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 7.800      ;
-; 32.248 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.785      ;
-; 32.251 ; OpticalSensorCommunicator:uut|CntWaitCycles[17]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.004     ; 7.783      ;
-; 32.254 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.007     ; 7.777      ;
-; 32.257 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.776      ;
-; 32.260 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.006      ; 7.784      ;
-; 32.260 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.006      ; 7.784      ;
-; 32.260 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.006      ; 7.784      ;
-; 32.264 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 7.774      ;
-; 32.264 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 7.774      ;
-; 32.264 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 7.774      ;
-; 32.274 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.007     ; 7.757      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[23] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.280 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.753      ;
-; 32.293 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.001      ; 7.746      ;
-; 32.304 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[3]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 7.731      ;
-; 32.317 ; OpticalSensorCommunicator:uut|CntWaitCycles[22]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 7.718      ;
-; 32.320 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 7.718      ;
-; 32.324 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.006     ; 7.708      ;
-; 32.337 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.006     ; 7.695      ;
-; 32.339 ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.697      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[23] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.691      ;
-; 32.343 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[1]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.693      ;
-; 32.343 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[17] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.693      ;
-; 32.343 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[18] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.693      ;
-; 32.343 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[19] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 7.693      ;
-; 32.343 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.698      ;
-; 32.343 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.698      ;
-; 32.343 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 7.698      ;
-; 32.344 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.693      ;
-; 32.344 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.693      ;
-; 32.344 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 7.693      ;
-; 32.349 ; OpticalSensorCommunicator:uut|CntWaitCycles[26]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.004     ; 7.685      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-; 32.361 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 7.672      ;
-+--------+---------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'SYSCLK'                                                                                                                                                             ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 28.473 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 11.549     ;
+; 28.475 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 11.547     ;
+; 28.561 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 11.461     ;
+; 28.563 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 11.459     ;
+; 29.214 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|Sel                  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 10.823     ;
+; 29.256 ; OpticalSensorCommunicator:uut|SlaveClkCounter[0]   ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 10.766     ;
+; 29.258 ; OpticalSensorCommunicator:uut|SlaveClkCounter[0]   ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 10.764     ;
+; 29.302 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|Sel                  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 10.735     ;
+; 29.912 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 10.125     ;
+; 29.941 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 10.081     ;
+; 29.943 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 10.079     ;
+; 29.997 ; OpticalSensorCommunicator:uut|SlaveClkCounter[0]   ; OpticalSensorCommunicator:uut|Sel                  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 10.040     ;
+; 30.000 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 10.037     ;
+; 30.081 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.946      ;
+; 30.101 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.926      ;
+; 30.106 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.930      ;
+; 30.109 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.927      ;
+; 30.110 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[15] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.926      ;
+; 30.110 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[3]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.926      ;
+; 30.139 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.883      ;
+; 30.141 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.881      ;
+; 30.169 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.858      ;
+; 30.194 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.842      ;
+; 30.197 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.839      ;
+; 30.198 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[15] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.838      ;
+; 30.198 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[3]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.838      ;
+; 30.204 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 9.833      ;
+; 30.205 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 9.832      ;
+; 30.206 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 9.831      ;
+; 30.211 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[23] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 9.826      ;
+; 30.274 ; OpticalSensorCommunicator:uut|SysClkGenCounter[12] ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.748      ;
+; 30.276 ; OpticalSensorCommunicator:uut|SysClkGenCounter[12] ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.746      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.746      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[13] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.749      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[14] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.749      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.749      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.749      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[28] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.746      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[29] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.746      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[30] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.746      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[31] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.746      ;
+; 30.287 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.746      ;
+; 30.292 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 9.745      ;
+; 30.293 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 9.744      ;
+; 30.294 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 9.743      ;
+; 30.295 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.741      ;
+; 30.299 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.728      ;
+; 30.299 ; OpticalSensorCommunicator:uut|SlaveClkCounter[20]  ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.723      ;
+; 30.299 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[23] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 9.738      ;
+; 30.301 ; OpticalSensorCommunicator:uut|SlaveClkCounter[20]  ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.721      ;
+; 30.320 ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.702      ;
+; 30.321 ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.015     ; 9.702      ;
+; 30.322 ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.700      ;
+; 30.322 ; OpticalSensorCommunicator:uut|SlaveClkCounter[19]  ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.700      ;
+; 30.323 ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.015     ; 9.700      ;
+; 30.324 ; OpticalSensorCommunicator:uut|SlaveClkCounter[19]  ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.698      ;
+; 30.326 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[35]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.700      ;
+; 30.330 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[33]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.696      ;
+; 30.333 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[38]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.694      ;
+; 30.338 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[42]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.689      ;
+; 30.339 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[46]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.688      ;
+; 30.339 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[36]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.688      ;
+; 30.342 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[44]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.685      ;
+; 30.351 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[38]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.676      ;
+; 30.354 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[35]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.672      ;
+; 30.357 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[34]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.669      ;
+; 30.357 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[36]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.670      ;
+; 30.358 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[39]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.668      ;
+; 30.358 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[33]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.668      ;
+; 30.358 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[42]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.669      ;
+; 30.359 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[46]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.668      ;
+; 30.362 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[45]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.664      ;
+; 30.362 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[44]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.665      ;
+; 30.364 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[37]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.662      ;
+; 30.367 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[47]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.660      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.658      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[13] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.661      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[14] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.661      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.661      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.661      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[28] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.658      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[29] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.658      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[30] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.658      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[31] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.658      ;
+; 30.375 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 9.658      ;
+; 30.380 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[47]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.647      ;
+; 30.383 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 9.653      ;
+; 30.385 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[34]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.641      ;
+; 30.385 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[39]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.641      ;
+; 30.388 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[45]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.638      ;
+; 30.399 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[37]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.627      ;
+; 30.414 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[35]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.612      ;
+; 30.418 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[33]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 9.608      ;
+; 30.421 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[38]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.606      ;
+; 30.426 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[42]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.601      ;
+; 30.427 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[46]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.600      ;
+; 30.427 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[36]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.600      ;
+; 30.430 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[44]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.597      ;
+; 30.434 ; OpticalSensorCommunicator:uut|SysClkGenCounter[12] ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.011     ; 9.593      ;
+; 30.434 ; OpticalSensorCommunicator:uut|SysClkGenCounter[26] ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.016     ; 9.588      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'SYSCLK'                                                                                                                                                                       ;
-+-------+-----------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                                 ; To Node                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.445 ; OpticalSensorCommunicator:uut|Sel                         ; OpticalSensorCommunicator:uut|Sel                     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|State.SetBurstRegister      ; OpticalSensorCommunicator:uut|State.SetBurstRegister  ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|CntWaitCycles[0]            ; OpticalSensorCommunicator:uut|CntWaitCycles[0]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|State.ReadBurstRegister     ; OpticalSensorCommunicator:uut|State.ReadBurstRegister ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[47]            ; OpticalSensorCommunicator:uut|BurstRegData[47]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataX[7]                   ; OpticalSensorCommunicator:uut|oDataX[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[46]            ; OpticalSensorCommunicator:uut|BurstRegData[46]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataX[6]                   ; OpticalSensorCommunicator:uut|oDataX[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[44]            ; OpticalSensorCommunicator:uut|BurstRegData[44]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataX[4]                   ; OpticalSensorCommunicator:uut|oDataX[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[43]            ; OpticalSensorCommunicator:uut|BurstRegData[43]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataX[3]                   ; OpticalSensorCommunicator:uut|oDataX[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[40]            ; OpticalSensorCommunicator:uut|BurstRegData[40]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataX[0]                   ; OpticalSensorCommunicator:uut|oDataX[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[45]            ; OpticalSensorCommunicator:uut|BurstRegData[45]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataX[5]                   ; OpticalSensorCommunicator:uut|oDataX[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[42]            ; OpticalSensorCommunicator:uut|BurstRegData[42]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataX[2]                   ; OpticalSensorCommunicator:uut|oDataX[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[41]            ; OpticalSensorCommunicator:uut|BurstRegData[41]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataX[1]                   ; OpticalSensorCommunicator:uut|oDataX[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[39]            ; OpticalSensorCommunicator:uut|BurstRegData[39]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataY[7]                   ; OpticalSensorCommunicator:uut|oDataY[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[38]            ; OpticalSensorCommunicator:uut|BurstRegData[38]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataY[6]                   ; OpticalSensorCommunicator:uut|oDataY[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[36]            ; OpticalSensorCommunicator:uut|BurstRegData[36]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataY[4]                   ; OpticalSensorCommunicator:uut|oDataY[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[35]            ; OpticalSensorCommunicator:uut|BurstRegData[35]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataY[3]                   ; OpticalSensorCommunicator:uut|oDataY[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[32]            ; OpticalSensorCommunicator:uut|BurstRegData[32]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataY[0]                   ; OpticalSensorCommunicator:uut|oDataY[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[37]            ; OpticalSensorCommunicator:uut|BurstRegData[37]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataY[5]                   ; OpticalSensorCommunicator:uut|oDataY[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[34]            ; OpticalSensorCommunicator:uut|BurstRegData[34]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataY[2]                   ; OpticalSensorCommunicator:uut|oDataY[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[33]            ; OpticalSensorCommunicator:uut|BurstRegData[33]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|oDataY[1]                   ; OpticalSensorCommunicator:uut|oDataY[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|DataValid                   ; OpticalSensorCommunicator:uut|DataValid               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; OpticalSensorCommunicator:uut|MasterOutput                ; OpticalSensorCommunicator:uut|MasterOutput            ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
-; 0.628 ; StrobeGen:GenerateStrobe|ClkCounter[5]                    ; StrobeGen:GenerateStrobe|ClkCounter[5]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.914      ;
-; 0.634 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|ClkCounter[3]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.920      ;
-; 0.639 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|ClkCounter[4]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.925      ;
-; 0.639 ; OpticalSensorCommunicator:uut|State.WaitForRead           ; OpticalSensorCommunicator:uut|DataValid               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.925      ;
-; 0.641 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|oStrobe                      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.927      ;
-; 0.763 ; OpticalSensorCommunicator:uut|BurstRegData[33]            ; OpticalSensorCommunicator:uut|oDataY[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.049      ;
-; 0.765 ; OpticalSensorCommunicator:uut|BurstRegData[37]            ; OpticalSensorCommunicator:uut|oDataY[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.051      ;
-; 0.767 ; OpticalSensorCommunicator:uut|BurstRegData[39]            ; OpticalSensorCommunicator:uut|oDataY[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.053      ;
-; 0.769 ; OpticalSensorCommunicator:uut|BurstRegData[45]            ; OpticalSensorCommunicator:uut|oDataX[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.055      ;
-; 0.770 ; OpticalSensorCommunicator:uut|BurstRegData[43]            ; OpticalSensorCommunicator:uut|oDataX[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.056      ;
-; 0.770 ; OpticalSensorCommunicator:uut|BurstRegData[34]            ; OpticalSensorCommunicator:uut|oDataY[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.056      ;
-; 0.771 ; OpticalSensorCommunicator:uut|BurstRegData[41]            ; OpticalSensorCommunicator:uut|oDataX[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.057      ;
-; 0.771 ; OpticalSensorCommunicator:uut|BurstRegData[35]            ; OpticalSensorCommunicator:uut|oDataY[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.057      ;
-; 0.775 ; OpticalSensorCommunicator:uut|DataValid                   ; oDataValid~reg0                                       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.061      ;
-; 0.787 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|ClkCounter[3]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.073      ;
-; 0.789 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|ClkCounter[4]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.075      ;
-; 0.791 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|oStrobe                      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.077      ;
-; 0.792 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[25]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.078      ;
-; 0.803 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[0]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.089      ;
-; 0.804 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.090      ;
-; 0.906 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|oDataY[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 1.191      ;
-; 0.906 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|oDataY[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 1.191      ;
-; 0.909 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|oDataY[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 1.194      ;
-; 0.938 ; OpticalSensorCommunicator:uut|State.WaitForRead           ; OpticalSensorCommunicator:uut|SlaveClkCounter[25]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.224      ;
-; 0.943 ; OpticalSensorCommunicator:uut|BurstRegData[42]            ; OpticalSensorCommunicator:uut|oDataX[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.229      ;
-; 0.982 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|ClkCounter[0]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.268      ;
-; 0.982 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.268      ;
-; 0.992 ; OpticalSensorCommunicator:uut|BurstRegData[40]            ; OpticalSensorCommunicator:uut|oDataX[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.278      ;
-; 0.993 ; OpticalSensorCommunicator:uut|BurstRegData[46]            ; OpticalSensorCommunicator:uut|oDataX[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.279      ;
-; 1.010 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.296      ;
-; 1.016 ; OpticalSensorCommunicator:uut|BurstRegData[44]            ; OpticalSensorCommunicator:uut|oDataX[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.302      ;
-; 1.019 ; StrobeGen:GenerateStrobe|ClkCounter[2]                    ; StrobeGen:GenerateStrobe|ClkCounter[2]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.305      ;
-; 1.035 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|DataValid               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.321      ;
-; 1.043 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 1.332      ;
-; 1.045 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.331      ;
-; 1.081 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 1.370      ;
-; 1.082 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 1.371      ;
-; 1.142 ; OpticalSensorCommunicator:uut|SysClk                      ; OpticalSensorCommunicator:uut|State.WaitForRead       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.428      ;
-; 1.144 ; OpticalSensorCommunicator:uut|SysClk                      ; OpticalSensorCommunicator:uut|Sel                     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.430      ;
-; 1.236 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[11]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.522      ;
-; 1.238 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[7]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.524      ;
-; 1.240 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[13]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.526      ;
-; 1.244 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[26]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.530      ;
-; 1.252 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[10]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.538      ;
-; 1.253 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]      ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.004     ; 1.535      ;
-; 1.254 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[23]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.540      ;
-; 1.254 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[24]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.540      ;
-; 1.255 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[31]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.541      ;
-; 1.256 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[12]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.542      ;
-; 1.257 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.543      ;
-; 1.260 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[14]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.546      ;
-; 1.261 ; OpticalSensorCommunicator:uut|BurstRegData[47]            ; OpticalSensorCommunicator:uut|oDataX[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 1.546      ;
-; 1.262 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[28]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 1.551      ;
-; 1.263 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[27]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 1.552      ;
-; 1.264 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[30]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 1.553      ;
-; 1.266 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[18]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 1.555      ;
-; 1.299 ; OpticalSensorCommunicator:uut|State.ReadBurstRegister     ; OpticalSensorCommunicator:uut|SysClk                  ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.002      ; 1.587      ;
-; 1.303 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[26]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 1.593      ;
-; 1.304 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[11]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 1.594      ;
-; 1.304 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[7]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 1.594      ;
-; 1.304 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[13]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 1.594      ;
-; 1.306 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[23]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 1.596      ;
-+-------+-----------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'SYSCLK'                                                                                                                                                                   ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                             ; To Node                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; OpticalSensorCommunicator:uut|Sel                     ; OpticalSensorCommunicator:uut|Sel                     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|State.SetBurstRegister  ; OpticalSensorCommunicator:uut|State.SetBurstRegister  ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|CntWaitCycles[0]        ; OpticalSensorCommunicator:uut|CntWaitCycles[0]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|State.ReadBurstRegister ; OpticalSensorCommunicator:uut|State.ReadBurstRegister ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[47]        ; OpticalSensorCommunicator:uut|BurstRegData[47]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataX[7]               ; OpticalSensorCommunicator:uut|oDataX[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[46]        ; OpticalSensorCommunicator:uut|BurstRegData[46]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataX[6]               ; OpticalSensorCommunicator:uut|oDataX[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[44]        ; OpticalSensorCommunicator:uut|BurstRegData[44]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataX[4]               ; OpticalSensorCommunicator:uut|oDataX[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[43]        ; OpticalSensorCommunicator:uut|BurstRegData[43]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataX[3]               ; OpticalSensorCommunicator:uut|oDataX[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[40]        ; OpticalSensorCommunicator:uut|BurstRegData[40]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataX[0]               ; OpticalSensorCommunicator:uut|oDataX[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[45]        ; OpticalSensorCommunicator:uut|BurstRegData[45]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataX[5]               ; OpticalSensorCommunicator:uut|oDataX[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[42]        ; OpticalSensorCommunicator:uut|BurstRegData[42]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataX[2]               ; OpticalSensorCommunicator:uut|oDataX[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[41]        ; OpticalSensorCommunicator:uut|BurstRegData[41]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataX[1]               ; OpticalSensorCommunicator:uut|oDataX[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[39]        ; OpticalSensorCommunicator:uut|BurstRegData[39]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataY[7]               ; OpticalSensorCommunicator:uut|oDataY[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[38]        ; OpticalSensorCommunicator:uut|BurstRegData[38]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataY[6]               ; OpticalSensorCommunicator:uut|oDataY[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[36]        ; OpticalSensorCommunicator:uut|BurstRegData[36]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataY[4]               ; OpticalSensorCommunicator:uut|oDataY[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[35]        ; OpticalSensorCommunicator:uut|BurstRegData[35]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataY[3]               ; OpticalSensorCommunicator:uut|oDataY[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[32]        ; OpticalSensorCommunicator:uut|BurstRegData[32]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataY[0]               ; OpticalSensorCommunicator:uut|oDataY[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[37]        ; OpticalSensorCommunicator:uut|BurstRegData[37]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataY[5]               ; OpticalSensorCommunicator:uut|oDataY[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[34]        ; OpticalSensorCommunicator:uut|BurstRegData[34]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataY[2]               ; OpticalSensorCommunicator:uut|oDataY[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|BurstRegData[33]        ; OpticalSensorCommunicator:uut|BurstRegData[33]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|oDataY[1]               ; OpticalSensorCommunicator:uut|oDataY[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|DataValid               ; OpticalSensorCommunicator:uut|DataValid               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; OpticalSensorCommunicator:uut|MasterOutput            ; OpticalSensorCommunicator:uut|MasterOutput            ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.653 ; StrobeGen:GenerateStrobe|ClkCounter[0]                ; StrobeGen:GenerateStrobe|ClkCounter[3]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.939      ;
+; 0.658 ; OpticalSensorCommunicator:uut|DataValid               ; oDataValid~reg0                                       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.944      ;
+; 0.658 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.944      ;
+; 0.662 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.948      ;
+; 0.667 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.953      ;
+; 0.669 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.955      ;
+; 0.669 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.955      ;
+; 0.670 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.956      ;
+; 0.670 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.956      ;
+; 0.671 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.957      ;
+; 0.672 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.958      ;
+; 0.672 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.958      ;
+; 0.673 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.959      ;
+; 0.673 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.959      ;
+; 0.673 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.959      ;
+; 0.674 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.960      ;
+; 0.710 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.996      ;
+; 0.710 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.996      ;
+; 0.711 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.997      ;
+; 0.711 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.997      ;
+; 0.713 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.999      ;
+; 0.714 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.000      ;
+; 0.714 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.000      ;
+; 0.762 ; OpticalSensorCommunicator:uut|BurstRegData[43]        ; OpticalSensorCommunicator:uut|oDataX[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.048      ;
+; 0.762 ; OpticalSensorCommunicator:uut|BurstRegData[36]        ; OpticalSensorCommunicator:uut|oDataY[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.048      ;
+; 0.790 ; OpticalSensorCommunicator:uut|BurstRegData[41]        ; OpticalSensorCommunicator:uut|oDataX[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.076      ;
+; 0.800 ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; StrobeGen:GenerateStrobe|oStrobe                      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.086      ;
+; 0.800 ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; StrobeGen:GenerateStrobe|ClkCounter[3]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.086      ;
+; 0.817 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.103      ;
+; 0.817 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.103      ;
+; 0.819 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.105      ;
+; 0.819 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.105      ;
+; 0.819 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.105      ;
+; 0.820 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.106      ;
+; 0.820 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.106      ;
+; 0.820 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.106      ;
+; 0.820 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.106      ;
+; 0.820 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.106      ;
+; 0.821 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.107      ;
+; 0.822 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.108      ;
+; 0.822 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.108      ;
+; 0.823 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.109      ;
+; 0.823 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.109      ;
+; 0.823 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.109      ;
+; 0.824 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.110      ;
+; 0.825 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.111      ;
+; 0.825 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.111      ;
+; 0.825 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.111      ;
+; 0.825 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.111      ;
+; 0.827 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.113      ;
+; 0.829 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.115      ;
+; 0.829 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.115      ;
+; 0.829 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.115      ;
+; 0.829 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.115      ;
+; 0.830 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.116      ;
+; 0.830 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.116      ;
+; 0.980 ; OpticalSensorCommunicator:uut|oDataX[1]               ; oHEX3[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.266      ;
+; 0.989 ; OpticalSensorCommunicator:uut|BurstRegData[35]        ; OpticalSensorCommunicator:uut|oDataY[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 1.274      ;
+; 0.990 ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.276      ;
+; 0.995 ; OpticalSensorCommunicator:uut|BurstRegData[34]        ; OpticalSensorCommunicator:uut|oDataY[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 1.280      ;
+; 0.996 ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; StrobeGen:GenerateStrobe|ClkCounter[4]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 1.282      ;
+; 0.997 ; OpticalSensorCommunicator:uut|BurstRegData[33]        ; OpticalSensorCommunicator:uut|oDataY[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 1.282      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -489,8 +489,8 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; iMISO        ; SYSCLK     ; 5.722 ; 5.722 ; Rise       ; SYSCLK          ;
-; inResetAsync ; SYSCLK     ; 0.113 ; 0.113 ; Rise       ; SYSCLK          ;
+; iMISO        ; SYSCLK     ; 4.789 ; 4.789 ; Rise       ; SYSCLK          ;
+; inResetAsync ; SYSCLK     ; 1.607 ; 1.607 ; Rise       ; SYSCLK          ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -499,8 +499,8 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; iMISO        ; SYSCLK     ; -4.554 ; -4.554 ; Rise       ; SYSCLK          ;
-; inResetAsync ; SYSCLK     ; 0.148  ; 0.148  ; Rise       ; SYSCLK          ;
+; iMISO        ; SYSCLK     ; -4.220 ; -4.220 ; Rise       ; SYSCLK          ;
+; inResetAsync ; SYSCLK     ; -1.316 ; -1.316 ; Rise       ; SYSCLK          ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -509,10 +509,42 @@ No paths to report.
 +------------+------------+--------+--------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
-; oDataValid ; SYSCLK     ; 11.756 ; 11.756 ; Rise       ; SYSCLK          ;
-; oMOSI      ; SYSCLK     ; 10.880 ; 10.880 ; Rise       ; SYSCLK          ;
-; oSelect    ; SYSCLK     ; 10.648 ; 10.648 ; Rise       ; SYSCLK          ;
-; oSysClk    ; SYSCLK     ; 10.922 ; 10.922 ; Rise       ; SYSCLK          ;
+; oDataValid ; SYSCLK     ; 11.919 ; 11.919 ; Rise       ; SYSCLK          ;
+; oHEX1[*]   ; SYSCLK     ; 10.224 ; 10.224 ; Rise       ; SYSCLK          ;
+;  oHEX1[0]  ; SYSCLK     ; 10.126 ; 10.126 ; Rise       ; SYSCLK          ;
+;  oHEX1[1]  ; SYSCLK     ; 10.224 ; 10.224 ; Rise       ; SYSCLK          ;
+;  oHEX1[2]  ; SYSCLK     ; 10.161 ; 10.161 ; Rise       ; SYSCLK          ;
+;  oHEX1[3]  ; SYSCLK     ; 10.163 ; 10.163 ; Rise       ; SYSCLK          ;
+;  oHEX1[4]  ; SYSCLK     ; 10.147 ; 10.147 ; Rise       ; SYSCLK          ;
+;  oHEX1[5]  ; SYSCLK     ; 10.163 ; 10.163 ; Rise       ; SYSCLK          ;
+;  oHEX1[6]  ; SYSCLK     ; 10.146 ; 10.146 ; Rise       ; SYSCLK          ;
+; oHEX2[*]   ; SYSCLK     ; 10.171 ; 10.171 ; Rise       ; SYSCLK          ;
+;  oHEX2[0]  ; SYSCLK     ; 10.171 ; 10.171 ; Rise       ; SYSCLK          ;
+;  oHEX2[1]  ; SYSCLK     ; 9.767  ; 9.767  ; Rise       ; SYSCLK          ;
+;  oHEX2[2]  ; SYSCLK     ; 9.772  ; 9.772  ; Rise       ; SYSCLK          ;
+;  oHEX2[3]  ; SYSCLK     ; 9.796  ; 9.796  ; Rise       ; SYSCLK          ;
+;  oHEX2[4]  ; SYSCLK     ; 9.788  ; 9.788  ; Rise       ; SYSCLK          ;
+;  oHEX2[5]  ; SYSCLK     ; 9.810  ; 9.810  ; Rise       ; SYSCLK          ;
+;  oHEX2[6]  ; SYSCLK     ; 10.143 ; 10.143 ; Rise       ; SYSCLK          ;
+; oHEX3[*]   ; SYSCLK     ; 10.144 ; 10.144 ; Rise       ; SYSCLK          ;
+;  oHEX3[0]  ; SYSCLK     ; 9.855  ; 9.855  ; Rise       ; SYSCLK          ;
+;  oHEX3[1]  ; SYSCLK     ; 10.098 ; 10.098 ; Rise       ; SYSCLK          ;
+;  oHEX3[2]  ; SYSCLK     ; 10.144 ; 10.144 ; Rise       ; SYSCLK          ;
+;  oHEX3[3]  ; SYSCLK     ; 9.907  ; 9.907  ; Rise       ; SYSCLK          ;
+;  oHEX3[4]  ; SYSCLK     ; 9.899  ; 9.899  ; Rise       ; SYSCLK          ;
+;  oHEX3[5]  ; SYSCLK     ; 10.132 ; 10.132 ; Rise       ; SYSCLK          ;
+;  oHEX3[6]  ; SYSCLK     ; 9.901  ; 9.901  ; Rise       ; SYSCLK          ;
+; oHEX4[*]   ; SYSCLK     ; 10.329 ; 10.329 ; Rise       ; SYSCLK          ;
+;  oHEX4[0]  ; SYSCLK     ; 10.122 ; 10.122 ; Rise       ; SYSCLK          ;
+;  oHEX4[1]  ; SYSCLK     ; 10.329 ; 10.329 ; Rise       ; SYSCLK          ;
+;  oHEX4[2]  ; SYSCLK     ; 10.323 ; 10.323 ; Rise       ; SYSCLK          ;
+;  oHEX4[3]  ; SYSCLK     ; 10.148 ; 10.148 ; Rise       ; SYSCLK          ;
+;  oHEX4[4]  ; SYSCLK     ; 10.113 ; 10.113 ; Rise       ; SYSCLK          ;
+;  oHEX4[5]  ; SYSCLK     ; 10.123 ; 10.123 ; Rise       ; SYSCLK          ;
+;  oHEX4[6]  ; SYSCLK     ; 10.152 ; 10.152 ; Rise       ; SYSCLK          ;
+; oMOSI      ; SYSCLK     ; 11.236 ; 11.236 ; Rise       ; SYSCLK          ;
+; oSelect    ; SYSCLK     ; 11.243 ; 11.243 ; Rise       ; SYSCLK          ;
+; oSysClk    ; SYSCLK     ; 11.272 ; 11.272 ; Rise       ; SYSCLK          ;
 +------------+------------+--------+--------+------------+-----------------+
 
 
@@ -521,10 +553,42 @@ No paths to report.
 +------------+------------+--------+--------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
-; oDataValid ; SYSCLK     ; 11.756 ; 11.756 ; Rise       ; SYSCLK          ;
-; oMOSI      ; SYSCLK     ; 10.880 ; 10.880 ; Rise       ; SYSCLK          ;
-; oSelect    ; SYSCLK     ; 10.648 ; 10.648 ; Rise       ; SYSCLK          ;
-; oSysClk    ; SYSCLK     ; 10.922 ; 10.922 ; Rise       ; SYSCLK          ;
+; oDataValid ; SYSCLK     ; 11.919 ; 11.919 ; Rise       ; SYSCLK          ;
+; oHEX1[*]   ; SYSCLK     ; 10.126 ; 10.126 ; Rise       ; SYSCLK          ;
+;  oHEX1[0]  ; SYSCLK     ; 10.126 ; 10.126 ; Rise       ; SYSCLK          ;
+;  oHEX1[1]  ; SYSCLK     ; 10.224 ; 10.224 ; Rise       ; SYSCLK          ;
+;  oHEX1[2]  ; SYSCLK     ; 10.161 ; 10.161 ; Rise       ; SYSCLK          ;
+;  oHEX1[3]  ; SYSCLK     ; 10.163 ; 10.163 ; Rise       ; SYSCLK          ;
+;  oHEX1[4]  ; SYSCLK     ; 10.147 ; 10.147 ; Rise       ; SYSCLK          ;
+;  oHEX1[5]  ; SYSCLK     ; 10.163 ; 10.163 ; Rise       ; SYSCLK          ;
+;  oHEX1[6]  ; SYSCLK     ; 10.146 ; 10.146 ; Rise       ; SYSCLK          ;
+; oHEX2[*]   ; SYSCLK     ; 9.767  ; 9.767  ; Rise       ; SYSCLK          ;
+;  oHEX2[0]  ; SYSCLK     ; 10.171 ; 10.171 ; Rise       ; SYSCLK          ;
+;  oHEX2[1]  ; SYSCLK     ; 9.767  ; 9.767  ; Rise       ; SYSCLK          ;
+;  oHEX2[2]  ; SYSCLK     ; 9.772  ; 9.772  ; Rise       ; SYSCLK          ;
+;  oHEX2[3]  ; SYSCLK     ; 9.796  ; 9.796  ; Rise       ; SYSCLK          ;
+;  oHEX2[4]  ; SYSCLK     ; 9.788  ; 9.788  ; Rise       ; SYSCLK          ;
+;  oHEX2[5]  ; SYSCLK     ; 9.810  ; 9.810  ; Rise       ; SYSCLK          ;
+;  oHEX2[6]  ; SYSCLK     ; 10.143 ; 10.143 ; Rise       ; SYSCLK          ;
+; oHEX3[*]   ; SYSCLK     ; 9.855  ; 9.855  ; Rise       ; SYSCLK          ;
+;  oHEX3[0]  ; SYSCLK     ; 9.855  ; 9.855  ; Rise       ; SYSCLK          ;
+;  oHEX3[1]  ; SYSCLK     ; 10.098 ; 10.098 ; Rise       ; SYSCLK          ;
+;  oHEX3[2]  ; SYSCLK     ; 10.144 ; 10.144 ; Rise       ; SYSCLK          ;
+;  oHEX3[3]  ; SYSCLK     ; 9.907  ; 9.907  ; Rise       ; SYSCLK          ;
+;  oHEX3[4]  ; SYSCLK     ; 9.899  ; 9.899  ; Rise       ; SYSCLK          ;
+;  oHEX3[5]  ; SYSCLK     ; 10.132 ; 10.132 ; Rise       ; SYSCLK          ;
+;  oHEX3[6]  ; SYSCLK     ; 9.901  ; 9.901  ; Rise       ; SYSCLK          ;
+; oHEX4[*]   ; SYSCLK     ; 10.113 ; 10.113 ; Rise       ; SYSCLK          ;
+;  oHEX4[0]  ; SYSCLK     ; 10.122 ; 10.122 ; Rise       ; SYSCLK          ;
+;  oHEX4[1]  ; SYSCLK     ; 10.329 ; 10.329 ; Rise       ; SYSCLK          ;
+;  oHEX4[2]  ; SYSCLK     ; 10.323 ; 10.323 ; Rise       ; SYSCLK          ;
+;  oHEX4[3]  ; SYSCLK     ; 10.148 ; 10.148 ; Rise       ; SYSCLK          ;
+;  oHEX4[4]  ; SYSCLK     ; 10.113 ; 10.113 ; Rise       ; SYSCLK          ;
+;  oHEX4[5]  ; SYSCLK     ; 10.123 ; 10.123 ; Rise       ; SYSCLK          ;
+;  oHEX4[6]  ; SYSCLK     ; 10.152 ; 10.152 ; Rise       ; SYSCLK          ;
+; oMOSI      ; SYSCLK     ; 11.236 ; 11.236 ; Rise       ; SYSCLK          ;
+; oSelect    ; SYSCLK     ; 11.243 ; 11.243 ; Rise       ; SYSCLK          ;
+; oSysClk    ; SYSCLK     ; 11.272 ; 11.272 ; Rise       ; SYSCLK          ;
 +------------+------------+--------+--------+------------+-----------------+
 
 
@@ -533,7 +597,7 @@ No paths to report.
 +--------+--------+---------------+
 ; Clock  ; Slack  ; End Point TNS ;
 +--------+--------+---------------+
-; SYSCLK ; 36.904 ; 0.000         ;
+; SYSCLK ; 35.527 ; 0.000         ;
 +--------+--------+---------------+
 
 
@@ -567,220 +631,220 @@ No paths to report.
 +--------+--------+----------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'SYSCLK'                                                                                                                                                            ;
-+--------+---------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                                         ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+---------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 36.904 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.123      ;
-; 36.931 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.103      ;
-; 36.931 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.103      ;
-; 36.931 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.103      ;
-; 36.947 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 3.082      ;
-; 36.952 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.075      ;
-; 36.953 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.078      ;
-; 36.953 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.078      ;
-; 36.953 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.078      ;
-; 36.955 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.072      ;
-; 36.958 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.069      ;
-; 36.965 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.066      ;
-; 36.965 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.066      ;
-; 36.965 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.066      ;
-; 36.966 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.066      ;
-; 36.966 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.066      ;
-; 36.966 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.066      ;
-; 36.969 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.058      ;
-; 36.969 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.006     ; 3.057      ;
-; 36.979 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.055      ;
-; 36.979 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.055      ;
-; 36.979 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.055      ;
-; 36.981 ; OpticalSensorCommunicator:uut|CntWaitCycles[25]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.006     ; 3.045      ;
-; 36.982 ; OpticalSensorCommunicator:uut|CntWaitCycles[21]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.045      ;
-; 36.982 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.052      ;
-; 36.982 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.052      ;
-; 36.982 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.052      ;
-; 36.985 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.049      ;
-; 36.985 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.049      ;
-; 36.985 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.049      ;
-; 36.995 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 3.034      ;
-; 36.996 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.038      ;
-; 36.996 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.038      ;
-; 36.996 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.002      ; 3.038      ;
-; 36.997 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 3.033      ;
-; 36.998 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 3.031      ;
-; 37.001 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]  ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 3.028      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[23] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.006 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.021      ;
-; 37.011 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[3]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 3.018      ;
-; 37.012 ; OpticalSensorCommunicator:uut|SlaveClkCounter[24] ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 3.017      ;
-; 37.024 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.005      ; 3.013      ;
-; 37.024 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.005      ; 3.013      ;
-; 37.024 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.005      ; 3.013      ;
-; 37.031 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[1]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 2.999      ;
-; 37.031 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[16] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 2.999      ;
-; 37.031 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[17] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 2.999      ;
-; 37.031 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[18] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 2.999      ;
-; 37.031 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SysClkGenCounter[19] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 2.999      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[15]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[17]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[18]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[19]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[20]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[21]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[22]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[27]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[28]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[29]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.038 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[30]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.003      ; 2.997      ;
-; 37.039 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 2.992      ;
-; 37.039 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 2.992      ;
-; 37.039 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 2.992      ;
-; 37.040 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3] ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 2.992      ;
-; 37.050 ; OpticalSensorCommunicator:uut|CntWaitCycles[27]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.003     ; 2.979      ;
-; 37.051 ; OpticalSensorCommunicator:uut|SlaveClkCounter[11] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.976      ;
-; 37.052 ; OpticalSensorCommunicator:uut|CntWaitCycles[22]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 2.980      ;
-; 37.052 ; OpticalSensorCommunicator:uut|CntWaitCycles[22]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 2.980      ;
-; 37.052 ; OpticalSensorCommunicator:uut|CntWaitCycles[22]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]   ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 2.980      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[26] ; OpticalSensorCommunicator:uut|SysClkGenCounter[4]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[23] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.054 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10] ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.973      ;
-; 37.055 ; OpticalSensorCommunicator:uut|CntWaitCycles[24]   ; OpticalSensorCommunicator:uut|SlaveClkCounter[5]   ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.006     ; 2.971      ;
-; 37.057 ; OpticalSensorCommunicator:uut|SlaveClkCounter[25] ; OpticalSensorCommunicator:uut|SlaveClkCounter[25]  ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 2.975      ;
-; 37.057 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.970      ;
-; 37.057 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.970      ;
-; 37.057 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.970      ;
-; 37.057 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.970      ;
-; 37.057 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]  ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 2.970      ;
-+--------+---------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'SYSCLK'                                                                                                                                                             ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 35.527 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 4.488      ;
+; 35.528 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 4.487      ;
+; 35.543 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 4.472      ;
+; 35.544 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 4.471      ;
+; 35.767 ; OpticalSensorCommunicator:uut|SlaveClkCounter[0]   ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 4.248      ;
+; 35.768 ; OpticalSensorCommunicator:uut|SlaveClkCounter[0]   ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 4.247      ;
+; 35.854 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|Sel                  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 4.176      ;
+; 35.870 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|Sel                  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 4.160      ;
+; 36.094 ; OpticalSensorCommunicator:uut|SlaveClkCounter[0]   ; OpticalSensorCommunicator:uut|Sel                  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 3.936      ;
+; 36.101 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 3.929      ;
+; 36.117 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.903      ;
+; 36.117 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|State.WaitForRead    ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.002     ; 3.913      ;
+; 36.133 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.887      ;
+; 36.157 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.870      ;
+; 36.157 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[28] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.870      ;
+; 36.157 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[29] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.870      ;
+; 36.157 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[30] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.870      ;
+; 36.157 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[31] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.870      ;
+; 36.157 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.870      ;
+; 36.170 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[13] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.861      ;
+; 36.170 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[15] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.861      ;
+; 36.170 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[14] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.861      ;
+; 36.170 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[3]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.861      ;
+; 36.170 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.861      ;
+; 36.170 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.861      ;
+; 36.170 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.861      ;
+; 36.170 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.861      ;
+; 36.173 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[5]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.854      ;
+; 36.173 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[28] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.854      ;
+; 36.173 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[29] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.854      ;
+; 36.173 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[30] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.854      ;
+; 36.173 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[31] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.854      ;
+; 36.173 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[6]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.005     ; 3.854      ;
+; 36.174 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.857      ;
+; 36.182 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 3.833      ;
+; 36.183 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 3.832      ;
+; 36.186 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[13] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.845      ;
+; 36.186 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[15] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.845      ;
+; 36.186 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[14] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.845      ;
+; 36.186 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[3]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.845      ;
+; 36.186 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[2]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.845      ;
+; 36.186 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[9]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.845      ;
+; 36.186 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[10] ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.845      ;
+; 36.186 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[8]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.845      ;
+; 36.188 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 3.827      ;
+; 36.189 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 3.826      ;
+; 36.190 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[7]  ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.001     ; 3.841      ;
+; 36.191 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[35]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.828      ;
+; 36.191 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[33]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.828      ;
+; 36.192 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[39]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.827      ;
+; 36.192 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[34]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.827      ;
+; 36.193 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[38]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.827      ;
+; 36.195 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[45]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.824      ;
+; 36.196 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[37]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.823      ;
+; 36.198 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[46]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.822      ;
+; 36.198 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[42]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.822      ;
+; 36.198 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[36]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.822      ;
+; 36.199 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[47]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.821      ;
+; 36.201 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.831      ;
+; 36.201 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.831      ;
+; 36.201 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.831      ;
+; 36.201 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[23] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.831      ;
+; 36.202 ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]   ; OpticalSensorCommunicator:uut|BurstRegData[44]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.818      ;
+; 36.207 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[35]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.812      ;
+; 36.207 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[33]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.812      ;
+; 36.208 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[39]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.811      ;
+; 36.208 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[34]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.811      ;
+; 36.209 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[38]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.811      ;
+; 36.211 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[45]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.808      ;
+; 36.212 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[37]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.807      ;
+; 36.214 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[46]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.806      ;
+; 36.214 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[42]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.806      ;
+; 36.214 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[36]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.806      ;
+; 36.215 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[47]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.805      ;
+; 36.217 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[20] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.815      ;
+; 36.217 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[21] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.815      ;
+; 36.217 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[22] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.815      ;
+; 36.217 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|SysClkGenCounter[23] ; SYSCLK       ; SYSCLK      ; 40.000       ; 0.000      ; 3.815      ;
+; 36.218 ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]   ; OpticalSensorCommunicator:uut|BurstRegData[44]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.802      ;
+; 36.220 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.800      ;
+; 36.226 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.794      ;
+; 36.227 ; OpticalSensorCommunicator:uut|SlaveClkCounter[20]  ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 3.788      ;
+; 36.228 ; OpticalSensorCommunicator:uut|SlaveClkCounter[20]  ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 3.787      ;
+; 36.240 ; OpticalSensorCommunicator:uut|SlaveClkCounter[19]  ; OpticalSensorCommunicator:uut|BurstRegData[41]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 3.775      ;
+; 36.241 ; OpticalSensorCommunicator:uut|SlaveClkCounter[19]  ; OpticalSensorCommunicator:uut|BurstRegData[43]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.017     ; 3.774      ;
+; 36.265 ; OpticalSensorCommunicator:uut|SlaveClkCounter[20]  ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.755      ;
+; 36.278 ; OpticalSensorCommunicator:uut|SlaveClkCounter[19]  ; OpticalSensorCommunicator:uut|BurstRegData[40]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.742      ;
+; 36.296 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[39]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.723      ;
+; 36.296 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[38]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.724      ;
+; 36.296 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[47]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.724      ;
+; 36.297 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[35]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.722      ;
+; 36.297 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[33]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.722      ;
+; 36.297 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[34]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.722      ;
+; 36.299 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[45]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.720      ;
+; 36.301 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[46]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.719      ;
+; 36.301 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[42]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.719      ;
+; 36.301 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]  ; OpticalSensorCommunicator:uut|BurstRegData[36]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.719      ;
+; 36.302 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[39]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.013     ; 3.717      ;
+; 36.302 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[38]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.718      ;
+; 36.302 ; OpticalSensorCommunicator:uut|SysClkGenCounter[11] ; OpticalSensorCommunicator:uut|BurstRegData[47]     ; SYSCLK       ; SYSCLK      ; 40.000       ; -0.012     ; 3.718      ;
++--------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'SYSCLK'                                                                                                                                                                       ;
-+-------+-----------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                                 ; To Node                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.215 ; OpticalSensorCommunicator:uut|Sel                         ; OpticalSensorCommunicator:uut|Sel                     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|State.SetBurstRegister      ; OpticalSensorCommunicator:uut|State.SetBurstRegister  ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|CntWaitCycles[0]            ; OpticalSensorCommunicator:uut|CntWaitCycles[0]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|State.ReadBurstRegister     ; OpticalSensorCommunicator:uut|State.ReadBurstRegister ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[47]            ; OpticalSensorCommunicator:uut|BurstRegData[47]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataX[7]                   ; OpticalSensorCommunicator:uut|oDataX[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[46]            ; OpticalSensorCommunicator:uut|BurstRegData[46]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataX[6]                   ; OpticalSensorCommunicator:uut|oDataX[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[44]            ; OpticalSensorCommunicator:uut|BurstRegData[44]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataX[4]                   ; OpticalSensorCommunicator:uut|oDataX[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[43]            ; OpticalSensorCommunicator:uut|BurstRegData[43]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataX[3]                   ; OpticalSensorCommunicator:uut|oDataX[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[40]            ; OpticalSensorCommunicator:uut|BurstRegData[40]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataX[0]                   ; OpticalSensorCommunicator:uut|oDataX[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[45]            ; OpticalSensorCommunicator:uut|BurstRegData[45]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataX[5]                   ; OpticalSensorCommunicator:uut|oDataX[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[42]            ; OpticalSensorCommunicator:uut|BurstRegData[42]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataX[2]                   ; OpticalSensorCommunicator:uut|oDataX[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[41]            ; OpticalSensorCommunicator:uut|BurstRegData[41]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataX[1]                   ; OpticalSensorCommunicator:uut|oDataX[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[39]            ; OpticalSensorCommunicator:uut|BurstRegData[39]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataY[7]                   ; OpticalSensorCommunicator:uut|oDataY[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[38]            ; OpticalSensorCommunicator:uut|BurstRegData[38]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataY[6]                   ; OpticalSensorCommunicator:uut|oDataY[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[36]            ; OpticalSensorCommunicator:uut|BurstRegData[36]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataY[4]                   ; OpticalSensorCommunicator:uut|oDataY[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[35]            ; OpticalSensorCommunicator:uut|BurstRegData[35]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataY[3]                   ; OpticalSensorCommunicator:uut|oDataY[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[32]            ; OpticalSensorCommunicator:uut|BurstRegData[32]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataY[0]                   ; OpticalSensorCommunicator:uut|oDataY[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[37]            ; OpticalSensorCommunicator:uut|BurstRegData[37]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataY[5]                   ; OpticalSensorCommunicator:uut|oDataY[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[34]            ; OpticalSensorCommunicator:uut|BurstRegData[34]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataY[2]                   ; OpticalSensorCommunicator:uut|oDataY[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[33]            ; OpticalSensorCommunicator:uut|BurstRegData[33]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|oDataY[1]                   ; OpticalSensorCommunicator:uut|oDataY[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|DataValid                   ; OpticalSensorCommunicator:uut|DataValid               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; OpticalSensorCommunicator:uut|MasterOutput                ; OpticalSensorCommunicator:uut|MasterOutput            ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
-; 0.245 ; StrobeGen:GenerateStrobe|ClkCounter[5]                    ; StrobeGen:GenerateStrobe|ClkCounter[5]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.397      ;
-; 0.247 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|ClkCounter[3]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.399      ;
-; 0.248 ; OpticalSensorCommunicator:uut|State.WaitForRead           ; OpticalSensorCommunicator:uut|DataValid               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.400      ;
-; 0.252 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|ClkCounter[4]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.404      ;
-; 0.254 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|oStrobe                      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.406      ;
-; 0.297 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[25]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.449      ;
-; 0.299 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|ClkCounter[3]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.451      ;
-; 0.302 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|ClkCounter[4]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.454      ;
-; 0.307 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[0]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.459      ;
-; 0.307 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[2]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.459      ;
-; 0.319 ; OpticalSensorCommunicator:uut|DataValid                   ; oDataValid~reg0                                       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.471      ;
-; 0.324 ; OpticalSensorCommunicator:uut|BurstRegData[33]            ; OpticalSensorCommunicator:uut|oDataY[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.476      ;
-; 0.327 ; OpticalSensorCommunicator:uut|BurstRegData[39]            ; OpticalSensorCommunicator:uut|oDataY[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.479      ;
-; 0.327 ; OpticalSensorCommunicator:uut|BurstRegData[37]            ; OpticalSensorCommunicator:uut|oDataY[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.479      ;
-; 0.329 ; OpticalSensorCommunicator:uut|BurstRegData[43]            ; OpticalSensorCommunicator:uut|oDataX[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.481      ;
-; 0.329 ; OpticalSensorCommunicator:uut|BurstRegData[45]            ; OpticalSensorCommunicator:uut|oDataX[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.481      ;
-; 0.329 ; OpticalSensorCommunicator:uut|BurstRegData[34]            ; OpticalSensorCommunicator:uut|oDataY[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.481      ;
-; 0.330 ; OpticalSensorCommunicator:uut|BurstRegData[41]            ; OpticalSensorCommunicator:uut|oDataX[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.482      ;
-; 0.331 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|oStrobe                      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.483      ;
-; 0.332 ; OpticalSensorCommunicator:uut|BurstRegData[35]            ; OpticalSensorCommunicator:uut|oDataY[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.484      ;
-; 0.348 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|oDataY[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.500      ;
-; 0.349 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|oDataY[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.501      ;
-; 0.351 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|oDataY[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.503      ;
-; 0.365 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|ClkCounter[0]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.517      ;
-; 0.368 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.520      ;
-; 0.373 ; StrobeGen:GenerateStrobe|ClkCounter[2]                    ; StrobeGen:GenerateStrobe|ClkCounter[2]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.525      ;
-; 0.382 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|DataValid               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.534      ;
-; 0.382 ; OpticalSensorCommunicator:uut|State.WaitForRead           ; OpticalSensorCommunicator:uut|SlaveClkCounter[25]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.534      ;
-; 0.391 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.543      ;
-; 0.401 ; OpticalSensorCommunicator:uut|BurstRegData[42]            ; OpticalSensorCommunicator:uut|oDataX[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 0.552      ;
-; 0.408 ; OpticalSensorCommunicator:uut|BurstRegData[46]            ; OpticalSensorCommunicator:uut|oDataX[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 0.559      ;
-; 0.408 ; OpticalSensorCommunicator:uut|BurstRegData[40]            ; OpticalSensorCommunicator:uut|oDataX[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 0.559      ;
-; 0.410 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.562      ;
-; 0.412 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[4]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.002      ; 0.566      ;
-; 0.414 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[6]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.002      ; 0.568      ;
-; 0.419 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[3]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.002      ; 0.573      ;
-; 0.421 ; OpticalSensorCommunicator:uut|BurstRegData[44]            ; OpticalSensorCommunicator:uut|oDataX[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 0.572      ;
-; 0.431 ; OpticalSensorCommunicator:uut|SysClk                      ; OpticalSensorCommunicator:uut|State.WaitForRead       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.583      ;
-; 0.433 ; OpticalSensorCommunicator:uut|SysClk                      ; OpticalSensorCommunicator:uut|Sel                     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.585      ;
-; 0.481 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[1]      ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.004     ; 0.629      ;
-; 0.485 ; OpticalSensorCommunicator:uut|State.ReadBurstRegister     ; OpticalSensorCommunicator:uut|SysClk                  ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.002      ; 0.639      ;
-; 0.490 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[28]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 0.645      ;
-; 0.491 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[27]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 0.646      ;
-; 0.492 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[30]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 0.647      ;
-; 0.494 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[18]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.003      ; 0.649      ;
-; 0.503 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.655      ;
-; 0.505 ; StrobeGen:GenerateStrobe|ClkCounter[4]                    ; StrobeGen:GenerateStrobe|ClkCounter[5]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.657      ;
-; 0.506 ; OpticalSensorCommunicator:uut|BurstRegData[47]            ; OpticalSensorCommunicator:uut|oDataX[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; -0.001     ; 0.657      ;
-; 0.506 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; StrobeGen:GenerateStrobe|ClkCounter[2]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.658      ;
-; 0.508 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[26]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 0.664      ;
-; 0.509 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[7]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 0.665      ;
-; 0.509 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[11]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 0.665      ;
-; 0.509 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[13]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 0.665      ;
-; 0.511 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[23]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 0.667      ;
-; 0.511 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[11]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.663      ;
-; 0.512 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[24]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 0.668      ;
-; 0.512 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[31]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 0.668      ;
-; 0.513 ; OpticalSensorCommunicator:uut|State.Init                  ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.004      ; 0.669      ;
-; 0.513 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[7]      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.665      ;
-; 0.515 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[13]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.667      ;
-; 0.518 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[26]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.670      ;
-; 0.523 ; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; OpticalSensorCommunicator:uut|SlaveClkCounter[10]     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.675      ;
-+-------+-----------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'SYSCLK'                                                                                                                                                                   ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                             ; To Node                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; OpticalSensorCommunicator:uut|Sel                     ; OpticalSensorCommunicator:uut|Sel                     ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|State.SetBurstRegister  ; OpticalSensorCommunicator:uut|State.SetBurstRegister  ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|CntWaitCycles[0]        ; OpticalSensorCommunicator:uut|CntWaitCycles[0]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|State.ReadBurstRegister ; OpticalSensorCommunicator:uut|State.ReadBurstRegister ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[47]        ; OpticalSensorCommunicator:uut|BurstRegData[47]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataX[7]               ; OpticalSensorCommunicator:uut|oDataX[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[46]        ; OpticalSensorCommunicator:uut|BurstRegData[46]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataX[6]               ; OpticalSensorCommunicator:uut|oDataX[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[44]        ; OpticalSensorCommunicator:uut|BurstRegData[44]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataX[4]               ; OpticalSensorCommunicator:uut|oDataX[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[43]        ; OpticalSensorCommunicator:uut|BurstRegData[43]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataX[3]               ; OpticalSensorCommunicator:uut|oDataX[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[40]        ; OpticalSensorCommunicator:uut|BurstRegData[40]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataX[0]               ; OpticalSensorCommunicator:uut|oDataX[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[45]        ; OpticalSensorCommunicator:uut|BurstRegData[45]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataX[5]               ; OpticalSensorCommunicator:uut|oDataX[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[42]        ; OpticalSensorCommunicator:uut|BurstRegData[42]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataX[2]               ; OpticalSensorCommunicator:uut|oDataX[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[41]        ; OpticalSensorCommunicator:uut|BurstRegData[41]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataX[1]               ; OpticalSensorCommunicator:uut|oDataX[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[39]        ; OpticalSensorCommunicator:uut|BurstRegData[39]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataY[7]               ; OpticalSensorCommunicator:uut|oDataY[7]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[38]        ; OpticalSensorCommunicator:uut|BurstRegData[38]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataY[6]               ; OpticalSensorCommunicator:uut|oDataY[6]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[36]        ; OpticalSensorCommunicator:uut|BurstRegData[36]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataY[4]               ; OpticalSensorCommunicator:uut|oDataY[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[35]        ; OpticalSensorCommunicator:uut|BurstRegData[35]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataY[3]               ; OpticalSensorCommunicator:uut|oDataY[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[32]        ; OpticalSensorCommunicator:uut|BurstRegData[32]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataY[0]               ; OpticalSensorCommunicator:uut|oDataY[0]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[37]        ; OpticalSensorCommunicator:uut|BurstRegData[37]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataY[5]               ; OpticalSensorCommunicator:uut|oDataY[5]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[34]        ; OpticalSensorCommunicator:uut|BurstRegData[34]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataY[2]               ; OpticalSensorCommunicator:uut|oDataY[2]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|BurstRegData[33]        ; OpticalSensorCommunicator:uut|BurstRegData[33]        ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|oDataY[1]               ; OpticalSensorCommunicator:uut|oDataY[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|DataValid               ; OpticalSensorCommunicator:uut|DataValid               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; OpticalSensorCommunicator:uut|MasterOutput            ; OpticalSensorCommunicator:uut|MasterOutput            ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.257 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.409      ;
+; 0.260 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.412      ;
+; 0.261 ; StrobeGen:GenerateStrobe|ClkCounter[0]                ; StrobeGen:GenerateStrobe|ClkCounter[3]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.413      ;
+; 0.261 ; OpticalSensorCommunicator:uut|DataValid               ; oDataValid~reg0                                       ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.413      ;
+; 0.263 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.415      ;
+; 0.265 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.417      ;
+; 0.265 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.417      ;
+; 0.269 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.421      ;
+; 0.269 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.421      ;
+; 0.269 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.421      ;
+; 0.269 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.421      ;
+; 0.270 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.422      ;
+; 0.270 ; OpticalSensorCommunicator:uut|oDataX[0]               ; oHEX3[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.422      ;
+; 0.271 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.423      ;
+; 0.271 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.423      ;
+; 0.271 ; OpticalSensorCommunicator:uut|oDataY[0]               ; oHEX1[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.423      ;
+; 0.289 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.441      ;
+; 0.289 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.441      ;
+; 0.290 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.442      ;
+; 0.290 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.442      ;
+; 0.292 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.444      ;
+; 0.293 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.445      ;
+; 0.293 ; OpticalSensorCommunicator:uut|oDataX[4]               ; oHEX4[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.445      ;
+; 0.307 ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; StrobeGen:GenerateStrobe|ClkCounter[3]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.459      ;
+; 0.316 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.468      ;
+; 0.317 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.469      ;
+; 0.317 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.469      ;
+; 0.317 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.469      ;
+; 0.318 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.470      ;
+; 0.318 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.470      ;
+; 0.318 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.470      ;
+; 0.318 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.470      ;
+; 0.318 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.470      ;
+; 0.318 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.470      ;
+; 0.319 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.471      ;
+; 0.319 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.471      ;
+; 0.320 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.472      ;
+; 0.321 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.473      ;
+; 0.321 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[3]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.473      ;
+; 0.322 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.474      ;
+; 0.322 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.474      ;
+; 0.324 ; OpticalSensorCommunicator:uut|BurstRegData[43]        ; OpticalSensorCommunicator:uut|oDataX[3]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.476      ;
+; 0.324 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.476      ;
+; 0.324 ; OpticalSensorCommunicator:uut|oDataY[3]               ; oHEX1[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.476      ;
+; 0.325 ; OpticalSensorCommunicator:uut|BurstRegData[36]        ; OpticalSensorCommunicator:uut|oDataY[4]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; OpticalSensorCommunicator:uut|oDataY[7]               ; oHEX2[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.477      ;
+; 0.326 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[0]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[1]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[2]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.478      ;
+; 0.327 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[6]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.479      ;
+; 0.327 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[5]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.479      ;
+; 0.330 ; OpticalSensorCommunicator:uut|oDataX[7]               ; oHEX4[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.482      ;
+; 0.331 ; OpticalSensorCommunicator:uut|oDataX[3]               ; oHEX3[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.483      ;
+; 0.334 ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; StrobeGen:GenerateStrobe|oStrobe                      ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.486      ;
+; 0.341 ; OpticalSensorCommunicator:uut|BurstRegData[41]        ; OpticalSensorCommunicator:uut|oDataX[1]               ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.493      ;
+; 0.370 ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.522      ;
+; 0.373 ; StrobeGen:GenerateStrobe|ClkCounter[5]                ; StrobeGen:GenerateStrobe|ClkCounter[5]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.525      ;
+; 0.376 ; StrobeGen:GenerateStrobe|ClkCounter[1]                ; StrobeGen:GenerateStrobe|ClkCounter[4]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.528      ;
+; 0.380 ; StrobeGen:GenerateStrobe|ClkCounter[2]                ; StrobeGen:GenerateStrobe|ClkCounter[2]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.532      ;
+; 0.380 ; OpticalSensorCommunicator:uut|oDataY[2]               ; oHEX1[4]~reg0                                         ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.532      ;
+; 0.381 ; StrobeGen:GenerateStrobe|ClkCounter[0]                ; StrobeGen:GenerateStrobe|ClkCounter[0]                ; SYSCLK       ; SYSCLK      ; 0.000        ; 0.000      ; 0.533      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -891,14 +955,14 @@ No paths to report.
 +--------+--------------+----------------+------------------+--------+------------+-------------------------------------------------+
 
 
-+----------------------------------------------------------------------------+
-; Setup Times                                                                ;
-+--------------+------------+--------+--------+------------+-----------------+
-; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+--------------+------------+--------+--------+------------+-----------------+
-; iMISO        ; SYSCLK     ; 2.484  ; 2.484  ; Rise       ; SYSCLK          ;
-; inResetAsync ; SYSCLK     ; -0.385 ; -0.385 ; Rise       ; SYSCLK          ;
-+--------------+------------+--------+--------+------------+-----------------+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; iMISO        ; SYSCLK     ; 2.135 ; 2.135 ; Rise       ; SYSCLK          ;
+; inResetAsync ; SYSCLK     ; 0.293 ; 0.293 ; Rise       ; SYSCLK          ;
++--------------+------------+-------+-------+------------+-----------------+
 
 
 +----------------------------------------------------------------------------+
@@ -906,8 +970,8 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; iMISO        ; SYSCLK     ; -2.011 ; -2.011 ; Rise       ; SYSCLK          ;
-; inResetAsync ; SYSCLK     ; 0.517  ; 0.517  ; Rise       ; SYSCLK          ;
+; iMISO        ; SYSCLK     ; -1.920 ; -1.920 ; Rise       ; SYSCLK          ;
+; inResetAsync ; SYSCLK     ; -0.156 ; -0.156 ; Rise       ; SYSCLK          ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -916,10 +980,42 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; oDataValid ; SYSCLK     ; 7.278 ; 7.278 ; Rise       ; SYSCLK          ;
-; oMOSI      ; SYSCLK     ; 6.968 ; 6.968 ; Rise       ; SYSCLK          ;
-; oSelect    ; SYSCLK     ; 6.893 ; 6.893 ; Rise       ; SYSCLK          ;
-; oSysClk    ; SYSCLK     ; 6.991 ; 6.991 ; Rise       ; SYSCLK          ;
+; oDataValid ; SYSCLK     ; 7.312 ; 7.312 ; Rise       ; SYSCLK          ;
+; oHEX1[*]   ; SYSCLK     ; 6.662 ; 6.662 ; Rise       ; SYSCLK          ;
+;  oHEX1[0]  ; SYSCLK     ; 6.596 ; 6.596 ; Rise       ; SYSCLK          ;
+;  oHEX1[1]  ; SYSCLK     ; 6.662 ; 6.662 ; Rise       ; SYSCLK          ;
+;  oHEX1[2]  ; SYSCLK     ; 6.622 ; 6.622 ; Rise       ; SYSCLK          ;
+;  oHEX1[3]  ; SYSCLK     ; 6.622 ; 6.622 ; Rise       ; SYSCLK          ;
+;  oHEX1[4]  ; SYSCLK     ; 6.617 ; 6.617 ; Rise       ; SYSCLK          ;
+;  oHEX1[5]  ; SYSCLK     ; 6.623 ; 6.623 ; Rise       ; SYSCLK          ;
+;  oHEX1[6]  ; SYSCLK     ; 6.616 ; 6.616 ; Rise       ; SYSCLK          ;
+; oHEX2[*]   ; SYSCLK     ; 6.630 ; 6.630 ; Rise       ; SYSCLK          ;
+;  oHEX2[0]  ; SYSCLK     ; 6.630 ; 6.630 ; Rise       ; SYSCLK          ;
+;  oHEX2[1]  ; SYSCLK     ; 6.452 ; 6.452 ; Rise       ; SYSCLK          ;
+;  oHEX2[2]  ; SYSCLK     ; 6.455 ; 6.455 ; Rise       ; SYSCLK          ;
+;  oHEX2[3]  ; SYSCLK     ; 6.472 ; 6.472 ; Rise       ; SYSCLK          ;
+;  oHEX2[4]  ; SYSCLK     ; 6.473 ; 6.473 ; Rise       ; SYSCLK          ;
+;  oHEX2[5]  ; SYSCLK     ; 6.494 ; 6.494 ; Rise       ; SYSCLK          ;
+;  oHEX2[6]  ; SYSCLK     ; 6.617 ; 6.617 ; Rise       ; SYSCLK          ;
+; oHEX3[*]   ; SYSCLK     ; 6.620 ; 6.620 ; Rise       ; SYSCLK          ;
+;  oHEX3[0]  ; SYSCLK     ; 6.488 ; 6.488 ; Rise       ; SYSCLK          ;
+;  oHEX3[1]  ; SYSCLK     ; 6.578 ; 6.578 ; Rise       ; SYSCLK          ;
+;  oHEX3[2]  ; SYSCLK     ; 6.620 ; 6.620 ; Rise       ; SYSCLK          ;
+;  oHEX3[3]  ; SYSCLK     ; 6.539 ; 6.539 ; Rise       ; SYSCLK          ;
+;  oHEX3[4]  ; SYSCLK     ; 6.529 ; 6.529 ; Rise       ; SYSCLK          ;
+;  oHEX3[5]  ; SYSCLK     ; 6.605 ; 6.605 ; Rise       ; SYSCLK          ;
+;  oHEX3[6]  ; SYSCLK     ; 6.532 ; 6.532 ; Rise       ; SYSCLK          ;
+; oHEX4[*]   ; SYSCLK     ; 6.750 ; 6.750 ; Rise       ; SYSCLK          ;
+;  oHEX4[0]  ; SYSCLK     ; 6.596 ; 6.596 ; Rise       ; SYSCLK          ;
+;  oHEX4[1]  ; SYSCLK     ; 6.750 ; 6.750 ; Rise       ; SYSCLK          ;
+;  oHEX4[2]  ; SYSCLK     ; 6.749 ; 6.749 ; Rise       ; SYSCLK          ;
+;  oHEX4[3]  ; SYSCLK     ; 6.613 ; 6.613 ; Rise       ; SYSCLK          ;
+;  oHEX4[4]  ; SYSCLK     ; 6.587 ; 6.587 ; Rise       ; SYSCLK          ;
+;  oHEX4[5]  ; SYSCLK     ; 6.595 ; 6.595 ; Rise       ; SYSCLK          ;
+;  oHEX4[6]  ; SYSCLK     ; 6.623 ; 6.623 ; Rise       ; SYSCLK          ;
+; oMOSI      ; SYSCLK     ; 7.120 ; 7.120 ; Rise       ; SYSCLK          ;
+; oSelect    ; SYSCLK     ; 7.127 ; 7.127 ; Rise       ; SYSCLK          ;
+; oSysClk    ; SYSCLK     ; 7.144 ; 7.144 ; Rise       ; SYSCLK          ;
 +------------+------------+-------+-------+------------+-----------------+
 
 
@@ -928,10 +1024,42 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; oDataValid ; SYSCLK     ; 7.278 ; 7.278 ; Rise       ; SYSCLK          ;
-; oMOSI      ; SYSCLK     ; 6.968 ; 6.968 ; Rise       ; SYSCLK          ;
-; oSelect    ; SYSCLK     ; 6.893 ; 6.893 ; Rise       ; SYSCLK          ;
-; oSysClk    ; SYSCLK     ; 6.991 ; 6.991 ; Rise       ; SYSCLK          ;
+; oDataValid ; SYSCLK     ; 7.312 ; 7.312 ; Rise       ; SYSCLK          ;
+; oHEX1[*]   ; SYSCLK     ; 6.596 ; 6.596 ; Rise       ; SYSCLK          ;
+;  oHEX1[0]  ; SYSCLK     ; 6.596 ; 6.596 ; Rise       ; SYSCLK          ;
+;  oHEX1[1]  ; SYSCLK     ; 6.662 ; 6.662 ; Rise       ; SYSCLK          ;
+;  oHEX1[2]  ; SYSCLK     ; 6.622 ; 6.622 ; Rise       ; SYSCLK          ;
+;  oHEX1[3]  ; SYSCLK     ; 6.622 ; 6.622 ; Rise       ; SYSCLK          ;
+;  oHEX1[4]  ; SYSCLK     ; 6.617 ; 6.617 ; Rise       ; SYSCLK          ;
+;  oHEX1[5]  ; SYSCLK     ; 6.623 ; 6.623 ; Rise       ; SYSCLK          ;
+;  oHEX1[6]  ; SYSCLK     ; 6.616 ; 6.616 ; Rise       ; SYSCLK          ;
+; oHEX2[*]   ; SYSCLK     ; 6.452 ; 6.452 ; Rise       ; SYSCLK          ;
+;  oHEX2[0]  ; SYSCLK     ; 6.630 ; 6.630 ; Rise       ; SYSCLK          ;
+;  oHEX2[1]  ; SYSCLK     ; 6.452 ; 6.452 ; Rise       ; SYSCLK          ;
+;  oHEX2[2]  ; SYSCLK     ; 6.455 ; 6.455 ; Rise       ; SYSCLK          ;
+;  oHEX2[3]  ; SYSCLK     ; 6.472 ; 6.472 ; Rise       ; SYSCLK          ;
+;  oHEX2[4]  ; SYSCLK     ; 6.473 ; 6.473 ; Rise       ; SYSCLK          ;
+;  oHEX2[5]  ; SYSCLK     ; 6.494 ; 6.494 ; Rise       ; SYSCLK          ;
+;  oHEX2[6]  ; SYSCLK     ; 6.617 ; 6.617 ; Rise       ; SYSCLK          ;
+; oHEX3[*]   ; SYSCLK     ; 6.488 ; 6.488 ; Rise       ; SYSCLK          ;
+;  oHEX3[0]  ; SYSCLK     ; 6.488 ; 6.488 ; Rise       ; SYSCLK          ;
+;  oHEX3[1]  ; SYSCLK     ; 6.578 ; 6.578 ; Rise       ; SYSCLK          ;
+;  oHEX3[2]  ; SYSCLK     ; 6.620 ; 6.620 ; Rise       ; SYSCLK          ;
+;  oHEX3[3]  ; SYSCLK     ; 6.539 ; 6.539 ; Rise       ; SYSCLK          ;
+;  oHEX3[4]  ; SYSCLK     ; 6.529 ; 6.529 ; Rise       ; SYSCLK          ;
+;  oHEX3[5]  ; SYSCLK     ; 6.605 ; 6.605 ; Rise       ; SYSCLK          ;
+;  oHEX3[6]  ; SYSCLK     ; 6.532 ; 6.532 ; Rise       ; SYSCLK          ;
+; oHEX4[*]   ; SYSCLK     ; 6.587 ; 6.587 ; Rise       ; SYSCLK          ;
+;  oHEX4[0]  ; SYSCLK     ; 6.596 ; 6.596 ; Rise       ; SYSCLK          ;
+;  oHEX4[1]  ; SYSCLK     ; 6.750 ; 6.750 ; Rise       ; SYSCLK          ;
+;  oHEX4[2]  ; SYSCLK     ; 6.749 ; 6.749 ; Rise       ; SYSCLK          ;
+;  oHEX4[3]  ; SYSCLK     ; 6.613 ; 6.613 ; Rise       ; SYSCLK          ;
+;  oHEX4[4]  ; SYSCLK     ; 6.587 ; 6.587 ; Rise       ; SYSCLK          ;
+;  oHEX4[5]  ; SYSCLK     ; 6.595 ; 6.595 ; Rise       ; SYSCLK          ;
+;  oHEX4[6]  ; SYSCLK     ; 6.623 ; 6.623 ; Rise       ; SYSCLK          ;
+; oMOSI      ; SYSCLK     ; 7.120 ; 7.120 ; Rise       ; SYSCLK          ;
+; oSelect    ; SYSCLK     ; 7.127 ; 7.127 ; Rise       ; SYSCLK          ;
+; oSysClk    ; SYSCLK     ; 7.144 ; 7.144 ; Rise       ; SYSCLK          ;
 +------------+------------+-------+-------+------------+-----------------+
 
 
@@ -940,8 +1068,8 @@ No paths to report.
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; 31.992 ; 0.215 ; N/A      ; N/A     ; 18.889              ;
-;  SYSCLK          ; 31.992 ; 0.215 ; N/A      ; N/A     ; 18.889              ;
+; Worst-case Slack ; 28.473 ; 0.215 ; N/A      ; N/A     ; 18.889              ;
+;  SYSCLK          ; 28.473 ; 0.215 ; N/A      ; N/A     ; 18.889              ;
 ; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  SYSCLK          ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 +------------------+--------+-------+----------+---------+---------------------+
@@ -952,8 +1080,8 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; iMISO        ; SYSCLK     ; 5.722 ; 5.722 ; Rise       ; SYSCLK          ;
-; inResetAsync ; SYSCLK     ; 0.113 ; 0.113 ; Rise       ; SYSCLK          ;
+; iMISO        ; SYSCLK     ; 4.789 ; 4.789 ; Rise       ; SYSCLK          ;
+; inResetAsync ; SYSCLK     ; 1.607 ; 1.607 ; Rise       ; SYSCLK          ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -962,8 +1090,8 @@ No paths to report.
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; iMISO        ; SYSCLK     ; -2.011 ; -2.011 ; Rise       ; SYSCLK          ;
-; inResetAsync ; SYSCLK     ; 0.517  ; 0.517  ; Rise       ; SYSCLK          ;
+; iMISO        ; SYSCLK     ; -1.920 ; -1.920 ; Rise       ; SYSCLK          ;
+; inResetAsync ; SYSCLK     ; -0.156 ; -0.156 ; Rise       ; SYSCLK          ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
@@ -972,10 +1100,42 @@ No paths to report.
 +------------+------------+--------+--------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
-; oDataValid ; SYSCLK     ; 11.756 ; 11.756 ; Rise       ; SYSCLK          ;
-; oMOSI      ; SYSCLK     ; 10.880 ; 10.880 ; Rise       ; SYSCLK          ;
-; oSelect    ; SYSCLK     ; 10.648 ; 10.648 ; Rise       ; SYSCLK          ;
-; oSysClk    ; SYSCLK     ; 10.922 ; 10.922 ; Rise       ; SYSCLK          ;
+; oDataValid ; SYSCLK     ; 11.919 ; 11.919 ; Rise       ; SYSCLK          ;
+; oHEX1[*]   ; SYSCLK     ; 10.224 ; 10.224 ; Rise       ; SYSCLK          ;
+;  oHEX1[0]  ; SYSCLK     ; 10.126 ; 10.126 ; Rise       ; SYSCLK          ;
+;  oHEX1[1]  ; SYSCLK     ; 10.224 ; 10.224 ; Rise       ; SYSCLK          ;
+;  oHEX1[2]  ; SYSCLK     ; 10.161 ; 10.161 ; Rise       ; SYSCLK          ;
+;  oHEX1[3]  ; SYSCLK     ; 10.163 ; 10.163 ; Rise       ; SYSCLK          ;
+;  oHEX1[4]  ; SYSCLK     ; 10.147 ; 10.147 ; Rise       ; SYSCLK          ;
+;  oHEX1[5]  ; SYSCLK     ; 10.163 ; 10.163 ; Rise       ; SYSCLK          ;
+;  oHEX1[6]  ; SYSCLK     ; 10.146 ; 10.146 ; Rise       ; SYSCLK          ;
+; oHEX2[*]   ; SYSCLK     ; 10.171 ; 10.171 ; Rise       ; SYSCLK          ;
+;  oHEX2[0]  ; SYSCLK     ; 10.171 ; 10.171 ; Rise       ; SYSCLK          ;
+;  oHEX2[1]  ; SYSCLK     ; 9.767  ; 9.767  ; Rise       ; SYSCLK          ;
+;  oHEX2[2]  ; SYSCLK     ; 9.772  ; 9.772  ; Rise       ; SYSCLK          ;
+;  oHEX2[3]  ; SYSCLK     ; 9.796  ; 9.796  ; Rise       ; SYSCLK          ;
+;  oHEX2[4]  ; SYSCLK     ; 9.788  ; 9.788  ; Rise       ; SYSCLK          ;
+;  oHEX2[5]  ; SYSCLK     ; 9.810  ; 9.810  ; Rise       ; SYSCLK          ;
+;  oHEX2[6]  ; SYSCLK     ; 10.143 ; 10.143 ; Rise       ; SYSCLK          ;
+; oHEX3[*]   ; SYSCLK     ; 10.144 ; 10.144 ; Rise       ; SYSCLK          ;
+;  oHEX3[0]  ; SYSCLK     ; 9.855  ; 9.855  ; Rise       ; SYSCLK          ;
+;  oHEX3[1]  ; SYSCLK     ; 10.098 ; 10.098 ; Rise       ; SYSCLK          ;
+;  oHEX3[2]  ; SYSCLK     ; 10.144 ; 10.144 ; Rise       ; SYSCLK          ;
+;  oHEX3[3]  ; SYSCLK     ; 9.907  ; 9.907  ; Rise       ; SYSCLK          ;
+;  oHEX3[4]  ; SYSCLK     ; 9.899  ; 9.899  ; Rise       ; SYSCLK          ;
+;  oHEX3[5]  ; SYSCLK     ; 10.132 ; 10.132 ; Rise       ; SYSCLK          ;
+;  oHEX3[6]  ; SYSCLK     ; 9.901  ; 9.901  ; Rise       ; SYSCLK          ;
+; oHEX4[*]   ; SYSCLK     ; 10.329 ; 10.329 ; Rise       ; SYSCLK          ;
+;  oHEX4[0]  ; SYSCLK     ; 10.122 ; 10.122 ; Rise       ; SYSCLK          ;
+;  oHEX4[1]  ; SYSCLK     ; 10.329 ; 10.329 ; Rise       ; SYSCLK          ;
+;  oHEX4[2]  ; SYSCLK     ; 10.323 ; 10.323 ; Rise       ; SYSCLK          ;
+;  oHEX4[3]  ; SYSCLK     ; 10.148 ; 10.148 ; Rise       ; SYSCLK          ;
+;  oHEX4[4]  ; SYSCLK     ; 10.113 ; 10.113 ; Rise       ; SYSCLK          ;
+;  oHEX4[5]  ; SYSCLK     ; 10.123 ; 10.123 ; Rise       ; SYSCLK          ;
+;  oHEX4[6]  ; SYSCLK     ; 10.152 ; 10.152 ; Rise       ; SYSCLK          ;
+; oMOSI      ; SYSCLK     ; 11.236 ; 11.236 ; Rise       ; SYSCLK          ;
+; oSelect    ; SYSCLK     ; 11.243 ; 11.243 ; Rise       ; SYSCLK          ;
+; oSysClk    ; SYSCLK     ; 11.272 ; 11.272 ; Rise       ; SYSCLK          ;
 +------------+------------+--------+--------+------------+-----------------+
 
 
@@ -984,10 +1144,42 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; oDataValid ; SYSCLK     ; 7.278 ; 7.278 ; Rise       ; SYSCLK          ;
-; oMOSI      ; SYSCLK     ; 6.968 ; 6.968 ; Rise       ; SYSCLK          ;
-; oSelect    ; SYSCLK     ; 6.893 ; 6.893 ; Rise       ; SYSCLK          ;
-; oSysClk    ; SYSCLK     ; 6.991 ; 6.991 ; Rise       ; SYSCLK          ;
+; oDataValid ; SYSCLK     ; 7.312 ; 7.312 ; Rise       ; SYSCLK          ;
+; oHEX1[*]   ; SYSCLK     ; 6.596 ; 6.596 ; Rise       ; SYSCLK          ;
+;  oHEX1[0]  ; SYSCLK     ; 6.596 ; 6.596 ; Rise       ; SYSCLK          ;
+;  oHEX1[1]  ; SYSCLK     ; 6.662 ; 6.662 ; Rise       ; SYSCLK          ;
+;  oHEX1[2]  ; SYSCLK     ; 6.622 ; 6.622 ; Rise       ; SYSCLK          ;
+;  oHEX1[3]  ; SYSCLK     ; 6.622 ; 6.622 ; Rise       ; SYSCLK          ;
+;  oHEX1[4]  ; SYSCLK     ; 6.617 ; 6.617 ; Rise       ; SYSCLK          ;
+;  oHEX1[5]  ; SYSCLK     ; 6.623 ; 6.623 ; Rise       ; SYSCLK          ;
+;  oHEX1[6]  ; SYSCLK     ; 6.616 ; 6.616 ; Rise       ; SYSCLK          ;
+; oHEX2[*]   ; SYSCLK     ; 6.452 ; 6.452 ; Rise       ; SYSCLK          ;
+;  oHEX2[0]  ; SYSCLK     ; 6.630 ; 6.630 ; Rise       ; SYSCLK          ;
+;  oHEX2[1]  ; SYSCLK     ; 6.452 ; 6.452 ; Rise       ; SYSCLK          ;
+;  oHEX2[2]  ; SYSCLK     ; 6.455 ; 6.455 ; Rise       ; SYSCLK          ;
+;  oHEX2[3]  ; SYSCLK     ; 6.472 ; 6.472 ; Rise       ; SYSCLK          ;
+;  oHEX2[4]  ; SYSCLK     ; 6.473 ; 6.473 ; Rise       ; SYSCLK          ;
+;  oHEX2[5]  ; SYSCLK     ; 6.494 ; 6.494 ; Rise       ; SYSCLK          ;
+;  oHEX2[6]  ; SYSCLK     ; 6.617 ; 6.617 ; Rise       ; SYSCLK          ;
+; oHEX3[*]   ; SYSCLK     ; 6.488 ; 6.488 ; Rise       ; SYSCLK          ;
+;  oHEX3[0]  ; SYSCLK     ; 6.488 ; 6.488 ; Rise       ; SYSCLK          ;
+;  oHEX3[1]  ; SYSCLK     ; 6.578 ; 6.578 ; Rise       ; SYSCLK          ;
+;  oHEX3[2]  ; SYSCLK     ; 6.620 ; 6.620 ; Rise       ; SYSCLK          ;
+;  oHEX3[3]  ; SYSCLK     ; 6.539 ; 6.539 ; Rise       ; SYSCLK          ;
+;  oHEX3[4]  ; SYSCLK     ; 6.529 ; 6.529 ; Rise       ; SYSCLK          ;
+;  oHEX3[5]  ; SYSCLK     ; 6.605 ; 6.605 ; Rise       ; SYSCLK          ;
+;  oHEX3[6]  ; SYSCLK     ; 6.532 ; 6.532 ; Rise       ; SYSCLK          ;
+; oHEX4[*]   ; SYSCLK     ; 6.587 ; 6.587 ; Rise       ; SYSCLK          ;
+;  oHEX4[0]  ; SYSCLK     ; 6.596 ; 6.596 ; Rise       ; SYSCLK          ;
+;  oHEX4[1]  ; SYSCLK     ; 6.750 ; 6.750 ; Rise       ; SYSCLK          ;
+;  oHEX4[2]  ; SYSCLK     ; 6.749 ; 6.749 ; Rise       ; SYSCLK          ;
+;  oHEX4[3]  ; SYSCLK     ; 6.613 ; 6.613 ; Rise       ; SYSCLK          ;
+;  oHEX4[4]  ; SYSCLK     ; 6.587 ; 6.587 ; Rise       ; SYSCLK          ;
+;  oHEX4[5]  ; SYSCLK     ; 6.595 ; 6.595 ; Rise       ; SYSCLK          ;
+;  oHEX4[6]  ; SYSCLK     ; 6.623 ; 6.623 ; Rise       ; SYSCLK          ;
+; oMOSI      ; SYSCLK     ; 7.120 ; 7.120 ; Rise       ; SYSCLK          ;
+; oSelect    ; SYSCLK     ; 7.127 ; 7.127 ; Rise       ; SYSCLK          ;
+; oSysClk    ; SYSCLK     ; 7.144 ; 7.144 ; Rise       ; SYSCLK          ;
 +------------+------------+-------+-------+------------+-----------------+
 
 
@@ -996,7 +1188,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; SYSCLK     ; SYSCLK   ; 18128    ; 0        ; 0        ; 0        ;
+; SYSCLK     ; SYSCLK   ; 18240    ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1006,7 +1198,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; SYSCLK     ; SYSCLK   ; 18128    ; 0        ; 0        ; 0        ;
+; SYSCLK     ; SYSCLK   ; 18240    ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1031,9 +1223,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 161   ; 161  ;
-; Unconstrained Output Ports      ; 4     ; 4    ;
-; Unconstrained Output Port Paths ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 189   ; 189  ;
+; Unconstrained Output Ports      ; 32    ; 32   ;
+; Unconstrained Output Port Paths ; 32    ; 32   ;
 +---------------------------------+-------+------+
 
 
@@ -1043,7 +1235,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Feb 12 01:54:01 2017
+    Info: Processing started: Sun Feb 12 16:32:15 2017
 Info: Command: quartus_sta TestOpticalSensor -c TestOpticalSensor
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1052,10 +1244,10 @@ Info (21077): High junction temperature is 85 degrees C
 Info (332104): Reading SDC File: '../../../../../flw/synlayQuartus/TimingConstraints.tcl'
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
-Info (332146): Worst-case setup slack is 31.992
+Info (332146): Worst-case setup slack is 28.473
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    31.992         0.000 SYSCLK 
+    Info (332119):    28.473         0.000 SYSCLK 
 Info (332146): Worst-case hold slack is 0.445
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1068,10 +1260,10 @@ Info (332146): Worst-case minimum pulse width slack is 18.889
     Info (332119):    18.889         0.000 SYSCLK 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332146): Worst-case setup slack is 36.904
+Info (332146): Worst-case setup slack is 35.527
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    36.904         0.000 SYSCLK 
+    Info (332119):    35.527         0.000 SYSCLK 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1087,7 +1279,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 398 megabytes
-    Info: Processing ended: Sun Feb 12 01:54:03 2017
+    Info: Processing ended: Sun Feb 12 16:32:17 2017
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -119,11 +119,41 @@ begin
 		oStrobe				=> OneMHzStrobe
 	);
 	
+	-- test process with ToSevSeg function
 	CheckValidData : process (iClk, inResetAsync) is
+		function ToSevSeg(cValue : std_ulogic_vector(3 downto 0))
+			return std_ulogic_vector is
+		begin	  
+		  case cValue(3 downto 0) is
+			when "0000" => return "0111111";
+			when "0001" => return "0000110";
+			when "0010" => return "1011011";
+			when "0011" => return "1001111";
+			when "0100" => return "1100110";
+			when "0101" => return "1101101";
+			when "0110" => return "1111101";
+			when "0111" => return "0000111";
+			when "1000" => return "1111111";
+			when "1001" => return "1101111";
+			when "1010" => return "1110111";
+			when "1011" => return "1111100";
+			when "1100" => return "0111001";
+			when "1101" => return "1011110";
+			when "1110" => return "1111001";
+			when "1111" => return "1110001";
+			when others => return "XXXXXXX";
+		  end case;
+		end ToSevSeg;
 	begin	
 		if (inResetAsync = cnActivated) then
 			NowDataValid <= '0';
 			oDataValid <= '0';
+			
+			oHEX1 <= "0111111";
+			oHEX2 <= "0111111";
+			oHEX3 <= "0111111";
+			oHEX4 <= "0111111";
+			
 		elsif (rising_edge(iClk)) then
 		
 			if(DataValid = '1' and ((oDataX /= "00000000" and oDataX /= "11111111") or (oDataY /= "00000000" and oDataY /= "11111111"))) then
@@ -132,10 +162,12 @@ begin
 				oDataValid <= '0';
 			end if;
 			
-			--if (NowDataValid = '1') then
-			--	oDataValid <= '1';
-			--end if;
-			
+			-- output
+			oHEX1 <= not(ToSevSeg(oDataY(3 downto 0)));
+			oHEX2 <= not(ToSevSeg(oDataY(7 downto 4)));
+			oHEX3 <= not(ToSevSeg(oDataX(3 downto 0)));
+			oHEX4 <= not(ToSevSeg(oDataX(7 downto 4)));
+					
 		end if;
 	end process;
 
