@@ -102,18 +102,36 @@ else:
 	#	WINDOWS
 	if (platform.system() == "Windows"):
 
-		# set variables for Altera Quartus:
-		os.environ['QUARTUS_ROOTDIR'] = r"C:\altera\15.0\quartus"
-		os.environ['QUARTUS_INSTALL_DIR'] = r"C:/altera/15.0/quartus"
-		os.environ['MY_QUARTUS_PATH'] = os.environ.get('QUARTUS_ROOTDIR')
-		os.environ['MY_QUARTUS_EXEC_QUARTUS'] = os.environ.get('MY_QUARTUS_PATH') + r"\bin64\quartus.exe"
-		os.environ['MY_QUARTUS_EXEC_SH'] = os.environ.get('MY_QUARTUS_PATH') + r"\bin64\quartus_sh.exe"
-		
-		# set variables for Mentor Graphics Modelsim/Questasim:
-		os.environ['MY_QUESTASIM_PATH'] = r"C:\questasim_10.0b"
-		os.environ['MY_QUESTASIM_EXEC_QUESTASIM'] = os.environ.get('MY_QUESTASIM_PATH') + r"\win32\questasim.exe"
-		os.environ['MY_QUESTASIM_EXEC_VSIM'] = os.environ.get('MY_QUESTASIM_PATH') + r"\win32\vsim.exe"
-		
+		#	CYCLONE II -> QUARTUS 13.0sp1
+		if (FPGA == "Cyclone II"):
+
+			# set variables for Altera Quartus:
+			os.environ['QUARTUS_ROOTDIR'] = r"C:\altera\13.0sp1\quartus"
+			os.environ['QUARTUS_INSTALL_DIR'] = r"C:/altera/13.0sp1/quartus"
+			os.environ['MY_QUARTUS_PATH'] = os.environ.get('QUARTUS_ROOTDIR')
+			os.environ['MY_QUARTUS_EXEC_QUARTUS'] = os.environ.get('MY_QUARTUS_PATH') + r"\bin64\quartus.exe"
+			os.environ['MY_QUARTUS_EXEC_SH'] = os.environ.get('MY_QUARTUS_PATH') + r"\bin64\quartus_sh.exe"
+			
+			# set variables for Mentor Graphics Modelsim/Questasim:
+			os.environ['MY_QUESTASIM_PATH'] = r"C:\questasim_10.0b"
+			os.environ['MY_QUESTASIM_EXEC_QUESTASIM'] = os.environ.get('MY_QUESTASIM_PATH') + r"\win32\questasim.exe"
+			os.environ['MY_QUESTASIM_EXEC_VSIM'] = os.environ.get('MY_QUESTASIM_PATH') + r"\win32\vsim.exe"
+			
+		#	CYCLONE V -> QUARTUS 15.0
+		else:
+			
+			# set variables for Altera Quartus:
+			os.environ['QUARTUS_ROOTDIR'] = r"C:\altera\15.0\quartus"
+			os.environ['QUARTUS_INSTALL_DIR'] = r"C:/altera/15.0/quartus"
+			os.environ['MY_QUARTUS_PATH'] = os.environ.get('QUARTUS_ROOTDIR')
+			os.environ['MY_QUARTUS_EXEC_QUARTUS'] = os.environ.get('MY_QUARTUS_PATH') + r"\bin64\quartus.exe"
+			os.environ['MY_QUARTUS_EXEC_SH'] = os.environ.get('MY_QUARTUS_PATH') + r"\bin64\quartus_sh.exe"
+
+			# set variables for Mentor Graphics Modelsim/Questasim:
+			os.environ['MY_QUESTASIM_PATH'] = r"C:\questasim_10.0b"
+			os.environ['MY_QUESTASIM_EXEC_QUESTASIM'] = os.environ.get('MY_QUESTASIM_PATH') + r"\win32\questasim.exe"
+			os.environ['MY_QUESTASIM_EXEC_VSIM'] = os.environ.get('MY_QUESTASIM_PATH') + r"\win32\vsim.exe"
+			
 	#	UNIX
 	else:
 		
