@@ -84,7 +84,7 @@ public:
 	/*
 	 * 	Virtual DTor if someone wants to inherit from this class.
 	 */
-	virtual ~TrackPiece();
+	virtual ~TrackPiece(){};
 	
 	
 private:
