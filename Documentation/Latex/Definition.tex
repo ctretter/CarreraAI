@@ -1,0 +1,67 @@
+\documentclass[12pt,a4paper]{scrartcl}
+
+\usepackage[a4paper, left=2cm, right=1cm, bottom=1cm, top=1cm, includeheadfoot]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc} % comment this if you uncomment utf8x
+%\usepackage[utf8x]{inputenc} % uncomment this if there are problems with 'ä', 'ü', 'ö'
+\usepackage{ucs}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{titleps}
+\usepackage{lipsum}
+\usepackage{textpos}
+\usepackage{setspace}
+\usepackage{trfsigns}
+
+\newpagestyle{mystyle}{
+\sethead[][][]{\name}{\matnr}{\grp}
+\setfoot[][][]{\Title}{\thepage}{\sem}
+}
+
+\definecolor{mygray}{rgb}{0.9,0.9,0.9}
+\lstset{language=[Visual]Basic, morekeywords={param, local}}
+
+
+\lstset{
+   literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+           {ß}{{\ss}}1
+           {é}{{\'e}}1,
+   inputencoding=ansinew,
+   extendedchars=true,
+   basicstyle=\scriptsize\ttfamily,
+   numberstyle=\scriptsize,
+   breaklines=true,
+   tabsize=2,
+   numbersep=5pt
+}
+\lstdefinestyle{customcpp}{
+   language=C++,
+   backgroundcolor=\color{mygray},
+   numbers=left,
+   keywordstyle=\color{blue}\bfseries,
+   stringstyle=\color{BrickRed}\ttfamily,
+   commentstyle=\color{OliveGreen}\ttfamily,
+   showspaces=false,
+   showstringspaces=false,
+   showtabs=false
+}
+\lstdefinestyle{customoutput}{
+   backgroundcolor=\color{mygray},
+   numbers=none,
+   showspaces=false,
+   showtabs=false
+}
+
+\newcommand{\sourceCode}[1]{\lstinputlisting[style=customcpp]{#1}}
+\newcommand{\tab}{\hspace{20px}}
