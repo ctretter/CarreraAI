@@ -1,5 +1,5 @@
 Fitter report for TestOpticalSensor
-Sun Feb 12 16:32:11 2017
+Wed Mar 01 10:05:39 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -62,15 +62,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Feb 12 16:32:11 2017           ;
+; Fitter Status                      ; Successful - Wed Mar 01 10:05:39 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; TestOpticalSensor                               ;
 ; Top-level Entity Name              ; TestOpticalSensor                               ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 375 / 18,752 ( 2 % )                            ;
-;     Total combinational functions  ; 375 / 18,752 ( 2 % )                            ;
+; Total logic elements               ; 368 / 18,752 ( 2 % )                            ;
+;     Total combinational functions  ; 368 / 18,752 ( 2 % )                            ;
 ;     Dedicated logic registers      ; 173 / 18,752 ( < 1 % )                          ;
 ; Total registers                    ; 173                                             ;
 ; Total pins                         ; 35 / 315 ( 11 % )                               ;
@@ -138,7 +138,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -149,8 +149,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 588 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 588 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 581 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 581 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -173,7 +173,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 585     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 578     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -181,7 +181,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.pin.
+The pin-out file can be found in C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.pin.
 
 
 +----------------------------------------------------------------------+
@@ -189,26 +189,26 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 375 / 18,752 ( 2 % )   ;
-;     -- Combinational with no register       ; 202                    ;
+; Total logic elements                        ; 368 / 18,752 ( 2 % )   ;
+;     -- Combinational with no register       ; 195                    ;
 ;     -- Register only                        ; 0                      ;
 ;     -- Combinational with a register        ; 173                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 160                    ;
-;     -- 3 input functions                    ; 30                     ;
-;     -- <=2 input functions                  ; 185                    ;
+;     -- 4 input functions                    ; 181                    ;
+;     -- 3 input functions                    ; 29                     ;
+;     -- <=2 input functions                  ; 158                    ;
 ;     -- Register only                        ; 0                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 277                    ;
+;     -- normal mode                          ; 270                    ;
 ;     -- arithmetic mode                      ; 98                     ;
 ;                                             ;                        ;
 ; Total registers*                            ; 173 / 19,649 ( < 1 % ) ;
 ;     -- Dedicated logic registers            ; 173 / 18,752 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )        ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 26 / 1,172 ( 2 % )     ;
+; Total LABs:  partially or completely used   ; 25 / 1,172 ( 2 % )     ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 35 / 315 ( 11 % )      ;
 ;     -- Clock pins                           ; 2 / 8 ( 25 % )         ;
@@ -224,11 +224,11 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 1% / 1% / 0%           ;
+; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%           ;
 ; Maximum fan-out                             ; 173                    ;
-; Highest non-global fan-out                  ; 57                     ;
-; Total fan-out                               ; 1773                   ;
-; Average fan-out                             ; 3.02                   ;
+; Highest non-global fan-out                  ; 83                     ;
+; Total fan-out                               ; 1800                   ;
+; Average fan-out                             ; 3.10                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -241,25 +241,25 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 375 / 18752 ( 2 % )   ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 202                   ; 0                              ;
+; Total logic elements                        ; 368 / 18752 ( 2 % )   ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 195                   ; 0                              ;
 ;     -- Register only                        ; 0                     ; 0                              ;
 ;     -- Combinational with a register        ; 173                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 160                   ; 0                              ;
-;     -- 3 input functions                    ; 30                    ; 0                              ;
-;     -- <=2 input functions                  ; 185                   ; 0                              ;
+;     -- 4 input functions                    ; 181                   ; 0                              ;
+;     -- 3 input functions                    ; 29                    ; 0                              ;
+;     -- <=2 input functions                  ; 158                   ; 0                              ;
 ;     -- Register only                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 277                   ; 0                              ;
+;     -- normal mode                          ; 270                   ; 0                              ;
 ;     -- arithmetic mode                      ; 98                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total registers                             ; 173                   ; 0                              ;
 ;     -- Dedicated logic registers            ; 173 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 26 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 25 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 35                    ; 0                              ;
@@ -275,8 +275,8 @@ The pin-out file can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PR
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 1773                  ; 0                              ;
-;     -- Registered Connections               ; 679                   ; 0                              ;
+;     -- Total Connections                    ; 1800                  ; 0                              ;
+;     -- Registered Connections               ; 723                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -905,8 +905,8 @@ Note: User assignments will override these defaults. The user specified values a
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                              ; Library Name ;
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------+--------------+
-; |TestOpticalSensor                 ; 375 (35)    ; 173 (29)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 35   ; 0            ; 202 (6)      ; 0 (0)             ; 173 (29)         ; |TestOpticalSensor                               ; work         ;
-;    |OpticalSensorCommunicator:uut| ; 330 (330)   ; 137 (137)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 193 (193)    ; 0 (0)             ; 137 (137)        ; |TestOpticalSensor|OpticalSensorCommunicator:uut ; work         ;
+; |TestOpticalSensor                 ; 368 (35)    ; 173 (29)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 35   ; 0            ; 195 (6)      ; 0 (0)             ; 173 (29)         ; |TestOpticalSensor                               ; work         ;
+;    |OpticalSensorCommunicator:uut| ; 323 (323)   ; 137 (137)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 186 (186)    ; 0 (0)             ; 137 (137)        ; |TestOpticalSensor|OpticalSensorCommunicator:uut ; work         ;
 ;    |StrobeGen:GenerateStrobe|      ; 10 (10)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 7 (7)            ; |TestOpticalSensor|StrobeGen:GenerateStrobe      ; work         ;
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -963,22 +963,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; iClk                                                     ;                   ;         ;
 ; inResetAsync                                             ;                   ;         ;
 ; iMISO                                                    ;                   ;         ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[47]~0  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[46]~1  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[44]~2  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[43]~3  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[40]~4  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[45]~5  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[42]~6  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[41]~7  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[39]~8  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[38]~9  ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[36]~10 ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[35]~11 ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[32]~12 ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[37]~13 ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[34]~14 ; 1                 ; 6       ;
-;      - OpticalSensorCommunicator:uut|BurstRegData[33]~15 ; 1                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[47]~0  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[46]~1  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[44]~2  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[43]~3  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[40]~4  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[45]~5  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[42]~6  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[41]~7  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[39]~8  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[38]~9  ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[36]~10 ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[35]~11 ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[32]~12 ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[37]~13 ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[34]~15 ; 0                 ; 6       ;
+;      - OpticalSensorCommunicator:uut|BurstRegData[33]~16 ; 0                 ; 6       ;
 +----------------------------------------------------------+-------------------+---------+
 
 
@@ -987,11 +987,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                      ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; OpticalSensorCommunicator:uut|CntWaitCycles[30]~1         ; LCCOMB_X42_Y15_N22 ; 31      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[0]~5        ; LCCOMB_X25_Y15_N30 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[26]~3       ; LCCOMB_X26_Y15_N14 ; 29      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; LCFF_X26_Y15_N11   ; 57      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~3       ; LCCOMB_X24_Y15_N6  ; 31      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|CntWaitCycles[30]~5         ; LCCOMB_X31_Y19_N14 ; 31      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[0]~3        ; LCCOMB_X32_Y19_N4  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[26]~1       ; LCCOMB_X31_Y19_N10 ; 29      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; LCFF_X31_Y19_N19   ; 58      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~2       ; LCCOMB_X34_Y20_N14 ; 31      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; iClk                                                      ; PIN_B12            ; 173     ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
 ; inResetAsync                                              ; PIN_L22            ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; inResetAsync                                              ; PIN_L22            ; 157     ; Async. clear ; yes    ; Global Clock         ; GCLK6            ; --                        ;
@@ -1013,30 +1013,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------+---------+
 ; Name                                                      ; Fan-Out ;
 +-----------------------------------------------------------+---------+
-; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; 57      ;
-; OpticalSensorCommunicator:uut|State.Init                  ; 53      ;
-; OpticalSensorCommunicator:uut|State.WaitForRead           ; 43      ;
-; OpticalSensorCommunicator:uut|CntWaitCycles[30]~1         ; 31      ;
-; OpticalSensorCommunicator:uut|CntWaitCycles[30]~0         ; 31      ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~3       ; 31      ;
+; OpticalSensorCommunicator:uut|State.Init                  ; 83      ;
+; OpticalSensorCommunicator:uut|State.WaitForRead           ; 72      ;
+; OpticalSensorCommunicator:uut|State.OutputAndWaitForWrite ; 58      ;
+; OpticalSensorCommunicator:uut|Equal2~10                   ; 35      ;
+; OpticalSensorCommunicator:uut|CntWaitCycles[30]~5         ; 31      ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~2       ; 31      ;
 ; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~1       ; 31      ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[26]~3       ; 29      ;
-; OpticalSensorCommunicator:uut|Equal1~1                    ; 17      ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[26]~1       ; 29      ;
 ; iMISO                                                     ; 16      ;
 ; inResetAsync                                              ; 16      ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[1]          ; 14      ;
-; OpticalSensorCommunicator:uut|State.ReadBurstRegister     ; 12      ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[0]          ; 12      ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[2]          ; 12      ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[3]          ; 12      ;
-; OpticalSensorCommunicator:uut|State.SetBurstRegister      ; 12      ;
-; StrobeGen:GenerateStrobe|oStrobe                          ; 10      ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[1]          ; 12      ;
+; OpticalSensorCommunicator:uut|Equal1~1                    ; 10      ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[0]          ; 10      ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[2]          ; 10      ;
+; OpticalSensorCommunicator:uut|State.ReadBurstRegister     ; 10      ;
 ; OpticalSensorCommunicator:uut|oDataY[5]                   ; 10      ;
 ; OpticalSensorCommunicator:uut|oDataY[6]                   ; 10      ;
 ; OpticalSensorCommunicator:uut|oDataX[5]                   ; 10      ;
 ; OpticalSensorCommunicator:uut|oDataX[6]                   ; 10      ;
-; OpticalSensorCommunicator:uut|Decoder0~2                  ; 9       ;
-; OpticalSensorCommunicator:uut|Decoder0~1                  ; 9       ;
+; StrobeGen:GenerateStrobe|oStrobe                          ; 9       ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[3]          ; 9       ;
+; OpticalSensorCommunicator:uut|State.SetBurstRegister      ; 9       ;
 ; OpticalSensorCommunicator:uut|oDataY[1]                   ; 9       ;
 ; OpticalSensorCommunicator:uut|oDataY[2]                   ; 9       ;
 ; OpticalSensorCommunicator:uut|oDataY[0]                   ; 9       ;
@@ -1049,56 +1047,59 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|oDataX[3]                   ; 9       ;
 ; OpticalSensorCommunicator:uut|oDataX[4]                   ; 9       ;
 ; OpticalSensorCommunicator:uut|oDataX[7]                   ; 9       ;
-; OpticalSensorCommunicator:uut|SysClk                      ; 6       ;
+; OpticalSensorCommunicator:uut|Decoder0~4                  ; 7       ;
+; OpticalSensorCommunicator:uut|Selector1~1                 ; 7       ;
+; OpticalSensorCommunicator:uut|CntWaitCycles~4             ; 6       ;
+; OpticalSensorCommunicator:uut|Equal4~1                    ; 6       ;
+; OpticalSensorCommunicator:uut|Selector1~3                 ; 6       ;
 ; OpticalSensorCommunicator:uut|Sel                         ; 6       ;
-; OpticalSensorCommunicator:uut|Selector103~0               ; 5       ;
-; OpticalSensorCommunicator:uut|Equal2~10                   ; 5       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[0]            ; 5       ;
-; OpticalSensorCommunicator:uut|Decoder0~5                  ; 4       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[0]         ; 5       ;
+; OpticalSensorCommunicator:uut|Decoder0~6                  ; 4       ;
 ; StrobeGen:GenerateStrobe|ClkCounter[0]                    ; 4       ;
 ; StrobeGen:GenerateStrobe|ClkCounter[1]                    ; 4       ;
-; OpticalSensorCommunicator:uut|Equal2~8                    ; 4       ;
-; OpticalSensorCommunicator:uut|Equal4~2                    ; 4       ;
-; OpticalSensorCommunicator:uut|Sel~0                       ; 4       ;
-; OpticalSensorCommunicator:uut|Equal0~1                    ; 4       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~8            ; 4       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~4            ; 4       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[0]         ; 4       ;
+; OpticalSensorCommunicator:uut|Selector103~1               ; 4       ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[6]          ; 4       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[31]         ; 4       ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[4]          ; 4       ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[5]          ; 4       ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[0]~5        ; 3       ;
-; OpticalSensorCommunicator:uut|Decoder0~15                 ; 3       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[3]         ; 4       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[4]         ; 4       ;
+; OpticalSensorCommunicator:uut|SysClk                      ; 4       ;
+; OpticalSensorCommunicator:uut|Decoder0~13                 ; 3       ;
 ; StrobeGen:GenerateStrobe|Equal0~0                         ; 3       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter~4          ; 3       ;
-; OpticalSensorCommunicator:uut|Selector1~3                 ; 3       ;
-; OpticalSensorCommunicator:uut|Equal2~5                    ; 3       ;
-; OpticalSensorCommunicator:uut|Equal2~4                    ; 3       ;
-; OpticalSensorCommunicator:uut|Equal4~0                    ; 3       ;
-; OpticalSensorCommunicator:uut|CntWaitCycles[2]            ; 3       ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[0]~3        ; 3       ;
+; OpticalSensorCommunicator:uut|Selector1~4                 ; 3       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~10           ; 3       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[5]            ; 3       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[6]            ; 3       ;
-; OpticalSensorCommunicator:uut|Selector1~0                 ; 3       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~9            ; 3       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[5]         ; 3       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[6]         ; 3       ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[6]          ; 3       ;
+; OpticalSensorCommunicator:uut|MasterOutput~7              ; 3       ;
+; OpticalSensorCommunicator:uut|MasterOutput~6              ; 3       ;
+; OpticalSensorCommunicator:uut|MasterOutput~5              ; 3       ;
 ; OpticalSensorCommunicator:uut|Decoder0~0                  ; 3       ;
-; OpticalSensorCommunicator:uut|Decoder0~17                 ; 2       ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[4]          ; 3       ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[5]          ; 3       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~9            ; 3       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~8            ; 3       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~7            ; 3       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~3            ; 3       ;
+; OpticalSensorCommunicator:uut|Decoder0~14                 ; 2       ;
+; OpticalSensorCommunicator:uut|Decoder0~12                 ; 2       ;
+; OpticalSensorCommunicator:uut|Decoder0~10                 ; 2       ;
 ; OpticalSensorCommunicator:uut|Decoder0~9                  ; 2       ;
+; OpticalSensorCommunicator:uut|Decoder0~8                  ; 2       ;
 ; OpticalSensorCommunicator:uut|Decoder0~7                  ; 2       ;
-; OpticalSensorCommunicator:uut|Decoder0~6                  ; 2       ;
+; OpticalSensorCommunicator:uut|Decoder0~5                  ; 2       ;
+; OpticalSensorCommunicator:uut|Decoder0~1                  ; 2       ;
 ; StrobeGen:GenerateStrobe|ClkCounter[3]                    ; 2       ;
 ; StrobeGen:GenerateStrobe|ClkCounter[5]                    ; 2       ;
 ; StrobeGen:GenerateStrobe|ClkCounter[2]                    ; 2       ;
 ; StrobeGen:GenerateStrobe|ClkCounter[4]                    ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~0       ; 2       ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[0]~4        ; 2       ;
-; OpticalSensorCommunicator:uut|Selector37~4                ; 2       ;
-; OpticalSensorCommunicator:uut|SlaveClkCounter[26]~2       ; 2       ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[0]~2        ; 2       ;
+; OpticalSensorCommunicator:uut|Selector37~5                ; 2       ;
+; OpticalSensorCommunicator:uut|SlaveClkCounter[26]~0       ; 2       ;
+; OpticalSensorCommunicator:uut|Selector1~7                 ; 2       ;
 ; OpticalSensorCommunicator:uut|Selector1~6                 ; 2       ;
 ; OpticalSensorCommunicator:uut|Selector1~5                 ; 2       ;
-; OpticalSensorCommunicator:uut|Selector1~1                 ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~0       ; 2       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[33]            ; 2       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[34]            ; 2       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[37]            ; 2       ;
@@ -1115,25 +1116,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|BurstRegData[44]            ; 2       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[46]            ; 2       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[47]            ; 2       ;
-; OpticalSensorCommunicator:uut|MasterOutput~8              ; 2       ;
-; OpticalSensorCommunicator:uut|Selector103~2               ; 2       ;
+; OpticalSensorCommunicator:uut|Selector101~0               ; 2       ;
+; OpticalSensorCommunicator:uut|Selector103~0               ; 2       ;
 ; OpticalSensorCommunicator:uut|SysClk~0                    ; 2       ;
-; OpticalSensorCommunicator:uut|Equal2~9                    ; 2       ;
-; OpticalSensorCommunicator:uut|Equal4~1                    ; 2       ;
-; OpticalSensorCommunicator:uut|Equal2~7                    ; 2       ;
-; OpticalSensorCommunicator:uut|CntWaitCycles[1]            ; 2       ;
-; OpticalSensorCommunicator:uut|CntWaitCycles[3]            ; 2       ;
-; OpticalSensorCommunicator:uut|CntWaitCycles[4]            ; 2       ;
-; OpticalSensorCommunicator:uut|CntWaitCycles[7]            ; 2       ;
-; OpticalSensorCommunicator:uut|Equal2~6                    ; 2       ;
+; OpticalSensorCommunicator:uut|Equal2~8                    ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[8]            ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[9]            ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[10]           ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[11]           ; 2       ;
+; OpticalSensorCommunicator:uut|Equal2~7                    ; 2       ;
+; OpticalSensorCommunicator:uut|CntWaitCycles[3]            ; 2       ;
+; OpticalSensorCommunicator:uut|CntWaitCycles[1]            ; 2       ;
+; OpticalSensorCommunicator:uut|CntWaitCycles[2]            ; 2       ;
+; OpticalSensorCommunicator:uut|CntWaitCycles[4]            ; 2       ;
+; OpticalSensorCommunicator:uut|CntWaitCycles[7]            ; 2       ;
+; OpticalSensorCommunicator:uut|Equal2~5                    ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[12]           ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[13]           ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[14]           ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[15]           ; 2       ;
+; OpticalSensorCommunicator:uut|Equal2~4                    ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[16]           ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[17]           ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[18]           ; 2       ;
@@ -1150,48 +1152,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|CntWaitCycles[29]           ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[30]           ; 2       ;
 ; OpticalSensorCommunicator:uut|CntWaitCycles[31]           ; 2       ;
-; OpticalSensorCommunicator:uut|Selector2~1                 ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[1]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[2]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[3]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[4]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[7]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[8]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[9]         ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[10]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[11]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[12]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[13]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[14]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[15]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[16]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[17]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[18]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[19]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[20]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[21]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[22]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[23]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[24]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[25]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[26]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[27]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[28]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[29]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[30]        ; 2       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[31]        ; 2       ;
-; OpticalSensorCommunicator:uut|Equal0~0                    ; 2       ;
-; OpticalSensorCommunicator:uut|MasterOutput~7              ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[7]          ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[8]          ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[9]          ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[10]         ; 2       ;
-; OpticalSensorCommunicator:uut|MasterOutput~6              ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[11]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[12]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[13]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[14]         ; 2       ;
-; OpticalSensorCommunicator:uut|MasterOutput~5              ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[15]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[16]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[17]         ; 2       ;
@@ -1209,11 +1177,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[29]         ; 2       ;
 ; OpticalSensorCommunicator:uut|SlaveClkCounter[30]         ; 2       ;
 ; OpticalSensorCommunicator:uut|MasterOutput~0              ; 2       ;
+; OpticalSensorCommunicator:uut|Equal0~2                    ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[16]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[17]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[18]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[19]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[20]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[21]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[22]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[23]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[1]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[2]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[5]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[6]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[7]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[8]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[9]         ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[10]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[11]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[12]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[13]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[14]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[15]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[30]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[31]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[24]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[25]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[26]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[27]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[28]        ; 2       ;
+; OpticalSensorCommunicator:uut|SysClkGenCounter[29]        ; 2       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~0            ; 2       ;
 ; OpticalSensorCommunicator:uut|DataValid                   ; 2       ;
 ; OpticalSensorCommunicator:uut|MasterOutput                ; 2       ;
 ; OpticalSensorCommunicator:uut|Add1~4                      ; 2       ;
 ; OpticalSensorCommunicator:uut|Add1~0                      ; 2       ;
 ; OpticalSensorCommunicator:uut|State.Init~feeder           ; 1       ;
+; OpticalSensorCommunicator:uut|Selector69~3                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector30~2                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector29~2                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector28~2                ; 1       ;
@@ -1244,48 +1244,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Selector35~2                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector34~2                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector33~2                ; 1       ;
+; OpticalSensorCommunicator:uut|Equal0~3                    ; 1       ;
 ; StrobeGen:GenerateStrobe|ClkCounter~1                     ; 1       ;
 ; StrobeGen:GenerateStrobe|ClkCounter~0                     ; 1       ;
-; OpticalSensorCommunicator:uut|BurstRegData[33]~15         ; 1       ;
+; OpticalSensorCommunicator:uut|BurstRegData[33]~16         ; 1       ;
+; OpticalSensorCommunicator:uut|BurstRegData[34]~15         ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[34]~14         ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~21                 ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~20                 ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[37]~13         ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~19                 ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~18                 ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[32]~12         ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[35]~11         ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~16                 ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[36]~10         ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[38]~9          ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[39]~8          ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~14                 ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~13                 ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[41]~7          ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[42]~6          ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~12                 ; 1       ;
-; OpticalSensorCommunicator:uut|BurstRegData[45]~5          ; 1       ;
 ; OpticalSensorCommunicator:uut|Decoder0~11                 ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~10                 ; 1       ;
+; OpticalSensorCommunicator:uut|BurstRegData[45]~5          ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[40]~4          ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[43]~3          ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~8                  ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[44]~2          ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[46]~1          ; 1       ;
 ; OpticalSensorCommunicator:uut|BurstRegData[47]~0          ; 1       ;
-; OpticalSensorCommunicator:uut|Decoder0~4                  ; 1       ;
 ; OpticalSensorCommunicator:uut|Decoder0~3                  ; 1       ;
-; OpticalSensorCommunicator:uut|LessThan1~0                 ; 1       ;
+; OpticalSensorCommunicator:uut|Decoder0~2                  ; 1       ;
+; StrobeGen:GenerateStrobe|Equal0~1                         ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector2~3                 ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector2~2                 ; 1       ;
-; OpticalSensorCommunicator:uut|Selector68~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector66~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector65~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector62~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector2~1                 ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector61~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector60~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector59~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector58~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector69~2                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector64~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector63~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector66~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector68~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector67~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector65~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector62~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector57~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector56~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector55~0                ; 1       ;
@@ -1306,19 +1303,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Selector40~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector39~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector38~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector69~1                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector69~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector67~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector64~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector63~0                ; 1       ;
-; StrobeGen:GenerateStrobe|Equal0~1                         ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector4~0                 ; 1       ;
+; OpticalSensorCommunicator:uut|Selector32~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector31~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector1~8                 ; 1       ;
+; OpticalSensorCommunicator:uut|Selector85~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector84~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector83~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector82~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector81~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector80~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector79~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector78~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector3~1                 ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector3~0                 ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector100~0               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector99~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector98~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector97~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector96~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector95~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector94~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector93~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector92~0                ; 1       ;
@@ -1328,34 +1330,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Selector88~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector87~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector86~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector85~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector84~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector83~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector82~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector81~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector80~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector79~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector78~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector71~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector70~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector77~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector76~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector75~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector74~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector73~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector72~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector71~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector70~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector101~4               ; 1       ;
+; OpticalSensorCommunicator:uut|Selector101~3               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector101~2               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector101~1               ; 1       ;
-; OpticalSensorCommunicator:uut|Selector101~0               ; 1       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~10           ; 1       ;
-; OpticalSensorCommunicator:uut|Selector96~0                ; 1       ;
-; OpticalSensorCommunicator:uut|SysClkGenCounter[3]~2       ; 1       ;
-; OpticalSensorCommunicator:uut|Selector95~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector32~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector31~0                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector1~7                 ; 1       ;
-; OpticalSensorCommunicator:uut|Selector1~4                 ; 1       ;
-; OpticalSensorCommunicator:uut|Selector1~2                 ; 1       ;
+; OpticalSensorCommunicator:uut|Selector98~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Selector97~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector127~0               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector126~0               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector123~0               ; 1       ;
@@ -1401,32 +1389,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Mux4~0                                                    ; 1       ;
 ; Mux5~0                                                    ; 1       ;
 ; Mux6~0                                                    ; 1       ;
+; OpticalSensorCommunicator:uut|Selector102~3               ; 1       ;
+; OpticalSensorCommunicator:uut|Selector102~2               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector102~1               ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector102~0               ; 1       ;
-; OpticalSensorCommunicator:uut|MasterOutput~10             ; 1       ;
-; OpticalSensorCommunicator:uut|MasterOutput~9              ; 1       ;
+; OpticalSensorCommunicator:uut|MasterOutput~8              ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector103~3               ; 1       ;
-; OpticalSensorCommunicator:uut|Selector103~1               ; 1       ;
+; OpticalSensorCommunicator:uut|Selector103~2               ; 1       ;
+; OpticalSensorCommunicator:uut|Selector37~4                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector37~3                ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector37~2                ; 1       ;
+; OpticalSensorCommunicator:uut|Equal2~9                    ; 1       ;
 ; OpticalSensorCommunicator:uut|Selector37~1                ; 1       ;
-; OpticalSensorCommunicator:uut|Selector37~0                ; 1       ;
+; OpticalSensorCommunicator:uut|Equal4~0                    ; 1       ;
+; OpticalSensorCommunicator:uut|Equal2~6                    ; 1       ;
 ; OpticalSensorCommunicator:uut|Equal2~3                    ; 1       ;
 ; OpticalSensorCommunicator:uut|Equal2~2                    ; 1       ;
 ; OpticalSensorCommunicator:uut|Equal2~1                    ; 1       ;
 ; OpticalSensorCommunicator:uut|Equal2~0                    ; 1       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~7            ; 1       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~6            ; 1       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~5            ; 1       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~3            ; 1       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~2            ; 1       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~1            ; 1       ;
-; OpticalSensorCommunicator:uut|RegAndClockGen~0            ; 1       ;
+; OpticalSensorCommunicator:uut|Selector37~0                ; 1       ;
 ; OpticalSensorCommunicator:uut|Equal1~0                    ; 1       ;
 ; OpticalSensorCommunicator:uut|MasterOutput~4              ; 1       ;
 ; OpticalSensorCommunicator:uut|MasterOutput~3              ; 1       ;
 ; OpticalSensorCommunicator:uut|MasterOutput~2              ; 1       ;
 ; OpticalSensorCommunicator:uut|MasterOutput~1              ; 1       ;
+; OpticalSensorCommunicator:uut|Selector1~2                 ; 1       ;
+; OpticalSensorCommunicator:uut|Selector1~0                 ; 1       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~6            ; 1       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~5            ; 1       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~4            ; 1       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~2            ; 1       ;
+; OpticalSensorCommunicator:uut|RegAndClockGen~1            ; 1       ;
 ; CheckValidData~6                                          ; 1       ;
 ; CheckValidData~5                                          ; 1       ;
 ; CheckValidData~4                                          ; 1       ;
@@ -1537,6 +1530,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Add2~2                      ; 1       ;
 ; OpticalSensorCommunicator:uut|Add2~1                      ; 1       ;
 ; OpticalSensorCommunicator:uut|Add2~0                      ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~62                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~61                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~60                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~59                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~58                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~57                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~56                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~55                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~54                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~53                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~52                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~51                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~50                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~49                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~48                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~47                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~46                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~45                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~44                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~43                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~42                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~41                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~40                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~39                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~38                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~37                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~36                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~35                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~34                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~33                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~32                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~31                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~30                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~29                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~28                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~27                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~26                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~25                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~24                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~23                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~22                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~21                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~20                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~19                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~18                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~17                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~16                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~15                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~14                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~13                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~12                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~11                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~10                     ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~9                      ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~8                      ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~7                      ; 1       ;
+; OpticalSensorCommunicator:uut|Add1~6                      ; 1       ;
 ; OpticalSensorCommunicator:uut|Add0~62                     ; 1       ;
 ; OpticalSensorCommunicator:uut|Add0~61                     ; 1       ;
 ; OpticalSensorCommunicator:uut|Add0~60                     ; 1       ;
@@ -1600,63 +1650,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; OpticalSensorCommunicator:uut|Add0~2                      ; 1       ;
 ; OpticalSensorCommunicator:uut|Add0~1                      ; 1       ;
 ; OpticalSensorCommunicator:uut|Add0~0                      ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~62                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~61                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~60                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~59                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~58                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~57                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~56                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~55                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~54                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~53                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~52                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~51                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~50                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~49                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~48                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~47                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~46                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~45                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~44                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~43                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~42                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~41                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~40                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~39                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~38                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~37                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~36                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~35                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~34                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~33                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~32                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~31                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~30                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~29                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~28                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~27                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~26                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~25                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~24                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~23                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~22                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~21                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~20                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~19                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~18                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~17                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~16                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~15                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~14                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~13                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~12                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~11                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~10                     ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~9                      ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~8                      ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~7                      ; 1       ;
-; OpticalSensorCommunicator:uut|Add1~6                      ; 1       ;
 ; OpticalSensorCommunicator:uut|Add1~5                      ; 1       ;
 ; OpticalSensorCommunicator:uut|Add1~3                      ; 1       ;
 ; OpticalSensorCommunicator:uut|Add1~2                      ; 1       ;
@@ -1669,57 +1662,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 414 / 54,004 ( < 1 % ) ;
-; C16 interconnects           ; 7 / 2,100 ( < 1 % )    ;
-; C4 interconnects            ; 144 / 36,000 ( < 1 % ) ;
-; Direct links                ; 160 / 54,004 ( < 1 % ) ;
+; Block interconnects         ; 406 / 54,004 ( < 1 % ) ;
+; C16 interconnects           ; 4 / 2,100 ( < 1 % )    ;
+; C4 interconnects            ; 130 / 36,000 ( < 1 % ) ;
+; Direct links                ; 177 / 54,004 ( < 1 % ) ;
 ; Global clocks               ; 2 / 16 ( 13 % )        ;
-; Local interconnects         ; 167 / 18,752 ( < 1 % ) ;
-; R24 interconnects           ; 17 / 1,900 ( < 1 % )   ;
-; R4 interconnects            ; 238 / 46,920 ( < 1 % ) ;
+; Local interconnects         ; 168 / 18,752 ( < 1 % ) ;
+; R24 interconnects           ; 9 / 1,900 ( < 1 % )    ;
+; R4 interconnects            ; 200 / 46,920 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 14.42) ; Number of LABs  (Total = 26) ;
+; Number of Logic Elements  (Average = 14.72) ; Number of LABs  (Total = 25) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 0                            ;
 ; 2                                           ; 0                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 1                            ;
+; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 0                            ;
+; 7                                           ; 1                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 1                            ;
+; 10                                          ; 2                            ;
+; 11                                          ; 0                            ;
 ; 12                                          ; 1                            ;
-; 13                                          ; 3                            ;
+; 13                                          ; 1                            ;
 ; 14                                          ; 1                            ;
-; 15                                          ; 4                            ;
-; 16                                          ; 14                           ;
+; 15                                          ; 2                            ;
+; 16                                          ; 17                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.27) ; Number of LABs  (Total = 26) ;
+; LAB-wide Signals  (Average = 2.16) ; Number of LABs  (Total = 25) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 20                           ;
-; 1 Clock                            ; 20                           ;
-; 1 Clock enable                     ; 14                           ;
-; 1 Sync. load                       ; 5                            ;
+; 1 Async. clear                     ; 19                           ;
+; 1 Clock                            ; 19                           ;
+; 1 Clock enable                     ; 12                           ;
+; 1 Sync. load                       ; 4                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 21.08) ; Number of LABs  (Total = 26) ;
+; Number of Signals Sourced  (Average = 21.64) ; Number of LABs  (Total = 25) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
@@ -1730,51 +1723,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
+; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 1                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 6                            ;
-; 17                                           ; 0                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 1                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 2                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 0                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 1                            ;
 ; 23                                           ; 1                            ;
-; 24                                           ; 1                            ;
+; 24                                           ; 2                            ;
 ; 25                                           ; 2                            ;
-; 26                                           ; 2                            ;
-; 27                                           ; 2                            ;
-; 28                                           ; 2                            ;
-; 29                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 3                            ;
+; 28                                           ; 5                            ;
 +----------------------------------------------+------------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +--------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 11.50) ; Number of LABs  (Total = 26) ;
+; Number of Signals Sourced Out  (Average = 11.84) ; Number of LABs  (Total = 25) ;
 +--------------------------------------------------+------------------------------+
 ; 0                                                ; 0                            ;
-; 1                                                ; 0                            ;
+; 1                                                ; 1                            ;
 ; 2                                                ; 0                            ;
-; 3                                                ; 1                            ;
+; 3                                                ; 0                            ;
 ; 4                                                ; 0                            ;
-; 5                                                ; 1                            ;
+; 5                                                ; 0                            ;
 ; 6                                                ; 1                            ;
-; 7                                                ; 0                            ;
-; 8                                                ; 3                            ;
-; 9                                                ; 3                            ;
+; 7                                                ; 2                            ;
+; 8                                                ; 2                            ;
+; 9                                                ; 1                            ;
 ; 10                                               ; 2                            ;
-; 11                                               ; 2                            ;
+; 11                                               ; 0                            ;
 ; 12                                               ; 2                            ;
-; 13                                               ; 2                            ;
-; 14                                               ; 0                            ;
-; 15                                               ; 2                            ;
+; 13                                               ; 5                            ;
+; 14                                               ; 1                            ;
+; 15                                               ; 1                            ;
 ; 16                                               ; 7                            ;
 +--------------------------------------------------+------------------------------+
 
@@ -1782,31 +1774,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 15.19) ; Number of LABs  (Total = 26) ;
+; Number of Distinct Inputs  (Average = 15.72) ; Number of LABs  (Total = 25) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
+; 2                                            ; 1                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
+; 6                                            ; 1                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 1                            ;
-; 9                                            ; 2                            ;
-; 10                                           ; 2                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 0                            ;
-; 13                                           ; 3                            ;
-; 14                                           ; 1                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 0                            ;
 ; 15                                           ; 2                            ;
-; 16                                           ; 4                            ;
-; 17                                           ; 6                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 2                            ;
-; 20                                           ; 2                            ;
+; 16                                           ; 3                            ;
+; 17                                           ; 7                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 3                            ;
+; 20                                           ; 1                            ;
 ; 21                                           ; 0                            ;
-; 22                                           ; 1                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1889,28 +1883,28 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X0_Y14 to location X11_Y27
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X25_Y14 to location X37_Y27
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.23 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.25 seconds.
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
-Info (144001): Generated suppressed messages file C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 634 megabytes
-    Info: Processing ended: Sun Feb 12 16:32:11 2017
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 625 megabytes
+    Info: Processing ended: Wed Mar 01 10:05:39 2017
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.fit.smsg.
+The suppressed messages can be found in C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.fit.smsg.
 
 

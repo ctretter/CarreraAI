@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun Feb 12 16:32:11 2017
+Fitter Status : Successful - Wed Mar 01 10:05:39 2017
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : TestOpticalSensor
 Top-level Entity Name : TestOpticalSensor
 Family : Cyclone II
 Device : EP2C20F484C7
 Timing Models : Final
-Total logic elements : 375 / 18,752 ( 2 % )
-    Total combinational functions : 375 / 18,752 ( 2 % )
+Total logic elements : 368 / 18,752 ( 2 % )
+    Total combinational functions : 368 / 18,752 ( 2 % )
     Dedicated logic registers : 173 / 18,752 ( < 1 % )
 Total registers : 173
 Total pins : 35 / 315 ( 11 % )

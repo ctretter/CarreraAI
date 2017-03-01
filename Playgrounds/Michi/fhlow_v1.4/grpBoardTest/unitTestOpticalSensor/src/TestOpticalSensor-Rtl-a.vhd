@@ -4,7 +4,7 @@
 -- File        :	TestOpticalSensor-Rtl-a.vhd
 -- Description : 	architecture for test of optical sensor
 -------------------------------------------------------------------------------
--- Latest update:	28.01.2017
+-- Latest update:	01.03.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of TestOpticalSensor is

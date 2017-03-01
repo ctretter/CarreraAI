@@ -1,5 +1,5 @@
 Assembler report for TestOpticalSensor
-Sun Feb 12 16:32:15 2017
+Wed Mar 01 10:05:43 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,9 +10,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.sof
-  6. Assembler Device Options: C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.pof
-  7. Assembler Device Options: C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.rbf
+  5. Assembler Device Options: C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.sof
+  6. Assembler Device Options: C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.pof
+  7. Assembler Device Options: C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.rbf
   8. Assembler Messages
 
 
@@ -39,7 +39,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Feb 12 16:32:15 2017 ;
+; Assembler Status      ; Successful - Wed Mar 01 10:05:43 2017 ;
 ; Revision Name         ; TestOpticalSensor                     ;
 ; Top-level Entity Name ; TestOpticalSensor                     ;
 ; Family                ; Cyclone II                            ;
@@ -79,48 +79,48 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                                                                                   ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                                                                                   ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.sof ;
-; C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.pof ;
-; C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.rbf ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                                                                        ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                                                                        ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.sof ;
+; C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.pof ;
+; C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.rbf ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.sof ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                                                                                              ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Device         ; EP2C20F484C7                                                                                                                                                                                         ;
-; JTAG usercode  ; 0x001E1204                                                                                                                                                                                           ;
-; Checksum       ; 0x001E1204                                                                                                                                                                                           ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                                                                   ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP2C20F484C7                                                                                                                                                                              ;
+; JTAG usercode  ; 0x001DF97C                                                                                                                                                                                ;
+; Checksum       ; 0x001DF97C                                                                                                                                                                                ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.pof ;
-+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                                                                                                                                          ;
-+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                                                                                                                                           ;
-; JTAG usercode      ; 0x00000000                                                                                                                                                                                       ;
-; Checksum           ; 0x1DD2B4A0                                                                                                                                                                                       ;
-; Compression Ratio  ; 3                                                                                                                                                                                                ;
-+--------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.pof ;
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                                                                                               ;
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Device             ; EPCS16                                                                                                                                                                                ;
+; JTAG usercode      ; 0x00000000                                                                                                                                                                            ;
+; Checksum           ; 0x1DD04A50                                                                                                                                                                            ;
+; Compression Ratio  ; 3                                                                                                                                                                                     ;
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.rbf ;
-+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Option              ; Setting                                                                                                                                                                                         ;
-+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Raw Binary File     ;                                                                                                                                                                                                 ;
-;  Compression Ratio  ; 3                                                                                                                                                                                               ;
-+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/synlayResults/TestOpticalSensor.rbf ;
++---------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Option              ; Setting                                                                                                                                                                              ;
++---------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Raw Binary File     ;                                                                                                                                                                                      ;
+;  Compression Ratio  ; 3                                                                                                                                                                                    ;
++---------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -129,14 +129,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Feb 12 16:32:12 2017
+    Info: Processing started: Wed Mar 01 10:05:40 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off TestOpticalSensor -c TestOpticalSensor
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 425 megabytes
-    Info: Processing ended: Sun Feb 12 16:32:15 2017
+    Info: Peak virtual memory: 430 megabytes
+    Info: Processing ended: Wed Mar 01 10:05:43 2017
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

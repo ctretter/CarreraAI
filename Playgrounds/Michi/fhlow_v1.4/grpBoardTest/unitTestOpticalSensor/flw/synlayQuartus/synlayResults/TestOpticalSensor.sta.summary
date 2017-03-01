@@ -3,7 +3,7 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'SYSCLK'
-Slack : 28.473
+Slack : 27.944
 TNS   : 0.000
 
 Type  : Slow Model Hold 'SYSCLK'
@@ -15,7 +15,7 @@ Slack : 18.889
 TNS   : 0.000
 
 Type  : Fast Model Setup 'SYSCLK'
-Slack : 35.527
+Slack : 35.445
 TNS   : 0.000
 
 Type  : Fast Model Hold 'SYSCLK'
