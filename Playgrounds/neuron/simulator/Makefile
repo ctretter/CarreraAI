@@ -1,7 +1,14 @@
 CFLAGS = -Wall
 LINKFLAGS = -lm
 COMPILER = g++
-TRACKPIECEOBJ = TrackPiece.o TrackPiece_Test.o
+TRACKPIECE = TrackPiece.o
+TRACKPIECEOBJ = $TRACKPIECE TrackPiece_Test.o
+TRACK = Track.o
+TRACKOBJ = $TRACKPIECE $TRACK Track_Test.o
+
+##   Track_Test: compiles test driver for class Track
+Track_Test: $(TRACKOBJ)
+	$(COMPILER)  $(CFLAGS) $(LINKFLAGS) $(TRACKOBJ) -o TrackPiece_Test
 
 ##   TrackPiece_Test: compiles test driver for class TrackPiece
 TrackPiece_Test: $(TRACKPIECEOBJ)
