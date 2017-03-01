@@ -1,4 +1,7 @@
-
+/*
+ * 	author: David Kahlbacher.
+ */
+ 
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include "TrackPiece.h"
@@ -126,11 +129,17 @@ void TrackPiece::_SetAngles(double const angle_i, double const angle_o){
 
 void TrackPiece::_CalcLen(double const x, double const y){
 	switch(mDirection){
-	case EDir_Straight: mLen = sqrt(pow((x - mStart.first)/cos(mAngles.first),2) + pow((y - mStart.first)/sin(mAngles.first),2));
+	case EDir_Straight: 
+		if(sin(mAngles.first) == 0) {
+			mLen = (x-mStart.first)/cos(mAngles.first);
+		}
+		else{
+			mLen = (y-mStart.second)/sin(mAngles.first);
+		}			
 		break;
-	case EDir_Left: mLen = mRadius * (mAngles.second - mAngles.first);
+	case EDir_Left: mLen = mRadius * (getAngle());
 		break;
-	case EDir_Right: mLen = mRadius * (mAngles.second - mAngles.first);
+	case EDir_Right: mLen = mRadius * (getAngle());
 		break;
 	default: mLen = 0.0;
 		break;
