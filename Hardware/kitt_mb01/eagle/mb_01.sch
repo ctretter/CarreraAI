@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -62,7 +62,7 @@
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="98" name="Guide" color="6" fill="1" visible="no" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="99" name="SpiceOrder" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="101" name="Patch_Top" color="7" fill="1" visible="yes" active="yes"/>
@@ -17887,55 +17887,6 @@ Source: www.ti.com/.. slvs087l.pdf</description>
 <smd name="5" x="0" y="0.95" dx="0.35" dy="0.8" layer="1" stop="no" cream="no"/>
 <smd name="6" x="-0.65" y="0.95" dx="0.35" dy="0.8" layer="1" stop="no" cream="no"/>
 </package>
-<package name="SOT95P280X130-5N">
-<wire x1="-0.4572" y1="-1.4986" x2="0.4572" y2="-1.4986" width="0.1524" layer="21"/>
-<wire x1="0.8636" y1="-0.3302" x2="0.8636" y2="0.3302" width="0.1524" layer="21"/>
-<wire x1="0.4572" y1="1.4986" x2="0.3048" y2="1.4986" width="0.1524" layer="21"/>
-<wire x1="0.3048" y1="1.4986" x2="-0.3048" y2="1.4986" width="0.1524" layer="21"/>
-<wire x1="-0.3048" y1="1.4986" x2="-0.4572" y2="1.4986" width="0.1524" layer="21"/>
-<wire x1="0.3048" y1="1.4986" x2="-0.3048" y2="1.4986" width="0.1524" layer="21" curve="-180"/>
-<text x="-2.1082" y="1.3716" size="1.27" layer="21" ratio="6" rot="SR0">*</text>
-<wire x1="-0.8636" y1="-1.4986" x2="0.8636" y2="-1.4986" width="0" layer="51"/>
-<wire x1="0.8636" y1="-1.4986" x2="0.8636" y2="-1.1938" width="0" layer="51"/>
-<wire x1="0.8636" y1="-1.1938" x2="0.8636" y2="-0.7112" width="0" layer="51"/>
-<wire x1="0.8636" y1="-0.7112" x2="0.8636" y2="0.7112" width="0" layer="51"/>
-<wire x1="0.8636" y1="1.4986" x2="0.3048" y2="1.4986" width="0" layer="51"/>
-<wire x1="0.3048" y1="1.4986" x2="-0.3048" y2="1.4986" width="0" layer="51"/>
-<wire x1="-0.3048" y1="1.4986" x2="-0.8636" y2="1.4986" width="0" layer="51"/>
-<wire x1="-0.8636" y1="1.4986" x2="-0.8636" y2="1.1938" width="0" layer="51"/>
-<wire x1="-0.8636" y1="1.1938" x2="-0.8636" y2="0.7112" width="0" layer="51"/>
-<wire x1="-0.8636" y1="0.7112" x2="-0.8636" y2="0.254" width="0" layer="51"/>
-<wire x1="-0.8636" y1="0.254" x2="-0.8636" y2="-0.254" width="0" layer="51"/>
-<wire x1="-0.8636" y1="-0.254" x2="-0.8636" y2="-0.7112" width="0" layer="51"/>
-<wire x1="-0.8636" y1="1.1938" x2="-1.4986" y2="1.1938" width="0" layer="51"/>
-<wire x1="-1.4986" y1="1.1938" x2="-1.4986" y2="0.7112" width="0" layer="51"/>
-<wire x1="-1.4986" y1="0.7112" x2="-0.8636" y2="0.7112" width="0" layer="51"/>
-<wire x1="-0.8636" y1="0.254" x2="-1.4986" y2="0.254" width="0" layer="51"/>
-<wire x1="-1.4986" y1="0.254" x2="-1.4986" y2="-0.254" width="0" layer="51"/>
-<wire x1="-1.4986" y1="-0.254" x2="-0.8636" y2="-0.254" width="0" layer="51"/>
-<wire x1="-0.8636" y1="-1.4986" x2="-0.8636" y2="-1.1938" width="0" layer="51"/>
-<wire x1="-0.8636" y1="-1.1938" x2="-0.8636" y2="-0.7112" width="0" layer="51"/>
-<wire x1="-0.8636" y1="-0.7112" x2="-1.4986" y2="-0.7112" width="0" layer="51"/>
-<wire x1="-1.4986" y1="-0.7112" x2="-1.4986" y2="-1.1938" width="0" layer="51"/>
-<wire x1="-1.4986" y1="-1.1938" x2="-0.8636" y2="-1.1938" width="0" layer="51"/>
-<wire x1="0.8636" y1="-1.1938" x2="1.4986" y2="-1.1938" width="0" layer="51"/>
-<wire x1="1.4986" y1="-1.1938" x2="1.4986" y2="-0.7112" width="0" layer="51"/>
-<wire x1="1.4986" y1="-0.7112" x2="0.8636" y2="-0.7112" width="0" layer="51"/>
-<wire x1="0.8636" y1="1.4986" x2="0.8636" y2="1.1938" width="0" layer="51"/>
-<wire x1="0.8636" y1="1.1938" x2="0.8636" y2="0.7112" width="0" layer="51"/>
-<wire x1="0.8636" y1="0.7112" x2="1.4986" y2="0.7112" width="0" layer="51"/>
-<wire x1="1.4986" y1="0.7112" x2="1.4986" y2="1.1938" width="0" layer="51"/>
-<wire x1="1.4986" y1="1.1938" x2="0.8636" y2="1.1938" width="0" layer="51"/>
-<wire x1="0.3048" y1="1.4986" x2="-0.3048" y2="1.4986" width="0" layer="51" curve="-180"/>
-<text x="-2.1082" y="1.3716" size="1.27" layer="51" ratio="6" rot="SR0">*</text>
-<text x="-3.4544" y="2.54" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-3.4544" y="-4.445" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
-<smd name="1" x="-1.27" y="0.9398" dx="1.3208" dy="0.5588" layer="1"/>
-<smd name="2" x="-1.27" y="0" dx="1.3208" dy="0.5588" layer="1"/>
-<smd name="3" x="-1.27" y="-0.9398" dx="1.3208" dy="0.5588" layer="1"/>
-<smd name="4" x="1.27" y="-0.9398" dx="1.3208" dy="0.5588" layer="1"/>
-<smd name="5" x="1.27" y="0.9398" dx="1.3208" dy="0.5588" layer="1"/>
-</package>
 </packages>
 <symbols>
 <symbol name="RT8293AHZSP">
@@ -18114,19 +18065,6 @@ Source: www.ti.com/.. slvs087l.pdf</description>
 <vertex x="2.032" y="0.762"/>
 <vertex x="2.032" y="-0.762"/>
 </polygon>
-</symbol>
-<symbol name="MIC5205-3.3YM5TR">
-<wire x1="-12.7" y1="7.62" x2="-12.7" y2="-15.24" width="0.4064" layer="94"/>
-<wire x1="-12.7" y1="-15.24" x2="12.7" y2="-15.24" width="0.4064" layer="94"/>
-<wire x1="12.7" y1="-15.24" x2="12.7" y2="7.62" width="0.4064" layer="94"/>
-<wire x1="12.7" y1="7.62" x2="-12.7" y2="7.62" width="0.4064" layer="94"/>
-<text x="-12.7" y="12.7" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-12.7" y="10.16" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
-<pin name="IN" x="-17.78" y="2.54" length="middle" direction="in"/>
-<pin name="EN" x="-17.78" y="-2.54" length="middle" direction="in"/>
-<pin name="BYP" x="-17.78" y="-5.08" length="middle" direction="in"/>
-<pin name="GND" x="-17.78" y="-10.16" length="middle" direction="pas"/>
-<pin name="OUT" x="17.78" y="2.54" length="middle" direction="out" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -18334,33 +18272,6 @@ Source: www.ti.com/.. slvs087l.pdf</description>
 </connects>
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="MIC5205-3.3YM5TR" prefix="U">
-<description>150mA Low-Noise LDO Regulator</description>
-<gates>
-<gate name="A" symbol="MIC5205-3.3YM5TR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SOT95P280X130-5N">
-<connects>
-<connect gate="A" pin="BYP" pad="4"/>
-<connect gate="A" pin="EN" pad="3"/>
-<connect gate="A" pin="GND" pad="2"/>
-<connect gate="A" pin="IN" pad="1"/>
-<connect gate="A" pin="OUT" pad="5"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="AVAILABILITY" value="Good"/>
-<attribute name="DESCRIPTION" value="MIC5205 Series 3.3 V Fixed Output 150 mA Low-Noise LDO Regulator - SOT-23-5"/>
-<attribute name="MF" value="Microchip"/>
-<attribute name="MP" value="MIC5205-3.3YM5-TR"/>
-<attribute name="PACKAGE" value="SOT-23-5 Microchip"/>
-<attribute name="PRICE" value="0.36 USD"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -26388,16 +26299,18 @@ Solder type</description>
 <part name="X7.03" library="kitt.con" deviceset="CON_HEADER_1X02" device=""/>
 <part name="R7.10" library="rcl" deviceset="R-EU_" device="R0603" value="330R"/>
 <part name="GND27" library="supply1" deviceset="GND" device=""/>
-<part name="U1.02" library="kitt.ic" deviceset="MIC5205-3.3YM5TR" device=""/>
-<part name="GND38" library="supply1" deviceset="GND" device=""/>
-<part name="P+5VMAIN7" library="supply1" deviceset="+5V" device="" value="+5V-MAIN"/>
-<part name="C1.07" library="rcl" deviceset="CPOL-EU" device="A/3216-18R" value="1uF"/>
-<part name="R1.07" library="rcl" deviceset="R-EU_" device="R0402" value="[0R]"/>
-<part name="C1.08" library="rcl" deviceset="CPOL-EU" device="A/3216-18R" value="1uF"/>
-<part name="GND39" library="supply1" deviceset="GND" device=""/>
-<part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
 <part name="DCL1" library="kitt.refs" deviceset="DCL.OSH.COPPER" device="'5MM'"/>
 <part name="DCL2" library="kitt.refs" deviceset="DCL.CARRERAI" device=""/>
+<part name="R7.17" library="rcl" deviceset="R-EU_" device="R0402" value="10kR"/>
+<part name="R7.18" library="rcl" deviceset="R-EU_" device="R0402" value="10kR"/>
+<part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
+<part name="+3V15" library="supply1" deviceset="+3V3" device=""/>
+<part name="GND38" library="supply1" deviceset="GND" device=""/>
+<part name="R7.19" library="jumper" deviceset="SJ" device="" value="[0R]"/>
+<part name="R7.20" library="jumper" deviceset="SJ" device="" value="[0R]"/>
+<part name="PAD1" library="wirepad" deviceset="SMD2" device=""/>
+<part name="PAD2" library="wirepad" deviceset="SMD2" device=""/>
+<part name="PAD3" library="wirepad" deviceset="SMD2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -26409,12 +26322,7 @@ Trainable Trackcars</text>
 <text x="180.34" y="19.05" size="2.1844" layer="94">- SUPPLY</text>
 <text x="217.17" y="20.32" size="2.1844" layer="94">D. Hoeglinger</text>
 <text x="247.65" y="5.08" size="2.1844" layer="94">R01</text>
-<text x="162.56" y="97.79" size="3.81" layer="98">TODO</text>
-<text x="172.72" y="92.71" size="3.81" layer="98">TODO</text>
-<text x="175.26" y="77.47" size="3.81" layer="98">TODO</text>
-<text x="193.04" y="80.01" size="3.81" layer="98">TODO</text>
-<text x="147.32" y="74.93" size="3.81" layer="98">TODO</text>
-<text x="147.32" y="67.31" size="3.81" layer="98">TODO</text>
+<text x="181.61" y="128.27" size="1.4224" layer="98">TODO TP</text>
 </plain>
 <instances>
 <instance part="D1.01" gate="G$1" x="31.75" y="147.32"/>
@@ -26465,19 +26373,6 @@ Trainable Trackcars</text>
 <attribute name="VALUE" x="243.84" y="145.288" size="1.778" layer="96"/>
 </instance>
 <instance part="GND29" gate="1" x="17.78" y="97.79"/>
-<instance part="U1.02" gate="A" x="109.22" y="60.96"/>
-<instance part="GND38" gate="1" x="71.12" y="43.18"/>
-<instance part="P+5VMAIN7" gate="1" x="71.12" y="71.12" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="74.93" y="72.39" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="C1.07" gate="G$1" x="71.12" y="55.88"/>
-<instance part="R1.07" gate="G$1" x="81.28" y="58.42" smashed="yes" rot="R180">
-<attribute name="NAME" x="78.74" y="60.96" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="88.9" y="60.96" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="C1.08" gate="G$1" x="129.54" y="55.88"/>
-<instance part="GND39" gate="1" x="129.54" y="43.18"/>
-<instance part="+3V7" gate="G$1" x="129.54" y="71.12" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -26535,19 +26430,6 @@ Trainable Trackcars</text>
 <junction x="196.85" y="101.6"/>
 <pinref part="GND29" gate="1" pin="GND"/>
 <wire x1="17.78" y1="100.33" x2="17.78" y2="101.6" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="GND38" gate="1" pin="GND"/>
-<pinref part="U1.02" gate="A" pin="GND"/>
-<wire x1="71.12" y1="45.72" x2="71.12" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="50.8" x2="91.44" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="C1.07" gate="G$1" pin="-"/>
-<junction x="71.12" y="50.8"/>
-</segment>
-<segment>
-<pinref part="C1.08" gate="G$1" pin="-"/>
-<pinref part="GND39" gate="1" pin="GND"/>
-<wire x1="129.54" y1="50.8" x2="129.54" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$81" class="0">
@@ -26672,36 +26554,6 @@ Trainable Trackcars</text>
 <pinref part="SUPPLY5" gate="+5V" pin="+5V"/>
 <wire x1="241.3" y1="152.4" x2="241.3" y2="154.94" width="0.1524" layer="91"/>
 </segment>
-<segment>
-<pinref part="P+5VMAIN7" gate="1" pin="+5V"/>
-<pinref part="U1.02" gate="A" pin="IN"/>
-<wire x1="71.12" y1="68.58" x2="71.12" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="63.5" x2="91.44" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="R1.07" gate="G$1" pin="2"/>
-<wire x1="71.12" y1="63.5" x2="71.12" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="58.42" x2="76.2" y2="58.42" width="0.1524" layer="91"/>
-<junction x="71.12" y="63.5"/>
-<pinref part="C1.07" gate="G$1" pin="+"/>
-<junction x="71.12" y="58.42"/>
-</segment>
-</net>
-<net name="N$49" class="0">
-<segment>
-<pinref part="R1.07" gate="G$1" pin="1"/>
-<pinref part="U1.02" gate="A" pin="EN"/>
-<wire x1="86.36" y1="58.42" x2="91.44" y2="58.42" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="+3V3" class="0">
-<segment>
-<pinref part="U1.02" gate="A" pin="OUT"/>
-<pinref part="C1.08" gate="G$1" pin="+"/>
-<wire x1="127" y1="63.5" x2="129.54" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="63.5" x2="129.54" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="+3V7" gate="G$1" pin="+3V3"/>
-<wire x1="129.54" y1="68.58" x2="129.54" y2="63.5" width="0.1524" layer="91"/>
-<junction x="129.54" y="63.5"/>
-</segment>
 </net>
 </nets>
 </sheet>
@@ -26713,6 +26565,9 @@ Trainable Trackcars</text>
 <text x="162.56" y="6.35" size="2.1844" layer="94">Kit for Intelligent and
 Trainable Trackcars</text>
 <text x="162.56" y="16.51" size="2.1844" layer="94">MotorBoard 01</text>
+<text x="-10.16" y="96.52" size="1.778" layer="98">WHERE DOES IT LEAD WHERE DOES IT GO
+DIDDY DAE YAY COTTON EYE JOE</text>
+<text x="22.86" y="91.44" size="1.778" layer="98">FIX VDRV????</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
@@ -27230,14 +27085,14 @@ Trainable Trackcars</text>
 <junction x="190.5" y="127"/>
 </segment>
 </net>
-<net name="ARDUINO.SCL" class="0">
+<net name="GYRO.SCL" class="0">
 <segment>
 <wire x1="139.7" y1="121.92" x2="144.78" y2="121.92" width="0.1524" layer="91"/>
 <label x="144.78" y="121.92" size="1.27" layer="95" xref="yes"/>
 <pinref part="IC3.01" gate="G$1" pin="SCL/SPC"/>
 </segment>
 </net>
-<net name="ARDUINO.SDA" class="0">
+<net name="GYRO.SDA" class="0">
 <segment>
 <wire x1="139.7" y1="116.84" x2="144.78" y2="116.84" width="0.1524" layer="91"/>
 <label x="144.78" y="116.84" size="1.27" layer="95" xref="yes"/>
@@ -27385,11 +27240,11 @@ Trainable Trackcars</text>
 <instance part="P+5VMAIN6" gate="1" x="29.845" y="66.675" rot="MR0"/>
 <instance part="+3V12" gate="G$1" x="40.64" y="66.675"/>
 <instance part="U7.01" gate="A" x="43.815" y="78.74"/>
-<instance part="X7.07" gate="A" x="144.78" y="83.185" rot="MR180"/>
-<instance part="GND35" gate="1" x="135.89" y="73.025"/>
-<instance part="+3V13" gate="G$1" x="135.89" y="93.345"/>
-<instance part="+3V14" gate="G$1" x="156.21" y="93.345" rot="MR0"/>
-<instance part="GND36" gate="1" x="156.21" y="73.025"/>
+<instance part="X7.07" gate="A" x="129.54" y="103.505" rot="MR180"/>
+<instance part="GND35" gate="1" x="120.65" y="93.345"/>
+<instance part="+3V13" gate="G$1" x="120.65" y="113.665"/>
+<instance part="+3V14" gate="G$1" x="140.97" y="113.665" rot="MR0"/>
+<instance part="GND36" gate="1" x="140.97" y="93.345"/>
 <instance part="P+5" gate="1" x="93.345" y="163.83" smashed="yes">
 <attribute name="VALUE" x="97.79" y="167.64" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -27430,6 +27285,22 @@ Trainable Trackcars</text>
 <instance part="GND27" gate="1" x="213.36" y="39.37"/>
 <instance part="DCL1" gate="G$1" x="162.56" y="27.94"/>
 <instance part="DCL2" gate="G$1" x="162.56" y="33.02"/>
+<instance part="R7.17" gate="G$1" x="172.72" y="81.28" rot="R90"/>
+<instance part="R7.18" gate="G$1" x="162.56" y="81.28" rot="R90"/>
+<instance part="+3V7" gate="G$1" x="162.56" y="93.98" rot="MR0"/>
+<instance part="+3V15" gate="G$1" x="172.72" y="93.98" rot="MR0"/>
+<instance part="GND38" gate="1" x="156.21" y="59.69"/>
+<instance part="R7.19" gate="1" x="184.15" y="68.58" smashed="yes">
+<attribute name="NAME" x="174.625" y="68.8086" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="187.96" y="69.088" size="1.4224" layer="96"/>
+</instance>
+<instance part="R7.20" gate="1" x="184.15" y="71.12" smashed="yes">
+<attribute name="NAME" x="174.625" y="71.3486" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="187.96" y="71.628" size="1.4224" layer="96"/>
+</instance>
+<instance part="PAD1" gate="1" x="138.43" y="71.12"/>
+<instance part="PAD2" gate="1" x="138.43" y="68.58"/>
+<instance part="PAD3" gate="1" x="138.43" y="66.04"/>
 </instances>
 <busses>
 </busses>
@@ -27500,14 +27371,14 @@ Trainable Trackcars</text>
 <segment>
 <pinref part="GND35" gate="1" pin="GND"/>
 <pinref part="X7.07" gate="A" pin="3"/>
-<wire x1="135.89" y1="75.565" x2="135.89" y2="83.185" width="0.1524" layer="91"/>
-<wire x1="135.89" y1="83.185" x2="142.24" y2="83.185" width="0.1524" layer="91"/>
+<wire x1="120.65" y1="95.885" x2="120.65" y2="103.505" width="0.1524" layer="91"/>
+<wire x1="120.65" y1="103.505" x2="127" y2="103.505" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND36" gate="1" pin="GND"/>
 <pinref part="X7.07" gate="A" pin="4"/>
-<wire x1="156.21" y1="75.565" x2="156.21" y2="83.185" width="0.1524" layer="91"/>
-<wire x1="156.21" y1="83.185" x2="149.86" y2="83.185" width="0.1524" layer="91"/>
+<wire x1="140.97" y1="95.885" x2="140.97" y2="103.505" width="0.1524" layer="91"/>
+<wire x1="140.97" y1="103.505" x2="134.62" y2="103.505" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND37" gate="1" pin="GND"/>
@@ -27524,6 +27395,12 @@ Trainable Trackcars</text>
 <pinref part="X7.02" gate="G$4" pin="GND"/>
 <wire x1="213.36" y1="41.91" x2="213.36" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="63.5" x2="215.9" y2="63.5" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND38" gate="1" pin="GND"/>
+<wire x1="156.21" y1="66.04" x2="156.21" y2="62.23" width="0.1524" layer="91"/>
+<pinref part="PAD3" gate="1" pin="P"/>
+<wire x1="156.21" y1="66.04" x2="140.97" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RAILS.RX" class="0">
@@ -27615,20 +27492,6 @@ Trainable Trackcars</text>
 <wire x1="193.675" y1="116.84" x2="199.39" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="SCL" class="0">
-<segment>
-<pinref part="X7.02" gate="G$4" pin="SCL"/>
-<wire x1="215.9" y1="71.12" x2="203.2" y2="71.12" width="0.1524" layer="91"/>
-<label x="203.2" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="SDA" class="0">
-<segment>
-<pinref part="X7.02" gate="G$4" pin="SDA"/>
-<wire x1="215.9" y1="68.58" x2="203.2" y2="68.58" width="0.1524" layer="91"/>
-<label x="203.2" y="68.58" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="MOT.IN1" class="0">
 <segment>
 <pinref part="X7.02" gate="G$3" pin="IO.3"/>
@@ -27681,19 +27544,29 @@ Trainable Trackcars</text>
 <segment>
 <pinref part="+3V13" gate="G$1" pin="+3V3"/>
 <pinref part="X7.07" gate="A" pin="5"/>
-<wire x1="135.89" y1="90.805" x2="135.89" y2="85.725" width="0.1524" layer="91"/>
-<wire x1="135.89" y1="85.725" x2="142.24" y2="85.725" width="0.1524" layer="91"/>
+<wire x1="120.65" y1="111.125" x2="120.65" y2="106.045" width="0.1524" layer="91"/>
+<wire x1="120.65" y1="106.045" x2="127" y2="106.045" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="X7.07" gate="A" pin="6"/>
 <pinref part="+3V14" gate="G$1" pin="+3V3"/>
-<wire x1="149.86" y1="85.725" x2="156.21" y2="85.725" width="0.1524" layer="91"/>
-<wire x1="156.21" y1="85.725" x2="156.21" y2="90.805" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="106.045" x2="140.97" y2="106.045" width="0.1524" layer="91"/>
+<wire x1="140.97" y1="106.045" x2="140.97" y2="111.125" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="+3V6" gate="G$1" pin="+3V3"/>
 <pinref part="R7.05" gate="1" pin="1"/>
 <wire x1="191.77" y1="127" x2="199.39" y2="127" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3V7" gate="G$1" pin="+3V3"/>
+<pinref part="R7.18" gate="G$1" pin="2"/>
+<wire x1="162.56" y1="91.44" x2="162.56" y2="86.36" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3V15" gate="G$1" pin="+3V3"/>
+<pinref part="R7.17" gate="G$1" pin="2"/>
+<wire x1="172.72" y1="91.44" x2="172.72" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$25" class="0">
@@ -27838,8 +27711,8 @@ Trainable Trackcars</text>
 <label x="210.82" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="129.54" y1="80.645" x2="142.24" y2="80.645" width="0.1524" layer="91"/>
-<label x="129.54" y="80.645" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="114.3" y1="100.965" x2="127" y2="100.965" width="0.1524" layer="91"/>
+<label x="114.3" y="100.965" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="X7.07" gate="A" pin="1"/>
 </segment>
 </net>
@@ -27850,8 +27723,8 @@ Trainable Trackcars</text>
 <label x="205.74" y="48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<label x="160.02" y="80.645" size="1.27" layer="95" xref="yes"/>
-<wire x1="149.86" y1="80.645" x2="160.02" y2="80.645" width="0.1524" layer="91"/>
+<label x="144.78" y="100.965" size="1.27" layer="95" xref="yes"/>
+<wire x1="134.62" y1="100.965" x2="144.78" y2="100.965" width="0.1524" layer="91"/>
 <pinref part="X7.07" gate="A" pin="2"/>
 </segment>
 </net>
@@ -27933,6 +27806,46 @@ Trainable Trackcars</text>
 <label x="210.82" y="99.06" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="X7.02" gate="G$3" pin="IO.1"/>
 <wire x1="210.82" y1="99.06" x2="215.9" y2="99.06" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="GYRO.SCL" class="0">
+<segment>
+<label x="172.72" y="55.88" size="1.4224" layer="95" rot="R270" xref="yes"/>
+<pinref part="R7.17" gate="G$1" pin="1"/>
+<wire x1="172.72" y1="55.88" x2="172.72" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="68.58" x2="172.72" y2="76.2" width="0.1524" layer="91"/>
+<junction x="172.72" y="68.58"/>
+<pinref part="R7.19" gate="1" pin="1"/>
+<wire x1="179.07" y1="68.58" x2="172.72" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="PAD2" gate="1" pin="P"/>
+<wire x1="140.97" y1="68.58" x2="172.72" y2="68.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="GYRO.SDA" class="0">
+<segment>
+<wire x1="162.56" y1="76.2" x2="162.56" y2="71.12" width="0.1524" layer="91"/>
+<label x="162.56" y="55.88" size="1.4224" layer="95" rot="R270" xref="yes"/>
+<pinref part="R7.18" gate="G$1" pin="1"/>
+<wire x1="162.56" y1="71.12" x2="162.56" y2="55.88" width="0.1524" layer="91"/>
+<junction x="162.56" y="71.12"/>
+<pinref part="R7.20" gate="1" pin="1"/>
+<wire x1="179.07" y1="71.12" x2="162.56" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="PAD1" gate="1" pin="P"/>
+<wire x1="162.56" y1="71.12" x2="140.97" y2="71.12" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$49" class="0">
+<segment>
+<pinref part="R7.19" gate="1" pin="2"/>
+<pinref part="X7.02" gate="G$4" pin="SDA"/>
+<wire x1="189.23" y1="68.58" x2="215.9" y2="68.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$53" class="0">
+<segment>
+<pinref part="R7.20" gate="1" pin="2"/>
+<wire x1="189.23" y1="71.12" x2="215.9" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="X7.02" gate="G$4" pin="SCL"/>
 </segment>
 </net>
 </nets>
@@ -28156,6 +28069,7 @@ Trainable Trackcars</text>
 <pinref part="U6.01" gate="A" pin="SW"/>
 <wire x1="104.14" y1="101.6" x2="114.3" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="L6.01" gate="G$1" pin="2"/>
+<junction x="104.14" y="104.14"/>
 </segment>
 </net>
 <net name="N$40" class="0">
@@ -28215,6 +28129,7 @@ Trainable Trackcars</text>
 <wire x1="149.86" y1="86.36" x2="157.48" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="86.36" x2="167.64" y2="86.36" width="0.1524" layer="91"/>
 <label x="167.64" y="86.36" size="1.778" layer="95" xref="yes"/>
+<junction x="157.48" y="86.36"/>
 </segment>
 </net>
 <net name="GND" class="0">
