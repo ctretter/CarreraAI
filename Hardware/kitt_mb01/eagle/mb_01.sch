@@ -26565,9 +26565,7 @@ Trainable Trackcars</text>
 <text x="162.56" y="6.35" size="2.1844" layer="94">Kit for Intelligent and
 Trainable Trackcars</text>
 <text x="162.56" y="16.51" size="2.1844" layer="94">MotorBoard 01</text>
-<text x="-10.16" y="96.52" size="1.778" layer="98">WHERE DOES IT LEAD WHERE DOES IT GO
-DIDDY DAE YAY COTTON EYE JOE</text>
-<text x="22.86" y="91.44" size="1.778" layer="98">FIX VDRV????</text>
+<text x="10.16" y="91.44" size="1.778" layer="98">FIX VDRV????</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
