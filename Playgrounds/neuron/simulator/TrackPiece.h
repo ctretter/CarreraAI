@@ -32,6 +32,11 @@ public:
 	 * 	Constant for 2*PI.
 	 */
 	static double const PI_2;
+	/*
+	 * 	Constant for Threshold for double comparison.
+	 * 	Value is 0.01 (1 cm).
+	 */
+	static double const Threshold;
 	typedef std::pair<double,double> TPair;
 	
 	/*
@@ -60,6 +65,14 @@ public:
 	 * 					they will be overwritten by this method.
 	 */
 	void CalcEndPoint(double &x, double &y) const;
+	
+	/*
+	 * 	IsOnTrack: Checks if the point is on this track piece.
+	 * 	Inputs:
+	 * 			x, y: These are the coordinates of the point which
+	 * 					is checked. 
+	 */
+	bool IsOnTrack(double const x, double const y) const;
 	
 	/*
 	 * 	get*: Returns a reference to the member included in the name.

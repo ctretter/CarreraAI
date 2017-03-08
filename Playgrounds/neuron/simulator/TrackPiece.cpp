@@ -1,5 +1,6 @@
 /*
  * 	author: David Kahlbacher.
+ * 	TODO: implement assertions and/or exceptions
  */
  
 #define _USE_MATH_DEFINES
@@ -9,7 +10,12 @@
 
 double const TrackPiece::PI_2 = 2.0*M_PI;
 
+double const TrackPiece::Threshold = 0.01;
+
 TrackPiece::TrackPiece(double const x, double const y, double const len, double const angle_i, double const angle_o, EDir const direction):mStart(x,y),mDirection(direction),mLen(len){
+	if(len < 0){
+		mLen = -mLen;
+	}
 	_SetAngles(angle_i, angle_o);
 	_CalcRadius();
 }
@@ -35,6 +41,35 @@ void TrackPiece::CalcEndPoint(double &x, double &y) const{
 		y = 0.0;
 		break;
 	}
+}
+
+bool TrackPiece::IsOnTrack(double const x, double const y) const{
+	bool retval = false;
+	switch(mDirection){
+	case EDir_Straight: {double dx = x - mStart.first;
+		double dy = y - mStart.second;
+		dx *= tan(mAngles.first);
+		retval = (dy <= dx+Threshold && dy >= dx-Threshold);}
+		break;
+	case EDir_Left: {double mx = mStart.first - mRadius*sin(mAngles.first);
+		double my = mStart.second + mRadius*cos(mAngles.first); 
+		mx -= x;
+		my -= y;
+		double ra = sqrt(mx*mx+my*my);
+		retval = (ra <= mRadius + Threshold && ra >= mRadius - Threshold);}
+		break;
+	case EDir_Right: {double mx = mStart.first + mRadius*sin(mAngles.first);
+		double my = mStart.second - mRadius*cos(mAngles.first); 
+		mx -= x;
+		my -= y;
+		double ra = sqrt(mx*mx+my*my);
+		retval = (ra <= mRadius + Threshold && ra >= mRadius - Threshold);}
+		break;
+	default:
+		retval = false;
+		break;
+	}
+	return retval;
 }
 
 std::pair<double,double> const& TrackPiece::getStartPoint(void) const{

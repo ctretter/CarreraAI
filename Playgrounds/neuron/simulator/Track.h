@@ -6,17 +6,19 @@
 
 #include "TrackPiece.h"
 #include <vector>
+#include <stdlib.h>
 
 class Track {
 public:
 	typedef std::vector<TrackPiece> TTrack;
+	typedef TTrack::const_iterator TTrackcIt;
+	typedef TTrack::iterator TTrackIt;
 	
 	void Push_Back(TrackPiece & piece);
 	void Pop_Back(void);
 	void Insert_At(TrackPiece & piece, size_t const pos);
 	void Clear(void);
 	void Remove(size_t const pos);
-	void Remove(TrackPiece const& piece);
 	size_t getPieceCount(void) const;
 	TTrack const& getTrack(void) const;
 	TTrack & getTrack(void);
@@ -29,5 +31,7 @@ public:
 	virtual ~Track(){}
 	
 private:
+	double _OnTrack(double const len) const;
+	
 	TTrack mTrack;
 };

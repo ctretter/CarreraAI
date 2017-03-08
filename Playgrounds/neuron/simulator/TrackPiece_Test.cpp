@@ -9,6 +9,7 @@
 
 /* 	TODO:
  *	Implement tests for method CalcPos. 
+ * 	Implement tests for method IsOnTrack.
  * 
  */
 
