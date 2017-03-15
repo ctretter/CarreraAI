@@ -10,7 +10,7 @@
 architecture Rtl of OpticalSensorXY is
 
 	-- component types	
-	type tCommunicationStates is (Init, SetMotionReg, WaitForReadMotion, ReadMotionReg, CheckMotionReg, OutputAndWaitForWrite,
+	type tCommunicationStates is (Reset, Init, SetMotionReg, WaitForReadMotion, ReadMotionReg, CheckMotionReg, OutputAndWaitForWrite,
 									WaitForWriteDataX, SetXReg, WaitForReadDataX, ReadXReg,
 									WaitForWriteDataY, SetYReg, WaitForReadDataY, ReadYReg);
 		
@@ -20,14 +20,15 @@ architecture Rtl of OpticalSensorXY is
 	signal DataXReg				: std_ulogic_vector (gDataWidth-1 downto 0)		:= (others => '0'); 
 	signal DataYReg				: std_ulogic_vector (gDataWidth-1 downto 0)		:= (others => '0'); 
 	signal MasterOutput			: std_ulogic									:= '0';
+	signal ResetSensor 			: std_ulogic									:= '0';
 	signal SysClk 				: std_ulogic									:= '0';
 	signal Sel 					: std_ulogic 									:= '1';
 	signal DataValid			: std_ulogic									:= '0';
 	signal SlaveClkCounter		: integer 										:= gDataWidth-1;
 	signal SysClkGenCounter 	: integer 										:= 1;
 	signal CntWaitCycles		: integer										:= 1;
+	signal ResetCnt				: integer										:= 0;
 
-	
 	-- component constants
 	constant cMotionRegAddr		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000010";			-- address: 0x02
 	constant cDataXAddr			: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000011";			-- address: 0x03
@@ -38,6 +39,8 @@ architecture Rtl of OpticalSensorXY is
 	constant cDelayNewData		: integer										:= 5;					-- 5µs delay between read -> write
 	constant cMaxWriteBits		: integer										:= gDataWidth;			-- length of a register: 8 bit
 	constant cMaxReadBits		: integer										:= gDataWidth;			-- length of single register: 8 bit
+	constant cResetTime			: integer 										:= 40000/(1000/gClkDivider);
+	constant cTimeAfterReset	: integer										:= 400000/(1000/gClkDivider);
 
 
 begin
@@ -46,7 +49,9 @@ begin
 	begin
 		if (inResetAsync = cnActivated) then
 		
-			State 				<= Init;
+			ResetSensor 		<= '1';
+			ResetCnt			<= 0;
+			State 				<= Reset;
 			SlaveClkCounter 	<= gDataWidth-1;
 			MasterOutput 		<= '0';
 			SysClk 				<= '1';
@@ -73,6 +78,20 @@ begin
 					
 			-- serial protocol communcation between FPGA and sensor
 			case State is
+				when Reset =>
+										if (ResetCnt = cResetTime and ResetSensor = '1') then
+										
+											ResetCnt <= 0;	
+											ResetSensor	<= '0';										
+										elsif (ResetCnt = cTimeAfterReset) then	
+										
+											State <= Init;
+											ResetCnt <= 0;
+										else
+											
+											ResetCnt <= ResetCnt + 1;
+										end if;		
+			
 				-- initialize slave select, reset slave clock and set MasterOutput
 				when Init =>
 										State 				<= SetMotionReg;	
@@ -314,5 +333,7 @@ begin
 	oSelect <= Sel;
 	oMOSI <= MasterOutput;
 	oDataValid <= DataValid;
+	oResetSensor <= ResetSensor;
+	oProductID <= (others => '0');
 
 end Rtl;
