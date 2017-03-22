@@ -22,6 +22,7 @@ entity OpticalSensorXY is
 		iClk 				: in std_ulogic;								-- clk 
 		inResetAsync		: in std_ulogic;								-- reset
 		iOneMHzStrobe		: in std_ulogic;								-- 1MHz strobe for wait cycles of sensor
+		iOneKHzStrobe		: in std_ulogic;								-- 1KHz strobe for reset wait 
 		iMISO				: in std_ulogic;								-- MasterInSlaveOut
 		oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
 		oSelect				: out std_ulogic;								-- select input bit

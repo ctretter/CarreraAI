@@ -30,6 +30,9 @@ architecture Bhv of tbOpticalSensorXY is
 	constant cDataValid			: std_ulogic_vector(cDataWidth-1 downto 0)		:= "10000000";	-- 0x80
 	constant cDataX				: std_ulogic_vector(cDataWidth-1 downto 0)		:= "01000010";	
 	constant cDataY				: std_ulogic_vector(cDataWidth-1 downto 0)		:= "10111101";	
+	constant cMotionRegAddr		: std_ulogic_vector (cDataWidth-1 downto 0)		:= "00000010";					-- address: 0x02
+	constant cDataXAddr			: std_ulogic_vector (cDataWidth-1 downto 0)		:= "00000011";					-- address: 0x03
+	constant cDataYAddr			: std_ulogic_vector (cDataWidth-1 downto 0)		:= "00000100";					-- address: 0x04
 	
 	-- component signals port map
 	signal iClk					: std_ulogic  									:= '0';
@@ -146,9 +149,10 @@ begin
 		inResetAsync <= cnActivated;
 		wait for 1 ns;
 		inResetAsync <= cnInactivated;
-
+		wait for 500 ns;
+		
 		-- perform read/write ten times
-		while (n < 10) loop	
+		while (n < 1) loop	
 		
 			wait until (oSelect = cnActivated and oSysClk = '1');
 			
@@ -162,18 +166,24 @@ begin
 			end loop;
 			i := 7;
 			
+			wait until (oSysClk'event and oSysClk = '1');
+			DataFromFPGA(0) <= oMOSI;
+			
 			-- wait until write to sensor is done
-			wait until (oSysClk = '1' and oSelect = cnActivated);
+			wait until (oSelect = cnActivated);
+			
+			-- check if motion register is valid
+			assert(DataFromFPGA = cMotionRegAddr) report "MotionReg: Data from FPGA is not valid!" severity error;
 			
 			-- wait 75 us
 			DataToFPGA <= cDataValid;
 			wait for 75 us;
-			
+			report "MotionReg: Valid to FPGA send ..." severity note;
 			
 			wait until (oSelect = cnActivated);
 			
 			-- send motion valid to OpticalSensorXY
-			while (j > 0) loop
+			while (j > -1) loop
 			
 				wait until (iClk'event and iClk = '1' and oSysClk = '0');
 				iMISO <= DataToFPGA(j);
@@ -199,19 +209,28 @@ begin
 				i := i - 1;
 			end loop;
 			i := 7;
+		
+			DataFromFPGA(0) <= oMOSI;
+		
+			wait until (oSysClk'event and oSysClk = '1');
+			DataFromFPGA(0) <= oMOSI;
 			
 			-- wait until write to sensor is done
-			wait until (oSysClk = '1' and oSelect = cnActivated);
-			
+			wait until (oSelect = cnActivated);
+		
+			-- check if data x register is valid
+			assert(DataFromFPGA = cDataXAddr) report "DataX: Data from FPGA is not valid!" severity error;
+		
 			-- wait 75 us
 			DataToFPGA <= cDataX;
 			wait for 75 us;
+			report "DataX: Data to FPGA send ..." severity note;
 			
 			
 			wait until (oSelect = cnActivated);
 			
 			-- send dataX valid to OpticalSensorXY
-			while (j > 0) loop
+			while (j > -1) loop
 			
 				wait until (iClk'event and iClk = '1' and oSysClk = '0');
 				iMISO <= DataToFPGA(j);
@@ -238,18 +257,25 @@ begin
 			end loop;
 			i := 7;
 			
+			wait until (oSysClk'event and oSysClk = '1');
+			DataFromFPGA(0) <= oMOSI;
+			
 			-- wait until write to sensor is done
-			wait until (oSysClk = '1' and oSelect = cnActivated);
+			wait until (oSelect = cnActivated);
+			
+			-- check if data y register is valid
+			assert(DataFromFPGA = cDataYAddr) report "DataY: Data from FPGA is not valid!" severity error;
 			
 			-- wait 75 us
 			DataToFPGA <= cDataY;
 			wait for 75 us;
+			report "DataY: Data to FPGA send ..." severity note;
 			
 			
 			wait until (oSelect = cnActivated);
 			
 			-- send dataY to OpticalSensorXY
-			while (j > 0) loop
+			while (j > -1) loop
 			
 				wait until (iClk'event and iClk = '1' and oSysClk = '0');
 				iMISO <= DataToFPGA(j);
@@ -258,6 +284,7 @@ begin
 				wait until (oSysClk = '1');
 			end loop;
 			j := 7;
+			report "DataY: Data from FPGA received ..." severity note;
 			
 			-- wait until read from sensor is done
 			DataFromFPGA <= (others => '0');

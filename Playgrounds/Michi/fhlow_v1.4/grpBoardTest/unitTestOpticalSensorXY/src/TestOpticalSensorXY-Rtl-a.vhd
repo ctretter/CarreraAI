@@ -12,14 +12,15 @@ architecture Rtl of TestOpticalSensorXY is
 	-- component constants
 	constant cClockFrequency	: natural										:= 24E6;
 	constant cDataWidth			: integer  										:= 8;
-	constant cClkFreq			: integer 										:= 24;
 	constant cOneMHzClkPeriod	: time 	   										:= 1 us;		--  1MHz clock
+	constant cOneKHzClkPeriod	: time 	   										:= 1000 us;		--  1KHz clock
 	
 	-- component signals port map
 	signal DataValid			: std_ulogic 									:= '0';	
 	signal oMotion				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal oDataX				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal oDataY				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
+	signal ProductID			: std_ulogic_vector(cDataWidth-1 downto 0)		:= (others => '0');
 	signal NowDataValid			: std_ulogic									:= '0';
 	signal SysClk				: std_ulogic									:= '0';
 	signal SysClkGen			: std_ulogic									:= '0';
@@ -27,6 +28,7 @@ architecture Rtl of TestOpticalSensorXY is
 	
 	-- component signals
 	signal OneMHzStrobe			: std_ulogic 									:= '0';
+	signal OneKHzStrobe			: std_ulogic 									:= '0';
 	
 	
 	-- component declaration of StrobeGen
@@ -49,12 +51,13 @@ architecture Rtl of TestOpticalSensorXY is
 	component OpticalSensorXY
 		generic (
 			gDataWidth			: integer := cDataWidth;						-- bit width of optical sensor values
-			gClkDivider			: integer := cClkFreq
+			gClkDivider			: integer := cClockFrequency/1000000
 		);
 		port (
 			iClk 				: in std_ulogic;								-- clk 50MHz
 			inResetAsync		: in std_ulogic;								-- reset
 			iOneMHzStrobe		: in std_ulogic;								-- 1MHz strobe for wait cycles of sensor
+			iOneKHzStrobe		: in std_ulogic;								-- 1KHz strobe for reset wait
 			iMISO				: in std_ulogic;								-- MasterInSlaveOut
 			oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
 			oSelect				: out std_ulogic;								-- select input bit
@@ -62,6 +65,8 @@ architecture Rtl of TestOpticalSensorXY is
 			oDataValid			: out std_ulogic;								-- valid bit for further usage in other components
 			
 			-- sensor data
+			oResetSensor		: out std_ulogic;
+			oProductID			: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oMotion				: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oDataX				: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oDataY				: out std_ulogic_vector (gDataWidth-1 downto 0)
@@ -76,17 +81,20 @@ begin
 	uut : OpticalSensorXY
 	generic map (
 		gDataWidth 		=> cDataWidth,
-		gClkDivider		=> cClkFreq
+		gClkDivider		=> cClockFrequency/1000000
 	)
 	port map (
 		iClk			=> iClk,
 		inResetAsync 	=> inResetAsync,
 		iOneMHzStrobe	=> OneMHzStrobe,
+		iOneKHzStrobe	=> OneKHzStrobe,
 		iMISO			=> iMISO,
 		oMOSI			=> oMOSI,
 		oSelect 		=> oSelect,
-		oSysClk			=> SysClk,
+		oSysClk			=> oSysClk,
 		oDataValid		=> DataValid,
+		oResetSensor 	=> oResetSensor,
+		oProductID		=> ProductID,
 		oMotion			=> oMotion,
 		oDataX			=> oDataX,
 		oDataY			=> oDataY
@@ -95,7 +103,7 @@ begin
 	-- #################################################
 	-- Instantiation: GenerateStrobe - StrobeGen
 	-- #################################################
-	GenerateStrobe :  StrobeGen
+	GenerateStrobeMHz :  StrobeGen
 	generic map (
 		gClkFrequency 		=> cClockFrequency,
 		gStrobeCycleTime 	=> cOneMHzClkPeriod
@@ -104,6 +112,20 @@ begin
 		iClk				=> iClk,
 		inResetAsync		=> inResetAsync,
 		oStrobe				=> OneMHzStrobe
+	);
+	
+	-- #################################################
+	-- Instantiation: GenerateStrobe - StrobeGen
+	-- #################################################
+	GenerateStrobeKHz :  StrobeGen
+	generic map (
+		gClkFrequency 		=> cClockFrequency,
+		gStrobeCycleTime 	=> cOneKHzClkPeriod
+	)
+	port map (
+		iClk				=> iClk,
+		inResetAsync		=> inResetAsync,
+		oStrobe				=> OneKHzStrobe
 	);
 	
 	-- test process with ToSevSeg function
@@ -150,10 +172,10 @@ begin
 			end if;
 			
 			-- output
-			oHEX1 <= not(ToSevSeg(oDataY(3 downto 0)));
-			oHEX2 <= not(ToSevSeg(oDataY(7 downto 4)));
-			oHEX3 <= not(ToSevSeg(oDataX(3 downto 0)));
-			oHEX4 <= not(ToSevSeg(oDataX(7 downto 4)));
+			oHEX1 <= not(ToSevSeg(ProductID(3 downto 0)));
+			oHEX2 <= not(ToSevSeg(ProductID(7 downto 4)));
+			oHEX3 <= not(ToSevSeg(oMotion(3 downto 0)));
+			oHEX4 <= not(ToSevSeg(oMotion(7 downto 4)));
 					
 		end if;
 	end process;
@@ -173,7 +195,7 @@ begin
 			end if;
 		end if;
 		
-		oSysClk <= SysClkGen;
+		--oSysClk <= SysClkGen;
 		
 	end process;
 
