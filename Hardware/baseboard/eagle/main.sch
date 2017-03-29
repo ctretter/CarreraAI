@@ -20038,7 +20038,7 @@ diameter 5 mm, horizontal, grid 15.24 mm</description>
 <part name="L2.1" library="rcl" deviceset="L-EU" device="L4516C" value="BEAD"/>
 <part name="C2.1" library="rcl" deviceset="C-EU" device="C0805K" value="4.7uF/25V"/>
 <part name="FRAME4" library="frames" deviceset="A4L-LOC" device=""/>
-<part name="U☢⏧" library="kitt.ic" deviceset="TPS61032RSAR" device="PSDO-G16"/>
+<part name="U☢⏧☺˸^)" library="kitt.ic" deviceset="TPS61032RSAR" device="PSDO-G16"/>
 <part name="L1" library="kitt.psvs" deviceset="NRS8030XX" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC/2" device="" value="SYSV"/>
 <part name="R4.XX1" library="rcl" deviceset="R-EU_" device="R0402" value="100kR"/>
@@ -20083,7 +20083,7 @@ Inputs, Outputs and Power</description>
 [  ] Figure out where to put a mp/mt switch for switching device off
 [  ] Add new power chain design before 5V Booster using the LT4000
 [  ] Rename all XX identifiers
-[  ] …???</text>
+[  ] Respect Sodd's Second Law[1]: Implement Fail-Safe or Fail-Badly &gt;in hardware&lt;, anything but Fail-Deadly is better than previously</text>
 <text x="17.78" y="15.24" size="2.54" layer="114">DO NOT POPULATE</text>
 <rectangle x1="7.62" y1="15.24" x2="15.24" y2="17.78" layer="114"/>
 <rectangle x1="7.62" y1="10.16" x2="15.24" y2="12.7" layer="98"/>
@@ -20092,6 +20092,12 @@ Inputs, Outputs and Power</description>
 <text x="203.2" y="104.14" size="1.6764" layer="98">[!!!!!!SHUNTS!!!!!!!!!]
 </text>
 <text x="53.34" y="116.84" size="1.6764" layer="98">[FILTER FOR UART BURSTS?]</text>
+<text x="195.58" y="-20.32" size="1.778" layer="98">[1]: Sodd's Second Law
+§a; Sooner or later, the worst possible combination of
+circumstances will happen
+§b; A system must always be designed to resist the worst
+possible combination of circumstances
+</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -20251,7 +20257,7 @@ Inputs, Outputs and Power</description>
 [ ] maybe add in a shunt bridge on the motor output
 [ ] ERC Check
 [ ] Schematic/Peer Review</text>
-<text x="124.46" y="55.88" size="1.778" layer="98">PfaffM: No point in making separate GND zones, focus on preventing slit antennae</text>
+<text x="124.46" y="55.88" size="1.778" layer="98">PfaffM(sic): No point in making separate GND zones, focus on preventing slit antennae</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
@@ -20714,7 +20720,7 @@ TWI M    ADR: 0x1C</text>
 </plain>
 <instances>
 <instance part="FRAME4" gate="G$1" x="0" y="0"/>
-<instance part="U☢⏧" gate="A" x="119.38" y="101.6"/>
+<instance part="U☢⏧☺˸^)" gate="A" x="119.38" y="101.6"/>
 <instance part="L1" gate="G$1" x="83.82" y="116.84" rot="R90"/>
 <instance part="P+2" gate="G$1" x="45.72" y="121.92"/>
 <instance part="R4.XX1" gate="G$1" x="83.82" y="104.14" rot="MR0"/>
@@ -20738,10 +20744,10 @@ TWI M    ADR: 0x1C</text>
 <nets>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U☢⏧" gate="A" pin="SW"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="SW"/>
 <wire x1="101.6" y1="114.3" x2="96.52" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="114.3" x2="96.52" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="U☢⏧" gate="A" pin="SW_2"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="SW_2"/>
 <wire x1="96.52" y1="116.84" x2="101.6" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="L1" gate="G$1" pin="2"/>
 <wire x1="88.9" y1="116.84" x2="96.52" y2="116.84" width="0.1524" layer="91"/>
@@ -20751,7 +20757,7 @@ TWI M    ADR: 0x1C</text>
 <net name="VCC/2" class="0">
 <segment>
 <pinref part="P+2" gate="G$1" pin="VCC/2"/>
-<pinref part="U☢⏧" gate="A" pin="VBAT"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="VBAT"/>
 <wire x1="101.6" y1="109.22" x2="73.66" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="109.22" x2="60.96" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="109.22" x2="45.72" y2="109.22" width="0.1524" layer="91"/>
@@ -20781,36 +20787,36 @@ TWI M    ADR: 0x1C</text>
 <net name="N$5" class="0">
 <segment>
 <pinref part="R4.XX1" gate="G$1" pin="1"/>
-<pinref part="U☢⏧" gate="A" pin="LBI"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="LBI"/>
 <wire x1="88.9" y1="104.14" x2="101.6" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="R4.XX2" gate="G$1" pin="1"/>
-<pinref part="U☢⏧" gate="A" pin="SYNC"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="SYNC"/>
 <wire x1="88.9" y1="93.98" x2="101.6" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="U☢⏧" gate="A" pin="EP"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="EP"/>
 <pinref part="GND15" gate="1" pin="GND"/>
 <wire x1="101.6" y1="76.2" x2="93.98" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="76.2" x2="93.98" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="U☢⏧" gate="A" pin="GND"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="GND"/>
 <wire x1="101.6" y1="78.74" x2="93.98" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="78.74" x2="93.98" y2="76.2" width="0.1524" layer="91"/>
 <junction x="93.98" y="76.2"/>
-<pinref part="U☢⏧" gate="A" pin="PGND"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="PGND"/>
 <wire x1="101.6" y1="81.28" x2="93.98" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="81.28" x2="93.98" y2="78.74" width="0.1524" layer="91"/>
 <junction x="93.98" y="78.74"/>
-<pinref part="U☢⏧" gate="A" pin="PGND_3"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="PGND_3"/>
 <wire x1="101.6" y1="83.82" x2="93.98" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="83.82" x2="93.98" y2="81.28" width="0.1524" layer="91"/>
 <junction x="93.98" y="81.28"/>
-<pinref part="U☢⏧" gate="A" pin="PGND_2"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="PGND_2"/>
 <wire x1="101.6" y1="86.36" x2="93.98" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="86.36" x2="93.98" y2="83.82" width="0.1524" layer="91"/>
 <junction x="93.98" y="83.82"/>
@@ -20843,17 +20849,17 @@ TWI M    ADR: 0x1C</text>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="U☢⏧" gate="A" pin="NC"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="NC"/>
 <wire x1="137.16" y1="76.2" x2="139.7" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="U☢⏧" gate="A" pin="VOUT_2"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="VOUT_2"/>
 <wire x1="139.7" y1="76.2" x2="139.7" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="106.68" x2="139.7" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="114.3" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="116.84" x2="137.16" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="U☢⏧" gate="A" pin="VOUT_3"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="VOUT_3"/>
 <wire x1="137.16" y1="114.3" x2="139.7" y2="114.3" width="0.1524" layer="91"/>
 <junction x="139.7" y="114.3"/>
-<pinref part="U☢⏧" gate="A" pin="VOUT"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="VOUT"/>
 <wire x1="137.16" y1="106.68" x2="139.7" y2="106.68" width="0.1524" layer="91"/>
 <junction x="139.7" y="106.68"/>
 <pinref part="C4.XX10" gate="G$1" pin="1"/>
@@ -20875,7 +20881,7 @@ TWI M    ADR: 0x1C</text>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="U☢⏧" gate="A" pin="LBO"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="LBO"/>
 <pinref part="R4.XX4" gate="G$1" pin="2"/>
 <wire x1="137.16" y1="99.06" x2="152.4" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="99.06" x2="152.4" y2="104.14" width="0.1524" layer="91"/>
@@ -20883,7 +20889,7 @@ TWI M    ADR: 0x1C</text>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="U☢⏧" gate="A" pin="EN"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="EN"/>
 <pinref part="R4.XX5" gate="G$1" pin="2"/>
 <wire x1="137.16" y1="83.82" x2="162.56" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="83.82" x2="162.56" y2="104.14" width="0.1524" layer="91"/>
@@ -20891,7 +20897,7 @@ TWI M    ADR: 0x1C</text>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="U☢⏧" gate="A" pin="FB"/>
+<pinref part="U☢⏧☺˸^)" gate="A" pin="FB"/>
 <pinref part="☇4XX1⏧" gate="G$1" pin="TP"/>
 <wire x1="137.16" y1="91.44" x2="144.78" y2="91.44" width="0.1524" layer="91"/>
 </segment>
