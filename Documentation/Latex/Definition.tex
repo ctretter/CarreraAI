@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper]{scrartcl}
 
 \usepackage[a4paper, left=2cm, right=1cm, bottom=1cm, top=1cm, includeheadfoot]{geometry}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc} % comment this if you uncomment utf8x
 %\usepackage[utf8x]{inputenc} % uncomment this if there are problems with 'ä', 'ü', 'ö'
 \usepackage{ucs}
@@ -21,6 +21,8 @@
 \usepackage{textpos}
 \usepackage{setspace}
 \usepackage{trfsigns}
+\usepackage{xspace}
+\usepackage{bib}
 
 \newpagestyle{mystyle}{
 \sethead[][][]{\name}{\matnr}{\grp}
@@ -65,3 +67,9 @@
 
 \newcommand{\sourceCode}[1]{\lstinputlisting[style=customcpp]{#1}}
 \newcommand{\tab}{\hspace{20px}}
+
+\newcommand*{\mathr}{$r$\@\xspace}
+\newcommand*{\mathl}{$l$\@\xspace}
+\newcommand*{\mathphi}{$\varphi$\@\xspace}
+\newcommand*{\mathphiout}{$\varphi_{out}$\@\xspace}
+\newcommand*{\mathphiin}{$\varphi_{in}$\@\xspace}
