@@ -1,9 +1,17 @@
-
+/*
+ * 	author: David Kahlbacher.
+ */
+ 
 #include "TrackPiece.h"
 #include <iostream>
 #include <iomanip>
 #include <cmath>
 
+/* 	TODO:
+ *	Implement tests for method CalcPos. 
+ * 	Implement tests for method IsOnTrack.
+ * 
+ */
 
 
 void PrintTestName(std::string const& msg, bool const test = true){
@@ -20,7 +28,7 @@ void PrintTestName(std::string const& msg, bool const test = true){
 void TestCtor(double const x_start, double const y_start, double const x_o, double const y_o, double const r, double const phi_in, 
 				double const phi_out, double const len, EDir const& dir, std::string const& msg, size_t const w, TrackPiece const& straight_piece)
 {
-	PrintTestName(msg);
+	PrintTestName(msg+", CalcEndPoint, getRadius, getAngle, getStartPoint and getLen");
 	double x = 0.0;
 	double y = 0.0;
 	
@@ -84,7 +92,7 @@ int main(int argc, char** argv){
 		TrackPiece piece(x_start,y_start,len,phi_in,phi_out,dir);
 		TestCtor(x_start,y_start,x_o,y_o,r,phi_in,phi_out,len,dir,"Testing CTor_1 right curve",10,piece);
 	}
-	
+	/* CTor_2 */
 	{
 		x_o = 10.0;
 		y_o = 50.0;
@@ -94,6 +102,33 @@ int main(int argc, char** argv){
 		dir = EDir_Straight;
 		TrackPiece piece(x_start,y_start,x_o,y_o,phi_in,phi_out,dir);
 		TestCtor(x_start,y_start,x_o,y_o,r,phi_in,phi_out,len,dir,"Testing CTor_2 straight up",10,piece);
+	}
+	{
+		x_o = 50.0;
+		y_o = 10.0;
+		phi_in = 0.0;
+		phi_out = phi_in;
+		r = 0.0;
+		dir = EDir_Straight;
+		TrackPiece piece(x_start,y_start,x_o,y_o,phi_in,phi_out,dir);
+		TestCtor(x_start,y_start,x_o,y_o,r,phi_in,phi_out,len,dir,"Testing CTor_2 straight right",10,piece);
+	}
+	{
+		x_o = 35.4648;
+		y_o = x_o;
+		phi_out = M_PI_2;
+		r = 25.4648;
+		dir = EDir_Left;
+		TrackPiece piece(x_start,y_start,x_o,y_o,phi_in,phi_out,dir);
+		TestCtor(x_start,y_start,x_o,y_o,r,phi_in,phi_out,len,dir,"Testing CTor_2 left curve",10,piece);
+	}
+	{
+		phi_out = -M_PI_2;
+		y_o = y_start - r;
+		r = 25.4648;
+		dir = EDir_Right;
+		TrackPiece piece(x_start,y_start,x_o,y_o,phi_in,phi_out,dir);
+		TestCtor(x_start,y_start,x_o,y_o,r,phi_in,phi_out,len,dir,"Testing CTor_2 right curve",10,piece);
 	}
 	
 	return 0;

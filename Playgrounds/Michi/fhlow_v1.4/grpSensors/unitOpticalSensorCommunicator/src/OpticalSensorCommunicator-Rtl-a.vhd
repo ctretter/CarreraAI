@@ -4,7 +4,7 @@
 -- File        :	OpticalSensorCommunicator-Rtl-a.vhd
 -- Description : 	architecture for communication between FPGA and OptiSensor
 -------------------------------------------------------------------------------
--- Latest update:	27.01.2017
+-- Latest update:	01.03.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of OpticalSensorCommunicator is
@@ -26,9 +26,9 @@ architecture Rtl of OpticalSensorCommunicator is
 	
 	-- component constants
 	constant cBurstRegister		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "01010000";			-- address: 0x50
-	constant cMaxSysClkValue	: integer										:= gClkDivider*2;		-- 500KHz for SysClk
+	constant cMaxSysClkValue	: integer										:= gClkDivider;			-- 500KHz for SysClk
 	constant cDelayMotionReg	: integer										:= 100;					-- 100µs delay between write -> read
-	constant cDelayNewData		: integer										:= 1;					-- 1µs delay between read -> write (min. 250ns)
+	constant cDelayNewData		: integer										:= 5;					-- 5µs delay between read -> write
 	constant cMaxWriteBits		: integer										:= gDataWidth;			-- length of a register: 8 bit
 	constant cMaxReadBits		: integer										:= gBurstRegWidth;		-- lengt of burst register: 56 bit
 

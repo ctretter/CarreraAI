@@ -41,20 +41,20 @@ set_global_assignment -name DEVICE EP2C20F484C7
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:56:45  JANUARY 29, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
-set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpPackages/pkgGlobal/src/Global-p.vhd"
-set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpStrobesClocks/unitStrobeGen/src/StrobeGen-e.vhd"
-set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpSensors/unitOpticalSensorCommunicator/src/OpticalSensorCommunicator-e.vhd"
-set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpBoardTest/unitTestOpticalSensor/src/TestOpticalSensor-e.vhd"
-set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpStrobesClocks/unitStrobeGen/src/StrobeGen-Rtl-a.vhd"
-set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpSensors/unitOpticalSensorCommunicator/src/OpticalSensorCommunicator-Rtl-a.vhd"
-set_global_assignment -name VHDL_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpBoardTest/unitTestOpticalSensor/src/TestOpticalSensor-Rtl-a.vhd"
+set_global_assignment -name VHDL_FILE "C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpPackages/pkgGlobal/src/Global-p.vhd"
+set_global_assignment -name VHDL_FILE "C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpStrobesClocks/unitStrobeGen/src/StrobeGen-e.vhd"
+set_global_assignment -name VHDL_FILE "C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpSensors/unitOpticalSensorCommunicator/src/OpticalSensorCommunicator-e.vhd"
+set_global_assignment -name VHDL_FILE "C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpBoardTest/unitTestOpticalSensor/src/TestOpticalSensor-e.vhd"
+set_global_assignment -name VHDL_FILE "C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpStrobesClocks/unitStrobeGen/src/StrobeGen-Rtl-a.vhd"
+set_global_assignment -name VHDL_FILE "C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpSensors/unitOpticalSensorCommunicator/src/OpticalSensorCommunicator-Rtl-a.vhd"
+set_global_assignment -name VHDL_FILE "C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../grpBoardTest/unitTestOpticalSensor/src/TestOpticalSensor-Rtl-a.vhd"
 set_global_assignment -name TOP_LEVEL_ENTITY TestOpticalSensor
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
 set_global_assignment -name EDA_SIMULATION_TOOL "MODELSIM (VHDL OUTPUT FROM QUARTUS II)"
 set_global_assignment -name FMAX_REQUIREMENT "24 MHz"
-set_global_assignment -name SDC_FILE "C:/Users/i7-Octopussy/Desktop/1.Semester_ESD/PRO1/CarreraAI.git/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../flw/synlayQuartus//TimingConstraints.tcl"
+set_global_assignment -name SDC_FILE "C:/Users/Michi/Desktop/1.Semester_ESD/PRO1/CarreraAI/trunk/Playgrounds/Michi/fhlow_v1.4/grpBoardTest/unitTestOpticalSensor/flw/synlayQuartus/../../../../flw/synlayQuartus//TimingConstraints.tcl"
 set_global_assignment -name GENERATE_RBF_FILE ON
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
