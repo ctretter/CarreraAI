@@ -1,9 +1,0 @@
-"Qty";"Value";"Device";"Package";"Parts";"Description";"MF";"MPN";"OC_FARNELL";"OC_NEWARK";"TP_SIGNAL_NAME";
-"8";"";"LEDCHIPLED_1206";"CHIPLED_1206";"D8.0, D8.1, D8.2, D8.3, D8.4, D8.5, D8.6, D8.7";"LED";"";"";"";"";"";
-"1";"";"MA04-1";"MA04-1";"X8.0";"PIN HEADER";"";"";"unknown";"unknown";"";
-"1";"100uF";"C-EUC0603";"C0603";"C8.0";"CAPACITOR, European symbol";"";"";"";"";"";
-"8";"330R";"R-EU_R0603";"R0603";"R8.0, R8.1, R8.2, R8.3, R8.4, R8.5, R8.6, R8.7";"RESISTOR, European symbol";"";"";"";"";"";
-"1";"CON_HEADER_1X08-SMD";"CON_HEADER_1X08-SMD";"M1X8_SMD";"X8.1";"";"";"";"";"";"";
-"1";"MCP23017ML";"MCP23017ML";"QFN28-ML_6X6MM";"U8";"http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf";"MICROCHIP";"MCP23017-E/ML";"unknown";"31K2957";"";
-"2";"TPTP09SQ";"TPTP09SQ";"TP09SQ";"T8.1, T8.2";"Test pad";"";"";"";"";"";
-"8";"[10kR]";"R-EU_R0402";"R0402";"R8.8, R8.9, R8.10, R8.11, R8.12, R8.13, R8.14, R8.15";"RESISTOR, European symbol";"";"";"";"";"";
