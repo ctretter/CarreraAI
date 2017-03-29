@@ -17,7 +17,7 @@ architecture Rtl of TestOpticalSensorXY is
 	
 	-- component signals port map
 	signal DataValid			: std_ulogic 									:= '0';	
-	signal oMotion				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
+	signal Motion				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal oDataX				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal oDataY				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal ProductID			: std_ulogic_vector(cDataWidth-1 downto 0)		:= (others => '0');
@@ -95,7 +95,7 @@ begin
 		oDataValid		=> DataValid,
 		oResetSensor 	=> oResetSensor,
 		oProductID		=> ProductID,
-		oMotion			=> oMotion,
+		oMotion			=> Motion,
 		oDataX			=> oDataX,
 		oDataY			=> oDataY
 	);
@@ -165,17 +165,17 @@ begin
 			
 		elsif (rising_edge(iClk)) then
 		
-			if(DataValid = '1' and ((oDataX /= "00000000" and oDataX /= "11111111") or (oDataY /= "00000000" and oDataY /= "11111111"))) then
+			if(DataValid = '1' and (Motion = "10000000")) then
 				oDataValid <= '1';
 			else 
 				oDataValid <= '0';
 			end if;
 			
 			-- output
-			oHEX1 <= not(ToSevSeg(ProductID(3 downto 0)));
-			oHEX2 <= not(ToSevSeg(ProductID(7 downto 4)));
-			oHEX3 <= not(ToSevSeg(oMotion(3 downto 0)));
-			oHEX4 <= not(ToSevSeg(oMotion(7 downto 4)));
+			oHEX1 <= not(ToSevSeg(oDataX(3 downto 0)));
+			oHEX2 <= not(ToSevSeg(oDataX(7 downto 4)));
+			oHEX3 <= not(ToSevSeg(oDataY(3 downto 0)));
+			oHEX4 <= not(ToSevSeg(oDataY(7 downto 4)));
 					
 		end if;
 	end process;
@@ -199,4 +199,5 @@ begin
 		
 	end process;
 
+	oNPD <= '1';
 end Rtl;

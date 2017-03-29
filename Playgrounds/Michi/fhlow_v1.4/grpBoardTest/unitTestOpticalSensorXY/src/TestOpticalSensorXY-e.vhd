@@ -25,6 +25,7 @@ entity TestOpticalSensorXY is
 		oSysClk				: out std_ulogic;
 		oMOSI				: out std_ulogic;
 		oResetSensor		: out std_ulogic;
+		oNPD				: out std_ulogic;
 		
 		-- seven segment
 		oHEX1				: out std_ulogic_vector (6 downto 0);

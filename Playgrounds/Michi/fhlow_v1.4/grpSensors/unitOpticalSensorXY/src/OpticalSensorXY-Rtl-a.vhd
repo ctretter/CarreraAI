@@ -13,6 +13,9 @@ architecture Rtl of OpticalSensorXY is
 	type tCommunicationStates is (DoReset, WaitAfterReset, Init, 
 									
 									SetProductIDReg, WaitForReadProductID, ReadProductIDReg,
+									SetMotionReg, WaitForReadMotion, ReadMotionReg, CheckMotionReg,
+									SetDataXReg, WaitForReadDataX, ReadDataXReg,
+									SetDataYReg, WaitForReadDataY, ReadDataYReg,
 									OutputAndWaitForWrite
 								);
 		
@@ -31,6 +34,7 @@ architecture Rtl of OpticalSensorXY is
 	signal SysClkGenCounter 	: integer 										:= 1;
 	signal CntWaitCycles		: integer										:= 1;
 	signal ResetCnt				: integer										:= 0;
+	signal SysClkEnable			: std_ulogic									:= '0';
 
 	-- component constants
 	constant cMotionRegAddr		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000010";					-- address: 0x02
@@ -39,8 +43,8 @@ architecture Rtl of OpticalSensorXY is
 	constant cProductIDAddr		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000000";					-- address: 0x00
 	constant cNewDataReceived	: std_ulogic_vector (gDataWidth-1 downto 0)		:= "10000000";					-- new data: 0x80
 	constant cMaxSysClkValue	: integer										:= gClkDivider*20;				-- freq to sysclk: 50KHz
-	constant cDelayRegisters	: integer										:= 100;							-- 100Âµs delay between write -> read
-	constant cDelayNewData		: integer										:= 5;							-- 5Âµs delay between read -> write
+	constant cDelayRegisters	: integer										:= 100;							-- 100 µs delay between write -> read
+	constant cDelayNewData		: integer										:= 10;							-- 5 µs delay between read -> write
 	constant cMaxWriteBits		: integer										:= gDataWidth;					-- length of a register: 8 bit
 	constant cMaxReadBits		: integer										:= gDataWidth;					-- length of single register: 8 bit
 	constant cResetTime			: integer 										:= 1000;						-- 1000 cycles of 1KHz clock
@@ -63,6 +67,7 @@ begin
 			DataValid 			<= '0';
 			SysClkGenCounter 	<= 1;
 			CntWaitCycles 		<= 1;
+			SysClkEnable 		<= '0';
 			MotionReg 			<= (others => '0');
 			DataXReg 			<= (others => '0');
 			DataYReg 			<= (others => '0');
@@ -70,7 +75,7 @@ begin
 		elsif (rising_edge(iClk)) then
 
 			-- generate SysClk
-			if (Sel = cnActivated) then
+			if (Sel = cnActivated and SysClkEnable = '1') then
 				-- toggle SysClk for slave
 				if (SysClkGenCounter = cMaxSysClkValue) then
 					SysClk <= not SysClk;
@@ -116,6 +121,7 @@ begin
 				-- initialize slave select, reset slave clock and set MasterOutput
 				when Init =>
 										State 				<= SetProductIDReg;	
+										SysClkEnable 		<= '0';
 										SlaveClkCounter 	<= 0;
 										Sel 				<= cnInactivated;
 										CntWaitCycles		<= 1;
@@ -125,19 +131,21 @@ begin
 										DataValid 			<= '0';
 										oMotion				<= (others => '0');
 										oDataX 				<= (others => '0');	
-										oDataY 				<= (others => '0');		
+										oDataY 				<= (others => '0');	
 										
-				when SetProductIDReg => 
-				
-										-- set select to low to set address of product ID
-										if (Sel = cnInactivated) then
+				-- ###########################################################################	
+				-- read product ID to verify connection and correct communcation to sensor!!
+				-- ###########################################################################	
+				when SetProductIDReg =>
+										if (Sel = cnInactivated and SysClkEnable = '0') then
 											Sel <= cnActivated;
+											SysClkEnable <= '1';
 											SlaveClkCounter <= cMaxWriteBits;
 										else	
 											-- set data to master output when sysclk is beginning low phase until to next low phase 
 											if (SysClk = '1' and SysClkGenCounter = cMaxSysClkValue) then
 												if (SlaveClkCounter /= 0) then
-													if (SlaveClkCounter < cMaxWriteBits) then
+													if (SlaveClkCounter <= cMaxWriteBits) then
 														MasterOutput <= cProductIDAddr(SlaveClkCounter-1);
 													end if;
 													
@@ -145,9 +153,9 @@ begin
 												else	
 													-- change to wait state after sending address and reset waitcounter
 													State <= WaitForReadProductID;
-													Sel <= cnInactivated;	
-													MasterOutput <= '0';
+													MasterOutput <= '1';
 													CntWaitCycles <= 1;
+													SysClkEnable <= '0';
 												end if;
 											end if;
 										end if;
@@ -156,6 +164,7 @@ begin
 										if (iOneMHzStrobe = '1') then
 											if (CntWaitCycles = cDelayRegisters) then
 											
+												MasterOutput <= '0';
 												State <= ReadProductIDReg;
 												CntWaitCycles <= 1;	
 											else										
@@ -164,31 +173,229 @@ begin
 										end if;
 										
 				when ReadProductIDReg => 
-										if (Sel = cnInactivated) then
-											Sel <= cnActivated;
+										if (Sel = cnActivated and SysClkEnable = '0') then
+											SysClkEnable <= '1';
 											SlaveClkCounter <= cMaxReadBits;
 										else
-											if (SysClk = '1' and SysClkGenCounter = cMaxSysClkValue) then
+											if (SysClk = '0' and SysClkGenCounter = cMaxSysClkValue) then
 												if (SlaveClkCounter /= 0) then
-													if (SlaveClkCounter < cMaxReadBits) then
+													if (SlaveClkCounter <= cMaxReadBits) then
 														ProductIDReg(SlaveClkCounter-1) <= iMISO;
 													end if;
 													
 													SlaveClkCounter <= SlaveClkCounter - 1;
 												else
 													State <= OutputAndWaitForWrite;
+													SysClkEnable <= '0';
 													Sel <= cnInactivated;	
-													CntWaitCycles <= 1;													
+													CntWaitCycles <= 1;	
+												end if;									
+											end if;
+										end if;
+				-- ###########################################################################	
+				-- end of communcation test
+				-- ###########################################################################	
+				
+				
+				-- ###########################################################################	
+				-- read motion register and check if new data received
+				-- ###########################################################################	
+				when SetMotionReg =>
+										if (Sel = cnInactivated and SysClkEnable = '0') then
+											Sel <= cnActivated;
+											SysClkEnable <= '1';
+											SlaveClkCounter <= cMaxWriteBits;
+										else	
+											-- set data to master output when sysclk is beginning low phase until to next low phase 
+											if (SysClk = '1' and SysClkGenCounter = cMaxSysClkValue) then
+												if (SlaveClkCounter /= 0) then
+													if (SlaveClkCounter <= cMaxWriteBits) then
+														MasterOutput <= cMotionRegAddr(SlaveClkCounter-1);
+													end if;
+													
+													SlaveClkCounter <= SlaveClkCounter - 1;
+												else	
+													-- change to wait state after sending address and reset waitcounter
+													State <= WaitForReadMotion;
+													MasterOutput <= '1';
+													CntWaitCycles <= 1;
+													SysClkEnable <= '0';
+												end if;
+											end if;
+										end if;
+										
+				when WaitForReadMotion =>				
+										if (iOneMHzStrobe = '1') then
+											if (CntWaitCycles = cDelayRegisters) then
+											
+												MasterOutput <= '0';
+												State <= ReadMotionReg;
+												CntWaitCycles <= 1;	
+											else										
+												CntWaitCycles <= CntWaitCycles + 1;
+											end if;
+										end if;
+										
+				when ReadMotionReg => 
+										if (Sel = cnActivated and SysClkEnable = '0') then
+											SysClkEnable <= '1';
+											SlaveClkCounter <= cMaxReadBits;
+										else
+											if (SysClk = '0' and SysClkGenCounter = cMaxSysClkValue) then
+												if (SlaveClkCounter /= 0) then
+													if (SlaveClkCounter <= cMaxReadBits) then
+														MotionReg(SlaveClkCounter-1) <= iMISO;
+													end if;
+													
+													SlaveClkCounter <= SlaveClkCounter - 1;
+												else
+													State <= CheckMotionReg;
+													SysClkEnable <= '0';
+													Sel <= cnInactivated;	
+													CntWaitCycles <= 1;	
+												end if;									
+											end if;
+										end if;
+										
+				when CheckMotionReg => 	
+										if (MotionReg = cNewDataReceived) then
+											State <= SetDataXReg;
+										else
+											State <= OutputAndWaitForWrite;
+										end if;
+				-- ###########################################################################	
+				-- end of read motion register
+				-- ###########################################################################	
+				
+				
+				-- #####################
+				-- read DataX register
+				-- #####################
+				when SetDataXReg =>
+										if (Sel = cnInactivated and SysClkEnable = '0') then
+											Sel <= cnActivated;
+											SysClkEnable <= '1';
+											SlaveClkCounter <= cMaxWriteBits;
+										else	
+											-- set data to master output when sysclk is beginning low phase until to next low phase 
+											if (SysClk = '1' and SysClkGenCounter = cMaxSysClkValue) then
+												if (SlaveClkCounter /= 0) then
+													if (SlaveClkCounter <= cMaxWriteBits) then
+														MasterOutput <= cDataXAddr(SlaveClkCounter-1);
+													end if;
+													
+													SlaveClkCounter <= SlaveClkCounter - 1;
+												else	
+													-- change to wait state after sending address and reset waitcounter
+													State <= WaitForReadDataX;
+													MasterOutput <= '1';
+													CntWaitCycles <= 1;
+													SysClkEnable <= '0';
+												end if;
+											end if;
+										end if;
+										
+				when WaitForReadDataX =>				
+										if (iOneMHzStrobe = '1') then
+											if (CntWaitCycles = cDelayRegisters) then
+											
+												MasterOutput <= '0';
+												State <= ReadDataXReg;
+												CntWaitCycles <= 1;	
+											else										
+												CntWaitCycles <= CntWaitCycles + 1;
+											end if;
+										end if;
+										
+				when ReadDataXReg => 
+										if (Sel = cnActivated and SysClkEnable = '0') then
+											SysClkEnable <= '1';
+											SlaveClkCounter <= cMaxReadBits;
+										else
+											if (SysClk = '0' and SysClkGenCounter = cMaxSysClkValue) then
+												if (SlaveClkCounter /= 0) then
+													if (SlaveClkCounter <= cMaxReadBits) then
+														DataXReg(SlaveClkCounter-1) <= iMISO;
+													end if;
+													
+													SlaveClkCounter <= SlaveClkCounter - 1;
+												else
+													State <= SetDataYReg;
+													SysClkEnable <= '0';
+													Sel <= cnInactivated;	
+													CntWaitCycles <= 1;	
 												end if;									
 											end if;
 										end if;
 				
-				
+				-- #####################
+				-- read DataY register
+				-- #####################
+				when SetDataYReg =>
+										if (Sel = cnInactivated and SysClkEnable = '0') then
+											Sel <= cnActivated;
+											SysClkEnable <= '1';
+											SlaveClkCounter <= cMaxWriteBits;
+										else	
+											-- set data to master output when sysclk is beginning low phase until to next low phase 
+											if (SysClk = '1' and SysClkGenCounter = cMaxSysClkValue) then
+												if (SlaveClkCounter /= 0) then
+													if (SlaveClkCounter <= cMaxWriteBits) then
+														MasterOutput <= cDataYAddr(SlaveClkCounter-1);
+													end if;
+													
+													SlaveClkCounter <= SlaveClkCounter - 1;
+												else	
+													-- change to wait state after sending address and reset waitcounter
+													State <= WaitForReadDataY;
+													MasterOutput <= '1';
+													CntWaitCycles <= 1;
+													SysClkEnable <= '0';
+												end if;
+											end if;
+										end if;
+										
+				when WaitForReadDataY =>				
+										if (iOneMHzStrobe = '1') then
+											if (CntWaitCycles = cDelayRegisters) then
+											
+												MasterOutput <= '0';
+												State <= ReadDataYReg;
+												CntWaitCycles <= 1;	
+											else										
+												CntWaitCycles <= CntWaitCycles + 1;
+											end if;
+										end if;
+										
+				when ReadDataYReg => 
+										if (Sel = cnActivated and SysClkEnable = '0') then
+											SysClkEnable <= '1';
+											SlaveClkCounter <= cMaxReadBits;
+										else
+											if (SysClk = '0' and SysClkGenCounter = cMaxSysClkValue) then
+												if (SlaveClkCounter /= 0) then
+													if (SlaveClkCounter <= cMaxReadBits) then
+														DataYReg(SlaveClkCounter-1) <= iMISO;
+													end if;
+													
+													SlaveClkCounter <= SlaveClkCounter - 1;
+												else
+													State <= OutputAndWaitForWrite;
+													SysClkEnable <= '0';
+													Sel <= cnInactivated;	
+													CntWaitCycles <= 1;	
+												end if;									
+											end if;
+										end if;
+																
+				-- #####################
+				-- output data
+				-- #####################
 				when OutputAndWaitForWrite =>		
 										if (iOneMHzStrobe = '1') then											
 											if (CntWaitCycles = cDelayNewData) then
 											
-												State <= SetProductIDReg;
+												State <= SetMotionReg;
 												CntWaitCycles <= 1;	
 												DataValid <= '0';
 											else							
@@ -197,9 +404,9 @@ begin
 											end if;
 										end if;
 										
-										oMotion <= (others => '0');
-										oDataX <= (others => '0');
-										oDataY <= (others => '0');
+										oMotion <= MotionReg;
+										oDataX <= DataXReg;
+										oDataY <= DataYReg;
 										oProductID <= ProductIDReg;
 										
 																					
