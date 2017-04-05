@@ -18,7 +18,6 @@
 #include <signal.h>
 #include <atomic>
 #include "hps_0.h"
-//#include "main.h"
 #include "DataAcquisition.h"
 #include "MatlabConnect/MatlabTCP.h"
 #include "Controller.h"
@@ -26,38 +25,35 @@
 #include "lsm9d1.h"
 
 
-#define HW_REGS_BASE ( ALT_STM_OFST )
-#define HW_REGS_SPAN ( 0x04000000 )
-#define HW_REGS_MASK ( HW_REGS_SPAN - 1 )
+static unsigned long const HW_REGS_BASE = ALT_STM_OFST;
+static unsigned long const HW_REGS_SPAN = 0x04000000;
+static unsigned long const HW_REGS_MASK = HW_REGS_SPAN - 1;
 
-/*volatile unsigned long* CarSensorsAddress;
-volatile unsigned long* CarLedsAddress;
-volatile unsigned long* LedsAddress;
-volatile bool Stop;
-volatile std::atomic<double> MaxSpeed;*/
+static unsigned long const MotorControl = (unsigned long)(ALT_LWFPGASLVS_OFST + MOTOR_CONTROL_0_BASE) & HW_REGS_MASK;
+static unsigned long const CarSensors = (unsigned long)(ALT_LWFPGASLVS_OFST + CARSENSORS_BASE) & HW_REGS_MASK;
+static unsigned long const CarLeds = (unsigned long)(ALT_LWFPGASLVS_OFST + CARLEDS_BASE) & HW_REGS_MASK;
+static unsigned long const Leds =  (unsigned long)(ALT_LWFPGASLVS_OFST + PIO_LED_BASE) & HW_REGS_MASK;
 
-const int CAR_LED_HEADLIGHT_SHIFT = 1;
 
-const bool DoCorrelation = true;
-const bool DoLookAheadSpeedControlling = true;
+static int const CAR_LED_HEADLIGHT_SHIFT = 1;
 
-const double MAX_DECELERATION = 450; // in mm/s² //450
-const double MAX_TURN_ACCELERATION = 6150; // in mm/s² //5950
+static bool const DoCorrelation = true;
+static bool const DoLookAheadSpeedControlling = true;
 
-const int HISTORY_LENGTH = 300; // How much history to store for cross-correlation
-const int SHIFT = 35; // how far to shift for correlation
+static double const MAX_DECELERATION = 450; // in mm/s² //450
+static double const MAX_TURN_ACCELERATION = 6150; // in mm/s² //5950
+
+static int const HISTORY_LENGTH = 300; // How much history to store for cross-correlation
+static int const SHIFT = 35; // how far to shift for correlation
 
 typedef struct timespec timespec;
 timespec TimeDifference(timespec start, timespec end);
 
-void* VirtualBaseAddress = 0;
-int MemoryFileDescriptor = 0;
+static void* VirtualBaseAddress = 0;
+static int MemoryFileDescriptor = 0;
 unsigned long* MotorControlAddress = 0;
-volatile unsigned long* CarSensorsAddress = 0;
-volatile unsigned long* CarLedsAddress = 0;
-volatile unsigned long* LedsAddress = 0;
-volatile bool Stop = false;
-volatile std::atomic<double> MaxSpeed(3800);
+static bool const Stop = false;
+static std::atomic<double> const MaxSpeed(3800);
 
 void SignalHandler(int signalNumber)
 {
@@ -81,8 +77,8 @@ void SignalHandler(int signalNumber)
 	}
 
 	std::cerr << "Stopping data acquisition" << std::endl;
-	if(DataAcquisition::GetInstance(MotorControlAddress)) {
-		DataAcquisition::GetInstance(MotorControlAddress)->Stop();
+	if(DataAcquisition::GetInstance()) {
+		DataAcquisition::GetInstance()->Stop();
 	}
 
 	// Stop engine again
@@ -138,10 +134,10 @@ int main(int argc, char **argv)
 	}
 
 	// Calculate addresses
-	MotorControlAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + ((unsigned long)(ALT_LWFPGASLVS_OFST + MOTOR_CONTROL_0_BASE) & (unsigned long)(HW_REGS_MASK)));
-	CarSensorsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + ((unsigned long)(ALT_LWFPGASLVS_OFST + CARSENSORS_BASE) & (unsigned long)(HW_REGS_MASK)));
-	CarLedsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + ((unsigned long)(ALT_LWFPGASLVS_OFST + CARLEDS_BASE) & (unsigned long)(HW_REGS_MASK)));
-	LedsAddress =  (unsigned long *)((unsigned long)VirtualBaseAddress + ((unsigned long)(ALT_LWFPGASLVS_OFST + PIO_LED_BASE) & (unsigned long)(HW_REGS_MASK)));
+	MotorControlAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + MotorControl);
+	volatile unsigned long* CarSensorsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + CarSensors);
+	volatile unsigned long* CarLedsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + CarLeds);
+	volatile unsigned long* LedsAddress =  (unsigned long *)((unsigned long)VirtualBaseAddress + Leds);
 
 	// If system freezes after this output there is a problem with the FPGA (registers don’t exist)
 	std::cerr << "Accessing FPGA" << std::endl;
@@ -162,12 +158,17 @@ int main(int argc, char **argv)
 
 	// Start threads
 	MatlabTCP::GetInstance()->Start();
-	DataAcquisition::GetInstance(MotorControlAddress)->Start();
+	if(!DataAcquisition::Init(MotorControlAddress)){
+		perror("Error initializing DataAquisition");
+		close(MemoryFileDescriptor);
+		return 1;
+	}
+	DataAcquisition::GetInstance()->Start();
 
 	while(true) {
 		// Get data sample from data acquisition thread
 		dataSample_t dataSample;
-		DataAcquisition::GetInstance(MotorControlAddress)->GetData(dataSample);
+		DataAcquisition::GetInstance()->GetData(dataSample);
 
 		if(Stop && dataSample.lapCount > 1) {
 			alt_write_word(CarLedsAddress, 0); // turn off LEDs

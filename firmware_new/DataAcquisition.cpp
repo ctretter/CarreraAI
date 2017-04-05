@@ -29,16 +29,26 @@ DataAcquisition::DataAcquisition(unsigned long* pwmAddress) : mPwmAddress(pwmAdd
 }
 
 DataAcquisition* DataAcquisition::GetInstance(){
+	//assert(mInstance);
 	return mInstance;
 }
 
-DataAcquisition* DataAcquisition::GetInstance(unsigned long* MotorControlAddress)
+bool DataAcquisition::Init(unsigned long* MotorControlAddress){
+	bool retval = false;
+	if(!mInstance){
+		mInstance = new DataAcquisition(MotorControlAddress);
+		retval = true;
+	}
+	return retval;
+}
+
+/*DataAcquisition* DataAcquisition::GetInstance(unsigned long* MotorControlAddress)
 {
-	if(mInstance == 0) {
+	if(!mInstance) {
 		mInstance = new DataAcquisition(MotorControlAddress);
 	}
 	return mInstance;
-}
+}*/
 
 
 typedef struct timespec timespec;
