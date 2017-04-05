@@ -8,7 +8,7 @@
 #include <iomanip>
 #include "DataAcquisition.h"
 #include "lsm9d1.h"
-#include "main.h"
+//#include "main.h"
 #include "Controller.h"
 
 // Sample distance in mm

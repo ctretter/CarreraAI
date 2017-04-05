@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+volatile unsigned long* MotorControlAddress;
+
 namespace Controller {
 	uint_fast16_t Update(double speed);
 	void SetP(double P);

@@ -16,13 +16,27 @@
 #include <socal/hps.h>
 #include <sys/ioctl.h>
 #include <signal.h>
+#include <atomic>
 #include "hps_0.h"
-#include "main.h"
+//#include "main.h"
 #include "DataAcquisition.h"
 #include "MatlabConnect/MatlabTCP.h"
 #include "Controller.h"
 #include "Correlation.h"
 #include "lsm9d1.h"
+
+
+#define HW_REGS_BASE ( ALT_STM_OFST )
+#define HW_REGS_SPAN ( 0x04000000 )
+#define HW_REGS_MASK ( HW_REGS_SPAN - 1 )
+
+volatile unsigned long* CarSensorsAddress;
+volatile unsigned long* CarLedsAddress;
+volatile unsigned long* LedsAddress;
+volatile bool Stop;
+volatile std::atomic<double> MaxSpeed;
+
+const int CAR_LED_HEADLIGHT_SHIFT = 1;
 
 const bool DoCorrelation = true;
 const bool DoLookAheadSpeedControlling = true;
