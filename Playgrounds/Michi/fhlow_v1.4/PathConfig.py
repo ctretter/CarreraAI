@@ -24,7 +24,7 @@ import platform
 #######################################################
 User = "Michi"
 Tower = "i7-Octopussy"
-FPGA = "Cyclone II"
+FPGA = "Cyclone V"
 
 #######################################################
 ## 	SET DEFAULT ENVIRONMENT VARIABLES

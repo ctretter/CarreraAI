@@ -31,9 +31,9 @@ entity OpticalSensorXY is
 		oSelect				: out std_ulogic;								-- select input bit
 		oSysClk				: out std_ulogic;								-- slave clk 1MHz
 		oNPD				: out std_ulogic;
+		oResetSensor		: out std_ulogic;
 		
 		-- sensor data
-		oResetSensor		: out std_ulogic;
 		oProductID			: out std_ulogic_vector (gDataWidth-1 downto 0);
 		oMotion				: out std_ulogic_vector (gDataWidth-1 downto 0);
 		oDataX				: out std_ulogic_vector (gDataWidth-1 downto 0);
