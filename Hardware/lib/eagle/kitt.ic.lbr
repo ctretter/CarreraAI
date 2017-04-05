@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -1238,14 +1238,14 @@ CONTROLLER </text>
 <text x="2.54" y="-1.27" size="1.778" layer="94" font="vector">CHARGE
 CONTROLLER </text>
 <text x="2.54" y="-3.81" size="1.4224" layer="94" font="vector" ratio="5">LTC4000-1</text>
-<pin name="ENC" x="-40.64" y="-5.08" length="middle"/>
-<pin name="IBMON" x="-20.32" y="-35.56" length="middle" rot="R90"/>
-<pin name="CX" x="5.08" y="-35.56" length="middle" rot="R90"/>
-<pin name="CL" x="12.7" y="-35.56" length="middle" rot="R90"/>
-<pin name="TMR" x="-5.08" y="-35.56" length="middle" rot="R90"/>
-<pin name="GND" x="20.32" y="-35.56" length="middle" rot="R90"/>
-<pin name="!FLT" x="-40.64" y="-15.24" length="middle"/>
-<pin name="!CHRG" x="-40.64" y="-10.16" length="middle"/>
+<pin name="ENC" x="-40.64" y="2.54" length="middle"/>
+<pin name="IBMON" x="-25.4" y="-35.56" length="middle" rot="R90"/>
+<pin name="CX" x="2.54" y="-35.56" length="middle" rot="R90"/>
+<pin name="CL" x="10.16" y="-35.56" length="middle" rot="R90"/>
+<pin name="TMR" x="-7.62" y="-35.56" length="middle" rot="R90"/>
+<pin name="GND" x="17.78" y="-35.56" length="middle" rot="R90"/>
+<pin name="!FLT" x="-40.64" y="-20.32" length="middle"/>
+<pin name="!CHRG" x="-40.64" y="-15.24" length="middle"/>
 <pin name="BIAS" x="27.94" y="-35.56" length="middle" rot="R90"/>
 <pin name="NTC" x="43.18" y="-22.86" length="middle" rot="R180"/>
 <pin name="FBG" x="43.18" y="-5.08" length="middle" rot="R180"/>
@@ -1253,13 +1253,13 @@ CONTROLLER </text>
 <pin name="BAT" x="43.18" y="10.16" length="middle" rot="R180"/>
 <pin name="BGATE" x="43.18" y="15.24" length="middle" rot="R180"/>
 <pin name="IFB" x="-40.64" y="-25.4" length="middle"/>
-<pin name="IIMON" x="-12.7" y="-35.56" length="middle" rot="R90"/>
+<pin name="IIMON" x="-17.78" y="-35.56" length="middle" rot="R90"/>
 <pin name="!RST" x="-40.64" y="20.32" length="middle"/>
-<pin name="VM" x="-40.64" y="0" length="middle"/>
+<pin name="VM" x="-40.64" y="-2.54" length="middle"/>
 <pin name="IN" x="-40.64" y="7.62" length="middle"/>
 <pin name="CLN" x="-40.64" y="12.7" length="middle"/>
-<pin name="CC" x="-10.16" y="33.02" length="middle" rot="R270"/>
-<pin name="ITH" x="-17.78" y="33.02" length="middle" rot="R270"/>
+<pin name="CC" x="-7.62" y="33.02" length="middle" rot="R270"/>
+<pin name="ITH" x="-22.86" y="33.02" length="middle" rot="R270"/>
 <pin name="IID" x="5.08" y="33.02" length="middle" rot="R270"/>
 <pin name="IGATE" x="15.24" y="33.02" length="middle" rot="R270"/>
 <pin name="OFB" x="43.18" y="5.08" length="middle" rot="R180"/>
