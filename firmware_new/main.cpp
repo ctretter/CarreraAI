@@ -30,11 +30,11 @@
 #define HW_REGS_SPAN ( 0x04000000 )
 #define HW_REGS_MASK ( HW_REGS_SPAN - 1 )
 
-volatile unsigned long* CarSensorsAddress;
+/*volatile unsigned long* CarSensorsAddress;
 volatile unsigned long* CarLedsAddress;
 volatile unsigned long* LedsAddress;
 volatile bool Stop;
-volatile std::atomic<double> MaxSpeed;
+volatile std::atomic<double> MaxSpeed;*/
 
 const int CAR_LED_HEADLIGHT_SHIFT = 1;
 
@@ -81,8 +81,8 @@ void SignalHandler(int signalNumber)
 	}
 
 	std::cerr << "Stopping data acquisition" << std::endl;
-	if(DataAcquisition::GetInstance()) {
-		DataAcquisition::GetInstance()->Stop();
+	if(DataAcquisition::GetInstance(MotorControlAddress)) {
+		DataAcquisition::GetInstance(MotorControlAddress)->Stop();
 	}
 
 	// Stop engine again

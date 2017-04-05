@@ -28,7 +28,7 @@ DataAcquisition::DataAcquisition(volatile unsigned long* pwmAddress) : mPwmAddre
 {
 }
 
-DataAcquisition* DataAcquisition::GetInstance()
+DataAcquisition* DataAcquisition::GetInstance(unsigned long* MotorControlAddress)
 {
 	if(mInstance == 0) {
 		mInstance = new DataAcquisition(MotorControlAddress);

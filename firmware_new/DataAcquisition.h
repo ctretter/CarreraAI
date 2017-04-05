@@ -23,7 +23,7 @@ struct dataSample_t {
 class DataAcquisition {
 public:
 	~DataAcquisition();
-	static DataAcquisition* GetInstance();
+	static DataAcquisition* GetInstance(unsigned long* MotorControlAddress);
 
 	std::thread* Start();
 	void Stop();

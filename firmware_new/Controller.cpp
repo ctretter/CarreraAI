@@ -19,7 +19,7 @@ static std::atomic<double> DFactor(0.002);
 static std::atomic<double> Setpoint(0);
 static std::atomic<int32_t> Output(0);
 
-uint_fast16_t Controller::Update(double speed) {
+uint_fast16_t Controller::Update(double speed, unsigned long* MotorControlAddress) {
 	static double previousSpeed = 0;
 	static double integral = 0;
 	static std::chrono::steady_clock::time_point lastSampleTime(std::chrono::steady_clock::now());
