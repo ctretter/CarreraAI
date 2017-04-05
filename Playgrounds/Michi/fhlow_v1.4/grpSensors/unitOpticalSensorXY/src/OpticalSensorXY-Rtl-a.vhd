@@ -4,7 +4,7 @@
 -- File        :	OpticalSensorXY-Rtl-a.vhd
 -- Description : 	architecture for communication between FPGA and OptiSensor
 -------------------------------------------------------------------------------
--- Latest update:	08.03.2017
+-- Latest update:	05.04.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of OpticalSensorXY is
@@ -30,11 +30,12 @@ architecture Rtl of OpticalSensorXY is
 	signal SysClk 				: std_ulogic									:= '0';
 	signal Sel 					: std_ulogic 									:= '1';
 	signal DataValid			: std_ulogic									:= '0';
+	signal SysClkEnable			: std_ulogic									:= '0';
 	signal SlaveClkCounter		: integer 										:= gDataWidth-1;
 	signal SysClkGenCounter 	: integer 										:= 1;
 	signal CntWaitCycles		: integer										:= 1;
 	signal ResetCnt				: integer										:= 0;
-	signal SysClkEnable			: std_ulogic									:= '0';
+
 
 	-- component constants
 	constant cMotionRegAddr		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000010";					-- address: 0x02
@@ -42,9 +43,9 @@ architecture Rtl of OpticalSensorXY is
 	constant cDataYAddr			: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000100";					-- address: 0x04
 	constant cProductIDAddr		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000000";					-- address: 0x00
 	constant cNewDataReceived	: std_ulogic_vector (gDataWidth-1 downto 0)		:= "10000000";					-- new data: 0x80
-	constant cMaxSysClkValue	: integer										:= gClkDivider*20;				-- freq to sysclk: 50KHz
+	constant cMaxSysClkValue	: integer										:= gClkDivider*2;				-- freq to sysclk: (gClkDivider*1MHz)/gClkDivider*2
 	constant cDelayRegisters	: integer										:= 100;							-- 100 µs delay between write -> read
-	constant cDelayNewData		: integer										:= 10;							-- 5 µs delay between read -> write
+	constant cDelayNewData		: integer										:= 10;							-- 10 µs delay between read -> write
 	constant cMaxWriteBits		: integer										:= gDataWidth;					-- length of a register: 8 bit
 	constant cMaxReadBits		: integer										:= gDataWidth;					-- length of single register: 8 bit
 	constant cResetTime			: integer 										:= 1000;						-- 1000 cycles of 1KHz clock
@@ -95,28 +96,27 @@ begin
 			
 				-- reset sensor 
 				when DoReset =>
-									if (iOneKHzStrobe = '1') then
-										if (ResetCnt = cResetTime) then
-											State <= WaitAfterReset;
-											ResetCnt <= 0;
-											ResetSensor <= '0';
-										else
-											ResetCnt <= ResetCnt + 1;
-											ResetSensor <= '1';
+										if (iOneKHzStrobe = '1') then
+											if (ResetCnt = cResetTime) then
+												State <= WaitAfterReset;
+												ResetCnt <= 0;
+												ResetSensor <= '0';
+											else
+												ResetCnt <= ResetCnt + 1;
+												ResetSensor <= '1';
+											end if;
 										end if;
-									end if;
 				
 				-- wait some time to get sensor system stable again			
 				when WaitAfterReset =>
-				
-									if (iOneKHzStrobe = '1') then
-										if (ResetCnt = cTimeAfterReset) then
-											State <= Init;
-											ResetCnt <= 0;
-										else
-											ResetCnt <= ResetCnt + 1;
+										if (iOneKHzStrobe = '1') then
+											if (ResetCnt = cTimeAfterReset) then
+												State <= Init;
+												ResetCnt <= 0;
+											else
+												ResetCnt <= ResetCnt + 1;
+											end if;
 										end if;
-									end if;
 			
 				-- initialize slave select, reset slave clock and set MasterOutput
 				when Init =>
@@ -432,5 +432,6 @@ begin
 	oMOSI <= MasterOutput;
 	oDataValid <= DataValid;
 	oResetSensor <= ResetSensor;
+	oNPD <= cActivated; -- do not power down sensor any time!
 
 end Rtl;

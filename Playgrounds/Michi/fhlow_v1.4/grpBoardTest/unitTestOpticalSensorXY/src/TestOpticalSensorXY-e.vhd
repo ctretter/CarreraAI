@@ -4,7 +4,7 @@
 -- File        :	TestOpticalSensorXY-e.vhd
 -- Description : 	entity for module TestOpticalSensorXY
 -------------------------------------------------------------------------------
--- Latest update:	08.03.2017
+-- Latest update:	05.04.2017
 -------------------------------------------------------------------------------
 
 library ieee;

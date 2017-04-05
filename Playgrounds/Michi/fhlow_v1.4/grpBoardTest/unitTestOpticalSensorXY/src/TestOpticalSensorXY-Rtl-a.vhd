@@ -4,7 +4,7 @@
 -- File        :	TestOpticalSensorXY-Rtl-a.vhd
 -- Description : 	architecture for test of optical sensor
 -------------------------------------------------------------------------------
--- Latest update:	08.03.2017
+-- Latest update:	05.04.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of TestOpticalSensorXY is
@@ -18,10 +18,9 @@ architecture Rtl of TestOpticalSensorXY is
 	-- component signals port map
 	signal DataValid			: std_ulogic 									:= '0';	
 	signal Motion				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
-	signal oDataX				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
-	signal oDataY				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
+	signal DataX				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
+	signal DataY				: std_ulogic_vector(cDataWidth-1 downto 0) 		:= (others => '0');
 	signal ProductID			: std_ulogic_vector(cDataWidth-1 downto 0)		:= (others => '0');
-	signal NowDataValid			: std_ulogic									:= '0';
 	signal SysClk				: std_ulogic									:= '0';
 	signal SysClkGen			: std_ulogic									:= '0';
 	signal SysClkCnt			: integer										:= 0;
@@ -58,11 +57,13 @@ architecture Rtl of TestOpticalSensorXY is
 			inResetAsync		: in std_ulogic;								-- reset
 			iOneMHzStrobe		: in std_ulogic;								-- 1MHz strobe for wait cycles of sensor
 			iOneKHzStrobe		: in std_ulogic;								-- 1KHz strobe for reset wait
+			oDataValid			: out std_ulogic;								-- valid bit for further usage in other components
+			
 			iMISO				: in std_ulogic;								-- MasterInSlaveOut
 			oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
 			oSelect				: out std_ulogic;								-- select input bit
 			oSysClk				: out std_ulogic;								-- slave clk 1 MHz	
-			oDataValid			: out std_ulogic;								-- valid bit for further usage in other components
+			oNPD				: out std_ulogic;
 			
 			-- sensor data
 			oResetSensor		: out std_ulogic;
@@ -88,16 +89,17 @@ begin
 		inResetAsync 	=> inResetAsync,
 		iOneMHzStrobe	=> OneMHzStrobe,
 		iOneKHzStrobe	=> OneKHzStrobe,
+		oDataValid		=> DataValid,
 		iMISO			=> iMISO,
 		oMOSI			=> oMOSI,
 		oSelect 		=> oSelect,
 		oSysClk			=> oSysClk,
-		oDataValid		=> DataValid,
+		oNPD			=> oNPD,
 		oResetSensor 	=> oResetSensor,
 		oProductID		=> ProductID,
 		oMotion			=> Motion,
-		oDataX			=> oDataX,
-		oDataY			=> oDataY
+		oDataX			=> DataX,
+		oDataY			=> DataY
 	);
 	
 	-- #################################################
@@ -155,7 +157,6 @@ begin
 		end ToSevSeg;
 	begin	
 		if (inResetAsync = cnActivated) then
-			NowDataValid <= '0';
 			oDataValid <= '0';
 			
 			oHEX1 <= "0111111";
@@ -172,32 +173,12 @@ begin
 			end if;
 			
 			-- output
-			oHEX1 <= not(ToSevSeg(oDataX(3 downto 0)));
-			oHEX2 <= not(ToSevSeg(oDataX(7 downto 4)));
-			oHEX3 <= not(ToSevSeg(oDataY(3 downto 0)));
-			oHEX4 <= not(ToSevSeg(oDataY(7 downto 4)));
+			oHEX1 <= not(ToSevSeg(DataX(3 downto 0)));
+			oHEX2 <= not(ToSevSeg(DataX(7 downto 4)));
+			oHEX3 <= not(ToSevSeg(DataY(3 downto 0)));
+			oHEX4 <= not(ToSevSeg(DataY(7 downto 4)));
 					
 		end if;
 	end process;
 	
-	
-	TenKHz : process (iClk, inResetAsync) is
-	begin
-		if (inResetAsync = cnActivated) then
-			SysClkGen <= '0';
-			SysClkCnt <= 1;
-		elsif (rising_edge(iClk)) then
-			if (SysClkCnt = 1200) then
-				SysClkCnt <= 1;
-				SysClkGen <= not(SysClkGen);
-			else	
-				SysClkCnt <= SysClkCnt + 1;
-			end if;
-		end if;
-		
-		--oSysClk <= SysClkGen;
-		
-	end process;
-
-	oNPD <= '1';
 end Rtl;

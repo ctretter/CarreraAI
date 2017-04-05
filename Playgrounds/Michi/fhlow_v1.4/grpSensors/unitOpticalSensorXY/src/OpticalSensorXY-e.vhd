@@ -4,7 +4,7 @@
 -- File        :	OpticalSensorXY-e.vhd
 -- Description : 	entity for module OpticalSensorXY
 -------------------------------------------------------------------------------
--- Latest update:	08.03.2017
+-- Latest update:	05.04.2017
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -23,11 +23,14 @@ entity OpticalSensorXY is
 		inResetAsync		: in std_ulogic;								-- reset
 		iOneMHzStrobe		: in std_ulogic;								-- 1MHz strobe for wait cycles of sensor
 		iOneKHzStrobe		: in std_ulogic;								-- 1KHz strobe for reset wait 
+		oDataValid			: out std_ulogic;								-- valid bit for further usage in other components
+		
+		-- sensor wires
 		iMISO				: in std_ulogic;								-- MasterInSlaveOut
 		oMOSI				: out std_ulogic;								-- MasterOutSlaveIn
 		oSelect				: out std_ulogic;								-- select input bit
-		oSysClk				: out std_ulogic;								-- slave clk 1MHz	
-		oDataValid			: out std_ulogic;								-- valid bit for further usage in other components
+		oSysClk				: out std_ulogic;								-- slave clk 1MHz
+		oNPD				: out std_ulogic;
 		
 		-- sensor data
 		oResetSensor		: out std_ulogic;
