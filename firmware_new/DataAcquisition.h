@@ -24,6 +24,7 @@ class DataAcquisition {
 public:
 	~DataAcquisition();
 	static DataAcquisition* GetInstance(unsigned long* MotorControlAddress);
+	static DataAcquisition* GetInstance();
 
 	std::thread* Start();
 	void Stop();
@@ -32,10 +33,10 @@ public:
 	uint32_t GetLapCount();
 
 private:
-	DataAcquisition(volatile unsigned long* pwmAddress);
+	DataAcquisition(unsigned long* pwmAddress);
 	void ThreadFunction();
 
-	volatile unsigned long* mPwmAddress;
+	unsigned long* mPwmAddress; //volatile
 	std::thread* mThread;
 	std::mutex mDataSampleMutex;
 	std::condition_variable mDataSampleConditionVariable;

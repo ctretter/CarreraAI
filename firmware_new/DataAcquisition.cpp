@@ -24,8 +24,12 @@ const size_t PULSES_PER_TURN = 8;
 
 DataAcquisition* DataAcquisition::mInstance = 0;
 
-DataAcquisition::DataAcquisition(volatile unsigned long* pwmAddress) : mPwmAddress(pwmAddress), mThread(0), mDataSampleReady(false), mStop(false), mDataSampleState(0), mLapCount(0)
+DataAcquisition::DataAcquisition(unsigned long* pwmAddress) : mPwmAddress(pwmAddress), mThread(0), mDataSampleReady(false), mStop(false), mDataSampleState(0), mLapCount(0)
 {
+}
+
+DataAcquisition* DataAcquisition::GetInstance(){
+	return mInstance;
 }
 
 DataAcquisition* DataAcquisition::GetInstance(unsigned long* MotorControlAddress)
@@ -153,7 +157,7 @@ void DataAcquisition::ThreadFunction()
 		}
 
 		// Update controller (calculates new output based on current speed)
-		Controller::Update(speed_mm_s);
+		Controller::Update(speed_mm_s, mPwmAddress);
 
 		std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
 		previousDistancePulses = alt_read_word(mPwmAddress+4);

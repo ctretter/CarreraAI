@@ -52,7 +52,7 @@ timespec TimeDifference(timespec start, timespec end);
 
 void* VirtualBaseAddress = 0;
 int MemoryFileDescriptor = 0;
-volatile unsigned long* MotorControlAddress = 0;
+unsigned long* MotorControlAddress = 0;
 volatile unsigned long* CarSensorsAddress = 0;
 volatile unsigned long* CarLedsAddress = 0;
 volatile unsigned long* LedsAddress = 0;
@@ -162,12 +162,12 @@ int main(int argc, char **argv)
 
 	// Start threads
 	MatlabTCP::GetInstance()->Start();
-	DataAcquisition::GetInstance()->Start();
+	DataAcquisition::GetInstance(MotorControlAddress)->Start();
 
 	while(true) {
 		// Get data sample from data acquisition thread
 		dataSample_t dataSample;
-		DataAcquisition::GetInstance()->GetData(dataSample);
+		DataAcquisition::GetInstance(MotorControlAddress)->GetData(dataSample);
 
 		if(Stop && dataSample.lapCount > 1) {
 			alt_write_word(CarLedsAddress, 0); // turn off LEDs
@@ -219,8 +219,8 @@ int main(int argc, char **argv)
 				trackPosition = GetPatternPosition(track, angularRateHistory, dataSample.distance-lapStartDistance, SHIFT); //TODO: Use distanceCorrected?
 
 				clock_gettime(CLOCK_MONOTONIC, &currentTime);
-				timespec timeForCalculationTimeSpec = TimeDifference(timeBefore, currentTime);
-				double timeForCalculation = timeForCalculationTimeSpec.tv_sec*1000 + (double)timeForCalculationTimeSpec.tv_nsec/MILLION;
+				//timespec timeForCalculationTimeSpec = TimeDifference(timeBefore, currentTime);
+				//double timeForCalculation = timeForCalculationTimeSpec.tv_sec*1000 + (double)timeForCalculationTimeSpec.tv_nsec/MILLION;
 
 				//printf("Match at position (calculated in %f ms): '%f', corrected: '%f', uncorrected: '%f'\n", timeForCalculation, trackPosition->distance, distanceCorrected, dataSample.distance - lapStartDistance);
 
