@@ -20771,14 +20771,15 @@ http://www.zetex.com&lt;p&gt;
 <modules>
 <module name="POW-4001" prefix="A5" dx="45.72" dy="30.48">
 <ports>
-<port name="DDC.IN" side="top" coord="-12.7" direction="io"/>
-<port name="DDC.OUT" side="top" coord="12.7" direction="io"/>
-<port name="DDC.!RST" side="top" coord="0" direction="out"/>
+<port name="DDC.IN" side="top" coord="-5.08" direction="io"/>
+<port name="DDC.OUT" side="top" coord="10.16" direction="io"/>
+<port name="DDC.!RST" side="left" coord="2.54" direction="out"/>
 <port name="BAT.+" side="right" coord="-5.08" direction="pwr"/>
 <port name="BAT.NTC" side="right" coord="-10.16" direction="in"/>
-<port name="GND" side="bottom" coord="0" direction="pwr"/>
-<port name="VDD" side="left" coord="2.54" direction="pwr"/>
+<port name="GND" side="left" coord="-10.16" direction="pwr"/>
+<port name="VDD" side="left" coord="10.16" direction="pwr"/>
 <port name="VSYS" side="right" coord="2.54" direction="pwr"/>
+<port name="DDC.ITH" side="top" coord="2.54" direction="io"/>
 </ports>
 <variantdefs>
 </variantdefs>
@@ -21238,8 +21239,17 @@ Those seem pretty damn useful.</text>
 </sheet>
 </sheets>
 </module>
-<module name="POW-3891" prefix="A6" dx="45.72" dy="30.48">
+<module name="POW-3891" prefix="A6" dx="45.72" dy="35.56">
 <ports>
+<port name="DDC.VIN" side="bottom" coord="-5.08" direction="io"/>
+<port name="DDC.ITH" side="bottom" coord="2.54" direction="io"/>
+<port name="DDC.OUT" side="bottom" coord="10.16" direction="io"/>
+<port name="CTRL.RUN" side="left" coord="12.7" direction="in"/>
+<port name="CTRL.PGOOD" side="left" coord="7.62" direction="out"/>
+<port name="CTRL.PLLIN/MODE" side="left" coord="2.54" direction="in"/>
+<port name="CTRL.FREQ" side="left" coord="-2.54" direction="in"/>
+<port name="GND" side="left" coord="-12.7" direction="pwr"/>
+<port name="DDC.EXTVCC" side="right" coord="12.7" direction="pwr"/>
 </ports>
 <variantdefs>
 </variantdefs>
@@ -21559,14 +21569,16 @@ Those seem pretty damn useful.</text>
 </net>
 <net name="N6.EXTVCC" class="0">
 <segment>
-<pinref part="U6" gate="A" pin="EXTVCC"/>
-<wire x1="116.84" y1="139.7" x2="132.08" y2="139.7" width="0.1524" layer="91"/>
-<label x="132.08" y="142.24" size="1.778" layer="95" rot="R180"/>
-</segment>
-<segment>
 <wire x1="129.54" y1="22.86" x2="144.78" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="☇6XX1" gate="G$1" pin="TP"/>
 <label x="144.78" y="25.4" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="DDC.EXTVCC" class="0">
+<segment>
+<pinref part="U6" gate="A" pin="EXTVCC"/>
+<wire x1="116.84" y1="139.7" x2="132.08" y2="139.7" width="0.1524" layer="91"/>
+<label x="132.08" y="142.24" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 </nets>
@@ -21667,6 +21679,7 @@ Those seem pretty damn useful.</text>
 <part name="C1.1" library="rcl" deviceset="C-EU" device="C1210K" value="XX"/>
 <part name="P+8" library="supply1" deviceset="VCC/2" device="" value="SYSV"/>
 <part name="P1" library="kitt.con" deviceset="JST.S2B-PH-SM4-TB" device=""/>
+<part name="FRAME5" library="frames" deviceset="A4L-LOC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -21697,12 +21710,6 @@ possible combination of circumstances
 <text x="43.18" y="15.24" size="1.778" layer="98">(TURN OFF)</text>
 <text x="40.64" y="-10.16" size="5.08" layer="98">✔</text>
 </plain>
-<moduleinsts>
-<moduleinst name="A5-U1" module="POW-4001" x="114.3" y="63.5" smashed="yes">
-<attribute name="NAME" x="114.3" y="58.42" size="2.032" layer="95" align="bottom-center"/>
-</moduleinst>
-<moduleinst name="A6-1" module="POW-3891" x="114.3" y="109.22"/>
-</moduleinsts>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="X1.0" gate="G$1" x="238.76" y="88.9"/>
@@ -22525,6 +22532,47 @@ TWI M    ADR: 0x1C</text>
 <pinref part="P+3" gate="1" pin="+5V"/>
 <pinref part="L2.2" gate="G$1" pin="2"/>
 <wire x1="228.6" y1="154.94" x2="220.98" y2="154.94" width="0.1524" layer="91"/>
+</segment>
+</net>
+</nets>
+</sheet>
+<sheet>
+<description>POW-System Supply Chain</description>
+<plain>
+</plain>
+<moduleinsts>
+<moduleinst name="A5-U1" module="POW-4001" x="111.76" y="73.66" smashed="yes">
+<attribute name="NAME" x="88.9" y="91.44" size="2.032" layer="95"/>
+</moduleinst>
+<moduleinst name="A6-U1" module="POW-3891" x="111.76" y="119.38" smashed="yes">
+<attribute name="NAME" x="88.9" y="139.7" size="2.032" layer="95"/>
+</moduleinst>
+</moduleinsts>
+<instances>
+<instance part="FRAME5" gate="G$1" x="0" y="0"/>
+</instances>
+<busses>
+</busses>
+<nets>
+<net name="N$13" class="0">
+<segment>
+<portref moduleinst="A6-U1" port="DDC.VIN"/>
+<portref moduleinst="A5-U1" port="DDC.IN"/>
+<wire x1="106.68" y1="96.52" x2="106.68" y2="93.98" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<portref moduleinst="A6-U1" port="DDC.OUT"/>
+<portref moduleinst="A5-U1" port="DDC.OUT"/>
+<wire x1="121.92" y1="96.52" x2="121.92" y2="93.98" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$15" class="0">
+<segment>
+<portref moduleinst="A6-U1" port="DDC.ITH"/>
+<portref moduleinst="A5-U1" port="DDC.ITH"/>
+<wire x1="114.3" y1="96.52" x2="114.3" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
