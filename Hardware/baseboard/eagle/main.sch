@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -590,16 +590,16 @@ DIN A4, landscape with location and doc. field</description>
 <pin name="2" x="-5.08" y="-1.27" length="middle" direction="pas"/>
 </symbol>
 <symbol name="S2B-PH-K-S(LF)(SN)">
-<wire x1="0" y1="1.27" x2="2.54" y2="1.27" width="0.762" layer="94"/>
-<wire x1="0" y1="-1.27" x2="2.54" y2="-1.27" width="0.762" layer="94"/>
-<wire x1="0" y1="3.81" x2="0" y2="-3.81" width="0.254" layer="94"/>
-<wire x1="0" y1="-3.81" x2="6.35" y2="-3.81" width="0.254" layer="94"/>
-<wire x1="6.35" y1="-3.81" x2="6.35" y2="3.81" width="0.254" layer="94"/>
-<wire x1="6.35" y1="3.81" x2="0" y2="3.81" width="0.254" layer="94"/>
-<text x="0" y="3.81" size="1.27" layer="95">&gt;NAME</text>
-<text x="0" y="-5.08" size="1.27" layer="96">&gt;VALUE</text>
-<pin name="1" x="-5.08" y="1.27" length="middle" direction="pas"/>
-<pin name="2" x="-5.08" y="-1.27" length="middle" direction="pas"/>
+<wire x1="0" y1="2.54" x2="2.54" y2="2.54" width="0.762" layer="94"/>
+<wire x1="0" y1="0" x2="2.54" y2="0" width="0.762" layer="94"/>
+<wire x1="0" y1="5.08" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="6.35" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="6.35" y1="-2.54" x2="6.35" y2="5.08" width="0.254" layer="94"/>
+<wire x1="6.35" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
+<text x="0" y="5.08" size="1.27" layer="95">&gt;NAME</text>
+<text x="0" y="-3.81" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="1" x="-5.08" y="2.54" length="middle" direction="pas"/>
+<pin name="2" x="-5.08" y="0" length="middle" direction="pas"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -20844,7 +20844,7 @@ http://www.zetex.com&lt;p&gt;
 <ports>
 <port name="DDC.!RST" side="left" coord="-2.54" direction="out"/>
 <port name="BAT.+" side="bottom" coord="10.16" direction="pwr"/>
-<port name="BAT.NTC" side="bottom" coord="2.54" direction="in"/>
+<port name="BAT.NTC" side="bottom" coord="6.35" direction="in"/>
 <port name="GND" side="bottom" coord="-15.24" direction="pwr"/>
 <port name="DDC.CLN" side="top" coord="-5.08" direction="io"/>
 <port name="DDC.ITH" side="top" coord="2.54" direction="io"/>
@@ -22171,7 +22171,8 @@ Those seem pretty damn useful.</text>
 <part name="SJ1" library="jumper" deviceset="SJ2W" device=""/>
 <part name="X2.1" library="con-phoenix-254" deviceset="MPT2" device="" value="MOTOR"/>
 <part name="X2.3" library="con-phoenix-254" deviceset="MPT2" device="" value="5V+SoC"/>
-<part name="P2" library="kitt.con" deviceset="S2B-PH-K-S(LF)(SN)" device=""/>
+<part name="P2" library="kitt.con" deviceset="S2B-PH-K-S(LF)(SN)" device="" value="NTC"/>
+<part name="P3" library="kitt.con" deviceset="S2B-PH-K-S(LF)(SN)" device="" value="BATTERY"/>
 </parts>
 <sheets>
 <sheet>
@@ -22592,6 +22593,7 @@ TWI M    ADR: 0x1C</text>
 <plain>
 <text x="217.17" y="20.32" size="2.54" layer="94">System Supply Chain</text>
 <text x="33.02" y="101.6" size="1.6764" layer="98">[FILTER FOR UART BURSTS?]</text>
+<text x="123.19" y="41.91" size="1.778" layer="98">TODO: VOLTAGE DIVIDE</text>
 </plain>
 <moduleinsts>
 <moduleinst name="A5-U1" module="POW-4001" x="129.54" y="93.98" smashed="yes">
@@ -22610,7 +22612,7 @@ TWI M    ADR: 0x1C</text>
 <instance part="GND15" gate="1" x="114.3" y="63.5"/>
 <instance part="GND16" gate="1" x="114.3" y="121.92"/>
 <instance part="GND19" gate="1" x="193.04" y="63.5"/>
-<instance part="P+2" gate="1" x="220.98" y="109.22"/>
+<instance part="P+2" gate="1" x="220.98" y="106.68"/>
 <instance part="P+8" gate="1" x="76.2" y="106.68" smashed="yes">
 <attribute name="VALUE" x="73.66" y="106.68" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -22628,7 +22630,14 @@ TWI M    ADR: 0x1C</text>
 <instance part="X2.1" gate="-2" x="22.86" y="50.8" rot="MR0"/>
 <instance part="X2.3" gate="-1" x="228.6" y="71.12"/>
 <instance part="X2.3" gate="-2" x="228.6" y="96.52"/>
-<instance part="P2" gate="G$1" x="149.86" y="60.96"/>
+<instance part="P2" gate="G$1" x="154.94" y="48.26" smashed="yes">
+<attribute name="NAME" x="162.56" y="52.07" size="1.27" layer="95"/>
+<attribute name="VALUE" x="162.56" y="49.53" size="1.27" layer="96"/>
+</instance>
+<instance part="P3" gate="G$1" x="154.94" y="60.96" smashed="yes">
+<attribute name="NAME" x="162.56" y="64.77" size="1.27" layer="95"/>
+<attribute name="VALUE" x="162.56" y="62.23" size="1.27" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -22680,7 +22689,16 @@ TWI M    ADR: 0x1C</text>
 <wire x1="193.04" y1="71.12" x2="193.04" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="71.12" x2="193.04" y2="71.12" width="0.1524" layer="91"/>
 <junction x="193.04" y="71.12"/>
-<wire x1="114.3" y1="71.12" x2="193.04" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="71.12" x2="144.78" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="P3" gate="G$1" pin="1"/>
+<wire x1="144.78" y1="71.12" x2="193.04" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="63.5" x2="144.78" y2="63.5" width="0.1524" layer="91"/>
+<junction x="144.78" y="71.12"/>
+<pinref part="P2" gate="G$1" pin="1"/>
+<wire x1="144.78" y1="63.5" x2="144.78" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="63.5" x2="144.78" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="50.8" x2="149.86" y2="50.8" width="0.1524" layer="91"/>
+<junction x="144.78" y="63.5"/>
 </segment>
 <segment>
 <portref moduleinst="A2-1" port="GND"/>
@@ -22698,7 +22716,7 @@ TWI M    ADR: 0x1C</text>
 <pinref part="P+2" gate="1" pin="+5V"/>
 <portref moduleinst="A4-1" port="DDC.VOUT"/>
 <wire x1="218.44" y1="96.52" x2="220.98" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="96.52" x2="220.98" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="96.52" x2="220.98" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="X2.3" gate="-2" pin="1"/>
 <wire x1="226.06" y1="96.52" x2="220.98" y2="96.52" width="0.1524" layer="91"/>
 <junction x="220.98" y="96.52"/>
@@ -22771,6 +22789,22 @@ TWI M    ADR: 0x1C</text>
 <pinref part="X2.1" gate="-2" pin="1"/>
 <portref moduleinst="A2-1" port="MOT.OUT+"/>
 <wire x1="53.34" y1="50.8" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="P2" gate="G$1" pin="2"/>
+<portref moduleinst="A5-U1" port="BAT.NTC"/>
+<wire x1="149.86" y1="48.26" x2="135.89" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="135.89" y1="48.26" x2="135.89" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="P3" gate="G$1" pin="2"/>
+<portref moduleinst="A5-U1" port="BAT.+"/>
+<wire x1="149.86" y1="60.96" x2="139.7" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="60.96" x2="139.7" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
