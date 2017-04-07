@@ -21009,10 +21009,11 @@ circumstances will happen
 possible combination of circumstances
 </text>
 <text x="43.18" y="15.24" size="1.778" layer="98">(TURN OFF)</text>
+<text x="40.64" y="-10.16" size="5.08" layer="98">✔</text>
 </plain>
 <moduleinsts>
-<moduleinst name="A5-U1" module="POW-4001" x="76.2" y="76.2" smashed="yes">
-<attribute name="NAME" x="76.2" y="71.12" size="2.032" layer="95" align="bottom-center"/>
+<moduleinst name="A5-U1" module="POW-4001" x="86.36" y="63.5" smashed="yes">
+<attribute name="NAME" x="86.36" y="58.42" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
 </moduleinsts>
 <instances>
@@ -21175,6 +21176,7 @@ possible combination of circumstances
 [ ] ERC Check
 [ ] Schematic/Peer Review</text>
 <text x="124.46" y="55.88" size="1.778" layer="98">PfaffM(sic): No point in making separate GND zones, focus on preventing slit antennae</text>
+<text x="1.27" y="-5.08" size="1.778" layer="98">✔</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
@@ -21634,6 +21636,7 @@ TWI M    ADR: 0x1C</text>
 [  ] Pullups: To which potential? 3V3 seems really fishy, given it comes from the SoC.
 [  ] Name nets on pins after pins connected for routing later,
      maybe use some unicode symbol for proximity constraints?</text>
+<text x="0" y="-25.4" size="6.4516" layer="98">✔</text>
 </plain>
 <instances>
 <instance part="FRAME4" gate="G$1" x="0" y="0"/>
