@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -21114,16 +21114,9 @@ Siemens, distributor Buerklin, 11G766</description>
 <plain>
 <text x="162.56" y="20.32" size="1.778" layer="98">refer to: ../sim/Supply/LTC4000_V1.asc</text>
 <text x="162.56" y="27.94" size="1.778" layer="98">TODO: Replace all packages of passives (currently non-smt)</text>
-<text x="0" y="-12.7" size="1.778" layer="98">[TODO1]
-8.2 milliohms? really?
-Could calcuate trace resistence for that</text>
 <text x="71.12" y="71.12" size="1.778" layer="98">[TODO 2]</text>
-<text x="50.8" y="-10.16" size="1.778" layer="98">Refer to [ltc4001 p24s4]  "Input Voltage Programming"</text>
-<text x="50.8" y="-7.62" size="1.778" layer="98">[TODO 2]</text>
-<text x="0" y="-15.24" size="1.778" layer="98">ad: Is this Kelvinized, judging by the wires?</text>
-<text x="0" y="-27.94" size="1.778" layer="98">[TODO3]
-Package this and everything else into MODULES.
-Those seem pretty damn useful.</text>
+<text x="0" y="-7.62" size="1.778" layer="98">Refer to [ltc4001 p24s4]  "Input Voltage Programming"</text>
+<text x="0" y="-5.08" size="1.778" layer="98">[TODO 2]</text>
 <text x="6.35" y="16.51" size="1.27" layer="97" align="top-left">LEGEND:
 ☇…Test Point
 ⚻…Component with kelvinized Connections
@@ -21980,7 +21973,6 @@ P|max = V|max * I|max = #0.24W#
 <sheet>
 <plain>
 <rectangle x1="81.28" y1="111.76" x2="91.44" y2="116.84" layer="114"/>
-<text x="71.12" y="88.9" size="1.778" layer="98" rot="R90">[TODO:PKG]</text>
 <text x="0" y="-31.75" size="3.81" layer="98">[  ] Check proximity constraints for passives -&gt; Application Note
 [  ] Important: Double check values and omittables!!! also LB and FB!
 [  ] Pullups: To which potential? 3V3 seems really fishy, given it comes from the SoC.
@@ -22283,7 +22275,7 @@ P|max = V|max * I|max = #0.24W#
 <sheets>
 <sheet>
 <plain>
-<text x="134.62" y="50.8" size="1.778" layer="98">PfaffM(sic): No point in making separate GND zones, focus on preventing slit antennae</text>
+<text x="1.27" y="-3.81" size="1.778" layer="98">[note1]: PfaffM(sic): No point in making separate GND zones, focus on preventing slit antennae</text>
 <text x="6.35" y="19.05" size="1.27" layer="97" align="top-left">LEGEND:
 ☇…Test Point
 ⚻…Component with kelvinized Connections
@@ -22291,6 +22283,7 @@ P|max = V|max * I|max = #0.24W#
 ↦…Place away from IC
 ✳…High EMI Node
 ↔…Keep Trace Short</text>
+<text x="148.59" y="59.69" size="1.778" layer="98" align="top-left">[note1]</text>
 </plain>
 <instances>
 <instance part="U20" gate="G$1" x="137.16" y="93.98"/>
@@ -22570,11 +22563,15 @@ P|max = V|max * I|max = #0.24W#
 Inputs, Outputs and Power</description>
 <plain>
 <text x="215.9" y="20.32" size="2.54" layer="97">Arduino I/O</text>
-<text x="0" y="-33.02" size="3.81" layer="98">General TODOs:
+<text x="0" y="-6.35" size="3.81" layer="98" align="top-left">General TODOs:
 [  ] Figure out where to put a mp/mt switch for switching device off
 [  ] Add new power chain design before 5V Booster using the LT4000
-[  ] Rename all XX identifiers
-[  ] Respect Sodd's Second Law[1]: Implement Fail-Safe or Fail-Badly &gt;in hardware&lt;, anything but Fail-Deadly is better than previously</text>
+[  ] Rename all XX (undefined) identifiers and values
+[  ] Respect Sodd's Second Law[1]: Implement Fail-Safe or Fail-Badly &gt;in hardware&lt;, anything but Fail-Deadly is better than previously
+[  ] Drafting -&gt; Figure out sensor placement for the 1000th time
+[  ] Compile BOM before routing this time
+[  ] Practice KISS -&gt; Keep it Simple Stupid
+[  ] Resolve any ERC issues originating from our custom libraries</text>
 <text x="17.78" y="12.7" size="2.54" layer="114">DO NOT POPULATE</text>
 <rectangle x1="7.62" y1="12.7" x2="15.24" y2="15.24" layer="114"/>
 <rectangle x1="7.62" y1="17.78" x2="15.24" y2="20.32" layer="98"/>
@@ -22586,9 +22583,11 @@ circumstances will happen
 possible combination of circumstances
 </text>
 <text x="43.18" y="17.78" size="1.778" layer="98">(TURN OFF)</text>
-<text x="40.64" y="-10.16" size="5.08" layer="98">✔</text>
+<text x="40.64" y="-11.43" size="5.08" layer="98">✔</text>
 <rectangle x1="7.62" y1="7.62" x2="15.24" y2="10.16" layer="116"/>
 <text x="17.78" y="7.62" size="2.54" layer="116">PROCESSED INTO BOM</text>
+<text x="0" y="-17.78" size="5.08" layer="98">✔</text>
+<text x="0" y="-22.86" size="5.08" layer="98">✔</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
