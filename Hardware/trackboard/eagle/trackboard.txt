@@ -1,5 +1,0 @@
-EAGLE Version 7.6.0 Copyright (c) 1988-2016 CadSoft
-List of signals with lengthSignal	l [mm]	diff. [mm]	diff. [%]	unrouted [mm]
-SCLK	19.563227704	0.000000000	0.000	--
-MOSI	20.001182109	0.437954404	2.239	--
-MISO	24.304600518	4.741372814	24.236	--
