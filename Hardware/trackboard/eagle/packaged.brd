@@ -3512,54 +3512,44 @@ Covered vias can be set in Masks (Limit).
 <element name="A1:U1" library="kitt.ic" package="ADNS-3080" value="ADNS-3080" x="56.9976" y="28.4988" smashed="yes">
 <attribute name="NAME" x="27.56685" y="29.7218" size="1.016" layer="25" font="vector" ratio="15" rot="R90"/>
 </element>
-<element name="A1:X9.00" library="Ai_Passives" package="RESON-SMD" value="RESON" x="64.8716" y="20.447" smashed="yes" rot="R180">
+<element name="A1:Y1" library="Ai_Passives" package="RESON-SMD" value="24MHz" x="64.8716" y="20.447" smashed="yes" rot="R180">
 <attribute name="NAME" x="31.8516" y="24.892" size="1.016" layer="25" font="vector" ratio="15" rot="R180"/>
 </element>
-<element name="A1:C9.03" library="rcl" package="C1608" value="2.2uF" x="60.96" y="37.1475" smashed="yes" rot="MR0">
+<element name="A1:C1" library="rcl" package="C1608" value="2.2uF/⇤" x="60.96" y="37.1475" smashed="yes" rot="MR0">
 <attribute name="NAME" x="27.94" y="31.59125" size="1.016" layer="26" font="vector" ratio="15" rot="MR0"/>
-<attribute name="VALUE" x="25.24125" y="31.59125" size="1.016" layer="28" font="vector" ratio="15" rot="MR0"/>
 </element>
-<element name="A1:R9.01" library="rcl" package="R0402" value="10kR" x="61.2775" y="19.84375" smashed="yes" rot="R90">
+<element name="A1:R6" library="rcl" package="R0402" value="10kR/⎒" x="61.2775" y="19.84375" smashed="yes" rot="R90">
 <attribute name="NAME" x="33.655" y="22.5425" size="1.016" layer="25" font="vector" ratio="15" rot="R90"/>
-<attribute name="VALUE" x="29.21" y="23.495" size="1.016" layer="27" font="vector" ratio="15" rot="R90"/>
 </element>
-<element name="A1:C9.04" library="rcl" package="C0805K" value="100nF" x="50.8" y="37.1475" smashed="yes" rot="MR0">
+<element name="A1:C2" library="rcl" package="C0805K" value="100nF/⇤" x="50.8" y="37.1475" smashed="yes" rot="MR0">
 <attribute name="NAME" x="31.48" y="33.26" size="1.016" layer="26" font="vector" ratio="15" rot="MR0"/>
-<attribute name="VALUE" x="35.6075" y="35.8825" size="1.016" layer="28" font="vector" ratio="15" rot="MR0"/>
 </element>
-<element name="A1:C9.05" library="rcl" package="C0805K" value="100nF" x="54.9275" y="37.1475" smashed="yes" rot="MR180">
+<element name="A1:C3" library="rcl" package="C0805K" value="100nF/⇤" x="54.9275" y="37.1475" smashed="yes" rot="MR180">
 <attribute name="NAME" x="21.5425" y="33.89125" size="1.016" layer="26" font="vector" ratio="15" rot="MR180"/>
-<attribute name="VALUE" x="20.43125" y="31.26875" size="1.016" layer="28" font="vector" ratio="15" rot="MR180"/>
 </element>
-<element name="A1:R9.13" library="rcl" package="R0402" value="[PPR]" x="56.8325" y="19.84375" smashed="yes" rot="R270">
-<attribute name="NAME" x="21.43125" y="25.24125" size="1.016" layer="25" font="vector" ratio="15" rot="R270"/>
-<attribute name="VALUE" x="30.32125" y="27.14625" size="1.016" layer="27" font="vector" ratio="15" rot="R270"/>
+<element name="A1:R8" library="rcl" package="R0402" value="10kR" x="56.8325" y="19.84375" smashed="yes" rot="R270">
+<attribute name="NAME" x="57.30875" y="14.12875" size="1.016" layer="25" font="vector" ratio="15" rot="R180"/>
 </element>
-<element name="A1:D9.00" library="led" package="CHIP-LED0805" value="RED" x="53.34" y="19.84375" smashed="yes" rot="R270">
+<element name="A1:D1" library="led" package="CHIP-LED0805" value="RED" x="53.34" y="19.84375" smashed="yes" rot="R270">
 <attribute name="NAME" x="23.495" y="26.035" size="1.016" layer="25" font="vector" ratio="15"/>
 </element>
 <element name="A1:DCL1" library="kitt.refs" package="DCL.LOGO-CARRERAI.W30MM" value="DCL.CARRERAI" x="16.51" y="-21.59"/>
 <element name="A1:REF1" library="kitt.refs" package="REF_LOGO_UASUA" value="REF.LOGO.UASUA" x="1.27" y="-33.02"/>
 <element name="A1:DCL2" library="kitt.refs" package="DCL.LOGO-OSH.5MM" value="DCL.OSH.COPPER'5MM'" x="27.94" y="-27.94"/>
-<element name="A1:R2" library="rcl" package="R0402" value="10kR" x="53.34" y="37.7825" smashed="yes" rot="R90">
+<element name="A1:R1" library="rcl" package="R0402" value="10kR/⎒" x="53.34" y="37.7825" smashed="yes" rot="R90">
 <attribute name="NAME" x="25.0825" y="33.02" size="1.016" layer="25" font="vector" ratio="15" rot="R90"/>
-<attribute name="VALUE" x="22.06625" y="32.7025" size="1.016" layer="27" font="vector" ratio="15" rot="R90"/>
 </element>
-<element name="A1:R1" library="rcl" package="R0402" value="100R" x="49.53" y="20.32" smashed="yes">
-<attribute name="NAME" x="28.8925" y="27.94" size="1.016" layer="25" font="vector" ratio="15"/>
-<attribute name="VALUE" x="25.87625" y="25.55875" size="1.016" layer="27" font="vector" ratio="15"/>
+<element name="A1:R2" library="rcl" package="R0402" value="100R/⇤" x="49.53" y="20.32" smashed="yes">
+<attribute name="NAME" x="33.655" y="37.1475" size="1.016" layer="25" font="vector" ratio="15"/>
 </element>
-<element name="A1:R3" library="rcl" package="R0402" value="100R" x="52.86375" y="24.765" smashed="yes" rot="MR270">
+<element name="A1:R3" library="rcl" package="R0402" value="100R/⇤" x="52.86375" y="24.765" smashed="yes" rot="MR270">
 <attribute name="NAME" x="25.4" y="29.05125" size="1.016" layer="26" font="vector" ratio="15" rot="MR270"/>
-<attribute name="VALUE" x="30.00375" y="26.82875" size="1.016" layer="28" font="vector" ratio="15" rot="MR270"/>
 </element>
-<element name="A1:R4" library="rcl" package="R0402" value="100R" x="54.9275" y="24.765" smashed="yes" rot="MR270">
+<element name="A1:R4" library="rcl" package="R0402" value="100R/⇤" x="54.9275" y="24.765" smashed="yes" rot="MR270">
 <attribute name="NAME" x="29.68625" y="27.46375" size="1.016" layer="26" font="vector" ratio="15" rot="MR270"/>
-<attribute name="VALUE" x="35.08375" y="26.67" size="1.016" layer="28" font="vector" ratio="15" rot="MR270"/>
 </element>
-<element name="A1:R9.02" library="rcl" package="R0402" value="10kR" x="58.42" y="19.84375" smashed="yes" rot="R90">
+<element name="A1:R5" library="rcl" package="R0402" value="10kR/⎒" x="58.42" y="19.84375" smashed="yes" rot="R90">
 <attribute name="NAME" x="25.24125" y="29.05125" size="1.016" layer="25" font="vector" ratio="15" rot="R90"/>
-<attribute name="VALUE" x="32.7025" y="24.60625" size="1.016" layer="27" font="vector" ratio="15" rot="R90"/>
 </element>
 <element name="A1:J1" library="pinhead" package="1X02" value="" x="67.31" y="37.465" smashed="yes" rot="R180">
 <attribute name="NAME" x="67.86245" y="45.4787" size="1.016" layer="25" font="vector" ratio="15" rot="R180"/>
@@ -3627,9 +3617,8 @@ Covered vias can be set in Masks (Limit).
 </element>
 <element name="A1:Q1" library="transistor-fet" package="SOT23" value="BS170" x="57.30875" y="37.465" smashed="yes" rot="R270">
 <attribute name="NAME" x="24.13" y="33.3375" size="1.016" layer="25" font="vector" ratio="15" rot="R270"/>
-<attribute name="VALUE" x="25.7175" y="33.17875" size="1.016" layer="27" font="vector" ratio="15" rot="R270"/>
 </element>
-<element name="A1:R5" library="rcl" package="R0805" value="" x="62.38875" y="37.62375" smashed="yes">
+<element name="A1:R7" library="rcl" package="R0805" value="200R" x="62.38875" y="37.62375" smashed="yes">
 <attribute name="NAME" x="22.38375" y="32.54375" size="1.016" layer="25" font="vector" ratio="15"/>
 <attribute name="VALUE" x="61.75375" y="35.08375" size="1.27" layer="27"/>
 </element>
@@ -3650,9 +3639,9 @@ Covered vias can be set in Masks (Limit).
 <signal name="A1:GND">
 <contactref element="A1:U1" pad="16"/>
 <contactref element="A1:U1" pad="19"/>
-<contactref element="A1:C9.04" pad="2"/>
-<contactref element="A1:C9.05" pad="2"/>
-<contactref element="A1:R9.13" pad="2"/>
+<contactref element="A1:C2" pad="2"/>
+<contactref element="A1:C3" pad="2"/>
+<contactref element="A1:R8" pad="2"/>
 <contactref element="A1:Q1" pad="2"/>
 <contactref element="A1:J2" pad="1"/>
 <contactref element="A1:⌁9" pad="X"/>
@@ -3683,19 +3672,19 @@ Covered vias can be set in Masks (Limit).
 <vertex x="69.5" y="40"/>
 </polygon>
 </signal>
-<signal name="A1:N$1">
+<signal name="A1:U1.GUARD">
 <contactref element="A1:U1" pad="9"/>
-<contactref element="A1:X9.00" pad="2"/>
+<contactref element="A1:Y1" pad="2"/>
 <wire x1="64.8716" y1="20.447" x2="64.8716" y2="22.1988" width="0.6096" layer="1"/>
 </signal>
-<signal name="A1:N$2">
-<contactref element="A1:X9.00" pad="3"/>
+<signal name="A1:U1.OSCOUT✳">
+<contactref element="A1:Y1" pad="3"/>
 <contactref element="A1:U1" pad="8"/>
 <wire x1="63.6716" y1="20.447" x2="63.6716" y2="21.3988" width="0.6096" layer="1"/>
 <wire x1="63.6716" y1="21.3988" x2="62.8716" y2="22.1988" width="0.6096" layer="1"/>
 </signal>
-<signal name="A1:N$3">
-<contactref element="A1:X9.00" pad="1"/>
+<signal name="A1:U1.OSCIN✳">
+<contactref element="A1:Y1" pad="1"/>
 <contactref element="A1:U1" pad="10"/>
 <wire x1="66.0716" y1="20.447" x2="66.0716" y2="21.3988" width="0.6096" layer="1"/>
 <wire x1="66.0716" y1="21.3988" x2="66.8716" y2="22.1988" width="0.6096" layer="1"/>
@@ -3704,12 +3693,12 @@ Covered vias can be set in Masks (Limit).
 <contactref element="A1:U1" pad="12"/>
 <contactref element="A1:U1" pad="17"/>
 <contactref element="A1:U1" pad="15"/>
-<contactref element="A1:R9.01" pad="1"/>
-<contactref element="A1:C9.04" pad="1"/>
-<contactref element="A1:C9.05" pad="1"/>
-<contactref element="A1:D9.00" pad="A"/>
-<contactref element="A1:R2" pad="1"/>
-<contactref element="A1:R9.02" pad="1"/>
+<contactref element="A1:R6" pad="1"/>
+<contactref element="A1:C2" pad="1"/>
+<contactref element="A1:C3" pad="1"/>
+<contactref element="A1:D1" pad="A"/>
+<contactref element="A1:R1" pad="1"/>
+<contactref element="A1:R5" pad="1"/>
 <contactref element="A1:J1" pad="1"/>
 <contactref element="A1:J3" pad="1"/>
 <contactref element="A1:⌁10" pad="X"/>
@@ -3740,7 +3729,7 @@ Covered vias can be set in Masks (Limit).
 </signal>
 <signal name="A1:RST">
 <contactref element="A1:U1" pad="6"/>
-<contactref element="A1:R9.02" pad="2"/>
+<contactref element="A1:R5" pad="2"/>
 <contactref element="A1:⌁13" pad="X"/>
 <wire x1="63.5" y1="16.51" x2="63.5" y2="17.30375" width="0.4064" layer="16"/>
 <wire x1="63.5" y1="17.30375" x2="62.70625" y2="18.0975" width="0.4064" layer="16"/>
@@ -3752,20 +3741,20 @@ Covered vias can be set in Masks (Limit).
 <wire x1="58.42" y1="21.7472" x2="58.42" y2="20.49375" width="0.4064" layer="1"/>
 </signal>
 <signal name="A1:N$5">
-<contactref element="A1:C9.03" pad="1"/>
+<contactref element="A1:C1" pad="1"/>
 <contactref element="A1:U1" pad="13"/>
 <wire x1="61.81" y1="37.1475" x2="61.81" y2="34.8604" width="0.8128" layer="16"/>
 <wire x1="61.81" y1="34.8604" x2="61.8716" y2="34.7988" width="0.8128" layer="16" curve="90"/>
 </signal>
 <signal name="A1:N$6">
-<contactref element="A1:C9.03" pad="2"/>
+<contactref element="A1:C1" pad="2"/>
 <contactref element="A1:U1" pad="14"/>
 <wire x1="60.11" y1="37.1475" x2="60.11" y2="35.0372" width="0.8128" layer="16"/>
 <wire x1="60.11" y1="35.0372" x2="59.8716" y2="34.7988" width="0.8128" layer="16" curve="-90"/>
 </signal>
 <signal name="A1:!PD">
 <contactref element="A1:U1" pad="7"/>
-<contactref element="A1:R9.01" pad="2"/>
+<contactref element="A1:R6" pad="2"/>
 <contactref element="A1:⌁12" pad="X"/>
 <wire x1="66.04" y1="16.51" x2="66.04" y2="17.62125" width="0.4064" layer="16"/>
 <wire x1="66.04" y1="17.62125" x2="64.61125" y2="19.05" width="0.4064" layer="16"/>
@@ -3777,15 +3766,15 @@ Covered vias can be set in Masks (Limit).
 <wire x1="61.2775" y1="21.7929" x2="61.2775" y2="20.49375" width="0.4064" layer="1"/>
 </signal>
 <signal name="A1:N$11">
-<contactref element="A1:D9.00" pad="C"/>
-<contactref element="A1:R9.13" pad="1"/>
+<contactref element="A1:D1" pad="C"/>
+<contactref element="A1:R8" pad="1"/>
 <wire x1="54.39" y1="19.84375" x2="55.40375" y2="19.84375" width="0.6096" layer="1"/>
 <wire x1="55.40375" y1="19.84375" x2="56.05375" y2="20.49375" width="0.6096" layer="1"/>
 <wire x1="56.05375" y1="20.49375" x2="56.8325" y2="20.49375" width="0.6096" layer="1"/>
 </signal>
 <signal name="A1:!CS0">
 <contactref element="A1:U1" pad="1"/>
-<contactref element="A1:R2" pad="2"/>
+<contactref element="A1:R1" pad="2"/>
 <contactref element="A1:⌁4" pad="X"/>
 <wire x1="53.34" y1="38.4325" x2="53.34" y2="40.48125" width="0.4064" layer="1"/>
 <wire x1="48.8716" y1="22.1988" x2="45.90495" y2="22.1988" width="0.6096" layer="15"/>
@@ -3797,7 +3786,7 @@ Covered vias can be set in Masks (Limit).
 </signal>
 <signal name="A1:U1.MISO">
 <contactref element="A1:U1" pad="2"/>
-<contactref element="A1:R1" pad="2"/>
+<contactref element="A1:R2" pad="2"/>
 <wire x1="50.18" y1="20.32" x2="50.57870625" y2="20.71870625" width="0.4064" layer="1"/>
 <wire x1="50.57870625" y1="20.71870625" x2="50.8716" y2="21.4258125" width="0.4064" layer="1" curve="45"/>
 <wire x1="50.8716" y1="21.4258125" x2="50.8716" y2="22.1988" width="0.4064" layer="1"/>
@@ -3815,7 +3804,7 @@ Covered vias can be set in Masks (Limit).
 <wire x1="54.9275" y1="22.333753125" x2="54.9275" y2="24.115" width="0.4064" layer="16"/>
 </signal>
 <signal name="A1:MISO">
-<contactref element="A1:R1" pad="1"/>
+<contactref element="A1:R2" pad="1"/>
 <contactref element="A1:⌁3" pad="X"/>
 <wire x1="48.88" y1="20.32" x2="48.26" y2="20.32" width="0.4064" layer="1"/>
 <wire x1="48.26" y1="20.32" x2="47.988996875" y2="20.432253125" width="0.4064" layer="1" curve="-45"/>
@@ -3917,7 +3906,7 @@ Covered vias can be set in Masks (Limit).
 </signal>
 <signal name="A1:N$7">
 <contactref element="A1:Q1" pad="1"/>
-<contactref element="A1:R5" pad="1"/>
+<contactref element="A1:R7" pad="1"/>
 <wire x1="56.20875" y1="38.415" x2="56.39460625" y2="38.60085625" width="0.6096" layer="1"/>
 <wire x1="56.39460625" y1="38.60085625" x2="57.1017125" y2="38.89375" width="0.6096" layer="1" curve="-45"/>
 <wire x1="57.1017125" y1="38.89375" x2="59.7545375" y2="38.89375" width="0.6096" layer="1"/>
@@ -3926,7 +3915,7 @@ Covered vias can be set in Masks (Limit).
 </signal>
 <signal name="A1:N$8">
 <contactref element="A1:J1" pad="2"/>
-<contactref element="A1:R5" pad="2"/>
+<contactref element="A1:R7" pad="2"/>
 <wire x1="63.33875" y1="37.62375" x2="65.65674375" y2="37.62375" width="0.6096" layer="1"/>
 <wire x1="65.65674375" y1="37.62375" x2="66.04" y2="37.465" width="0.6096" layer="1" curve="-45"/>
 </signal>
