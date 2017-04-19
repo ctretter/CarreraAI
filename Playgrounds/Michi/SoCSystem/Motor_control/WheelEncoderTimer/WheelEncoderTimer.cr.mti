@@ -1,0 +1,71 @@
+D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitStrobeGen/src/StrobeGen-e.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitStrobeGen/src/StrobeGen-e.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Global
+-- Compiling entity StrobeGen
+
+} {} {}} D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitsForSim/PwrOnReset-Bhv-a.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitsForSim/PwrOnReset-Bhv-a.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Compiling architecture Bhv of PwrOnReset
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Global
+-- Loading entity PwrOnReset
+
+} {} {}} D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/tbWheelEncoder.vhd {2 {vcom -work work -2002 -explicit -stats=none D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/tbWheelEncoder.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Global
+-- Compiling entity tbWheelEncoder
+-- Compiling architecture Bhv of tbWheelEncoder
+** Warning: [4] D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/tbWheelEncoder.vhd(24): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: [4] D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/tbWheelEncoder.vhd(25): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+-- Loading entity WheelEncoder
+-- Loading entity Oscillator
+-- Loading entity PwrOnReset
+
+} {} {}} D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/pgkGlobal/Global-p.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/pgkGlobal/Global-p.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package Global
+-- Compiling package body Global
+-- Loading package Global
+
+} {} {}} D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitsForSim/Oscillator-e.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitsForSim/Oscillator-e.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Oscillator
+
+} {} {}} D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitsForSim/PwrOnReset-e.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitsForSim/PwrOnReset-e.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Global
+-- Compiling entity PwrOnReset
+
+} {} {}} D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitsForSim/Oscillator-Bhv-a.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/7.2015WS/PRO/svn/trunk/04_software/fpga/WheelEncoder/unitsForSim/Oscillator-Bhv-a.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Compiling architecture Bhv of Oscillator
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading entity Oscillator
+
+} {} {}}

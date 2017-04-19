@@ -1,0 +1,754 @@
+# Reading D:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+do compile.do
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:06 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/pkgGlobal/Global-p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Global
+# -- Compiling package body Global
+# -- Loading package Global
+# End time: 10:56:06 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:06 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/pkgPwmGenPack/src/PwmGenPack-p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling package PwmGenPack
+# -- Compiling package body PwmGenPack
+# -- Loading package PwmGenPack
+# End time: 10:56:06 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:06 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/Oscillator-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Oscillator
+# End time: 10:56:06 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:06 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/Oscillator-Bhv-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Bhv of Oscillator
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity Oscillator
+# End time: 10:56:06 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:06 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/PwrOnReset-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity PwrOnReset
+# End time: 10:56:06 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:06 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/PwrOnReset-Bhv-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Bhv of PwrOnReset
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity PwrOnReset
+# End time: 10:56:07 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:07 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitStrobeGen/src/StrobeGen-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity StrobeGen
+# End time: 10:56:07 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:07 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitStrobeGen/src/StrobeGen-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of StrobeGen
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity StrobeGen
+# End time: 10:56:07 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:07 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenCtrlpath/src/PwmGenCtrlpath-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGenCtrlpath
+# End time: 10:56:07 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:07 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenCtrlpath/src/PwmGenCtrlpath-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling architecture RTL of PwmGenCtrlpath
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGenCtrlpath
+# End time: 10:56:08 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:08 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenDatapath/src/PwmGenDatapath-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGenDatapath
+# End time: 10:56:08 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:08 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenDatapath/src/PwmGenDatapath-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of PwmGenDatapath
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGenDatapath
+# End time: 10:56:08 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:08 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGen/src/PwmGen-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGen
+# End time: 10:56:08 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:08 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGen/src/PwmGen-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of PwmGen
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGen
+# -- Loading entity StrobeGen
+# -- Loading entity PwmGenCtrlpath
+# -- Loading entity PwmGenDatapath
+# End time: 10:56:09 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:09 on May 11,2016
+# vcom -reportprogress 300 -work work ./WheelEncoderTimer/WheelEncoderTimer-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity WheelEncoderTimer
+# End time: 10:56:09 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:09 on May 11,2016
+# vcom -reportprogress 300 -work work ./WheelEncodertimer/WheelEncoderTimer-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture RTL of WheelEncoderTimer
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity WheelEncoderTimer
+# -- Loading entity StrobeGen
+# End time: 10:56:09 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:09 on May 11,2016
+# vcom -reportprogress 300 -work work ./RoundSensor/RoundSensor-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity RoundSensor
+# End time: 10:56:09 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:09 on May 11,2016
+# vcom -reportprogress 300 -work work ./RoundSensor/RoundSensor-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture RTL of RoundSensor
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity RoundSensor
+# -- Loading entity StrobeGen
+# End time: 10:56:10 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:10 on May 11,2016
+# vcom -reportprogress 300 -work work ./Motor_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity Motor_Control
+# -- Compiling architecture rtl of Motor_Control
+# -- Loading entity PwmGen
+# -- Loading entity WheelEncoderTimer
+# -- Loading entity RoundSensor
+# End time: 10:56:10 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:56:10 on May 11,2016
+# vcom -reportprogress 300 -work work ./tbMotor_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity tbPWM_Motor_Control
+# -- Compiling architecture Bhv of tbPWM_Motor_Control
+# -- Loading entity Motor_Control
+# -- Loading entity Oscillator
+# -- Loading entity PwrOnReset
+# End time: 10:56:11 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+do compile.do
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:57 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/pkgGlobal/Global-p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Global
+# -- Compiling package body Global
+# -- Loading package Global
+# End time: 11:03:57 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:57 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/pkgPwmGenPack/src/PwmGenPack-p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling package PwmGenPack
+# -- Compiling package body PwmGenPack
+# -- Loading package PwmGenPack
+# End time: 11:03:57 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:57 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/Oscillator-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Oscillator
+# End time: 11:03:57 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:57 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/Oscillator-Bhv-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Bhv of Oscillator
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity Oscillator
+# End time: 11:03:57 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:57 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/PwrOnReset-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity PwrOnReset
+# End time: 11:03:58 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:58 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/PwrOnReset-Bhv-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Bhv of PwrOnReset
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity PwrOnReset
+# End time: 11:03:58 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:58 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitStrobeGen/src/StrobeGen-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity StrobeGen
+# End time: 11:03:58 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:58 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitStrobeGen/src/StrobeGen-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of StrobeGen
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity StrobeGen
+# End time: 11:03:58 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:58 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenCtrlpath/src/PwmGenCtrlpath-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGenCtrlpath
+# End time: 11:03:59 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:59 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenCtrlpath/src/PwmGenCtrlpath-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling architecture RTL of PwmGenCtrlpath
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGenCtrlpath
+# End time: 11:03:59 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:59 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenDatapath/src/PwmGenDatapath-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGenDatapath
+# End time: 11:03:59 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:03:59 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenDatapath/src/PwmGenDatapath-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of PwmGenDatapath
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGenDatapath
+# End time: 11:04:00 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:00 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGen/src/PwmGen-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGen
+# End time: 11:04:00 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:00 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGen/src/PwmGen-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of PwmGen
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGen
+# -- Loading entity StrobeGen
+# -- Loading entity PwmGenCtrlpath
+# -- Loading entity PwmGenDatapath
+# End time: 11:04:00 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:00 on May 11,2016
+# vcom -reportprogress 300 -work work ./WheelEncoderTimer/WheelEncoderTimer-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity WheelEncoderTimer
+# End time: 11:04:00 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:00 on May 11,2016
+# vcom -reportprogress 300 -work work ./WheelEncodertimer/WheelEncoderTimer-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture RTL of WheelEncoderTimer
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity WheelEncoderTimer
+# -- Loading entity StrobeGen
+# End time: 11:04:01 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:01 on May 11,2016
+# vcom -reportprogress 300 -work work ./RoundSensor/RoundSensor-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity RoundSensor
+# End time: 11:04:01 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:01 on May 11,2016
+# vcom -reportprogress 300 -work work ./RoundSensor/RoundSensor-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture RTL of RoundSensor
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity RoundSensor
+# -- Loading entity StrobeGen
+# End time: 11:04:01 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:01 on May 11,2016
+# vcom -reportprogress 300 -work work ./Motor_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity Motor_Control
+# -- Compiling architecture rtl of Motor_Control
+# -- Loading entity PwmGen
+# -- Loading entity WheelEncoderTimer
+# -- Loading entity RoundSensor
+# End time: 11:04:02 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:02 on May 11,2016
+# vcom -reportprogress 300 -work work ./tbMotor_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity tbPWM_Motor_Control
+# -- Compiling architecture Bhv of tbPWM_Motor_Control
+# -- Loading entity Motor_Control
+# -- Loading entity Oscillator
+# -- Loading entity PwrOnReset
+# End time: 11:04:02 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do compile.do
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:58 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/pkgGlobal/Global-p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Global
+# -- Compiling package body Global
+# -- Loading package Global
+# End time: 11:04:58 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:58 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/pkgPwmGenPack/src/PwmGenPack-p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling package PwmGenPack
+# -- Compiling package body PwmGenPack
+# -- Loading package PwmGenPack
+# End time: 11:04:58 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:58 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/Oscillator-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Oscillator
+# End time: 11:04:58 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:58 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/Oscillator-Bhv-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Bhv of Oscillator
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity Oscillator
+# End time: 11:04:59 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:59 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/PwrOnReset-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity PwrOnReset
+# End time: 11:04:59 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:59 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitsForSim/PwrOnReset-Bhv-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Bhv of PwrOnReset
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity PwrOnReset
+# End time: 11:04:59 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:59 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitStrobeGen/src/StrobeGen-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity StrobeGen
+# End time: 11:04:59 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:04:59 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitStrobeGen/src/StrobeGen-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of StrobeGen
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity StrobeGen
+# End time: 11:05:00 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:00 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenCtrlpath/src/PwmGenCtrlpath-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGenCtrlpath
+# End time: 11:05:00 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:00 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenCtrlpath/src/PwmGenCtrlpath-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling architecture RTL of PwmGenCtrlpath
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGenCtrlpath
+# End time: 11:05:00 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:00 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenDatapath/src/PwmGenDatapath-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGenDatapath
+# End time: 11:05:01 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:01 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGenDatapath/src/PwmGenDatapath-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of PwmGenDatapath
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGenDatapath
+# End time: 11:05:01 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:01 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGen/src/PwmGen-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity PwmGen
+# End time: 11:05:01 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:01 on May 11,2016
+# vcom -reportprogress 300 -work work ./../src/unitPwmGen/src/PwmGen-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture Rtl of PwmGen
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Loading entity PwmGen
+# -- Loading entity StrobeGen
+# -- Loading entity PwmGenCtrlpath
+# -- Loading entity PwmGenDatapath
+# End time: 11:05:01 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:02 on May 11,2016
+# vcom -reportprogress 300 -work work ./WheelEncoderTimer/WheelEncoderTimer-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity WheelEncoderTimer
+# End time: 11:05:02 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:02 on May 11,2016
+# vcom -reportprogress 300 -work work ./WheelEncodertimer/WheelEncoderTimer-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture RTL of WheelEncoderTimer
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity WheelEncoderTimer
+# -- Loading entity StrobeGen
+# End time: 11:05:02 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:02 on May 11,2016
+# vcom -reportprogress 300 -work work ./RoundSensor/RoundSensor-e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Compiling entity RoundSensor
+# End time: 11:05:02 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:02 on May 11,2016
+# vcom -reportprogress 300 -work work ./RoundSensor/RoundSensor-Rtl-a.vhd 
+# -- Loading package STANDARD
+# -- Compiling architecture RTL of RoundSensor
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading entity RoundSensor
+# -- Loading entity StrobeGen
+# End time: 11:05:03 on May 11,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:03 on May 11,2016
+# vcom -reportprogress 300 -work work ./Motor_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity Motor_Control
+# -- Compiling architecture rtl of Motor_Control
+# -- Loading entity PwmGen
+# -- Loading entity WheelEncoderTimer
+# -- Loading entity RoundSensor
+# End time: 11:05:03 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 11:05:03 on May 11,2016
+# vcom -reportprogress 300 -work work ./tbMotor_Control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Global
+# -- Loading package PwmGenPack
+# -- Compiling entity tbPWM_Motor_Control
+# -- Compiling architecture Bhv of tbPWM_Motor_Control
+# -- Loading entity Motor_Control
+# -- Loading entity Oscillator
+# -- Loading entity PwrOnReset
+# End time: 11:05:03 on May 11,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

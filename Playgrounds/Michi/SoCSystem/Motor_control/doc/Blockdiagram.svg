@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Neues Dokument 1">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3950"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3947"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-8"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3947-8"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="460.27301"
+     inkscape:cy="745.78335"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:window-width="1789"
+     inkscape:window-height="1177"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-midpoints="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2985"
+       width="275.71429"
+       height="300"
+       x="197.14285"
+       y="128.07646"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="162.47099"
+       y="173.60912"
+       id="text2989"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan2991"
+         x="162.47099"
+         y="173.60912">AVALON</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart);marker-mid:none;marker-end:url(#Arrow1Lend)"
+       d="m 197.14286,183.79076 -87.14286,0"
+       id="path2993"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4755"
+       width="98.571426"
+       height="95.714287"
+       x="354.57144"
+       y="150.36218"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="403.85718"
+       y="198.21933"
+       id="text4757"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4759"
+         x="403.85718"
+         y="198.21933">PWM Generation</tspan></text>
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4755-1"
+       width="98.571426"
+       height="95.714287"
+       x="354.57144"
+       y="260.07648"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4779"
+       width="104.60261"
+       height="249.00726"
+       x="221.14285"
+       y="150.6479"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="268.62308"
+       y="186.60382"
+       id="text4781"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4783"
+         x="268.62308"
+         y="186.60382">32-Bit Register</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="403.78394"
+       y="307.75198"
+       id="text4757-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4759-4"
+         x="403.78394"
+         y="307.75198">Wheel Encoder</tspan></text>
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:0.61554027;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4755-1-0"
+       width="98.660881"
+       height="36.232292"
+       x="354.48199"
+       y="365.79077"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="403.70111"
+       y="383.72528"
+       id="text4757-7-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4759-4-4"
+         x="403.70111"
+         y="383.72528">Round Sensor</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 453.14287,198.21933 73.99999,0"
+       id="path4845"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart);marker-end:none"
+       d="m 453.14287,307.93362 90.69217,-0.85715"
+       id="path4847"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path6689"
+       sodipodi:cx="594.28571"
+       sodipodi:cy="213.79076"
+       sodipodi:rx="31.428572"
+       sodipodi:ry="31.428572"
+       d="m 625.71428,213.79076 a 31.428572,31.428572 0 1 1 -62.85715,0 31.428572,31.428572 0 1 1 62.85715,0 z"
+       transform="translate(-34.714274,-15.571426)"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path6691"
+       sodipodi:cx="622.85712"
+       sodipodi:cy="199.50504"
+       sodipodi:rx="39.485382"
+       sodipodi:ry="21.812088"
+       d="m 662.3425,199.50504 a 39.485382,21.812088 0 1 1 -78.97077,0 39.485382,21.812088 0 1 1 78.97077,0 z"
+       transform="matrix(0.4980314,0,0,0.90156249,253.2976,127.21021)"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 552.05357,307.00504 7.58929,0 0.17857,-7.32143 8.30357,0.0893 0.0893,7.76784 5.5357,-0.0893"
+       id="path6695"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="559.43958"
+       y="194.70078"
+       id="text6697"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan6699"
+         x="560.93958"
+         y="194.70078">DC </tspan><tspan
+         sodipodi:role="line"
+         x="559.43958"
+         y="209.70078"
+         id="tspan6701">Motor</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:2,2;stroke-dashoffset:0"
+       d="M 559.57143,229.6479 563.5,287.41151"
+       id="path6703"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart);marker-end:none"
+       d="m 453.14288,383.90692 90.69217,-0.85715"
+       id="path4847-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow1Lstart-8);marker-end:url(#Arrow1Lend)"
+       d="m 354.57144,198.21933 -28.82598,0"
+       id="path6729"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow1Lstart-8);marker-end:url(#Arrow1Lend)"
+       d="m 354.57144,307.93362 -28.82598,0"
+       id="path6731"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow1Lstart-8);marker-end:url(#Arrow1Lend)"
+       d="m 354.48199,383.90692 -28.73653,0"
+       id="path6733"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\Motor_control\doc\Blockdiagram.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+</svg>
