@@ -55,6 +55,70 @@ unsigned long* MotorControlAddress = 0;
 static bool const Stop = false;
 static std::atomic<double> const MaxSpeed(3800);
 
+// defines used for optical sensor
+volatile unsigned long* OpticalSensorAddress = 0;
+static bool SensorInitialized = false;
+#define VALID_SENSOR_PRODUCT_ID 0x17
+#define OFFSET_PRODUCT_ID_REG 0x00
+#define OFFSET_MOTION_REG 0x01
+#define OFFSET_DATA_REG 0x02
+#define OFFSET_TIME_REG 0x03
+#define MOTION_DETECTED = 0x80
+
+// implementation of data acquisition using optical sensor
+void GetOpticalSensorData() 
+{
+	uint32_t sensorData = 0;
+	
+	uint32_t dataX = 0;
+	uint32_t dataY = 0;
+	
+	std::cout << "Try to connect to memory space of optical sensor information ..." << std::endl;
+	if (!OpticalSensorAddress)
+	{
+		std::cerr << "Error! Address currently not initialized!" << std::endl;
+	}
+	else
+	{	
+		if (!SensorInitialized)
+		{
+			std::cout << "Try to connect to ADNS-3080 by reading product ID ..." << std::endl;
+			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG);
+			if(sensorData != VALID_SENSOR_PRODUCT_ID) 
+			{
+				std::cerr << "Error! Product ID is invalid!" << std::endl;
+			}
+			else
+			{
+				std::cout << "Product ID is valid! Sensor is ready!" << std::endl;
+				SensorInitialized = true;
+			}
+		}
+		else
+		{
+			std::cout << "Check motion register for changes ..." << std::endl;
+			sensorData = alt_read_word(OpticalSensor + OFFSET_MOTION_REG);
+			if(sensorData == MOTION_DETECTED)
+			{
+				std::cout << "New motion detected! Reading data ..." << std::endl;
+				sensorData = alt_read_word(OpticalSensor + OFFSET_DATA_REG);
+				
+				dataX = (sensorData << 8) >> 24;
+				dataY = (sensorData >> 24);
+				std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
+				
+				std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
+				sensorData = alt_read_word(OpticalSensor + OFFSET_TIME_REG);
+				std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
+			}
+			else
+			{
+				std::cout << "No motion detected!" << std::endl;
+			}
+		}
+	}	
+}
+
 void SignalHandler(int signalNumber)
 {
 	std::cerr << "Received signal" << std::endl;
@@ -138,7 +202,7 @@ int main(int argc, char **argv)
 	//volatile unsigned long* CarSensorsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + CarSensors);
 	volatile unsigned long* CarLedsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + CarLeds);
 	//volatile unsigned long* LedsAddress =  (unsigned long *)((unsigned long)VirtualBaseAddress + Leds);
-	volatile unsigned long* OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
+	OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
 
 	// If system freezes after this output there is a problem with the FPGA (registers don’t exist)
 	std::cerr << "Accessing FPGA" << std::endl;

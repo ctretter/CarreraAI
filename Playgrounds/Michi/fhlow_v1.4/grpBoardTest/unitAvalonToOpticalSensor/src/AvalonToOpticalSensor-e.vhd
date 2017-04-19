@@ -16,7 +16,8 @@ use work.Global.all;
 entity AvalonToOpticalSensor is
 	generic (
 		gDataWidth			: natural := 32;
-		gAddrWidth			: natural := 8
+		gAddrWidth			: natural := 8;
+		gClockFrequency		: natural := 50E6
 	);
 	port (
 		-- avalon ports
@@ -29,11 +30,11 @@ entity AvalonToOpticalSensor is
 		avs_s0_writedata 	: in  std_logic_vector(gDataWidth-1 downto 0);	  	-- .writedata	
 		
 		-- sensor ports
-		iMISO				: in std_ulogic;									-- MasterInSlaveOut
-		oMOSI				: out std_ulogic;									-- MasterOutSlaveIn
-		oSelect				: out std_ulogic;									-- select input bit
-		oSysClk				: out std_ulogic;									-- slave clk 1MHz
-		oNPD				: out std_ulogic;
-		oResetSensor		: out std_ulogic
+		iMISO				: in std_logic;										-- MasterInSlaveOut
+		oMOSI				: out std_logic;									-- MasterOutSlaveIn
+		oSelect				: out std_logic;									-- select input bit
+		oSysClk				: out std_logic;									-- slave clk 1MHz
+		oNPD				: out std_logic;
+		oResetSensor		: out std_logic
     );
 end AvalonToOpticalSensor;

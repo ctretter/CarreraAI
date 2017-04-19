@@ -59,7 +59,12 @@ module HPS (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n);	
+	reset_reset_n,
+	hps_0_f2h_cold_reset_req_reset_n,
+	hps_0_f2h_debug_reset_req_reset_n,
+	hps_0_f2h_warm_reset_req_reset_n,
+	hps_0_f2h_stm_hw_events_stm_hwevents,
+	hps_0_h2f_reset_reset_n);	
 
 	input		clk_clk;
 	output		hps_io_hps_io_emac1_inst_TX_CLK;
@@ -121,4 +126,9 @@ module HPS (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
+	input		hps_0_f2h_cold_reset_req_reset_n;
+	input		hps_0_f2h_debug_reset_req_reset_n;
+	input		hps_0_f2h_warm_reset_req_reset_n;
+	input	[27:0]	hps_0_f2h_stm_hw_events_stm_hwevents;
+	output		hps_0_h2f_reset_reset_n;
 endmodule

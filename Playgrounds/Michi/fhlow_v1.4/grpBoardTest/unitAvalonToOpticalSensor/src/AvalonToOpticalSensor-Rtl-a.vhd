@@ -10,11 +10,11 @@
 architecture Rtl of AvalonToOpticalSensor is
 
 	-- component constants
-	constant cClockFrequency	: natural											:= 50E6;		-- freq of cyclone V
-	constant cDataWidthSensor	: integer  											:= 8;			-- datawidth of sensor
-	constant cOneMHzClkPeriod	: time 	   											:= 1 us;		-- 1MHz clock
-	constant cOneKHzClkPeriod	: time 	   											:= 1000 us;		-- 1KHz clock
-	constant cNewDataReceived	: std_ulogic_vector (cDataWidthSensor-1 downto 0)	:= "10000000";	-- new data: 0x80
+	constant cClockFrequency	: natural											:= gClockFrequency;		-- freq of cyclone V
+	constant cDataWidthSensor	: integer  											:= 8;					-- datawidth of sensor
+	constant cOneMHzClkPeriod	: time 	   											:= 1 us;				-- 1MHz clock
+	constant cOneKHzClkPeriod	: time 	   											:= 1000 us;				-- 1KHz clock
+	constant cNewDataReceived	: std_ulogic_vector (cDataWidthSensor-1 downto 0)	:= "10000000";			-- new data: 0x80
 	
 	-- component constants for avalon addresses
 	constant cAddrMotionDetected 	:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(0, gAddrWidth));	-- addr: 0
@@ -22,9 +22,8 @@ architecture Rtl of AvalonToOpticalSensor is
 	constant cAddrData				:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(2, gAddrWidth));	-- addr: 2
 	constant cAddrTimeMeasured		:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(3, gAddrWidth));	-- addr: 3
 	
-	-- component signals for sensor wiring
+	-- component signals for sensor information
 	signal DataValid			: std_ulogic 										:= '0';	
-	signal SysClk				: std_ulogic										:= '0';
 	signal Motion				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
 	signal DataX				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
 	signal DataY				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
@@ -95,9 +94,17 @@ architecture Rtl of AvalonToOpticalSensor is
 	signal AvalonReadData	   	: std_ulogic_vector(gDataWidth-1 downto 0)			:= (others => '0');
 	signal AvalonWriteData	   	: std_ulogic_vector(gDataWidth-1 downto 0)			:= (others => '0');
 	
+	-- component signals for sensor information to avoid tristate buffers
+	signal MOSI					: std_ulogic										:= '0';
+	signal MISO					: std_ulogic										:= '0';
+	signal SysClk				: std_ulogic										:= '0';
+	signal NPD					: std_ulogic										:= '0';
+	signal Sel					: std_ulogic										:= '0';
+	signal ResetSensor			: std_ulogic										:= '0';
+	
 begin
 
-	-- port wiring to unresolved signals
+	-- port wiring to unresolved signals of Avalon bus
 	Clk 			<= std_ulogic(clock_clk);
 	nResetAsync 	<= std_ulogic(reset_n);
 	AvalonWE 		<= std_ulogic(avs_s0_write);
@@ -105,6 +112,14 @@ begin
 	AvalonAddr 		<= std_ulogic_vector(avs_s0_address);
 	AvalonWriteData <= std_ulogic_vector(avs_s0_writedata);
 	avs_s0_readdata	<= std_logic_vector(AvalonReadData);
+	
+	-- port wiring to unresolved signals of optical sensor
+	MISO <= std_ulogic(iMISO);
+	oMOSI <= std_logic(MOSI);
+	oNPD <= std_logic(NPD);
+	oResetSensor <= std_logic(ResetSensor);
+	oSysClk <= std_logic(SysClk);
+	oSelect <= std_logic(Sel);
 
 	-- #################################################
 	-- Instantiation: Unit Under Test - OpticalSensorCommunicator
@@ -120,12 +135,12 @@ begin
 		iOneMHzStrobe	=> OneMHzStrobe,
 		iOneKHzStrobe	=> OneKHzStrobe,
 		oDataValid		=> DataValid,
-		iMISO			=> iMISO,
-		oMOSI			=> oMOSI,
-		oSelect 		=> oSelect,
-		oSysClk			=> oSysClk,
-		oNPD			=> oNPD,
-		oResetSensor 	=> oResetSensor,
+		iMISO			=> MISO,
+		oMOSI			=> MOSI,
+		oSelect 		=> Sel,
+		oSysClk			=> SysClk,
+		oNPD			=> NPD,
+		oResetSensor 	=> ResetSensor,
 		oProductID		=> ProductID,
 		oMotion			=> Motion,
 		oDataX			=> DataX,
