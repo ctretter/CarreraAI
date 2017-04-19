@@ -33,7 +33,7 @@ static unsigned long const MotorControl = (unsigned long)(ALT_LWFPGASLVS_OFST + 
 static unsigned long const CarSensors = (unsigned long)(ALT_LWFPGASLVS_OFST + CARSENSORS_BASE) & HW_REGS_MASK;
 static unsigned long const CarLeds = (unsigned long)(ALT_LWFPGASLVS_OFST + CARLEDS_BASE) & HW_REGS_MASK;
 static unsigned long const Leds =  (unsigned long)(ALT_LWFPGASLVS_OFST + PIO_LED_BASE) & HW_REGS_MASK;
-
+static unsigned long const OpticalSensor = (unsigned long)(ALT_LWFPGASLVS_OFST + AVALONTOSENSORCOMMUNICATION_0_BASE) & HW_REGS_MASK;
 
 static int const CAR_LED_HEADLIGHT_SHIFT = 1;
 
@@ -60,7 +60,7 @@ void SignalHandler(int signalNumber)
 	std::cerr << "Received signal" << std::endl;
 
 	std::cerr << "Stopping engine" << std::endl;
-	Controller::SetSetpoint(0);
+	Controller::GetInstance()->SetSetpoint(0);
 	if(MotorControlAddress) {
 		while(alt_read_word(MotorControlAddress+2) != 0) {
 			alt_write_word(MotorControlAddress+2, 0);
@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 	if(argc > 1) {
 		speedSetting = atof(argv[1]);
 	}
-	Controller::SetSetpoint(speedSetting);
+	Controller::GetInstance()->SetSetpoint(speedSetting);
 
 	// Map the address space of the FPGA registers into user space so we can interact with them.
 	errno = 0;
@@ -135,9 +135,10 @@ int main(int argc, char **argv)
 
 	// Calculate addresses
 	MotorControlAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + MotorControl);
-	volatile unsigned long* CarSensorsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + CarSensors);
+	//volatile unsigned long* CarSensorsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + CarSensors);
 	volatile unsigned long* CarLedsAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + CarLeds);
-	volatile unsigned long* LedsAddress =  (unsigned long *)((unsigned long)VirtualBaseAddress + Leds);
+	//volatile unsigned long* LedsAddress =  (unsigned long *)((unsigned long)VirtualBaseAddress + Leds);
+	volatile unsigned long* OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
 
 	// If system freezes after this output there is a problem with the FPGA (registers don’t exist)
 	std::cerr << "Accessing FPGA" << std::endl;
@@ -293,11 +294,11 @@ int main(int argc, char **argv)
 			} else {
 				alt_write_word(CarLedsAddress, ledState | (1 << CAR_LED_HEADLIGHT_SHIFT));
 			}
-			Controller::SetSetpoint(speedSetting);
+			Controller::GetInstance()->SetSetpoint(speedSetting);
 		}
 
-		//int pwmValue = Controller::GetOutput();
-		//printf("%.5f; %.5f; %.5f; %.5f; %.5f; %.5f; %5d\n", dataSample.time, dataSample.distance - lapStartDistance, dataSample.speed, dataSample.yawRate, distanceCorrected, Controller::GetSetpoint(), pwmValue);
+		//int pwmValue = Controller::GetInstance()->GetOutput();
+		//printf("%.5f; %.5f; %.5f; %.5f; %.5f; %.5f; %5d\n", dataSample.time, dataSample.distance - lapStartDistance, dataSample.speed, dataSample.yawRate, distanceCorrected, Controller::GetInstance()->GetSetpoint(), pwmValue);
 	}
 }
 

@@ -22,7 +22,7 @@ struct dataSample_t {
  */
 class DataAcquisition {
 public:
-	~DataAcquisition();
+	virtual ~DataAcquisition();
 	static bool Init(unsigned long* MotorControlAddress);
 	static DataAcquisition* GetInstance();
 

@@ -3,15 +3,7 @@ BINARY = Ghostcar
 TARGET_IP = 192.168.2.102
 TARGET_PATH = root@${TARGET_IP}:/home/root
 
-ifeq ($(OS),Windows_NT)
-	#Path for Lukas ;-) - do not delete!!!! 
-	#uncomment and add your path :D
-	#SOCEDS_DEST_ROOT = d:/altera/15.0
-	SOCEDS_DEST_ROOT ?= ../firmware/altera_SOCEDS_DEST_ROOT
-else
-	#SOCEDS_DEST_ROOT ?= ${HOME}/.opt/altera/15/
-	SOCEDS_DEST_ROOT ?= ../firmware/altera_SOCEDS_DEST_ROOT
-endif
+SOCEDS_DEST_ROOT ?= ../firmware/altera_SOCEDS_DEST_ROOT
 
 SRC = BSP/I2C/i2c.c
 SRC += BSP/LSM9D1/lsm9d1.c
@@ -34,22 +26,31 @@ INCLUDES += -Isoc_system_hps_0
 INCLUDES += -IBSP/LSM9D1
 INCLUDES += -IBSP/I2C
 
+BIN_DIR = bin
+OBJ_DIR = obj
+
 CROSS_COMPILE = arm-linux-gnueabihf-
 CFLAGS = -g -Og -Wall -std=gnu++11 -Dsoc_cv_av $(INCLUDES) -mfloat-abi=hard -mfpu=vfpv3 -march="armv7-a" -ffast-math -pthread -lpthread -Wl,--no-as-needed -static
 LDFLAGS = -g -Wall -pthread -lpthread -Wl,--no-as-needed -static -Wl,-u,pthread_cancel,-u,pthread_cond_broadcast,-u,pthread_cond_destroy,-u,pthread_cond_signal,-u,pthread_cond_wait,-u,pthread_create,-u,pthread_detach,-u,pthread_cond_signal,-u,pthread_equal,-u,pthread_join,-u,pthread_mutex_lock,-u,pthread_mutex_unlock,-u,pthread_once,-u,pthread_setcancelstate
 CC = $(CROSS_COMPILE)g++
 ARCH= arm
 
+#OBJ := $($(INCLUDES)/%.c = $(OBJ_DIR)/%.o)
+#OBJ_CPP := $($(INCLUDES)/%.cpp = $(OBJ_DIR)/%.o)
 OBJ := $(subst $(EXT),.o,$(SRC))
-OBJ_CPP += $(subst $(EXT_CPP),.o,$(SRC_CPP))
+OBJ_CPP := $(subst $(EXT_CPP),.o,$(SRC_CPP))
 
 .PHONY: clean all build documentation
 
-all: clean build
+all: clean dirs build
 	@ #ping -c2 -W1 ${TARGET_IP} && scp ${BINARY} ${TARGET_PATH}
 
-build: $(BINARY)
-$(BINARY): $(OBJ) $(OBJ_CPP)
+dirs:
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(BIN_DIR)
+
+build: $(BIN_DIR)/$(BINARY)
+$(BIN_DIR)/$(BINARY): $(OBJ) $(OBJ_CPP)
 	@$(CC) $(LDFLAGS)   $^ -o $@
 	
 %.o : %$(EXT_CPP)
@@ -59,5 +60,7 @@ $(BINARY): $(OBJ) $(OBJ_CPP)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	@-rm -f -r $(OBJ_DIR)
+	@-rm -f -r $(BIN_DIR)
 	@-rm -f $(BINARY) *.a *.o *~ 
 

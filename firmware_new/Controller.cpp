@@ -1,23 +1,30 @@
 #include "Controller.h"
 //#include "main.h"
 #include <socal/socal.h>
-#include <atomic>
 #include <ctime>
 #include <chrono>
 #include <iostream>
 #include <stdint.h>
 
-const double BRAKE_POINT = 110; // brake if speed is more than this value above setpoint //120
-const double STEP_SIZE_ACCELERATION = 450.0;
-const double STEP_SIZE_DECELERATION = 400.0;
-const double INTEGRAL_LIMIT = 1000.0;
-const int32_t MAX_PWM_VALUE = 1023;
+Controller* Controller::mInstance = 0;
 
-static std::atomic<double> PFactor(1.0);
-static std::atomic<double> IFactor(1.2);
-static std::atomic<double> DFactor(0.002);
-static std::atomic<double> Setpoint(0);
-static std::atomic<int32_t> Output(0);
+Controller* Controller::GetInstance()
+{
+	if(!mInstance){
+		mInstance = new Controller();
+	}
+	return mInstance;
+}
+
+Controller::~Controller()
+{
+	delete mInstance;
+	mInstance = 0;
+}
+
+Controller::Controller() : PFactor(1.0), IFactor(1.2), DFactor(0.002), Setpoint(0), Output(0)
+{
+}
 
 uint_fast16_t Controller::Update(double speed, unsigned long* MotorControlAddress) {
 	static double previousSpeed = 0;

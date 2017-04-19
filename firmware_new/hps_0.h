@@ -163,8 +163,19 @@
 #define MOTOR_CONTROL_0_COMPONENT_TYPE Motor_Control
 #define MOTOR_CONTROL_0_COMPONENT_NAME Motor_Control_0
 #define MOTOR_CONTROL_0_BASE 0x40000
-#define MOTOR_CONTROL_0_SPAN 32
+//#define MOTOR_CONTROL_0_SPAN 32
 #define MOTOR_CONTROL_0_END 0x4001f
+
+/*
+ * Macros for device 'AvalonToSensorCommunication_0', class 'AvalonToSensorCommunication'
+ * The macros are prefixed with 'AVALONTOSENSORCOMMUNICATION_0_'.
+ * The prefix is the slave descriptor.
+ */
+#define AVALONTOSENSORCOMMUNICATION_0_COMPONENT_TYPE AvalonToSensorCommunication
+#define AVALONTOSENSORCOMMUNICATION_0_COMPONENT_NAME AvalonToSensorCommunication_0
+#define AVALONTOSENSORCOMMUNICATION_0_BASE 0x50000
+#define AVALONTOSENSORCOMMUNICATION_0_SPAN 64
+#define AVALONTOSENSORCOMMUNICATION_0_END 0x5003f
 
 
 #endif /* _ALTERA_HPS_0_H_ */

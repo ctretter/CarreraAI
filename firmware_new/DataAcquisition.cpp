@@ -167,7 +167,7 @@ void DataAcquisition::ThreadFunction()
 		}
 
 		// Update controller (calculates new output based on current speed)
-		Controller::Update(speed_mm_s, mPwmAddress);
+		Controller::GetInstance()->Update(speed_mm_s, mPwmAddress);
 
 		std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
 		previousDistancePulses = alt_read_word(mPwmAddress+4);
@@ -245,4 +245,6 @@ DataAcquisition::~DataAcquisition() {
 		mThread = 0;
 	}
 	LSM9D1_Close();
+	delete mInstance;
+	mInstance = 0;
 }
