@@ -1,0 +1,5 @@
+* Z:\home\domh\work\UAS\esd1\proj\git\CarreraAI\Hardware\baseboard\sim\Inverter\Draft1.asc
+C1 OUT 0 10µ ic=10V
+.tran 1u
+.backanno
+.end

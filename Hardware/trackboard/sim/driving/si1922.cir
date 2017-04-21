@@ -1,0 +1,48 @@
+*Jan 23, 2012
+*Doc. ID: 63731, ECN S12-0129, Rev. A
+*This document is intended as a SPICE modeling guideline and does not
+*constitute a commercial product datasheet. Designers should refer to the
+*appropriate datasheet of the same number for guaranteed specification
+*limits.
+.SUBCKT Si1922EDH D G S
+x1  D G S Si1922EDH_mos
+x2  G S   Si1922EDH_esd
+.ENDS  Si1922EDH
+.SUBCKT Si1922EDH_mos D G S
+M1 3 GX S S NMOS W=78665u L=0.25u
+M2 S GX S D PMOS W=78665u L=7.852e-07
+R1 D 3 1.418e-01 4.402e-03 8.059e-06
+CGS GX S 19e-13
+CGD GX D 5.441e-13
+RG G GY 1.9
+RTCV 100 S 1e6 2.108e-04 5.861e-07
+ETCV GX GY 100 200 1
+ITCV S 100 1u
+VTCV 200 S 1
+DBD S D DBD
+****************************************************************
+.MODEL NMOS NMOS ( LEVEL=3 TOX=1.7e-8
++ RS=5.444e-03 KP=4.194e-05 NSUB=1.240e+17
++ KAPPA=5.908e-02 ETA=4.369e-05 NFS=1.640e+12
++ LD=0 IS=0 TPG=1)
+***************************************************************
+.MODEL PMOS PMOS ( LEVEL=3 TOX=1.7e-8
++NSUB=9.908e+13 IS=0 TPG=-1 )
+****************************************************************
+.MODEL DBD D (
++FC=0.1 TT=2.000e-08 TREF=25 BV=21
++RS=1.000e-01 N=1.665e+00 IS=1.000e-07
++EG=9.022e-01 XTI=2.955e-01 TRS=2.459e-03
++CJO=200e-12 VJ=0.38 M=0.28 )
+.ENDS  Si1922EDH_mos
+.subckt Si1922EDH_esd 1 2
+r1 1 9 9.422e+06 ;TC= -7.063e-03
+d1 9 2 dleak M=1
+.MODEL dleak d (IS=4.652e-10 XTI=5.768e+02 EG=1.17 TREF=25 TCV=0 N=4.541e+01 BV=50)
+r2 1 10 2.712e+02 ;TC= -4.115e-03
+d3 11 10 dout M= 0.514
+d4 11 12 dout M= 0.514
+d5 13 12 dout M= 0.575
+d6 13 2  dout M= 0.575
+.MODEL dout D (IS=1.763e-10 XTI=1.433e+01 EG=1.17 TREF=25 TCV=-3.285e-03 N=2.898e+00 BV=6.560e+00 )
+.ends Si1922EDH_esd
