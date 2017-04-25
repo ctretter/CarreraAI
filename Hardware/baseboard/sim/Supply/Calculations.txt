@@ -1,0 +1,27 @@
+LTC 3891
+Vfb = 0.8V target
+
+Vfb= Vout*(1+R_FB1/R_FB2)
+Vout = 0.8V/(1+R_FB1/R_FB2)
+
+E12: 330k/84k -> 4,02V out
+E12: 180/42 ->4,12V or 51/12 -> 4,2V
+
+L1: current ripple(dI)
+dI = Vout/(f*L) * (1 - Vout/Vin)
+L = Vout/(f*dI) * (1 - Vout/Vin)
+10uH -> 4/(535*10^3 * 10*10^-6)  * (1- 18/4) = 0,58...  bigger would be nice, but causes backwards currents ->problems?
+
+
+
+LTC 4000
+
+OFB
+Vout = 1.136*(1+R_OFB1/R_OFB2)
+4.2V ->270k / 100k
+
+BFB - float voltage
+Vfloat = 1.193V * (1+R_BFB1/R_BFB2)
+~4.2V (4.191V) ->  220k/82k
+
+will add more soon'ish and in a better format
