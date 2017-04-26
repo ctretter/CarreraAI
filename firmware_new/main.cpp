@@ -63,7 +63,7 @@ static bool SensorInitialized = false;
 #define OFFSET_MOTION_REG 0x01
 #define OFFSET_DATA_REG 0x02
 #define OFFSET_TIME_REG 0x03
-#define MOTION_DETECTED = 0x80
+#define MOTION_DETECTED 0x80
 
 // implementation of data acquisition using optical sensor
 void GetOpticalSensorData() 
@@ -103,7 +103,7 @@ void GetOpticalSensorData()
 				std::cout << "New motion detected! Reading data ..." << std::endl;
 				sensorData = alt_read_word(OpticalSensor + OFFSET_DATA_REG);
 				
-				dataX = (sensorData << 8) >> 24;
+				dataX = (sensorData << 8) >> 24; // TODO constants
 				dataY = (sensorData >> 24);
 				std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				
