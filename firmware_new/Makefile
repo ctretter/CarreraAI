@@ -1,6 +1,6 @@
 BINARY = Ghostcar
 
-TARGET_IP = 192.168.2.102
+TARGET_IP = 192.168.1.102
 TARGET_PATH = root@${TARGET_IP}:/home/root
 
 SOCEDS_DEST_ROOT ?= ../firmware/altera_SOCEDS_DEST_ROOT
