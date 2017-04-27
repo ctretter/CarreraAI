@@ -4,17 +4,17 @@
 -- File        :	AvalonToOpticalSensor-Rtl-a.vhd
 -- Description : 	architecture to get data from FPGA by using avalon in software
 -------------------------------------------------------------------------------
--- Latest update:	05.04.2017
+-- Latest update:	26.04.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of AvalonToOpticalSensor is
 
 	-- component constants
-	constant cClockFrequency	: natural											:= gClockFrequency;		-- freq of cyclone V
-	constant cDataWidthSensor	: integer  											:= 8;					-- datawidth of sensor
-	constant cOneMHzClkPeriod	: time 	   											:= 1 us;				-- 1MHz clock
-	constant cOneKHzClkPeriod	: time 	   											:= 1000 us;				-- 1KHz clock
-	constant cNewDataReceived	: std_ulogic_vector (cDataWidthSensor-1 downto 0)	:= "10000000";			-- new data: 0x80
+	constant cClockFrequency		: natural											:= gClockFrequency;		-- freq of cyclone V
+	constant cDataWidthSensor		: integer  											:= 8;					-- datawidth of sensor
+	constant cOneMHzClkPeriod		: time 	   											:= 1 us;				-- 1MHz clock
+	constant cOneKHzClkPeriod		: time 	   											:= 1000 us;				-- 1KHz clock
+	constant cNewDataReceived		: std_ulogic_vector (cDataWidthSensor-1 downto 0)	:= "10000000";			-- new data: 0x80
 	
 	-- component constants for avalon addresses
 	constant cAddrMotionDetected 	:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(0, gAddrWidth));	-- addr: 0
@@ -23,23 +23,23 @@ architecture Rtl of AvalonToOpticalSensor is
 	constant cAddrTimeMeasured		:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(3, gAddrWidth));	-- addr: 3
 	
 	-- component signals for sensor information
-	signal DataValid			: std_ulogic 										:= '0';	
-	signal Motion				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
-	signal DataX				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
-	signal DataY				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
-	signal ProductID			: std_ulogic_vector(cDataWidthSensor-1 downto 0)	:= (others => '0');
+	signal DataValid				: std_ulogic 										:= '0';	
+	signal Motion					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
+	signal DataX					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
+	signal DataY					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
+	signal ProductID				: std_ulogic_vector(cDataWidthSensor-1 downto 0)	:= (others => '0');
 		
 	-- internal data registers for relevant sensor data
-	signal RegMotion			: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
-	signal RegDataX				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
-	signal RegDataY				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
-	signal RegTime				: std_ulogic_vector(gDataWidth-1 downto 0)			:= (others => '0');
-	signal DataACK				: std_ulogic										:= '0';
-	signal TimeCtr				: integer											:= 0;
+	signal RegMotion				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
+	signal RegDataX					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
+	signal RegDataY					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
+	signal RegTime					: std_ulogic_vector(gDataWidth-1 downto 0)			:= (others => '0');
+	signal DataACK					: std_ulogic										:= '0';
+	signal TimeCtr					: integer											:= 0;
 	
 	-- component signals for strobes
-	signal OneMHzStrobe			: std_ulogic 										:= '0';
-	signal OneKHzStrobe			: std_ulogic 										:= '0';
+	signal OneMHzStrobe				: std_ulogic 										:= '0';
+	signal OneKHzStrobe				: std_ulogic 										:= '0';
 	
 	-- component declaration of StrobeGen
 	component StrobeGen
@@ -114,12 +114,12 @@ begin
 	avs_s0_readdata	<= std_logic_vector(AvalonReadData);
 	
 	-- port wiring to unresolved signals of optical sensor
-	MISO <= std_ulogic(iMISO);
-	oMOSI <= std_logic(MOSI);
-	oNPD <= std_logic(NPD);
-	oResetSensor <= std_logic(ResetSensor);
-	oSysClk <= std_logic(SysClk);
-	oSelect <= std_logic(Sel);
+	MISO 			<= std_ulogic(iMISO);
+	oMOSI 			<= std_logic(MOSI);
+	oNPD 			<= std_logic(NPD);
+	oResetSensor	<= std_logic(ResetSensor);
+	oSysClk 		<= std_logic(SysClk);
+	oSelect 		<= std_logic(Sel);
 
 	-- #################################################
 	-- Instantiation: Unit Under Test - OpticalSensorCommunicator

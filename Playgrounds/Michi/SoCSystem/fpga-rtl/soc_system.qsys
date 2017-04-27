@@ -17,7 +17,7 @@
          type = "String";
       }
    }
-   element AvalonToSensorCommunication_0
+   element AvalonToOpticalSensor_Communication_0
    {
       datum _sortIndex
       {
@@ -373,6 +373,14 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -415,6 +423,11 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface
+   name="avalontoopticalsensor_sensor_ports"
+   internal="AvalonToOpticalSensor_Communication_0.OpticalSensorPorts"
+   type="conduit"
+   dir="end" />
  <interface
    name="carleds_external_connection"
    internal="CarLeds.external_connection"
@@ -460,24 +473,19 @@
    type="conduit"
    dir="end" />
  <interface
-   name="opticalsensor_external_connection"
-   internal="AvalonToSensorCommunication_0.OpticalSensorPorts"
-   type="conduit"
-   dir="end" />
- <interface
    name="pio_led_external_connection"
    internal="pio_led.external_connection"
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <module
-   name="AvalonToSensorCommunication_0"
-   kind="AvalonToSensorCommunication"
-   version="0.1"
+   name="AvalonToOpticalSensor_Communication_0"
+   kind="AvalonToOpticalSensor_Communication"
+   version="1.0"
    enabled="1">
-  <parameter name="gAddrWidth" value="3" />
+  <parameter name="gAddrWidth" value="8" />
   <parameter name="gClockFrequency" value="50000000" />
-  <parameter name="gDataWidth" value="64" />
+  <parameter name="gDataWidth" value="32" />
  </module>
  <module name="CarLeds" kind="altera_avalon_pio" version="15.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -1165,7 +1173,7 @@
    kind="avalon"
    version="15.0"
    start="hps_0.h2f_lw_axi_master"
-   end="AvalonToSensorCommunication_0.AvalonBus">
+   end="AvalonToOpticalSensor_Communication_0.AvalonBus">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00050000" />
   <parameter name="defaultConnection" value="false" />
@@ -1303,7 +1311,7 @@
    kind="clock"
    version="15.0"
    start="clk_0.clk"
-   end="AvalonToSensorCommunication_0.clock" />
+   end="AvalonToOpticalSensor_Communication_0.clock" />
  <connection
    kind="clock"
    version="15.0"
@@ -1384,7 +1392,7 @@
    kind="reset"
    version="15.0"
    start="clk_0.clk_reset"
-   end="AvalonToSensorCommunication_0.reset" />
+   end="AvalonToOpticalSensor_Communication_0.reset" />
  <connection
    kind="reset"
    version="15.0"
