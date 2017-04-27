@@ -31808,7 +31808,7 @@ DRIVER</text>
 <text x="10.16" y="243.84" size="1.778" layer="98" ratio="20">TODO: Put into submodule before route -&gt; crowded
 either that or use A3</text>
 <text x="215.9" y="195.58" size="2.54" layer="114" rot="MR0" align="center">⨯</text>
-<text x="124.46" y="119.38" size="1.778" layer="98" ratio="20">KILLSWITCH</text>
+<text x="149.86" y="119.38" size="1.778" layer="98" ratio="20">KILLSWITCH</text>
 <text x="264.16" y="81.28" size="1.778" layer="98" ratio="20">TODO: use 4pol using standard 4-wire scheme -&gt; can populate with 2pol and hardwire ntc instead</text>
 <text x="78.74" y="124.46" size="1.778" layer="90" ratio="20" align="center">Input Protection and 
 Measurement Circuit</text>
@@ -31845,8 +31845,8 @@ CONTROL</text>
 (BATTERY)</text>
 </plain>
 <moduleinsts>
-<moduleinst name="A5" module="POW-4001" x="248.92" y="124.46" smashed="yes">
-<attribute name="NAME" x="220.98" y="140.97" size="2.032" layer="95"/>
+<moduleinst name="A5" module="POW-4001" x="248.92" y="127" smashed="yes">
+<attribute name="NAME" x="220.98" y="143.51" size="2.032" layer="95"/>
 </moduleinst>
 <moduleinst name="A6" module="POW-3891" x="248.92" y="182.88" smashed="yes" rot="MR0">
 <attribute name="NAME" x="220.98" y="201.93" size="2.032" layer="95" rot="MR0" align="bottom-right"/>
@@ -31898,7 +31898,7 @@ CONTROL</text>
 <instance part="VDD4" gate="G$1" x="289.56" y="137.16" smashed="yes">
 <attribute name="VALUE" x="292.1" y="142.24" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="S3" gate="G$1" x="129.54" y="129.54"/>
+<instance part="S3" gate="G$1" x="160.02" y="129.54" rot="MR0"/>
 <instance part="S1" gate="G$1" x="287.02" y="66.04"/>
 <instance part="P+4" gate="1" x="124.46" y="241.3" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="123.19" y="242.57" size="1.778" layer="96" rot="MR90"/>
@@ -31953,7 +31953,7 @@ CONTROL</text>
 <segment>
 <portref moduleinst="A6" port="DDC.VIN"/>
 <portref moduleinst="A5" port="DDC.CLN"/>
-<wire x1="243.84" y1="160.02" x2="243.84" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="160.02" x2="243.84" y2="147.32" width="0.1524" layer="91"/>
 <label x="241.3" y="160.02" size="1.778" layer="95" ratio="20" rot="R270"/>
 </segment>
 </net>
@@ -31961,7 +31961,7 @@ CONTROL</text>
 <segment>
 <portref moduleinst="A6" port="DDC.ITH"/>
 <portref moduleinst="A5" port="DDC.ITH"/>
-<wire x1="251.46" y1="160.02" x2="251.46" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="160.02" x2="251.46" y2="147.32" width="0.1524" layer="91"/>
 <label x="248.92" y="160.02" size="1.778" layer="95" ratio="20" rot="R270"/>
 </segment>
 </net>
@@ -31969,7 +31969,7 @@ CONTROL</text>
 <segment>
 <portref moduleinst="A6" port="DDC.OUT"/>
 <portref moduleinst="A5" port="DDC.IID"/>
-<wire x1="259.08" y1="144.78" x2="259.08" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="147.32" x2="259.08" y2="160.02" width="0.1524" layer="91"/>
 <label x="256.54" y="160.02" size="1.778" layer="95" ratio="20" rot="R270"/>
 </segment>
 </net>
@@ -31982,7 +31982,7 @@ CONTROL</text>
 <pinref part="GND15" gate="1" pin="GND"/>
 <portref moduleinst="A5" port="GND"/>
 <wire x1="228.6" y1="93.98" x2="228.6" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="228.6" y1="99.06" x2="228.6" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="228.6" y1="99.06" x2="228.6" y2="106.68" width="0.1524" layer="91"/>
 <junction x="228.6" y="99.06"/>
 <pinref part="GND19" gate="1" pin="GND"/>
 <wire x1="25.4" y1="99.06" x2="76.2" y2="99.06" width="0.1524" layer="91"/>
@@ -32082,7 +32082,7 @@ CONTROL</text>
 <pinref part="P2" gate="G$1" pin="2"/>
 <portref moduleinst="A5" port="BAT.NTC"/>
 <wire x1="309.88" y1="48.26" x2="243.84" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="243.84" y1="48.26" x2="243.84" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="48.26" x2="243.84" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC/2" class="0">
@@ -32097,10 +32097,10 @@ CONTROL</text>
 <portref moduleinst="A4" port="V~IN"/>
 </segment>
 </net>
-<net name="N$13" class="0">
+<net name="TOP.V+/IPC" class="0">
 <segment>
 <portref moduleinst="A5" port="BAT.+"/>
-<wire x1="256.54" y1="104.14" x2="256.54" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="106.68" x2="256.54" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="S1" gate="G$1" pin="2"/>
 <wire x1="276.86" y1="66.04" x2="256.54" y2="66.04" width="0.1524" layer="91"/>
 </segment>
@@ -32267,11 +32267,13 @@ CONTROL</text>
 <portref moduleinst="A7" port="!INT"/>
 </segment>
 </net>
-<net name="N$33" class="0">
+<net name="VF+OUT/IPC" class="0">
 <segment>
-<pinref part="S3" gate="G$1" pin="2"/>
 <portref moduleinst="A4" port="VF+OUT"/>
-<wire x1="119.38" y1="129.54" x2="104.14" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="S3" gate="G$1" pin="3"/>
+<wire x1="144.78" y1="129.54" x2="104.14" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="129.54" x2="149.86" y2="127" width="0.1524" layer="91"/>
+<label x="104.14" y="132.08" size="1.778" layer="95" ratio="20" rot="MR180"/>
 </segment>
 </net>
 <net name="CORE.ADCX" class="0">
@@ -32389,7 +32391,7 @@ CONTROL</text>
 <pinref part="VDD4" gate="G$1" pin="VDD"/>
 <portref moduleinst="A5" port="DDC.VOUT"/>
 <portref moduleinst="A9" port="VIN"/>
-<wire x1="281.94" y1="127" x2="289.56" y2="127" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="129.54" x2="289.56" y2="127" width="0.1524" layer="91"/>
 <wire x1="289.56" y1="127" x2="299.72" y2="127" width="0.1524" layer="91"/>
 <junction x="289.56" y="127"/>
 <wire x1="289.56" y1="134.62" x2="289.56" y2="127" width="0.1524" layer="91"/>
@@ -32402,17 +32404,21 @@ CONTROL</text>
 </net>
 <net name="VF+OUT/SWITCH" class="0">
 <segment>
-<pinref part="S3" gate="G$1" pin="3"/>
 <portref moduleinst="A5" port="DDC.VIN"/>
-<wire x1="139.7" y1="127" x2="215.9" y2="127" width="0.1524" layer="91"/>
-<label x="213.36" y="129.54" size="1.778" layer="95" ratio="20" rot="R180"/>
+<label x="213.36" y="132.08" size="1.778" layer="95" ratio="20" rot="R180"/>
+<wire x1="170.18" y1="129.54" x2="215.9" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="S3" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="S3" gate="G$1" pin="1"/>
+<wire x1="149.86" y1="132.08" x2="152.4" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
 <segment>
 <pinref part="☈12" gate="1" pin="1"/>
 <portref moduleinst="A5" port="DDC.!RST"/>
-<wire x1="238.76" y1="144.78" x2="238.76" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="147.32" x2="238.76" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="238.76" y1="152.4" x2="233.68" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
