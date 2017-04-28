@@ -31595,7 +31595,7 @@ Capacitor and ESD38, what's this?</text>
 </bus>
 </busses>
 <nets>
-<net name="DDC.VIN" class="0">
+<net name="DDC.CLN/VIN" class="0">
 <segment>
 <portref moduleinst="A6" port="DDC.VIN"/>
 <portref moduleinst="A5" port="DDC.CLN"/>
