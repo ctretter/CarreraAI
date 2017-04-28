@@ -28848,19 +28848,19 @@ http://cds.linear.com/image/1940asch.png</text>
 <net name="↔SENSE-" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="SENSE-"/>
-<wire x1="215.9" y1="111.76" x2="215.9" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="215.9" y1="88.9" x2="134.62" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="111.76" x2="210.82" y2="90.17" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="90.17" x2="134.62" y2="88.9" width="0.1524" layer="91"/>
 <label x="196.85" y="90.17" size="1.778" layer="95"/>
-<pinref part="R1" gate="G$1" pin="K+"/>
+<pinref part="R1" gate="G$1" pin="K-"/>
 </segment>
 </net>
 <net name="↔SENSE+" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="SENSE+"/>
-<wire x1="134.62" y1="93.98" x2="210.82" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="93.98" x2="210.82" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="93.98" x2="215.9" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="215.9" y1="93.98" x2="215.9" y2="111.76" width="0.1524" layer="91"/>
 <label x="196.85" y="95.25" size="1.778" layer="95"/>
-<pinref part="R1" gate="G$1" pin="K-"/>
+<pinref part="R1" gate="G$1" pin="K+"/>
 </segment>
 </net>
 <net name="↔ILIM" class="0">
