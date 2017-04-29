@@ -1217,6 +1217,47 @@ Source: www.ti.com/.. slvs087l.pdf</description>
 <text x="-3.81" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
+<package name="9-VQFN-HR">
+<smd name="1" x="-0.895" y="0.77" dx="1.1" dy="0.3" layer="1"/>
+<smd name="9" x="0.72" y="0.77" dx="1.45" dy="0.3" layer="1"/>
+<smd name="2" x="0" y="0.17" dx="2.9" dy="0.3" layer="1" stop="no"/>
+<smd name="3" x="-1.15" y="-0.425" dx="0.6" dy="0.3" layer="1"/>
+<smd name="8" x="1.15" y="-0.425" dx="0.6" dy="0.3" layer="1"/>
+<smd name="5" x="-0.25" y="-1.175" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<smd name="4" x="-0.75" y="-1.175" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<smd name="6" x="0.25" y="-1.175" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<smd name="7" x="0.75" y="-1.175" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<rectangle x1="-0.5" y1="-0.125" x2="0.475" y2="0.025" layer="1"/>
+<polygon width="0" layer="29">
+<vertex x="-1.55" y="0.425"/>
+<vertex x="-1.55" y="-0.075"/>
+<vertex x="-0.575" y="-0.075"/>
+<vertex x="-0.575" y="-0.175"/>
+<vertex x="-0.575" y="-0.2"/>
+<vertex x="0.55" y="-0.2"/>
+<vertex x="0.55" y="-0.075"/>
+<vertex x="1.55" y="-0.075"/>
+<vertex x="1.55" y="0.425"/>
+</polygon>
+<wire x1="-1.2835" y1="1.3135" x2="-1.2835" y2="-1.2865" width="0.127" layer="51"/>
+<wire x1="-1.2835" y1="-1.2865" x2="1.3165" y2="-1.2865" width="0.127" layer="51"/>
+<wire x1="1.3165" y1="-1.2865" x2="1.3165" y2="1.3135" width="0.127" layer="51"/>
+<wire x1="1.3165" y1="1.3135" x2="-1.2835" y2="1.3135" width="0.127" layer="51"/>
+<text x="0" y="1.905" size="1.778" layer="25" rot="R180" align="top-center">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.778" layer="27" align="top-center">&gt;VALUE</text>
+<wire x1="-1.075" y1="0.9625" x2="-0.875" y2="0.8375" width="0" layer="37"/>
+<wire x1="-0.875" y1="0.8375" x2="-0.825" y2="0.8625" width="0" layer="37"/>
+<wire x1="-0.825" y1="0.8625" x2="-0.8125" y2="1.05" width="0" layer="37"/>
+<wire x1="-0.8125" y1="1.05" x2="-0.875" y2="1.0625" width="0" layer="37"/>
+<wire x1="-0.875" y1="1.0625" x2="-0.875" y2="0.9125" width="0" layer="37"/>
+<wire x1="-0.875" y1="0.9125" x2="-1.025" y2="1.0125" width="0" layer="37"/>
+<wire x1="-1.025" y1="1.0125" x2="-1.075" y2="0.9625" width="0" layer="37"/>
+<wire x1="-1.0125" y1="1.05" x2="-0.9" y2="0.9625" width="0" layer="37"/>
+<wire x1="-0.9" y1="0.9625" x2="-0.9" y2="1.0875" width="0" layer="37"/>
+<wire x1="-1.0125" y1="1.05" x2="-0.9" y2="1.0875" width="0" layer="37"/>
+<circle x="-0.925" y="0.9625" radius="0.2003875" width="0" layer="51"/>
+<text x="-0.925" y="0.8625" size="0.0125" layer="37" rot="R327" align="top-center">CRE LABS/AT</text>
+</package>
 </packages>
 <symbols>
 <symbol name="ADNS-3080">
@@ -2270,7 +2311,7 @@ CONTROLLER </text>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TPS6123X" prefix="IC">
+<deviceset name="TPS6123X" prefix="U">
 <gates>
 <gate name="G$1" symbol="TPS61235P" x="0" y="0"/>
 </gates>
@@ -2289,6 +2330,24 @@ CONTROLLER </text>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+<device name="5V" package="9-VQFN-HR">
+<connects>
+<connect gate="G$1" pin="AGND" pad="5"/>
+<connect gate="G$1" pin="CC" pad="4"/>
+<connect gate="G$1" pin="EN" pad="7"/>
+<connect gate="G$1" pin="FB" pad="6"/>
+<connect gate="G$1" pin="INACT" pad="8"/>
+<connect gate="G$1" pin="PGND" pad="1"/>
+<connect gate="G$1" pin="SW" pad="2"/>
+<connect gate="G$1" pin="VIN" pad="3"/>
+<connect gate="G$1" pin="VOUT" pad="9"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CC" value="XYX17" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
