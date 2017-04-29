@@ -28143,7 +28143,7 @@ Low ESR, OP~5V,ceramic</text>
 <instance part="☇8" gate="G$1" x="96.52" y="15.24" rot="R90"/>
 <instance part="☇6" gate="G$1" x="124.46" y="10.16" rot="R90"/>
 <instance part="☇9" gate="G$1" x="96.52" y="10.16" rot="R90"/>
-<instance part="R1" gate="G$1" x="45.72" y="147.32"/>
+<instance part="R1" gate="G$1" x="45.72" y="147.32" rot="MR0"/>
 <instance part="U1" gate="X" x="121.92" y="101.6"/>
 </instances>
 <busses>
@@ -28416,9 +28416,9 @@ Low ESR, OP~5V,ceramic</text>
 <pinref part="☇5" gate="G$1" pin="TP"/>
 </segment>
 <segment>
-<pinref part="R1" gate="G$1" pin="+"/>
-<wire x1="40.64" y1="147.32" x2="20.32" y2="147.32" width="0.1524" layer="91"/>
 <label x="20.32" y="147.32" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="40.64" y1="147.32" x2="20.32" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="-"/>
 </segment>
 </net>
 <net name="DDC.VOUT" class="0">
@@ -28458,27 +28458,27 @@ Low ESR, OP~5V,ceramic</text>
 </segment>
 <segment>
 <wire x1="58.42" y1="147.32" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="-"/>
-<wire x1="50.8" y1="147.32" x2="58.42" y2="147.32" width="0.1524" layer="91"/>
 <label x="58.42" y="157.48" size="1.778" layer="95" rot="R90" xref="yes"/>
+<wire x1="50.8" y1="147.32" x2="58.42" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="+"/>
 </segment>
 </net>
 <net name="↔CLN" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="K-"/>
 <wire x1="81.28" y1="114.3" x2="48.26" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="114.3" x2="48.26" y2="142.24" width="0.1524" layer="91"/>
 <label x="78.74" y="116.84" size="1.778" layer="95" rot="R180"/>
 <pinref part="U1" gate="X" pin="CLN"/>
+<pinref part="R1" gate="G$1" pin="K+"/>
 </segment>
 </net>
 <net name="↔IN" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="K+"/>
 <wire x1="43.18" y1="142.24" x2="43.18" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="109.22" x2="81.28" y2="109.22" width="0.1524" layer="91"/>
 <label x="78.74" y="111.76" size="1.778" layer="95" rot="R180"/>
 <pinref part="U1" gate="X" pin="IN"/>
+<pinref part="R1" gate="G$1" pin="K-"/>
 </segment>
 </net>
 <net name="TMR" class="0">
