@@ -721,6 +721,18 @@ DIN A3, landscape with location and doc. field</description>
 <pad name="SHELL" x="-4.2" y="0" drill="2"/>
 <pad name="SHELL1" x="4.2" y="0" drill="2"/>
 </package>
+<package name="MOLEX_15244441">
+<text x="-12" y="8" size="1.27" layer="25">&gt;NAME</text>
+<text x="-12" y="-10" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="1" x="-7.6" y="-6" drill="1.6" shape="octagon"/>
+<pad name="2" x="-2.5199" y="-5.9993" drill="1.6" shape="octagon"/>
+<pad name="3" x="2.562" y="-5.9999" drill="1.6" shape="octagon"/>
+<pad name="4" x="7.6421" y="-5.9992" drill="1.6" shape="octagon"/>
+<hole x="-10.14" y="-3.4607" drill="2.59"/>
+<hole x="10.1812" y="-3.4601" drill="2.59"/>
+<hole x="-5.0599" y="4.1582" drill="3.99"/>
+<hole x="5.0979" y="4.1575" drill="3.99"/>
+</package>
 </packages>
 <symbols>
 <symbol name="AU_ADC">
@@ -916,6 +928,22 @@ DIN A3, landscape with location and doc. field</description>
 <pin name="VBUS" x="-7.62" y="-5.08" length="middle" direction="pas"/>
 <pin name="SHIELD" x="-5.08" y="-10.16" length="middle" direction="pas"/>
 </symbol>
+<symbol name="15244441">
+<wire x1="-1.27" y1="5.08" x2="-3.81" y2="5.08" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="2.54" x2="-3.81" y2="2.54" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-3.81" y2="0" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="-2.54" x2="-3.81" y2="-2.54" width="0.6096" layer="94"/>
+<wire x1="-5.334" y1="7.62" x2="-5.334" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.334" y1="-5.08" x2="2.286" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.286" y1="-5.08" x2="2.286" y2="7.62" width="0.254" layer="94"/>
+<wire x1="2.286" y1="7.62" x2="-5.334" y2="7.62" width="0.254" layer="94"/>
+<text x="-5.08" y="8.89" size="1.27" layer="95">&gt;NAME</text>
+<text x="-5.08" y="-7.62" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="1" x="-7.62" y="5.08" length="middle" direction="pas"/>
+<pin name="2" x="-7.62" y="2.54" length="middle" direction="pas"/>
+<pin name="3" x="-7.62" y="0" length="middle" direction="pas"/>
+<pin name="4" x="-7.62" y="-2.54" length="middle" direction="pas"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="ARDUINO_UNO" prefix="CON">
@@ -1082,6 +1110,32 @@ Created 2014-07-09, Karrer Zheng&lt;br&gt;
 <attribute name="MP" value="651005136421"/>
 <attribute name="PACKAGE" value="None"/>
 <attribute name="PRICE" value="2.13 USD"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="15244441">
+<description>Conn Disk Drive Power HDR 4 POS 5.08mm Solder RA Thru-Hole 4 Terminal 1 Port Tray</description>
+<gates>
+<gate name="G$1" symbol="15244441" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOLEX_15244441">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="AVAILABILITY" value="Good"/>
+<attribute name="DESCRIPTION" value="Disk Drive Power Connection Systems 4P R/A HDR LEAD-FREE"/>
+<attribute name="MF" value="Molex"/>
+<attribute name="MP" value="15-24-4441"/>
+<attribute name="PACKAGE" value="None"/>
+<attribute name="PRICE" value="0.58 USD"/>
 </technology>
 </technologies>
 </device>
@@ -33903,6 +33957,13 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <part name="SUPPLY2" library="supply2" deviceset="+4.1V" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="+4.1V" device=""/>
 <part name="D1" library="diode" deviceset="BAS40-05" device=""/>
+<part name="X5" library="kitt.con" deviceset="15244441" device=""/>
+<part name="P+9" library="supply1" deviceset="VCC/2" device="" value="VRAILS"/>
+<part name="GND6" library="supply1" deviceset="GND" device=""/>
+<part name="P+10" library="supply1" deviceset="+5V" device=""/>
+<part name="⌁1" library="kitt.con" deviceset="SINGLEPAD" device="40MIL-BREAK.PILOT"/>
+<part name="⌁2" library="kitt.con" deviceset="SINGLEPAD" device="40MIL-BREAK" value="SINGLEPAD40MIL-BREAK"/>
+<part name="⌁3" library="kitt.con" deviceset="SINGLEPAD" device="40MIL-BREAK" value="SINGLEPAD40MIL-BREAK"/>
 </parts>
 <sheets>
 <sheet>
@@ -34489,6 +34550,9 @@ https://github.com/NextThingCo/CHIP-Hardware/blob/master/CHIP[v1_0]/CHIP_v1_0_SC
 
 Look at Battery In:
 Capacitor and ESD38, what's this?</text>
+<text x="12.7" y="180.34" size="1.778" layer="98" ratio="20" align="center-left">for developers who dislike screwing around
+with phoenix contact 100mil connectors
+- breakaway next to LTC connector</text>
 </plain>
 <moduleinsts>
 <moduleinst name="A5" module="POW-4000" x="248.92" y="127" smashed="yes">
@@ -34578,6 +34642,15 @@ Capacitor and ESD38, what's this?</text>
 <instance part="X1" gate="A" x="314.96" y="69.85" rot="MR180"/>
 <instance part="X1" gate="B" x="314.96" y="49.53" rot="MR180"/>
 <instance part="SUPPLY2" gate="P" x="264.16" y="83.82"/>
+<instance part="X5" gate="G$1" x="22.86" y="162.56" rot="MR0"/>
+<instance part="P+9" gate="G$1" x="40.64" y="167.64" rot="R270"/>
+<instance part="GND6" gate="1" x="35.56" y="152.4" rot="MR0"/>
+<instance part="P+10" gate="1" x="43.18" y="160.02" smashed="yes" rot="MR90">
+<attribute name="VALUE" x="39.37" y="163.83" size="1.778" layer="96" rot="MR180"/>
+</instance>
+<instance part="⌁1" gate="G$1" x="35.56" y="167.64" rot="R90"/>
+<instance part="⌁2" gate="G$1" x="35.56" y="165.1" rot="R90"/>
+<instance part="⌁3" gate="G$1" x="38.1" y="160.02" rot="R90"/>
 </instances>
 <busses>
 <bus name="TOP[0..7],SYSTWI.SCL,SYSTWI.SDA,SYSTWI.!INT,TOP.!RST">
@@ -34689,6 +34762,18 @@ Capacitor and ESD38, what's this?</text>
 <portref moduleinst="A8" port="GND"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="X5" gate="G$1" pin="2"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+<wire x1="30.48" y1="165.1" x2="35.56" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="165.1" x2="35.56" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="X5" gate="G$1" pin="3"/>
+<wire x1="35.56" y1="162.56" x2="35.56" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="162.56" x2="35.56" y2="162.56" width="0.1524" layer="91"/>
+<junction x="35.56" y="162.56"/>
+<pinref part="⌁2" gate="G$1" pin="P$1"/>
+<junction x="35.56" y="165.1"/>
+</segment>
 </net>
 <net name="+18V" class="0">
 <segment>
@@ -34750,6 +34835,14 @@ Capacitor and ESD38, what's this?</text>
 <wire x1="33.02" y1="132.08" x2="48.26" y2="132.08" width="0.1524" layer="91"/>
 <portref moduleinst="A4" port="V~IN"/>
 </segment>
+<segment>
+<pinref part="X5" gate="G$1" pin="1"/>
+<pinref part="P+9" gate="G$1" pin="VCC/2"/>
+<wire x1="38.1" y1="167.64" x2="35.56" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="⌁1" gate="G$1" pin="P$1"/>
+<wire x1="35.56" y1="167.64" x2="30.48" y2="167.64" width="0.1524" layer="91"/>
+<junction x="35.56" y="167.64"/>
+</segment>
 </net>
 <net name="PWR.MOTA" class="0">
 <segment>
@@ -34786,6 +34879,14 @@ Capacitor and ESD38, what's this?</text>
 <pinref part="☇1" gate="G$1" pin="TP"/>
 <pinref part="P+8" gate="1" pin="+5V"/>
 <wire x1="274.32" y1="22.86" x2="264.16" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="X5" gate="G$1" pin="4"/>
+<pinref part="P+10" gate="1" pin="+5V"/>
+<wire x1="30.48" y1="160.02" x2="38.1" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="⌁3" gate="G$1" pin="P$1"/>
+<wire x1="38.1" y1="160.02" x2="40.64" y2="160.02" width="0.1524" layer="91"/>
+<junction x="38.1" y="160.02"/>
 </segment>
 </net>
 <net name="VSYS" class="0">
