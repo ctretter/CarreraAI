@@ -696,31 +696,6 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="11.5" y1="4" x2="11.5" y2="2.5" width="0.127" layer="21"/>
 <wire x1="11.5" y1="4" x2="10" y2="4" width="0.127" layer="21"/>
 </package>
-<package name="651005136421">
-<description>WR-COM Vertical 5 Contacts Mini USB Type B, 5 pins</description>
-<wire x1="5.1" y1="1.95" x2="5.1" y2="-1.95" width="0.127" layer="51"/>
-<wire x1="5.1" y1="-1.95" x2="-5.1" y2="-1.95" width="0.127" layer="21"/>
-<wire x1="-5.1" y1="-1.95" x2="-5.1" y2="1.95" width="0.127" layer="51"/>
-<wire x1="-5.1" y1="1.95" x2="5.1" y2="1.95" width="0.127" layer="21"/>
-<text x="-2.765" y="-1.605" size="0.6096" layer="51">1</text>
-<text x="2.435" y="-1.63" size="0.6096" layer="51">5</text>
-<text x="-2.402" y="3.0159" size="1.016" layer="25">&gt;NAME</text>
-<text x="-2.667" y="-3.9234" size="1.016" layer="27">&gt;VALUE</text>
-<text x="-2.765" y="-1.605" size="0.6096" layer="21">1</text>
-<polygon width="0.127" layer="39">
-<vertex x="-6" y="2.2"/>
-<vertex x="6" y="2.2"/>
-<vertex x="6" y="-2.2"/>
-<vertex x="-6" y="-2.2"/>
-</polygon>
-<pad name="3" x="0" y="-0.95" drill="0.6"/>
-<pad name="5" x="1.6" y="-0.95" drill="0.6"/>
-<pad name="1" x="-1.6" y="-0.95" drill="0.6"/>
-<pad name="2" x="-0.8" y="0.95" drill="0.6"/>
-<pad name="4" x="0.8" y="0.95" drill="0.6"/>
-<pad name="SHELL" x="-4.2" y="0" drill="2"/>
-<pad name="SHELL1" x="4.2" y="0" drill="2"/>
-</package>
 <package name="MOLEX_15244441">
 <text x="-12" y="8" size="1.27" layer="25">&gt;NAME</text>
 <text x="-12" y="-10" size="1.27" layer="27">&gt;VALUE</text>
@@ -909,25 +884,6 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="9.144" y1="-11.684" x2="-7.112" y2="-11.684" width="0.254" layer="94"/>
 <text x="-21.336" y="0.635" size="1.27" layer="97">GND</text>
 </symbol>
-<symbol name="5_USB_A">
-<wire x1="-2.54" y1="-7.62" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="7.62" x2="3.81" y2="7.62" width="0.254" layer="94"/>
-<wire x1="3.81" y1="-7.62" x2="-2.54" y2="-7.62" width="0.254" layer="94"/>
-<text x="-2.54" y="10.668" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-13.97" size="1.778" layer="96">&gt;VALUE</text>
-<wire x1="5.08" y1="8.89" x2="5.08" y2="-8.89" width="0.254" layer="94" style="shortdash"/>
-<wire x1="5.08" y1="-8.89" x2="1.27" y2="-8.89" width="0.254" layer="94" style="shortdash"/>
-<wire x1="1.27" y1="-8.89" x2="1.27" y2="-10.16" width="0.254" layer="94" style="shortdash"/>
-<wire x1="0" y1="-10.16" x2="1.27" y2="-10.16" width="0.254" layer="94" style="shortdash"/>
-<wire x1="1.27" y1="8.89" x2="5.08" y2="8.89" width="0.254" layer="94" style="shortdash"/>
-<text x="4.445" y="-2.2225" size="1.778" layer="94" rot="R90">USB</text>
-<pin name="GND" x="-7.62" y="5.08" length="middle" direction="pas"/>
-<pin name="ID" x="-7.62" y="2.54" length="middle" direction="pas"/>
-<pin name="D+" x="-7.62" y="0" length="middle" direction="pas"/>
-<pin name="D-" x="-7.62" y="-2.54" length="middle" direction="pas"/>
-<pin name="VBUS" x="-7.62" y="-5.08" length="middle" direction="pas"/>
-<pin name="SHIELD" x="-5.08" y="-10.16" length="middle" direction="pas"/>
-</symbol>
 <symbol name="15244441">
 <wire x1="-1.27" y1="5.08" x2="-3.81" y2="5.08" width="0.6096" layer="94"/>
 <wire x1="-1.27" y1="2.54" x2="-3.81" y2="2.54" width="0.6096" layer="94"/>
@@ -1077,39 +1033,6 @@ DIN A3, landscape with location and doc. field</description>
 <technologies>
 <technology name="">
 <attribute name="CC" value="XYX17" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="WüRTH-MINIB.VERTICAL" prefix="J">
-<description>&lt;b&gt;WR-COM Vertical 5 Contacts Mini USB Type B, 5 pins&lt;/b&gt;=&gt;Code : Con_I-O_COM_MiniUSB_651005136421
-&lt;br&gt;&lt;a href="http://katalog.we-online.de/media/images/eican/Con_I-O_COM_MiniUSB_651005136421_pf2.jpg" title="Enlarge picture"&gt;
-&lt;img src="http://katalog.we-online.de/media/thumbs2/eican/thb_Con_I-O_COM_MiniUSB_651005136421_pf2.jpg" width="320"&gt;&lt;/a&gt;&lt;p&gt;
-Details see: &lt;a href="http://katalog.we-online.de/en/em/COM_MINI_TYPE_B_VERTICAL/651005136421"&gt;http://katalog.we-online.de/en/em/COM_MINI_TYPE_B_VERTICAL/651005136421&lt;/a&gt;&lt;p&gt;
-Created 2014-07-09, Karrer Zheng&lt;br&gt;
-2014 (C) Würth Elektronik</description>
-<gates>
-<gate name="G$1" symbol="5_USB_A" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="651005136421">
-<connects>
-<connect gate="G$1" pin="D+" pad="3"/>
-<connect gate="G$1" pin="D-" pad="2"/>
-<connect gate="G$1" pin="GND" pad="5"/>
-<connect gate="G$1" pin="ID" pad="4"/>
-<connect gate="G$1" pin="SHIELD" pad="SHELL SHELL1"/>
-<connect gate="G$1" pin="VBUS" pad="1"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="AVAILABILITY" value="Good"/>
-<attribute name="DESCRIPTION" value="5 Position Through Hole Vertical MINI USB Receptacle"/>
-<attribute name="MF" value="Würth Elektronik"/>
-<attribute name="MP" value="651005136421"/>
-<attribute name="PACKAGE" value="None"/>
-<attribute name="PRICE" value="2.13 USD"/>
 </technology>
 </technologies>
 </device>
@@ -33950,7 +33873,6 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <part name="VDD5" library="supply1" deviceset="VDD" device="" value="VSYS"/>
 <part name="X1" library="kitt.con" deviceset="JST-4POS-2X" device="4POS"/>
 <part name="X2" library="kitt.con" deviceset="ROCKETBOARDS-LTC" device="TH" value="ATLAS-LTC"/>
-<part name="X3" library="kitt.con" deviceset="WüRTH-MINIB.VERTICAL" device="" value="SYS-IIC"/>
 <part name="X4" library="con-cypressindustries" deviceset="MINI-USB_SHIELD5P2-" device="32005-601" value="SYSTEWI"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="VDD6" library="supply1" deviceset="VDD" device="" value="VSYS"/>
@@ -34115,7 +34037,6 @@ and voltage join; business as usual</text>
 <instance part="REF1" gate="G$1" x="165.1" y="20.32"/>
 <instance part="X2" gate="X" x="120.65" y="58.42"/>
 <instance part="X2" gate="REF" x="118.11" y="58.42"/>
-<instance part="X3" gate="G$1" x="158.75" y="88.9" rot="R180"/>
 <instance part="X4" gate="G41" x="17.78" y="76.2" rot="MR0"/>
 <instance part="GND5" gate="1" x="25.4" y="63.5" rot="MR0"/>
 <instance part="VDD6" gate="G$1" x="40.64" y="99.06" smashed="yes" rot="MR0">
@@ -34793,7 +34714,7 @@ with phoenix contact 100mil connectors
 <portref moduleinst="A7" port="V++"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="TOP.MOT-" class="0">
 <segment>
 <pinref part="SJ1" gate="G$1" pin="3"/>
 <wire x1="78.74" y1="58.42" x2="35.56" y2="58.42" width="0.1524" layer="91"/>
@@ -34808,7 +34729,7 @@ with phoenix contact 100mil connectors
 <wire x1="25.4" y1="50.8" x2="30.48" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="TOP.MOT+" class="0">
 <segment>
 <pinref part="X2.1" gate="-2" pin="1"/>
 <portref moduleinst="A2" port="MOT.OUT+"/>
