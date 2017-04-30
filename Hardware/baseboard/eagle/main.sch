@@ -34219,20 +34219,6 @@ and voltage join; business as usual</text>
 <wire x1="71.12" y1="147.32" x2="50.8" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="SDA" class="0">
-<segment>
-<wire x1="213.36" y1="132.08" x2="198.12" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="XA1" gate="G$4" pin="SDA"/>
-<label x="198.12" y="132.08" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="SCL" class="0">
-<segment>
-<wire x1="213.36" y1="134.62" x2="198.12" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="XA1" gate="G$4" pin="SCL"/>
-<label x="198.12" y="134.62" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="SCLK" class="0">
 <segment>
 <wire x1="213.36" y1="124.46" x2="193.04" y2="124.46" width="0.1524" layer="91"/>
@@ -34350,12 +34336,22 @@ and voltage join; business as usual</text>
 <wire x1="33.02" y1="73.66" x2="55.88" y2="73.66" width="0.1524" layer="91"/>
 <label x="53.34" y="76.2" size="1.778" layer="95" ratio="20" rot="R180"/>
 </segment>
+<segment>
+<wire x1="213.36" y1="132.08" x2="198.12" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="XA1" gate="G$4" pin="SDA"/>
+<label x="198.12" y="132.08" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="SYSTWI.SCL" class="0">
 <segment>
 <pinref part="X4" gate="G41" pin="2"/>
 <wire x1="22.86" y1="78.74" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
 <label x="53.34" y="81.28" size="1.778" layer="95" ratio="20" rot="R180"/>
+</segment>
+<segment>
+<wire x1="213.36" y1="134.62" x2="198.12" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="XA1" gate="G$4" pin="SCL"/>
+<label x="198.12" y="134.62" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -34882,20 +34878,6 @@ with phoenix contact 100mil connectors
 <wire x1="160.02" y1="180.34" x2="160.02" y2="177.8" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="SDA" class="0">
-<segment>
-<wire x1="68.58" y1="198.12" x2="53.34" y2="198.12" width="0.1524" layer="91"/>
-<label x="53.34" y="198.12" size="1.778" layer="95" rot="R180" xref="yes"/>
-<portref moduleinst="A7" port="SDA"/>
-</segment>
-</net>
-<net name="SCL" class="0">
-<segment>
-<wire x1="68.58" y1="193.04" x2="53.34" y2="193.04" width="0.1524" layer="91"/>
-<label x="53.34" y="193.04" size="1.778" layer="95" rot="R180" xref="yes"/>
-<portref moduleinst="A7" port="SCL"/>
-</segment>
-</net>
 <net name="SCLK" class="0">
 <segment>
 <wire x1="68.58" y1="228.6" x2="55.88" y2="228.6" width="0.1524" layer="91"/>
@@ -34929,13 +34911,6 @@ with phoenix contact 100mil connectors
 <wire x1="68.58" y1="208.28" x2="55.88" y2="208.28" width="0.1524" layer="91"/>
 <label x="55.88" y="208.28" size="1.778" layer="95" rot="R180" xref="yes"/>
 <portref moduleinst="A7" port="!CS1"/>
-</segment>
-</net>
-<net name="!INT" class="0">
-<segment>
-<wire x1="68.58" y1="203.2" x2="55.88" y2="203.2" width="0.1524" layer="91"/>
-<label x="55.88" y="203.2" size="1.778" layer="95" rot="R180" xref="yes"/>
-<portref moduleinst="A7" port="!INT"/>
 </segment>
 </net>
 <net name="VF+OUT/IPC" class="0">
@@ -34972,6 +34947,11 @@ with phoenix contact 100mil connectors
 <wire x1="350.52" y1="187.96" x2="370.84" y2="187.96" width="0.1524" layer="91"/>
 <label x="350.52" y="190.5" size="1.778" layer="95" ratio="20" rot="MR180"/>
 </segment>
+<segment>
+<wire x1="68.58" y1="203.2" x2="55.88" y2="203.2" width="0.1524" layer="91"/>
+<label x="55.88" y="203.2" size="1.778" layer="95" rot="R180" xref="yes"/>
+<portref moduleinst="A7" port="!INT"/>
+</segment>
 </net>
 <net name="SYSTWI.SDA" class="0">
 <segment>
@@ -34984,6 +34964,11 @@ with phoenix contact 100mil connectors
 <wire x1="350.52" y1="177.8" x2="370.84" y2="177.8" width="0.1524" layer="91"/>
 <label x="350.52" y="180.34" size="1.778" layer="95" ratio="20" rot="MR180"/>
 </segment>
+<segment>
+<wire x1="68.58" y1="198.12" x2="53.34" y2="198.12" width="0.1524" layer="91"/>
+<label x="53.34" y="198.12" size="1.778" layer="95" rot="R180" xref="yes"/>
+<portref moduleinst="A7" port="SDA"/>
+</segment>
 </net>
 <net name="SYSTWI.SCL" class="0">
 <segment>
@@ -34995,6 +34980,11 @@ with phoenix contact 100mil connectors
 <portref moduleinst="A8" port="SCL"/>
 <wire x1="350.52" y1="182.88" x2="370.84" y2="182.88" width="0.1524" layer="91"/>
 <label x="350.52" y="185.42" size="1.778" layer="95" ratio="20" rot="MR180"/>
+</segment>
+<segment>
+<wire x1="68.58" y1="193.04" x2="53.34" y2="193.04" width="0.1524" layer="91"/>
+<label x="53.34" y="193.04" size="1.778" layer="95" rot="R180" xref="yes"/>
+<portref moduleinst="A7" port="SCL"/>
 </segment>
 </net>
 <net name="TOP.!RST" class="0">
