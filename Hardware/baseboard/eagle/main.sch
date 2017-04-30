@@ -33312,12 +33312,13 @@ Is that you anton?</text>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="IC1" library="microchip" deviceset="MCP23017" device="ML"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="R2" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎑"/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
-<part name="R4" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
-<part name="R6" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎑"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="R3" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="C1" library="rcl" deviceset="C-EU" device="C0805K" value="100nF/⇤"/>
 </parts>
 <sheets>
 <sheet>
@@ -33381,6 +33382,7 @@ looks nicer than a bus.</text>
 <attribute name="NAME" x="43.18" y="50.5714" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="43.18" y="47.752" size="1.778" layer="96" rot="MR180"/>
 </instance>
+<instance part="C1" gate="G$1" x="93.98" y="45.72"/>
 </instances>
 <busses>
 <bus name="S1.RUN,S1.PGOOD,S1.MODE,S1.FREQ,S2.INACT,S2.EN">
@@ -33486,9 +33488,10 @@ looks nicer than a bus.</text>
 <pinref part="IC1" gate="G$1" pin="VDD"/>
 <wire x1="109.22" y1="91.44" x2="99.06" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="91.44" x2="99.06" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="142.24" x2="68.58" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="142.24" x2="93.98" y2="142.24" width="0.1524" layer="91"/>
 <label x="20.32" y="142.24" size="1.778" layer="95" ratio="20" rot="R180" xref="yes"/>
 <pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="93.98" y1="142.24" x2="68.58" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="142.24" x2="53.34" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="142.24" x2="40.64" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="142.24" x2="20.32" y2="142.24" width="0.1524" layer="91"/>
@@ -33503,6 +33506,9 @@ looks nicer than a bus.</text>
 <junction x="99.06" y="142.24"/>
 <label x="238.76" y="142.24" size="1.778" layer="95" ratio="20" xref="yes"/>
 <wire x1="99.06" y1="142.24" x2="238.76" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="93.98" y1="48.26" x2="93.98" y2="142.24" width="0.1524" layer="91"/>
+<junction x="93.98" y="142.24"/>
 </segment>
 </net>
 <net name="!INT" class="0">
@@ -33523,9 +33529,10 @@ looks nicer than a bus.</text>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="104.14" y1="33.02" x2="104.14" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="43.18" x2="68.58" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="33.02" x2="104.14" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="33.02" x2="93.98" y2="33.02" width="0.1524" layer="91"/>
 <junction x="104.14" y="33.02"/>
 <pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="93.98" y1="33.02" x2="104.14" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="43.18" x2="53.34" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="33.02" x2="68.58" y2="33.02" width="0.1524" layer="91"/>
 <junction x="68.58" y="33.02"/>
@@ -33538,6 +33545,9 @@ looks nicer than a bus.</text>
 <label x="17.78" y="33.02" size="1.778" layer="95" ratio="20" rot="R180" xref="yes"/>
 <wire x1="104.14" y1="33.02" x2="238.76" y2="33.02" width="0.1524" layer="91"/>
 <label x="238.76" y="33.02" size="1.778" layer="95" ratio="20" xref="yes"/>
+<pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="93.98" y1="40.64" x2="93.98" y2="33.02" width="0.1524" layer="91"/>
+<junction x="93.98" y="33.02"/>
 </segment>
 </net>
 <net name="!RST" class="0">
@@ -33549,7 +33559,7 @@ looks nicer than a bus.</text>
 <label x="20.32" y="121.92" size="1.778" layer="95" ratio="20" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="A1" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -33560,7 +33570,7 @@ looks nicer than a bus.</text>
 <pinref part="IC1" gate="G$1" pin="A1"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="A2" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="R4" gate="G$1" pin="1"/>
@@ -33571,7 +33581,7 @@ looks nicer than a bus.</text>
 <wire x1="68.58" y1="55.88" x2="109.22" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="A0" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="A0"/>
 <pinref part="R6" gate="G$1" pin="1"/>
@@ -33886,6 +33896,7 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <part name="⌁1" library="kitt.con" deviceset="SINGLEPAD" device="40MIL-BREAK.PILOT"/>
 <part name="⌁2" library="kitt.con" deviceset="SINGLEPAD" device="40MIL-BREAK" value="SINGLEPAD40MIL-BREAK"/>
 <part name="⌁3" library="kitt.con" deviceset="SINGLEPAD" device="40MIL-BREAK" value="SINGLEPAD40MIL-BREAK"/>
+<part name="JP2" library="pinhead" deviceset="PINHD-2X3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -34038,6 +34049,7 @@ and voltage join; business as usual</text>
 </instance>
 <instance part="SUPPLY3" gate="P" x="22.86" y="99.06"/>
 <instance part="D1" gate="G$1" x="33.02" y="91.44" rot="R180"/>
+<instance part="JP2" gate="A" x="134.62" y="106.68"/>
 </instances>
 <busses>
 <bus name="TOP[0..7],SYSTWI.SCL,SYSTWI.SDA,SYSTWI.!INT,TOP.!RST">
