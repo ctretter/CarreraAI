@@ -33652,6 +33652,8 @@ looks nicer than a bus.</text>
 <port name="V~IN" side="left" coord="7.62" direction="pwr"/>
 <port name="VF+OUT" side="right" coord="5.08" direction="pwr"/>
 <port name="V+PWR" side="right" coord="-10.16" direction="pwr"/>
+<port name="COM.RRX" side="top" coord="2.54" direction="io"/>
+<port name="MON.VPWR" side="top" coord="7.62" direction="io"/>
 </ports>
 <variantdefs>
 </variantdefs>
@@ -33849,9 +33851,7 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <part name="☈2" library="jumper" deviceset="SJ" device="" value=" "/>
 <part name="☈1" library="jumper" deviceset="SJ" device="" value=" "/>
 <part name="VDD2" library="supply1" deviceset="VDD" device="" value="VSYS"/>
-<part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="☈3" library="jumper" deviceset="SJ" device="" value=" "/>
-<part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
 <part name="☈9" library="jumper" deviceset="SJ" device="" value=" "/>
 <part name="☈10" library="jumper" deviceset="SJ" device="" value=" "/>
 <part name="☈11" library="jumper" deviceset="SJ" device="" value=" "/>
@@ -34011,15 +34011,9 @@ and voltage join; business as usual</text>
 <instance part="VDD2" gate="G$1" x="50.8" y="127" smashed="yes" rot="MR90">
 <attribute name="VALUE" x="53.34" y="127" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="P+1" gate="1" x="63.5" y="124.46" smashed="yes" rot="MR90">
-<attribute name="VALUE" x="64.77" y="125.73" size="1.778" layer="96" rot="MR180"/>
-</instance>
 <instance part="☈3" gate="1" x="35.56" y="124.46" smashed="yes" rot="MR0">
 <attribute name="NAME" x="45.72" y="124.46" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="30.48" y="125.73" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="+3V2" gate="G$1" x="50.8" y="121.92" smashed="yes" rot="R270">
-<attribute name="VALUE" x="51.435" y="121.285" size="1.778" layer="96"/>
 </instance>
 <instance part="☈9" gate="1" x="35.56" y="121.92" smashed="yes" rot="MR0">
 <attribute name="NAME" x="45.72" y="121.92" size="1.778" layer="95" rot="MR0"/>
@@ -34073,11 +34067,6 @@ and voltage join; business as usual</text>
 <pinref part="L2" gate="G$1" pin="1"/>
 <pinref part="+3V7" gate="G$1" pin="+3V3"/>
 <wire x1="81.28" y1="157.48" x2="93.98" y2="157.48" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="40.64" y1="121.92" x2="48.26" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="+3V2" gate="G$1" pin="+3V3"/>
-<pinref part="☈9" gate="1" pin="1"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -34141,11 +34130,6 @@ and voltage join; business as usual</text>
 <pinref part="P+3" gate="1" pin="+5V"/>
 <pinref part="L3" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="154.94" x2="81.28" y2="154.94" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="60.96" y1="124.46" x2="40.64" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="P+1" gate="1" pin="+5V"/>
-<pinref part="☈3" gate="1" pin="1"/>
 </segment>
 </net>
 <net name="N$16" class="0">
@@ -34223,13 +34207,6 @@ and voltage join; business as usual</text>
 <wire x1="71.12" y1="147.32" x2="50.8" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="COM.RRX" class="0">
-<segment>
-<wire x1="195.58" y1="147.32" x2="213.36" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="XA1" gate="G$3" pin="IO.7"/>
-<label x="195.58" y="147.32" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="SDA" class="0">
 <segment>
 <wire x1="213.36" y1="132.08" x2="198.12" y2="132.08" width="0.1524" layer="91"/>
@@ -34284,13 +34261,6 @@ and voltage join; business as usual</text>
 <wire x1="213.36" y1="111.76" x2="200.66" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="XA1" gate="G$4" pin="IO.8"/>
 <label x="200.66" y="111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="MON.VPWR" class="0">
-<segment>
-<wire x1="50.8" y1="129.54" x2="40.64" y2="129.54" width="0.1524" layer="91"/>
-<label x="50.8" y="129.54" size="1.778" layer="95" rot="MR180" xref="yes"/>
-<pinref part="☈1" gate="1" pin="1"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -34400,6 +34370,20 @@ and voltage join; business as usual</text>
 <wire x1="40.64" y1="91.44" x2="38.1" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="TOP.RRX" class="0">
+<segment>
+<wire x1="213.36" y1="147.32" x2="198.12" y2="147.32" width="0.1524" layer="91"/>
+<label x="198.12" y="147.32" size="1.778" layer="95" ratio="20" rot="R180" xref="yes"/>
+<pinref part="XA1" gate="G$3" pin="IO.7"/>
+</segment>
+</net>
+<net name="TOP.MVPRW" class="0">
+<segment>
+<wire x1="40.64" y1="129.54" x2="50.8" y2="129.54" width="0.1524" layer="91"/>
+<label x="50.8" y="129.54" size="1.778" layer="95" ratio="20" xref="yes"/>
+<pinref part="☈1" gate="1" pin="1"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -34422,7 +34406,7 @@ DRIVER</text>
 either that or use A3</text>
 <text x="215.9" y="195.58" size="2.54" layer="114" rot="MR0" align="center">⨯</text>
 <text x="149.86" y="119.38" size="1.778" layer="98" ratio="20">KILLSWITCH</text>
-<text x="78.74" y="124.46" size="1.778" layer="90" ratio="20" align="center">Input Protection and 
+<text x="78.74" y="121.92" size="1.778" layer="90" ratio="20" align="center">Input Protection and 
 Measurement Circuit</text>
 <text x="355.6" y="172.72" size="1.778" layer="92" ratio="20" align="center">TOP I/O</text>
 <text x="365.76" y="233.68" size="1.778" layer="92" ratio="20" align="center">SYSTWI</text>
@@ -35093,6 +35077,22 @@ with phoenix contact 100mil connectors
 <wire x1="264.16" y1="66.04" x2="256.54" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="264.16" y1="81.28" x2="264.16" y2="66.04" width="0.1524" layer="91"/>
 <junction x="264.16" y="66.04"/>
+</segment>
+</net>
+<net name="TOP.RRX" class="0">
+<segment>
+<portref moduleinst="A4" port="COM.RRX"/>
+<wire x1="78.74" y1="144.78" x2="78.74" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="154.94" x2="96.52" y2="154.94" width="0.1524" layer="91"/>
+<label x="96.52" y="154.94" size="1.778" layer="95" ratio="20" xref="yes"/>
+</segment>
+</net>
+<net name="TOP.MVPRW" class="0">
+<segment>
+<portref moduleinst="A4" port="MON.VPWR"/>
+<wire x1="83.82" y1="144.78" x2="83.82" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="149.86" x2="96.52" y2="149.86" width="0.1524" layer="91"/>
+<label x="96.52" y="149.86" size="1.778" layer="95" ratio="20" xref="yes"/>
 </segment>
 </net>
 </nets>
