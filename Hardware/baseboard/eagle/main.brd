@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="6.25" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.0125" altunitdist="inch" altunit="inch"/>
+<grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.0125" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -18,27 +18,27 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
-<layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
-<layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
-<layer number="34" name="bFinish" color="6" fill="6" visible="yes" active="yes"/>
-<layer number="35" name="tGlue" color="7" fill="4" visible="yes" active="yes"/>
-<layer number="36" name="bGlue" color="7" fill="5" visible="yes" active="yes"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
@@ -49,7 +49,7 @@
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -68,82 +68,12 @@
 <layer number="101" name="Patch_Top" color="12" fill="4" visible="yes" active="yes"/>
 <layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="103" name="tMap" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="104" name="Name" color="16" fill="1" visible="yes" active="yes"/>
-<layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="108" name="centerline" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="109" name="blok" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="110" name="lijnen" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="111" name="circles" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="112" name="hoeken" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="113" name="Route13" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="114" name="NO_POPULATE" color="12" fill="10" visible="yes" active="yes"/>
+<layer number="104" name="Name" color="16" fill="1" visible="no" active="yes"/>
+<layer number="114" name="NO_POPULATE" color="12" fill="10" visible="no" active="yes"/>
 <layer number="115" name="ThePlan" color="38" fill="1" visible="yes" active="yes"/>
-<layer number="116" name="BOM_PROCESSED" color="26" fill="10" visible="yes" active="yes"/>
-<layer number="117" name="noteSIM" color="57" fill="1" visible="yes" active="yes"/>
-<layer number="118" name="mVias" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="119" name="mUnrouted" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="120" name="mDimension" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="124" name="bTestmark" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="126" name="_bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="129" name="mtStop" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="130" name="mbStop" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="131" name="prix" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="132" name="test" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="133" name="mtFinish" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="134" name="mbFinish" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="135" name="mtGlue" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="136" name="mbGlue" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="137" name="mtTest" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="138" name="mbTest" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="139" name="mtKeepout" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="140" name="mbKeepout" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="141" name="mtRestrict" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="142" name="mbRestrict" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="143" name="mvRestrict" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="145" name="mHoles" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="146" name="mMilling" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="147" name="mMeasures" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="148" name="mDocument" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="149" name="mReference" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="153" name="FabDoc1" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="191" name="mNets" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="192" name="mBusses" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="193" name="mPins" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="194" name="mSymbols" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="195" name="mNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="196" name="mValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="199" name="hulplijn" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
-<layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
-<layer number="202" name="202bmp" color="3" fill="10" visible="yes" active="yes"/>
-<layer number="203" name="203bmp" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="204" name="204bmp" color="5" fill="10" visible="yes" active="yes"/>
-<layer number="205" name="205bmp" color="6" fill="10" visible="yes" active="yes"/>
-<layer number="206" name="206bmp" color="7" fill="10" visible="yes" active="yes"/>
-<layer number="207" name="207bmp" color="8" fill="10" visible="yes" active="yes"/>
-<layer number="208" name="208bmp" color="9" fill="10" visible="yes" active="yes"/>
-<layer number="209" name="209bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="210" name="210bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="211" name="211bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="212" name="212bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="213" name="213bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="214" name="214bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="215" name="215bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="216" name="216bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="116" name="BOM_PROCESSED" color="26" fill="10" visible="no" active="yes"/>
+<layer number="117" name="noteSIM" color="57" fill="1" visible="no" active="yes"/>
+<layer number="156" name="Powerflow" color="61" fill="8" visible="no" active="yes"/>
 <layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
 <layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
 <layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
@@ -152,11 +82,8 @@
 <layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
 <layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
 <layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
-<layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
-<layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
 <plain>
@@ -685,9 +612,10 @@ these are the little things I do for break time</text>
 </polygon>
 <rectangle x1="91.5" y1="11.5" x2="93.5" y2="14" layer="30"/>
 <rectangle x1="91.5" y1="6" x2="93.5" y2="8.5" layer="30"/>
-<text x="77.5" y="16.75" size="1.016" layer="115">better idea would've been a male usb mini</text>
 <text x="61" y="65.5" size="1.016" layer="117" rot="R45">unimportant</text>
 <text x="33.5" y="65.75" size="1.016" layer="117" rot="R45">unimportant</text>
+<text x="27.78125" y="27.78125" size="1.4224" layer="15">?????</text>
+<text x="76.67625" y="16.35125" size="1.4224" layer="115">solder bridges are missing</text>
 </plain>
 <libraries>
 <library name="rcl">
@@ -5630,7 +5558,7 @@ Covered vias can be set in Masks (Limit).
 <element name="A5:C4" library="rcl" package="C0402K" value="1uF/⇤" x="34.765625" y="47.815" rot="MR180"/>
 <element name="A5:C5" library="rcl" package="C0402K" value="10nF/⇤" x="34.765625" y="45.989375" rot="MR180"/>
 <element name="A5:C6" library="rcl" package="C0402K" value="10nF/⇤" x="34.845" y="42.496875" rot="MR180"/>
-<element name="A5:T1" library="kitt.ic" package="SOIC8" value="PCF/XX" x="23.65375" y="81.43875" rot="R270"/>
+<element name="A5:T1" library="kitt.ic" package="SOIC8" value="PCF/XX" x="31.75" y="79.0575"/>
 <element name="A5:T2" library="kitt.ic" package="SOIC8" value="PCF/XX" x="23.65375" y="89.535" rot="R270"/>
 <element name="A5:R1" library="kitt.psvs" package="R1206-KELV" value="0.82R/⚻" x="14.85125" y="44.75375" rot="R90"/>
 <element name="A5:R10" library="rcl" package="R0402" value="1kR/⇤" x="34.845" y="41.385625" rot="MR0"/>
@@ -5903,7 +5831,6 @@ Covered vias can be set in Masks (Limit).
 <element name="A7:R8" library="rcl" package="R0402" value="0R" x="54.98625" y="20.01625" smashed="yes" rot="R270">
 <attribute name="NAME" x="54.98625" y="18.349375" size="0.889" layer="26" font="vector" ratio="15" rot="MR0" align="center"/>
 </element>
-<element name="A7:⌁21" library="kitt.con" package="PAD40MIL.BREAK_PILOT" value="SINGLEPAD40MIL-BREAK.PILOT" x="158.9875" y="14.4775"/>
 <element name="A9:C1" library="rcl" package="C0805K" value="10uF/⇤" x="18.813125" y="18.5825" rot="MR90"/>
 <element name="A9:C2" library="rcl" package="C0805K" value="22uF/⇤" x="31.215625" y="20.32875" rot="MR270"/>
 <element name="A9:C3" library="rcl" package="C0805K" value="22uF/⇤" x="33.279375" y="20.32875" rot="MR270"/>
@@ -6768,7 +6695,7 @@ Covered vias can be set in Masks (Limit).
 <wire x1="24.04625" y1="49.323125" x2="24.04625" y2="48.45375" width="0.3048" layer="16"/>
 <wire x1="24.04625" y1="48.45375" x2="24.288125" y2="48.211875" width="0.3048" layer="16"/>
 <wire x1="24.288125" y1="48.211875" x2="25.240625" y2="48.211875" width="0.3048" layer="16"/>
-<wire x1="24.04625" y1="49.323125" x2="21.05375" y2="79.53375" width="0" layer="19" extent="1-16"/>
+<wire x1="24.04625" y1="49.323125" x2="33.655" y2="76.4575" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="A5:N$8">
 <contactref element="A5:R7" pad="1"/>
@@ -6856,9 +6783,9 @@ Covered vias can be set in Masks (Limit).
 <wire x1="17.3825" y1="40.274375" x2="17.3825" y2="38.925" width="1.016" layer="1"/>
 <wire x1="27.641875" y1="47.3591" x2="27.641875" y2="47.874375" width="0.3048" layer="16"/>
 <wire x1="27.641875" y1="47.874375" x2="27.225" y2="48.29125" width="0.3048" layer="16"/>
-<wire x1="21.05375" y1="82.07375" x2="21.05375" y2="83.34375" width="0" layer="19" extent="1-1"/>
-<wire x1="21.05375" y1="80.80375" x2="21.05375" y2="82.07375" width="0" layer="19" extent="1-1"/>
-<wire x1="27.225" y1="48.29125" x2="21.05375" y2="80.80375" width="0" layer="19" extent="1-16"/>
+<wire x1="31.115" y1="76.4575" x2="29.845" y2="76.4575" width="0" layer="19" extent="1-1"/>
+<wire x1="32.385" y1="76.4575" x2="31.115" y2="76.4575" width="0" layer="19" extent="1-1"/>
+<wire x1="27.225" y1="48.29125" x2="32.385" y2="76.4575" width="0" layer="19" extent="1-16"/>
 <wire x1="21.6785" y1="38.24125" x2="27.641875" y2="47.3591" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="DDC.CLN/VIN">
@@ -7294,15 +7221,14 @@ Covered vias can be set in Masks (Limit).
 <contactref element="A7:⌁16" pad="P$1"/>
 <wire x1="44.81625" y1="19.34" x2="48.36" y2="19.34" width="0.4064" layer="16"/>
 <wire x1="48.36" y1="19.34" x2="49.90625" y2="17.79375" width="0.4064" layer="16"/>
-<wire x1="27.586" y1="4.87" x2="27.73" y2="4.87" width="0.4064" layer="16"/>
-<via x="27.73" y="4.87" extent="1-16" drill="0.3"/>
-<wire x1="27.73" y1="4.87" x2="29.21" y2="6.35" width="0.4064" layer="1"/>
-<wire x1="29.21" y1="6.35" x2="36.67125" y2="6.35" width="0.4064" layer="1"/>
+<wire x1="27.586" y1="4.87" x2="27.57125" y2="4.87" width="0.4064" layer="16"/>
+<wire x1="29.066" y1="6.35" x2="36.67125" y2="6.35" width="0.4064" layer="1"/>
 <wire x1="36.67125" y1="6.35" x2="45.085" y2="14.605" width="0.4064" layer="1"/>
 <wire x1="45.085" y1="14.605" x2="49.2125" y2="14.605" width="0.4064" layer="1"/>
 <wire x1="49.2125" y1="14.605" x2="49.8475" y2="15.24" width="0.4064" layer="1"/>
 <wire x1="49.8475" y1="15.24" x2="49.8475" y2="16.9775" width="0.4064" layer="1"/>
 <wire x1="49.8475" y1="16.9775" x2="49.88" y2="17.01" width="0.4064" layer="1"/>
+<wire x1="29.066" y1="6.35" x2="27.586" y2="4.87" width="0.4064" layer="1"/>
 <wire x1="49.88" y1="17.01" x2="49.90625" y2="17.79375" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="!CS0">
@@ -7800,9 +7726,9 @@ Covered vias can be set in Masks (Limit).
 <contactref element="XA1" pad="SDA"/>
 <wire x1="14.886" y1="4.87" x2="15.03" y2="4.87" width="0.4064" layer="1"/>
 <wire x1="15.03" y1="4.87" x2="16.51" y2="6.35" width="0.4064" layer="1"/>
-<wire x1="16.51" y1="6.35" x2="28.09875" y2="6.35" width="0.4064" layer="1"/>
-<wire x1="28.09875" y1="6.35" x2="28.8925" y2="7.14375" width="0.4064" layer="1"/>
-<wire x1="28.8925" y1="7.14375" x2="36.35375" y2="7.14375" width="0.4064" layer="1"/>
+<wire x1="16.51" y1="6.35" x2="27.94" y2="6.35" width="0.4064" layer="1"/>
+<wire x1="27.94" y1="6.35" x2="28.73375" y2="7.14375" width="0.4064" layer="1"/>
+<wire x1="28.73375" y1="7.14375" x2="36.35375" y2="7.14375" width="0.4064" layer="1"/>
 <wire x1="44.7675" y1="15.5575" x2="44.7675" y2="16.66" width="0.4064" layer="1"/>
 <wire x1="12.905" y1="10.82625" x2="13.0175" y2="10.795" width="0.4064" layer="16"/>
 <wire x1="36.35375" y1="7.14375" x2="44.7675" y2="15.5575" width="0.4064" layer="1"/>
@@ -7845,9 +7771,9 @@ Covered vias can be set in Masks (Limit).
 <wire x1="10.4775" y1="6.7385" x2="12.346" y2="4.87" width="0.4064" layer="16"/>
 <wire x1="42.26" y1="17.01" x2="42.26" y2="14.32" width="0.4064" layer="1"/>
 <wire x1="42.26" y1="14.32" x2="35.8775" y2="7.9375" width="0.4064" layer="1"/>
-<wire x1="35.8775" y1="7.9375" x2="28.575" y2="7.9375" width="0.4064" layer="1"/>
-<wire x1="28.575" y1="7.9375" x2="27.78125" y2="7.14375" width="0.4064" layer="1"/>
-<wire x1="27.78125" y1="7.14375" x2="14.61975" y2="7.14375" width="0.4064" layer="1"/>
+<wire x1="35.8775" y1="7.9375" x2="28.41625" y2="7.9375" width="0.4064" layer="1"/>
+<wire x1="28.41625" y1="7.9375" x2="27.6225" y2="7.14375" width="0.4064" layer="1"/>
+<wire x1="27.6225" y1="7.14375" x2="14.61975" y2="7.14375" width="0.4064" layer="1"/>
 <wire x1="14.61975" y1="7.14375" x2="12.346" y2="4.87" width="0.4064" layer="1"/>
 <contactref element="X2" pad="11"/>
 <wire x1="71.0175" y1="11.6825" x2="70.050625" y2="10.715625" width="0.3048" layer="15"/>
@@ -7966,10 +7892,10 @@ Covered vias can be set in Masks (Limit).
 <wire x1="25.289375" y1="47.418125" x2="25.55875" y2="47.14875" width="0.4064" layer="15"/>
 <wire x1="25.55875" y1="47.14875" x2="25.55875" y2="46.069375" width="0.4064" layer="15"/>
 <wire x1="25.55875" y1="46.069375" x2="25.558125" y2="46.06875" width="0.4064" layer="15"/>
-<wire x1="26.25375" y1="83.34375" x2="26.25375" y2="82.07375" width="0" layer="19" extent="1-1"/>
-<wire x1="26.25375" y1="80.80375" x2="26.25375" y2="82.07375" width="0" layer="19" extent="1-1"/>
-<wire x1="26.25375" y1="79.53375" x2="26.25375" y2="80.80375" width="0" layer="19" extent="1-1"/>
-<wire x1="21.81375" y1="49.655625" x2="26.25375" y2="79.53375" width="0" layer="19" extent="1-16"/>
+<wire x1="29.845" y1="81.6575" x2="31.115" y2="81.6575" width="0" layer="19" extent="1-1"/>
+<wire x1="32.385" y1="81.6575" x2="31.115" y2="81.6575" width="0" layer="19" extent="1-1"/>
+<wire x1="33.655" y1="81.6575" x2="32.385" y2="81.6575" width="0" layer="19" extent="1-1"/>
+<wire x1="21.81375" y1="49.655625" x2="33.655" y2="81.6575" width="0" layer="19" extent="1-16"/>
 <wire x1="26.258125" y1="33.3375" x2="26.95465" y2="45.671875" width="0" layer="19" extent="16-16"/>
 <wire x1="29.77806875" y1="27.601678125" x2="26.258125" y2="31.115" width="0" layer="19" extent="16-16"/>
 <wire x1="21.955" y1="25.0825" x2="25.796875" y2="31.115" width="0" layer="19" extent="1-16"/>

@@ -233,6 +233,53 @@
 <text x="140.716" y="4.953" size="2.54" layer="94">Sheet:</text>
 <frame x1="0" y1="0" x2="184.15" y2="133.35" columns="4" rows="4" layer="94"/>
 </symbol>
+<symbol name="DINA-DOC">
+<wire x1="50.8" y1="0.254" x2="50.8254" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="40.64" x2="76.2" y2="40.64" width="0.3048" layer="94"/>
+<wire x1="76.2" y1="35.56" x2="0" y2="35.56" width="0.3048" layer="94"/>
+<wire x1="0" y1="30.48" x2="50.8" y2="30.48" width="0.3048" layer="94"/>
+<wire x1="50.8" y1="25.4" x2="0" y2="25.4" width="0.3048" layer="94"/>
+<wire x1="0" y1="20.32" x2="50.8" y2="20.32" width="0.3048" layer="94"/>
+<wire x1="50.8" y1="15.24" x2="0" y2="15.24" width="0.3048" layer="94"/>
+<wire x1="0" y1="10.16" x2="50.8" y2="10.16" width="0.3048" layer="94"/>
+<wire x1="50.8" y1="5.08" x2="0" y2="5.08" width="0.3048" layer="94"/>
+<wire x1="7.62" y1="0.127" x2="7.62" y2="45.72" width="0.3048" layer="94"/>
+<wire x1="30.48" y1="45.72" x2="30.48" y2="0" width="0.3048" layer="94"/>
+<wire x1="40.64" y1="0" x2="40.64" y2="45.72" width="0.3048" layer="94"/>
+<wire x1="58.42" y1="45.72" x2="58.42" y2="30.48" width="0.3048" layer="94"/>
+<wire x1="68.58" y1="30.48" x2="68.58" y2="45.72" width="0.3048" layer="94"/>
+<wire x1="50.8" y1="45.72" x2="50.8" y2="30.48" width="0.8128" layer="94"/>
+<wire x1="76.2" y1="0.381" x2="76.2" y2="30.48" width="0.8128" layer="94"/>
+<wire x1="76.2" y1="30.48" x2="50.8" y2="30.48" width="0.8128" layer="94"/>
+<wire x1="76.2" y1="30.48" x2="76.2" y2="35.56" width="0.8128" layer="94"/>
+<wire x1="50.8" y1="30.48" x2="50.8" y2="20.32" width="0.8128" layer="94"/>
+<wire x1="50.8" y1="20.32" x2="121.539" y2="20.32" width="0.8128" layer="94"/>
+<wire x1="50.8" y1="20.32" x2="50.8" y2="5.08" width="0.8128" layer="94"/>
+<wire x1="121.539" y1="5.08" x2="50.8" y2="5.08" width="0.8128" layer="94"/>
+<wire x1="50.8" y1="5.08" x2="50.8" y2="0.254" width="0.8128" layer="94"/>
+<wire x1="76.2" y1="35.56" x2="121.539" y2="35.56" width="0.8128" layer="94"/>
+<wire x1="76.2" y1="35.56" x2="76.2" y2="45.72" width="0.8128" layer="94"/>
+<wire x1="121.539" y1="45.72" x2="0" y2="45.72" width="0.8128" layer="94"/>
+<wire x1="0" y1="45.72" x2="0" y2="0.381" width="0.8128" layer="94"/>
+<wire x1="0" y1="0" x2="121.92" y2="0" width="0.1016" layer="94"/>
+<wire x1="121.92" y1="0" x2="121.92" y2="45.72" width="0.1016" layer="94"/>
+<text x="1.27" y="1.905" size="1.778" layer="94">Rev</text>
+<text x="8.89" y="1.905" size="1.778" layer="94">Änderungs-Nr.</text>
+<text x="34.29" y="1.905" size="1.778" layer="94">Tag</text>
+<text x="43.815" y="1.905" size="1.778" layer="94">Name</text>
+<text x="51.435" y="37.465" size="1.397" layer="94">Bearb.</text>
+<text x="52.07" y="32.385" size="1.397" layer="94">Gepr.</text>
+<text x="60.96" y="42.545" size="1.778" layer="94">Tag</text>
+<text x="69.215" y="42.545" size="1.778" layer="94">Name</text>
+<text x="77.47" y="32.385" size="1.778" layer="94">Benennung</text>
+<text x="77.47" y="17.145" size="1.778" layer="94">Zeichnungs-Nr.</text>
+<text x="53.594" y="1.8796" size="1.905" layer="94">&gt;DRAWING_NAME</text>
+<text x="52.705" y="27.94" size="1.27" layer="94">zu Gerät</text>
+<text x="52.705" y="17.78" size="1.27" layer="94">zu Anlage</text>
+<text x="84.963" y="1.905" size="1.778" layer="94">&gt;SHEET</text>
+<text x="92.456" y="1.905" size="1.778" layer="94">&gt;LAST_DATE_TIME</text>
+<text x="77.47" y="1.905" size="1.778" layer="94">Blatt</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="A4L-LOC" prefix="FRAME" uservalue="yes">
@@ -267,6 +314,19 @@ DIN A3, landscape with location and doc. field</description>
 <description>A5L LOC</description>
 <gates>
 <gate name="G$1" symbol="A5L-LOC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DINA-DOC" prefix="FRAME" uservalue="yes">
+<description>DINA DOC</description>
+<gates>
+<gate name="G$1" symbol="DINA-DOC" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -32609,7 +32669,6 @@ TWI M    ADR: 0x1C</text>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" deviceset="+5V" device=""/>
 <part name="+3V9" library="supply1" deviceset="+3V3" device=""/>
-<part name="⌁21" library="kitt.con" deviceset="SINGLEPAD" device="40MIL-BREAK.PILOT"/>
 </parts>
 <sheets>
 <sheet>
@@ -32689,7 +32748,6 @@ TWI M    ADR: 0x1C</text>
 <instance part="GND8" gate="1" x="208.28" y="58.42" rot="R270"/>
 <instance part="P+2" gate="1" x="205.74" y="96.52" rot="R90"/>
 <instance part="+3V9" gate="G$1" x="205.74" y="104.14" rot="MR270"/>
-<instance part="⌁21" gate="G$1" x="228.6" y="134.62"/>
 </instances>
 <busses>
 </busses>
@@ -33821,6 +33879,30 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 </sheet>
 </sheets>
 </module>
+<module name="POW-1540" prefix="A" dx="40.64" dy="25.4">
+<ports>
+</ports>
+<variantdefs>
+</variantdefs>
+<parts>
+<part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
+<part name="FRAME2" library="frames" deviceset="DINA-DOC" device=""/>
+</parts>
+<sheets>
+<sheet>
+<plain>
+</plain>
+<instances>
+<instance part="FRAME1" gate="G$1" x="0" y="0"/>
+<instance part="FRAME2" gate="G$1" x="7.62" y="7.62"/>
+</instances>
+<busses>
+</busses>
+<nets>
+</nets>
+</sheet>
+</sheets>
+</module>
 </modules>
 <parts>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
@@ -34475,6 +34557,7 @@ Capacitor and ESD38, what's this?</text>
 <text x="12.7" y="180.34" size="1.778" layer="98" ratio="20" align="center-left">for developers who dislike screwing around
 with phoenix contact 100mil connectors
 - breakaway next to LTC connector</text>
+<text x="195.58" y="58.42" size="7.62" layer="90" ratio="20" align="center">⎚</text>
 </plain>
 <moduleinsts>
 <moduleinst name="A5" module="POW-4000" x="248.92" y="127" smashed="yes">
@@ -34500,6 +34583,9 @@ with phoenix contact 100mil connectors
 </moduleinst>
 <moduleinst name="A3" module="SEN-GYRO1" x="160.02" y="162.56" smashed="yes">
 <attribute name="NAME" x="139.7" y="173.99" size="2.032" layer="95" rot="R180" align="top-right"/>
+</moduleinst>
+<moduleinst name="A10" module="POW-1540" x="208.28" y="58.42" smashed="yes">
+<attribute name="NAME" x="190.5" y="73.66" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
 </moduleinsts>
 <instances>
