@@ -34362,6 +34362,7 @@ Seems unlikely a 33MR will be a 0402</text>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="P+11" library="supply1" deviceset="+5V" device=""/>
+<part name="P+12" library="supply1" deviceset="+18V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -34520,6 +34521,9 @@ Bridges serve double duty:
 <instance part="GND17" gate="1" x="111.76" y="137.16" rot="MR180"/>
 <instance part="P+8" gate="1" x="91.44" y="137.16" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="90.805" y="137.795" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="P+12" gate="1" x="99.06" y="137.16" smashed="yes">
+<attribute name="VALUE" x="101.6" y="142.24" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -34932,6 +34936,14 @@ Bridges serve double duty:
 <label x="106.68" y="160.02" size="1.778" layer="95" rot="MR180" xref="yes"/>
 </segment>
 </net>
+<net name="+18V" class="0">
+<segment>
+<pinref part="P+12" gate="1" pin="+18V"/>
+<pinref part="SV2" gate="1" pin="2"/>
+<wire x1="99.06" y1="134.62" x2="99.06" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="132.08" x2="101.6" y2="129.54" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -35041,8 +35053,8 @@ NEAR BATTERY</text>
 <moduleinst name="A3" module="SEN-GYRO1" x="124.46" y="172.72" smashed="yes">
 <attribute name="NAME" x="104.14" y="184.15" size="2.032" layer="95" rot="R180" align="top-right"/>
 </moduleinst>
-<moduleinst name="A10" module="POW-1540" x="279.4" y="114.3" smashed="yes">
-<attribute name="NAME" x="261.62" y="129.54" size="2.032" layer="95" align="bottom-center"/>
+<moduleinst name="A10" module="POW-1540" x="276.86" y="114.3" smashed="yes">
+<attribute name="NAME" x="259.08" y="129.54" size="2.032" layer="95" align="bottom-center"/>
 </moduleinst>
 </moduleinsts>
 <instances>
@@ -35175,8 +35187,8 @@ NEAR BATTERY</text>
 <wire x1="187.96" y1="83.82" x2="205.74" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="83.82" x2="218.44" y2="83.82" width="0.1524" layer="91"/>
 <junction x="205.74" y="83.82"/>
-<wire x1="218.44" y1="83.82" x2="284.48" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="284.48" y1="83.82" x2="325.12" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="83.82" x2="281.94" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="83.82" x2="325.12" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="83.82" x2="205.74" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="35.56" x2="218.44" y2="35.56" width="0.1524" layer="91"/>
 <label x="345.44" y="85.09" size="1.778" layer="95"/>
@@ -35206,8 +35218,8 @@ NEAR BATTERY</text>
 <wire x1="294.64" y1="63.5" x2="294.64" y2="66.04" width="0.1524" layer="91"/>
 <junction x="294.64" y="66.04"/>
 <portref moduleinst="A10" port="GND"/>
-<wire x1="284.48" y1="93.98" x2="284.48" y2="83.82" width="0.1524" layer="91"/>
-<junction x="284.48" y="83.82"/>
+<wire x1="281.94" y1="93.98" x2="281.94" y2="83.82" width="0.1524" layer="91"/>
+<junction x="281.94" y="83.82"/>
 </segment>
 <segment>
 <portref moduleinst="A2" port="GND"/>
@@ -35270,14 +35282,14 @@ NEAR BATTERY</text>
 <portref moduleinst="A2" port="MOT.OUT-"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="✳TOP.MOT-" class="0">
 <segment>
 <pinref part="SJ1" gate="G$1" pin="2"/>
 <pinref part="X2.1" gate="-1" pin="1"/>
 <wire x1="25.4" y1="35.56" x2="30.48" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="TOP.MOT+" class="0">
+<net name="✳TOP.MOT+" class="0">
 <segment>
 <pinref part="X2.1" gate="-2" pin="1"/>
 <portref moduleinst="A2" port="MOT.OUT+"/>
@@ -35568,7 +35580,7 @@ NEAR BATTERY</text>
 <portref moduleinst="A5" port="DDC.VOUT"/>
 <wire x1="241.3" y1="106.68" x2="246.38" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="246.38" y1="106.68" x2="246.38" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="254" y1="106.68" x2="246.38" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="106.68" x2="246.38" y2="106.68" width="0.1524" layer="91"/>
 <junction x="246.38" y="106.68"/>
 <portref moduleinst="A10" port="POW.SRC"/>
 </segment>
@@ -35635,8 +35647,8 @@ NEAR BATTERY</text>
 <wire x1="223.52" y1="66.04" x2="223.52" y2="50.8" width="0.1524" layer="91"/>
 <junction x="223.52" y="50.8"/>
 <portref moduleinst="A10" port="VBAT"/>
-<wire x1="274.32" y1="93.98" x2="274.32" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="88.9" x2="215.9" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="93.98" x2="271.78" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="88.9" x2="215.9" y2="88.9" width="0.1524" layer="91"/>
 <junction x="215.9" y="88.9"/>
 </segment>
 </net>
@@ -35656,10 +35668,11 @@ NEAR BATTERY</text>
 <label x="96.52" y="134.62" size="1.778" layer="95" ratio="20" xref="yes"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="TOP.VSYS/GUARD" class="0">
 <segment>
 <portref moduleinst="A9" port="VIN"/>
 <portref moduleinst="A10" port="POW.SINK"/>
+<wire x1="302.26" y1="106.68" x2="304.8" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
