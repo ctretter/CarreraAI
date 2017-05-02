@@ -31489,15 +31489,13 @@ Low ESR, OP~5V,ceramic</text>
 <label x="220.98" y="86.36" size="1.778" layer="95" xref="yes"/>
 <wire x1="203.2" y1="86.36" x2="208.28" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="86.36" x2="220.98" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="86.36" x2="208.28" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="86.36" x2="208.28" y2="111.76" width="0.1524" layer="91"/>
 <junction x="208.28" y="86.36"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 <pinref part="U1" gate="X" pin="BAT"/>
-<wire x1="205.74" y1="111.76" x2="165.1" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="205.74" y1="111.76" x2="208.28" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="111.76" x2="165.1" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="A" pin="D"/>
-<wire x1="208.28" y1="109.22" x2="208.28" y2="111.76" width="0.1524" layer="91"/>
-<junction x="208.28" y="109.22"/>
+<junction x="208.28" y="111.76"/>
 </segment>
 </net>
 <net name="BAT.NTC" class="0">
@@ -31529,15 +31527,13 @@ Low ESR, OP~5V,ceramic</text>
 </net>
 <net name="CSN" class="0">
 <segment>
-<wire x1="165.1" y1="121.92" x2="205.74" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="132.08" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="121.92" x2="208.28" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="132.08" x2="208.28" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
 <pinref part="U1" gate="X" pin="CSN"/>
 <label x="175.26" y="124.46" size="1.778" layer="95" ratio="20" rot="R180"/>
-<wire x1="205.74" y1="121.92" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="A" pin="S"/>
-<wire x1="208.28" y1="121.92" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
-<junction x="208.28" y="124.46"/>
+<junction x="208.28" y="121.92"/>
 </segment>
 </net>
 <net name="BGATE" class="0">
@@ -31606,9 +31602,9 @@ Low ESR, OP~5V,ceramic</text>
 </net>
 <net name="DDC.VOUT" class="0">
 <segment>
-<wire x1="142.24" y1="147.32" x2="149.86" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="147.32" x2="149.86" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="147.32" x2="149.86" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="144.78" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="144.78" x2="139.7" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="147.32" x2="182.88" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="147.32" x2="182.88" y2="142.24" width="0.1524" layer="91"/>
 <junction x="149.86" y="147.32"/>
@@ -31629,8 +31625,8 @@ Low ESR, OP~5V,ceramic</text>
 <label x="154.94" y="149.86" size="1.778" layer="95" rot="R180"/>
 <pinref part="U1" gate="X" pin="CSP"/>
 <pinref part="U$1" gate="B" pin="D"/>
-<wire x1="137.16" y1="147.32" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
-<junction x="142.24" y="147.32"/>
+<wire x1="137.16" y1="147.32" x2="139.7" y2="147.32" width="0.1524" layer="91"/>
+<junction x="139.7" y="147.32"/>
 </segment>
 </net>
 <net name="DDC.CLN" class="0">
@@ -32348,11 +32344,11 @@ http://cds.linear.com/image/1940asch.png</text>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="R3.1" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
-<part name="R3.2" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
-<part name="R3.3" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎑"/>
-<part name="R3.4" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎑"/>
-<part name="R3.5" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
-<part name="R3.6" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
+<part name="R3.2" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="R3.3" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎑"/>
+<part name="R3.4" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎑"/>
+<part name="R3.5" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="R3.6" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
@@ -32360,8 +32356,8 @@ http://cds.linear.com/image/1940asch.png</text>
 <part name="C3.XX" library="rcl" deviceset="C-EU" device="C0805" value="10nF/⇤"/>
 <part name="R3.9" library="rcl" deviceset="R-EU_" device="R0603" value="60R/⇤"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
-<part name="R3.10" library="rcl" deviceset="R-EU_" device="R0603" value="10k/⎒"/>
-<part name="R3.11" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎑"/>
+<part name="R3.10" library="rcl" deviceset="R-EU_" device="R0402" value="10k/⎒"/>
+<part name="R3.11" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎑"/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="C3.1" library="rcl" deviceset="C-EU" device="C0805" value="10nF/⇤"/>
@@ -33654,7 +33650,6 @@ Populate with Capacitor and fitting value</text>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
-<part name="C1" library="rcl" deviceset="C-EU" device="C0805K" value="100nF/⇤"/>
 </parts>
 <sheets>
 <sheet>
@@ -33688,6 +33683,10 @@ looks nicer than a bus.</text>
 <wire x1="142.24" y1="17.78" x2="139.7" y2="20.32" width="0.4064" layer="97"/>
 <wire x1="137.16" y1="5.715" x2="142.24" y2="5.715" width="0.4064" layer="97"/>
 <text x="233.68" y="99.06" size="1.778" layer="97" ratio="20" align="center-left">{H}</text>
+<text x="86.36" y="40.64" size="1.778" layer="98">removed
+because
+really close to
+output caps of 5VDCDC</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -33717,7 +33716,6 @@ looks nicer than a bus.</text>
 <attribute name="NAME" x="43.18" y="50.5714" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="43.18" y="47.752" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="C1" gate="G$1" x="93.98" y="45.72"/>
 </instances>
 <busses>
 <bus name="S1.RUN,S1.PGOOD,S1.MODE,S1.FREQ,S2.INACT,S2.EN">
@@ -33841,7 +33839,6 @@ looks nicer than a bus.</text>
 <junction x="99.06" y="142.24"/>
 <label x="238.76" y="142.24" size="1.778" layer="95" ratio="20" xref="yes"/>
 <wire x1="99.06" y1="142.24" x2="238.76" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="48.26" x2="93.98" y2="142.24" width="0.1524" layer="91"/>
 <junction x="93.98" y="142.24"/>
 </segment>
@@ -33880,7 +33877,6 @@ looks nicer than a bus.</text>
 <label x="17.78" y="33.02" size="1.778" layer="95" ratio="20" rot="R180" xref="yes"/>
 <wire x1="104.14" y1="33.02" x2="238.76" y2="33.02" width="0.1524" layer="91"/>
 <label x="238.76" y="33.02" size="1.778" layer="95" ratio="20" xref="yes"/>
-<pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="93.98" y1="40.64" x2="93.98" y2="33.02" width="0.1524" layer="91"/>
 <junction x="93.98" y="33.02"/>
 </segment>
@@ -34176,8 +34172,8 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R0402" value="430R"/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0402K" value="1uF/⇤"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0402" value="25kR"/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="R0402" value="33MR"/>
-<part name="R4" library="rcl" deviceset="R-EU_" device="R0402" value="33MR"/>
+<part name="R3" library="rcl" deviceset="R-EU_" device="M0805" value="XXMR"/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="M0805" value="XXMR"/>
 </parts>
 <sheets>
 <sheet>
@@ -34407,6 +34403,9 @@ Seems unlikely a 33MR will be a 0402</text>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="P+11" library="supply1" deviceset="+5V" device=""/>
 <part name="P+12" library="supply1" deviceset="+18V" device=""/>
+<part name="P+13" library="supply1" deviceset="+5V" device=""/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="R0402" value="100R"/>
+<part name="L2" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD/0R/⎵"/>
 </parts>
 <sheets>
 <sheet>
@@ -34548,7 +34547,7 @@ Bridges serve double duty:
 <instance part="X2" gate="X" x="121.92" y="58.42"/>
 <instance part="X2" gate="REF" x="119.38" y="58.42"/>
 <instance part="GND5" gate="1" x="25.4" y="63.5" rot="MR0"/>
-<instance part="SUPPLY3" gate="P" x="22.86" y="99.06"/>
+<instance part="SUPPLY3" gate="P" x="12.7" y="101.6"/>
 <instance part="D1" gate="G$1" x="33.02" y="91.44" rot="R180"/>
 <instance part="GND7" gate="1" x="93.98" y="43.18" rot="MR0"/>
 <instance part="GND11" gate="1" x="149.86" y="43.18" rot="MR0"/>
@@ -34568,6 +34567,14 @@ Bridges serve double duty:
 </instance>
 <instance part="P+12" gate="1" x="99.06" y="137.16" smashed="yes">
 <attribute name="VALUE" x="101.6" y="142.24" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="P+13" gate="1" x="40.64" y="101.6" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="40.005" y="102.235" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="R1" gate="G$1" x="20.32" y="91.44"/>
+<instance part="L2" gate="G$1" x="152.4" y="149.86" smashed="yes" rot="R270">
+<attribute name="NAME" x="148.59" y="151.3586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="148.59" y="146.558" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -34717,6 +34724,12 @@ Bridges serve double duty:
 <pinref part="P+8" gate="1" pin="+5V"/>
 <pinref part="SV2" gate="1" pin="1"/>
 <wire x1="91.44" y1="134.62" x2="99.06" y2="129.54" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+13" gate="1" pin="+5V"/>
+<pinref part="D1" gate="G$1" pin="A1"/>
+<wire x1="40.64" y1="99.06" x2="40.64" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="91.44" x2="38.1" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="UNO.5V" class="0">
@@ -34949,9 +34962,9 @@ Bridges serve double duty:
 <net name="+4.1V" class="0">
 <segment>
 <pinref part="SUPPLY3" gate="P" pin="+4.1V"/>
-<pinref part="D1" gate="G$1" pin="A2"/>
-<wire x1="22.86" y1="96.52" x2="22.86" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="91.44" x2="27.94" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="99.06" x2="12.7" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="15.24" y1="91.44" x2="12.7" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SV2" gate="1" pin="3"/>
@@ -34986,6 +34999,13 @@ Bridges serve double duty:
 <pinref part="SV2" gate="1" pin="2"/>
 <wire x1="99.06" y1="134.62" x2="99.06" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="132.08" x2="101.6" y2="129.54" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="D1" gate="G$1" pin="A2"/>
+<wire x1="25.4" y1="91.44" x2="27.94" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
