@@ -2664,6 +2664,29 @@ CONTROLLER </text>
 </device>
 </devices>
 </deviceset>
+<deviceset name="IRF7328">
+<gates>
+<gate name="A" symbol="P-MOSFET" x="-2.54" y="10.16"/>
+<gate name="B" symbol="P-MOSFET" x="-2.54" y="-10.16"/>
+</gates>
+<devices>
+<device name="" package="SOIC8">
+<connects>
+<connect gate="A" pin="D" pad="7 8"/>
+<connect gate="A" pin="G" pad="2"/>
+<connect gate="A" pin="S" pad="1"/>
+<connect gate="B" pin="D" pad="5 6"/>
+<connect gate="B" pin="G" pad="4"/>
+<connect gate="B" pin="S" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CC" value="XYX17" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="supply1">
@@ -31179,12 +31202,10 @@ W = angled&lt;p&gt;
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0402" value="16kR/⇤"/>
 <part name="☇3" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0603K" value="47nF/⇤"/>
-<part name="T1" library="kitt.ic" deviceset="SI4427BDY" device="" value="PCF/XX"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="1MR"/>
 <part name="R8" library="rcl" deviceset="R-EU_" device="R0402" value="68kR/1%"/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="R0402" value="27kR/1%"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0402" value="100kR"/>
-<part name="T2" library="kitt.ic" deviceset="SI4427BDY" device="" value="PCF/XX"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0402" value="270kR"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C1206K" value="100uF/~5V"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
@@ -31197,6 +31218,7 @@ W = angled&lt;p&gt;
 <part name="☇9" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="R1" library="kitt.psvs" deviceset="RKELV" device="1206" value="0.82R/⚻"/>
 <part name="U1" library="kitt.ic" deviceset="LTC4000" device="LTC4000EUFD#XXX"/>
+<part name="U$1" library="kitt.ic" deviceset="IRF7328" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -31215,8 +31237,6 @@ W = angled&lt;p&gt;
 <rectangle x1="128.27" y1="48.26" x2="137.16" y2="58.42" layer="116"/>
 <text x="177.8" y="91.44" size="1.778" layer="115" ratio="20" align="center-left">[kerash]</text>
 <text x="195.58" y="86.36" size="1.778" layer="115" ratio="20" align="center-left">[kerash]</text>
-<text x="205.74" y="116.84" size="1.778" layer="115" ratio="20" align="center-left">[kerash]</text>
-<text x="127" y="147.32" size="1.778" layer="115" ratio="20" align="center-left">[kerash]</text>
 <rectangle x1="185.42" y1="129.54" x2="205.74" y2="142.24" layer="116"/>
 <text x="198.12" y="142.24" size="1.778" layer="98" ratio="20" align="center-left">[spec1]</text>
 <text x="162.56" y="30.48" size="1.778" layer="98" ratio="20" align="center-left">[spec1]: 
@@ -31263,10 +31283,6 @@ Low ESR, OP~5V,ceramic</text>
 <attribute name="NAME" x="111.506" y="143.129" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="111.506" y="140.589" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="T1" gate="G$1" x="132.08" y="144.78" smashed="yes" rot="R90">
-<attribute name="VALUE" x="127" y="149.86" size="1.778" layer="96"/>
-<attribute name="NAME" x="127" y="152.4" size="1.778" layer="95"/>
-</instance>
 <instance part="R3" gate="G$1" x="139.7" y="139.7" smashed="yes" rot="MR270">
 <attribute name="NAME" x="142.24" y="142.0114" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="142.24" y="139.192" size="1.778" layer="96" rot="MR180"/>
@@ -31283,7 +31299,6 @@ Low ESR, OP~5V,ceramic</text>
 <attribute name="NAME" x="185.42" y="102.87" size="1.778" layer="95"/>
 <attribute name="VALUE" x="185.42" y="100.33" size="1.778" layer="96"/>
 </instance>
-<instance part="T2" gate="G$1" x="205.74" y="116.84"/>
 <instance part="R4" gate="G$1" x="182.88" y="137.16" smashed="yes" rot="MR90">
 <attribute name="NAME" x="180.34" y="138.43" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="180.34" y="135.89" size="1.778" layer="96" rot="MR0"/>
@@ -31307,6 +31322,8 @@ Low ESR, OP~5V,ceramic</text>
 <instance part="U1" gate="X" x="121.92" y="101.6" smashed="yes">
 <attribute name="NAME" x="86.36" y="132.08" size="1.4224" layer="95" ratio="5"/>
 </instance>
+<instance part="U$1" gate="A" x="132.08" y="144.78" rot="R90"/>
+<instance part="U$1" gate="B" x="205.74" y="116.84"/>
 </instances>
 <busses>
 </busses>
@@ -31459,12 +31476,12 @@ Low ESR, OP~5V,ceramic</text>
 <segment>
 <wire x1="129.54" y1="142.24" x2="129.54" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="134.62" x2="134.62" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="T1" gate="G$1" pin="G"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="U1" gate="X" pin="IGATE"/>
 <wire x1="134.62" y1="134.62" x2="129.54" y2="134.62" width="0.1524" layer="91"/>
 <junction x="134.62" y="134.62"/>
 <label x="137.16" y="137.16" size="1.778" layer="95" ratio="20" rot="R180"/>
+<pinref part="U$1" gate="A" pin="G"/>
 </segment>
 </net>
 <net name="BAT.+" class="0">
@@ -31476,9 +31493,9 @@ Low ESR, OP~5V,ceramic</text>
 <wire x1="208.28" y1="111.76" x2="165.1" y2="111.76" width="0.1524" layer="91"/>
 <junction x="208.28" y="86.36"/>
 <pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="T2" gate="G$1" pin="D"/>
-<junction x="208.28" y="111.76"/>
 <pinref part="U1" gate="X" pin="BAT"/>
+<pinref part="U$1" gate="B" pin="D"/>
+<junction x="208.28" y="111.76"/>
 </segment>
 </net>
 <net name="BAT.NTC" class="0">
@@ -31513,10 +31530,10 @@ Low ESR, OP~5V,ceramic</text>
 <wire x1="165.1" y1="121.92" x2="208.28" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="132.08" x2="208.28" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
-<pinref part="T2" gate="G$1" pin="S"/>
-<junction x="208.28" y="121.92"/>
 <pinref part="U1" gate="X" pin="CSN"/>
 <label x="175.26" y="124.46" size="1.778" layer="95" ratio="20" rot="R180"/>
+<pinref part="U$1" gate="B" pin="S"/>
+<junction x="208.28" y="121.92"/>
 </segment>
 </net>
 <net name="BGATE" class="0">
@@ -31524,8 +31541,8 @@ Low ESR, OP~5V,ceramic</text>
 <wire x1="165.1" y1="116.84" x2="167.64" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="116.84" x2="167.64" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="119.38" x2="203.2" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="T2" gate="G$1" pin="G"/>
 <pinref part="U1" gate="X" pin="BGATE"/>
+<pinref part="U$1" gate="B" pin="G"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -31562,13 +31579,13 @@ Low ESR, OP~5V,ceramic</text>
 </net>
 <net name="DDC.IID" class="0">
 <segment>
-<pinref part="T1" gate="G$1" pin="S"/>
-<wire x1="127" y1="147.32" x2="121.92" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="147.32" x2="121.92" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="147.32" x2="121.92" y2="154.94" width="0.1524" layer="91"/>
 <junction x="121.92" y="147.32"/>
 <label x="121.92" y="154.94" size="1.778" layer="95" rot="R90" xref="yes"/>
 <pinref part="U1" gate="X" pin="IID"/>
+<pinref part="U$1" gate="A" pin="S"/>
+<wire x1="121.92" y1="147.32" x2="127" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DDC.VIN" class="0">
@@ -31585,11 +31602,9 @@ Low ESR, OP~5V,ceramic</text>
 </net>
 <net name="DDC.VOUT" class="0">
 <segment>
-<wire x1="137.16" y1="147.32" x2="139.7" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="147.32" x2="149.86" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="147.32" x2="149.86" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="144.78" x2="139.7" y2="147.32" width="0.1524" layer="91"/>
-<junction x="139.7" y="147.32"/>
 <wire x1="149.86" y1="147.32" x2="182.88" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="147.32" x2="182.88" y2="142.24" width="0.1524" layer="91"/>
 <junction x="149.86" y="147.32"/>
@@ -31601,7 +31616,6 @@ Low ESR, OP~5V,ceramic</text>
 <junction x="190.5" y="147.32"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<pinref part="T1" gate="G$1" pin="D"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="208.28" y1="147.32" x2="233.68" y2="147.32" width="0.1524" layer="91"/>
@@ -31610,6 +31624,9 @@ Low ESR, OP~5V,ceramic</text>
 <label x="187.96" y="149.86" size="1.778" layer="95" rot="R180"/>
 <label x="154.94" y="149.86" size="1.778" layer="95" rot="R180"/>
 <pinref part="U1" gate="X" pin="CSP"/>
+<pinref part="U$1" gate="A" pin="D"/>
+<wire x1="137.16" y1="147.32" x2="139.7" y2="147.32" width="0.1524" layer="91"/>
+<junction x="139.7" y="147.32"/>
 </segment>
 </net>
 <net name="DDC.CLN" class="0">
@@ -34233,7 +34250,7 @@ Seems unlikely a 33MR will be a 0402</text>
 <junction x="154.94" y="132.08"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="REF" class="0">
 <segment>
 <pinref part="U1" gate="U" pin="REF"/>
 <wire x1="134.62" y1="88.9" x2="119.38" y2="88.9" width="0.1524" layer="91"/>
@@ -34249,14 +34266,14 @@ Seems unlikely a 33MR will be a 0402</text>
 <junction x="119.38" y="109.22"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="COMP" class="0">
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="119.38" y1="66.04" x2="119.38" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="HYST" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="73.66" x2="86.36" y2="68.58" width="0.1524" layer="91"/>
@@ -34268,7 +34285,7 @@ Seems unlikely a 33MR will be a 0402</text>
 <junction x="86.36" y="73.66"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="IN-" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="U1" gate="U" pin="IN-"/>
