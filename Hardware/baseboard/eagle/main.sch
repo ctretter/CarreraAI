@@ -31322,8 +31322,8 @@ Low ESR, OP~5V,ceramic</text>
 <instance part="U1" gate="X" x="121.92" y="101.6" smashed="yes">
 <attribute name="NAME" x="86.36" y="132.08" size="1.4224" layer="95" ratio="5"/>
 </instance>
-<instance part="U$1" gate="A" x="132.08" y="144.78" rot="R90"/>
-<instance part="U$1" gate="B" x="205.74" y="116.84"/>
+<instance part="U$1" gate="A" x="205.74" y="116.84"/>
+<instance part="U$1" gate="B" x="132.08" y="144.78" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -31481,7 +31481,7 @@ Low ESR, OP~5V,ceramic</text>
 <wire x1="134.62" y1="134.62" x2="129.54" y2="134.62" width="0.1524" layer="91"/>
 <junction x="134.62" y="134.62"/>
 <label x="137.16" y="137.16" size="1.778" layer="95" ratio="20" rot="R180"/>
-<pinref part="U$1" gate="A" pin="G"/>
+<pinref part="U$1" gate="B" pin="G"/>
 </segment>
 </net>
 <net name="BAT.+" class="0">
@@ -31489,13 +31489,15 @@ Low ESR, OP~5V,ceramic</text>
 <label x="220.98" y="86.36" size="1.778" layer="95" xref="yes"/>
 <wire x1="203.2" y1="86.36" x2="208.28" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="86.36" x2="220.98" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="86.36" x2="208.28" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="111.76" x2="165.1" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="86.36" x2="208.28" y2="109.22" width="0.1524" layer="91"/>
 <junction x="208.28" y="86.36"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 <pinref part="U1" gate="X" pin="BAT"/>
-<pinref part="U$1" gate="B" pin="D"/>
-<junction x="208.28" y="111.76"/>
+<wire x1="205.74" y1="111.76" x2="165.1" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="111.76" x2="208.28" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="A" pin="D"/>
+<wire x1="208.28" y1="109.22" x2="208.28" y2="111.76" width="0.1524" layer="91"/>
+<junction x="208.28" y="109.22"/>
 </segment>
 </net>
 <net name="BAT.NTC" class="0">
@@ -31527,13 +31529,15 @@ Low ESR, OP~5V,ceramic</text>
 </net>
 <net name="CSN" class="0">
 <segment>
-<wire x1="165.1" y1="121.92" x2="208.28" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="132.08" x2="208.28" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="121.92" x2="205.74" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="132.08" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
 <pinref part="U1" gate="X" pin="CSN"/>
 <label x="175.26" y="124.46" size="1.778" layer="95" ratio="20" rot="R180"/>
-<pinref part="U$1" gate="B" pin="S"/>
-<junction x="208.28" y="121.92"/>
+<wire x1="205.74" y1="121.92" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="A" pin="S"/>
+<wire x1="208.28" y1="121.92" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
+<junction x="208.28" y="124.46"/>
 </segment>
 </net>
 <net name="BGATE" class="0">
@@ -31542,7 +31546,7 @@ Low ESR, OP~5V,ceramic</text>
 <wire x1="167.64" y1="116.84" x2="167.64" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="119.38" x2="203.2" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="U1" gate="X" pin="BGATE"/>
-<pinref part="U$1" gate="B" pin="G"/>
+<pinref part="U$1" gate="A" pin="G"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -31584,8 +31588,8 @@ Low ESR, OP~5V,ceramic</text>
 <junction x="121.92" y="147.32"/>
 <label x="121.92" y="154.94" size="1.778" layer="95" rot="R90" xref="yes"/>
 <pinref part="U1" gate="X" pin="IID"/>
-<pinref part="U$1" gate="A" pin="S"/>
-<wire x1="121.92" y1="147.32" x2="127" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="B" pin="S"/>
+<wire x1="127" y1="147.32" x2="121.92" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DDC.VIN" class="0">
@@ -31602,9 +31606,9 @@ Low ESR, OP~5V,ceramic</text>
 </net>
 <net name="DDC.VOUT" class="0">
 <segment>
-<wire x1="139.7" y1="147.32" x2="149.86" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="147.32" x2="149.86" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="147.32" x2="149.86" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="144.78" x2="139.7" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="144.78" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="147.32" x2="182.88" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="147.32" x2="182.88" y2="142.24" width="0.1524" layer="91"/>
 <junction x="149.86" y="147.32"/>
@@ -31624,9 +31628,9 @@ Low ESR, OP~5V,ceramic</text>
 <label x="187.96" y="149.86" size="1.778" layer="95" rot="R180"/>
 <label x="154.94" y="149.86" size="1.778" layer="95" rot="R180"/>
 <pinref part="U1" gate="X" pin="CSP"/>
-<pinref part="U$1" gate="A" pin="D"/>
-<wire x1="137.16" y1="147.32" x2="139.7" y2="147.32" width="0.1524" layer="91"/>
-<junction x="139.7" y="147.32"/>
+<pinref part="U$1" gate="B" pin="D"/>
+<wire x1="137.16" y1="147.32" x2="142.24" y2="147.32" width="0.1524" layer="91"/>
+<junction x="142.24" y="147.32"/>
 </segment>
 </net>
 <net name="DDC.CLN" class="0">
@@ -35118,7 +35122,7 @@ NEAR BATTERY</text>
 <attribute name="VALUE" x="233.68" y="93.98" size="1.778" layer="96"/>
 </instance>
 <instance part="S3" gate="G$1" x="144.78" y="114.3" rot="MR0"/>
-<instance part="S1" gate="G$1" x="237.49" y="50.8"/>
+<instance part="S1" gate="G$1" x="238.76" y="50.8" rot="MR0"/>
 <instance part="P+4" gate="1" x="121.92" y="243.84" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="120.65" y="245.11" size="1.778" layer="96" rot="MR90"/>
 </instance>
@@ -35247,9 +35251,9 @@ NEAR BATTERY</text>
 <wire x1="304.8" y1="66.04" x2="294.64" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="294.64" y1="66.04" x2="274.32" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="274.32" y1="66.04" x2="274.32" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="55.88" x2="245.11" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="245.11" y1="55.88" x2="245.11" y2="59.69" width="0.1524" layer="91"/>
-<wire x1="245.11" y1="59.69" x2="218.44" y2="59.69" width="0.1524" layer="91"/>
+<wire x1="274.32" y1="55.88" x2="250.19" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="250.19" y1="55.88" x2="250.19" y2="59.69" width="0.1524" layer="91"/>
+<wire x1="250.19" y1="59.69" x2="218.44" y2="59.69" width="0.1524" layer="91"/>
 <pinref part="X1" gate="A" pin="2"/>
 <pinref part="X1" gate="B" pin="2"/>
 <label x="217.17" y="38.1" size="1.778" layer="95" ratio="20" rot="R180"/>
@@ -35468,17 +35472,17 @@ NEAR BATTERY</text>
 </net>
 <net name="TOP.BAT/CON" class="0">
 <segment>
-<pinref part="S1" gate="G$1" pin="1"/>
-<wire x1="247.65" y1="53.34" x2="274.32" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="53.34" x2="274.32" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="248.92" y1="50.8" x2="274.32" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="274.32" y1="50.8" x2="274.32" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="274.32" y1="45.72" x2="294.64" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="294.64" y1="45.72" x2="304.8" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="304.8" y1="45.72" x2="304.8" y2="53.34" width="0.1524" layer="91"/>
-<label x="267.97" y="52.07" size="1.778" layer="95" ratio="20" rot="R180"/>
+<label x="267.97" y="54.61" size="1.778" layer="95" ratio="20" rot="R180"/>
 <pinref part="X1" gate="A" pin="1"/>
 <pinref part="D2" gate="G$1" pin="B"/>
 <wire x1="294.64" y1="48.26" x2="294.64" y2="45.72" width="0.1524" layer="91"/>
 <junction x="294.64" y="45.72"/>
+<pinref part="S1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -35679,17 +35683,17 @@ NEAR BATTERY</text>
 <segment>
 <portref moduleinst="A5" port="BAT.+"/>
 <wire x1="215.9" y1="93.98" x2="215.9" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="S1" gate="G$1" pin="2"/>
-<wire x1="215.9" y1="88.9" x2="215.9" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="227.33" y1="50.8" x2="223.52" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="215.9" y1="88.9" x2="215.9" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="P" pin="+4.1V"/>
-<wire x1="223.52" y1="50.8" x2="215.9" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="223.52" y1="66.04" x2="223.52" y2="50.8" width="0.1524" layer="91"/>
-<junction x="223.52" y="50.8"/>
+<wire x1="228.6" y1="48.26" x2="223.52" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="48.26" x2="215.9" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="66.04" x2="223.52" y2="48.26" width="0.1524" layer="91"/>
+<junction x="223.52" y="48.26"/>
 <portref moduleinst="A10" port="VBAT"/>
 <wire x1="271.78" y1="93.98" x2="271.78" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="271.78" y1="88.9" x2="215.9" y2="88.9" width="0.1524" layer="91"/>
 <junction x="215.9" y="88.9"/>
+<pinref part="S1" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="TOP.RRX" class="0">
