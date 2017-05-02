@@ -31216,7 +31216,7 @@ W = angled&lt;p&gt;
 <part name="☇8" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="☇6" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="☇9" library="testpad" deviceset="PTR1" device="TP07SQ"/>
-<part name="R1" library="kitt.psvs" deviceset="RKELV" device="1206" value="0.82R/⚻"/>
+<part name="R1" library="kitt.psvs" deviceset="RKELV" device="1206" value="8.2mR/⚻"/>
 <part name="U1" library="kitt.ic" deviceset="LTC4000" device="LTC4000EUFD#XXX"/>
 <part name="U$1" library="kitt.ic" deviceset="IRF7328" device=""/>
 </parts>
@@ -31742,6 +31742,8 @@ Low ESR, OP~5V,ceramic</text>
 <part name="☇9" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="☇2" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="R1" library="kitt.psvs" deviceset="RKELV" device="1206" value="15mR/25mW⚻"/>
+<part name="C4" library="rcl" deviceset="CPOL-EU" device="C/6032-28R" value="100uF"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C0402K" value="1uF/⇤"/>
 </parts>
 <sheets>
 <sheet>
@@ -31782,7 +31784,6 @@ http://cds.linear.com/image/1940asch.png</text>
 <text x="226.06" y="93.98" size="1.778" layer="115" ratio="20" align="center-left">[kerash]</text>
 <text x="226.06" y="71.12" size="1.778" layer="115" ratio="20" align="center-left">[kerash]</text>
 <text x="210.82" y="116.84" size="1.778" layer="115" ratio="20" align="center-left">[domh]</text>
-<text x="40.64" y="149.86" size="1.778" layer="115" ratio="20" align="center-left">[CAP MISSING?]</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -31823,6 +31824,11 @@ http://cds.linear.com/image/1940asch.png</text>
 <instance part="☇9" gate="G$1" x="118.11" y="7.62" rot="MR270"/>
 <instance part="☇2" gate="G$1" x="147.32" y="22.86" rot="MR270"/>
 <instance part="R1" gate="G$1" x="213.36" y="116.84" rot="MR0"/>
+<instance part="C4" gate="G$1" x="246.38" y="99.06"/>
+<instance part="C5" gate="G$1" x="53.34" y="73.66" smashed="yes" rot="MR0">
+<attribute name="NAME" x="50.546" y="72.771" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="50.546" y="70.231" size="1.778" layer="96" rot="MR0"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -31852,6 +31858,14 @@ http://cds.linear.com/image/1940asch.png</text>
 <wire x1="177.8" y1="58.42" x2="228.6" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="228.6" y1="58.42" x2="228.6" y2="66.04" width="0.1524" layer="91"/>
 <junction x="177.8" y="58.42"/>
+<pinref part="C4" gate="G$1" pin="-"/>
+<wire x1="246.38" y1="93.98" x2="246.38" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="58.42" x2="228.6" y2="58.42" width="0.1524" layer="91"/>
+<junction x="228.6" y="58.42"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="68.58" x2="53.34" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="58.42" x2="68.58" y2="58.42" width="0.1524" layer="91"/>
+<junction x="68.58" y="58.42"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
@@ -31869,8 +31883,8 @@ http://cds.linear.com/image/1940asch.png</text>
 <net name="DDC.ITH" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="ITH"/>
-<wire x1="73.66" y1="86.36" x2="48.26" y2="86.36" width="0.1524" layer="91"/>
-<label x="48.26" y="86.36" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="73.66" y1="86.36" x2="30.48" y2="86.36" width="0.1524" layer="91"/>
+<label x="30.48" y="86.36" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="144.78" y1="22.86" x2="129.54" y2="22.86" width="0.1524" layer="91"/>
@@ -31882,14 +31896,18 @@ http://cds.linear.com/image/1940asch.png</text>
 <segment>
 <pinref part="U1" gate="A" pin="VIN"/>
 <wire x1="91.44" y1="139.7" x2="91.44" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="154.94" x2="50.8" y2="154.94" width="0.1524" layer="91"/>
-<label x="50.8" y="154.94" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="91.44" y1="154.94" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
+<label x="22.86" y="154.94" size="1.778" layer="95" rot="R180" xref="yes"/>
 <pinref part="T1" gate="A" pin="D"/>
+<wire x1="53.34" y1="154.94" x2="22.86" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="132.08" x2="177.8" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="154.94" x2="91.44" y2="154.94" width="0.1524" layer="91"/>
 <junction x="91.44" y="154.94"/>
 <label x="96.52" y="157.48" size="1.778" layer="95" rot="R180"/>
 <label x="182.88" y="157.48" size="1.778" layer="95" rot="R180"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="53.34" y1="76.2" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
+<junction x="53.34" y="154.94"/>
 </segment>
 </net>
 <net name="BG" class="0">
@@ -31932,11 +31950,15 @@ http://cds.linear.com/image/1940asch.png</text>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="218.44" y1="116.84" x2="228.6" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="228.6" y1="116.84" x2="236.22" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="228.6" y1="116.84" x2="246.38" y2="116.84" width="0.1524" layer="91"/>
 <junction x="228.6" y="116.84"/>
+<wire x1="246.38" y1="116.84" x2="251.46" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="228.6" y1="116.84" x2="228.6" y2="99.06" width="0.1524" layer="91"/>
-<label x="236.22" y="116.84" size="1.778" layer="95" xref="yes"/>
+<label x="251.46" y="116.84" size="1.778" layer="95" xref="yes"/>
 <pinref part="R1" gate="G$1" pin="+"/>
+<pinref part="C4" gate="G$1" pin="+"/>
+<wire x1="246.38" y1="101.6" x2="246.38" y2="116.84" width="0.1524" layer="91"/>
+<junction x="246.38" y="116.84"/>
 </segment>
 </net>
 <net name="↔VFB" class="0">
@@ -31965,8 +31987,8 @@ http://cds.linear.com/image/1940asch.png</text>
 <net name="CTRL.PLLIN/MODE" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="PLLIN/MODE"/>
-<wire x1="73.66" y1="96.52" x2="48.26" y2="96.52" width="0.1524" layer="91"/>
-<label x="48.26" y="96.52" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="73.66" y1="96.52" x2="30.48" y2="96.52" width="0.1524" layer="91"/>
+<label x="30.48" y="96.52" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="115.57" y1="7.62" x2="92.71" y2="7.62" width="0.1524" layer="91"/>
@@ -31979,8 +32001,8 @@ http://cds.linear.com/image/1940asch.png</text>
 <pinref part="U1" gate="A" pin="FREQ"/>
 <wire x1="73.66" y1="109.22" x2="66.04" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="109.22" x2="66.04" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="106.68" x2="48.26" y2="106.68" width="0.1524" layer="91"/>
-<label x="48.26" y="106.68" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="66.04" y1="106.68" x2="30.48" y2="106.68" width="0.1524" layer="91"/>
+<label x="30.48" y="106.68" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="115.57" y1="22.86" x2="92.71" y2="22.86" width="0.1524" layer="91"/>
@@ -31991,8 +32013,8 @@ http://cds.linear.com/image/1940asch.png</text>
 <net name="CTRL.RUN" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="RUN"/>
-<wire x1="73.66" y1="111.76" x2="48.26" y2="111.76" width="0.1524" layer="91"/>
-<label x="48.26" y="111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="73.66" y1="111.76" x2="30.48" y2="111.76" width="0.1524" layer="91"/>
+<label x="30.48" y="111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="115.57" y1="12.7" x2="92.71" y2="12.7" width="0.1524" layer="91"/>
@@ -32003,8 +32025,8 @@ http://cds.linear.com/image/1940asch.png</text>
 <net name="CTRL.PGOOD" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="PGOOD"/>
-<wire x1="73.66" y1="124.46" x2="50.8" y2="124.46" width="0.1524" layer="91"/>
-<label x="50.8" y="124.46" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="73.66" y1="124.46" x2="30.48" y2="124.46" width="0.1524" layer="91"/>
+<label x="30.48" y="124.46" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="115.57" y1="17.78" x2="92.71" y2="17.78" width="0.1524" layer="91"/>
@@ -33981,7 +34003,7 @@ looks nicer than a bus.</text>
 <part name="D1" library="diode" deviceset="SCHOTTKY-DIODE" device="SMD"/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="L1" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD"/>
-<part name="C1.1" library="rcl" deviceset="C-EU" device="C1210K" value="XX"/>
+<part name="C1" library="rcl" deviceset="C-EU" device="C1210K" value="10uF"/>
 <part name="F1" library="rcl" deviceset="R-EU_" device="R1210" value="1.5A-&gt;750mA "/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0805W" value="10kR"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0805W" value="2.2kR"/>
@@ -34005,6 +34027,7 @@ V|out = [3.3 3.8]V
 V|out = A*V|in -&gt; A = ~10/12
 R1 = 10k
 A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
+<rectangle x1="78.74" y1="66.04" x2="91.44" y2="73.66" layer="116"/>
 </plain>
 <instances>
 <instance part="P+8" gate="1" x="93.98" y="91.44" smashed="yes">
@@ -34013,7 +34036,7 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <instance part="D1" gate="G$1" x="53.34" y="83.82"/>
 <instance part="GND18" gate="1" x="83.82" y="48.26"/>
 <instance part="L1" gate="G$1" x="72.39" y="83.82" rot="MR270"/>
-<instance part="C1.1" gate="G$1" x="83.82" y="71.12"/>
+<instance part="C1" gate="G$1" x="83.82" y="71.12"/>
 <instance part="F1" gate="G$1" x="116.84" y="83.82"/>
 <instance part="R3" gate="G$1" x="104.14" y="76.2" smashed="yes" rot="R90">
 <attribute name="NAME" x="106.045" y="76.4286" size="1.778" layer="95"/>
@@ -34097,7 +34120,7 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <junction x="104.14" y="83.82"/>
 <pinref part="P+8" gate="1" pin="+18V"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-<pinref part="C1.1" gate="G$1" pin="1"/>
+<pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="L1" gate="G$1" pin="2"/>
 <pinref part="F1" gate="G$1" pin="1"/>
 <wire x1="83.82" y1="83.82" x2="83.82" y2="101.6" width="0.1524" layer="91"/>
@@ -34118,7 +34141,7 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <wire x1="104.14" y1="55.88" x2="104.14" y2="53.34" width="0.1524" layer="91"/>
 <junction x="104.14" y="53.34"/>
 <wire x1="104.14" y1="53.34" x2="132.08" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="C1.1" gate="G$1" pin="2"/>
+<pinref part="C1" gate="G$1" pin="2"/>
 <pinref part="GND18" gate="1" pin="GND"/>
 <pinref part="R4" gate="G$1" pin="1"/>
 <pinref part="R2" gate="G$1" pin="1"/>
