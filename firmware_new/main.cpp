@@ -17,13 +17,14 @@
 #include <sys/ioctl.h>
 #include <signal.h>
 #include <atomic>
+#include <fstream>
+
 #include "hps_0.h"
 #include "DataAcquisition.h"
 #include "MatlabConnect/MatlabTCP.h"
 #include "Controller.h"
 #include "Correlation.h"
 #include "lsm9d1.h"
-
 
 static unsigned long const HW_REGS_BASE = ALT_STM_OFST;
 static unsigned long const HW_REGS_SPAN = 0x04000000;
@@ -63,7 +64,7 @@ static bool SensorInitialized = false;
 #define OFFSET_MOTION_REG 0x01
 #define OFFSET_DATA_REG 0x02
 #define OFFSET_TIME_REG 0x03
-#define MOTION_DETECTED = 0x80
+#define MOTION_DETECTED 0x80
 
 // implementation of data acquisition using optical sensor
 void GetOpticalSensorData() 
@@ -72,11 +73,18 @@ void GetOpticalSensorData()
 	
 	uint32_t dataX = 0;
 	uint32_t dataY = 0;
+
+	static std::ofstream f;
+	if(!f.is_open())
+	{
+	  f.open("motion_logfile.txt", ios::out | ios::app);
+	  f << "Data samples begin here" << std::endl << std::endl;
+	}
 	
 	std::cout << "Try to connect to memory space of optical sensor information ..." << std::endl;
 	if (!OpticalSensorAddress)
 	{
-		std::cerr << "Error! Address currently not initialized!" << std::endl;
+	  std::cerr << "Error! Address currently not initialized!" << std::endl;
 	}
 	else
 	{	
@@ -105,11 +113,13 @@ void GetOpticalSensorData()
 				
 				dataX = (sensorData << 8) >> 24;
 				dataY = (sensorData >> 24);
-				std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
+				//std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
+				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				
 				std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
 				sensorData = alt_read_word(OpticalSensor + OFFSET_TIME_REG);
-				std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
+				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
+				f << "elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
 			}
 			else
 			{
@@ -118,7 +128,7 @@ void GetOpticalSensorData()
 		}
 	}	
 }
-
+/*
 void SignalHandler(int signalNumber)
 {
 	std::cerr << "Received signal" << std::endl;
@@ -230,6 +240,9 @@ int main(int argc, char **argv)
 	}
 	DataAcquisition::GetInstance()->Start();
 
+	// initialize sensor
+	GetOpticalSensorData();
+	
 	while(true) {
 		// Get data sample from data acquisition thread
 		dataSample_t dataSample;
@@ -364,6 +377,32 @@ int main(int argc, char **argv)
 		//int pwmValue = Controller::GetInstance()->GetOutput();
 		//printf("%.5f; %.5f; %.5f; %.5f; %.5f; %.5f; %5d\n", dataSample.time, dataSample.distance - lapStartDistance, dataSample.speed, dataSample.yawRate, distanceCorrected, Controller::GetInstance()->GetSetpoint(), pwmValue);
 	}
+}
+*/
+
+int main(int argc, char **argv)
+{
+  // Map the address space of the FPGA registers into user space so we can interact with them.
+  errno = 0;
+  MemoryFileDescriptor = open("/dev/mem", (O_RDWR | O_SYNC));
+  if(MemoryFileDescriptor == -1) {
+	perror("Error opening /dev/mem");
+	return 1;
+  }
+  
+  errno = 0;
+  VirtualBaseAddress = mmap(NULL, HW_REGS_SPAN, (PROT_READ | PROT_WRITE), MAP_SHARED, MemoryFileDescriptor, HW_REGS_BASE);
+  if(VirtualBaseAddress == MAP_FAILED) {
+	perror("Error executing mmap");
+	close(MemoryFileDescriptor);
+	return 1;
+  }
+  
+  OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
+  
+  while(true){
+	GetOpticalSensorData();
+  }
 }
 
 timespec TimeDifference(timespec start, timespec end)
