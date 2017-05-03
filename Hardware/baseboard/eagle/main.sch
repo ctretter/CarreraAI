@@ -34184,6 +34184,22 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <text x="71.12" y="71.12" size="1.9304" layer="98" rot="R90">[todo]
 Package?
 Seems unlikely a 33MR will be a 0402</text>
+<text x="182.88" y="83.82" size="1.778" layer="98">[TODO]
+Add Logic/transistors for
+a; a bias in case the battery is not connected
+b; when the comparator shuts off when the battery is connected
+c; when the system managment might want to override</text>
+<wire x1="218.44" y1="96.52" x2="228.6" y2="101.6" width="0.1524" layer="98"/>
+<wire x1="228.6" y1="101.6" x2="231.14" y2="109.22" width="0.1524" layer="98"/>
+<wire x1="231.14" y1="109.22" x2="231.14" y2="114.3" width="0.1524" layer="98"/>
+<wire x1="231.14" y1="114.3" x2="226.06" y2="119.38" width="0.1524" layer="98"/>
+<wire x1="226.06" y1="119.38" x2="208.28" y2="124.46" width="0.1524" layer="98"/>
+<wire x1="208.28" y1="124.46" x2="200.66" y2="124.46" width="0.1524" layer="98"/>
+<wire x1="200.66" y1="124.46" x2="193.04" y2="127" width="0.1524" layer="98"/>
+<wire x1="193.04" y1="127" x2="193.04" y2="124.46" width="0.1524" layer="98"/>
+<wire x1="193.04" y1="124.46" x2="198.12" y2="127" width="0.1524" layer="98"/>
+<wire x1="198.12" y1="127" x2="193.04" y2="127" width="0.1524" layer="98"/>
+<text x="213.36" y="96.52" size="1.778" layer="98">High side PMOS gate:</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -34475,6 +34491,8 @@ Bridges serve double duty:
 2. If filtered connection needed, populate with bead</text>
 <text x="99.06" y="30.48" size="1.9304" layer="98">Question:
 [an##]: annotation##  or anton##?</text>
+<text x="7.62" y="142.24" size="1.778" layer="98" rot="R90">VIN and IOREF are Outpus</text>
+<text x="30.48" y="165.1" size="1.778" layer="98">tie to 3v3 from ghostcar bb20</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
