@@ -1,6 +1,6 @@
 BINARY = Ghostcar
 
-TARGET_IP = 192.168.1.102
+TARGET_IP = 192.168.2.102
 TARGET_PATH = root@${TARGET_IP}:/home/root
 
 SOCEDS_DEST_ROOT ?= ../firmware/altera_SOCEDS_DEST_ROOT
@@ -43,7 +43,7 @@ OBJ_CPP := $(subst $(EXT_CPP),.o,$(SRC_CPP))
 .PHONY: clean all build documentation
 
 all: clean dirs build
-	@ #ping -c2 -W1 ${TARGET_IP} && scp ${BINARY} ${TARGET_PATH}
+	@ ping -c2 -W1 ${TARGET_IP} && scp bin/${BINARY} ${TARGET_PATH}
 
 dirs:
 	@mkdir -p $(OBJ_DIR)
