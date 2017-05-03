@@ -1,0 +1,20 @@
+
+State Machine - |TestOpticalSensorXYCycV|OpticalSensorXY:uut|State
+Name State.OutputAndWaitForWrite State.ReadDataYReg State.WaitForReadDataY State.SetDataYReg State.ReadDataXReg State.WaitForReadDataX State.SetDataXReg State.CheckMotionReg State.ReadMotionReg State.WaitForReadMotion State.SetMotionReg State.ReadProductIDReg State.WaitForReadProductID State.SetProductIDReg State.Init State.WaitAfterReset State.DoReset 
+State.DoReset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+State.WaitAfterReset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+State.Init 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+State.SetProductIDReg 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+State.WaitForReadProductID 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+State.ReadProductIDReg 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+State.SetMotionReg 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+State.WaitForReadMotion 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+State.ReadMotionReg 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+State.CheckMotionReg 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+State.SetDataXReg 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+State.WaitForReadDataX 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+State.ReadDataXReg 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+State.SetDataYReg 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+State.WaitForReadDataY 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+State.ReadDataYReg 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+State.OutputAndWaitForWrite 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

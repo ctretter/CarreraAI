@@ -102,6 +102,9 @@ architecture Rtl of AvalonToOpticalSensor is
 	signal Sel					: std_ulogic										:= '0';
 	signal ResetSensor			: std_ulogic										:= '0';
 	signal ValidProductID		: std_ulogic										:= '0';
+	signal MotionDetected		: std_ulogic										:= '0';
+	signal ValidReadAccess		: std_ulogic										:= '0';
+	signal ReadEnableDetected	: std_ulogic										:= '0';
 	
 begin
 
@@ -115,13 +118,16 @@ begin
 	avs_s0_readdata	<= std_logic_vector(AvalonReadData);
 	
 	-- port wiring to unresolved signals of optical sensor
-	MISO 			<= std_ulogic(iMISO);
-	oMOSI 			<= std_logic(MOSI);
-	oNPD 			<= std_logic(NPD);
-	oResetSensor	<= std_logic(ResetSensor);
-	oSysClk 		<= std_logic(SysClk);
-	oSelect 		<= std_logic(Sel);
-	oValidProductID <= std_logic(ValidProductID);
+	MISO 				<= std_ulogic(iMISO);
+	oMOSI 				<= std_logic(MOSI);
+	oNPD 				<= std_logic(NPD);
+	oResetSensor		<= std_logic(ResetSensor);
+	oSysClk 			<= std_logic(SysClk);
+	oSelect 			<= std_logic(Sel);
+	oValidProductID 	<= std_logic(ValidProductID);
+	oMotionDetected 	<= std_logic(MotionDetected);
+	oValidReadAccess	<= std_logic(ValidReadAccess);
+	oReadEnableDetected <= std_logic(ReadEnableDetected);
 
 	-- #################################################
 	-- Instantiation: Unit Under Test - OpticalSensorCommunicator
@@ -196,11 +202,34 @@ begin
 
 		elsif (rising_edge(Clk)) then
 		
-			if (ProductID = "00000111") then
+			-- LED visualization for ProductID
+			if (ProductID = "00010111") then
 				ValidProductID <= '1';
 			else
 				ValidProductID <= '0';
 			end if;
+			
+			-- LED visualization for MotionDetected
+			if (Motion = cNewDataReceived) then
+				MotionDetected <= '1';
+			else
+				MotionDetected <= '0';
+			end if;
+			
+			-- LED visualization for read access
+			if (AvalonAddr = cAddrProductID or AvalonAddr = cAddrMotionDetected or AvalonAddr = cAddrTimeMeasured or AvalonAddr = cAddrData) then
+				ValidReadAccess <= '1';
+			else 
+				ValidReadAccess <= '0';
+			end if;
+			
+			-- LED visualization for read enable
+			if (AvalonRE = '1') then
+				ReadEnableDetected <= '1';
+			else
+				ReadEnableDetected <= '0';
+			end if;
+			
 			-- increase time ctr each cycle to calculate speed in software
 			-- time will be read by software
 			TimeCtr <= TimeCtr + 1;
