@@ -34200,6 +34200,8 @@ c; when the system managment might want to override</text>
 <wire x1="193.04" y1="124.46" x2="198.12" y2="127" width="0.1524" layer="98"/>
 <wire x1="198.12" y1="127" x2="193.04" y2="127" width="0.1524" layer="98"/>
 <text x="213.36" y="96.52" size="1.778" layer="98">High side PMOS gate:</text>
+<text x="165.1" y="116.84" size="1.778" layer="98">Pin2 really N/C?
+</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
