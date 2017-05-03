@@ -154,6 +154,29 @@ double CalcMaxSpeed(double const dx, double const dy, double const omega)
 	return CalcMaxSpeed(RadiusCalculation(dx,dy,omega));
 }
 
+enum EAccel {Faster,Neutral,Slower};
+
+EAccel Regulation(double const maxspeed, double const speed)
+{
+	EAccel res = Neutral;
+	if (speed < maxspeed)
+	{
+		res = EAccel::Faster;
+	}
+	else if (speed > maxspeed)
+	{
+		res = EAccel::Slower;
+	}
+	return res;	
+}
+
+// TODO: measure track
+// TODO: create class for pair of maxspeed|position(length)
+// TODO: measure max. slow down acceleration (reality) (a)
+// TODO: convertion from gyro to omega
+// TODO: calculate foresight distance (l_f = (v_min-v_cur)*(v_min-v_cur)/(2*a) )
+// TODO: choose maxspeed (v_max = min(v_max_future,v_max_cur) )
+
 /*
   void SignalHandler(int signalNumber)
   {
