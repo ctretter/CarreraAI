@@ -111,7 +111,7 @@ void GetOpticalSensorData()
 				std::cout << "New motion detected! Reading data ..." << std::endl;
 				sensorData = alt_read_word(OpticalSensor + OFFSET_DATA_REG);
 				
-				dataX = (sensorData << 8) >> 24;
+				dataX = (sensorData << 8) >> 24; // TODO constants
 				dataY = (sensorData >> 24);
 				//std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;

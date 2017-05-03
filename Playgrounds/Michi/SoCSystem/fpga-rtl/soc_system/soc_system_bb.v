@@ -78,12 +78,12 @@ module soc_system (
 	motor_control_0_external_roundsignal,
 	pio_led_external_connection_export,
 	reset_reset_n,
-	opticalsensor_external_connection_miso,
-	opticalsensor_external_connection_mosi,
-	opticalsensor_external_connection_select,
-	opticalsensor_external_connection_sysclk,
-	opticalsensor_external_connection_npd,
-	opticalsensor_external_connection_sensorrst);	
+	avalontoopticalsensor_sensor_ports_miso,
+	avalontoopticalsensor_sensor_ports_mosi,
+	avalontoopticalsensor_sensor_ports_select,
+	avalontoopticalsensor_sensor_ports_sysclk,
+	avalontoopticalsensor_sensor_ports_npd,
+	avalontoopticalsensor_sensor_ports_sensorrst);	
 
 	output	[7:0]	carleds_external_connection_export;
 	input	[7:0]	carsensors_external_connection_export;
@@ -163,10 +163,10 @@ module soc_system (
 	input		motor_control_0_external_roundsignal;
 	output	[7:0]	pio_led_external_connection_export;
 	input		reset_reset_n;
-	input		opticalsensor_external_connection_miso;
-	output		opticalsensor_external_connection_mosi;
-	output		opticalsensor_external_connection_select;
-	output		opticalsensor_external_connection_sysclk;
-	output		opticalsensor_external_connection_npd;
-	output		opticalsensor_external_connection_sensorrst;
+	input		avalontoopticalsensor_sensor_ports_miso;
+	output		avalontoopticalsensor_sensor_ports_mosi;
+	output		avalontoopticalsensor_sensor_ports_select;
+	output		avalontoopticalsensor_sensor_ports_sysclk;
+	output		avalontoopticalsensor_sensor_ports_npd;
+	output		avalontoopticalsensor_sensor_ports_sensorrst;
 endmodule
