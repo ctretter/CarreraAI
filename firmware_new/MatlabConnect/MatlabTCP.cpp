@@ -201,8 +201,8 @@ void MatlabTCP::ThreadFunction() {
 				statusData.speed = dataSample.speed;
 				statusData.yawRate = dataSample.yawRate * dataSample.speed;
 				statusData.settings = 0x1; // TODO proper value
-				statusData.controllerOutput = Controller::GetOutput();
-				statusData.controllerSetpoint = Controller::GetSetpoint();
+				statusData.controllerOutput = Controller::GetInstance()->GetOutput();
+				statusData.controllerSetpoint = Controller::GetInstance()->GetSetpoint();
 				statusData.lapCount = DataAcquisition::GetInstance()->GetLapCount();
 				std::chrono::milliseconds lapTime = std::chrono::duration_cast<std::chrono::milliseconds> (std::chrono::steady_clock::now() - lapStartTime);
 				statusData.currentLapTime = lapTime.count();
