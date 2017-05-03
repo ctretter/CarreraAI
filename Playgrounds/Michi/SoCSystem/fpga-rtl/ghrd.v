@@ -165,14 +165,28 @@ module ghrd(
   wire 		  oSysClk;
   wire		  oMOSI;
   wire 		  iMISO;
+  wire 		  oValidProductID;
+  wire		  oMotionDetected;
+  wire 		  oReadEnableDetected;
+  wire        oValidReadAccess;
+  wire 		  oErrorProductID;
+  wire 		  oResetActive;
   
   // optical sensor mapping
-  assign GPIO_0[1] = iMISO;
+  assign iMISO = GPIO_0[1];
   assign GPIO_0[3] = oNPD;
   assign GPIO_0[4] = oSelect;
   assign GPIO_0[5] = oSensorReset;
   assign GPIO_0[6] = oMOSI;
   assign GPIO_0[7] = oSysClk;
+  assign LED[0] = oResetActive;
+  assign LED[1] = oErrorProductID;
+  assign LED[2] = oValidProductID;
+  assign LED[3] = oMotionDetected;
+  assign LED[4] = oReadEnableDetected;
+  assign LED[5] = oValidReadAccess;
+  
+
   
   
   
@@ -197,9 +211,9 @@ module ghrd(
   //assign iCarSensors[7] = <spare>;
   
   // board leds mapping
-  assign LED[0] = oPWM_Out;
-  assign LED[1] = ~ oRUN_nBrake;
-  assign LED[2+:6] = oBoardLeds[2+:6];
+  //assign LED[0] = oPWM_Out;
+  //assign LED[1] = ~ oRUN_nBrake;
+  //assign LED[2+:6] = oBoardLeds[2+:6];
 
   assign iVCar = ARDUINO_IO[0];
 //assign ARDUINO_IO[1] = <UART_TX>
@@ -316,12 +330,18 @@ module ghrd(
 	.pio_led_external_connection_export    (oBoardLeds),      						   	//  pio_led_external_connection.export
 	.carleds_external_connection_export    (oCarLeds),    								//    carleds_external_connection.export
 	.carsensors_external_connection_export (iCarSensors),								// carsensors_external_connection.export
-	.avalontoopticalsensor_sensor_ports_miso      (iMISO),      						// avalontoopticalsensor_sensor_ports.miso
-	.avalontoopticalsensor_sensor_ports_mosi      (oMOSI),      						//                                   .mosi
-	.avalontoopticalsensor_sensor_ports_select    (oSelect),    						//                                   .select
-	.avalontoopticalsensor_sensor_ports_sysclk    (oSysClk),    						//                                   .sysclk
-	.avalontoopticalsensor_sensor_ports_npd       (oNPD),       						//                                   .npd
-	.avalontoopticalsensor_sensor_ports_sensorrst (oSensorReset)						//                                   .sensorrst
+	.avalontoopticalsensor_communication_0_opticalsensorports_miso      (iMISO),      						// avalontoopticalsensor_sensor_ports.miso
+	.avalontoopticalsensor_communication_0_opticalsensorports_mosi      (oMOSI),      						//                                   .mosi
+	.avalontoopticalsensor_communication_0_opticalsensorports_select    (oSelect),    						//                                   .select
+	.avalontoopticalsensor_communication_0_opticalsensorports_sysclk    (oSysClk),    						//                                   .sysclk
+	.avalontoopticalsensor_communication_0_opticalsensorports_npd       (oNPD),       						//                                   .npd
+	.avalontoopticalsensor_communication_0_opticalsensorports_sensorrst (oSensorReset),						//                                   .sensorrst
+	.avalontoopticalsensor_communication_0_opticalsensorports_validproductid (oValidProductID),						//                                   .sensorrst
+	.avalontoopticalsensor_communication_0_opticalsensorports_motiondetected (oMotionDetected),						
+	.avalontoopticalsensor_communication_0_opticalsensorports_validreadaccess (oValidReadAccess),						
+	.avalontoopticalsensor_communication_0_opticalsensorports_readenabledetected (oReadEnableDetected),
+	.avalontoopticalsensor_communication_0_opticalsensorports_errorproductid (oErrorProductID),	
+	.avalontoopticalsensor_communication_0_opticalsensorports_resetactive (oResetActive),
 );
 
 hps_reset hps_reset_inst (

@@ -21,7 +21,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "11";
          type = "int";
       }
    }
@@ -29,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "9";
          type = "int";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "10";
          type = "int";
       }
    }
@@ -45,7 +45,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "8";
          type = "int";
       }
    }
@@ -61,7 +61,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "7";
          type = "int";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "5";
          type = "int";
       }
    }
@@ -97,27 +97,11 @@
          type = "String";
       }
    }
-   element hps_only_master
-   {
-      datum _sortIndex
-      {
-         value = "2";
-         type = "int";
-      }
-   }
-   element hps_only_master.master
-   {
-      datum _tags
-      {
-         value = "";
-         type = "String";
-      }
-   }
    element intr_capturer_0
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "6";
          type = "int";
       }
    }
@@ -159,7 +143,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "4";
          type = "int";
       }
    }
@@ -193,7 +177,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "3";
          type = "int";
       }
    }
@@ -381,11 +365,67 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "2";
          type = "int";
       }
    }
@@ -424,7 +464,7 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface
-   name="avalontoopticalsensor_sensor_ports"
+   name="avalontoopticalsensor_communication_0_opticalsensorports"
    internal="AvalonToOpticalSensor_Communication_0.OpticalSensorPorts"
    type="conduit"
    dir="end" />
@@ -481,7 +521,7 @@
  <module
    name="AvalonToOpticalSensor_Communication_0"
    kind="AvalonToOpticalSensor_Communication"
-   version="1.0"
+   version="1.1"
    enabled="1">
   <parameter name="gAddrWidth" value="8" />
   <parameter name="gClockFrequency" value="50000000" />
@@ -1069,20 +1109,6 @@
   <parameter name="use_default_mpu_clk" value="true" />
  </module>
  <module
-   name="hps_only_master"
-   kind="altera_jtag_avalon_master"
-   version="15.0"
-   enabled="1">
-  <parameter name="AUTO_DEVICE" value="5CSEMA4U23C6" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
-  <parameter name="COMPONENT_CLOCK" value="0" />
-  <parameter name="FAST_VER" value="0" />
-  <parameter name="FIFO_DEPTHS" value="2" />
-  <parameter name="PLI_PORT" value="50000" />
-  <parameter name="USE_PLI" value="0" />
- </module>
- <module
    name="intr_capturer_0"
    kind="intr_capturer"
    version="100.99.98.97"
@@ -1115,7 +1141,7 @@
    version="15.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_onchip_memory2_0</parameter>
+  <parameter name="autoInitializationFileName">soc_system_onchip_memory2_0</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="64" />
@@ -1262,26 +1288,12 @@
  <connection
    kind="avalon"
    version="15.0"
-   start="hps_only_master.master"
-   end="hps_0.f2h_axi_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="15.0"
    start="fpga_only_master.master"
    end="onchip_memory2_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection
-   kind="clock"
-   version="15.0"
-   start="clk_0.clk"
-   end="hps_only_master.clk" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="sysid_qsys.clk" />
  <connection
    kind="clock"
@@ -1348,11 +1360,6 @@
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="1" />
  </connection>
- <connection
-   kind="reset"
-   version="15.0"
-   start="clk_0.clk_reset"
-   end="hps_only_master.clk_reset" />
  <connection
    kind="reset"
    version="15.0"

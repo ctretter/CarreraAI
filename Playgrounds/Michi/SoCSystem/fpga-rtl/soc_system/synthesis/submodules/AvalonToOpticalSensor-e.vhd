@@ -4,7 +4,7 @@
 -- File        :	AvalonToOpticalSensor-e.vhd
 -- Description : 	entity for communication between Avalon and OpticalSensor
 -------------------------------------------------------------------------------
--- Latest update:	05.04.2017
+-- Latest update:	03.05.2017
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -35,6 +35,14 @@ entity AvalonToOpticalSensor is
 		oSelect				: out std_logic;									-- select input bit
 		oSysClk				: out std_logic;									-- slave clk 1MHz
 		oNPD				: out std_logic;
-		oResetSensor		: out std_logic
+		oResetSensor		: out std_logic;
+		
+		-- debug LEDs
+		oValidProductID		: out std_logic;
+		oMotionDetected 	: out std_logic;	
+		oValidReadAccess	: out std_logic;
+		oReadEnableDetected : out std_logic;
+		oErrorProductID		: out std_logic;
+		oResetActive		: out std_logic
     );
 end AvalonToOpticalSensor;

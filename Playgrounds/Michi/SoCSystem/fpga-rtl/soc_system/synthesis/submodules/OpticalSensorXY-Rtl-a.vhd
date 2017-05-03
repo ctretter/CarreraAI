@@ -31,6 +31,8 @@ architecture Rtl of OpticalSensorXY is
 	signal Sel 					: std_ulogic 									:= '1';
 	signal DataValid			: std_ulogic									:= '0';
 	signal SysClkEnable			: std_ulogic									:= '0';
+	signal ErrorProductID		: std_ulogic									:= '0';
+	signal ResetActive			: std_ulogic									:= '0';
 	signal SlaveClkCounter		: integer 										:= gDataWidth-1;
 	signal SysClkGenCounter 	: integer 										:= 1;
 	signal CntWaitCycles		: integer										:= 1;
@@ -43,6 +45,7 @@ architecture Rtl of OpticalSensorXY is
 	constant cDataYAddr			: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000100";					-- address: 0x04
 	constant cProductIDAddr		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000000";					-- address: 0x00
 	constant cNewDataReceived	: std_ulogic_vector (gDataWidth-1 downto 0)		:= "10000000";					-- new data: 0x80
+	constant cProductID			: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00010111";					-- product id: 0x17
 	constant cMaxSysClkValue	: integer										:= gClkDivider*2;				-- freq to sysclk: (gClkDivider*1MHz)/gClkDivider*2
 	constant cDelayRegisters	: integer										:= 100;							-- 100 µs delay between write -> read
 	constant cDelayNewData		: integer										:= 10;							-- 10 µs delay between read -> write
@@ -69,6 +72,8 @@ begin
 			SysClkGenCounter 	<= 1;
 			CntWaitCycles 		<= 1;
 			SysClkEnable 		<= '0';
+			ErrorProductID		<= '1';
+			ResetActive 		<= '1';
 			MotionReg 			<= (others => '0');
 			DataXReg 			<= (others => '0');
 			DataYReg 			<= (others => '0');
@@ -129,6 +134,7 @@ begin
 										MasterOutput 		<= '0';
 										SysClk 				<= '0';	
 										DataValid 			<= '0';
+										ResetActive			<= '0';
 										oMotion				<= (others => '0');
 										oDataX 				<= (others => '0');	
 										oDataY 				<= (others => '0');	
@@ -409,6 +415,12 @@ begin
 										oDataY <= DataYReg;
 										oProductID <= ProductIDReg;
 										
+										if (ProductIDReg /= cProductID) then
+											ErrorProductID <= '1';
+										else
+											ErrorProductID <= '0';
+										end if;
+										
 																					
 				when others =>			
 										-- reset by error
@@ -420,6 +432,8 @@ begin
 										DataValid 			<= '0';										
 										SysClkGenCounter 	<= 1;
 										CntWaitCycles 		<= 1;
+										ErrorProductID		<= '1';
+										ResetActive			<= '1';
 										MotionReg 			<= (others => '0');
 										DataXReg 			<= (others => '0');
 										DataYReg 			<= (others => '0');
@@ -433,5 +447,7 @@ begin
 	oDataValid <= DataValid;
 	oResetSensor <= ResetSensor;
 	oNPD <= cActivated; -- do not power down sensor any time!
+	oErrorProductID <= ErrorProductID;
+	oResetActive <= ResetActive;
 
 end Rtl;

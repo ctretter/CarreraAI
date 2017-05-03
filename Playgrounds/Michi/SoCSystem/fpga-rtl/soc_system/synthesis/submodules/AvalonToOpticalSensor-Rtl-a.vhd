@@ -4,7 +4,7 @@
 -- File        :	AvalonToOpticalSensor-Rtl-a.vhd
 -- Description : 	architecture to get data from FPGA by using avalon in software
 -------------------------------------------------------------------------------
--- Latest update:	26.04.2017
+-- Latest update:	03.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of AvalonToOpticalSensor is
@@ -81,7 +81,11 @@ architecture Rtl of AvalonToOpticalSensor is
 			oProductID			: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oMotion				: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oDataX				: out std_ulogic_vector (gDataWidth-1 downto 0);
-			oDataY				: out std_ulogic_vector (gDataWidth-1 downto 0)
+			oDataY				: out std_ulogic_vector (gDataWidth-1 downto 0);
+			
+			-- debug outputs
+			oErrorProductID		: out std_ulogic;
+			oResetActive		: out std_ulogic
 		);
     end component;
 	
@@ -101,6 +105,12 @@ architecture Rtl of AvalonToOpticalSensor is
 	signal NPD					: std_ulogic										:= '0';
 	signal Sel					: std_ulogic										:= '0';
 	signal ResetSensor			: std_ulogic										:= '0';
+	signal ValidProductID		: std_ulogic										:= '0';
+	signal MotionDetected		: std_ulogic										:= '0';
+	signal ValidReadAccess		: std_ulogic										:= '0';
+	signal ReadEnableDetected	: std_ulogic										:= '0';
+	signal ErrorProductID		: std_ulogic										:= '0';
+	signal ResetActive			: std_ulogic										:= '0';
 	
 begin
 
@@ -114,12 +124,18 @@ begin
 	avs_s0_readdata	<= std_logic_vector(AvalonReadData);
 	
 	-- port wiring to unresolved signals of optical sensor
-	MISO 			<= std_ulogic(iMISO);
-	oMOSI 			<= std_logic(MOSI);
-	oNPD 			<= std_logic(NPD);
-	oResetSensor	<= std_logic(ResetSensor);
-	oSysClk 		<= std_logic(SysClk);
-	oSelect 		<= std_logic(Sel);
+	MISO 				<= std_ulogic(iMISO);
+	oMOSI 				<= std_logic(MOSI);
+	oNPD 				<= std_logic(NPD);
+	oResetSensor		<= std_logic(ResetSensor);
+	oSysClk 			<= std_logic(SysClk);
+	oSelect 			<= std_logic(Sel);
+	oValidProductID 	<= std_logic(ValidProductID);
+	oMotionDetected 	<= std_logic(MotionDetected);
+	oValidReadAccess	<= std_logic(ValidReadAccess);
+	oReadEnableDetected <= std_logic(ReadEnableDetected);
+	oErrorProductID		<= std_logic(ErrorProductID);
+	oResetActive		<= std_logic(ResetActive);
 
 	-- #################################################
 	-- Instantiation: Unit Under Test - OpticalSensorCommunicator
@@ -144,7 +160,9 @@ begin
 		oProductID		=> ProductID,
 		oMotion			=> Motion,
 		oDataX			=> DataX,
-		oDataY			=> DataY
+		oDataY			=> DataY,
+		oErrorProductID => ErrorProductID,
+		oResetActive	=> ResetActive
 	);
 	
 	-- #################################################
@@ -190,9 +208,38 @@ begin
 			RegTime 		<= (others => '0');
 			DataACK 		<= '1';
 			TimeCtr 		<= 0;
+			ValidProductID  <= '0';
 
 		elsif (rising_edge(Clk)) then
 		
+			-- LED visualization for ProductID
+			if (ProductID = "00010111") then
+				ValidProductID <= '1';
+			else
+				ValidProductID <= '0';
+			end if;
+			
+			-- LED visualization for MotionDetected
+			if (Motion = cNewDataReceived) then
+				MotionDetected <= '1';
+			else
+				MotionDetected <= '0';
+			end if;
+			
+			-- LED visualization for read access
+			if (AvalonAddr = cAddrProductID or AvalonAddr = cAddrMotionDetected or AvalonAddr = cAddrTimeMeasured or AvalonAddr = cAddrData) then
+				ValidReadAccess <= '1';
+			else 
+				ValidReadAccess <= '0';
+			end if;
+			
+			-- LED visualization for read enable
+			if (AvalonRE = '1') then
+				ReadEnableDetected <= '1';
+			else
+				ReadEnableDetected <= '0';
+			end if;
+			
 			-- increase time ctr each cycle to calculate speed in software
 			-- time will be read by software
 			TimeCtr <= TimeCtr + 1;
