@@ -1,8 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.fixed_generic_pkg.all;
---use ieee.fixed_pkg.all;
+--use ieee.fixed_generic_pkg.all;
+use work.fixed_pkg.all;
 
 package NN is
 	constant cDataWidth : integer;
@@ -28,7 +28,7 @@ package body NN is
 	constant cDataWidth : integer := 12;
 	constant cFractionWidth : integer := 52;
 
-	constant c_FP_one : sfixed(11 downto (0-52)) := to_sfixed(std_ulogic_vector(to_unsigned(1,64)), 12, -52);
+	constant c_FP_one : sfixed(11 downto (0-52)) := to_sfixed(std_ulogic_vector(to_signed(1,64)), 11, -52);
 	
 	constant cTrainedWeigth0 : tSynapse_0 := ((x"FF8C3620EE8D10F5",x"FF8CB9170D62BF11",x"FFEE416DF3F96180",x"FFF916F86A098915",x"0011BC60029F16B1"),
 											  (x"0009400431BDE82D",x"002A9D4E8FB00BCB",x"0008AE978D4FDF3B",x"FF8C8426351DEEFE",x"0018A705C896DD26"),

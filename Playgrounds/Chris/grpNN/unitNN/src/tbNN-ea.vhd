@@ -1,10 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.fixed_generic_pkg.all;
-use ieee.fixed_pkg.all
+--use ieee.fixed_generic_pkg.all;
+use work.fixed_pkg.all;
 
-use work.NN.pkg.all;
+use work.NN.all;
 
 --use work.Global.all;
 
@@ -28,7 +28,7 @@ begin
 
 clk <=  not(clk) after 5 ns;
 
-NN: entity work.NN(RTL)
+NN: entity work.NeuralNetwork(RTL3)
 port map(
 	iclk		=> clk,
     inReset 	=> Reset,
@@ -42,8 +42,10 @@ port map(
 	
 stimuli: process is
 begin
+	Reset <= '1';
+	wait for 2 ns;
 	Reset <= '0';
-	wait for 5 ns;
+	wait for 45 ns;
 	Reset <= '1';
 	
 	speed <= x"000E666666666666";
@@ -52,6 +54,6 @@ begin
 	position <= x"0009999999999999";
 	wait;
 	
-end process
+end process;
 	
-end architecture Bhv
+end architecture Bhv;
