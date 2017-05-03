@@ -208,7 +208,7 @@ begin
 			RegTime 		<= (others => '0');
 			DataACK 		<= '1';
 			TimeCtr 		<= 0;
-			ValidProductID <= '0';
+			ValidProductID  <= '0';
 
 		elsif (rising_edge(Clk)) then
 		
