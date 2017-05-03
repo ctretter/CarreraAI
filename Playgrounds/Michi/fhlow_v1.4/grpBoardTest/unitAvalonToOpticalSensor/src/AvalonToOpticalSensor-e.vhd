@@ -36,9 +36,13 @@ entity AvalonToOpticalSensor is
 		oSysClk				: out std_logic;									-- slave clk 1MHz
 		oNPD				: out std_logic;
 		oResetSensor		: out std_logic;
+		
+		-- debug LEDs
 		oValidProductID		: out std_logic;
 		oMotionDetected 	: out std_logic;	
 		oValidReadAccess	: out std_logic;
-		oReadEnableDetected : out std_logic
+		oReadEnableDetected : out std_logic;
+		oErrorProductID		: out std_logic;
+		oResetActive		: out std_logic
     );
 end AvalonToOpticalSensor;

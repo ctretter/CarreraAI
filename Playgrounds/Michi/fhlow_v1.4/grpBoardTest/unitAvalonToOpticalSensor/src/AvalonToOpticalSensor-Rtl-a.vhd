@@ -81,7 +81,11 @@ architecture Rtl of AvalonToOpticalSensor is
 			oProductID			: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oMotion				: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oDataX				: out std_ulogic_vector (gDataWidth-1 downto 0);
-			oDataY				: out std_ulogic_vector (gDataWidth-1 downto 0)
+			oDataY				: out std_ulogic_vector (gDataWidth-1 downto 0);
+			
+			-- debug outputs
+			oErrorProductID		: out std_ulogic;
+			oResetActive		: out std_ulogic
 		);
     end component;
 	
@@ -105,6 +109,8 @@ architecture Rtl of AvalonToOpticalSensor is
 	signal MotionDetected		: std_ulogic										:= '0';
 	signal ValidReadAccess		: std_ulogic										:= '0';
 	signal ReadEnableDetected	: std_ulogic										:= '0';
+	signal ErrorProductID		: std_ulogic										:= '0';
+	signal ResetActive			: std_ulogic										:= '0';
 	
 begin
 
@@ -128,6 +134,8 @@ begin
 	oMotionDetected 	<= std_logic(MotionDetected);
 	oValidReadAccess	<= std_logic(ValidReadAccess);
 	oReadEnableDetected <= std_logic(ReadEnableDetected);
+	oErrorProductID		<= std_logic(ErrorProductID);
+	oResetActive		<= std_logic(ResetActive);
 
 	-- #################################################
 	-- Instantiation: Unit Under Test - OpticalSensorCommunicator
@@ -152,7 +160,9 @@ begin
 		oProductID		=> ProductID,
 		oMotion			=> Motion,
 		oDataX			=> DataX,
-		oDataY			=> DataY
+		oDataY			=> DataY,
+		oErrorProductID => ErrorProductID,
+		oResetActive	=> ResetActive
 	);
 	
 	-- #################################################

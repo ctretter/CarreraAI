@@ -29,6 +29,10 @@ architecture Rtl of TestOpticalSensorXY is
 	signal OneMHzStrobe			: std_ulogic 									:= '0';
 	signal OneKHzStrobe			: std_ulogic 									:= '0';
 	
+	-- debug
+	signal ErrorProductID		: std_ulogic									:= '0';
+	signal ResetActive			: std_ulogic									:= '0';
+	
 	
 	-- component declaration of StrobeGen
 	component StrobeGen
@@ -70,7 +74,11 @@ architecture Rtl of TestOpticalSensorXY is
 			oProductID			: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oMotion				: out std_ulogic_vector (gDataWidth-1 downto 0);
 			oDataX				: out std_ulogic_vector (gDataWidth-1 downto 0);
-			oDataY				: out std_ulogic_vector (gDataWidth-1 downto 0)
+			oDataY				: out std_ulogic_vector (gDataWidth-1 downto 0);
+			
+			-- debug outputs
+			oErrorProductID		: out std_ulogic;
+			oResetActive		: out std_ulogic
 		);
     end component;
 	
@@ -99,7 +107,9 @@ begin
 		oProductID		=> ProductID,
 		oMotion			=> Motion,
 		oDataX			=> DataX,
-		oDataY			=> DataY
+		oDataY			=> DataY,
+		oErrorProductID => ErrorProductID,
+		oResetActive	=> ResetActive
 	);
 	
 	-- #################################################
