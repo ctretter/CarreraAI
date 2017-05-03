@@ -1,0 +1,15 @@
+Diese Pakete sollten von allen neueren Simulations- und Synthesetools
+bereits standardmäßig unterstützt werden. Sie sollten daher die von
+Ihren Tools mitgelieferten Bibliotheken bevorzugen. In einigen der
+vorgegeben Units und Packages (z.B. pkgGlobal) muss dazu allerdings
+die Zeile
+
+  use work.fixed_pkg.all;
+
+durch
+
+  use ieee_proposed.fixed_pkg.all;
+
+ersetzt werden. Zudem muss eventuell das Fixed-Package aus der
+Konfiguation von fhlow entfernt werden.
+
