@@ -4,7 +4,7 @@
 -- File        :	AvalonToOpticalSensor-Rtl-a.vhd
 -- Description : 	architecture to get data from FPGA by using avalon in software
 -------------------------------------------------------------------------------
--- Latest update:	26.04.2017
+-- Latest update:	03.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of AvalonToOpticalSensor is
@@ -101,6 +101,7 @@ architecture Rtl of AvalonToOpticalSensor is
 	signal NPD					: std_ulogic										:= '0';
 	signal Sel					: std_ulogic										:= '0';
 	signal ResetSensor			: std_ulogic										:= '0';
+	signal ValidProductID		: std_ulogic										:= '0';
 	
 begin
 
@@ -120,6 +121,7 @@ begin
 	oResetSensor	<= std_logic(ResetSensor);
 	oSysClk 		<= std_logic(SysClk);
 	oSelect 		<= std_logic(Sel);
+	oValidProductID <= std_logic(ValidProductID);
 
 	-- #################################################
 	-- Instantiation: Unit Under Test - OpticalSensorCommunicator
@@ -190,9 +192,15 @@ begin
 			RegTime 		<= (others => '0');
 			DataACK 		<= '1';
 			TimeCtr 		<= 0;
+			ValidProductID <= '0';
 
 		elsif (rising_edge(Clk)) then
 		
+			if (ProductID = "00000111") then
+				ValidProductID <= '1';
+			else
+				ValidProductID <= '0';
+			end if;
 			-- increase time ctr each cycle to calculate speed in software
 			-- time will be read by software
 			TimeCtr <= TimeCtr + 1;
