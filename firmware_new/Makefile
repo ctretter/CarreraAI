@@ -52,6 +52,7 @@ dirs:
 build: $(BIN_DIR)/$(BINARY)
 $(BIN_DIR)/$(BINARY): $(OBJ) $(OBJ_CPP)
 	@$(CC) $(LDFLAGS)   $^ -o $@
+	@echo "build done"
 	
 %.o : %$(EXT_CPP)
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -60,7 +61,9 @@ $(BIN_DIR)/$(BINARY): $(OBJ) $(OBJ_CPP)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	@-rm -f `find -name "*.o"`
 	@-rm -f -r $(OBJ_DIR)
 	@-rm -f -r $(BIN_DIR)
 	@-rm -f $(BINARY) *.a *.o *~ 
+	@echo "clean done"
 
