@@ -48,10 +48,18 @@ begin
 	wait for 45 ns;
 	Reset <= '1';
 	
-	speed <= x"000E666666666666";
-	gyro  <= x"0008000000000000";
+	--first test
+	--speed <= x"000E666666666666";
+	--gyro  <= x"0008000000000000";
+	--Relation <= x"0008000000000000";
+	--position <= x"0009999999999999";
+	
+	--second test
+	speed <= x"0007333333333333";
+	gyro  <= x"0000000000000000";
 	Relation <= x"0008000000000000";
-	position <= x"0009999999999999";
+	position <= x"0005C28F5C28F5C2";
+	NextCurve <= x"0010000000000000";
 	wait;
 	
 end process;

@@ -82,11 +82,13 @@ begin
 		
 	Counter: process (iclk , inReset) is	
 	begin
-		if(inReset = cnActivated) then
+		if(inReset = '0') then
 			Count <= (others => '0');
 		elsif (iclk'event and iclk = '1') then
 			if (Enable = '1') then
 				Count <=  Count + 1;
+			else
+				Count <= (others => '0');
 			end if;
 		end if;
 	end process;
@@ -99,6 +101,7 @@ begin
 	variable vtmpDendrites_1: tDendrites_1;
 	variable vDendrites_1   : tDendrites_1;
 	variable vtmpDiv	: sfixed(64 downto -64);
+	variable vtmpAdd	: sfixed(gDataWidth downto -gFractionWidth);
 	variable vtmpMatrixMul  : sfixed(24 downto -104);
 	variable vtmpDotMul	: sfixed(24 downto -104);
 	variable vDotMul	: sfixed(gDataWidth-1 downto (0-gFractionWidth));
@@ -142,16 +145,18 @@ begin
 				--Exponent <= to_signed(vfloat,64);
 				Enable <= '1';
 				wait until Count = "00100101";
+				wait until iclk'event and iclk = '0';
 				Enable <= '0';
-				Count <= (others => '0');
-			    vtmpDiv := (c_FP_one/(c_FP_one + IP_Result));
-			    vDendrites_1(i) := vtmpDiv(vtmpDiv'high) & vtmpDiv((gDataWidth-2) downto (0-gFractionWidth));
+				--Count <= (others => '0');
+				vtmpAdd := (c_FP_one sll 52) + IP_Result;
+			    vtmpDiv := ((c_FP_one sll 52)/(vtmpAdd));
+			    vDendrites_1(i) := (vtmpDiv(vtmpDiv'high) & vtmpDiv((gDataWidth-2) downto (0-gFractionWidth)));
 		    end loop;
 		    
 		    --calculate  dot product
 		   -- Dendrite_conv := gSynWeigth1(0) * Dendrite_1(0) + gSynWeigth1(1) * Dendrite_1(1) + gSynWeigth1(2) * Dendrite_1(2);	
 		   -- Dendrite <= Dendrite_conv(Dendrite_conv'high) & Dendrite_conv(10 downto -52);
-
+			vDotMul := (others => '0');
 		    for i in 2 downto 0 loop
 			vtmpDotMul := vDotMul + (gSynWeigth1(i) * vDendrites_1(i));
 			vDotMul  := vtmpDotMul(vtmpDotMul'high) & vtmpDotMul((gDataWidth-2) downto (0-gFractionWidth));
@@ -166,9 +171,11 @@ begin
 			Exponent <= t(vtmps);
 			Enable <= '1';
 			wait until Count = "00100101";
+			wait until iclk'event and iclk = '0';
 			Enable <= '0';
-			Count <= (others => '0');
-		    vtmpDiv := (c_FP_one/(c_FP_one + IP_Result));
+			--Count <= (others => '0');
+			vtmpAdd := (c_FP_one sll 52) + IP_Result;
+		    vtmpDiv := ((c_FP_one sll 52)/(vtmpAdd));
 		    vThrottle := vtmpDiv(vtmpDiv'high) & vtmpDiv((gDataWidth-2) downto (0-gFractionWidth));
 			
 		end if;
