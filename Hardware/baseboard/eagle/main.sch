@@ -35352,8 +35352,6 @@ Jumps Over The Lazy Dog</text>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
-<part name="☈4" library="jumper" deviceset="SJ" device="" value=" "/>
-<part name="☈5" library="jumper" deviceset="SJ" device="" value=" "/>
 <part name="☈6" library="jumper" deviceset="SJ" device="" value=" "/>
 <part name="☈7" library="jumper" deviceset="SJ" device="" value=" "/>
 <part name="☈8" library="jumper" deviceset="SJ" device="" value=" "/>
@@ -35432,6 +35430,7 @@ Jumps Over The Lazy Dog</text>
 <part name="JP2" library="pinhead" deviceset="PINHD-1X1" device=""/>
 <part name="PAD1" library="wirepad" deviceset="WIREPAD" device="SMD2,54-5,08"/>
 <part name="PAD2" library="wirepad" deviceset="WIREPAD" device="SMD2,54-5,08"/>
+<part name="L1" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD/0R/⎵"/>
 </parts>
 <sheets>
 <sheet>
@@ -36279,14 +36278,6 @@ on this board</text>
 <instance part="+3V7" gate="G$1" x="96.52" y="157.48" smashed="yes" rot="R270">
 <attribute name="VALUE" x="97.155" y="156.845" size="1.778" layer="96"/>
 </instance>
-<instance part="☈4" gate="1" x="45.72" y="154.94" smashed="yes" rot="MR0">
-<attribute name="NAME" x="55.88" y="154.94" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="40.64" y="156.21" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="☈5" gate="1" x="45.72" y="157.48" smashed="yes" rot="MR0">
-<attribute name="NAME" x="55.88" y="157.48" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="40.64" y="158.75" size="1.778" layer="96" rot="MR0"/>
-</instance>
 <instance part="☈6" gate="1" x="45.72" y="162.56" smashed="yes" rot="MR0">
 <attribute name="NAME" x="55.88" y="162.56" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="40.64" y="163.83" size="1.778" layer="96" rot="MR0"/>
@@ -36358,9 +36349,9 @@ on this board</text>
 <attribute name="VALUE" x="40.005" y="102.235" size="1.778" layer="96" rot="MR90"/>
 </instance>
 <instance part="R1" gate="G$1" x="20.32" y="91.44"/>
-<instance part="L2" gate="G$1" x="134.62" y="170.18" smashed="yes" rot="R270">
-<attribute name="NAME" x="130.81" y="171.6786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="130.81" y="166.878" size="1.778" layer="96"/>
+<instance part="L2" gate="G$1" x="76.2" y="157.48" smashed="yes" rot="R270">
+<attribute name="NAME" x="72.39" y="158.9786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="72.39" y="154.178" size="1.778" layer="96"/>
 </instance>
 <instance part="X5" gate="G$1" x="134.62" y="137.16" rot="MR0"/>
 <instance part="P+9" gate="G$1" x="170.18" y="142.24" rot="R270"/>
@@ -36384,6 +36375,10 @@ on this board</text>
 <instance part="☇XX1.2" gate="G$1" x="154.94" y="147.32" rot="R90"/>
 <instance part="☇XX1.3" gate="G$1" x="160.02" y="147.32" rot="R90"/>
 <instance part="☇XX1.4" gate="G$1" x="165.1" y="147.32" rot="R90"/>
+<instance part="L1" gate="G$1" x="63.5" y="154.94" smashed="yes" rot="R270">
+<attribute name="NAME" x="59.69" y="156.4386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="59.69" y="151.638" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 <bus name="TOP[0..7],SYSTWI.SCL,SYSTWI.SDA,SYSTWI.!INT,TOP.!RST">
@@ -36411,9 +36406,8 @@ on this board</text>
 </segment>
 <segment>
 <pinref part="+3V7" gate="G$1" pin="+3V3"/>
-<wire x1="81.28" y1="157.48" x2="83.82" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="157.48" x2="93.98" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="157.48" x2="81.28" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="157.48" x2="93.98" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="L2" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="X2" gate="X" pin="2"/>
@@ -36546,8 +36540,8 @@ on this board</text>
 <net name="+5V" class="0">
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
-<pinref part="☈4" gate="1" pin="1"/>
-<wire x1="93.98" y1="154.94" x2="50.8" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="154.94" x2="68.58" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="SV4" gate="G$1" pin="3"/>
@@ -36579,26 +36573,15 @@ on this board</text>
 <net name="UNO.5V" class="0">
 <segment>
 <pinref part="XA1" gate="G$2" pin="5V"/>
-<pinref part="☈4" gate="1" pin="2"/>
-<wire x1="40.64" y1="154.94" x2="27.94" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="2"/>
+<wire x1="58.42" y1="154.94" x2="27.94" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="UNO.3V3" class="0">
 <segment>
 <pinref part="XA1" gate="G$2" pin="3V3"/>
-<pinref part="☈5" gate="1" pin="2"/>
-<wire x1="40.64" y1="157.48" x2="27.94" y2="157.48" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$19" class="0">
-<segment>
-<pinref part="☈5" gate="1" pin="1"/>
-<wire x1="71.12" y1="157.48" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="☈6" gate="1" pin="1"/>
-<wire x1="58.42" y1="157.48" x2="50.8" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="162.56" x2="58.42" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="162.56" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
-<junction x="58.42" y="157.48"/>
+<wire x1="71.12" y1="157.48" x2="27.94" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="L2" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="UNO.IOREF" class="0">
