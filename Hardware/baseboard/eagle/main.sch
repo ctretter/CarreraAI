@@ -57,7 +57,7 @@
 <layer number="90" name="Modules" color="17" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="6" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -80,8 +80,8 @@
 <layer number="113" name="Route13" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="114" name="NO_POPULATE" color="12" fill="10" visible="yes" active="yes"/>
 <layer number="115" name="VERIFY_MARK" color="26" fill="1" visible="yes" active="yes"/>
-<layer number="116" name="BOM_PROCESSED" color="26" fill="10" visible="no" active="yes"/>
-<layer number="117" name="TODO" color="14" fill="1" visible="no" active="yes"/>
+<layer number="116" name="BOM_PROCESSED" color="26" fill="10" visible="yes" active="yes"/>
+<layer number="117" name="TODO" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="mVias" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="119" name="mUnrouted" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="120" name="mDimension" color="7" fill="1" visible="yes" active="yes"/>
@@ -233,21 +233,6 @@
 <text x="140.716" y="4.953" size="2.54" layer="94">Sheet:</text>
 <frame x1="0" y1="0" x2="184.15" y2="133.35" columns="4" rows="4" layer="94"/>
 </symbol>
-<symbol name="DOCSMAL">
-<wire x1="88.9" y1="0" x2="88.9" y2="5.08" width="0.254" layer="94"/>
-<wire x1="88.9" y1="5.08" x2="149.86" y2="5.08" width="0.254" layer="94"/>
-<wire x1="149.86" y1="5.08" x2="149.86" y2="0" width="0.254" layer="94"/>
-<wire x1="149.86" y1="5.08" x2="180.34" y2="5.08" width="0.254" layer="94"/>
-<wire x1="88.9" y1="5.08" x2="88.9" y2="10.16" width="0.254" layer="94"/>
-<wire x1="88.9" y1="10.16" x2="180.34" y2="10.16" width="0.254" layer="94"/>
-<text x="90.17" y="6.35" size="2.54" layer="94">Date:</text>
-<text x="101.6" y="6.35" size="2.54" layer="94">&gt;LAST_DATE_TIME</text>
-<text x="151.13" y="1.27" size="2.54" layer="94">Sheet:</text>
-<text x="165.1" y="1.27" size="2.54" layer="94">&gt;SHEET</text>
-<text x="90.17" y="1.27" size="2.54" layer="94">TITLE:</text>
-<text x="106.68" y="1.27" size="2.54" layer="94">&gt;DRAWING_NAME</text>
-<frame x1="0" y1="0" x2="180.34" y2="264.16" columns="4" rows="4" layer="94" border-left="no" border-top="no" border-right="no" border-bottom="no"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="A4L-LOC" prefix="FRAME" uservalue="yes">
@@ -282,20 +267,6 @@ DIN A3, landscape with location and doc. field</description>
 <description>A5L LOC</description>
 <gates>
 <gate name="G$1" symbol="A5L-LOC" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="A4-SMALL-DOCFIELD" prefix="FRAME" uservalue="yes">
-<description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
-DIN A4, with small doc field</description>
-<gates>
-<gate name="/1" symbol="DOCSMAL" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -32691,6 +32662,7 @@ http://cds.linear.com/image/1940asch.png</text>
 <rectangle x1="170.18" y1="97.79" x2="186.69" y2="114.3" layer="116"/>
 <rectangle x1="171.45" y1="120.65" x2="185.42" y2="134.62" layer="116"/>
 <rectangle x1="238.76" y1="87.63" x2="255.27" y2="106.68" layer="116"/>
+<text x="83.82" y="50.8" size="1.778" layer="117" align="bottom-right">datasheet recoomendations for passives when BOM</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -33286,6 +33258,8 @@ Using the LSM9DS1</description>
 TWI M    ADR: 0x1C</text>
 <rectangle x1="124.46" y1="53.34" x2="140.97" y2="62.23" layer="114"/>
 <text x="193.04" y="58.42" size="1.778" layer="98" ratio="20">TODO: Rename identifiers to submod UID scheme</text>
+<text x="177.8" y="45.72" size="1.778" layer="98">TODO after routing:
+fix identifiers</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -33871,7 +33845,7 @@ TWI M    ADR: 0x1C</text>
 ⇤…Place near IC
 ↦…Place away from IC
 ✳…High EMI Node</text>
-<text x="205.74" y="50.8" size="1.778" layer="98">TODO: fix that, also pitch the thing to armin right about now as a proof of concept, using the track-core with a blank pcb to illustrate</text>
+<text x="213.36" y="53.34" size="1.778" layer="98">Fix wire conflicts afterwards</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="88.9" y="104.14"/>
@@ -34350,8 +34324,6 @@ Ceramic capacitor’s derating effect under bias should
 be considered when selecting capacitors</text>
 <wire x1="116.84" y1="83.82" x2="127" y2="83.82" width="0.1524" layer="98" style="shortdash"/>
 <text x="121.92" y="82.55" size="0.6096" layer="98" ratio="20" align="center">RECOMMENDED</text>
-<text x="81.28" y="128.27" size="1.778" layer="98" ratio="20" align="center-left">3A</text>
-<text x="80.01" y="132.08" size="1.778" layer="98" ratio="20" align="center-left">:2.5A</text>
 <rectangle x1="91.44" y1="73.66" x2="109.22" y2="86.36" layer="114"/>
 <text x="91.44" y="91.44" size="1.778" layer="98" ratio="20" rot="R180" align="center-left">[an02]</text>
 <text x="71.12" y="20.32" size="1.778" layer="98" ratio="20" align="center-left">[an02]: 
@@ -34563,10 +34535,10 @@ Populate with Capacitor and fitting value</text>
 <plain>
 <text x="104.14" y="-35.56" size="1.27" layer="98" ratio="20" rot="R180" align="center">&gt;should&lt; look like a banyan switch,
 used to make route/swapping easier</text>
-<wire x1="218.44" y1="129.54" x2="231.14" y2="43.815" width="0.4064" layer="94"/>
-<wire x1="231.14" y1="129.54" x2="218.44" y2="43.815" width="0.4064" layer="94"/>
-<wire x1="218.44" y1="129.54" x2="231.14" y2="129.54" width="0.4064" layer="94"/>
-<wire x1="218.44" y1="43.815" x2="231.14" y2="43.815" width="0.4064" layer="94"/>
+<wire x1="157.48" y1="129.54" x2="170.18" y2="43.815" width="0.4064" layer="94"/>
+<wire x1="170.18" y1="129.54" x2="157.48" y2="43.815" width="0.4064" layer="94"/>
+<wire x1="157.48" y1="129.54" x2="170.18" y2="129.54" width="0.4064" layer="94"/>
+<wire x1="157.48" y1="43.815" x2="170.18" y2="43.815" width="0.4064" layer="94"/>
 <text x="142.24" y="-22.86" size="1.778" layer="98" ratio="20" align="center">TODO: Status LEDs</text>
 <text x="119.38" y="109.22" size="2.54" layer="114" rot="MR0" align="center">⨯</text>
 <text x="152.4" y="-25.4" size="1.778" layer="98" ratio="20" align="center">TODO: Reset Signals to submodules?</text>
@@ -34575,12 +34547,8 @@ used to make route/swapping easier</text>
 <text x="146.05" y="-36.83" size="1.778" layer="98" ratio="20">TODO: Default Bias on Stage 1+2 Control Signals here using pasives!</text>
 <text x="90.17" y="-40.64" size="1.778" layer="98" ratio="20" align="center-left">actually, use (yet another) module for that
 looks nicer than a bus.</text>
-<text x="215.9" y="40.64" size="1.778" layer="98" ratio="20" rot="R90" align="center-left">ROUTING</text>
-<wire x1="147.32" y1="144.78" x2="147.32" y2="38.1" width="0.4064" layer="98"/>
-<wire x1="147.32" y1="38.1" x2="205.74" y2="38.1" width="0.4064" layer="98"/>
-<wire x1="205.74" y1="38.1" x2="205.74" y2="144.78" width="0.4064" layer="98"/>
+<text x="154.94" y="40.64" size="1.778" layer="98" ratio="20" rot="R90" align="center-left">ROUTING</text>
 <wire x1="205.74" y1="144.78" x2="147.32" y2="144.78" width="0.4064" layer="98"/>
-<text x="144.78" y="38.1" size="1.778" layer="98" ratio="20" rot="R90" align="center-left">CONFIGURATION BIAS</text>
 <wire x1="139.7" y1="20.32" x2="137.16" y2="17.78" width="0.4064" layer="97"/>
 <wire x1="137.16" y1="17.78" x2="137.16" y2="5.715" width="0.4064" layer="97"/>
 <wire x1="137.16" y1="5.715" x2="137.16" y2="5.08" width="0.4064" layer="97"/>
@@ -34594,6 +34562,9 @@ looks nicer than a bus.</text>
 because
 really close to
 output caps of 5VDCDC</text>
+<text x="104.14" y="99.06" size="1.778" layer="98">TODO:
+Connect once final airwires are to be done
+since pinswap doesn't work with this symbol</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -34627,7 +34598,7 @@ output caps of 5VDCDC</text>
 <busses>
 <bus name="S1.RUN,S1.PGOOD,S1.MODE,S1.FREQ,S2.INACT,S2.EN">
 <segment>
-<wire x1="231.14" y1="38.735" x2="231.14" y2="133.985" width="0.762" layer="92"/>
+<wire x1="170.18" y1="38.735" x2="170.18" y2="133.985" width="0.762" layer="92"/>
 </segment>
 </bus>
 <bus name="TOP[1..7]">
@@ -34638,9 +34609,9 @@ output caps of 5VDCDC</text>
 </bus>
 <bus name="S1.RUN,S1.PGOOD,S1.MODE,S1.FREQ,S2.INACT,S2.EN,S1.ENC,S1.!CHRG,S1.!FLT">
 <segment>
-<wire x1="218.44" y1="38.735" x2="218.44" y2="133.985" width="0.762" layer="92"/>
-<wire x1="231.14" y1="38.735" x2="218.44" y2="38.735" width="0.762" layer="92"/>
-<wire x1="231.14" y1="133.985" x2="218.44" y2="133.985" width="0.762" layer="92"/>
+<wire x1="157.48" y1="38.735" x2="157.48" y2="133.985" width="0.762" layer="92"/>
+<wire x1="170.18" y1="38.735" x2="157.48" y2="38.735" width="0.762" layer="92"/>
+<wire x1="170.18" y1="133.985" x2="157.48" y2="133.985" width="0.762" layer="92"/>
 </segment>
 </bus>
 </busses>
@@ -34665,62 +34636,62 @@ output caps of 5VDCDC</text>
 </net>
 <net name="S1.RUN" class="0">
 <segment>
-<wire x1="231.14" y1="127" x2="238.76" y2="127" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="127" x2="238.76" y2="127" width="0.1524" layer="91"/>
 <label x="238.76" y="127" size="1.778" layer="95" ratio="20" xref="yes"/>
 </segment>
 <segment>
-<label x="215.9" y="93.345" size="1.27" layer="95" ratio="20" rot="R180"/>
-<wire x1="137.16" y1="91.44" x2="218.44" y2="91.44" width="0.1524" layer="91"/>
+<label x="154.94" y="93.345" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="137.16" y1="91.44" x2="157.48" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="S1.PGOOD" class="0">
 <segment>
-<wire x1="231.14" y1="121.92" x2="238.76" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="121.92" x2="238.76" y2="121.92" width="0.1524" layer="91"/>
 <label x="238.76" y="121.92" size="1.778" layer="95" ratio="20" xref="yes"/>
 </segment>
 <segment>
-<label x="215.9" y="90.805" size="1.27" layer="95" ratio="20" rot="R180"/>
-<wire x1="137.16" y1="88.9" x2="218.44" y2="88.9" width="0.1524" layer="91"/>
+<label x="154.94" y="90.805" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="137.16" y1="88.9" x2="157.48" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="S1.MODE" class="0">
 <segment>
-<wire x1="231.14" y1="116.84" x2="238.76" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="116.84" x2="238.76" y2="116.84" width="0.1524" layer="91"/>
 <label x="238.76" y="116.84" size="1.778" layer="95" ratio="20" xref="yes"/>
 </segment>
 <segment>
-<label x="215.9" y="88.265" size="1.27" layer="95" ratio="20" rot="R180"/>
-<wire x1="137.16" y1="86.36" x2="218.44" y2="86.36" width="0.1524" layer="91"/>
+<label x="154.94" y="88.265" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="137.16" y1="86.36" x2="157.48" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="S1.FREQ" class="0">
 <segment>
-<wire x1="231.14" y1="111.76" x2="238.76" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="111.76" x2="238.76" y2="111.76" width="0.1524" layer="91"/>
 <label x="238.76" y="111.76" size="1.778" layer="95" ratio="20" xref="yes"/>
 </segment>
 <segment>
-<label x="215.9" y="85.725" size="1.27" layer="95" ratio="20" rot="R180"/>
-<wire x1="137.16" y1="83.82" x2="218.44" y2="83.82" width="0.1524" layer="91"/>
+<label x="154.94" y="85.725" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="137.16" y1="83.82" x2="157.48" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="S2.INACT" class="0">
 <segment>
-<wire x1="231.14" y1="104.14" x2="238.76" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="104.14" x2="238.76" y2="104.14" width="0.1524" layer="91"/>
 <label x="238.76" y="104.14" size="1.778" layer="95" ratio="20" xref="yes"/>
 </segment>
 <segment>
-<label x="215.9" y="75.565" size="1.27" layer="95" ratio="20" rot="R180"/>
-<wire x1="137.16" y1="73.66" x2="218.44" y2="73.66" width="0.1524" layer="91"/>
+<label x="154.94" y="75.565" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="137.16" y1="73.66" x2="157.48" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="S2.EN" class="0">
 <segment>
-<wire x1="231.14" y1="99.06" x2="238.76" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="99.06" x2="238.76" y2="99.06" width="0.1524" layer="91"/>
 <label x="238.76" y="99.06" size="1.778" layer="95" ratio="20" xref="yes"/>
 </segment>
 <segment>
-<label x="215.9" y="70.485" size="1.27" layer="95" ratio="20" rot="R180"/>
-<wire x1="137.16" y1="68.58" x2="218.44" y2="68.58" width="0.1524" layer="91"/>
+<label x="154.94" y="70.485" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="137.16" y1="68.58" x2="157.48" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VDD" class="0">
@@ -34874,20 +34845,20 @@ output caps of 5VDCDC</text>
 </net>
 <net name="S1.ENC" class="0">
 <segment>
-<wire x1="137.16" y1="78.74" x2="218.44" y2="78.74" width="0.1524" layer="91"/>
-<label x="215.9" y="80.645" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="137.16" y1="78.74" x2="157.48" y2="78.74" width="0.1524" layer="91"/>
+<label x="154.94" y="80.645" size="1.27" layer="95" ratio="20" rot="R180"/>
 </segment>
 </net>
 <net name="S1.!CHRG" class="0">
 <segment>
-<wire x1="218.44" y1="81.28" x2="137.16" y2="81.28" width="0.1524" layer="91"/>
-<label x="215.9" y="83.185" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="157.48" y1="81.28" x2="137.16" y2="81.28" width="0.1524" layer="91"/>
+<label x="154.94" y="83.185" size="1.27" layer="95" ratio="20" rot="R180"/>
 </segment>
 </net>
 <net name="S1.!FLT" class="0">
 <segment>
-<wire x1="137.16" y1="76.2" x2="218.44" y2="76.2" width="0.1524" layer="91"/>
-<label x="215.9" y="78.105" size="1.27" layer="95" ratio="20" rot="R180"/>
+<wire x1="137.16" y1="76.2" x2="157.48" y2="76.2" width="0.1524" layer="91"/>
+<label x="154.94" y="78.105" size="1.27" layer="95" ratio="20" rot="R180"/>
 </segment>
 </net>
 </nets>
@@ -35091,15 +35062,6 @@ A = R2/(R1+R2) -&gt; R2= ~ 2.2kR </text>
 <rectangle x1="73.66" y1="78.74" x2="83.82" y2="91.44" layer="116"/>
 <rectangle x1="73.66" y1="66.04" x2="86.36" y2="73.66" layer="116"/>
 <rectangle x1="48.26" y1="66.04" x2="58.42" y2="78.74" layer="116"/>
-<text x="223.52" y="90.17" size="1.9304" layer="98">IID</text>
-<text x="224.79" y="90.17" size="1.9304" layer="98">IID</text>
-<text x="228.6" y="91.44" size="1.9304" layer="98">IID</text>
-<text x="229.87" y="91.44" size="1.9304" layer="98">IID</text>
-<text x="232.41" y="90.17" size="1.9304" layer="98">IID</text>
-<text x="233.68" y="90.17" size="1.9304" layer="98">IID</text>
-<text x="237.49" y="87.63" size="1.9304" layer="98">IID</text>
-<text x="217.17" y="95.25" size="1.9304" layer="98">CMOS LOGIC LEVEL</text>
-<text x="226.06" y="83.82" size="5.08" layer="98">IID</text>
 <wire x1="165.1" y1="111.76" x2="165.1" y2="119.38" width="0.1524" layer="98"/>
 <text x="166.37" y="114.3" size="1.778" layer="98">Schmitt-Triggered
 HIGH: 2.0V to VDD</text>
@@ -35314,12 +35276,16 @@ Jumps Over The Lazy Dog</text>
 ↔…Keep Trace Short
 ✳…EMI Noise Culprit
 ✧…EMI Noise Victim</text>
-<text x="12.7" y="45.72" size="2.54" layer="114">DO NOT POPULATE</text>
-<rectangle x1="2.54" y1="45.72" x2="10.16" y2="48.26" layer="114"/>
-<rectangle x1="2.54" y1="50.8" x2="10.16" y2="53.34" layer="98"/>
-<text x="12.7" y="50.8" size="2.54" layer="98">ANNOTATIONS</text>
-<text x="38.1" y="50.8" size="1.778" layer="98">(TURN OFF)</text>
-<text x="46.355" y="45.72" size="1.778" layer="114">(ALSO USED AS N/C MARKER LAYER)</text>
+<text x="10.16" y="55.88" size="2.54" layer="114">DO NOT POPULATE</text>
+<rectangle x1="0" y1="55.88" x2="7.62" y2="58.42" layer="114"/>
+<rectangle x1="0" y1="60.96" x2="7.62" y2="63.5" layer="98"/>
+<text x="10.16" y="60.96" size="2.54" layer="98">ANNOTATIONS</text>
+<text x="35.56" y="60.96" size="1.778" layer="98">(TURN OFF)</text>
+<text x="43.815" y="55.88" size="1.778" layer="114">(ALSO USED AS N/C MARKER LAYER)</text>
+<rectangle x1="0" y1="50.8" x2="7.62" y2="53.34" layer="116"/>
+<rectangle x1="0" y1="45.72" x2="7.62" y2="48.26" layer="117"/>
+<text x="10.16" y="45.72" size="2.54" layer="117">TODO Items</text>
+<text x="10.16" y="50.8" size="2.54" layer="116">PROCESSED INTO BOM</text>
 </plain>
 <instances>
 </instances>
@@ -35408,7 +35374,6 @@ Jumps Over The Lazy Dog</text>
 <part name="P+13" library="supply1" deviceset="+5V" device=""/>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R0402" value="100R"/>
 <part name="L2" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD/0R/⎵"/>
-<part name="FRAME3" library="frames" deviceset="A4-SMALL-DOCFIELD" device=""/>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="+9V" device=""/>
 <part name="☇1" library="kitt.con" deviceset="CON.BUOC.IO" device="BPD-P5MM" value="1"/>
@@ -35433,23 +35398,6 @@ Jumps Over The Lazy Dog</text>
 <part name="L1" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD/0R/⎵"/>
 </parts>
 <sheets>
-<sheet>
-<plain>
-<text x="93.98" y="175.26" size="6.4516" layer="97" align="center">ESD'16 PROJECT
-G2 / "Carrera AI"</text>
-<text x="91.44" y="93.98" size="6.4516" layer="97" align="center">SCHEMATICS</text>
-<text x="91.44" y="104.14" size="6.4516" layer="97" align="center">KITT-MK1</text>
-<text x="91.44" y="139.7" size="10.16" layer="97" align="center">Kit for Intelligent,
-Trainable Trackcars</text>
-</plain>
-<instances>
-<instance part="FRAME3" gate="/1" x="0" y="0"/>
-</instances>
-<busses>
-</busses>
-<nets>
-</nets>
-</sheet>
 <sheet>
 <description>POW-System Supply Chain</description>
 <plain>
@@ -35530,6 +35478,9 @@ NEAR BATTERY</text>
 <wire x1="203.2" y1="132.08" x2="213.36" y2="132.08" width="0.1524" layer="98"/>
 <circle x="195.58" y="132.08" radius="0.635" width="0.1524" layer="98"/>
 <text x="201.93" y="133.35" size="1.778" layer="98">4.2-4.35V</text>
+<text x="101.6" y="83.82" size="1.778" layer="98">wire bridge
+because time constraint</text>
+<text x="96.52" y="198.12" size="1.778" layer="98">TODO after DC/DC signals are 100% done in layout</text>
 </plain>
 <moduleinsts>
 <moduleinst name="A5" module="POW-4000" x="185.42" y="111.76" smashed="yes">
@@ -35563,7 +35514,7 @@ NEAR BATTERY</text>
 <instances>
 <instance part="GND15" gate="1" x="165.1" y="73.66"/>
 <instance part="GND16" gate="1" x="208.28" y="144.78"/>
-<instance part="GND19" gate="1" x="317.5" y="76.2"/>
+<instance part="GND19" gate="1" x="317.5" y="78.74"/>
 <instance part="P+2" gate="1" x="353.06" y="124.46" smashed="yes">
 <attribute name="VALUE" x="355.6" y="127" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -35681,17 +35632,17 @@ NEAR BATTERY</text>
 <pinref part="X2.3" gate="-1" pin="1"/>
 <wire x1="356.87" y1="81.28" x2="327.66" y2="81.28" width="0.1524" layer="91"/>
 <junction x="317.5" y="81.28"/>
-<wire x1="327.66" y1="81.28" x2="317.5" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="327.66" y1="81.28" x2="317.5" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="165.1" y1="81.28" x2="182.88" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="81.28" x2="195.58" y2="81.28" width="0.1524" layer="91"/>
 <junction x="182.88" y="81.28"/>
 <wire x1="195.58" y1="81.28" x2="266.7" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="266.7" y1="81.28" x2="317.5" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="81.28" x2="317.5" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="81.28" x2="182.88" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="33.02" x2="195.58" y2="33.02" width="0.1524" layer="91"/>
 <label x="337.82" y="82.55" size="1.778" layer="95"/>
 <portref moduleinst="A9" port="AGND"/>
-<wire x1="317.5" y1="91.44" x2="317.5" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="317.5" y1="91.44" x2="317.5" y2="81.28" width="0.1524" layer="91"/>
 <portref moduleinst="A9" port="PGND"/>
 <wire x1="327.66" y1="91.44" x2="327.66" y2="81.28" width="0.1524" layer="91"/>
 <junction x="327.66" y="81.28"/>
@@ -36126,6 +36077,8 @@ NEAR BATTERY</text>
 <wire x1="256.54" y1="86.36" x2="193.04" y2="86.36" width="0.1524" layer="91"/>
 <junction x="193.04" y="86.36"/>
 <pinref part="S1" gate="G$1" pin="3"/>
+<label x="254" y="88.9" size="1.778" layer="95" rot="R180"/>
+<label x="200.66" y="88.9" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="TOP.RRX" class="0">
@@ -36149,6 +36102,7 @@ NEAR BATTERY</text>
 <portref moduleinst="A9" port="VIN"/>
 <portref moduleinst="A10" port="POW.SINK"/>
 <wire x1="287.02" y1="104.14" x2="297.18" y2="104.14" width="0.1524" layer="91"/>
+<label x="292.1" y="111.76" size="1.778" layer="95" rot="R270"/>
 </segment>
 </net>
 <net name="TOP.PWRON" class="0">
@@ -36158,6 +36112,7 @@ NEAR BATTERY</text>
 <wire x1="233.68" y1="113.03" x2="233.68" y2="123.19" width="0.1524" layer="91"/>
 <wire x1="233.68" y1="123.19" x2="236.22" y2="123.19" width="0.1524" layer="91"/>
 <portref moduleinst="A10" port="CTRL.PWRON"/>
+<label x="236.22" y="111.76" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="A10.!ACT" class="0">
@@ -36167,6 +36122,7 @@ NEAR BATTERY</text>
 <wire x1="289.56" y1="121.92" x2="289.56" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="289.56" y1="147.32" x2="304.8" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="304.8" y1="147.32" x2="304.8" y2="152.4" width="0.1524" layer="91"/>
+<label x="292.1" y="129.54" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="TOP.!BATOK" class="0">
@@ -36176,6 +36132,7 @@ NEAR BATTERY</text>
 <wire x1="294.64" y1="144.78" x2="309.88" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="309.88" y1="144.78" x2="309.88" y2="152.4" width="0.1524" layer="91"/>
 <portref moduleinst="A10" port="CTRL.!BATOK"/>
+<label x="297.18" y="127" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="TOP.18V/PREFUSE" class="0">
@@ -36202,40 +36159,14 @@ NEAR BATTERY</text>
 
 Inputs, Outputs and Power</description>
 <plain>
-<text x="0" y="-6.35" size="3.81" layer="98" align="top-left">General TODOs:
-[  ] Figure out where to put a mp/mt switch for switching device off
-[  ] Add new power chain design before 5V Booster using the LT4000
-[  ] Rename all XX (undefined) identifiers and values
-[  ] Respect Sodd's Second Law[1]: Implement Fail-Safe or Fail-Badly &gt;in hardware&lt;, anything but Fail-Deadly is better than previously
-[  ] Drafting -&gt; Figure out sensor placement for the 1000th time
-[  ] Compile BOM before routing this time
-[  ] Practice KISS -&gt; Keep it Simple Stupid
-[  ] Resolve any ERC issues originating from our custom libraries</text>
-<text x="195.58" y="-20.32" size="1.778" layer="98">[1]: Sodd's Second Law
-§a; Sooner or later, the worst possible combination of
-circumstances will happen
-§b; A system must always be designed to resist the worst
-possible combination of circumstances
-</text>
-<text x="40.64" y="-11.43" size="5.08" layer="98">✔</text>
-<rectangle x1="7.62" y1="7.62" x2="15.24" y2="10.16" layer="116"/>
-<text x="17.78" y="7.62" size="2.54" layer="116">PROCESSED INTO BOM</text>
-<text x="0" y="-17.78" size="5.08" layer="98">✔</text>
-<text x="0" y="-22.86" size="5.08" layer="98">✔</text>
 <text x="73.025" y="163.195" size="1.27" layer="98" rot="MR0" align="top-left">⇽ CURRENT ⇽</text>
 <text x="73.025" y="151.765" size="1.27" layer="98" rot="MR0" align="top-left">⇽ CURRENT ⇽</text>
 <text x="90.805" y="163.195" size="1.27" layer="98" rot="MR0" align="top-left">⇽ CURRENT ⇽</text>
 <text x="27.94" y="165.1" size="2.54" layer="114" rot="MR0" align="center">⨯</text>
 <text x="76.2" y="166.37" size="1.778" layer="98" rot="MR0" align="center">[TODO1]</text>
-<text x="133.985" y="29.845" size="1.778" layer="98" align="center">[TODO1]: Is this okay =?</text>
 <text x="217.17" y="20.32" size="2.1844" layer="94">System TOP</text>
 <rectangle x1="63.5" y1="142.24" x2="83.82" y2="160.02" layer="116"/>
 <text x="72.39" y="135.89" size="1.778" layer="98" rot="MR0" align="top-left">[Voltage Monitoring]</text>
-<text x="0" y="-27.94" size="5.08" layer="98">✔</text>
-<text x="0" y="-33.02" size="5.08" layer="98">✔</text>
-<text x="0" y="-40.64" size="5.08" layer="98">✔</text>
-<text x="0" y="-45.72" size="5.08" layer="98">✔</text>
-<text x="0" y="-50.8" size="5.08" layer="98">✔</text>
 <text x="58.42" y="68.58" size="1.778" layer="98" ratio="20" rot="R90" align="center-left">SYSTWI</text>
 <text x="35.56" y="86.36" size="1.778" layer="98" ratio="20" align="center-left">[an01]</text>
 <text x="99.06" y="25.4" size="1.778" layer="98" ratio="20" align="center-left">[an01]: polarity protection
@@ -36247,17 +36178,13 @@ Bridges serve double duty:
 2. If filtered connection needed, populate with bead</text>
 <text x="7.62" y="142.24" size="1.778" layer="98" rot="R90">VIN and IOREF are Outpus</text>
 <text x="30.48" y="165.1" size="1.778" layer="98">tie to 3v3 from ghostcar bb20</text>
-<text x="172.72" y="83.82" size="1.778" layer="98" ratio="20" rot="R180" align="center-left">for developers who dislike screwing around
-with phoenix contact 100mil connectors
-- breakaway next to LTC connector</text>
 <text x="210.82" y="83.82" size="1.9304" layer="98">[toco1]:
 To consider: maybe add some extra stuff
 on this board</text>
-<wire x1="218.44" y1="48.26" x2="218.44" y2="27.94" width="0.1524" layer="94"/>
-<text x="190.5" y="25.4" size="1.778" layer="94">Build your Own Connector</text>
-<wire x1="190.5" y1="48.26" x2="190.5" y2="27.94" width="0.1524" layer="94"/>
-<wire x1="190.5" y1="27.94" x2="218.44" y2="27.94" width="0.1524" layer="94"/>
-<wire x1="218.44" y1="48.26" x2="190.5" y2="48.26" width="0.1524" layer="94"/>
+<wire x1="238.76" y1="48.26" x2="238.76" y2="27.94" width="0.1524" layer="94"/>
+<wire x1="210.82" y1="48.26" x2="210.82" y2="27.94" width="0.1524" layer="94"/>
+<wire x1="210.82" y1="27.94" x2="238.76" y2="27.94" width="0.1524" layer="94"/>
+<wire x1="238.76" y1="48.26" x2="210.82" y2="48.26" width="0.1524" layer="94"/>
 <text x="167.64" y="58.42" size="1.016" layer="96" align="bottom-right">???
     ???</text>
 </plain>
@@ -36336,14 +36263,14 @@ on this board</text>
 <instance part="P+1" gate="1" x="137.16" y="101.6" smashed="yes" rot="MR90">
 <attribute name="VALUE" x="137.795" y="102.235" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="SUPPLY4" gate="P" x="104.14" y="137.16"/>
+<instance part="SUPPLY4" gate="P" x="101.6" y="134.62"/>
 <instance part="GND14" gate="1" x="106.68" y="99.06" rot="MR0"/>
-<instance part="GND17" gate="1" x="111.76" y="137.16" rot="MR180"/>
-<instance part="P+8" gate="1" x="91.44" y="137.16" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="90.805" y="137.795" size="1.778" layer="96" rot="MR90"/>
+<instance part="GND17" gate="1" x="106.68" y="137.16" rot="MR180"/>
+<instance part="P+8" gate="1" x="99.06" y="137.16" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="98.425" y="137.795" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="P+12" gate="1" x="99.06" y="137.16" smashed="yes">
-<attribute name="VALUE" x="101.6" y="142.24" size="1.778" layer="96" rot="R180"/>
+<instance part="P+12" gate="1" x="104.14" y="142.24" smashed="yes">
+<attribute name="VALUE" x="106.68" y="147.32" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="P+13" gate="1" x="40.64" y="101.6" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="40.005" y="102.235" size="1.778" layer="96" rot="MR90"/>
@@ -36361,16 +36288,16 @@ on this board</text>
 </instance>
 <instance part="+3V2" gate="G$1" x="147.32" y="73.66" rot="MR0"/>
 <instance part="SUPPLY5" gate="G$1" x="93.98" y="71.12" rot="MR0"/>
-<instance part="☇1" gate="G$1" x="193.04" y="43.18"/>
-<instance part="☇2" gate="G$1" x="215.9" y="43.18" rot="R180"/>
-<instance part="☇3" gate="G$1" x="193.04" y="40.64"/>
-<instance part="☇4" gate="G$1" x="215.9" y="40.64" rot="R180"/>
-<instance part="☇5" gate="G$1" x="193.04" y="38.1"/>
-<instance part="☇6" gate="G$1" x="215.9" y="38.1" rot="R180"/>
-<instance part="☇7" gate="G$1" x="193.04" y="35.56"/>
-<instance part="☇8" gate="G$1" x="215.9" y="35.56" rot="R180"/>
-<instance part="☇9" gate="G$1" x="193.04" y="33.02"/>
-<instance part="☇10" gate="G$1" x="215.9" y="33.02" rot="R180"/>
+<instance part="☇1" gate="G$1" x="215.9" y="43.18"/>
+<instance part="☇2" gate="G$1" x="233.68" y="43.18" rot="R180"/>
+<instance part="☇3" gate="G$1" x="215.9" y="40.64"/>
+<instance part="☇4" gate="G$1" x="233.68" y="40.64" rot="R180"/>
+<instance part="☇5" gate="G$1" x="215.9" y="38.1"/>
+<instance part="☇6" gate="G$1" x="233.68" y="38.1" rot="R180"/>
+<instance part="☇7" gate="G$1" x="215.9" y="35.56"/>
+<instance part="☇8" gate="G$1" x="233.68" y="35.56" rot="R180"/>
+<instance part="☇9" gate="G$1" x="215.9" y="33.02"/>
+<instance part="☇10" gate="G$1" x="233.68" y="33.02" rot="R180"/>
 <instance part="☇XX1.1" gate="G$1" x="149.86" y="147.32" rot="R90"/>
 <instance part="☇XX1.2" gate="G$1" x="154.94" y="147.32" rot="R90"/>
 <instance part="☇XX1.3" gate="G$1" x="160.02" y="147.32" rot="R90"/>
@@ -36496,7 +36423,7 @@ on this board</text>
 <segment>
 <pinref part="SV2" gate="1" pin="4"/>
 <pinref part="GND17" gate="1" pin="GND"/>
-<wire x1="111.76" y1="134.62" x2="106.68" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="134.62" x2="106.68" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="X5" gate="G$1" pin="2"/>
@@ -36552,7 +36479,7 @@ on this board</text>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
 <pinref part="SV2" gate="1" pin="1"/>
-<wire x1="91.44" y1="134.62" x2="99.06" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="134.62" x2="99.06" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+13" gate="1" pin="+5V"/>
@@ -36654,6 +36581,7 @@ on this board</text>
 <segment>
 <wire x1="116.84" y1="60.96" x2="73.66" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="X2" gate="X" pin="5"/>
+<label x="81.28" y="63.5" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="!CS0" class="0">
@@ -36670,9 +36598,9 @@ on this board</text>
 <label x="200.66" y="114.3" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="227.33" y1="33.02" x2="215.9" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="245.11" y1="33.02" x2="233.68" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="☇10" gate="G$1" pin="P$1"/>
-<label x="226.06" y="33.02" size="1.016" layer="95" xref="yes"/>
+<label x="243.84" y="33.02" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="163.83" y1="50.8" x2="124.46" y2="50.8" width="0.1524" layer="91"/>
@@ -36758,8 +36686,8 @@ on this board</text>
 <pinref part="J1" gate="G$1" pin="ID"/>
 </segment>
 <segment>
-<wire x1="93.98" y1="86.36" x2="104.14" y2="106.68" width="0.1524" layer="91"/>
-<label x="93.98" y="86.36" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="104.14" y1="101.6" x2="104.14" y2="106.68" width="0.1524" layer="91"/>
+<label x="104.14" y="101.6" size="1.778" layer="95" rot="R270" xref="yes"/>
 <pinref part="SV1" gate="1" pin="3"/>
 </segment>
 </net>
@@ -36779,10 +36707,11 @@ on this board</text>
 <segment>
 <wire x1="73.66" y1="55.88" x2="116.84" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="X2" gate="X" pin="9"/>
+<label x="83.82" y="58.42" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<wire x1="91.44" y1="91.44" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
-<label x="91.44" y="91.44" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="101.6" y1="104.14" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
+<label x="101.6" y="104.14" size="1.778" layer="95" rot="R270" xref="yes"/>
 <pinref part="SV1" gate="1" pin="2"/>
 </segment>
 </net>
@@ -36800,10 +36729,11 @@ on this board</text>
 <segment>
 <wire x1="73.66" y1="53.34" x2="116.84" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="X2" gate="X" pin="11"/>
+<label x="83.82" y="55.88" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<wire x1="91.44" y1="96.52" x2="99.06" y2="106.68" width="0.1524" layer="91"/>
-<label x="91.44" y="96.52" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="99.06" y1="104.14" x2="99.06" y2="106.68" width="0.1524" layer="91"/>
+<label x="99.06" y="104.14" size="1.778" layer="95" rot="R270" xref="yes"/>
 <pinref part="SV1" gate="1" pin="1"/>
 </segment>
 </net>
@@ -36823,9 +36753,9 @@ on this board</text>
 <wire x1="15.24" y1="91.44" x2="12.7" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SV2" gate="1" pin="3"/>
 <pinref part="SUPPLY4" gate="P" pin="+4.1V"/>
-<wire x1="104.14" y1="134.62" x2="104.14" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="132.08" x2="101.6" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="SV2" gate="1" pin="2"/>
 </segment>
 </net>
 <net name="TOP.RRX" class="0">
@@ -36852,9 +36782,8 @@ on this board</text>
 <net name="+18V" class="0">
 <segment>
 <pinref part="P+12" gate="1" pin="+18V"/>
-<pinref part="SV2" gate="1" pin="2"/>
-<wire x1="99.06" y1="134.62" x2="99.06" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="132.08" x2="101.6" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="139.7" x2="104.14" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="SV2" gate="1" pin="3"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -36879,11 +36808,11 @@ on this board</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="106,3,91.44,147.32,+9V,,,,,"/>
-<approved hash="106,3,81.28,147.32,+9V,,,,,"/>
-<approved hash="106,3,213.36,147.32,COM.RRX,,,,,"/>
-<approved hash="213,2,134.62,76.2,CTRL.A,in,,,,"/>
-<approved hash="213,2,134.62,68.58,CTRL.B,in,,,,"/>
+<approved hash="106,2,91.44,147.32,+9V,,,,,"/>
+<approved hash="106,2,81.28,147.32,+9V,,,,,"/>
+<approved hash="106,2,213.36,147.32,COM.RRX,,,,,"/>
+<approved hash="213,1,134.62,76.2,CTRL.A,in,,,,"/>
+<approved hash="213,1,134.62,68.58,CTRL.B,in,,,,"/>
 <approved hash="106,1@X1-TRACKBOARD3080,226.06,81.28,ADC2,,,,,"/>
 <approved hash="118,1@POW-4001,190.5,133.35,Net,GND,,,,"/>
 <approved hash="118,1@POW-3891,106.68,63.5,Net,GND,,,,"/>
