@@ -26399,13 +26399,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <packages>
 </packages>
 <symbols>
-<symbol name="+09V">
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="94"/>
-<wire x1="0" y1="0.635" x2="0" y2="1.905" width="0.1524" layer="94"/>
-<circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
-<text x="-1.905" y="3.175" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="+9V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-</symbol>
 <symbol name="+4.1V">
 <wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="94"/>
 <wire x1="0" y1="0.635" x2="0" y2="1.905" width="0.1524" layer="94"/>
@@ -26415,19 +26408,6 @@ In this library the device names are the same as the pin names of the symbols, t
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="+9V" prefix="SUPPLY">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="+09V" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="+4.1V" prefix="SUPPLY">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
@@ -34696,9 +34676,6 @@ Jumps Over The Lazy Dog</text>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
-<part name="☈7" library="jumper" deviceset="SJ" device="" value=" "/>
-<part name="☈8" library="jumper" deviceset="SJ" device="" value=" "/>
-<part name="SUPPLY1" library="supply2" deviceset="+9V" device=""/>
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
@@ -34719,7 +34696,6 @@ Jumps Over The Lazy Dog</text>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="GUIDE1" library="kitt.con" deviceset="BREAK.GUIDE" device="40MIL-BREAK"/>
-<part name="☈12" library="jumper" deviceset="SJ" device="" value=" "/>
 <part name="REF1" library="kitt.refs" deviceset="REF.EDULIMIT" device="" value="EAGLE EDU LIMIT"/>
 <part name="X1" library="kitt.con" deviceset="JST-4POS-2X" device="4POS"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
@@ -34748,8 +34724,11 @@ Jumps Over The Lazy Dog</text>
 <part name="PAD2" library="wirepad" deviceset="WIREPAD" device="SMD2,54-5,08"/>
 <part name="L1" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD/0R/⎵"/>
 <part name="SUPPLY6" library="supply2" deviceset="+4.1V" device=""/>
-<part name="L3" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD/0R/⎵"/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
+<part name="L4" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD/0R/⎵"/>
+<part name="P+9" library="supply1" deviceset="+18V" device=""/>
+<part name="L5" library="rcl" deviceset="L-EU" device="L2012C" value="BEAD/0R/⎵"/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="R0201"/>
 </parts>
 <sheets>
 <sheet>
@@ -34905,10 +34884,6 @@ NEAR BATTERY</text>
 <instance part="GND3" gate="1" x="101.6" y="129.54"/>
 <instance part="GND4" gate="1" x="330.2" y="144.78"/>
 <instance part="GUIDE1" gate="G$1" x="342.9" y="31.75"/>
-<instance part="☈12" gate="1" x="165.1" y="139.7" smashed="yes" rot="MR0">
-<attribute name="NAME" x="175.26" y="139.7" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="160.02" y="140.97" size="1.778" layer="96" rot="MR0"/>
-</instance>
 <instance part="X1" gate="A" x="287.02" y="52.07" rot="MR180"/>
 <instance part="X1" gate="B" x="200.66" y="31.75" rot="MR180"/>
 <instance part="SUPPLY2" gate="P" x="200.66" y="66.04"/>
@@ -34921,6 +34896,7 @@ NEAR BATTERY</text>
 <instance part="PAD1" gate="G$1" x="91.44" y="76.2" rot="R270"/>
 <instance part="PAD2" gate="G$1" x="127" y="76.2" rot="R270"/>
 <instance part="SUPPLY6" gate="P" x="-27.94" y="185.42"/>
+<instance part="R2" gate="G$1" x="165.1" y="139.7"/>
 </instances>
 <busses>
 <bus name="TOP[0..7],SYSTWI.SCL,SYSTWI.SDA,SYSTWI.!INT,TOP.!RST">
@@ -35357,9 +35333,9 @@ NEAR BATTERY</text>
 <label x="347.98" y="185.42" size="1.778" layer="95" ratio="20" rot="MR180"/>
 </segment>
 <segment>
-<pinref part="☈12" gate="1" pin="2"/>
 <wire x1="160.02" y1="139.7" x2="144.78" y2="139.7" width="0.1524" layer="91"/>
 <label x="147.32" y="137.16" size="1.778" layer="95" ratio="20"/>
+<pinref part="R2" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <wire x1="91.44" y1="193.04" x2="144.78" y2="193.04" width="0.1524" layer="91"/>
@@ -35395,10 +35371,10 @@ NEAR BATTERY</text>
 </net>
 <net name="!RST" class="0">
 <segment>
-<pinref part="☈12" gate="1" pin="1"/>
 <portref moduleinst="A5" port="DDC.!RST"/>
 <wire x1="175.26" y1="132.08" x2="175.26" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="139.7" x2="170.18" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="TOP.ENC" class="0">
@@ -35526,13 +35502,11 @@ Inputs, Outputs and Power</description>
 <text x="45.72" y="38.1" size="1.778" layer="98" ratio="20" align="center-left">[an01]</text>
 <text x="99.06" y="25.4" size="1.778" layer="98" ratio="20" align="center-left">[an01]: polarity protection
 and voltage join; business as usual</text>
-<text x="43.18" y="170.18" size="1.9304" layer="98">[an02]</text>
 <text x="99.06" y="7.62" size="1.9304" layer="98">[an02]
 Bridges serve double duty:
 1. Connect/Disconnect option to power pins
 2. If filtered connection needed, populate with bead</text>
 <text x="7.62" y="142.24" size="1.778" layer="98" rot="R90">VIN and IOREF are Outpus</text>
-<text x="43.18" y="167.64" size="1.778" layer="98">tie to 3v3 from ghostcar bb20</text>
 <text x="210.82" y="83.82" size="1.9304" layer="98">[toco1]:
 To consider: maybe add some extra stuff
 on this board</text>
@@ -35544,6 +35518,9 @@ Voltage Range: 0 ~ 4.096V</text>
 <text x="236.22" y="165.1" size="1.778" layer="98" rot="R180" align="bottom-right">I/O Standard: 3.3V and upward
 CMOS prefered</text>
 <text x="142.24" y="116.84" size="1.778" layer="98" align="bottom-right">"Driver Patch"</text>
+<text x="35.56" y="170.18" size="1.778" layer="98" rot="R180" align="bottom-right">No IOREF.
+I/O fixed to 3V3</text>
+<text x="27.94" y="162.56" size="2.54" layer="114" rot="MR0" align="center">⨯</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -35562,15 +35539,6 @@ CMOS prefered</text>
 <instance part="+3V7" gate="G$1" x="96.52" y="157.48" smashed="yes" rot="R270">
 <attribute name="VALUE" x="97.155" y="156.845" size="1.778" layer="96"/>
 </instance>
-<instance part="☈7" gate="1" x="45.72" y="147.32" smashed="yes" rot="MR0">
-<attribute name="NAME" x="55.88" y="147.32" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="40.64" y="148.59" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="☈8" gate="1" x="45.72" y="160.02" smashed="yes" rot="MR0">
-<attribute name="NAME" x="55.88" y="160.02" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="40.64" y="161.29" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="SUPPLY1" gate="G$1" x="93.98" y="147.32" rot="MR90"/>
 <instance part="GND2" gate="1" x="200.66" y="127" rot="MR90"/>
 <instance part="☈2" gate="1" x="35.56" y="127" smashed="yes" rot="MR0">
 <attribute name="NAME" x="45.72" y="127" size="1.778" layer="95" rot="MR0"/>
@@ -35625,11 +35593,17 @@ CMOS prefered</text>
 <attribute name="NAME" x="72.39" y="156.4386" size="1.778" layer="95"/>
 <attribute name="VALUE" x="72.39" y="151.638" size="1.778" layer="96"/>
 </instance>
-<instance part="L3" gate="G$1" x="45.72" y="162.56" smashed="yes" rot="R270">
-<attribute name="NAME" x="41.91" y="164.0586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="41.91" y="159.258" size="1.778" layer="96"/>
-</instance>
 <instance part="+3V4" gate="G$1" x="58.42" y="83.82" rot="MR0"/>
+<instance part="L4" gate="G$1" x="48.26" y="147.32" smashed="yes" rot="R270">
+<attribute name="NAME" x="44.45" y="148.8186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="44.45" y="144.018" size="1.778" layer="96"/>
+</instance>
+<instance part="P+9" gate="1" x="71.12" y="147.32" smashed="yes" rot="R270">
+<attribute name="VALUE" x="76.2" y="144.78" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="L5" gate="G$1" x="45.72" y="160.02" smashed="yes" rot="R270">
+<attribute name="NAME" x="41.91" y="161.5186" size="1.778" layer="95"/>
+</instance>
 </instances>
 <busses>
 <bus name="TOP[0..7],SYSTWI.SCL,SYSTWI.SDA,SYSTWI.!INT,TOP.!RST">
@@ -35775,41 +35749,22 @@ CMOS prefered</text>
 <net name="UNO.3V3" class="0">
 <segment>
 <pinref part="XA1" gate="G$2" pin="3V3"/>
-<wire x1="71.12" y1="157.48" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="L2" gate="G$1" pin="2"/>
-<wire x1="58.42" y1="157.48" x2="27.94" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="162.56" x2="58.42" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="162.56" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
-<junction x="58.42" y="157.48"/>
-<pinref part="L3" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="UNO.IOREF" class="0">
-<segment>
-<pinref part="XA1" gate="G$2" pin="IOREF"/>
-<wire x1="40.64" y1="162.56" x2="27.94" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="L3" gate="G$1" pin="2"/>
+<wire x1="71.12" y1="157.48" x2="27.94" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="UNO.VIN" class="0">
 <segment>
-<pinref part="☈7" gate="1" pin="2"/>
 <pinref part="XA1" gate="G$2" pin="VIN"/>
-<wire x1="40.64" y1="147.32" x2="27.94" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="147.32" x2="27.94" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="L4" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="UNO.RESET" class="0">
 <segment>
 <pinref part="XA1" gate="G$2" pin="RESET"/>
-<pinref part="☈8" gate="1" pin="2"/>
 <wire x1="27.94" y1="160.02" x2="40.64" y2="160.02" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="+9V" class="0">
-<segment>
-<pinref part="SUPPLY1" gate="G$1" pin="+9V"/>
-<pinref part="☈7" gate="1" pin="1"/>
-<wire x1="91.44" y1="147.32" x2="50.8" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="L5" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="SCLK" class="0">
@@ -35880,14 +35835,10 @@ CMOS prefered</text>
 <wire x1="30.48" y1="119.38" x2="27.94" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="XA1" gate="G$1" pin="ADC.4"/>
 </segment>
-<segment>
-<wire x1="30.48" y1="116.84" x2="27.94" y2="116.84" width="0.1524" layer="91"/>
-</segment>
 </net>
 <net name="UNO.ADC5" class="0">
 <segment>
 <pinref part="☈11" gate="1" pin="2"/>
-<wire x1="30.48" y1="116.84" x2="27.94" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="XA1" gate="G$1" pin="ADC.5"/>
 <wire x1="30.48" y1="116.84" x2="27.94" y2="116.84" width="0.1524" layer="91"/>
 </segment>
@@ -36002,9 +35953,9 @@ CMOS prefered</text>
 </net>
 <net name="TOP.!RST" class="0">
 <segment>
-<pinref part="☈8" gate="1" pin="1"/>
 <wire x1="50.8" y1="160.02" x2="106.68" y2="160.02" width="0.1524" layer="91"/>
 <label x="106.68" y="160.02" size="1.778" layer="95" rot="MR180" xref="yes"/>
+<pinref part="L5" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="+18V" class="0">
@@ -36014,6 +35965,11 @@ CMOS prefered</text>
 <wire x1="121.92" y1="134.62" x2="119.38" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="134.62" x2="119.38" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="SV2" gate="1" pin="3"/>
+</segment>
+<segment>
+<pinref part="L4" gate="G$1" pin="1"/>
+<pinref part="P+9" gate="1" pin="+18V"/>
+<wire x1="68.58" y1="147.32" x2="53.34" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -36027,21 +35983,13 @@ CMOS prefered</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="106,2,91.44,147.32,+9V,,,,,"/>
-<approved hash="106,2,81.28,147.32,+9V,,,,,"/>
-<approved hash="106,2,213.36,147.32,COM.RRX,,,,,"/>
-<approved hash="213,1,134.62,76.2,CTRL.A,in,,,,"/>
-<approved hash="213,1,134.62,68.58,CTRL.B,in,,,,"/>
 <approved hash="106,1@X1-TRACKBOARD3080,226.06,81.28,ADC2,,,,,"/>
-<approved hash="118,1@POW-4001,190.5,133.35,Net,GND,,,,"/>
 <approved hash="118,1@POW-3891,106.68,63.5,Net,GND,,,,"/>
 <approved hash="118,1@POW-8871,127,53.34,Net,GND,,,,"/>
 <approved hash="118,1@SEN-GYRO1,53.34,62.23,Net,GND,,,,"/>
 <approved hash="118,1@X1-TRACKBOARD3080,72.39,86.36,Net,GND,,,,"/>
-<approved hash="118,1@X1-TRACKBOARD3080,124.46,115.57,Net,RST,,,,"/>
 <approved hash="118,1@X1-TRACKBOARD3080,71.12,125.73,Net,+3V3,,,,"/>
 <approved hash="118,1@X1-TRACKBOARD3080,217.17,96.52,Net,+5V,,,,"/>
-<approved hash="118,1@POW-DDC3350,116.84,83.82,Net,AGND,,,,"/>
 </errors>
 </schematic>
 </drawing>
