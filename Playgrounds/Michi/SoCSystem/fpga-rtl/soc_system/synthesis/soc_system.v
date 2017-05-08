@@ -196,7 +196,7 @@ module soc_system (
 	wire  [31:0] mm_interconnect_0_sysid_qsys_control_slave_readdata;                         // sysid_qsys:readdata -> mm_interconnect_0:sysid_qsys_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_qsys_control_slave_address;                          // mm_interconnect_0:sysid_qsys_control_slave_address -> sysid_qsys:address
 	wire  [31:0] mm_interconnect_0_avalontoopticalsensor_communication_0_avalonbus_readdata;  // AvalonToOpticalSensor_Communication_0:avs_s0_readdata -> mm_interconnect_0:AvalonToOpticalSensor_Communication_0_AvalonBus_readdata
-	wire   [7:0] mm_interconnect_0_avalontoopticalsensor_communication_0_avalonbus_address;   // mm_interconnect_0:AvalonToOpticalSensor_Communication_0_AvalonBus_address -> AvalonToOpticalSensor_Communication_0:avs_s0_address
+	wire   [2:0] mm_interconnect_0_avalontoopticalsensor_communication_0_avalonbus_address;   // mm_interconnect_0:AvalonToOpticalSensor_Communication_0_AvalonBus_address -> AvalonToOpticalSensor_Communication_0:avs_s0_address
 	wire         mm_interconnect_0_avalontoopticalsensor_communication_0_avalonbus_read;      // mm_interconnect_0:AvalonToOpticalSensor_Communication_0_AvalonBus_read -> AvalonToOpticalSensor_Communication_0:avs_s0_read
 	wire         mm_interconnect_0_avalontoopticalsensor_communication_0_avalonbus_write;     // mm_interconnect_0:AvalonToOpticalSensor_Communication_0_AvalonBus_write -> AvalonToOpticalSensor_Communication_0:avs_s0_write
 	wire  [31:0] mm_interconnect_0_avalontoopticalsensor_communication_0_avalonbus_writedata; // mm_interconnect_0:AvalonToOpticalSensor_Communication_0_AvalonBus_writedata -> AvalonToOpticalSensor_Communication_0:avs_s0_writedata
@@ -231,7 +231,7 @@ module soc_system (
 
 	AvalonToOpticalSensor #(
 		.gDataWidth      (32),
-		.gAddrWidth      (8),
+		.gAddrWidth      (3),
 		.gClockFrequency (50000000)
 	) avalontoopticalsensor_communication_0 (
 		.reset_n             (~rst_controller_reset_out_reset),                                             //              reset.reset_n

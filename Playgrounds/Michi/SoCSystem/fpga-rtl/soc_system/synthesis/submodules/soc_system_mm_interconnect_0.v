@@ -91,7 +91,7 @@ module soc_system_mm_interconnect_0 (
 		output wire        fpga_only_master_master_readdatavalid,                            //                                                           .readdatavalid
 		input  wire        fpga_only_master_master_write,                                    //                                                           .write
 		input  wire [31:0] fpga_only_master_master_writedata,                                //                                                           .writedata
-		output wire [7:0]  AvalonToOpticalSensor_Communication_0_AvalonBus_address,          //            AvalonToOpticalSensor_Communication_0_AvalonBus.address
+		output wire [2:0]  AvalonToOpticalSensor_Communication_0_AvalonBus_address,          //            AvalonToOpticalSensor_Communication_0_AvalonBus.address
 		output wire        AvalonToOpticalSensor_Communication_0_AvalonBus_write,            //                                                           .write
 		output wire        AvalonToOpticalSensor_Communication_0_AvalonBus_read,             //                                                           .read
 		input  wire [31:0] AvalonToOpticalSensor_Communication_0_AvalonBus_readdata,         //                                                           .readdata
@@ -1319,7 +1319,7 @@ module soc_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (8),
+		.AV_ADDRESS_W                   (3),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),

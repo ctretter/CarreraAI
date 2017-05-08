@@ -60,10 +60,10 @@ static std::atomic<double> const MaxSpeed(3800);
 volatile unsigned long* OpticalSensorAddress = 0;
 static bool SensorInitialized = false;
 #define VALID_SENSOR_PRODUCT_ID 0x17
-#define OFFSET_PRODUCT_ID_REG 0x00
-#define OFFSET_MOTION_REG 0x01
-#define OFFSET_DATA_REG 0x02
-#define OFFSET_TIME_REG 0x03
+#define OFFSET_PRODUCT_ID_REG 0
+#define OFFSET_MOTION_REG 1
+#define OFFSET_DATA_REG 2
+#define OFFSET_TIME_REG 3
 #define MOTION_DETECTED 0x80
 
 static double const g = 9.81;

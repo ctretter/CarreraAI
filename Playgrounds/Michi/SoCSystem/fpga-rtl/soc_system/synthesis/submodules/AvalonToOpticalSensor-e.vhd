@@ -16,7 +16,7 @@ use work.Global.all;
 entity AvalonToOpticalSensor is
 	generic (
 		gDataWidth			: natural := 32;
-		gAddrWidth			: natural := 8;
+		gAddrWidth			: natural := 3;
 		gClockFrequency		: natural := 50E6
 	);
 	port (
