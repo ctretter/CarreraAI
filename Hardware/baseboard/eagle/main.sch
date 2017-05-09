@@ -35476,11 +35476,11 @@ I/O fixed to 3V3</text>
 <instance part="J1" gate="G$1" x="22.86" y="27.94" rot="MR0"/>
 <instance part="SV1" gate="1" x="119.38" y="111.76" rot="R270"/>
 <instance part="SV2" gate="1" x="119.38" y="121.92" rot="MR90"/>
-<instance part="SUPPLY4" gate="P" x="114.3" y="142.24"/>
+<instance part="SUPPLY4" gate="P" x="109.22" y="142.24"/>
 <instance part="GND14" gate="1" x="121.92" y="83.82" rot="MR0"/>
 <instance part="GND17" gate="1" x="127" y="137.16" rot="MR180"/>
-<instance part="P+8" gate="1" x="109.22" y="137.16" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="108.585" y="137.795" size="1.778" layer="96" rot="MR90"/>
+<instance part="P+8" gate="1" x="116.84" y="144.78" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="116.205" y="145.415" size="1.778" layer="96" rot="MR90"/>
 </instance>
 <instance part="P+12" gate="1" x="121.92" y="142.24" smashed="yes">
 <attribute name="VALUE" x="124.46" y="147.32" size="1.778" layer="96" rot="R180"/>
@@ -35629,17 +35629,15 @@ I/O fixed to 3V3</text>
 <pinref part="L1" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="P+8" gate="1" pin="+5V"/>
-<pinref part="SV2" gate="1" pin="1"/>
-<wire x1="109.22" y1="134.62" x2="109.22" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="132.08" x2="114.3" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="132.08" x2="114.3" y2="129.54" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="P+13" gate="1" pin="+5V"/>
 <wire x1="50.8" y1="50.8" x2="50.8" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="43.18" x2="48.26" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="D1" gate="G$1" pin="A2"/>
+</segment>
+<segment>
+<pinref part="SV2" gate="1" pin="2"/>
+<pinref part="P+8" gate="1" pin="+5V"/>
+<wire x1="116.84" y1="142.24" x2="116.84" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="UNO.5V" class="0">
@@ -35829,11 +35827,9 @@ I/O fixed to 3V3</text>
 <wire x1="25.4" y1="43.18" x2="22.86" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
+<pinref part="SV2" gate="1" pin="1"/>
 <pinref part="SUPPLY4" gate="P" pin="+4.1V"/>
-<wire x1="114.3" y1="139.7" x2="114.3" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="134.62" x2="116.84" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="134.62" x2="116.84" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="2"/>
+<wire x1="109.22" y1="139.7" x2="114.3" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TOP.RRX" class="0">
