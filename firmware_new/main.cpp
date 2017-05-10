@@ -99,10 +99,10 @@ void GetOpticalSensorData()
 		{
 			std::cout << std::endl << "###########################################################" << std::endl;
 			std::cout << "### DATA DUMP: " << std::endl;
-			std::cout << "### Product ID: " << alt_read_word(OpticalSensor + OFFSET_PRODUCT_ID_REG) << std::endl;
-			std::cout << "### Data: " << alt_read_word(OpticalSensor + OFFSET_DATA_REG) << std::endl;
-			std::cout << "### Time : " << alt_read_word(OpticalSensor + OFFSET_TIME_REG) << std::endl;
-			std::cout << "### Motion : " << alt_read_word(OpticalSensor + OFFSET_MOTION_REG) << std::endl;
+			std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
+			std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
+			std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
+			std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
 			std::cout << "###########################################################" << std::endl << std::endl;
 			
 			std::cout << "Try to connect to ADNS-3080 by reading product ID ..." << std::endl;
