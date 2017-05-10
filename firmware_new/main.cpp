@@ -34,7 +34,7 @@ static unsigned long const MotorControl = (unsigned long)(ALT_LWFPGASLVS_OFST + 
 static unsigned long const CarSensors = (unsigned long)(ALT_LWFPGASLVS_OFST + CARSENSORS_BASE) & HW_REGS_MASK;
 static unsigned long const CarLeds = (unsigned long)(ALT_LWFPGASLVS_OFST + CARLEDS_BASE) & HW_REGS_MASK;
 static unsigned long const Leds =  (unsigned long)(ALT_LWFPGASLVS_OFST + PIO_LED_BASE) & HW_REGS_MASK;
-static unsigned long const OpticalSensor = (unsigned long)(ALT_LWFPGASLVS_OFST + AVALONTOSENSORCOMMUNICATION_0_BASE) & HW_REGS_MASK;
+static unsigned long const OpticalSensor = (unsigned long)(ALT_LWFPGASLVS_OFST + AVALONTOOPTICALSENSOR_COMMUNICATION_0_BASE) & HW_REGS_MASK;
 
 static int const CAR_LED_HEADLIGHT_SHIFT = 1;
 
