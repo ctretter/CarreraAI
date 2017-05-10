@@ -60,18 +60,18 @@ static std::atomic<double> const MaxSpeed(3800);
 volatile unsigned long* OpticalSensorAddress = 0;
 static bool SensorInitialized = false;
 #define VALID_SENSOR_PRODUCT_ID 0x17
-#define OFFSET_PRODUCT_ID_REG 0
-#define OFFSET_MOTION_REG 1
+#define OFFSET_PRODUCT_ID_REG 1
+#define OFFSET_MOTION_REG 0
 #define OFFSET_DATA_REG 2
 #define OFFSET_TIME_REG 3
 #define MOTION_DETECTED 0x80
 
-static double const g = 9.81;
-static double const ls = 0.55; // Distance from outer wheel to the center of mass (car) in meter
-static double const hs = 0.21; // Distance from the bottom to the center of mass (car) in meter
-static double const SpeedConstant = g*ls/hs;
-static double const SafetyConstant = 0.9; // Any value between 0.0 and 1.0. Percentage of max speed.
-static double const TConstant = 0.00015; // Constant sampling time in seconds
+static double const gravity = 9.81;
+static double const distance_centroid_wheel = 0.55; 
+static double const distance_centroid_street = 0.21; 
+static double const speed_calculation_constant = gravity*distance_centroid_wheel/distance_centroid_street;
+static double const safety_max_speed = 0.9;
+static double const sample_time = 0.00015; 
 
 // implementation of data acquisition using optical sensor
 void GetOpticalSensorData() 
@@ -95,16 +95,17 @@ void GetOpticalSensorData()
 	}
 	else
 	{	
+		std::cout << std::endl << "###########################################################" << std::endl;
+		std::cout << "### DATA DUMP: " << std::endl;
+		std::cout << "### Address: " << OpticalSensorAddress << std::endl;
+		std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
+		std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
+		std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
+		std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
+		std::cout << "###########################################################" << std::endl << std::endl;
+		
 		if (!SensorInitialized)
 		{
-			std::cout << std::endl << "###########################################################" << std::endl;
-			std::cout << "### DATA DUMP: " << std::endl;
-			std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
-			std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
-			std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
-			std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
-			std::cout << "###########################################################" << std::endl << std::endl;
-			
 			std::cout << "Try to connect to ADNS-3080 by reading product ID ..." << std::endl;
 			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG);
 			if(sensorData != VALID_SENSOR_PRODUCT_ID) 
@@ -126,8 +127,8 @@ void GetOpticalSensorData()
 				std::cout << "New motion detected! Reading data ..." << std::endl;
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
 				
-				dataX = (sensorData << 8) >> 24;
-				dataY = (sensorData >> 24);
+				dataX = (sensorData << 24) >> 24;
+				dataY = (sensorData >> 8);
 				//std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				
@@ -144,39 +145,33 @@ void GetOpticalSensorData()
 	}	
 }
 
-double RadiusCalculation(double const dx, double const dy, double const omega)
+double calculateRadius(double const deltax, double const deltay, double const angular_speed)
 {
-	double radius = 0.0;
-	radius = sqrt(dx*dx+dy*dy)/(omega*TConstant);
-	return radius;
+	double r = sqrt(deltax*deltax+deltay*deltay)/(angular_speed*sample_time);
+	return r;
 }
 
-double CalcMaxSpeed(double const radius)
+double calculateMaxVelocity(double const radius)
 {
-	double v = sqrt(SpeedConstant*radius)*SafetyConstant;
+	double v = sqrt(speed_calculation_constant*radius)*safety_max_speed;
 	return v;
 }
 
-double CalcMaxSpeed(double const dx, double const dy, double const omega)
+double calculateMaxVelocity(double const deltax, double const deltay, double const angular_speed)
 {
-	return CalcMaxSpeed(RadiusCalculation(dx,dy,omega));
+	double v = calculateMaxVelocity(calculateRadius(deltax,deltay,angular_speed));
+	return v;
 }
 
 enum EAccel {Faster,Neutral,Slower};
 
-EAccel Regulation(double const maxspeed, double const speed)
+EAccel calculateAcceleration(double const max_speed, double const current_speed)
 {
-	EAccel res = Neutral;
-	if (speed < maxspeed)
-	{
-		res = EAccel::Faster;
-	}
-	else if (speed > maxspeed)
-	{
-		res = EAccel::Slower;
-	}
-	return res;	
+	EAccel a = (current_speed < max_speed?EAccel::Faster : (current_speed > max_speed ? EAccel::Slower : EAccel::Neutral));
+	return a;	
 }
+
+
 
 // TODO: measure track
 // TODO: create class for pair of maxspeed|position(length)
