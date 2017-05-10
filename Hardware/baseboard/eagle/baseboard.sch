@@ -34886,8 +34886,8 @@ NEAR BATTERY</text>
 <instance part="X2" gate="-1" x="53.34" y="35.56" rot="R180"/>
 <instance part="X2" gate="-2" x="53.34" y="20.32" rot="R180"/>
 <instance part="X2" gate="-3" x="53.34" y="53.34" rot="R180"/>
-<instance part="TP2" gate="G$1" x="304.8" y="210.82" rot="R180"/>
-<instance part="TP3" gate="G$1" x="309.88" y="210.82" rot="R180"/>
+<instance part="TP2" gate="G$1" x="304.8" y="203.2" rot="R180"/>
+<instance part="TP3" gate="G$1" x="309.88" y="203.2" rot="R180"/>
 <instance part="TP4" gate="G$1" x="314.96" y="210.82" rot="R180"/>
 <instance part="TP5" gate="G$1" x="320.04" y="210.82" rot="R180"/>
 <instance part="TP6" gate="G$1" x="325.12" y="210.82" rot="R180"/>
@@ -35470,13 +35470,13 @@ NEAR BATTERY</text>
 <net name="TOP1" class="0">
 <segment>
 <pinref part="TP2" gate="G$1" pin="TP"/>
-<wire x1="304.8" y1="213.36" x2="304.8" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="304.8" y1="205.74" x2="304.8" y2="218.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TOP2" class="0">
 <segment>
 <pinref part="TP3" gate="G$1" pin="TP"/>
-<wire x1="309.88" y1="213.36" x2="309.88" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="309.88" y1="205.74" x2="309.88" y2="218.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TOP3" class="0">
