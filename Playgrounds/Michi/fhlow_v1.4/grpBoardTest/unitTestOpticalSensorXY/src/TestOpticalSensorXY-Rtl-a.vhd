@@ -178,15 +178,16 @@ begin
 		
 			if(DataValid = '1' and (Motion = "10000000")) then
 				oDataValid <= '1';
+				-- output
+				oHEX1 <= not(ToSevSeg(DataX(3 downto 0)));
+				oHEX2 <= not(ToSevSeg(DataX(7 downto 4)));
+				oHEX3 <= not(ToSevSeg(DataY(3 downto 0)));
+				oHEX4 <= not(ToSevSeg(DataY(7 downto 4)));
 			else 
 				oDataValid <= '0';
 			end if;
 			
-			-- output
-			oHEX1 <= not(ToSevSeg(DataX(3 downto 0)));
-			oHEX2 <= not(ToSevSeg(DataX(7 downto 4)));
-			oHEX3 <= not(ToSevSeg(DataY(3 downto 0)));
-			oHEX4 <= not(ToSevSeg(DataY(7 downto 4)));
+			
 					
 		end if;
 	end process;
