@@ -82,8 +82,17 @@ EAccel calculateAcceleration(double const max_speed, double const current_speed)
 
 class TrackRecorder{
 public:
-	// first is distance_to_start and second is max_velocity
-	typedef std::pair<double,double> TrackPoint;
+	struct TrackPoint{
+		TrackPoint(double const distance_to_start, double const max_velocity)
+		: distance_to_start(distance_to_start), max_velocity(max_velocity)
+		{
+			// maybe error handling, distance_to_start and max_velocity only positive
+		}
+		
+		double const distance_to_start;
+		double const max_velocity;
+	};
+	
 	typedef std::vector<TrackPoint> TrackMap;
 
 	TrackRecorder(	double const distance_centroid_wheel = 1.0,
@@ -106,7 +115,7 @@ public:
 	
 private:
 	
-	static double const gravity;
+	static double constexpr gravity = 9.81;
 	double const safety_for_max_velocity;
 	double const speed_calculation_constant;
 	
@@ -130,8 +139,6 @@ private:
 		return v;
 	}
 };
-
-double const TrackRecorder::gravity = 9.81;
 
 // implementation of data acquisition using optical sensor
 void GetOpticalSensorData() 
@@ -183,19 +190,21 @@ void GetOpticalSensorData()
 				std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
 				std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
 				std::cout << "###########################################################" << std::endl << std::endl;
-		*/
+			*/
 				std::cout << "New motion detected! Reading data ..." << std::endl;
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
+				
+				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
+				f << sensorData << "  Time elapsed: " << double(sensorData/(clock_rate/seconds_to_micro)) << " us" << std::endl;
 				
 				dataY = (sensorData << 24) >> 24;
 				dataX = (sensorData >> 8);
 				//std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
+				f << "SensorData: " << sensorData << std::endl;
 				
-				std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
-				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
+				//std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
 				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
-				f << "elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/(clock_rate/seconds_to_micro)) << " us" << std::endl;
 			}
 			else
 			{
