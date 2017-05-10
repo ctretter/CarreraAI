@@ -104,7 +104,7 @@ public:
 		// maybe error handling, distance_centroid_* positive values, safety_for_max_velocity between 0.0 and 1.0
 	}
 
-	TrackMap const getTrackMap(void) const
+	TrackMap const& getTrackMap(void) const
 	{
 		return this->track_map;
 	}
@@ -143,12 +143,13 @@ private:
 };
 
 // implementation of data acquisition using optical sensor
-void readOpticalSensorData() 
+void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_time) 
 {
 	uint32_t sensorData = 0;
 	
-	uint32_t dataX = 0;
-	uint32_t dataY = 0;
+	dataX = 0;
+	dataY = 0;
+	sample_time = 0.0;
 
 	static std::ofstream f;
 	if(!f.is_open())
@@ -194,14 +195,18 @@ void readOpticalSensorData()
 				std::cout << "###########################################################" << std::endl << std::endl;
 			*/
 				std::cout << "New motion detected! Reading data ..." << std::endl;
-				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
 				
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
-				f << sensorData << "  Time elapsed: " << double(sensorData/(clock_rate/seconds_to_micro)) << " us" << std::endl;
+				sample_time = sensorData;
 				
+				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
 				dataY = (sensorData << 24) >> 24;
 				dataX = (sensorData >> 8);
-				//std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
+				
+				
+				f << "Cycles elapsed: " << sample_time << std::endl;
+				sample_time /= clock_rate;
+				f << "Time elapsed: " << sample_time * seconds_to_micro << " us" << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "SensorData: " << sensorData << std::endl << std::endl;
 				
@@ -495,12 +500,12 @@ int main(int argc, char **argv)
 	OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
   
 	TrackRecorder track(1.0,0.5,0.9,0.7);
+	uint32_t deltax, deltay;
+	double sample_time;
 	// TODO implement isStartSignal for detection of driving over start
-	// TODO change interface of readOpticalSensorData
 	// TODO implement readAngularVelocity
 	/*while(!isStartSignal());	// waiting for first time to drive over start
 	while(!isStartSignal()){	// record track
-		uint32_t deltax, deltay, sample_time;
 		uint32_t gyro_z;
 		//readOpticalSensorData(deltax, deltay, sample_time);
 		//gyro_z = readAngularVelocity();
@@ -508,7 +513,7 @@ int main(int argc, char **argv)
 	}*/
 	while(true){
 		
-		readOpticalSensorData();
+		readOpticalSensorData(deltax, deltay, sample_time);
 		usleep(5);
 		//sleep(1);
 	}
