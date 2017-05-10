@@ -72,9 +72,7 @@ static double const seconds_to_micro = 1000000.0;
 
 
 enum EAccel {FASTER,NEUTRAL,SLOWER};
-
-
-EAccel calculateAcceleration(double const max_speed, double const current_speed)
+EAccel decideAcceleration(double const max_speed, double const current_speed)
 {
 	EAccel a = (current_speed < max_speed?EAccel::FASTER : (current_speed > max_speed ? EAccel::SLOWER : EAccel::NEUTRAL));
 	return a;	
@@ -111,8 +109,10 @@ public:
 		return this->track_map;
 	}
 
-	void addTrackPoint(double const distance_to_start, double const deltax, double const deltay, double const gyro_z, double const sample_time){
-		track_map.push_back(TrackPoint(distance_to_start, calculateMaxVelocity(deltax,deltay,gyro_z, sample_time)));
+	void addTrackPoint(double const deltax, double const deltay, double const gyro_z, double const sample_time){
+		double distance = sqrt(deltax * deltax + deltay * deltay);
+		double distance_to_start = (track_map.empty()?0.0:track_map.back().distance_to_start) + distance;
+		track_map.push_back(TrackPoint(distance_to_start, calculateMaxVelocity(distance, gyro_z, sample_time)));
 	}
 	
 private:
@@ -125,28 +125,25 @@ private:
 	
 	TrackMap track_map;
 	
-	double calculateRadius(double const deltax, double const deltay, double const gyro_z, double const sample_time)
+	double calculateRadius(double const distance, double const gyro_z, double const sample_time)
 	{
 		double angular_velocity = gyro_z * gyro_to_angular_velocity;
-		double r = sqrt(deltax * deltax + deltay * deltay) / (angular_velocity * sample_time);
-		return r;
+		return (distance / (angular_velocity * sample_time));
 	}
 
 	double calculateMaxVelocity(double const radius)
 	{
-		double v = sqrt(speed_calculation_constant*radius)*safety_for_max_velocity;
-		return v;
+		return (sqrt(speed_calculation_constant*radius)*safety_for_max_velocity);
 	}
 
-	double calculateMaxVelocity(double const deltax, double const deltay, double const gyro_z, double const sample_time)
+	double calculateMaxVelocity(double const distance, double const gyro_z, double const sample_time)
 	{
-		double v = calculateMaxVelocity(calculateRadius(deltax,deltay,gyro_z, sample_time));
-		return v;
+		return calculateMaxVelocity(calculateRadius(distance, gyro_z, sample_time));
 	}
 };
 
 // implementation of data acquisition using optical sensor
-void GetOpticalSensorData() 
+void readOpticalSensorData() 
 {
 	uint32_t sensorData = 0;
 	
@@ -219,17 +216,8 @@ void GetOpticalSensorData()
 	}	
 }
 
-
-
-
-
-
-
-
 // TODO: measure track
-// TODO: create class for pair of maxspeed|position(length)
 // TODO: measure max. slow down acceleration (reality) (a)
-// TODO: convertion from gyro to omega
 // TODO: calculate foresight distance (l_f = (v_min-v_cur)*(v_min-v_cur)/(2*a) )
 // TODO: choose maxspeed (v_max = min(v_max_future,v_max_cur) )
 
@@ -346,7 +334,7 @@ void GetOpticalSensorData()
   DataAcquisition::GetInstance()->Start();
 
   // initialize sensor
-  GetOpticalSensorData();
+  readOpticalSensorData();
 	
   while(true) {
   // Get data sample from data acquisition thread
@@ -506,8 +494,21 @@ int main(int argc, char **argv)
 	std::cout << "Mem mapped" << std::endl;
 	OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
   
+	TrackRecorder track(1.0,0.5,0.9,0.7);
+	// TODO implement isStartSignal for detection of driving over start
+	// TODO change interface of readOpticalSensorData
+	// TODO implement readAngularVelocity
+	/*while(!isStartSignal());	// waiting for first time to drive over start
+	while(!isStartSignal()){	// record track
+		uint32_t deltax, deltay, sample_time;
+		uint32_t gyro_z;
+		//readOpticalSensorData(deltax, deltay, sample_time);
+		//gyro_z = readAngularVelocity();
+		track.addTrackPoint(deltax,deltay,gyro_z,sample_time);
+	}*/
 	while(true){
-		GetOpticalSensorData();
+		
+		readOpticalSensorData();
 		usleep(5);
 		//sleep(1);
 	}
