@@ -97,6 +97,14 @@ void GetOpticalSensorData()
 	{	
 		if (!SensorInitialized)
 		{
+			std::cout << std::endl << "###########################################################" << std::endl;
+			std::cout << "### DATA DUMP: " << std::endl;
+			std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
+			std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
+			std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
+			std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
+			std::cout << "###########################################################" << std::endl << std::endl;
+			
 			std::cout << "Try to connect to ADNS-3080 by reading product ID ..." << std::endl;
 			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG);
 			if(sensorData != VALID_SENSOR_PRODUCT_ID) 
@@ -112,11 +120,11 @@ void GetOpticalSensorData()
 		else
 		{
 			std::cout << "Check motion register for changes ..." << std::endl;
-			sensorData = alt_read_word(OpticalSensor + OFFSET_MOTION_REG);
+			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG);
 			if(sensorData == MOTION_DETECTED)
 			{
 				std::cout << "New motion detected! Reading data ..." << std::endl;
-				sensorData = alt_read_word(OpticalSensor + OFFSET_DATA_REG);
+				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
 				
 				dataX = (sensorData << 8) >> 24;
 				dataY = (sensorData >> 24);
@@ -124,7 +132,7 @@ void GetOpticalSensorData()
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				
 				std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
-				sensorData = alt_read_word(OpticalSensor + OFFSET_TIME_REG);
+				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
 				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
 				f << "elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
 			}
