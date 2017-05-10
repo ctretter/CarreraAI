@@ -4,7 +4,7 @@
 -- File        :	OpticalSensorXY-Rtl-a.vhd
 -- Description : 	architecture for communication between FPGA and OptiSensor
 -------------------------------------------------------------------------------
--- Latest update:	05.04.2017
+-- Latest update:	10.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of OpticalSensorXY is
@@ -29,7 +29,6 @@ architecture Rtl of OpticalSensorXY is
 	signal ResetSensor 			: std_ulogic									:= '0';
 	signal SysClk 				: std_ulogic									:= '0';
 	signal Sel 					: std_ulogic 									:= '1';
-	signal DataValid			: std_ulogic									:= '0';
 	signal SysClkEnable			: std_ulogic									:= '0';
 	signal ErrorProductID		: std_ulogic									:= '0';
 	signal ResetActive			: std_ulogic									:= '0';
@@ -68,7 +67,10 @@ begin
 			MasterOutput 		<= '0';
 			SysClk 				<= '0';
 			Sel 				<= cnInactivated;			
-			DataValid 			<= '0';
+			oDataValid 			<= '0';
+			oMotion				<= (others => '0');
+			oDataX				<= (others => '0');
+			oDataY				<= (others => '0');
 			SysClkGenCounter 	<= 1;
 			CntWaitCycles 		<= 1;
 			SysClkEnable 		<= '0';
@@ -133,7 +135,7 @@ begin
 										SysClkGenCounter 	<= 1;
 										MasterOutput 		<= '0';
 										SysClk 				<= '0';	
-										DataValid 			<= '0';
+										oDataValid 			<= '0';
 										ResetActive			<= '0';
 										oMotion				<= (others => '0');
 										oDataX 				<= (others => '0');	
@@ -403,16 +405,27 @@ begin
 											
 												State <= SetMotionReg;
 												CntWaitCycles <= 1;	
-												DataValid <= '0';
 											else							
-												DataValid <= '1';
 												CntWaitCycles <= CntWaitCycles + 1;
 											end if;
 										end if;
 										
-										oMotion <= MotionReg;
-										oDataX <= DataXReg;
-										oDataY <= DataYReg;
+										-- send data and motion to output if new data received, else NULL
+										if (MotionReg = cNewDataReceived) then
+											oMotion <= MotionReg;
+											oDataX <= DataXReg;
+											oDataY <= DataYReg;
+											oDataValid <= '1';
+											
+											-- reset motion register
+											MotionReg <= (others => '0');
+										else
+											oMotion <= (others => '0');
+											oDataX <= (others => '0');
+											oDataY <= (others => '0');
+											oDataValid <= '0';
+										end if;
+										
 										oProductID <= ProductIDReg;
 										
 										if (ProductIDReg /= cProductID) then
@@ -428,8 +441,7 @@ begin
 										SlaveClkCounter 	<= cMaxWriteBits;
 										MasterOutput 		<= '0';
 										SysClk 				<= '0';
-										Sel 				<= cnInactivated;					
-										DataValid 			<= '0';										
+										Sel 				<= cnInactivated;															
 										SysClkGenCounter 	<= 1;
 										CntWaitCycles 		<= 1;
 										ErrorProductID		<= '1';
@@ -444,7 +456,6 @@ begin
 	oSysClk <= SysClk;
 	oSelect <= Sel;
 	oMOSI <= MasterOutput;
-	oDataValid <= DataValid;
 	oResetSensor <= ResetSensor;
 	oNPD <= cActivated; -- do not power down sensor any time!
 	oErrorProductID <= ErrorProductID;
