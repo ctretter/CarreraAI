@@ -2,7 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 --use ieee.fixed_generic_pkg.all;
-use work.fixed_pkg.all;
+--library ieee_proposed;
+use ieee.fixed_pkg.all;
 
 package NN is
 	constant cDataWidth : integer;

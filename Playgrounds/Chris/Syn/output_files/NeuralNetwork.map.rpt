@@ -1,0 +1,226 @@
+Analysis & Synthesis report for NeuralNetwork
+Wed May 10 15:08:59 2017
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                             ;
++-----------------------------+--------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Wed May 10 15:08:59 2017          ;
+; Quartus II 64-Bit Version   ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
+; Revision Name               ; NeuralNetwork                              ;
+; Top-level Entity Name       ; NeuralNetwork                              ;
+; Family                      ; Cyclone V                                  ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                  ;
+; Total registers             ; N/A until Partition Merge                  ;
+; Total pins                  ; N/A until Partition Merge                  ;
+; Total virtual pins          ; N/A until Partition Merge                  ;
+; Total block memory bits     ; N/A until Partition Merge                  ;
+; Total PLLs                  ; N/A until Partition Merge                  ;
+; Total DLLs                  ; N/A until Partition Merge                  ;
++-----------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA4U23C6       ;                    ;
+; Top-level entity name                                                           ; NeuralNetwork      ; NeuralNetwork      ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Wed May 10 15:08:29 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off NeuralNetwork -c NeuralNetwork
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 21 design units, including 21 entities, in source file /fh_hagenberg/projekt/carreraai/playgrounds/chris/grpip/unitexp/exponential_syn.v
+    Info (12023): Found entity 1: Exponential_altmult_opt_csa
+    Info (12023): Found entity 2: Exponential_mult
+    Info (12023): Found entity 3: Exponential_mult1
+    Info (12023): Found entity 4: Exponential_altmult_opt
+    Info (12023): Found entity 5: Exponential_add_sub
+    Info (12023): Found entity 6: Exponential_altmult_opt_csa1
+    Info (12023): Found entity 7: Exponential_mult12
+    Info (12023): Found entity 8: Exponential_mult123
+    Info (12023): Found entity 9: Exponential_altmult_opt1
+    Info (12023): Found entity 10: Exponential_add_sub1
+    Info (12023): Found entity 11: Exponential_altmult_opt_csa12
+    Info (12023): Found entity 12: Exponential_mult1234
+    Info (12023): Found entity 13: Exponential_altmult_opt12
+    Info (12023): Found entity 14: Exponential_lpm_clshift
+    Info (12023): Found entity 15: Exponential_mult12345
+    Info (12023): Found entity 16: Exponential_mult123456
+    Info (12023): Found entity 17: Exponential_mux
+    Info (12023): Found entity 18: Exponential_mux1
+    Info (12023): Found entity 19: Exponential_mux12
+    Info (12023): Found entity 20: Exponential_altfp_exp
+    Info (12023): Found entity 21: Exponential
+Info (12021): Found 14 design units, including 14 entities, in source file /fh_hagenberg/projekt/carreraai/playgrounds/chris/grpip/convert/fixed2float/floatconv_syn.v
+    Info (12023): Found entity 1: FloatConv_altbarrel_shift
+    Info (12023): Found entity 2: FloatConv_altpriority_encoder12345
+    Info (12023): Found entity 3: FloatConv_altpriority_encoder1234
+    Info (12023): Found entity 4: FloatConv_altpriority_encoder123
+    Info (12023): Found entity 5: FloatConv_altpriority_encoder12
+    Info (12023): Found entity 6: FloatConv_altpriority_encoder123456789
+    Info (12023): Found entity 7: FloatConv_altpriority_encoder12345678
+    Info (12023): Found entity 8: FloatConv_altpriority_encoder1234567
+    Info (12023): Found entity 9: FloatConv_altpriority_encoder123456
+    Info (12023): Found entity 10: FloatConv_altpriority_encoder1
+    Info (12023): Found entity 11: FloatConv_altpriority_encoder12345678910
+    Info (12023): Found entity 12: FloatConv_altpriority_encoder
+    Info (12023): Found entity 13: FloatConv_altfp_convert
+    Info (12023): Found entity 14: FloatConv
+Info (12021): Found 4 design units, including 4 entities, in source file /fh_hagenberg/projekt/carreraai/playgrounds/chris/grpip/convert/float2fixed/tofixed_syn.v
+    Info (12023): Found entity 1: tofixed_altbarrel_shift
+    Info (12023): Found entity 2: tofixed_cmpr
+    Info (12023): Found entity 3: tofixed_altfp_convert
+    Info (12023): Found entity 4: tofixed
+Info (12021): Found 2 design units, including 0 entities, in source file /fh_hagenberg/projekt/carreraai/playgrounds/chris/grpieeeproposed/src/float_pkg_c.vhdl
+    Info (12022): Found design unit 1: float_pkg
+    Info (12022): Found design unit 2: float_pkg-body
+Info (12021): Found 2 design units, including 0 entities, in source file /fh_hagenberg/projekt/carreraai/playgrounds/chris/grpieeeproposed/src/fixed_pkg-p.vhd
+    Info (12022): Found design unit 1: fixed_pkg
+    Info (12022): Found design unit 2: fixed_pkg-body
+Info (12021): Found 1 design units, including 0 entities, in source file /fh_hagenberg/projekt/carreraai/playgrounds/chris/grpieeeproposed/src/fixed_float_types-p.vhd
+    Info (12022): Found design unit 1: fixed_float_types
+Info (12021): Found 2 design units, including 0 entities, in source file /fh_hagenberg/projekt/carreraai/playgrounds/chris/grpnn/unitnn/src/nn-pkg.vhd
+    Info (12022): Found design unit 1: NN
+    Info (12022): Found design unit 2: NN-body
+Info (12021): Found 2 design units, including 1 entities, in source file /fh_hagenberg/projekt/carreraai/playgrounds/chris/grpnn/unitnn/src_rtl4/nn-rtl4-ea.vhd
+    Info (12022): Found design unit 1: NeuralNetwork-RTL4
+    Info (12023): Found entity 1: NeuralNetwork
+Error (10482): VHDL error at NN-RTL4-ea.vhd(53): object "Exponential" is used but not declared File: D:/FH_HAGENBERG/Projekt/CarreraAI/Playgrounds/Chris/grpNN/unitNN/src_RTL4/NN-RTL4-ea.vhd Line: 53
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 971 megabytes
+    Error: Processing ended: Wed May 10 15:09:00 2017
+    Error: Elapsed time: 00:00:31
+    Error: Total CPU time (on all processors): 00:00:54
+
+
