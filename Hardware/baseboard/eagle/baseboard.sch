@@ -31475,7 +31475,6 @@ W = angled&lt;p&gt;
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R0805" value="5mR"/>
 <part name="☇4" library="testpad" deviceset="PTR1" device="TP07SQ"/>
-<part name="☇5" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="☇7" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="☇8" library="testpad" deviceset="PTR1" device="TP07SQ"/>
 <part name="☇6" library="testpad" deviceset="PTR1" device="TP07SQ"/>
@@ -31586,7 +31585,6 @@ Low ESR, OP~5V,ceramic</text>
 <attribute name="VALUE" x="210.82" y="135.89" size="1.778" layer="96"/>
 </instance>
 <instance part="☇4" gate="G$1" x="124.46" y="20.32" rot="R90"/>
-<instance part="☇5" gate="G$1" x="124.46" y="15.24" rot="R90"/>
 <instance part="☇7" gate="G$1" x="96.52" y="20.32" rot="R90"/>
 <instance part="☇8" gate="G$1" x="96.52" y="15.24" rot="R90"/>
 <instance part="☇6" gate="G$1" x="124.46" y="10.16" rot="R90"/>
@@ -31866,11 +31864,6 @@ Low ESR, OP~5V,ceramic</text>
 </net>
 <net name="DDC.VIN" class="0">
 <segment>
-<wire x1="106.68" y1="15.24" x2="121.92" y2="15.24" width="0.1524" layer="91"/>
-<label x="119.38" y="17.78" size="1.778" layer="95" rot="R180"/>
-<pinref part="☇5" gate="G$1" pin="TP"/>
-</segment>
-<segment>
 <label x="20.32" y="147.32" size="1.778" layer="95" rot="R180" xref="yes"/>
 <wire x1="40.64" y1="147.32" x2="20.32" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="-"/>
@@ -32055,6 +32048,7 @@ http://cds.linear.com/image/1940asch.png</text>
 <rectangle x1="220.98" y1="83.82" x2="237.49" y2="104.14" layer="116"/>
 <rectangle x1="218.44" y1="60.96" x2="242.57" y2="78.74" layer="116"/>
 <rectangle x1="40.64" y1="63.5" x2="57.15" y2="81.28" layer="116"/>
+<rectangle x1="181.61" y1="111.76" x2="199.39" y2="120.65" layer="116"/>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
