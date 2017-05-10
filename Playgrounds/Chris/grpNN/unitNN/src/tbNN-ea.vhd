@@ -23,6 +23,7 @@ signal Relation  :  sfixed(cDataWidth-1 downto (0-cFractionWidth)):= (others => 
 signal position  :  sfixed(cDataWidth-1 downto (0-cFractionWidth)):= (others => '0');
 signal NextCurve :  sfixed(cDataWidth-1 downto (0-cFractionWidth)):= (others => '0');
 signal Throttle  :  sfixed(cDataWidth-1 downto (0-cFractionWidth)):= (others => '0');
+signal Throttle2  :  sfixed(cDataWidth-1 downto (0-cFractionWidth)):= (others => '0');
 
 begin
 
@@ -40,6 +41,18 @@ port map(
     oThrottle	=>  Throttle);
 	
 	
+NN2: entity work.NeuralNetwork(RTL4)
+port map(
+	iclk		=> clk,
+    inReset 	=> Reset,
+    iSpeed		=> speed,
+    iGyro		=> gyro,
+    iRelation 	=> Relation,
+    iPos		=> position,
+    iNCurve		=> NextCurve,
+    oThrottle	=>  Throttle2);
+	
+	
 stimuli: process is
 begin
 	Reset <= '1';
@@ -48,11 +61,77 @@ begin
 	wait for 45 ns;
 	Reset <= '1';
 	
+	
+	speed <= x"000CCCCCCCCCCCCC";
+	gyro <= x"0008000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0000000000000000";
+	
+	wait for 2000 ns;
+	
+	speed <= x"000CCCCCCCCCCCCC";
+	gyro <= x"0008000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0000CCCCCCCCCCCC";
+	
+	wait for 2000 ns;
+	
+	speed <= x"000C000000000000";
+	gyro <= x"0008000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0001C28F5C28F5C2";
+	NextCurve <= x"0010000000000000";
+	
+	wait for 2000 ns;
+	
+	speed <= x"000A666666666666";
+	gyro <= x"0000000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0001EB851EB851EB";
+	NextCurve <= x"0010000000000000";
+	
+	wait for 2000 ns;
+	
+	speed <= x"000A666666666666";
+	gyro <= x"0000000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0003AE147AE147AE";
+	NextCurve <= x"0010000000000000";
+	
+	wait for 2000 ns;
+	
+	speed <= x"0008CCCCCCCCCCCC";
+	gyro <= x"0010000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0003D70A3D70A3D7";
+	NextCurve <= x"0010000000000000";
+	
+	wait for 2000 ns;
+	
+	speed <= x"0008000000000000";
+	gyro <= x"0010000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0005999999999999";
+	NextCurve <= x"0010000000000000";
+	
+		wait for 2000 ns;
+	
+	speed <= x"0007333333333333";
+	gyro <= x"0000000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0005C28F5C28F5C2";
+	NextCurve <= x"0010000000000000";
+	
+	wait for 2000 ns;
+	
 	--first test
-	--speed <= x"000E666666666666";
-	--gyro  <= x"0008000000000000";
-	--Relation <= x"0008000000000000";
-	--position <= x"0009999999999999";
+	speed <= x"000E666666666666";
+	gyro  <= x"0008000000000000";
+	Relation <= x"0008000000000000";
+	position <= x"0009999999999999";
+	NextCurve <= x"0000000000000000";
+	
+	wait for 2000 ns;
 	
 	--second test
 	speed <= x"0007333333333333";

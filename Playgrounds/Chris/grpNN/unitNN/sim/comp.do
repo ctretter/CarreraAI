@@ -21,5 +21,7 @@ echo ## according pkg and NN
 vcom $o1 $o2 -work "work" ../src/NN-pkg.vhd
 vcom $o1 $o2 -work "work" ../src_RTL3/NN-RTL3-ea.vhd
 
+vcom $o1 $o2 -work "work" ../src_RTL4/NN-RTL4-ea.vhd
+
 echo ## testbench
 vcom $o1 $o2 -work "work" ../src/tbNN-ea.vhd
