@@ -6,10 +6,11 @@ use ieee.numeric_std.all;
 --use ieee.math_real.all;
 -----------------------------------------
 --library floatfixlib;
-use work.fixed_float_types.all;
-use work.float_pkg.all;
+library ieee_proposed;
+use ieee_proposed.fixed_float_types.all;
+use ieee_proposed.float_pkg.all;
+use ieee_proposed.fixed_pkg.all;
 
-use work.fixed_pkg.all;
 use work.NN.all;
 
 
@@ -28,7 +29,7 @@ entity NeuralNetwork is
 		iGyro		: in sfixed(gDataWidth-1 downto (0-gFractionWidth));
 		iRelation	: in sfixed(gDataWidth-1 downto (0-gFractionWidth));
 		iPos		: in sfixed(gDataWidth-1 downto (0-gFractionWidth));
-		iNCurve		: in sfixed(gDataWidth-1 downto (0-gFractionWidth));
+		iNxtCurve		: in sfixed(gDataWidth-1 downto (0-gFractionWidth));
 
 		oThrottle	: out sfixed(gDataWidth-1 downto (0-gFractionWidth));
 		oRdy		: out std_ulogic
@@ -118,7 +119,7 @@ begin
 		vDotMul := (others => '0');
 		Exponent <= (others => '0');
 		
-		wait on inReset, iSpeed, iGyro, iRelation, iPos, iNCurve;
+		wait on inReset, iSpeed, iGyro, iRelation, iPos, iNxtCurve;
     	if(inReset = cnActivated) then
 		    vDendrites_0 	:= ((others=> (others => '0')));
 		    vDendrites_1	:= ((others=> (others => '0')));
@@ -132,7 +133,7 @@ begin
 	    else
 			oRdy <= '0';
 		    --assign input values to vector
-		    vDendrites_0 := (iNCurve, iPos, iRelation, iGyro, iSpeed); 		
+		    vDendrites_0 := (iNxtCurve, iPos, iRelation, iGyro, iSpeed); 		
 		
 
 		    --calculate matrix product of matrix and vector

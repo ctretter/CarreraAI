@@ -13,9 +13,9 @@ vcom $o1 $o2 $o3 -work "work" ${Root}/grpIP/convert/Fixed2Float/FloatConv.vhd
 
 echo ## pkg fixed point 
 
-vcom $o1 $o2 $o3 -work "work" ${Root}/grpIeeeProposed/pkgfixed_float_types/src/fixed_float_types-p.vhd
-vcom $o1 $o2 $o3 -work "work" ${Root}/grpIeeeProposed/pkgfixed_pkg/src/fixed_pkg-p.vhd
-vcom $o1 $o2 $o3 -work "work" ${Root}/grpIeeeProposed/others/vhdl2008c/float_pkg_c.vhdl
+##vcom $o1 $o2 $o3 -work "work" ${Root}/grpIeeeProposed/pkgfixed_float_types/src/fixed_float_types-p.vhd
+##vcom $o1 $o2 $o3 -work "work" ${Root}/grpIeeeProposed/pkgfixed_pkg/src/fixed_pkg-p.vhd
+##vcom $o1 $o2 $o3 -work "work" ${Root}/grpIeeeProposed/others/vhdl2008c/float_pkg_c.vhdl
 
 echo ## according pkg and NN
 vcom $o1 $o2 -work "work" ../src/NN-pkg.vhd
