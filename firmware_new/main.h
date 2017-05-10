@@ -6,14 +6,14 @@ struct distanceYawRate_t {
 	double yawRate;
 };
 
-/*#include <atomic>
+#include <atomic>
 
 #define HW_REGS_BASE ( ALT_STM_OFST )
 #define HW_REGS_SPAN ( 0x04000000 )
 #define HW_REGS_MASK ( HW_REGS_SPAN - 1 )
 
 //const int CAR_LED_HEADLIGHT_SHIFT = 1;
-/*const int CAR_LED_LED0_SHIFT = 3;
+const int CAR_LED_LED0_SHIFT = 3;
 const int CAR_LED_LED1_SHIFT = 4;
 const int CAR_LED_ERR_SHIFT = 5;
 

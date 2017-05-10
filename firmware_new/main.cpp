@@ -97,9 +97,11 @@ public:
 
 	TrackRecorder(	double const distance_centroid_wheel = 1.0,
 					double const distance_centroid_street = 0.5,
-					double const safety_for_max_velocity = 0.9)
+					double const safety_for_max_velocity = 0.9,
+					double const gyro_to_angular_velocity = 0.07)
 	: safety_for_max_velocity(safety_for_max_velocity), 
-	  speed_calculation_constant(gravity*distance_centroid_wheel/distance_centroid_street)
+	  speed_calculation_constant(gravity*distance_centroid_wheel/distance_centroid_street),
+	  gyro_to_angular_velocity(gyro_to_angular_velocity*degree_to_radian)
 	{
 		// maybe error handling, distance_centroid_* positive values, safety_for_max_velocity between 0.0 and 1.0
 	}
@@ -109,21 +111,24 @@ public:
 		return this->track_map;
 	}
 
-	void addTrackPoint(double const distance_to_start, double const deltax, double const deltay, double const angular_velocity, double const sample_time){
-		track_map.push_back(TrackPoint(distance_to_start, calculateMaxVelocity(deltax,deltay,angular_velocity, sample_time)));
+	void addTrackPoint(double const distance_to_start, double const deltax, double const deltay, double const gyro_z, double const sample_time){
+		track_map.push_back(TrackPoint(distance_to_start, calculateMaxVelocity(deltax,deltay,gyro_z, sample_time)));
 	}
 	
 private:
 	
 	static double constexpr gravity = 9.81;
+	static double constexpr degree_to_radian = M_PI/180.0;
 	double const safety_for_max_velocity;
 	double const speed_calculation_constant;
+	double const gyro_to_angular_velocity;
 	
 	TrackMap track_map;
 	
-	double calculateRadius(double const deltax, double const deltay, double const angular_velocity, double const sample_time)
+	double calculateRadius(double const deltax, double const deltay, double const gyro_z, double const sample_time)
 	{
-		double r = sqrt(deltax*deltax+deltay*deltay)/(angular_velocity*sample_time);
+		double angular_velocity = gyro_z * gyro_to_angular_velocity;
+		double r = sqrt(deltax * deltax + deltay * deltay) / (angular_velocity * sample_time);
 		return r;
 	}
 
@@ -133,9 +138,9 @@ private:
 		return v;
 	}
 
-	double calculateMaxVelocity(double const deltax, double const deltay, double const angular_velocity, double const sample_time)
+	double calculateMaxVelocity(double const deltax, double const deltay, double const gyro_z, double const sample_time)
 	{
-		double v = calculateMaxVelocity(calculateRadius(deltax,deltay,angular_velocity, sample_time));
+		double v = calculateMaxVelocity(calculateRadius(deltax,deltay,gyro_z, sample_time));
 		return v;
 	}
 };
@@ -201,7 +206,7 @@ void GetOpticalSensorData()
 				dataX = (sensorData >> 8);
 				//std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
-				f << "SensorData: " << sensorData << std::endl;
+				f << "SensorData: " << sensorData << std::endl << std::endl;
 				
 				//std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
 				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
@@ -503,8 +508,7 @@ int main(int argc, char **argv)
   
 	while(true){
 		GetOpticalSensorData();
-//		std::cout << "Cycle done" << std::endl;
-//		usleep(100000);
+		usleep(5);
 		//sleep(1);
 	}
 }
