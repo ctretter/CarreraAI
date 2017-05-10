@@ -65,13 +65,85 @@ static bool SensorInitialized = false;
 #define OFFSET_DATA_REG 2
 #define OFFSET_TIME_REG 3
 #define MOTION_DETECTED 0x80
+ 
+static double const clock_rate = 50000000.0;
+static double const seconds_to_milli = 1000.0;
+static double const seconds_to_micro = 1000000.0;
 
-static double const gravity = 9.81;
-static double const distance_centroid_wheel = 0.55; 
-static double const distance_centroid_street = 0.21; 
-static double const speed_calculation_constant = gravity*distance_centroid_wheel/distance_centroid_street;
-static double const safety_max_speed = 0.9;
-static double const sample_time = 0.00015; 
+
+enum EAccel {FASTER,NEUTRAL,SLOWER};
+
+
+EAccel calculateAcceleration(double const max_speed, double const current_speed)
+{
+	EAccel a = (current_speed < max_speed?EAccel::FASTER : (current_speed > max_speed ? EAccel::SLOWER : EAccel::NEUTRAL));
+	return a;	
+}
+
+class TrackRecorder{
+public:
+	struct TrackPoint{
+		TrackPoint(double const distance_to_start, double const max_velocity)
+		: distance_to_start(distance_to_start), max_velocity(max_velocity)
+		{
+			// maybe error handling, distance_to_start and max_velocity only positive
+		}
+		
+		double const distance_to_start;
+		double const max_velocity;
+	};
+	
+	typedef std::vector<TrackPoint> TrackMap;
+
+	TrackRecorder(	double const distance_centroid_wheel = 1.0,
+					double const distance_centroid_street = 0.5,
+					double const safety_for_max_velocity = 0.9,
+					double const gyro_to_angular_velocity = 0.07)
+	: safety_for_max_velocity(safety_for_max_velocity), 
+	  speed_calculation_constant(gravity*distance_centroid_wheel/distance_centroid_street),
+	  gyro_to_angular_velocity(gyro_to_angular_velocity*degree_to_radian)
+	{
+		// maybe error handling, distance_centroid_* positive values, safety_for_max_velocity between 0.0 and 1.0
+	}
+
+	TrackMap const getTrackMap(void) const
+	{
+		return this->track_map;
+	}
+
+	void addTrackPoint(double const distance_to_start, double const deltax, double const deltay, double const gyro_z, double const sample_time){
+		track_map.push_back(TrackPoint(distance_to_start, calculateMaxVelocity(deltax,deltay,gyro_z, sample_time)));
+	}
+	
+private:
+	
+	static double constexpr gravity = 9.81;
+	static double constexpr degree_to_radian = M_PI/180.0;
+	double const safety_for_max_velocity;
+	double const speed_calculation_constant;
+	double const gyro_to_angular_velocity;
+	
+	TrackMap track_map;
+	
+	double calculateRadius(double const deltax, double const deltay, double const gyro_z, double const sample_time)
+	{
+		double angular_velocity = gyro_z * gyro_to_angular_velocity;
+		double r = sqrt(deltax * deltax + deltay * deltay) / (angular_velocity * sample_time);
+		return r;
+	}
+
+	double calculateMaxVelocity(double const radius)
+	{
+		double v = sqrt(speed_calculation_constant*radius)*safety_for_max_velocity;
+		return v;
+	}
+
+	double calculateMaxVelocity(double const deltax, double const deltay, double const gyro_z, double const sample_time)
+	{
+		double v = calculateMaxVelocity(calculateRadius(deltax,deltay,gyro_z, sample_time));
+		return v;
+	}
+};
 
 // implementation of data acquisition using optical sensor
 void GetOpticalSensorData() 
@@ -95,15 +167,6 @@ void GetOpticalSensorData()
 	}
 	else
 	{	
-		std::cout << std::endl << "###########################################################" << std::endl;
-		std::cout << "### DATA DUMP: " << std::endl;
-		std::cout << "### Address: " << OpticalSensorAddress << std::endl;
-		std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
-		std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
-		std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
-		std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
-		std::cout << "###########################################################" << std::endl << std::endl;
-		
 		if (!SensorInitialized)
 		{
 			std::cout << "Try to connect to ADNS-3080 by reading product ID ..." << std::endl;
@@ -123,19 +186,30 @@ void GetOpticalSensorData()
 			std::cout << "Check motion register for changes ..." << std::endl;
 			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG);
 			if(sensorData == MOTION_DETECTED)
-			{
+			{/*
+				std::cout << std::endl << "###########################################################" << std::endl;
+				std::cout << "### DATA DUMP: " << std::endl;
+				std::cout << "### Address: " << OpticalSensorAddress << std::endl;
+				std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
+				std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
+				std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
+				std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
+				std::cout << "###########################################################" << std::endl << std::endl;
+			*/
 				std::cout << "New motion detected! Reading data ..." << std::endl;
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
 				
-				dataX = (sensorData << 24) >> 24;
-				dataY = (sensorData >> 8);
+				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
+				f << sensorData << "  Time elapsed: " << double(sensorData/(clock_rate/seconds_to_micro)) << " us" << std::endl;
+				
+				dataY = (sensorData << 24) >> 24;
+				dataX = (sensorData >> 8);
 				//std::cout << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
+				f << "SensorData: " << sensorData << std::endl << std::endl;
 				
-				std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
-				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
+				//std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
 				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
-				f << "elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
 			}
 			else
 			{
@@ -145,31 +219,10 @@ void GetOpticalSensorData()
 	}	
 }
 
-double calculateRadius(double const deltax, double const deltay, double const angular_speed)
-{
-	double r = sqrt(deltax*deltax+deltay*deltay)/(angular_speed*sample_time);
-	return r;
-}
 
-double calculateMaxVelocity(double const radius)
-{
-	double v = sqrt(speed_calculation_constant*radius)*safety_max_speed;
-	return v;
-}
 
-double calculateMaxVelocity(double const deltax, double const deltay, double const angular_speed)
-{
-	double v = calculateMaxVelocity(calculateRadius(deltax,deltay,angular_speed));
-	return v;
-}
 
-enum EAccel {Faster,Neutral,Slower};
 
-EAccel calculateAcceleration(double const max_speed, double const current_speed)
-{
-	EAccel a = (current_speed < max_speed?EAccel::Faster : (current_speed > max_speed ? EAccel::Slower : EAccel::Neutral));
-	return a;	
-}
 
 
 
@@ -455,9 +508,8 @@ int main(int argc, char **argv)
   
 	while(true){
 		GetOpticalSensorData();
-//		std::cout << "Cycle done" << std::endl;
-//		usleep(100000);
-		sleep(1);
+		usleep(5);
+		//sleep(1);
 	}
 }
 

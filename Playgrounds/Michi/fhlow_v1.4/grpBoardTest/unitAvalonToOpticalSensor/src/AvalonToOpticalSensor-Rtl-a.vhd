@@ -4,7 +4,7 @@
 -- File        :	AvalonToOpticalSensor-Rtl-a.vhd
 -- Description : 	architecture to get data from FPGA by using avalon in software
 -------------------------------------------------------------------------------
--- Latest update:	03.05.2017
+-- Latest update:	10.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of AvalonToOpticalSensor is
@@ -14,13 +14,14 @@ architecture Rtl of AvalonToOpticalSensor is
 	constant cDataWidthSensor		: integer  											:= 8;					-- datawidth of sensor
 	constant cOneMHzClkPeriod		: time 	   											:= 1 us;				-- 1MHz clock
 	constant cOneKHzClkPeriod		: time 	   											:= 1000 us;				-- 1KHz clock
-	constant cNewDataReceived		: std_ulogic_vector (cDataWidthSensor-1 downto 0)	:= "10000000";			-- new data: 0x80
+	constant cNewDataReceived		: std_ulogic_vector(cDataWidthSensor-1 downto 0)	:= "10000000";			-- new data: 0x80
+	constant cProductID				: std_ulogic_vector(cDataWidthSensor-1 downto 0)	:= "00010111"; 			-- product ID
 	
 	-- component constants for avalon addresses
-	constant cAddrMotionDetected 	:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(0, gAddrWidth));	-- addr: 0
-	constant cAddrProductID			:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(1, gAddrWidth));	-- addr: 1
-	constant cAddrData				:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(2, gAddrWidth));	-- addr: 2
-	constant cAddrTimeMeasured		:	std_ulogic_vector(gAddrWidth-1 downto 0)	:= std_ulogic_vector(to_unsigned(3, gAddrWidth));	-- addr: 3
+	constant cAddrMotionDetected 	:	std_ulogic_vector(gAddrWidth-1 downto 0)		:= std_ulogic_vector(to_unsigned(0, gAddrWidth));	-- addr: 0
+	constant cAddrProductID			:	std_ulogic_vector(gAddrWidth-1 downto 0)		:= std_ulogic_vector(to_unsigned(1, gAddrWidth));	-- addr: 1
+	constant cAddrData				:	std_ulogic_vector(gAddrWidth-1 downto 0)		:= std_ulogic_vector(to_unsigned(2, gAddrWidth));	-- addr: 2
+	constant cAddrTimeMeasured		:	std_ulogic_vector(gAddrWidth-1 downto 0)		:= std_ulogic_vector(to_unsigned(3, gAddrWidth));	-- addr: 3
 	
 	-- component signals for sensor information
 	signal DataValid				: std_ulogic 										:= '0';	
@@ -213,14 +214,14 @@ begin
 		elsif (rising_edge(Clk)) then
 		
 			-- LED visualization for ProductID
-			if (ProductID = "00010111") then
+			if (ProductID = cProductID) then
 				ValidProductID <= '1';
 			else
 				ValidProductID <= '0';
 			end if;
 			
-			-- LED visualization for MotionDetected
-			if (Motion = cNewDataReceived) then
+			-- LED visualization for MotionDetected (if data is valid)
+			if (Motion = cNewDataReceived and DataValid = '1') then
 				MotionDetected <= '1';
 			else
 				MotionDetected <= '0';
@@ -245,7 +246,7 @@ begin
 			TimeCtr <= TimeCtr + 1;
 		
 			-- check if new data received and old data are send to software
-			if (Motion = cNewDataReceived and DataACK = '1') then
+			if (Motion = cNewDataReceived and DataValid = '1' and DataACK = '1') then
 			
 				RegMotion <= Motion;
 				RegDataX  <= DataX;
@@ -261,30 +262,38 @@ begin
 				when cAddrProductID =>
 				
 						if (AvalonRE = '1') then
+							AvalonReadData(gDataWidth-1 downto cDataWidthSensor) <= (others => '0');
 							AvalonReadData(cDataWidthSensor-1 downto 0) <= ProductID;
 						end if;
 						
-				-- Motion is readonly	
+				-- Motion is readonly - reset register after read!
 				when cAddrMotionDetected =>
 				
 						if (AvalonRE = '1') then
+							AvalonReadData(gDataWidth-1 downto cDataWidthSensor) <= (others => '0');
 							AvalonReadData(cDataWidthSensor-1 downto 0) <= RegMotion;
+							RegMotion <= (others => '0');
 						end if;
 						
-				-- Motion is readonly	
+				-- Time is readonly	- reset register after read!
 				when cAddrTimeMeasured =>
 				
 						if (AvalonRE = '1') then
-							AvalonReadData <= RegTime;
+							AvalonReadData(gDataWidth-1 downto 0) <= RegTime;
+							RegTime <= (others => '0');
 						end if;
 						
 				-- ATTENTION: read this address after cAddrMotionDetected and cAddrTimeMeasured because DataACK will be set! 
 				-- This will give FPGA the posibility to overwrite Registers (DataX, DataY, Motion, Time) again!
-				-- DataX and DataY are readonly
+				-- DataX and DataY are readonly - reset registers after read!
 				when cAddrData =>
 				
 						if (AvalonRE = '1') then
-							AvalonReadData((cDataWidthSensor*2)-1 downto 0) <= RegDataX & RegDataY;
+							AvalonReadData(gDataWidth-1 downto cDataWidthSensor*2) <= (others => '0');
+							AvalonReadData((cDataWidthSensor*2)-1 downto cDataWidthSensor) <= RegDataX;
+							AvalonReadData(cDataWidthSensor-1 downto 0) <= RegDataY;
+							RegDataX <= (others => '0');
+							RegDataY <= (others => '0');
 							DataACK <= '1';
 						end if;
 				
