@@ -4,18 +4,19 @@
 -- File        :	AvalonToOpticalSensor-Rtl-a.vhd
 -- Description : 	architecture to get data from FPGA by using avalon in software
 -------------------------------------------------------------------------------
--- Latest update:	10.05.2017
+-- Latest update:	11.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of AvalonToOpticalSensor is
 
 	-- component constants
-	constant cClockFrequency		: natural											:= gClockFrequency;		-- freq of cyclone V
-	constant cDataWidthSensor		: integer  											:= 8;					-- datawidth of sensor
-	constant cOneMHzClkPeriod		: time 	   											:= 1 us;				-- 1MHz clock
-	constant cOneKHzClkPeriod		: time 	   											:= 1000 us;				-- 1KHz clock
+	constant cClockFrequency		: natural											:= gClockFrequency;		-- freq of cyclone V (default: 50 MHz)
+	constant cMHzDivide				: natural											:= 1000000;				-- Mhz (million) value for division used in strobeGen
+	constant cDataWidthSensor		: integer  											:= 8;					-- datawidth of optical sensor
+	constant cOneMHzClkPeriod		: time 	   											:= 1 us;				-- generate 1MHz clock (StrobeGen)
+	constant cOneKHzClkPeriod		: time 	   											:= 1000 us;				-- generate 1KHz clock (StrobeGen)
 	constant cNewDataReceived		: std_ulogic_vector(cDataWidthSensor-1 downto 0)	:= "10000000";			-- new data: 0x80
-	constant cProductID				: std_ulogic_vector(cDataWidthSensor-1 downto 0)	:= "00010111"; 			-- product ID
+	constant cProductID				: std_ulogic_vector(cDataWidthSensor-1 downto 0)	:= "00010111"; 			-- product ID: 0x17
 	
 	-- component constants for avalon addresses
 	constant cAddrMotionDetected 	:	std_ulogic_vector(gAddrWidth-1 downto 0)		:= std_ulogic_vector(to_unsigned(0, gAddrWidth));	-- addr: 0
@@ -24,11 +25,11 @@ architecture Rtl of AvalonToOpticalSensor is
 	constant cAddrTimeMeasured		:	std_ulogic_vector(gAddrWidth-1 downto 0)		:= std_ulogic_vector(to_unsigned(3, gAddrWidth));	-- addr: 3
 	
 	-- component signals for sensor information
-	signal DataValid				: std_ulogic 										:= '0';	
 	signal Motion					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
 	signal DataX					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
 	signal DataY					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
 	signal ProductID				: std_ulogic_vector(cDataWidthSensor-1 downto 0)	:= (others => '0');
+	signal DataValid				: std_ulogic 										:= '0';	
 		
 	-- internal data registers for relevant sensor data
 	signal RegMotion				: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
@@ -62,7 +63,7 @@ architecture Rtl of AvalonToOpticalSensor is
 	component OpticalSensorXY
 		generic (
 			gDataWidth			: integer := cDataWidthSensor;					-- bit width of optical sensor values
-			gClkDivider			: integer := cClockFrequency/1000000
+			gClkDivider			: integer := cClockFrequency/cMHzDivide
 		);
 		port (
 			iClk 				: in std_ulogic;								-- clk 50MHz
@@ -144,7 +145,7 @@ begin
 	uut : OpticalSensorXY
 	generic map (
 		gDataWidth 		=> cDataWidthSensor,
-		gClkDivider		=> cClockFrequency/1000000
+		gClkDivider		=> cClockFrequency/cMHzDivide
 	)
 	port map (
 		iClk			=> Clk,
@@ -195,21 +196,17 @@ begin
 	);
 	
 	-- #################################################
-	-- Process: DataTransfer from FPGA to HPS via Avalon
+	-- Process: LED visualization for debug purpose
 	-- #################################################
-	DataTransfer : process(Clk, nResetAsync) is
+	DebugVisualizationLED : process (Clk, nResetAsync) is
 	begin
 	
 		if (nResetAsync = cnActivated) then
 		
-			AvalonReadData 	<= (others => '0');
-			RegDataX 		<= (others => '0');
-			RegDataY 		<= (others => '0');
-			RegMotion 		<= (others => '0');
-			RegTime 		<= (others => '0');
-			DataACK 		<= '1';
-			TimeCtr 		<= 0;
-			ValidProductID  <= '0';
+			ValidProductID  	<= '0';
+			MotionDetected		<= '0';
+			ValidReadAccess		<= '0';
+			ReadEnableDetected 	<= '0';
 
 		elsif (rising_edge(Clk)) then
 		
@@ -240,9 +237,28 @@ begin
 			else
 				ReadEnableDetected <= '0';
 			end if;
+		end if;
+	end process;
+	
+	-- #################################################
+	-- Process: DataTransfer from FPGA to HPS via Avalon
+	-- #################################################
+	DataTransfer : process(Clk, nResetAsync) is
+	begin
+	
+		if (nResetAsync = cnActivated) then
+		
+			AvalonReadData 	<= (others => '0');
+			RegDataX 		<= (others => '0');
+			RegDataY 		<= (others => '0');
+			RegMotion 		<= (others => '0');
+			RegTime 		<= (others => '0');
+			DataACK 		<= '1';
+			TimeCtr 		<= 0;
+
+		elsif (rising_edge(Clk)) then
 			
-			-- increase time ctr each cycle to calculate speed in software
-			-- time will be read by software
+			-- increase time ctr each cycle to calculate speed in software (time will be read by software)
 			TimeCtr <= TimeCtr + 1;
 		
 			-- check if new data received and old data are send to software
@@ -256,8 +272,9 @@ begin
 				TimeCtr   <= 0;
 			end if;
 		
-		
+			-- evaluate Avalon address and read data
 			case AvalonAddr is	
+			
 				-- ProductID is readonly
 				when cAddrProductID =>
 				
@@ -283,8 +300,9 @@ begin
 							RegTime <= (others => '0');
 						end if;
 						
-				-- ATTENTION: read this address after cAddrMotionDetected and cAddrTimeMeasured because DataACK will be set! 
-				-- This will give FPGA the posibility to overwrite Registers (DataX, DataY, Motion, Time) again!
+				-- ATTENTION: 
+				-- read this address after cAddrMotionDetected and cAddrTimeMeasured because DataACK will be set! 
+				-- This will give FPGA the posibility to overwrite registers (DataX, DataY, Motion, Time) again!
 				-- DataX and DataY are readonly - reset registers after read!
 				when cAddrData =>
 				
@@ -296,7 +314,6 @@ begin
 							RegDataY <= (others => '0');
 							DataACK <= '1';
 						end if;
-				
 				
 				-- do nothing if other address active
 				when others => 
