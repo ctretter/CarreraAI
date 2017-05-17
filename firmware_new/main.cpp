@@ -27,6 +27,7 @@
 #include "lsm9d1.h"
 #include "TrackRecorder.h"
 #include "DataAcq.h"
+#include "MotorController.h"
 
 static unsigned long const HW_REGS_BASE = ALT_STM_OFST;
 static unsigned long const HW_REGS_SPAN = 0x04000000;
@@ -61,12 +62,12 @@ static std::atomic<double> const MaxSpeed(3800);
 // defines used for optical sensor
 volatile unsigned long* OpticalSensorAddress = 0;
 static bool SensorInitialized = false;
-#define VALID_SENSOR_PRODUCT_ID 0x17
+/*#define VALID_SENSOR_PRODUCT_ID 0x17
 #define OFFSET_PRODUCT_ID_REG 1
 #define OFFSET_MOTION_REG 0
 #define OFFSET_DATA_REG 2
 #define OFFSET_TIME_REG 3
-#define MOTION_DETECTED 0x80
+#define MOTION_DETECTED 0x80*/
  
 static double const clock_rate = 50000000.0;
 static double const seconds_to_milli = 1000.0;
@@ -111,41 +112,21 @@ void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_t
 		}
 		else
 		{
-			std::cout << "Check motion register for changes ..." << std::endl;
 			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG);
 			if(sensorData == MOTION_DETECTED)
-			{/*
-				std::cout << std::endl << "###########################################################" << std::endl;
-				std::cout << "### DATA DUMP: " << std::endl;
-				std::cout << "### Address: " << OpticalSensorAddress << std::endl;
-				std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
-				std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
-				std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
-				std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
-				std::cout << "###########################################################" << std::endl << std::endl;
-			*/
-				std::cout << "New motion detected! Reading data ..." << std::endl;
-
+			{
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
 				sample_time = sensorData;
 
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
 				dataY = (sensorData << 24) >> 24;
 				dataX = (sensorData >> 8);
-
+				std::cout << "Reading new data: " << dataX << "|" << dataY << std::endl;
 
 				f << "Cycles elapsed: " << sample_time << std::endl;
 				sample_time /= clock_rate;
 				f << "Time elapsed: " << sample_time * seconds_to_micro << " us" << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
-				f << "SensorData: " << sensorData << std::endl << std::endl;
-
-				//std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
-				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
-			}
-			else
-			{
-				std::cout << "No motion detected!" << std::endl;
 			}
 		}
 	}
@@ -432,6 +413,13 @@ int main(int argc, char **argv)
 	TrackRecorder track(1.0,0.5,0.9);
 	uint32_t deltax, deltay;
 	double sample_time;
+	//DataAcquisition harvester(OpticalSensorAddress);
+	//MotorController(harvester,track);
+	
+	/*while(!harvester.IsStartLineCrossed())
+	{
+		track.addTrackPoint(harvester.GetDistanceTravelled(),harvester.GetAngularVelocity(),harvester.GetDrivingVelocity);
+	}*/
 	// TODO implement isStartSignal for detection of driving over start
 	// TODO implement readAngularVelocity
 	/*while(!isStartSignal());	// waiting for first time to drive over start
@@ -444,7 +432,7 @@ int main(int argc, char **argv)
 	while(true){
 		
 		readOpticalSensorData(deltax, deltay, sample_time);
-		usleep(5);
+		usleep(5000);
 		//sleep(1);
 	}
 }

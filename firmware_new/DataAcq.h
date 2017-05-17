@@ -2,6 +2,15 @@
 #define DATAACQUISITION_H
 
 #include <cmath>
+#include <iostream>
+#include <fstream>
+
+#define VALID_SENSOR_PRODUCT_ID 0x17
+#define OFFSET_PRODUCT_ID_REG 1
+#define OFFSET_MOTION_REG 0
+#define OFFSET_DATA_REG 2
+#define OFFSET_TIME_REG 3
+#define MOTION_DETECTED 0x80
 
 /* @brief Class for handling data acquisition
  *
@@ -14,14 +23,14 @@ public:
 
 	void UpdateAllData();
 
-	size_t GetLapCount();
+	size_t GetLapCount() const;
 	double GetDrivingVelocity() const;	//in m/s
 	double GetDistanceTravelled() const;	//in m
 	double GetAngularVelocity() const;	// in rad/s
 	bool IsStartLineCrossed();		// flag cleared, when read
 
 private:
-	void ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & microSeconds) const;
+	void ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & Seconds) const;
 	double ReadGyroVelocity() const;
 
 	size_t mLapCount;

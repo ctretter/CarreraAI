@@ -15,6 +15,8 @@ SRC_CPP += DataAcquisition.cpp
 SRC_CPP += Controller.cpp
 SRC_CPP += Correlation.cpp
 SRC_CPP += TrackRecorder.cpp
+SRC_CPP += DataAcq.cpp
+SRC_CPP += MotorController.cpp
 EXT_CPP = .cpp
 
 INCLUDES := -I.

@@ -31,7 +31,7 @@ void MotorController::UpdateMotorVelocity()
 MotorController::EAccel MotorController::DecideAcceleration() const
 {
 	double const currentVelocity = mDataAcq->GetDrivingVelocity();
-	EAccel a = (currentVelocity < mTargetSpeed?EAccel::FASTER : (currentVelocity > mTargetSpeed ? EAccel::SLOWER : EAccel::NEUTRAL));
+	EAccel a = (currentVelocity < mTargetVelocity?EAccel::FASTER : (currentVelocity > mTargetVelocity ? EAccel::SLOWER : EAccel::NEUTRAL));
 	return a;
 }
 

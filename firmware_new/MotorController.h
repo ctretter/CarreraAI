@@ -2,6 +2,7 @@
 #define MOTORCONTROLLER_H
 
 #include "DataAcq.h"
+#include "TrackRecorder.h"
 
 /* @brief Class for controlling the motor
  *

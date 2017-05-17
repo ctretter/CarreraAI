@@ -1,6 +1,4 @@
 #include "DataAcq.h"
-#include <iostream>
-#include <fstream>
 
 DataAcquisition::DataAcquisition(const unsigned long opticalSensorAddress) : OpticalSensorAddress(opticalSensorAddress)
 {
@@ -25,32 +23,32 @@ void DataAcquisition::UpdateAllData()
 	mGyroVelocity = ReadGyroVelocity(); // in rad/second
 
 	// Read optical sensor data
-	uint32_t deltaX;
-	uint32_t deltaY;
-	double microSeconds;
-	ReadOpticalSensorData(deltaX, deltaY, microSeconds);
+	double deltaX;
+	double deltaY;
+	double Seconds;
+	ReadOpticalSensorData(deltaX, deltaY, Seconds);
 	// Calculate current distance and speed
 	double distance = sqrt(deltaX*deltaX + deltaY*deltaY);
 	mDistanceTravelled += distance;	// in meter
-	mDrivingVelocity = distance / microSeconds*1e6; // in meter/second
+	mDrivingVelocity = distance / (Seconds*1e6); // in meter/second
 }
 
-size_t DataAcquisition::GetLapCount()
+size_t DataAcquisition::GetLapCount() const
 {
 	return mLapCount;
 }
 
-double DataAcquisition::GetDrivingVelocity()
+double DataAcquisition::GetDrivingVelocity() const
 {
 	return mDrivingVelocity;
 }
 
-double DataAcquisition::GetDistanceTravelled()
+double DataAcquisition::GetDistanceTravelled() const
 {
 	return mDistanceTravelled;
 }
 
-double DataAcquisition::GetAngularVelocity()
+double DataAcquisition::GetAngularVelocity() const
 {
 	return mGyroVelocity;
 }
@@ -67,7 +65,7 @@ bool DataAcquisition::IsStartLineCrossed()
 	return ret;
 }
 
-double DataAcquisition::ReadGyroVelocity()
+double DataAcquisition::ReadGyroVelocity() const
 {
 	double gyroData = 0.0;
 
@@ -77,13 +75,13 @@ double DataAcquisition::ReadGyroVelocity()
 	return gyroData * GyroToAngularVelocityRad;
 }
 
-void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & microSeconds)
+void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & Seconds) const
 {
 	uint32_t deltaX;
 	uint32_t deltaY;
 	double sample_time = 0.0;
 
-	uint32_t sensorData = 0;
+	/*uint32_t sensorData = 0;
 
 	static std::ofstream f;
 	if(!f.is_open())
@@ -115,46 +113,32 @@ void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & delta
 		}
 		else
 		{
-			std::cout << "Check motion register for changes ..." << std::endl;
 			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG);
 			if(sensorData == MOTION_DETECTED)
-			{/*
-				std::cout << std::endl << "###########################################################" << std::endl;
-				std::cout << "### DATA DUMP: " << std::endl;
-				std::cout << "### Address: " << OpticalSensorAddress << std::endl;
-				std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
-				std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
-				std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
-				std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
-				std::cout << "###########################################################" << std::endl << std::endl;
-			*/
-				std::cout << "New motion detected! Reading data ..." << std::endl;
+			{
 
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
 				sample_time = sensorData;
 
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
-				dataY = (sensorData << 24) >> 24;
-				dataX = (sensorData >> 8);
+				deltaY = (sensorData << 24) >> 24;
+				deltaX = (sensorData >> 8);
 
 
 				f << "Cycles elapsed: " << sample_time << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "SensorData: " << sensorData << std::endl << std::endl;
-
-				//std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
-				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
 			}
 			else
 			{
 				std::cout << "No motion detected!" << std::endl;
 			}
 		}
-	}
+	}*/
 
 	// Optical Sensor data to meter
 	deltaXmeter = deltaX * OptSensorToMeter;
 	deltaYmeter = deltaY * OptSensorToMeter;
-	microSeconds = (sample_time / ClockRate) * SecondsToMicro;
+	Seconds = (sample_time / ClockRate);
 
 }
