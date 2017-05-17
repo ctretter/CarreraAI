@@ -31871,6 +31871,153 @@ W = angled&lt;p&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="con-molex">
+<description>&lt;b&gt;Molex Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="87758-0816">
+<description>&lt;b&gt;8 Pin - 2mm Dual Row Single Wafer, Vertical T/H HDR&lt;/b&gt;&lt;p&gt;
+Source: http://www.molex.com/pdm_docs/sd/877580616_sd.pdf</description>
+<wire x1="-3.85" y1="-1.9" x2="3.85" y2="-1.9" width="0.2032" layer="21"/>
+<wire x1="3.85" y1="-1.9" x2="3.85" y2="-0.4" width="0.2032" layer="21"/>
+<wire x1="3.85" y1="0.4" x2="3.85" y2="1.9" width="0.2032" layer="21"/>
+<wire x1="3.85" y1="1.9" x2="-3.85" y2="1.9" width="0.2032" layer="21"/>
+<wire x1="-3.85" y1="1.9" x2="-3.85" y2="0.4" width="0.2032" layer="21"/>
+<wire x1="-3.85" y1="-0.4" x2="-3.85" y2="-1.9" width="0.2032" layer="21"/>
+<wire x1="-3.85" y1="0.4" x2="-3.85" y2="-0.4" width="0.2032" layer="21" curve="-129.184564"/>
+<wire x1="3.85" y1="-0.4" x2="3.85" y2="0.4" width="0.2032" layer="21" curve="-129.184564"/>
+<pad name="1" x="-3" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="2" x="-3" y="1" drill="0.9" diameter="1.27"/>
+<pad name="3" x="-1" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="4" x="-1" y="1" drill="0.9" diameter="1.27"/>
+<pad name="5" x="1" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="6" x="1" y="1" drill="0.9" diameter="1.27"/>
+<pad name="7" x="3" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="8" x="3" y="1" drill="0.9" diameter="1.27"/>
+<text x="-3.65" y="-1.75" size="0.3048" layer="21" font="vector">1</text>
+<text x="-3.62" y="-3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.62" y="2.54" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-3.25" y1="-1.25" x2="-2.75" y2="-0.75" layer="51"/>
+<rectangle x1="-3.25" y1="0.75" x2="-2.75" y2="1.25" layer="51"/>
+<rectangle x1="-1.25" y1="-1.25" x2="-0.75" y2="-0.75" layer="51"/>
+<rectangle x1="-1.25" y1="0.75" x2="-0.75" y2="1.25" layer="51"/>
+<rectangle x1="0.75" y1="-1.25" x2="1.25" y2="-0.75" layer="51"/>
+<rectangle x1="0.75" y1="0.75" x2="1.25" y2="1.25" layer="51"/>
+<rectangle x1="2.75" y1="-1.25" x2="3.25" y2="-0.75" layer="51"/>
+<rectangle x1="2.75" y1="0.75" x2="3.25" y2="1.25" layer="51"/>
+</package>
+<package name="87758-0616">
+<description>&lt;b&gt;6 Pin - 2mm Dual Row Single Wafer, Vertical T/H HDR&lt;/b&gt;&lt;p&gt;
+Source: http://www.molex.com/pdm_docs/sd/877580616_sd.pdf</description>
+<wire x1="-2.85" y1="-1.9" x2="2.85" y2="-1.9" width="0.2032" layer="21"/>
+<wire x1="2.85" y1="-1.9" x2="2.85" y2="-0.4" width="0.2032" layer="21"/>
+<wire x1="2.85" y1="0.4" x2="2.85" y2="1.9" width="0.2032" layer="21"/>
+<wire x1="2.85" y1="1.9" x2="-2.85" y2="1.9" width="0.2032" layer="21"/>
+<wire x1="-2.85" y1="1.9" x2="-2.85" y2="0.4" width="0.2032" layer="21"/>
+<wire x1="-2.85" y1="-0.4" x2="-2.85" y2="-1.9" width="0.2032" layer="21"/>
+<wire x1="-2.85" y1="0.4" x2="-2.85" y2="-0.4" width="0.2032" layer="21" curve="-129.184564"/>
+<wire x1="2.85" y1="-0.4" x2="2.85" y2="0.4" width="0.2032" layer="21" curve="-129.184564"/>
+<pad name="1" x="-2" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="2" x="-2" y="1" drill="0.9" diameter="1.27"/>
+<pad name="3" x="0" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="4" x="0" y="1" drill="0.9" diameter="1.27"/>
+<pad name="5" x="2" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="6" x="2" y="1" drill="0.9" diameter="1.27"/>
+<text x="-2.65" y="-1.75" size="0.3048" layer="21" font="vector">1</text>
+<text x="-2.62" y="-3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.62" y="2.54" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-2.25" y1="-1.25" x2="-1.75" y2="-0.75" layer="51"/>
+<rectangle x1="-2.25" y1="0.75" x2="-1.75" y2="1.25" layer="51"/>
+<rectangle x1="-0.25" y1="-1.25" x2="0.25" y2="-0.75" layer="51"/>
+<rectangle x1="-0.25" y1="0.75" x2="0.25" y2="1.25" layer="51"/>
+<rectangle x1="1.75" y1="-1.25" x2="2.25" y2="-0.75" layer="51"/>
+<rectangle x1="1.75" y1="0.75" x2="2.25" y2="1.25" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MV">
+<wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<text x="-0.762" y="1.397" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="M">
+<wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="87758-0816" prefix="X">
+<description>&lt;b&gt;8 Pin - 2mm Dual Row Single Wafer, Vertical T/H HDR&lt;/b&gt;&lt;p&gt;
+Source: http://www.molex.com/pdm_docs/sd/877580616_sd.pdf</description>
+<gates>
+<gate name="-1" symbol="MV" x="-10.16" y="30.48" addlevel="always"/>
+<gate name="-2" symbol="MV" x="10.16" y="30.48" addlevel="always"/>
+<gate name="-3" symbol="M" x="-10.16" y="27.94" addlevel="always"/>
+<gate name="-4" symbol="M" x="10.16" y="27.94" addlevel="always"/>
+<gate name="-5" symbol="M" x="-10.16" y="25.4" addlevel="always"/>
+<gate name="-6" symbol="M" x="10.16" y="25.4" addlevel="always"/>
+<gate name="-7" symbol="M" x="-10.16" y="22.86" addlevel="always"/>
+<gate name="-8" symbol="M" x="10.16" y="22.86" addlevel="always"/>
+</gates>
+<devices>
+<device name="" package="87758-0816">
+<connects>
+<connect gate="-1" pin="S" pad="1"/>
+<connect gate="-2" pin="S" pad="2"/>
+<connect gate="-3" pin="S" pad="3"/>
+<connect gate="-4" pin="S" pad="4"/>
+<connect gate="-5" pin="S" pad="5"/>
+<connect gate="-6" pin="S" pad="6"/>
+<connect gate="-7" pin="S" pad="7"/>
+<connect gate="-8" pin="S" pad="8"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="MOLEX" constant="no"/>
+<attribute name="MPN" value="87758-0816" constant="no"/>
+<attribute name="OC_FARNELL" value="7472331" constant="no"/>
+<attribute name="OC_NEWARK" value="59J1556" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="87758-0616" prefix="X">
+<description>&lt;b&gt;6 Pin - 2mm Dual Row Single Wafer, Vertical T/H HDR&lt;/b&gt;&lt;p&gt;
+Source: http://www.molex.com/pdm_docs/sd/877580616_sd.pdf</description>
+<gates>
+<gate name="-1" symbol="MV" x="-10.16" y="2.54" addlevel="always"/>
+<gate name="-2" symbol="MV" x="10.16" y="2.54" addlevel="always"/>
+<gate name="-3" symbol="M" x="-10.16" y="0" addlevel="always"/>
+<gate name="-4" symbol="M" x="10.16" y="0" addlevel="always"/>
+<gate name="-5" symbol="M" x="-10.16" y="-2.54" addlevel="always"/>
+<gate name="-6" symbol="M" x="10.16" y="-2.54" addlevel="always"/>
+</gates>
+<devices>
+<device name="" package="87758-0616">
+<connects>
+<connect gate="-1" pin="S" pad="1"/>
+<connect gate="-2" pin="S" pad="2"/>
+<connect gate="-3" pin="S" pad="3"/>
+<connect gate="-4" pin="S" pad="4"/>
+<connect gate="-5" pin="S" pad="5"/>
+<connect gate="-6" pin="S" pad="6"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="87758-0616" constant="no"/>
+<attribute name="OC_FARNELL" value="7472323" constant="no"/>
+<attribute name="OC_NEWARK" value="25M5667" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -33043,10 +33190,10 @@ http://cds.linear.com/image/1940asch.png</text>
 <part name="U3.1" library="kitt.ic" deviceset="LSM9DS1" device="LONG" value="LSM9DS1LONG"/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="R3.1" library="rcl" deviceset="R-EU_" device="R0603" value="10kR/⎒"/>
-<part name="R3.2" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
-<part name="R3.3" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎑"/>
-<part name="R3.4" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎑"/>
+<part name="R3.1" library="resistor" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="R3.2" library="resistor" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
+<part name="R3.3" library="rcl" deviceset="R-EU_" device="R0201" value="10kR/⎑"/>
+<part name="R3.4" library="rcl" deviceset="R-EU_" device="R0201" value="10kR/⎑"/>
 <part name="R3.5" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
 <part name="R3.6" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎒"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
@@ -33057,7 +33204,7 @@ http://cds.linear.com/image/1940asch.png</text>
 <part name="R3.9" library="rcl" deviceset="R-EU_" device="R0603" value="60R/⇤"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R3.10" library="rcl" deviceset="R-EU_" device="R0402" value="10k/⎒"/>
-<part name="R3.11" library="rcl" deviceset="R-EU_" device="R0402" value="10kR/⎑"/>
+<part name="R3.11" library="rcl" deviceset="R-EU_" device="R0201" value="10kR/⎑"/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="C3.1" library="rcl" deviceset="C-EU" device="C0805" value="10nF/⇤"/>
@@ -33066,6 +33213,15 @@ http://cds.linear.com/image/1940asch.png</text>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="☇2" library="testpad" deviceset="PTR1" device="TP06R" value="PTR1TP06R"/>
 <part name="☇3" library="testpad" deviceset="PTR1" device="TP06R" value="PTR1TP06R"/>
+<part name="C3.3" library="rcl" deviceset="C-EU" device="C0402K" value="100nF/⇤"/>
+<part name="+3V3" library="supply1" deviceset="+3V3" device=""/>
+<part name="GND8" library="supply1" deviceset="GND" device=""/>
+<part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
+<part name="C3.4" library="rcl" deviceset="C-EU" device="C0402K" value="100nF/⇤"/>
+<part name="GND9" library="supply1" deviceset="GND" device=""/>
+<part name="C3.5" library="rcl" deviceset="C-EU" device="C0402K" value="100nF/⇤"/>
+<part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
+<part name="GND10" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -33078,9 +33234,10 @@ Using the LSM9DS1</description>
 <text x="73.66" y="132.08" size="1.778" layer="98" font="fixed" ratio="15">TWI A/G ADR: 0x6A
 TWI M    ADR: 0x1C</text>
 <rectangle x1="124.46" y1="53.34" x2="140.97" y2="62.23" layer="114"/>
-<text x="193.04" y="58.42" size="1.778" layer="98" ratio="20">TODO: Rename identifiers to submod UID scheme</text>
-<text x="177.8" y="45.72" size="1.778" layer="98">TODO after routing:
+<text x="185.42" y="27.94" size="1.778" layer="98" ratio="20">TODO: Rename identifiers to submod UID scheme</text>
+<text x="274.32" y="99.06" size="1.778" layer="98">TODO after routing:
 fix identifiers</text>
+<text x="193.04" y="63.5" size="1.778" layer="90">[note]: can patch together IRQs into VIA</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -33146,6 +33303,24 @@ fix identifiers</text>
 <instance part="GND7" gate="1" x="53.34" y="45.72"/>
 <instance part="☇2" gate="G$1" x="149.86" y="17.78" rot="MR270"/>
 <instance part="☇3" gate="G$1" x="149.86" y="12.7" rot="MR270"/>
+<instance part="C3.3" gate="G$1" x="88.9" y="27.94" smashed="yes" rot="MR0">
+<attribute name="NAME" x="86.106" y="27.051" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="86.106" y="24.511" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="+3V3" gate="G$1" x="88.9" y="40.64"/>
+<instance part="GND8" gate="1" x="88.9" y="12.7"/>
+<instance part="+3V5" gate="G$1" x="99.06" y="40.64"/>
+<instance part="C3.4" gate="G$1" x="99.06" y="27.94" smashed="yes" rot="MR0">
+<attribute name="NAME" x="96.266" y="27.051" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="96.266" y="24.511" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="GND9" gate="1" x="99.06" y="12.7"/>
+<instance part="C3.5" gate="G$1" x="111.76" y="27.94" smashed="yes" rot="MR0">
+<attribute name="NAME" x="108.966" y="27.051" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="108.966" y="24.511" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="+3V6" gate="G$1" x="111.76" y="40.64"/>
+<instance part="GND10" gate="1" x="111.76" y="12.7"/>
 </instances>
 <busses>
 </busses>
@@ -33247,8 +33422,8 @@ fix identifiers</text>
 <segment>
 <pinref part="U3.1" gate="U" pin="INT_M"/>
 <label x="116.84" y="83.82" size="1.778" layer="95" rot="MR180"/>
-<wire x1="203.2" y1="81.28" x2="114.3" y2="81.28" width="0.1524" layer="91"/>
-<label x="203.2" y="81.28" size="1.778" layer="95" xref="yes"/>
+<label x="236.22" y="81.28" size="1.778" layer="95" xref="yes"/>
+<wire x1="236.22" y1="81.28" x2="114.3" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="147.32" y1="17.78" x2="134.62" y2="17.78" width="0.1524" layer="91"/>
@@ -33260,8 +33435,8 @@ fix identifiers</text>
 <segment>
 <pinref part="U3.1" gate="U" pin="INT2_A/G"/>
 <label x="116.84" y="78.74" size="1.778" layer="95" rot="MR180"/>
-<wire x1="203.2" y1="76.2" x2="114.3" y2="76.2" width="0.1524" layer="91"/>
-<label x="203.2" y="76.2" size="1.778" layer="95" xref="yes"/>
+<label x="236.22" y="76.2" size="1.778" layer="95" xref="yes"/>
+<wire x1="236.22" y1="76.2" x2="114.3" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="147.32" y1="12.7" x2="134.62" y2="12.7" width="0.1524" layer="91"/>
@@ -33273,7 +33448,7 @@ fix identifiers</text>
 <segment>
 <wire x1="114.3" y1="68.58" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="68.58" x2="127" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="127" y1="68.58" x2="223.52" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="127" y1="68.58" x2="236.22" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="127" y1="63.5" x2="127" y2="68.58" width="0.1524" layer="91"/>
 <junction x="127" y="68.58"/>
 <wire x1="119.38" y1="63.5" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
@@ -33282,7 +33457,7 @@ fix identifiers</text>
 <pinref part="C3.XX" gate="G$1" pin="1"/>
 <pinref part="R3.9" gate="G$1" pin="1"/>
 <label x="116.84" y="71.12" size="1.778" layer="95" rot="MR180"/>
-<label x="223.52" y="68.58" size="1.778" layer="95" xref="yes"/>
+<label x="236.22" y="68.58" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="↔CAP" class="0">
@@ -33349,6 +33524,21 @@ fix identifiers</text>
 <pinref part="GND3" gate="1" pin="GND"/>
 <pinref part="R3.3" gate="G$1" pin="2"/>
 </segment>
+<segment>
+<pinref part="C3.3" gate="G$1" pin="2"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+<wire x1="88.9" y1="22.86" x2="88.9" y2="15.24" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C3.4" gate="G$1" pin="2"/>
+<pinref part="GND9" gate="1" pin="GND"/>
+<wire x1="99.06" y1="22.86" x2="99.06" y2="15.24" width="0.1524" layer="91" style="longdash"/>
+</segment>
+<segment>
+<pinref part="C3.5" gate="G$1" pin="2"/>
+<pinref part="GND10" gate="1" pin="GND"/>
+<wire x1="111.76" y1="15.24" x2="111.76" y2="22.86" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -33385,6 +33575,21 @@ fix identifiers</text>
 <wire x1="144.78" y1="147.32" x2="144.78" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="R3.10" gate="G$1" pin="1"/>
 <pinref part="+3V4" gate="G$1" pin="+3V3"/>
+</segment>
+<segment>
+<pinref part="C3.3" gate="G$1" pin="1"/>
+<pinref part="+3V3" gate="G$1" pin="+3V3"/>
+<wire x1="88.9" y1="38.1" x2="88.9" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3V5" gate="G$1" pin="+3V3"/>
+<pinref part="C3.4" gate="G$1" pin="1"/>
+<wire x1="99.06" y1="38.1" x2="99.06" y2="30.48" width="0.1524" layer="91" style="longdash"/>
+</segment>
+<segment>
+<pinref part="C3.5" gate="G$1" pin="1"/>
+<pinref part="+3V6" gate="G$1" pin="+3V3"/>
+<wire x1="111.76" y1="38.1" x2="111.76" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -35110,12 +35315,6 @@ Jumps Over The Lazy Dog</text>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0201"/>
 <part name="X2" library="con-phoenix-254" deviceset="MPT3" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="TP2" library="testpad" deviceset="TP" device="TP07R"/>
-<part name="TP3" library="testpad" deviceset="TP" device="TP07R"/>
-<part name="TP4" library="testpad" deviceset="TP" device="TP07R"/>
-<part name="TP5" library="testpad" deviceset="TP" device="TP07R"/>
-<part name="TP6" library="testpad" deviceset="TP" device="TP07R"/>
-<part name="TP7" library="testpad" deviceset="TP" device="TP07R"/>
 <part name="JP4" library="pinhead" deviceset="PINHD-2X2" device=""/>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
 <part name="☈1" library="jumper" deviceset="SJ" device="" value=" "/>
@@ -35128,6 +35327,9 @@ Jumps Over The Lazy Dog</text>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0201"/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="R0201"/>
 <part name="P+9" library="supply1" deviceset="+24V" device=""/>
+<part name="X5" library="con-molex" deviceset="87758-0816" device=""/>
+<part name="X6" library="con-molex" deviceset="87758-0616" device=""/>
+<part name="+3V8" library="supply1" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -35137,8 +35339,7 @@ Jumps Over The Lazy Dog</text>
 <text x="0" y="-5.08" size="1.778" layer="117">[TODO1]: Calculate System Power draw and recalculate fuse hold current accordingly</text>
 <text x="0" y="-7.62" size="1.778" layer="117">[TODO2]: Design Filter to keep out UART Bursts</text>
 <text x="15.24" y="121.92" size="1.778" layer="117">[TODO4]</text>
-<text x="323.85" y="175.26" size="1.778" layer="90" ratio="20" rot="R180" align="center">Power Control 
-&amp; Monitor Unit</text>
+<text x="321.31" y="162.56" size="1.778" layer="90" ratio="20" rot="R180" align="center">Prototype Interception</text>
 <text x="317.5" y="111.76" size="1.778" layer="90" ratio="20" align="center-left">VSYS-&gt;5V
 BOOSTER</text>
 <text x="172.72" y="170.18" size="1.778" layer="90" ratio="20" align="center-left">VPWR-&gt;VSYS
@@ -35173,7 +35374,6 @@ SENSOR UNIT</text>
 <text x="312.42" y="110.49" size="7.62" layer="90" ratio="20" align="center">↯</text>
 <text x="111.76" y="45.72" size="7.62" layer="90" ratio="20" align="center">↯</text>
 <text x="175.26" y="111.76" size="7.62" layer="90" ratio="20" align="center">⎚</text>
-<text x="322.58" y="167.64" size="7.62" layer="90" ratio="20" align="center">⎚</text>
 <text x="184.15" y="111.76" size="1.778" layer="90" ratio="20" align="center-left">CHARGE
 CONTROL</text>
 <wire x1="63.5" y1="209.55" x2="77.47" y2="213.36" width="0.4064" layer="90"/>
@@ -35210,6 +35410,13 @@ NEAR BATTERY</text>
 <wire x1="203.2" y1="132.08" x2="213.36" y2="132.08" width="0.1524" layer="98"/>
 <circle x="195.58" y="132.08" radius="0.635" width="0.1524" layer="98"/>
 <text x="201.93" y="133.35" size="1.778" layer="98">4.2-4.35V</text>
+<text x="314.96" y="173.99" size="7.62" layer="90" ratio="20" align="center">↯</text>
+<text x="327.66" y="173.99" size="7.62" layer="90" ratio="20" align="center">⎚</text>
+<text x="321.31" y="185.42" size="1.778" layer="90" ratio="20" align="center">«gumstick»</text>
+<wire x1="297.18" y1="190.5" x2="297.18" y2="154.94" width="0.8128" layer="90" style="longdash"/>
+<wire x1="297.18" y1="154.94" x2="345.44" y2="154.94" width="0.8128" layer="90" style="longdash"/>
+<wire x1="345.44" y1="154.94" x2="345.44" y2="190.5" width="0.8128" layer="90" style="longdash"/>
+<wire x1="345.44" y1="190.5" x2="297.18" y2="190.5" width="0.8128" layer="90" style="longdash"/>
 </plain>
 <moduleinsts>
 <moduleinst name="A5" module="POW-4000" x="185.42" y="111.76" smashed="yes">
@@ -35223,9 +35430,6 @@ NEAR BATTERY</text>
 </moduleinst>
 <moduleinst name="A9" module="POW-DDC3350" x="322.58" y="111.76" smashed="yes">
 <attribute name="NAME" x="304.165" y="128.27" size="2.032" layer="95" align="bottom-center"/>
-</moduleinst>
-<moduleinst name="A8" module="POW-CTRLMON" x="322.58" y="170.18" smashed="yes">
-<attribute name="NAME" x="302.26" y="189.23" size="2.032" layer="95" rot="R180" align="top-right"/>
 </moduleinst>
 <moduleinst name="A7" module="X1-TRACKBOARD3080" x="71.12" y="208.28" smashed="yes">
 <attribute name="NAME" x="71.12" y="215.9" size="2.032" layer="95" align="bottom-center"/>
@@ -35288,14 +35492,25 @@ NEAR BATTERY</text>
 <instance part="X2" gate="-1" x="53.34" y="35.56" rot="R180"/>
 <instance part="X2" gate="-2" x="53.34" y="20.32" rot="R180"/>
 <instance part="X2" gate="-3" x="53.34" y="53.34" rot="R180"/>
-<instance part="TP2" gate="G$1" x="304.8" y="203.2" rot="R180"/>
-<instance part="TP3" gate="G$1" x="309.88" y="203.2" rot="R180"/>
-<instance part="TP4" gate="G$1" x="314.96" y="210.82" rot="R180"/>
-<instance part="TP5" gate="G$1" x="320.04" y="210.82" rot="R180"/>
-<instance part="TP6" gate="G$1" x="325.12" y="210.82" rot="R180"/>
-<instance part="TP7" gate="G$1" x="330.2" y="210.82" rot="R180"/>
 <instance part="P+9" gate="1" x="96.52" y="238.76" smashed="yes">
 <attribute name="VALUE" x="96.52" y="241.3" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="X5" gate="-1" x="419.1" y="180.34"/>
+<instance part="X5" gate="-2" x="439.42" y="180.34"/>
+<instance part="X5" gate="-3" x="419.1" y="177.8"/>
+<instance part="X5" gate="-4" x="439.42" y="177.8"/>
+<instance part="X5" gate="-5" x="419.1" y="175.26"/>
+<instance part="X5" gate="-6" x="439.42" y="175.26"/>
+<instance part="X5" gate="-7" x="419.1" y="172.72"/>
+<instance part="X5" gate="-8" x="439.42" y="172.72"/>
+<instance part="X6" gate="-1" x="421.64" y="226.06" rot="MR0"/>
+<instance part="X6" gate="-2" x="441.96" y="226.06"/>
+<instance part="X6" gate="-3" x="421.64" y="223.52" rot="MR0"/>
+<instance part="X6" gate="-4" x="441.96" y="223.52"/>
+<instance part="X6" gate="-5" x="421.64" y="220.98" rot="MR0"/>
+<instance part="X6" gate="-6" x="441.96" y="220.98"/>
+<instance part="+3V8" gate="G$1" x="431.8" y="233.68" smashed="yes">
+<attribute name="VALUE" x="432.435" y="234.315" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -35312,7 +35527,6 @@ NEAR BATTERY</text>
 <bus name="TOP[0..7]">
 <segment>
 <wire x1="347.98" y1="157.48" x2="365.76" y2="157.48" width="0.762" layer="92"/>
-<portref moduleinst="A8" port="TOP[0..7]"/>
 </segment>
 </bus>
 </busses>
@@ -35419,10 +35633,6 @@ NEAR BATTERY</text>
 <portref moduleinst="A3" port="GND"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 </segment>
-<segment>
-<portref moduleinst="A8" port="GND"/>
-<pinref part="GND4" gate="1" pin="GND"/>
-</segment>
 </net>
 <net name="+18V" class="0">
 <segment>
@@ -35508,7 +35718,6 @@ NEAR BATTERY</text>
 </segment>
 <segment>
 <pinref part="P+11" gate="1" pin="+5V"/>
-<portref moduleinst="A8" port="VDD"/>
 <wire x1="330.2" y1="198.12" x2="330.2" y2="193.04" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -35516,13 +35725,11 @@ NEAR BATTERY</text>
 <segment>
 <portref moduleinst="A6" port="CTRL.RUN"/>
 <wire x1="218.44" y1="182.88" x2="297.18" y2="182.88" width="0.1524" layer="91"/>
-<portref moduleinst="A8" port="S1.RUN"/>
 <label x="236.22" y="185.42" size="1.778" layer="95" ratio="20" rot="R180"/>
 </segment>
 </net>
 <net name="TOP.FREQ" class="0">
 <segment>
-<portref moduleinst="A8" port="S1.FREQ"/>
 <portref moduleinst="A6" port="CTRL.FREQ"/>
 <wire x1="297.18" y1="167.64" x2="218.44" y2="167.64" width="0.1524" layer="91"/>
 <label x="236.22" y="170.18" size="1.778" layer="95" ratio="20" rot="R180"/>
@@ -35530,7 +35737,6 @@ NEAR BATTERY</text>
 </net>
 <net name="TOP.MODE" class="0">
 <segment>
-<portref moduleinst="A8" port="S1.MODE"/>
 <portref moduleinst="A6" port="CTRL.PLLIN/MODE"/>
 <wire x1="297.18" y1="172.72" x2="218.44" y2="172.72" width="0.1524" layer="91"/>
 <label x="236.22" y="175.26" size="1.778" layer="95" ratio="20" rot="R180"/>
@@ -35538,7 +35744,6 @@ NEAR BATTERY</text>
 </net>
 <net name="TOP.PGOOD" class="0">
 <segment>
-<portref moduleinst="A8" port="S1.PGOOD"/>
 <portref moduleinst="A6" port="CTRL.PGOOD"/>
 <wire x1="297.18" y1="177.8" x2="218.44" y2="177.8" width="0.1524" layer="91"/>
 <label x="236.22" y="180.34" size="1.778" layer="95" ratio="20" rot="R180"/>
@@ -35546,7 +35751,6 @@ NEAR BATTERY</text>
 </net>
 <net name="TOP.INACT" class="0">
 <segment>
-<portref moduleinst="A8" port="S2.INACT"/>
 <portref moduleinst="A9" port="INACT"/>
 <wire x1="320.04" y1="147.32" x2="320.04" y2="132.08" width="0.1524" layer="91"/>
 <label x="317.5" y="144.78" size="1.778" layer="95" ratio="20" rot="R270"/>
@@ -35579,6 +35783,15 @@ NEAR BATTERY</text>
 <portref moduleinst="A3" port="+3V3"/>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
 <wire x1="101.6" y1="165.1" x2="101.6" y2="162.56" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="X6" gate="-5" pin="S"/>
+<wire x1="431.8" y1="231.14" x2="431.8" y2="220.98" width="0.1524" layer="91"/>
+<wire x1="431.8" y1="220.98" x2="424.18" y2="220.98" width="0.1524" layer="91"/>
+<pinref part="X6" gate="-6" pin="S"/>
+<wire x1="439.42" y1="220.98" x2="431.8" y2="220.98" width="0.1524" layer="91"/>
+<junction x="431.8" y="220.98"/>
+<pinref part="+3V8" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 <net name="SCLK" class="0">
@@ -35646,7 +35859,6 @@ NEAR BATTERY</text>
 <label x="142.24" y="144.78" size="1.778" layer="95" ratio="20" rot="R180"/>
 </segment>
 <segment>
-<portref moduleinst="A8" port="!INT"/>
 <wire x1="347.98" y1="175.26" x2="368.3" y2="175.26" width="0.1524" layer="91"/>
 <label x="347.98" y="177.8" size="1.778" layer="95" ratio="20" rot="MR180"/>
 </segment>
@@ -35663,7 +35875,6 @@ NEAR BATTERY</text>
 <label x="142.24" y="149.86" size="1.778" layer="95" ratio="20" rot="R180"/>
 </segment>
 <segment>
-<portref moduleinst="A8" port="SDA"/>
 <wire x1="347.98" y1="165.1" x2="368.3" y2="165.1" width="0.1524" layer="91"/>
 <label x="347.98" y="167.64" size="1.778" layer="95" ratio="20" rot="MR180"/>
 </segment>
@@ -35680,7 +35891,6 @@ NEAR BATTERY</text>
 <label x="142.24" y="154.94" size="1.778" layer="95" ratio="20" rot="R180"/>
 </segment>
 <segment>
-<portref moduleinst="A8" port="SCL"/>
 <wire x1="347.98" y1="170.18" x2="368.3" y2="170.18" width="0.1524" layer="91"/>
 <label x="347.98" y="172.72" size="1.778" layer="95" ratio="20" rot="MR180"/>
 </segment>
@@ -35692,7 +35902,6 @@ NEAR BATTERY</text>
 </net>
 <net name="TOP.!RST" class="0">
 <segment>
-<portref moduleinst="A8" port="!RST"/>
 <wire x1="347.98" y1="182.88" x2="368.3" y2="182.88" width="0.1524" layer="91"/>
 <label x="347.98" y="185.42" size="1.778" layer="95" ratio="20" rot="MR180"/>
 </segment>
@@ -35747,7 +35956,6 @@ NEAR BATTERY</text>
 <portref moduleinst="A5" port="CTRL.ENC"/>
 <wire x1="218.44" y1="121.92" x2="220.98" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="121.92" x2="220.98" y2="162.56" width="0.1524" layer="91"/>
-<portref moduleinst="A8" port="S1.ENC"/>
 <wire x1="220.98" y1="162.56" x2="297.18" y2="162.56" width="0.1524" layer="91"/>
 <label x="218.44" y="147.32" size="1.778" layer="95" ratio="20" rot="R270"/>
 </segment>
@@ -35757,7 +35965,6 @@ NEAR BATTERY</text>
 <portref moduleinst="A5" port="CTRL.!CHRG"/>
 <wire x1="218.44" y1="119.38" x2="226.06" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="119.38" x2="226.06" y2="160.02" width="0.1524" layer="91"/>
-<portref moduleinst="A8" port="S1.!CHRG"/>
 <wire x1="226.06" y1="160.02" x2="297.18" y2="160.02" width="0.1524" layer="91"/>
 <label x="223.52" y="147.32" size="1.778" layer="95" ratio="20" rot="R270"/>
 </segment>
@@ -35767,7 +35974,6 @@ NEAR BATTERY</text>
 <portref moduleinst="A5" port="CTRL.!FLT"/>
 <wire x1="218.44" y1="116.84" x2="231.14" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="231.14" y1="116.84" x2="231.14" y2="157.48" width="0.1524" layer="91"/>
-<portref moduleinst="A8" port="S1.!FLT"/>
 <wire x1="231.14" y1="157.48" x2="297.18" y2="157.48" width="0.1524" layer="91"/>
 <label x="228.6" y="147.32" size="1.778" layer="95" ratio="20" rot="R270"/>
 </segment>
@@ -35862,42 +36068,6 @@ NEAR BATTERY</text>
 <portref moduleinst="A7" port="MTXS"/>
 <wire x1="91.44" y1="200.66" x2="114.3" y2="200.66" width="0.1524" layer="91"/>
 <label x="114.3" y="200.66" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="TOP1" class="0">
-<segment>
-<pinref part="TP2" gate="G$1" pin="TP"/>
-<wire x1="304.8" y1="205.74" x2="304.8" y2="218.44" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="TOP2" class="0">
-<segment>
-<pinref part="TP3" gate="G$1" pin="TP"/>
-<wire x1="309.88" y1="205.74" x2="309.88" y2="218.44" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="TOP3" class="0">
-<segment>
-<pinref part="TP4" gate="G$1" pin="TP"/>
-<wire x1="314.96" y1="213.36" x2="314.96" y2="218.44" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="TOP4" class="0">
-<segment>
-<pinref part="TP5" gate="G$1" pin="TP"/>
-<wire x1="320.04" y1="213.36" x2="320.04" y2="218.44" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="TOP5" class="0">
-<segment>
-<pinref part="TP6" gate="G$1" pin="TP"/>
-<wire x1="325.12" y1="213.36" x2="325.12" y2="218.44" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="TOP6" class="0">
-<segment>
-<pinref part="TP7" gate="G$1" pin="TP"/>
-<wire x1="330.2" y1="213.36" x2="330.2" y2="218.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+24V" class="0">
