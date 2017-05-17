@@ -1,4 +1,5 @@
 #include "DataAcq.h"
+#include <socal/socal.h>
 
 DataAcquisition::DataAcquisition(const unsigned long opticalSensorAddress) : OpticalSensorAddress(opticalSensorAddress)
 {
@@ -77,12 +78,13 @@ double DataAcquisition::ReadGyroVelocity() const
 
 void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & Seconds) const
 {
-	uint32_t deltaX;
-	uint32_t deltaY;
+	int32_t deltaX = 0;
+	int32_t deltaY = 0;
 	double sample_time = 0.0;
 
-	/*uint32_t sensorData = 0;
+	int32_t sensorData = 0;
 
+	static bool SensorInitialized = false;
 	static std::ofstream f;
 	if(!f.is_open())
 	{
@@ -90,7 +92,6 @@ void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & delta
 		f << "Data samples begin here" << std::endl << std::endl;
 	}
 
-	std::cout << "Try to connect to memory space of optical sensor information ..." << std::endl;
 	if (!OpticalSensorAddress)
 	{
 		std::cerr << "Error! Address currently not initialized!" << std::endl;
@@ -126,7 +127,7 @@ void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & delta
 
 
 				f << "Cycles elapsed: " << sample_time << std::endl;
-				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
+				f << "deltaX: " << deltaX << "  DeltaY: " << deltaY << std::endl;
 				f << "SensorData: " << sensorData << std::endl << std::endl;
 			}
 			else
@@ -134,7 +135,7 @@ void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & delta
 				std::cout << "No motion detected!" << std::endl;
 			}
 		}
-	}*/
+	}
 
 	// Optical Sensor data to meter
 	deltaXmeter = deltaX * OptSensorToMeter;
