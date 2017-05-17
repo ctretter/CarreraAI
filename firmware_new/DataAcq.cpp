@@ -81,7 +81,7 @@ void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & delta
 {
 	uint32_t deltaX;
 	uint32_t deltaY;
-	sample_time = 0.0;
+	double sample_time = 0.0;
 
 	uint32_t sensorData = 0;
 
@@ -139,8 +139,6 @@ void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & delta
 
 
 				f << "Cycles elapsed: " << sample_time << std::endl;
-				sample_time /= clock_rate;
-				f << "Time elapsed: " << sample_time * seconds_to_micro << " us" << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "SensorData: " << sensorData << std::endl << std::endl;
 
@@ -157,5 +155,6 @@ void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & delta
 	// Optical Sensor data to meter
 	deltaXmeter = deltaX * OptSensorToMeter;
 	deltaYmeter = deltaY * OptSensorToMeter;
+	microSeconds = (sample_time / ClockRate) * SecondsToMicro;
 
 }

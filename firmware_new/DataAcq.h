@@ -30,12 +30,15 @@ private:
 	double mGyroVelocity;
 	bool mLineCrossed;
 
+	// Base address for optical sensor
 	unsigned long OpticalSensorAddress;
 
+	// Constants for gyro sensor
 	static double constexpr GyroToAngularVelocityDegree = 0.07; //datasheet
 	static double constexpr DegreeToRadian = M_PI/180.0;
 	static double constexpr GyroToAngularVelocityRad = GyroToAngularVelocityDegree * DegreeToRadian;
 
+	// Constants for opt. sensor data
 	// in inch: deltaX/400
 	// in cm: inch * 2.54
 	// in m: cm/100
@@ -43,6 +46,9 @@ private:
 	static double constexpr InchToCm = 2.54;
 	static double constexpr CmToMeter = 1.0/100.0;
 	static double constexpr OptSensorToMeter = OptSensorToInch * InchToCm * CmToMeter;
+	// Cycles to time
+	static double constexpr ClockRate = 50000000.0; // in Hz
+	static double constexpr SecondsToMicro = 1000000.0;
 };
 
 #endif
