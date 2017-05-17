@@ -20,12 +20,13 @@
 #include <fstream>
 
 #include "hps_0.h"
-#include "DataAcquisition.h"
-#include "MatlabConnect/MatlabTCP.h"
+//#include "DataAcquisition.h"
+//#include "MatlabConnect/MatlabTCP.h"
 #include "Controller.h"
 #include "Correlation.h"
 #include "lsm9d1.h"
 #include "TrackRecorder.h"
+#include "DataAcq.h"
 
 static unsigned long const HW_REGS_BASE = ALT_STM_OFST;
 static unsigned long const HW_REGS_SPAN = 0x04000000;
@@ -72,10 +73,10 @@ static double const seconds_to_milli = 1000.0;
 static double const seconds_to_micro = 1000000.0;
 
 // implementation of data acquisition using optical sensor
-void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_time) 
+void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_time)
 {
 	uint32_t sensorData = 0;
-	
+
 	dataX = 0;
 	dataY = 0;
 	sample_time = 0.0;
@@ -83,22 +84,22 @@ void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_t
 	static std::ofstream f;
 	if(!f.is_open())
 	{
-		f.open("motion_logfile.txt", ios::out | ios::app);
+		f.open("motion_logfile.txt", std::ios::out | std::ios::app);
 		f << "Data samples begin here" << std::endl << std::endl;
 	}
-	
+
 	std::cout << "Try to connect to memory space of optical sensor information ..." << std::endl;
 	if (!OpticalSensorAddress)
 	{
 		std::cerr << "Error! Address currently not initialized!" << std::endl;
 	}
 	else
-	{	
+	{
 		if (!SensorInitialized)
 		{
 			std::cout << "Try to connect to ADNS-3080 by reading product ID ..." << std::endl;
 			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG);
-			if(sensorData != VALID_SENSOR_PRODUCT_ID) 
+			if(sensorData != VALID_SENSOR_PRODUCT_ID)
 			{
 				std::cerr << "Error! Product ID is invalid!" << std::endl;
 			}
@@ -124,21 +125,21 @@ void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_t
 				std::cout << "###########################################################" << std::endl << std::endl;
 			*/
 				std::cout << "New motion detected! Reading data ..." << std::endl;
-				
+
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
 				sample_time = sensorData;
-				
+
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
 				dataY = (sensorData << 24) >> 24;
 				dataX = (sensorData >> 8);
-				
-				
+
+
 				f << "Cycles elapsed: " << sample_time << std::endl;
 				sample_time /= clock_rate;
 				f << "Time elapsed: " << sample_time * seconds_to_micro << " us" << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
 				f << "SensorData: " << sensorData << std::endl << std::endl;
-				
+
 				//std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
 				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
 			}
@@ -147,7 +148,7 @@ void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_t
 				std::cout << "No motion detected!" << std::endl;
 			}
 		}
-	}	
+	}
 }
 
 // TODO: measure track
@@ -450,6 +451,7 @@ int main(int argc, char **argv)
 
 timespec TimeDifference(timespec start, timespec end)
 {
+	size_t BILLION = 1000000000;
 	timespec temp;
 	if ((end.tv_nsec-start.tv_nsec)<0) {
 		temp.tv_sec = end.tv_sec-start.tv_sec-1;
