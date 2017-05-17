@@ -71,12 +71,7 @@ static double const seconds_to_milli = 1000.0;
 static double const seconds_to_micro = 1000000.0;
 
 
-enum EAccel {FASTER,NEUTRAL,SLOWER};
-EAccel decideAcceleration(double const max_speed, double const current_speed)
-{
-	EAccel a = (current_speed < max_speed?EAccel::FASTER : (current_speed > max_speed ? EAccel::SLOWER : EAccel::NEUTRAL));
-	return a;	
-}
+
 
 class TrackRecorder{
 public:
