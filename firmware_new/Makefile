@@ -14,6 +14,7 @@ SRC_CPP += MatlabConnect/MatlabTCP.cpp
 SRC_CPP += DataAcquisition.cpp
 SRC_CPP += Controller.cpp
 SRC_CPP += Correlation.cpp
+SRC_CPP += TrackRecorder.cpp
 EXT_CPP = .cpp
 
 INCLUDES := -I.

@@ -25,6 +25,7 @@
 #include "Controller.h"
 #include "Correlation.h"
 #include "lsm9d1.h"
+#include "TrackRecorder.h"
 
 static unsigned long const HW_REGS_BASE = ALT_STM_OFST;
 static unsigned long const HW_REGS_SPAN = 0x04000000;
@@ -69,73 +70,6 @@ static bool SensorInitialized = false;
 static double const clock_rate = 50000000.0;
 static double const seconds_to_milli = 1000.0;
 static double const seconds_to_micro = 1000000.0;
-
-
-
-
-class TrackRecorder{
-public:
-	struct TrackPoint{
-		TrackPoint(double const distance_to_start, double const max_velocity)
-		: distance_to_start(distance_to_start), max_velocity(max_velocity)
-		{
-			// maybe error handling, distance_to_start and max_velocity only positive
-		}
-		
-		double const distance_to_start;
-		double const max_velocity;
-	};
-	
-	typedef std::vector<TrackPoint> TrackMap;
-
-	TrackRecorder(	double const distance_centroid_wheel = 1.0,
-					double const distance_centroid_street = 0.5,
-					double const safety_for_max_velocity = 0.9,
-					double const gyro_to_angular_velocity = 0.07)
-	: safety_for_max_velocity(safety_for_max_velocity), 
-	  speed_calculation_constant(gravity*distance_centroid_wheel/distance_centroid_street),
-	  gyro_to_angular_velocity(gyro_to_angular_velocity*degree_to_radian)
-	{
-		// maybe error handling, distance_centroid_* positive values, safety_for_max_velocity between 0.0 and 1.0
-	}
-
-	TrackMap const& getTrackMap(void) const
-	{
-		return this->track_map;
-	}
-
-	void addTrackPoint(double const deltax, double const deltay, double const gyro_z, double const sample_time){
-		double distance = sqrt(deltax * deltax + deltay * deltay);
-		double distance_to_start = (track_map.empty()?0.0:track_map.back().distance_to_start) + distance;
-		track_map.push_back(TrackPoint(distance_to_start, calculateMaxVelocity(distance, gyro_z, sample_time)));
-	}
-	
-private:
-	
-	static double constexpr gravity = 9.81;
-	static double constexpr degree_to_radian = M_PI/180.0;
-	double const safety_for_max_velocity;
-	double const speed_calculation_constant;
-	double const gyro_to_angular_velocity;
-	
-	TrackMap track_map;
-	
-	double calculateRadius(double const distance, double const gyro_z, double const sample_time)
-	{
-		double angular_velocity = gyro_z * gyro_to_angular_velocity;
-		return (distance / (angular_velocity * sample_time));
-	}
-
-	double calculateMaxVelocity(double const radius)
-	{
-		return (sqrt(speed_calculation_constant*radius)*safety_for_max_velocity);
-	}
-
-	double calculateMaxVelocity(double const distance, double const gyro_z, double const sample_time)
-	{
-		return calculateMaxVelocity(calculateRadius(distance, gyro_z, sample_time));
-	}
-};
 
 // implementation of data acquisition using optical sensor
 void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_time) 
@@ -494,7 +428,7 @@ int main(int argc, char **argv)
 	std::cout << "Mem mapped" << std::endl;
 	OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
   
-	TrackRecorder track(1.0,0.5,0.9,0.7);
+	TrackRecorder track(1.0,0.5,0.9);
 	uint32_t deltax, deltay;
 	double sample_time;
 	// TODO implement isStartSignal for detection of driving over start
