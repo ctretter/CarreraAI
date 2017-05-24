@@ -4,6 +4,9 @@ use ieee.numeric_std.all;
 --use ieee.fixed_generic_pkg.all;
 library ieee_proposed;
 use ieee_proposed.fixed_pkg.all;
+--use ieee.fixed_float_types.all;
+--use ieee.float_pkg.all;
+--use ieee.fixed_pkg.all;
 
 package NN is
 	constant cDataWidth : natural;
@@ -52,10 +55,10 @@ package body NN is
 	constant cTrainedWeigth1 : tSynapse(2 downto 0):= (x"005E71476AF89C5E", x"FFCC1D9F4D37C137", x"003D79496249A133");
 	
 	function Syn2SynMa(Val: tSynapse) return tSynapseMatrix is 
-		variable tmp: tSynapseMatrix(Val'length-1 downto 0, 0 downto 0);
+		variable tmp: tSynapseMatrix(0 downto 0, Val'length-1 downto 0);
 		begin
 			for i in val'length-1 downto 0 loop
-				tmp(i, 0) := Val(i);
+				tmp(0, i) := Val(i);
 			end loop;
 			return tmp;
 		end Syn2SynMa;

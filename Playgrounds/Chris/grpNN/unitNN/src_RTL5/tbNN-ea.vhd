@@ -39,6 +39,8 @@ port map(
     iRelation 	=> Relation,
     iPos		=> position,
     iNxtCurve		=> NextCurve,
+	iEnable		=> ,
+	oRdy		=> ,
     oThrottle	=>  Throttle);
 	
 	
