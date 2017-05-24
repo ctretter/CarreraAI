@@ -24,16 +24,19 @@ public:
 	void UpdateAllData();
 
 	size_t GetLapCount() const;
+	double GetSampleTime() const;	// seconds
 	double GetDrivingVelocity() const;	//in m/s
 	double GetDistanceTravelled() const;	//in m
 	double GetAngularVelocity() const;	// in rad/s
 	bool IsStartLineCrossed();		// flag cleared, when read
+
 
 private:
 	void ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & Seconds) const;
 	double ReadGyroVelocity() const;
 
 	size_t mLapCount;
+	double mSampleTime;
 	double mDrivingVelocity;
 	double mDistanceTravelled;
 	double mGyroVelocity;

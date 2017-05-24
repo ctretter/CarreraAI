@@ -8,6 +8,7 @@ DataAcquisition::DataAcquisition(const unsigned long opticalSensorAddress) : Opt
 	mDistanceTravelled = 0.0;
 	mGyroVelocity = 0.0;
 	mLineCrossed = false;
+	mSampleTime = 0.0;
 }
 
 DataAcquisition::~DataAcquisition()
@@ -26,17 +27,23 @@ void DataAcquisition::UpdateAllData()
 	// Read optical sensor data
 	double deltaX;
 	double deltaY;
-	double Seconds;
-	ReadOpticalSensorData(deltaX, deltaY, Seconds);
+	double seconds;
+	ReadOpticalSensorData(deltaX, deltaY, seconds);
 	// Calculate current distance and speed
 	double distance = sqrt(deltaX*deltaX + deltaY*deltaY);
 	mDistanceTravelled += distance;	// in meter
-	mDrivingVelocity = distance / (Seconds*1e6); // in meter/second
+	mDrivingVelocity = distance / (seconds); // in meter/second
+	mSampleTime = seconds;
 }
 
 size_t DataAcquisition::GetLapCount() const
 {
 	return mLapCount;
+}
+
+double DataAcquisition::GetSampleTime() const	// seconds
+{
+	return mSampleTime;
 }
 
 double DataAcquisition::GetDrivingVelocity() const
