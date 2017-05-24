@@ -78,8 +78,8 @@ double DataAcquisition::ReadGyroVelocity() const
 
 void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & Seconds) const
 {
-	int32_t deltaX = 0;
-	int32_t deltaY = 0;
+	int8_t deltaX = 0;
+	int8_t deltaY = 0;
 	double sample_time = 0.0;
 
 	int32_t sensorData = 0;
@@ -138,8 +138,8 @@ void DataAcquisition::ReadOpticalSensorData(double & deltaXmeter, double & delta
 	}
 
 	// Optical Sensor data to meter
-	deltaXmeter = deltaX * OptSensorToMeter;
-	deltaYmeter = deltaY * OptSensorToMeter;
+	deltaXmeter = (double)deltaX * OptSensorToMeter;
+	deltaYmeter = (double)deltaY * OptSensorToMeter;
 	Seconds = (sample_time / ClockRate);
 
 }

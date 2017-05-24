@@ -2,25 +2,23 @@
 -- Created	   :	17.05.2017
 -- Author	   :	Michael Bierig
 -- File        :	OpticalSensorBurst-Rtl-a.vhd
--- Description : 	architecture for communication between FPGA and OptiSensor
+-- Description : 	architecture for communication between FPGA and Optical sensor
 -------------------------------------------------------------------------------
--- Latest update:	17.05.2017
+-- Latest update:	24.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of OpticalSensorBurst is
 
 	-- component types	
-	type tCommunicationStates is (DoReset, WaitAfterReset, Init, 
-									
+	type tCommunicationStates is (DoReset, WaitAfterReset, Init,								
 									SetProductIDReg, WaitForReadProductID, ReadProductIDReg,
-									SetMotionReg, WaitForReadMotion, ReadMotionReg, CheckMotionReg,
-									SetBurstReg, WaitForReadMotion, ReadBurstReg,
+									SetBurstReg, WaitForReadBurst, ReadBurstReg,
 									OutputAndWaitForWrite
 								);
 		
 	-- component signals
 	signal State 					: tCommunicationStates 								:= Init;
-	signal BurstReg					: std_ulogic_vector ((gDataWidth*7)-1 downto 0);	:= (others => '0');
+	signal BurstReg					: std_ulogic_vector ((gDataWidth*7)-1 downto 0)		:= (others => '0');
 	signal ProductIDReg				: std_ulogic_vector	(gDataWidth-1 downto 0)			:= (others => '0');
 	signal MasterOutput				: std_ulogic										:= '0';
 	signal ResetSensor 				: std_ulogic										:= '0';
@@ -40,7 +38,7 @@ architecture Rtl of OpticalSensorBurst is
 	constant cProductIDAddr			: std_ulogic_vector (gDataWidth-1 downto 0)			:= "00000000";					-- address: 0x00
 	constant cNewDataReceived		: std_ulogic_vector (gDataWidth-1 downto 0)			:= "10000000";					-- new data: 0x80
 	constant cProductID				: std_ulogic_vector (gDataWidth-1 downto 0)			:= "00010111";					-- product id: 0x17
-	constant cMaxSysClkValue		: integer											:= gClkDivider*4;				-- freq to sysclk: (gClkDivider*1MHz)/gClkDivider*2
+	constant cMaxSysClkValue		: integer											:= gClkDivider*200;				-- freq to sysclk: (gClkDivider*1MHz)/gClkDivider*2
 	constant cDelayRegisters		: integer											:= 100;							-- 100 µs delay between write -> read
 	constant cDelayNewData			: integer											:= 10;							-- 10 µs delay between read -> write
 	constant cMaxWriteBits			: integer											:= gDataWidth;					-- length of a register: 8 bit
@@ -201,13 +199,8 @@ begin
 
 
 				-- ###########################################################################	
-				-- end of read motion register
+				-- start to set and read burst register of optical sensor (ADNS-3080)
 				-- ###########################################################################	
-				
-				
-				
-								
-				
 				when SetBurstReg =>
 										if (Sel = cnInactivated and SysClkEnable = '0') then
 											Sel <= cnActivated;
@@ -265,10 +258,7 @@ begin
 											end if;
 										end if;
 										
-				
-				
-				
-																
+										
 				-- #####################
 				-- output data
 				-- #####################
@@ -284,10 +274,10 @@ begin
 										end if;
 										
 										-- send data and motion to output if new data received, else NULL
-										if (BurstReg(56 downto 49) = cNewDataReceived) then
-											oMotion <= BurstReg(56 downto 49);
-											oDataX <= BurstReg(48 downto 41);
-											oDataY <= BurstReg(40 downto 33);
+										if (BurstReg(55 downto 48) = cNewDataReceived) then
+											oMotion <= BurstReg(55 downto 48);
+											oDataX <= BurstReg(47 downto 40);
+											oDataY <= BurstReg(39 downto 32);
 											oDataValid <= '1';
 											
 											-- reset motion register

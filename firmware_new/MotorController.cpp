@@ -3,8 +3,8 @@
 
 MotorController::MotorController(DataAcquisition & dataAcq, TrackRecorder & trackRec)
 {
-
-
+	mDataAcq = &dataAcq;
+	mTrackRecorder = &trackRec;
 }
 
 MotorController::~MotorController()
