@@ -1,24 +1,24 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -radix decimal /tbnn/NN/IP_Result
-add wave -noupdate -radix decimal /tbnn/NN/Exponent
-add wave -noupdate -divider {New Divider}
-add wave -noupdate -radix decimal /tbnn/NN/Think/vThrottle
-add wave -noupdate -radix decimal /tbnn/NN/Think/vDendrites_0
-add wave -noupdate -radix decimal /tbnn/NN/Think/vtmpDendrites_1
-add wave -noupdate -radix decimal -childformat {{/tbnn/NN/Think/vDendrites_1(2) -radix decimal} {/tbnn/NN/Think/vDendrites_1(1) -radix decimal} {/tbnn/NN/Think/vDendrites_1(0) -radix decimal}} -expand -subitemconfig {/tbnn/NN/Think/vDendrites_1(2) {-radix decimal} /tbnn/NN/Think/vDendrites_1(1) {-radix decimal} /tbnn/NN/Think/vDendrites_1(0) {-radix decimal}} /tbnn/NN/Think/vDendrites_1
-add wave -noupdate -radix decimal /tbnn/NN/Think/vtmpDiv
-add wave -noupdate -radix decimal /tbnn/NN/Think/vtmpMatrixMul
-add wave -noupdate -radix decimal /tbnn/NN/Think/vtmpDotMul
-add wave -noupdate -radix decimal /tbnn/NN/Think/vDotMul
-add wave -noupdate -radix decimal /tbnn/NN/Think/vInverted
-add wave -noupdate /tbnn/NN/Think/vfloat
-add wave -noupdate /tbnn/NN/Think/vtmps
-add wave -noupdate /tbnn/NN/Think/vtmptmp
-add wave -noupdate /tbnn/NN/oRdy
+add wave -noupdate /tbnn/NN/Enable
+add wave -noupdate -radix decimal /tbnn/NN/Dendrites1
+add wave -noupdate -radix decimal /tbnn/NN/Dendrites0
+add wave -noupdate -radix decimal /tbnn/NN/FirstStage/tmpDendrites
+add wave -noupdate -radix decimal /tbnn/NN/FirstStage/IP_Result
+add wave -noupdate /tbnn/NN/FirstStage/Exponent
+add wave -noupdate /tbnn/NN/FirstStage/Count
+add wave -noupdate /tbnn/NN/FirstStage/ni
+add wave -noupdate /tbnn/NN/FirstStage/iclk
+add wave -noupdate /tbnn/NN/FirstStage/State
+add wave -noupdate /tbnn/NN/FirstStage/Reset
+add wave -noupdate -radix decimal -childformat {{/tbnn/NN/FirstStage/iValues(4) -radix decimal} {/tbnn/NN/FirstStage/iValues(3) -radix decimal} {/tbnn/NN/FirstStage/iValues(2) -radix decimal} {/tbnn/NN/FirstStage/iValues(1) -radix decimal} {/tbnn/NN/FirstStage/iValues(0) -radix decimal}} -subitemconfig {/tbnn/NN/FirstStage/iValues(4) {-height 15 -radix decimal} /tbnn/NN/FirstStage/iValues(3) {-height 15 -radix decimal} /tbnn/NN/FirstStage/iValues(2) {-height 15 -radix decimal} /tbnn/NN/FirstStage/iValues(1) {-height 15 -radix decimal} /tbnn/NN/FirstStage/iValues(0) {-height 15 -radix decimal}} /tbnn/NN/FirstStage/iValues
+add wave -noupdate -radix decimal /tbnn/NN/FirstStage/tmpDendrites
+add wave -noupdate -radix decimal /tbnn/NN/FirstStage/ntmpDendrites
+add wave -noupdate -radix decimal -childformat {{/tbnn/NN/FirstStage/SynWeigth(2) -radix decimal -childformat {{/tbnn/NN/FirstStage/SynWeigth(2)(4) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(2)(3) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(2)(2) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(2)(1) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(2)(0) -radix decimal}}} {/tbnn/NN/FirstStage/SynWeigth(1) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(0) -radix decimal}} -subitemconfig {/tbnn/NN/FirstStage/SynWeigth(2) {-height 15 -radix decimal -childformat {{/tbnn/NN/FirstStage/SynWeigth(2)(4) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(2)(3) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(2)(2) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(2)(1) -radix decimal} {/tbnn/NN/FirstStage/SynWeigth(2)(0) -radix decimal}}} /tbnn/NN/FirstStage/SynWeigth(2)(4) {-height 15 -radix decimal} /tbnn/NN/FirstStage/SynWeigth(2)(3) {-height 15 -radix decimal} /tbnn/NN/FirstStage/SynWeigth(2)(2) {-height 15 -radix decimal} /tbnn/NN/FirstStage/SynWeigth(2)(1) {-height 15 -radix decimal} /tbnn/NN/FirstStage/SynWeigth(2)(0) {-height 15 -radix decimal} /tbnn/NN/FirstStage/SynWeigth(1) {-height 15 -radix decimal} /tbnn/NN/FirstStage/SynWeigth(0) {-height 15 -radix decimal}} /tbnn/NN/FirstStage/SynWeigth
+add wave -noupdate -radix decimal /tbnn/NN/FirstStage/Comb/vtmpMatrixMul
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {3120 ns} 0}
-configure wave -namecolwidth 199
+WaveRestoreCursors {{Cursor 1} {55 ns} 0}
+configure wave -namecolwidth 255
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -32,4 +32,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {1714 ns} {2612 ns}
+WaveRestoreZoom {34 ns} {84 ns}

@@ -2,9 +2,9 @@
 -- Created	   :	17.05.2017
 -- Author	   :	Michael Bierig
 -- File        :	TestOpticalSensorBurst-Rtl-a.vhd
--- Description : 	architecture for test of optical sensor
+-- Description : 	architecture for test of optical sensor on DE1 Cyclone II
 -------------------------------------------------------------------------------
--- Latest update:	17.05.2017
+-- Latest update:	24.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of TestOpticalSensorBurst is

@@ -4,7 +4,7 @@
 -- File        :	AvalonToOpticalSensor-Rtl-a.vhd
 -- Description : 	architecture to get data from FPGA by using avalon in software
 -------------------------------------------------------------------------------
--- Latest update:	11.05.2017
+-- Latest update:	24.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of AvalonToOpticalSensor is
@@ -58,11 +58,11 @@ architecture Rtl of AvalonToOpticalSensor is
 		);
 	end component;
 	
-	-- component declaration of OpticalSensorXY
+	-- component declaration of OpticalSensorBurst
 	component OpticalSensorBurst
 		generic (
 			gDataWidth			: integer := cDataWidthSensor;					-- bit width of optical sensor values
-			gClkDivider			: integer := cClockFrequency/cMHzDivide
+			gClkDivider			: integer := cClockFrequency/cMHzDivide			-- input of clkDivider for optical sensor to configure frequency of SysClk
 		);
 		port (
 			iClk 				: in std_ulogic;								-- clk 50MHz
