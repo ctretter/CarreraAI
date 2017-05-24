@@ -45,7 +45,7 @@ architecture Rtl of OpticalSensorXY is
 	constant cProductIDAddr		: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00000000";					-- address: 0x00
 	constant cNewDataReceived	: std_ulogic_vector (gDataWidth-1 downto 0)		:= "10000000";					-- new data: 0x80
 	constant cProductID			: std_ulogic_vector (gDataWidth-1 downto 0)		:= "00010111";					-- product id: 0x17
-	constant cMaxSysClkValue	: integer										:= gClkDivider*2;				-- freq to sysclk: (gClkDivider*1MHz)/gClkDivider*2
+	constant cMaxSysClkValue	: integer										:= gClkDivider*4;				-- freq to sysclk: (gClkDivider*1MHz)/gClkDivider*2
 	constant cDelayRegisters	: integer										:= 100;							-- 100 µs delay between write -> read
 	constant cDelayNewData		: integer										:= 10;							-- 10 µs delay between read -> write
 	constant cMaxWriteBits		: integer										:= gDataWidth;					-- length of a register: 8 bit

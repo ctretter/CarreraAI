@@ -14,6 +14,9 @@ SRC_CPP += MatlabConnect/MatlabTCP.cpp
 SRC_CPP += DataAcquisition.cpp
 SRC_CPP += Controller.cpp
 SRC_CPP += Correlation.cpp
+SRC_CPP += TrackRecorder.cpp
+SRC_CPP += DataAcq.cpp
+SRC_CPP += MotorController.cpp
 EXT_CPP = .cpp
 
 INCLUDES := -I.
@@ -35,6 +38,8 @@ LDFLAGS = -g -Wall -pthread -lpthread -Wl,--no-as-needed -static -Wl,-u,pthread_
 CC = $(CROSS_COMPILE)g++
 ARCH= arm
 
+#OBJ := $(notdir $(subst $(EXT),.o,$(SRC)))
+#OBJ_CPP := $(notdir $(subst $(EXT_CPP),.o,$(SRC_CPP)))
 #OBJ := $($(INCLUDES)/%.c = $(OBJ_DIR)/%.o)
 #OBJ_CPP := $($(INCLUDES)/%.cpp = $(OBJ_DIR)/%.o)
 OBJ := $(subst $(EXT),.o,$(SRC))
