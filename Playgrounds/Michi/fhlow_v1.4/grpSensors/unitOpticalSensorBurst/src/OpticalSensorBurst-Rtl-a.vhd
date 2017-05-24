@@ -2,16 +2,15 @@
 -- Created	   :	17.05.2017
 -- Author	   :	Michael Bierig
 -- File        :	OpticalSensorBurst-Rtl-a.vhd
--- Description : 	architecture for communication between FPGA and OptiSensor
+-- Description : 	architecture for communication between FPGA and Optical sensor
 -------------------------------------------------------------------------------
--- Latest update:	17.05.2017
+-- Latest update:	24.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of OpticalSensorBurst is
 
 	-- component types	
-	type tCommunicationStates is (DoReset, WaitAfterReset, Init, 
-									
+	type tCommunicationStates is (DoReset, WaitAfterReset, Init,								
 									SetProductIDReg, WaitForReadProductID, ReadProductIDReg,
 									SetBurstReg, WaitForReadBurst, ReadBurstReg,
 									OutputAndWaitForWrite
@@ -19,7 +18,7 @@ architecture Rtl of OpticalSensorBurst is
 		
 	-- component signals
 	signal State 					: tCommunicationStates 								:= Init;
-	signal BurstReg					: std_ulogic_vector ((gDataWidth*7)-1 downto 0)	:= (others => '0');
+	signal BurstReg					: std_ulogic_vector ((gDataWidth*7)-1 downto 0)		:= (others => '0');
 	signal ProductIDReg				: std_ulogic_vector	(gDataWidth-1 downto 0)			:= (others => '0');
 	signal MasterOutput				: std_ulogic										:= '0';
 	signal ResetSensor 				: std_ulogic										:= '0';
@@ -200,13 +199,8 @@ begin
 
 
 				-- ###########################################################################	
-				-- end of read motion register
+				-- start to set and read burst register of optical sensor (ADNS-3080)
 				-- ###########################################################################	
-				
-				
-				
-								
-				
 				when SetBurstReg =>
 										if (Sel = cnInactivated and SysClkEnable = '0') then
 											Sel <= cnActivated;
@@ -264,10 +258,7 @@ begin
 											end if;
 										end if;
 										
-				
-				
-				
-																
+										
 				-- #####################
 				-- output data
 				-- #####################
