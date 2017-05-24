@@ -45,8 +45,8 @@
 --altmult_opt_csa CARRY_SELECT="NO" CBX_AUTO_BLACKBOX="ALL" LPM_DIRECTION="ADD" LPM_PIPELINE=1 LPM_REPRESENTATION="UNSIGNED" LPM_WIDTH=90 aclr clken clock dataa datab result
 --VERSION_BEGIN 16.0 cbx_altmult_opt 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_mult 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_padd 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 
- LIBRARY lpm;
- USE lpm.all;
+ LIBRARY lpm_ver;
+ USE lpm_ver.all;
 
 --synthesis_resources = lpm_add_sub 1 
  LIBRARY ieee;
@@ -114,8 +114,8 @@
 
  END RTL; --Exponential_altmult_opt_csa_ksf
 
- LIBRARY lpm;
- USE lpm.all;
+ LIBRARY lpm_ver;
+ USE lpm_ver.all;
 
 --synthesis_resources = lpm_add_sub 3 lpm_mult 3 reg 422 
  LIBRARY ieee;
@@ -4531,8 +4531,8 @@
 --altmult_opt_csa CARRY_SELECT="NO" CBX_AUTO_BLACKBOX="ALL" LPM_DIRECTION="ADD" LPM_PIPELINE=2 LPM_REPRESENTATION="UNSIGNED" LPM_WIDTH=92 aclr clken clock dataa datab result
 --VERSION_BEGIN 16.0 cbx_altmult_opt 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_mult 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_padd 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 
- LIBRARY lpm;
- USE lpm.all;
+ LIBRARY lpm_ver;
+ USE lpm_ver.all;
 
 --synthesis_resources = lpm_add_sub 1 
  LIBRARY ieee;
@@ -4600,8 +4600,8 @@
 
  END RTL; --Exponential_altmult_opt_csa_nsf
 
- LIBRARY lpm;
- USE lpm.all;
+ LIBRARY lpm_ver;
+ USE lpm_ver.all;
 
 --synthesis_resources = lpm_add_sub 3 lpm_mult 3 reg 464 
  LIBRARY ieee;
@@ -9130,8 +9130,8 @@
 --altmult_opt_csa CARRY_SELECT="NO" CBX_AUTO_BLACKBOX="ALL" LPM_DIRECTION="ADD" LPM_PIPELINE=2 LPM_REPRESENTATION="UNSIGNED" LPM_WIDTH=90 aclr clken clock dataa datab result
 --VERSION_BEGIN 16.0 cbx_altmult_opt 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_mult 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_padd 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
 
- LIBRARY lpm;
- USE lpm.all;
+ LIBRARY lpm_ver;
+ USE lpm_ver.all;
 
 --synthesis_resources = lpm_add_sub 1 
  LIBRARY ieee;
@@ -9199,8 +9199,8 @@
 
  END RTL; --Exponential_altmult_opt_csa_lsf
 
- LIBRARY lpm;
- USE lpm.all;
+ LIBRARY lpm_ver;
+ USE lpm_ver.all;
 
 --synthesis_resources = lpm_add_sub 3 lpm_mult 3 reg 458 
  LIBRARY ieee;
@@ -13631,8 +13631,8 @@
 
  END RTL; --Exponential_altmult_opt_95e
 
- LIBRARY lpm;
- USE lpm.lpm_components.all;
+ LIBRARY lpm_ver;
+ USE lpm_ver.lpm_components.all;
 
 --synthesis_resources = lpm_add_sub 18 lpm_clshift 1 lpm_compare 3 lpm_mult 11 lpm_mux 3 mux21 224 reg 2890 
  LIBRARY ieee;
