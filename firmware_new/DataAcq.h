@@ -18,7 +18,7 @@
 class DataAcquisition {
 public:
 
-	DataAcquisition(unsigned long OpticalSensorAddress);
+	DataAcquisition(unsigned long opticalSensorAddress, unsigned long pwmAddress);
 	~DataAcquisition();
 
 	void UpdateAllData();
@@ -34,6 +34,7 @@ public:
 private:
 	void ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & Seconds) const;
 	double ReadGyroVelocity() const;
+	bool ReadLineCrossed() const;
 
 	size_t mLapCount;
 	double mSampleTime;
@@ -44,6 +45,8 @@ private:
 
 	// Base address for optical sensor
 	unsigned long OpticalSensorAddress;
+	// is motor control address
+	unsigned long PwmAddress;
 
 	// Constants for gyro sensor
 	static double constexpr GyroToAngularVelocityDegree = 0.07; //datasheet
