@@ -15,9 +15,11 @@ public:
 	
 	typedef std::vector<TrackPoint> TrackMap;
 
-	TrackRecorder(	double const distance_centroid_wheel = 1.0,
-					double const distance_centroid_street = 0.5,
-					double const safety_for_max_velocity = 0.9);
+	TrackRecorder(	double const distance_centroid_wheel = 1.0,		// same unit as distance_centroid_wheel
+					double const distance_centroid_street = 0.5,    // same unit as distance_centroid_street
+					double const safety_for_max_velocity = 0.9,     // No unit. Value between 0.0 and 1.0 (0...100%)
+					double const mass = 0.0045,                     // in kg.
+					double const sum_of_forces_in_z = 220.4);       // in Newton [N].
 
 	TrackMap const& getTrackMap(void) const;
 	void addTrackPoint(double const delta_distance, double const angular_velocity, double const sample_time);
@@ -27,9 +29,9 @@ public:
 	
 private:
 	
-	static double constexpr gravity = 9.81;
 	double const safety_for_max_velocity;
 	double const speed_calculation_constant;
+	double const sum_of_forces_in_z;
 	
 	TrackMap track_map;
 	double smallest_max_velocity;
