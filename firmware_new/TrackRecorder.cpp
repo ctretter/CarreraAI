@@ -1,13 +1,12 @@
 #include "TrackRecorder.h"
 
+double const TrackRecorder::gravitational_acceleration = 9.81;
+
 TrackRecorder::TrackRecorder(	double const distance_centroid_wheel,
 								double const distance_centroid_street,
-								double const safety_for_max_velocity,
-								double const mass,                     
-								double const sum_of_forces_in_z)
+								double const safety_for_max_velocity)
 : safety_for_max_velocity(safety_for_max_velocity), 
-  speed_calculation_constant(distance_centroid_wheel/(distance_centroid_street*mass)),
-  sum_of_forces_in_z(sum_of_forces_in_z),
+  speed_calculation_constant(distance_centroid_wheel/distance_centroid_street*gravitational_acceleration),
   smallest_max_velocity(0.0)
 {
 	// TODO: Implement CTor. Maybe error handling, distance_centroid_* positive values, safety_for_max_velocity between 0.0 and 1.0
@@ -58,7 +57,7 @@ double TrackRecorder::calculateRadius(double const distance, double const angula
 
 double TrackRecorder::calculateMaxVelocity(double const radius)
 {
-	return (sqrt(speed_calculation_constant*radius*sum_of_forces_in_z)*safety_for_max_velocity);
+	return (sqrt(speed_calculation_constant*radius)*safety_for_max_velocity);
 }
 
 double TrackRecorder::calculateMaxVelocity(double const distance, double const angular_velocity, double const sample_time)
