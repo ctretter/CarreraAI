@@ -1,0 +1,13 @@
+GPIO_0_1		iMISO			MISO
+GPIO_0_3		oNPD			NPD
+GPIO_0_4		oSelect			CS
+GPIO_0_5		oSensorReset		RST
+GPIO_0_6		oMOSI			MOSI
+GPIO_0_7		oSysClk			SCLK
+
+LED_0			oResetActive		LED to show if reset is on/off
+LED_1			oErrorProductID		LED on if product ID is invalid (not 0x17)
+LED_2			oValidProductID		LED on if product ID is valid (0x17)
+LED_3			oMotionDetected		Blink if motion of sensor is detected
+LED_4			oReadEnableDetected	Blink if read enable is triggered
+LED_5			oValidReadAccess	LED off if read access is on invalid address
