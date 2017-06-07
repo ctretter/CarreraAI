@@ -10,7 +10,7 @@
 class MotorController {
 public:
 
-	MotorController(DataAcquisition & dataAcq, TrackRecorder & trackRec, unsigned long MotorControlAddress);
+	MotorController(DataAcquisition & dataAcq, TrackRecorder & trackRec, unsigned long * MotorControlAddress);
 	~MotorController();
 
 	// Calculate braking distance
@@ -28,7 +28,7 @@ private:
 
 	DataAcquisition * mDataAcq;
 	TrackRecorder * mTrackRecorder;
-	unsigned long MOTORCONTROL_ADDRESS;
+	unsigned long * MOTORCONTROL_ADDRESS;
 
 	// maximal acceleration and deceleration in mm/(s²)
 	static double constexpr MAX_ACCEL = 450;

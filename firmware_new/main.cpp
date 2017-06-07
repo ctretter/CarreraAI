@@ -59,8 +59,8 @@ static bool const Stop = false;
 static std::atomic<double> const MaxSpeed(3800);
 
 // defines used for optical sensor
-volatile unsigned long OpticalSensorAddress = 0;
-volatile unsigned long MotorControlAddress = 0;
+volatile unsigned long * OpticalSensorAddress = 0;
+volatile unsigned long * MotorControlAddress = 0;
 static bool SensorInitialized = false;
 /*#define VALID_SENSOR_PRODUCT_ID 0x17
 #define OFFSET_PRODUCT_ID_REG 1
@@ -409,12 +409,12 @@ int main(int argc, char **argv)
 		return 1;
 	}
 	std::cout << "Mem mapped" << std::endl;
-	OpticalSensorAddress = ((unsigned long)VirtualBaseAddress + OpticalSensor);
-	MotorControlAddress = ((unsigned long)VirtualBaseAddress + MotorControl);		// with this adress it should be possible to access the gyro and the motor controler
+	OpticalSensorAddress = (unsigned long*)((unsigned long)VirtualBaseAddress + OpticalSensor);
+	MotorControlAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + MotorControl);		// with this adress it should be possible to access the gyro and the motor controler
   
 	TrackRecorder track(1.0,0.5,0.9,0.0045,220.4);
-	DataAcquisition harvester(OpticalSensorAddress,MotorControlAddress);
-	MotorController ctrl(harvester,track,MotorControlAddress);
+	DataAcquisition harvester((unsigned long*)OpticalSensorAddress, (unsigned long*)MotorControlAddress);
+	MotorController ctrl(harvester, track, (unsigned long*)MotorControlAddress);
 	
 	while(!harvester.IsStartLineCrossed());
 	while(!harvester.IsStartLineCrossed())

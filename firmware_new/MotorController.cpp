@@ -2,7 +2,7 @@
 #include <cmath>
 #include <socal/socal.h>
 
-MotorController::MotorController(DataAcquisition & dataAcq, TrackRecorder & trackRec, unsigned long MotorControlAddress)
+MotorController::MotorController(DataAcquisition & dataAcq, TrackRecorder & trackRec, unsigned long * MotorControlAddress)
 {
 	mDataAcq = &dataAcq;
 	mTrackRecorder = &trackRec;

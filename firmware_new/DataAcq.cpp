@@ -2,7 +2,7 @@
 #include <socal/socal.h>
 #include "BSP/LSM9D1/lsm9d1.h"
 
-DataAcquisition::DataAcquisition(const unsigned long opticalSensorAddress, unsigned long pwmAddress) :
+DataAcquisition::DataAcquisition(unsigned long * opticalSensorAddress, unsigned long * pwmAddress) :
 	OpticalSensorAddress(opticalSensorAddress),
 	PwmAddress(pwmAddress)
 {
