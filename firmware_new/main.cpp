@@ -416,13 +416,15 @@ int main(int argc, char **argv)
 	DataAcquisition harvester((unsigned long*)OpticalSensorAddress, (unsigned long*)MotorControlAddress);
 	MotorController ctrl(harvester, track, (unsigned long*)MotorControlAddress);
 	
+	// Initial round -> measure track TODO set good speed value
+	ctrl.UpdateMotorVelocity(100);
 	while(!harvester.IsStartLineCrossed());
 	while(!harvester.IsStartLineCrossed())
 	{
 		track.addTrackPoint(harvester.GetDistanceTravelled(),harvester.GetAngularVelocity(),harvester.GetDrivingVelocity());
 	}
 	while(true){
-		ctrl.UpdateMotorVelocity();
+		ctrl.UpdateMotorVelocity(ctrl.CalculateTargetVelocity());
 		//readOpticalSensorData(deltax, deltay, sample_time);
 		usleep(5000);
 		//sleep(1);

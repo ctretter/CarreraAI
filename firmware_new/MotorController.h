@@ -15,11 +15,11 @@ public:
 
 	// Calculate braking distance
 	// Get max speed now and new point
-	double CalculateTargetVelocity() const;
+	double CalculateTargetVelocity() const; // m/s
 
 	// Compare speed now to max speed new point -> slow down or speed up
 	// Send new speed to motor
-	void UpdateMotorVelocity() const;
+	void UpdateMotorVelocity(double const targetVelocity) const; // m/s
 
 
 private:

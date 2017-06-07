@@ -24,14 +24,13 @@ double MotorController::CalculateTargetVelocity() const
 
 // Compare speed now to max speed new point -> slow down or speed up
 // Send new speed to motor
-void MotorController::UpdateMotorVelocity() const
+void MotorController::UpdateMotorVelocity(double const targetVelocity) const
 {
 	static double prevVelocity = 0;
 
-	double const targetVelocity = CalculateTargetVelocity();
 	double const currentVelocity = mDataAcq->GetDrivingVelocity();
 
-	double DiffVelocity = targetVelocity - currentVelocity;
+	double DiffVelocity = (targetVelocity - currentVelocity) * 1000; // mm/s;
 	if(DiffVelocity > MAX_ACCEL)
 	{
 		DiffVelocity = MAX_ACCEL;
