@@ -55,13 +55,12 @@ timespec TimeDifference(timespec start, timespec end);
 
 static void* VirtualBaseAddress = 0;
 static int MemoryFileDescriptor = 0;
-unsigned long* MotorControlAddress = 0;
 static bool const Stop = false;
 static std::atomic<double> const MaxSpeed(3800);
 
 // defines used for optical sensor
-volatile unsigned long* OpticalSensorAddress = 0;
-volatile unsigned long* MotorControlAddress = 0;
+volatile unsigned long OpticalSensorAddress = 0;
+volatile unsigned long MotorControlAddress = 0;
 static bool SensorInitialized = false;
 /*#define VALID_SENSOR_PRODUCT_ID 0x17
 #define OFFSET_PRODUCT_ID_REG 1
@@ -410,31 +409,21 @@ int main(int argc, char **argv)
 		return 1;
 	}
 	std::cout << "Mem mapped" << std::endl;
-	OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
-	MotorControlAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + MotorControl);		// with this adress it should be possible to access the gyro and the motor controler
+	OpticalSensorAddress = ((unsigned long)VirtualBaseAddress + OpticalSensor);
+	MotorControlAddress = ((unsigned long)VirtualBaseAddress + MotorControl);		// with this adress it should be possible to access the gyro and the motor controler
   
 	TrackRecorder track(1.0,0.5,0.9,0.0045,220.4);
-	int32_t deltax, deltay;
-	double sample_time;
-	//DataAcquisition harvester(OpticalSensorAddress);
-	//MotorController(harvester,track);
+	DataAcquisition harvester(OpticalSensorAddress,MotorControlAddress);
+	MotorController ctrl(harvester,track,MotorControlAddress);
 	
-	/*while(!harvester.IsStartLineCrossed())
+	while(!harvester.IsStartLineCrossed());
+	while(!harvester.IsStartLineCrossed())
 	{
-		track.addTrackPoint(harvester.GetDistanceTravelled(),harvester.GetAngularVelocity(),harvester.GetDrivingVelocity);
-	}*/
-	// TODO implement isStartSignal for detection of driving over start
-	// TODO implement readAngularVelocity
-	/*while(!isStartSignal());	// waiting for first time to drive over start
-	while(!isStartSignal()){	// record track
-		uint32_t gyro_z;
-		//readOpticalSensorData(deltax, deltay, sample_time);
-		//gyro_z = readAngularVelocity();
-		track.addTrackPoint(deltax,deltay,gyro_z,sample_time);
-	}*/
+		track.addTrackPoint(harvester.GetDistanceTravelled(),harvester.GetAngularVelocity(),harvester.GetDrivingVelocity());
+	}
 	while(true){
-		
-		readOpticalSensorData(deltax, deltay, sample_time);
+		ctrl.UpdateMotorVelocity();
+		//readOpticalSensorData(deltax, deltay, sample_time);
 		usleep(5000);
 		//sleep(1);
 	}
