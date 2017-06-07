@@ -417,7 +417,7 @@ int main(int argc, char **argv)
 	MotorController ctrl(harvester, track, (unsigned long*)MotorControlAddress);
 	
 	// Initial round -> measure track TODO set good speed value
-	ctrl.UpdateMotorVelocity(100);
+	ctrl.UpdateMotorVelocity(1.5);
 	while(!harvester.IsStartLineCrossed());
 	while(!harvester.IsStartLineCrossed())
 	{
