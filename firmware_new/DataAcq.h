@@ -49,9 +49,10 @@ private:
 	unsigned long * PwmAddress;
 
 	// Constants for gyro sensor
-	static double constexpr GyroToAngularVelocityDegree = 0.07; //datasheet
+	//static double constexpr GyroToAngularVelocityDegree = 0.07; //datasheet
 	static double constexpr DegreeToRadian = M_PI/180.0;
-	static double constexpr GyroToAngularVelocityRad = GyroToAngularVelocityDegree * DegreeToRadian;
+	static double constexpr GyroToAngularVelocityRad = DegreeToRadian / 1000.0;
+	//static double constexpr GyroToAngularVelocityRad = GyroToAngularVelocityDegree * DegreeToRadian;
 
 	// Constants for opt. sensor data
 	// in inch: deltaX/400
