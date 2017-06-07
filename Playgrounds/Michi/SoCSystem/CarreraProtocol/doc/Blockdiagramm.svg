@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Blockdiagramm.svg"
+   inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <title
+     id="title4631">Blockdiagramm Carrera Protocol</title>
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3997"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-0"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3997-9"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-8"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3997-8"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-4"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3997-5"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-1"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3997-7"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-15"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3997-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-17"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3997-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-2"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3997-45"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="534.49349"
+     inkscape:cy="769.37775"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-global="true"
+     inkscape:snap-object-midpoints="false"
+     inkscape:snap-center="false"
+     inkscape:object-nodes="true"
+     inkscape:snap-nodes="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Blockdiagramm Carrera Protocol</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2985"
+       width="88.571426"
+       height="91.428574"
+       x="147.14288"
+       y="182.36218"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2985-1"
+       width="337.14285"
+       height="277.14285"
+       x="325.71429"
+       y="119.50504"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="347.54642"
+       y="135.3629"
+       id="text3005"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3007"
+         x="347.54642"
+         y="135.3629">FPGA</tspan></text>
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3009"
+       width="146.06091"
+       height="88.511955"
+       x="375.71429"
+       y="182.36218"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="419.88617"
+       y="196.6479"
+       id="text3011"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3013"
+         x="419.88617"
+         y="196.6479">CarreraProtocol</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 191.4286,273.79076 0,17.85714"
+       id="path3017"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 178.9286,291.6479 25,0"
+       id="path3019"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 535.71429,396.6479 0,17.85714"
+       id="path3017-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 523.21429,414.50504 25,0"
+       id="path3019-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="225.71431"
+       y="235.07648"
+       id="text4434"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4436"
+         x="225.71431"
+         y="235.07648">+</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="193.42859"
+       y="176.36218"
+       id="text4438"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4440"
+         x="193.42859"
+         y="176.36218">Carrera Rail Signal</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="515.77521"
+       y="196.76297"
+       id="text4444"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4446"
+         x="515.77521"
+         y="196.76297">oID[31..0]</tspan><tspan
+         sodipodi:role="line"
+         x="515.77521"
+         y="211.76297"
+         id="tspan3032">oData[15..0]</tspan><tspan
+         sodipodi:role="line"
+         x="515.77521"
+         y="226.76297"
+         id="tspan4448">oNewData</tspan><tspan
+         sodipodi:role="line"
+         x="515.77521"
+         y="241.76297"
+         id="tspan4452">oError</tspan><tspan
+         sodipodi:role="line"
+         x="515.77521"
+         y="256.76297"
+         id="tspan4454">oBitLen[3..0]</tspan><tspan
+         sodipodi:role="line"
+         x="515.77521"
+         y="271.76297"
+         id="tspan4450" /></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 443.19145,308.6843 0,-37.81016"
+       id="path3015-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="439.41635"
+       y="320.00159"
+       id="text4480"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4482"
+         x="439.41635"
+         y="320.00159">Clock, nReset</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.59536731px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 521.57289,207.03471 49.25673,0"
+       id="path3015-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.59536731px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 521.57289,222.53714 49.25673,0"
+       id="path3015-2-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.59536731px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 521.7208,238.03959 49.25673,0"
+       id="path3015-2-5-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.59536731px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 521.57289,253.54201 49.25673,0"
+       id="path3015-2-5-1-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="407.01746"
+       y="234.4369"
+       id="text4434-2"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4436-3"
+         x="407.01746"
+         y="234.4369">iDataAsync</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.59536731px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 521.77521,193.05249 49.25673,0"
+       id="path3015-2-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3039"
+       width="11.071428"
+       height="25.357143"
+       x="270.10461"
+       y="245.71931"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 275.64032,245.71932 0,-14.64285"
+       id="path3079"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 275.64032,285.71931 0,-14.64285"
+       id="path3079-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3039-0"
+       width="11.071428"
+       height="25.357143"
+       x="270.10461"
+       y="300.36218"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 275.64032,300.36216 0,-14.64285"
+       id="path3079-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 275.64032,340.36215 0,-14.64285"
+       id="path3079-4-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 275.64032,340.36215 0,17.85714"
+       id="path3017-7-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 263.14032,358.21929 25,0"
+       id="path3019-4-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 275.64032,285.71931 31.19352,-0.50508 -0.25254,-56.56854 69.13299,0.50508"
+       id="path3015-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 275.64032,231.07647 -39.92601,0"
+       id="path3168"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="250.51784"
+       y="260.40259"
+       id="text3170"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3172"
+         x="250.51784"
+         y="260.40259" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="257.08383"
+       y="315.96097"
+       id="text3174"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3176"
+         x="257.08383"
+         y="315.96097">1k8</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="256.07367"
+       y="261.91782"
+       id="text3178"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3180"
+         x="256.07367"
+         y="261.91782">8k2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="249.67732"
+       y="227.07648"
+       id="text3182"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3184"
+         x="249.67732"
+         y="227.07648">18V</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="296.98483"
+       y="228.03709"
+       id="text3207"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\7.2015WS\PRO1\svn\trunk\04_software\fpga\CarreraProtocol\doc\Blockdiagramm.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3209"
+         x="296.98483"
+         y="228.03709">3V3</tspan></text>
+  </g>
+</svg>

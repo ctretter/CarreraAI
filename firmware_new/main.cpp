@@ -20,11 +20,14 @@
 #include <fstream>
 
 #include "hps_0.h"
-#include "DataAcquisition.h"
-#include "MatlabConnect/MatlabTCP.h"
+//#include "DataAcquisition.h"
+//#include "MatlabConnect/MatlabTCP.h"
 #include "Controller.h"
 #include "Correlation.h"
 #include "lsm9d1.h"
+#include "TrackRecorder.h"
+#include "DataAcq.h"
+#include "MotorController.h"
 
 static unsigned long const HW_REGS_BASE = ALT_STM_OFST;
 static unsigned long const HW_REGS_SPAN = 0x04000000;
@@ -58,90 +61,24 @@ static std::atomic<double> const MaxSpeed(3800);
 
 // defines used for optical sensor
 volatile unsigned long* OpticalSensorAddress = 0;
+volatile unsigned long* MotorControlAddress = 0;
 static bool SensorInitialized = false;
-#define VALID_SENSOR_PRODUCT_ID 0x17
+/*#define VALID_SENSOR_PRODUCT_ID 0x17
 #define OFFSET_PRODUCT_ID_REG 1
 #define OFFSET_MOTION_REG 0
 #define OFFSET_DATA_REG 2
 #define OFFSET_TIME_REG 3
-#define MOTION_DETECTED 0x80
+#define MOTION_DETECTED 0x80*/
  
 static double const clock_rate = 50000000.0;
 static double const seconds_to_milli = 1000.0;
 static double const seconds_to_micro = 1000000.0;
 
-
-
-
-class TrackRecorder{
-public:
-	struct TrackPoint{
-		TrackPoint(double const distance_to_start, double const max_velocity)
-		: distance_to_start(distance_to_start), max_velocity(max_velocity)
-		{
-			// maybe error handling, distance_to_start and max_velocity only positive
-		}
-		
-		double const distance_to_start;
-		double const max_velocity;
-	};
-	
-	typedef std::vector<TrackPoint> TrackMap;
-
-	TrackRecorder(	double const distance_centroid_wheel = 1.0,
-					double const distance_centroid_street = 0.5,
-					double const safety_for_max_velocity = 0.9,
-					double const gyro_to_angular_velocity = 0.07)
-	: safety_for_max_velocity(safety_for_max_velocity), 
-	  speed_calculation_constant(gravity*distance_centroid_wheel/distance_centroid_street),
-	  gyro_to_angular_velocity(gyro_to_angular_velocity*degree_to_radian)
-	{
-		// maybe error handling, distance_centroid_* positive values, safety_for_max_velocity between 0.0 and 1.0
-	}
-
-	TrackMap const& getTrackMap(void) const
-	{
-		return this->track_map;
-	}
-
-	void addTrackPoint(double const deltax, double const deltay, double const gyro_z, double const sample_time){
-		double distance = sqrt(deltax * deltax + deltay * deltay);
-		double distance_to_start = (track_map.empty()?0.0:track_map.back().distance_to_start) + distance;
-		track_map.push_back(TrackPoint(distance_to_start, calculateMaxVelocity(distance, gyro_z, sample_time)));
-	}
-	
-private:
-	
-	static double constexpr gravity = 9.81;
-	static double constexpr degree_to_radian = M_PI/180.0;
-	double const safety_for_max_velocity;
-	double const speed_calculation_constant;
-	double const gyro_to_angular_velocity;
-	
-	TrackMap track_map;
-	
-	double calculateRadius(double const distance, double const gyro_z, double const sample_time)
-	{
-		double angular_velocity = gyro_z * gyro_to_angular_velocity;
-		return (distance / (angular_velocity * sample_time));
-	}
-
-	double calculateMaxVelocity(double const radius)
-	{
-		return (sqrt(speed_calculation_constant*radius)*safety_for_max_velocity);
-	}
-
-	double calculateMaxVelocity(double const distance, double const gyro_z, double const sample_time)
-	{
-		return calculateMaxVelocity(calculateRadius(distance, gyro_z, sample_time));
-	}
-};
-
 // implementation of data acquisition using optical sensor
-void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_time) 
+void readOpticalSensorData(int32_t & dataX, int32_t & dataY, double & sample_time)
 {
-	uint32_t sensorData = 0;
-	
+	int32_t sensorData = 0;
+
 	dataX = 0;
 	dataY = 0;
 	sample_time = 0.0;
@@ -149,22 +86,21 @@ void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_t
 	static std::ofstream f;
 	if(!f.is_open())
 	{
-		f.open("motion_logfile.txt", ios::out | ios::app);
+		f.open("motion_logfile.txt", std::ios::out | std::ios::app);
 		f << "Data samples begin here" << std::endl << std::endl;
 	}
 	
-	std::cout << "Try to connect to memory space of optical sensor information ..." << std::endl;
 	if (!OpticalSensorAddress)
 	{
 		std::cerr << "Error! Address currently not initialized!" << std::endl;
 	}
 	else
-	{	
+	{
 		if (!SensorInitialized)
 		{
 			std::cout << "Try to connect to ADNS-3080 by reading product ID ..." << std::endl;
 			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG);
-			if(sensorData != VALID_SENSOR_PRODUCT_ID) 
+			if(sensorData != VALID_SENSOR_PRODUCT_ID)
 			{
 				std::cerr << "Error! Product ID is invalid!" << std::endl;
 			}
@@ -176,44 +112,26 @@ void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_t
 		}
 		else
 		{
-			std::cout << "Check motion register for changes ..." << std::endl;
 			sensorData = alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG);
 			if(sensorData == MOTION_DETECTED)
-			{/*
-				std::cout << std::endl << "###########################################################" << std::endl;
-				std::cout << "### DATA DUMP: " << std::endl;
-				std::cout << "### Address: " << OpticalSensorAddress << std::endl;
-				std::cout << "### Product ID: " << alt_read_word(OpticalSensorAddress + OFFSET_PRODUCT_ID_REG) << std::endl;
-				std::cout << "### Data: " << alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG) << std::endl;
-				std::cout << "### Time : " << alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG) << std::endl;
-				std::cout << "### Motion : " << alt_read_word(OpticalSensorAddress + OFFSET_MOTION_REG) << std::endl;
-				std::cout << "###########################################################" << std::endl << std::endl;
-			*/
-				std::cout << "New motion detected! Reading data ..." << std::endl;
-				
+			{
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_TIME_REG);
 				sample_time = sensorData;
-				
+
 				sensorData = alt_read_word(OpticalSensorAddress + OFFSET_DATA_REG);
-				dataY = (sensorData << 24) >> 24;
-				dataX = (sensorData >> 8);
-				
-				
+				int8_t dataYtemp = ((sensorData << 24) >> 24);
+				int8_t dataXtemp = (sensorData >> 8);
+				dataX = dataXtemp;
+				dataY = dataYtemp;
+				std::cout << "Reading new data: " << dataX << " | " << dataY << std::endl;
+
 				f << "Cycles elapsed: " << sample_time << std::endl;
 				sample_time /= clock_rate;
 				f << "Time elapsed: " << sample_time * seconds_to_micro << " us" << std::endl;
 				f << "DataX: " << dataX << "  DataY: " << dataY << std::endl;
-				f << "SensorData: " << sensorData << std::endl << std::endl;
-				
-				//std::cout << "Read cycles of FPGA elapsed ..." << std::endl;
-				//std::cout << "Cycles elapsed: " << sensorData << "  Time elapsed: " << double(sensorData/50000) << " ms" << std::endl;
-			}
-			else
-			{
-				std::cout << "No motion detected!" << std::endl;
 			}
 		}
-	}	
+	}
 }
 
 // TODO: measure track
@@ -337,139 +255,139 @@ void readOpticalSensorData(uint32_t & dataX, uint32_t & dataY, double & sample_t
   readOpticalSensorData();
 	
   while(true) {
-  // Get data sample from data acquisition thread
-  dataSample_t dataSample;
-  DataAcquisition::GetInstance()->GetData(dataSample);
+	  // Get data sample from data acquisition thread
+	  dataSample_t dataSample;
+	  DataAcquisition::GetInstance()->GetData(dataSample);
 
-  if(Stop && dataSample.lapCount > 1) {
-  alt_write_word(CarLedsAddress, 0); // turn off LEDs
-  alt_write_word(MotorControlAddress, 0x01); // inhibit on (brake) and enable PWM
-  alt_write_word(MotorControlAddress+2, 700); // PWM reg
-  continue;
-  }
+	  if(Stop && dataSample.lapCount > 1) {
+	  alt_write_word(CarLedsAddress, 0); // turn off LEDs
+	  alt_write_word(MotorControlAddress, 0x01); // inhibit on (brake) and enable PWM
+	  alt_write_word(MotorControlAddress+2, 700); // PWM reg
+	  continue;
+	  }
 
-  // Detect lap start
-  if(previousLapCount != dataSample.lapCount) {
-  // Just finished the first (recording) lap
-  if(dataSample.lapCount == 2) {
-  lapLength = dataSample.distance - lapStartDistance;
-  }
-  std::cout << "Lap length: " << dataSample.distance - lapStartDistance << std::endl;
-  lapStartDistance = dataSample.distance;
-  distanceError = 0.0;
-  previousLapCount = dataSample.lapCount;
-  }
+	  // Detect lap start
+	  if(previousLapCount != dataSample.lapCount) {
+	  // Just finished the first (recording) lap
+	  if(dataSample.lapCount == 2) {
+	  lapLength = dataSample.distance - lapStartDistance;
+	  }
+	  std::cout << "Lap length: " << dataSample.distance - lapStartDistance << std::endl;
+	  lapStartDistance = dataSample.distance;
+	  distanceError = 0.0;
+	  previousLapCount = dataSample.lapCount;
+	  }
 
-  // Record first Lap (i.e. after we cross the start line for the first time)
-  if(dataSample.lapCount == 1) {
-  distanceYawRate_t datapoint;
-  datapoint.distance = dataSample.distance - lapStartDistance;
-  datapoint.yawRate = dataSample.yawRate;
-  track.push_back(datapoint);
-  }
+	  // Record first Lap (i.e. after we cross the start line for the first time)
+	  if(dataSample.lapCount == 1) {
+	  distanceYawRate_t datapoint;
+	  datapoint.distance = dataSample.distance - lapStartDistance;
+	  datapoint.yawRate = dataSample.yawRate;
+	  track.push_back(datapoint);
+	  }
 
-  if(dataSample.lapCount > 2 && ((dataSample.distance - lapStartDistance) > (lapLength * 1.1))) {
-  std::cerr << "Looks like we failed to detect a lap, aborting …" << std::endl;
-  SignalHandler(SIGTERM);
-  }
+	  if(dataSample.lapCount > 2 && ((dataSample.distance - lapStartDistance) > (lapLength * 1.1))) {
+	  std::cerr << "Looks like we failed to detect a lap, aborting …" << std::endl;
+	  SignalHandler(SIGTERM);
+	  }
 
-  double distanceCorrected = dataSample.distance - distanceError - lapStartDistance;
-  std::vector<distanceYawRate_t>::iterator trackPosition;
-  // Correct position using cross-correlation
-  if(DoCorrelation) {
-  // Add to history
-  if(angularRateHistory.size() >= HISTORY_LENGTH) {
-  // remove oldest entry
-  angularRateHistory.erase(angularRateHistory.begin());
-  }
-  angularRateHistory.push_back(dataSample.yawRate);
+	  double distanceCorrected = dataSample.distance - distanceError - lapStartDistance;
+	  std::vector<distanceYawRate_t>::iterator trackPosition;
+	  // Correct position using cross-correlation
+	  if(DoCorrelation) {
+	  // Add to history
+	  if(angularRateHistory.size() >= HISTORY_LENGTH) {
+	  // remove oldest entry
+	  angularRateHistory.erase(angularRateHistory.begin());
+	  }
+	  angularRateHistory.push_back(dataSample.yawRate);
 
-  if(dataSample.lapCount > 1) {
-  timespec currentTime, timeBefore;
-  clock_gettime(CLOCK_MONOTONIC, &timeBefore);
+	  if(dataSample.lapCount > 1) {
+	  timespec currentTime, timeBefore;
+	  clock_gettime(CLOCK_MONOTONIC, &timeBefore);
 
-  trackPosition = GetPatternPosition(track, angularRateHistory, dataSample.distance-lapStartDistance, SHIFT); //TODO: Use distanceCorrected?
+	  trackPosition = GetPatternPosition(track, angularRateHistory, dataSample.distance-lapStartDistance, SHIFT); //TODO: Use distanceCorrected?
 
-  clock_gettime(CLOCK_MONOTONIC, &currentTime);
-  //timespec timeForCalculationTimeSpec = TimeDifference(timeBefore, currentTime);
-  //double timeForCalculation = timeForCalculationTimeSpec.tv_sec*1000 + (double)timeForCalculationTimeSpec.tv_nsec/MILLION;
+	  clock_gettime(CLOCK_MONOTONIC, &currentTime);
+	  //timespec timeForCalculationTimeSpec = TimeDifference(timeBefore, currentTime);
+	  //double timeForCalculation = timeForCalculationTimeSpec.tv_sec*1000 + (double)timeForCalculationTimeSpec.tv_nsec/MILLION;
 
-  //printf("Match at position (calculated in %f ms): '%f', corrected: '%f', uncorrected: '%f'\n", timeForCalculation, trackPosition->distance, distanceCorrected, dataSample.distance - lapStartDistance);
+	  //printf("Match at position (calculated in %f ms): '%f', corrected: '%f', uncorrected: '%f'\n", timeForCalculation, trackPosition->distance, distanceCorrected, dataSample.distance - lapStartDistance);
 
-  // Only start correcting after the first 1000 mm
-  if(dataSample.distance - lapStartDistance > 1000) {
-  distanceError = dataSample.distance - trackPosition->distance - lapStartDistance;
-  }
-  }
-  } else if (dataSample.lapCount > 1) {
-  trackPosition = track.begin();
-  while((trackPosition->distance < (dataSample.distance - lapStartDistance)) && (trackPosition != track.end())) {
-  trackPosition++;
-  }
-  }
+	  // Only start correcting after the first 1000 mm
+	  if(dataSample.distance - lapStartDistance > 1000) {
+	  distanceError = dataSample.distance - trackPosition->distance - lapStartDistance;
+	  }
+	  }
+	  } else if (dataSample.lapCount > 1) {
+	  trackPosition = track.begin();
+	  while((trackPosition->distance < (dataSample.distance - lapStartDistance)) && (trackPosition != track.end())) {
+		trackPosition++;
+	  }
+	  }
 
-  if(DoLookAheadSpeedControlling && dataSample.lapCount > 1) {
-  speedSetting = MaxSpeed;
-  bool wrapAround = false;
-  // Look at next 50 samples and determine if we should brake
-  for(size_t i = 0; i < 70; i++) {
-  // Avoid division by 0
-  if(trackPosition->yawRate == 0.0) {
-  trackPosition->yawRate = 0.0001;
-  }
+	  if(DoLookAheadSpeedControlling && dataSample.lapCount > 1) {
+	  speedSetting = MaxSpeed;
+	  bool wrapAround = false;
+	  // Look at next 50 samples and determine if we should brake
+	  for(size_t i = 0; i < 70; i++) {
+	  // Avoid division by 0
+	  if(trackPosition->yawRate == 0.0) {
+	  trackPosition->yawRate = 0.0001;
+	  }
 
-  // Maximum possible speed for recorded point
-  double vMax = sqrt(MAX_TURN_ACCELERATION*90E3/abs(trackPosition->yawRate));
-  double brakingDistance = ((dataSample.speed - vMax)*(dataSample.speed - vMax))/(2*MAX_DECELERATION);
+	  // Maximum possible speed for recorded point
+	  double vMax = sqrt(MAX_TURN_ACCELERATION*90E3/abs(trackPosition->yawRate));
+	  double brakingDistance = ((dataSample.speed - vMax)*(dataSample.speed - vMax))/(2*MAX_DECELERATION);
 
-  // No need to brake if current speed is already slower
-  if(vMax > dataSample.speed) {
-  brakingDistance = 0;
-  }
+	  // No need to brake if current speed is already slower
+	  if(vMax > dataSample.speed) {
+	  brakingDistance = 0;
+	  }
 
-  // Brake to vMax if we are within braking distance
-  if(wrapAround) {
-  // wrap around -> trackPosition is in next lap, add lapLength
-  if(brakingDistance > ((trackPosition->distance + lapLength) - distanceCorrected)) {
-  if(vMax < speedSetting) {
-  speedSetting = vMax;
-  }
-  }
-  } else {
-  if(brakingDistance > (trackPosition->distance - distanceCorrected)) {
-  if(vMax < speedSetting) {
-  speedSetting = vMax;
-  }
-  }
-  }
+	  // Brake to vMax if we are within braking distance
+	  if(wrapAround) {
+	  // wrap around -> trackPosition is in next lap, add lapLength
+	  if(brakingDistance > ((trackPosition->distance + lapLength) - distanceCorrected)) {
+	  if(vMax < speedSetting) {
+	  speedSetting = vMax;
+	  }
+	  }
+	  } else {
+	  if(brakingDistance > (trackPosition->distance - distanceCorrected)) {
+	  if(vMax < speedSetting) {
+	  speedSetting = vMax;
+	  }
+	  }
+	  }
 
 
-  trackPosition++;
-  if(trackPosition == track.end()) {
-  wrapAround = true;
-  trackPosition = track.begin();
-  }
-  }
+	  trackPosition++;
+	  if(trackPosition == track.end()) {
+	  wrapAround = true;
+	  trackPosition = track.begin();
+	  }
+	  }
 
-  // Limit with vMax based on current speed and yawRate
-  double vMaxCurrentYawRate = sqrt(MAX_TURN_ACCELERATION*90E3/abs(dataSample.yawRate));
-  if(vMaxCurrentYawRate < speedSetting) {
-  speedSetting = vMaxCurrentYawRate;
-  }
+	  // Limit with vMax based on current speed and yawRate
+	  double vMaxCurrentYawRate = sqrt(MAX_TURN_ACCELERATION*90E3/abs(dataSample.yawRate));
+	  if(vMaxCurrentYawRate < speedSetting) {
+	  speedSetting = vMaxCurrentYawRate;
+	  }
 
-  // Turn off headlight LEDs when we are not aiming for max speed (i.e. in turns or when braking)
-  uint32_t ledState = alt_read_word(CarLedsAddress);
-  if(speedSetting < MaxSpeed) {
-  alt_write_word(CarLedsAddress, ledState & ~(1 << CAR_LED_HEADLIGHT_SHIFT));
-  } else {
-  alt_write_word(CarLedsAddress, ledState | (1 << CAR_LED_HEADLIGHT_SHIFT));
-  }
-  Controller::GetInstance()->SetSetpoint(speedSetting);
-  }
+	  // Turn off headlight LEDs when we are not aiming for max speed (i.e. in turns or when braking)
+	  uint32_t ledState = alt_read_word(CarLedsAddress);
+	  if(speedSetting < MaxSpeed) {
+	  alt_write_word(CarLedsAddress, ledState & ~(1 << CAR_LED_HEADLIGHT_SHIFT));
+	  } else {
+	  alt_write_word(CarLedsAddress, ledState | (1 << CAR_LED_HEADLIGHT_SHIFT));
+	  }
+	  Controller::GetInstance()->SetSetpoint(speedSetting);
+	  }
 
-  //int pwmValue = Controller::GetInstance()->GetOutput();
-  //printf("%.5f; %.5f; %.5f; %.5f; %.5f; %.5f; %5d\n", dataSample.time, dataSample.distance - lapStartDistance, dataSample.speed, dataSample.yawRate, distanceCorrected, Controller::GetInstance()->GetSetpoint(), pwmValue);
-  }
+	  //int pwmValue = Controller::GetInstance()->GetOutput();
+	  //printf("%.5f; %.5f; %.5f; %.5f; %.5f; %.5f; %5d\n", dataSample.time, dataSample.distance - lapStartDistance, dataSample.speed, dataSample.yawRate, distanceCorrected, Controller::GetInstance()->GetSetpoint(), pwmValue);
+	  }
   }
 */
 
@@ -493,10 +411,18 @@ int main(int argc, char **argv)
 	}
 	std::cout << "Mem mapped" << std::endl;
 	OpticalSensorAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + OpticalSensor);
+	MotorControlAddress = (unsigned long *)((unsigned long)VirtualBaseAddress + MotorControl);		// with this adress it should be possible to access the gyro and the motor controler
   
-	TrackRecorder track(1.0,0.5,0.9,0.7);
-	uint32_t deltax, deltay;
+	TrackRecorder track(1.0,0.5,0.9,0.0045,220.4);
+	int32_t deltax, deltay;
 	double sample_time;
+	//DataAcquisition harvester(OpticalSensorAddress);
+	//MotorController(harvester,track);
+	
+	/*while(!harvester.IsStartLineCrossed())
+	{
+		track.addTrackPoint(harvester.GetDistanceTravelled(),harvester.GetAngularVelocity(),harvester.GetDrivingVelocity);
+	}*/
 	// TODO implement isStartSignal for detection of driving over start
 	// TODO implement readAngularVelocity
 	/*while(!isStartSignal());	// waiting for first time to drive over start
@@ -509,13 +435,14 @@ int main(int argc, char **argv)
 	while(true){
 		
 		readOpticalSensorData(deltax, deltay, sample_time);
-		usleep(5);
+		usleep(5000);
 		//sleep(1);
 	}
 }
 
 timespec TimeDifference(timespec start, timespec end)
 {
+	size_t BILLION = 1000000000;
 	timespec temp;
 	if ((end.tv_nsec-start.tv_nsec)<0) {
 		temp.tv_sec = end.tv_sec-start.tv_sec-1;

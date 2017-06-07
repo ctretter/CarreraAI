@@ -4,7 +4,7 @@
 -- File        :	AvalonToOpticalSensor-Rtl-a.vhd
 -- Description : 	architecture to get data from FPGA by using avalon in software
 -------------------------------------------------------------------------------
--- Latest update:	11.05.2017
+-- Latest update:	24.05.2017
 -------------------------------------------------------------------------------
 
 architecture Rtl of AvalonToOpticalSensor is
@@ -36,7 +36,6 @@ architecture Rtl of AvalonToOpticalSensor is
 	signal RegDataX					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
 	signal RegDataY					: std_ulogic_vector(cDataWidthSensor-1 downto 0) 	:= (others => '0');
 	signal RegTime					: std_ulogic_vector(gDataWidth-1 downto 0)			:= (others => '0');
-	signal DataACK					: std_ulogic										:= '0';
 	signal TimeCtr					: integer											:= 0;
 	
 	-- component signals for strobes
@@ -59,11 +58,11 @@ architecture Rtl of AvalonToOpticalSensor is
 		);
 	end component;
 	
-	-- component declaration of OpticalSensorXY
-	component OpticalSensorXY
+	-- component declaration of OpticalSensorBurst
+	component OpticalSensorBurst
 		generic (
 			gDataWidth			: integer := cDataWidthSensor;					-- bit width of optical sensor values
-			gClkDivider			: integer := cClockFrequency/cMHzDivide
+			gClkDivider			: integer := cClockFrequency/cMHzDivide			-- input of clkDivider for optical sensor to configure frequency of SysClk
 		);
 		port (
 			iClk 				: in std_ulogic;								-- clk 50MHz
@@ -142,7 +141,7 @@ begin
 	-- #################################################
 	-- Instantiation: Unit Under Test - OpticalSensorCommunicator
 	-- #################################################
-	uut : OpticalSensorXY
+	uut : OpticalSensorBurst
 	generic map (
 		gDataWidth 		=> cDataWidthSensor,
 		gClkDivider		=> cClockFrequency/cMHzDivide
@@ -253,7 +252,6 @@ begin
 			RegDataY 		<= (others => '0');
 			RegMotion 		<= (others => '0');
 			RegTime 		<= (others => '0');
-			DataACK 		<= '1';
 			TimeCtr 		<= 0;
 
 		elsif (rising_edge(Clk)) then
@@ -262,13 +260,12 @@ begin
 			TimeCtr <= TimeCtr + 1;
 		
 			-- check if new data received and old data are send to software
-			if (Motion = cNewDataReceived and DataValid = '1' and DataACK = '1') then
+			if (Motion = cNewDataReceived and DataValid = '1') then
 			
 				RegMotion <= Motion;
 				RegDataX  <= DataX;
 				RegDataY  <= DataY;
 				RegTime	  <= std_ulogic_vector(to_unsigned(TimeCtr, gDataWidth));
-				DataACK   <= '0';
 				TimeCtr   <= 0;
 			end if;
 		
@@ -312,7 +309,6 @@ begin
 							AvalonReadData(cDataWidthSensor-1 downto 0) <= RegDataY;
 							RegDataX <= (others => '0');
 							RegDataY <= (others => '0');
-							DataACK <= '1';
 						end if;
 				
 				-- do nothing if other address active
