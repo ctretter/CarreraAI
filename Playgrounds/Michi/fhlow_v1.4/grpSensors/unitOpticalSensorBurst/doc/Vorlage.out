@@ -1,0 +1,5 @@
+\BOOKMARK [1][-]{section.1}{Concept description}{}% 1
+\BOOKMARK [1][-]{section.2}{ADNS 3080}{}% 2
+\BOOKMARK [1][-]{section.3}{FPGA Cyclone V and SoC}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Read burst register of optical sensor}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Avalon to sensor communication}{section.3}% 5
