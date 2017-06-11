@@ -21,6 +21,20 @@
     <marker
        inkscape:isstock="true"
        style="overflow:visible"
+       id="marker4433"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="EmptyDiamondL">
+      <path
+         transform="scale(0.8)"
+         style="fill-rule:evenodd;fill:#ffffff;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z "
+         id="path4435" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
        id="marker5870"
        refX="0.0"
        refY="0.0"
@@ -117,8 +131,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="607.17084"
-     inkscape:cy="685.86805"
+     inkscape:cx="50.033129"
+     inkscape:cy="598.78074"
      inkscape:document-units="px"
      inkscape:current-layer="g5056"
      showgrid="true"
@@ -152,7 +166,7 @@
     <g
        id="g5056">
       <g
-         id="g5933">
+         id="g4513">
         <g
            id="g4448"
            transform="translate(36.34518,429.42888)">
@@ -327,20 +341,12 @@
              x="20.005066"
              y="87.615997" />
         </g>
-        <g
-           id="g5689">
-          <path
-             sodipodi:nodetypes="cc"
-             inkscape:connector-curvature="0"
-             id="path4462"
-             d="m 182.25254,697.3622 0,-49.54569"
-             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#EmptyDiamondL)" />
-          <path
-             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             d="m 177.25253,687.3622 5,10 5,-10"
-             id="path5267"
-             inkscape:connector-curvature="0" />
-        </g>
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4433)"
+           d="m 182.25254,697.3622 0,-49.54569"
+           id="path4462"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
         <g
            id="g5508"
            transform="translate(8.4746288,405)">
@@ -576,21 +582,12 @@
              id="tspan5628-4"
              x="195"
              y="693.36218">*</tspan></text>
-        <g
-           id="g5693"
-           transform="translate(0,-245.64286)">
-          <path
-             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#EmptyDiamondL)"
-             d="m 182.25254,697.3622 0,-49.54569"
-             id="path5695"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="cc" />
-          <path
-             inkscape:connector-curvature="0"
-             id="path5697"
-             d="m 177.25253,687.3622 5,10 5,-10"
-             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-        </g>
+        <path
+           sodipodi:nodetypes="cc"
+           inkscape:connector-curvature="0"
+           id="path5695"
+           d="m 182.25254,451.71934 0,-49.54569"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#EmptyDiamondL)" />
         <text
            sodipodi:linespacing="125%"
            id="text5699"
@@ -613,22 +610,12 @@
              x="195"
              id="tspan5705"
              sodipodi:role="line">1</tspan></text>
-        <g
-           id="g5775"
-           transform="translate(22.091123,3.535534)">
-          <path
-             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             d="m 533.63605,448.27184 0,-114.70053"
-             id="path5695-1"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="cc" />
-          <path
-             sodipodi:nodetypes="ccc"
-             inkscape:connector-curvature="0"
-             id="path5697-0"
-             d="m 528.63604,438.27184 5,10 5,-10"
-             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-        </g>
+        <path
+           sodipodi:nodetypes="cc"
+           inkscape:connector-curvature="0"
+           id="path5695-1"
+           d="m 555.72717,451.80737 0,-114.70053"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
         <path
            inkscape:connector-curvature="0"
            id="path5779"
