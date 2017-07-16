@@ -10,16 +10,16 @@
 class MotorController {
 public:
 
-	MotorController(DataAcquisition & dataAcq, TrackRecorder & trackRec, unsigned long MotorControlAddress);
+	MotorController(DataAcquisition & dataAcq, TrackRecorder & trackRec, unsigned long * MotorControlAddress);
 	~MotorController();
 
 	// Calculate braking distance
 	// Get max speed now and new point
-	double CalculateTargetVelocity() const;
+	double CalculateTargetVelocity() const; // m/s
 
 	// Compare speed now to max speed new point -> slow down or speed up
 	// Send new speed to motor
-	void UpdateMotorVelocity() const;
+	void UpdateMotorVelocity(double const targetVelocity) const; // m/s
 
 
 private:
@@ -28,7 +28,7 @@ private:
 
 	DataAcquisition * mDataAcq;
 	TrackRecorder * mTrackRecorder;
-	unsigned long MOTORCONTROL_ADDRESS;
+	unsigned long * MOTORCONTROL_ADDRESS;
 
 	// maximal acceleration and deceleration in mm/(s²)
 	static double constexpr MAX_ACCEL = 450;

@@ -2,7 +2,7 @@
 #include <socal/socal.h>
 #include "BSP/LSM9D1/lsm9d1.h"
 
-DataAcquisition::DataAcquisition(const unsigned long opticalSensorAddress, unsigned long pwmAddress) :
+DataAcquisition::DataAcquisition(unsigned long * opticalSensorAddress, unsigned long * pwmAddress) :
 	OpticalSensorAddress(opticalSensorAddress),
 	PwmAddress(pwmAddress)
 {
@@ -25,13 +25,13 @@ void DataAcquisition::UpdateAllData()
 {
 	// Read if line was crossed
 	mLineCrossed = false;
-	//TODO test this function! -> schreibt das pfga in das register??
-	//mLineCrossed = ReadLineCrossed();
+	//TODO test this function!
+	mLineCrossed = ReadLineCrossed();
 
 	// Read Gyro
 	mGyroVelocity = 0.0;
 	//TODO test this function! -> connect isc gyro
-	//mGyroVelocity = ReadGyroVelocity(); // in rad/second
+	mGyroVelocity = ReadGyroVelocity(); // in rad/second
 
 	// Read optical sensor data
 	double deltaX;
@@ -90,17 +90,19 @@ double DataAcquisition::ReadGyroVelocity() const
 	if(LSM9D1_GetStatus() & 0x2) {
 		if(!LSM9D1_GetAngularRateZ(&gyroData))
 		{
-			//TODO (i2c konnte nicht gelesen werden -> kein value)
+			//TODO (i2c konnte nicht gelesen werden -> kein value) fehlerbehandlung
+		}
+		if(gyroData == 0.0)
+		{
+			gyroData = 0.00000001;
 		}
 	}
 	else
 	{
-		//TODO
+		//TODO fehlerbehandlung
 	}
 
 	// Gyro data to radian
-	//TODO muss der wert noch so umgerechnet werden?
-	//(in der funktion wird auch schon was gerechnet, aber was komplett anderes)
 	return gyroData * GyroToAngularVelocityRad;
 }
 
