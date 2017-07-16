@@ -7,3 +7,12 @@
 /tmp/
 .project
 .texlipse
+/Documentation.synctex.gz
+/Control.aux
+/Documentation.aux
+/Documentation.bbl
+/Documentation.bcf
+/Documentation.blg
+/Documentation.log
+/Documentation.out
+/Documentation.run.xml
