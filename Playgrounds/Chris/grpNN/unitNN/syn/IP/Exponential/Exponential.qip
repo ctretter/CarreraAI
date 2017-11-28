@@ -1,9 +1,0 @@
-set_global_assignment -name IP_TOOL_NAME "ALTFP_EXP"
-set_global_assignment -name IP_TOOL_VERSION "15.0"
-set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "{Cyclone V}"
-set_global_assignment -name VHDL_FILE [file join $::quartus(qip_path) "Exponential.vhd"]
-set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Exponential.bsf"]
-set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Exponential_inst.vhd"]
-set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Exponential.inc"]
-set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Exponential.cmp"]
-set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Exponential_syn.v"]
