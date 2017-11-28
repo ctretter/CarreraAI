@@ -18,34 +18,41 @@
 class DataAcquisition {
 public:
 
-	DataAcquisition(unsigned long OpticalSensorAddress);
+	DataAcquisition(unsigned long * opticalSensorAddress, unsigned long * pwmAddress);
 	~DataAcquisition();
 
 	void UpdateAllData();
 
 	size_t GetLapCount() const;
+	double GetSampleTime() const;	// seconds
 	double GetDrivingVelocity() const;	//in m/s
 	double GetDistanceTravelled() const;	//in m
 	double GetAngularVelocity() const;	// in rad/s
 	bool IsStartLineCrossed();		// flag cleared, when read
 
+
 private:
 	void ReadOpticalSensorData(double & deltaXmeter, double & deltaYmeter, double & Seconds) const;
 	double ReadGyroVelocity() const;
+	bool ReadLineCrossed() const;
 
 	size_t mLapCount;
+	double mSampleTime;
 	double mDrivingVelocity;
 	double mDistanceTravelled;
 	double mGyroVelocity;
 	bool mLineCrossed;
 
 	// Base address for optical sensor
-	unsigned long OpticalSensorAddress;
+	unsigned long * OpticalSensorAddress;
+	// is motor control address
+	unsigned long * PwmAddress;
 
 	// Constants for gyro sensor
-	static double constexpr GyroToAngularVelocityDegree = 0.07; //datasheet
+	//static double constexpr GyroToAngularVelocityDegree = 0.07; //datasheet
 	static double constexpr DegreeToRadian = M_PI/180.0;
-	static double constexpr GyroToAngularVelocityRad = GyroToAngularVelocityDegree * DegreeToRadian;
+	static double constexpr GyroToAngularVelocityRad = DegreeToRadian / 1000.0;
+	//static double constexpr GyroToAngularVelocityRad = GyroToAngularVelocityDegree * DegreeToRadian;
 
 	// Constants for opt. sensor data
 	// in inch: deltaX/400

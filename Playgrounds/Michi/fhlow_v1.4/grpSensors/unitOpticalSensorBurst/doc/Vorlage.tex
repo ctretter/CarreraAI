@@ -1,0 +1,41 @@
+\include{Definition} %beinhaltet alle benötigten Packages etc.
+\begin{document}
+
+% Titelseite:
+\title{Optical sensor communication to FPGA and HPS} % Übungsname und Nummer angeben
+\subtitle {CarreraAI - ESD 2016/2017} % Semester angeben oder auskommentieren, falls nicht erwünscht
+\author{Michael Bierig - S1610567002} % Autorenname
+\date{}
+\maketitle % Titelseite erstellen
+
+
+% Inhaltsverzeichnis
+\newpage
+\tableofcontents % Inhaltsverzeichnis erstellen
+\newpage
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% 										My stuff
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Concept description}
+To measure the movement of a slot car an optical mouse sensor will be used (ADNS-3080).
+The communication between sensor and FPGA is a state machine, which is reading product ID (address: 0x00) - valid value is 0x17.\\
+After receiving valid product ID the burst register (address: 0x50) will be read. If the first byte (motion register) has the value 0x80 a new motion is detected and the X/Y data will be sent to firmware using Avalon bus to HPS.
+
+ 
+\section{ADNS 3080}
+The optical sensor can communicate via MISO and MOSI wire, controlled by SCLK (system clock), NCS (negated chip select), RST (reset for sensor) and NPD (negated power down).\\
+For further information of receiving data please read the datasheet of ADNS 3080 (adns\_3080.pdf).
+
+\section{FPGA Cyclone V and SoC}
+\subsection{Read burst register of optical sensor}
+To read the burst register the FPGA component is the master for slave sensor. The FPGA is controlling all inputs to ADNS 3080 refering to the communication protocol in ADNS 3080 datasheet. After reseting sensor the product ID will be received. After that the burst register will be read and each difference in X or Y will be sent to HPS.
+
+\subsection{Avalon to sensor communication}
+The Avalon bus is used to send the data from sensor component to HPS. This bus is created in QSYS with a distributed memory. The firmware is able to read the data from these memory addresses now (defined in hps\_0.h).
+
+
+%\includegraphics[width=0.8\textwidth]{C:/Users/i7-Octopussy/Desktop/2.Semester_ESD/AMV2/Uebung/Uebung6/doc/CoverageDiagramm.PNG}\\
+%\lstinputlisting{C:/Users/i7-Octopussy/Desktop/2.Semester_ESD/AMV2/Uebung/Uebung6/doc/constraints.txt}
+
+\end{document}
